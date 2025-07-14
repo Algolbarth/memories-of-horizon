@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class WyverneMarine extends Creature {
     name = "Wyverne marine";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 3;
         this.init([["Or", 30], ["Eau", 30]]);

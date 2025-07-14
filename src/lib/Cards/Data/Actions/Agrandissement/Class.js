@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Agrandissement extends Action {
     name = "Agrandissement";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 50]]);
 

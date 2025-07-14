@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class MageDeLaTerre extends Creature {
     name = "Mage de la terre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 20], ["Terre", 20]]);
         this.familles.base.push("Nain");

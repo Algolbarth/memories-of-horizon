@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 	export let entity;
 </script>
 
@@ -23,11 +23,11 @@
 
 	{#if entity.flux > 0}
 		Flux : {entity.flux}
-		{#if System.game.phase == "Préparation"}
+		{#if system.game.phase == "Préparation"}
 			<br />
 			<button
 				on:click={() => {
-					System.game.flux = true;
+					system.game.flux = true;
 				}}
 			>
 				Transformer le flux
@@ -36,7 +36,7 @@
 		<br />
 	{/if}
 
-	{#if System.settings.show_intelligence}
+	{#if system.settings.show_intelligence}
 		Intelligence : {entity.totalIntelligence()}
 	{/if}
 </div>

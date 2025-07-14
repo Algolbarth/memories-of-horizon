@@ -1,14 +1,14 @@
 <script>
 	import { Account } from "./Account.js";
 
-	export let System;
+	export let system;
 
 	let name = "";
 
 	function register() {
 		if (name != "") {
-			System.account = new Account(System, name);
-			System.page = "Menu";
+			system.account = new Account(system, name);
+			system.page = "Menu";
 		}
 	}
 </script>
@@ -20,7 +20,7 @@
 
 	<button
 		on:click={() => {
-			System.page = "TitleScreen";
+			system.page = "TitleScreen";
 		}}
 	>
 		Retour

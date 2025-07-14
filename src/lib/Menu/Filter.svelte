@@ -1,7 +1,7 @@
 <script>
 	import Dropdown from "../Utils/Dropdown.svelte";
 
-	export let System;
+	export let system;
 	export var levelSelect;
 	export let typeSelect;
 	export let familleSelect;
@@ -34,7 +34,7 @@
 				Niveau
 				<div>
 					<Dropdown
-						array={System.sort.levels}
+						array={system.sort.levels}
 						selected={levelSelect}
 						selecting={function (element) {
 							levelSelect = element;
@@ -46,7 +46,7 @@
 				Type
 				<div>
 					<Dropdown
-						array={System.sort.types}
+						array={system.sort.types}
 						selected={typeSelect}
 						selecting={function (element) {
 							typeSelect = element;
@@ -58,7 +58,7 @@
 				Famille
 				<div>
 					<Dropdown
-						array={System.sort.familles}
+						array={system.sort.familles}
 						selected={familleSelect}
 						selecting={function (element) {
 							familleSelect = element;
@@ -70,7 +70,7 @@
 				Élément
 				<div>
 					<Dropdown
-						array={System.sort.elements}
+						array={system.sort.elements}
 						selected={elementSelect}
 						selecting={function (element) {
 							elementSelect = element;

@@ -1,22 +1,22 @@
-export function save(System) {
-    let text = "MoH_" + System.account.name + "_";
+export function save(system) {
+    let text = "MoH_" + system.account.name + "_";
     text +=
-        System.account.aventure.victory +
+        system.account.aventure.victory +
         "_" +
-        System.account.aventure.defeat +
+        system.account.aventure.defeat +
         "_" +
-        System.account.construct.victory +
+        system.account.construct.victory +
         "_" +
-        System.account.construct.defeat +
+        system.account.construct.defeat +
         "_";
 
-    text += System.music.volume + "_";
-    text += System.settings.show_intelligence + "_";
-    text += System.settings.autoplay + "_";
-    text += System.settings.auto_speed + "_";
+    text += system.music.volume + "_";
+    text += system.settings.show_intelligence + "_";
+    text += system.settings.autoplay + "_";
+    text += system.settings.auto_speed + "_";
 
-    text += System.decks.length + "_";
-    for (const deck of System.decks) {
+    text += system.decks.length + "_";
+    for (const deck of system.decks) {
         text +=
             deck.name +
             "_" +
@@ -36,7 +36,7 @@ export function save(System) {
         "href",
         "data:text/plain;charset=utf-8," + encodeURIComponent(text),
     );
-    element.setAttribute("download", "MoH_" + System.account.name);
+    element.setAttribute("download", "MoH_" + system.account.name);
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();

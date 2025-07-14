@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class Gyoun extends Boss {
     name = "Gyoun, colosse de jade";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 10;
         this.elements.base = ["Végétal"];

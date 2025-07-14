@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Montagne extends Lieu {
     name = "Montagne";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15], ["Terre", 15]]);
 

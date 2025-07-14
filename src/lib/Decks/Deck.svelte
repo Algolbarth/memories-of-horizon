@@ -3,12 +3,12 @@
 	import { several } from "../Utils";
 	import View from "../Cards/View/Main.svelte";
 
-	export let System;
+	export let system;
 
-	let name = System.deck.name;
+	let name = system.deck.name;
 	let sorted = false;
 	let move;
-	if (System.deck.canModify()) {
+	if (system.deck.canModify()) {
 		move = false;
 	} else {
 		move = true;
@@ -24,8 +24,8 @@
 
 	function cards() {
 		let tab = [];
-		for (const cardName of System.deck.cards) {
-			let card = System.cards.getByName(cardName);
+		for (const cardName of system.deck.cards) {
+			let card = system.cards.getByName(cardName);
 			if (
 				(levelSelect == "Tous" || card.level == levelSelect) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
@@ -57,8 +57,8 @@
 <button
 	class="close"
 	on:click={() => {
-		System.view.reset();
-		System.page = "Decks";
+		system.view.reset();
+		system.page = "Decks";
 	}}
 >
 	X
@@ -69,10 +69,10 @@
 <div id="head" class="zone">
 	<div>
 		<input type="text" bind:value={name} />
-		{#if name != System.deck.name}
+		{#if name != system.deck.name}
 			<button
 				on:click={() => {
-					System.deck.changeName(name, 0);
+					system.deck.changeName(name, 0);
 				}}
 			>
 				Renommer
@@ -83,9 +83,9 @@
 
 		<button
 			on:click={() => {
-				System.view.reset();
-				System.deck.clone();
-				System.page = "Decks";
+				system.view.reset();
+				system.deck.clone();
+				system.page = "Decks";
 			}}
 		>
 			Cloner
@@ -95,10 +95,10 @@
 		<button
 			class="classic delete"
 			on:click={() => {
-				System.view.reset();
-				System.deck.delete();
-				System = System;
-				System.page = "Decks";
+				system.view.reset();
+				system.deck.delete();
+				system = system;
+				system.page = "Decks";
 			}}
 		>
 			Supprimer
@@ -108,7 +108,7 @@
 <div class="zone">
 	{cardList.length}
 	/
-	{several(System.deck.cards.length, "carte")}
+	{several(system.deck.cards.length, "carte")}
 	-
 	<button
 		on:click={() => {
@@ -117,12 +117,12 @@
 	>
 		Filtrer
 	</button>
-	{#if System.deck.canModify()}
+	{#if system.deck.canModify()}
 		-
 		<button
 			on:click={() => {
-				System.view.reset();
-				System.page = "Add";
+				system.view.reset();
+				system.page = "Add";
 			}}
 		>
 			Modifier les cartes
@@ -134,13 +134,13 @@
 				<div>
 					<button
 						on:click={() => {
-							System.view.card = System.cards.getByName(card);
+							system.view.card = system.cards.getByName(card);
 						}}
 						on:mouseenter={() => {
-							System.view.quick = System.cards.getByName(card);
+							system.view.quick = system.cards.getByName(card);
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 					>
 						{card}
@@ -150,9 +150,9 @@
 					{#if i > 0}
 						<button
 							on:click={() => {
-								let temp = System.deck.cards[i - 1];
-								System.deck.cards[i - 1] = card;
-								System.deck.cards[i] = temp;
+								let temp = system.deck.cards[i - 1];
+								system.deck.cards[i - 1] = card;
+								system.deck.cards[i] = temp;
 								cards();
 							}}
 						>
@@ -161,12 +161,12 @@
 					{:else}
 						<button class="classic useless">&#9650</button>
 					{/if}
-					{#if i < System.deck.cards.length - 1}
+					{#if i < system.deck.cards.length - 1}
 						<button
 							on:click={() => {
-								let temp = System.deck.cards[i + 1];
-								System.deck.cards[i + 1] = card;
-								System.deck.cards[i] = temp;
+								let temp = system.deck.cards[i + 1];
+								system.deck.cards[i + 1] = card;
+								system.deck.cards[i] = temp;
 								cards();
 							}}
 						>
@@ -182,12 +182,12 @@
 </div>
 
 <div id="view">
-	<View bind:System />
+	<View bind:system />
 </div>
 
 {#if sorted}
 	<Filter
-		bind:System
+		bind:system
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

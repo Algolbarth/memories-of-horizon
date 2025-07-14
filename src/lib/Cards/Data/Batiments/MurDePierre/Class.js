@@ -3,8 +3,8 @@ import { Batiment } from '../Batiment.js';
 export class MurDePierre extends Batiment {
     name = "Mur de pierre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 12], ["Terre", 12]]);
         this.stat("Vie").base = 50;

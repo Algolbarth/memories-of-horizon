@@ -7,8 +7,8 @@ export class Music {
     slot = 0;
     number = 4;
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
     };
 
     init() {

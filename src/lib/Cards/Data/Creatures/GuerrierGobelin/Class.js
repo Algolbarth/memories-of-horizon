@@ -3,8 +3,8 @@ import { Creature } from '../Creature.js';
 export class GuerrierGobelin extends Creature {
     name = "Guerrier gobelin";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10], ["Feu", 10]]);
         this.familles.base.push("Gobelin");

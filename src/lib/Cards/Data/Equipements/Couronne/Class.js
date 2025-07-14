@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Couronne extends Equipment {
     name = "Couronne";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 100]]);
 

@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Raido extends Boss {
     name = "Raido, chef brutal";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 2;
         this.elements.base = ["Neutre"];

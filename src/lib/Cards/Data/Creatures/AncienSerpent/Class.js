@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class AncienSerpent extends Creature {
     name = "Ancien serpent";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
         this.familles.base.push("Reptile");

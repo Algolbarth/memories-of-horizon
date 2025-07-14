@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 	export let zone;
 	export let entity;
 
@@ -32,9 +32,9 @@
 	{/if}
 	<button
 		on:click={() => {
-			System.view.reset();
-			System.train.add.entity = entity;
-			System.train.add.zone = zone;
+			system.view.reset();
+			system.train.add.entity = entity;
+			system.train.add.zone = zone;
 		}}
 	>
 		Ajouter une carte
@@ -46,13 +46,13 @@
 				<div>
 					<button
 						on:click={() => {
-							System.view.card = System.cards.getByName(card);
+							system.view.card = system.cards.getByName(card);
 						}}
 						on:mouseenter={() => {
-							System.view.quick = System.cards.getByName(card);
+							system.view.quick = system.cards.getByName(card);
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 					>
 						{card}
@@ -64,7 +64,7 @@
 							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
-								System = System;
+								system = system;
 							}}
 						>
 							Enlever
@@ -78,7 +78,7 @@
 							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
-								System = System;
+								system = system;
 							}}
 						>
 							Enlever
@@ -88,13 +88,13 @@
 				<div style="text-align:right;">
 					<button
 						on:click={() => {
-							System.view.card = System.cards.getByName(card);
+							system.view.card = system.cards.getByName(card);
 						}}
 						on:mouseenter={() => {
-							System.view.quick = System.cards.getByName(card);
+							system.view.quick = system.cards.getByName(card);
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 					>
 						{card}

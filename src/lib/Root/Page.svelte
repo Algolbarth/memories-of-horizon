@@ -20,47 +20,47 @@
 	import Deck from "../Decks/Deck.svelte";
 	import Add from "../Decks/Add.svelte";
 
-	export let System;
+	export let system;
 </script>
 
-{#if System.page == "BlackScreen"}
-	<BlackScreen bind:System />
-{:else if System.page == "TitleScreen"}
-	<TitleScreen bind:System />
-{:else if System.page == "Login"}
-	<Login bind:System />
-{:else if System.page == "Register"}
-	<Register bind:System />
-{:else if System.page == "Menu"}
-	<Menu bind:System />
-{:else if System.page == "Play"}
-	<Play bind:System />
-{:else if System.page == "Construit"}
-	<Construit bind:System />
-{:else if System.page == "Library"}
-	<Library bind:System />
-{:else if System.page == "Profil"}
-	<Profil bind:System />
-{:else if System.page == "Universe"}
-	<Universe bind:System />
-{:else if System.page == "News"}
-	<News bind:System />
-{:else if System.page == "Training"}
-	<Training bind:System />
-{:else if System.page == "Game"}
-	<Game bind:System />
-{:else if System.page == "Settings"}
-	<Settings bind:System />
-{:else if System.page == "Dialog"}
-	<Dialog bind:System />
-{:else if System.page == "Victory"}
-	<Victory bind:System />
-{:else if System.page == "GameOver"}
-	<GameOver bind:System />
-{:else if System.page == "Decks"}
-	<Decks bind:System />
-{:else if System.page == "Deck"}
-	<Deck bind:System />
-{:else if System.page == "Add"}
-	<Add bind:System />
+{#if system.page == "BlackScreen"}
+	<BlackScreen bind:system />
+{:else if system.page == "TitleScreen"}
+	<TitleScreen bind:system />
+{:else if system.page == "Login"}
+	<Login bind:system />
+{:else if system.page == "Register"}
+	<Register bind:system />
+{:else if system.page == "Menu"}
+	<Menu bind:system />
+{:else if system.page == "Play"}
+	<Play bind:system />
+{:else if system.page == "Construit"}
+	<Construit bind:system />
+{:else if system.page == "Library"}
+	<Library bind:system />
+{:else if system.page == "Profil"}
+	<Profil bind:system />
+{:else if system.page == "Universe"}
+	<Universe bind:system />
+{:else if system.page == "News"}
+	<News bind:system />
+{:else if system.page == "Training"}
+	<Training bind:system />
+{:else if system.page == "Game"}
+	<Game bind:system />
+{:else if system.page == "Settings"}
+	<Settings bind:system />
+{:else if system.page == "Dialog"}
+	<Dialog bind:system />
+{:else if system.page == "Victory"}
+	<Victory bind:system />
+{:else if system.page == "GameOver"}
+	<GameOver bind:system />
+{:else if system.page == "Decks"}
+	<Decks bind:system />
+{:else if system.page == "Deck"}
+	<Deck bind:system />
+{:else if system.page == "Add"}
+	<Add bind:system />
 {/if}

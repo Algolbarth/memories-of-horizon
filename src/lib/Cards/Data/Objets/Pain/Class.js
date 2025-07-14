@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class Pain extends Objet {
     name = "Pain";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 8]]);
         this.familles.base.push("Nourriture");
@@ -15,8 +15,8 @@ export class Pain extends Objet {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;

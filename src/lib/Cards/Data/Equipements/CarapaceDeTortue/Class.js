@@ -4,8 +4,8 @@ import Text from '../Text.svelte';
 export class CarapaceDeTortue extends Equipment {
     name = "Carapace de tortue";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 8], ["Eau", 8]]);
         this.familles.base.push("Armure", "Reptile");

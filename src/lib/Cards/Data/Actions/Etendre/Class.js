@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Etendre extends Action {
     name = "Étendre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 50]]);
 

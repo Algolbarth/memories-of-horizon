@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class Atlas extends Boss {
     name = "Atlas, marche-cratère";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 16;
         this.elements.base = ["Neutre"];

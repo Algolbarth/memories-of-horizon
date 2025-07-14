@@ -1,14 +1,13 @@
-<script>
+<script lang="ts">
   import Root from "./lib/Root/Page.svelte";
-  import { System as Sys } from "./lib/System/Class";
+  import { System } from "./lib/System/Class";
 
-  let System = new Sys();
-  System.music.init();
-  System.page = "BlackScreen";
+  let system = new System();
+  system.music.init();
 </script>
 
 <div class="window">
   <div class="body">
-    <Root bind:System />
+    <Root bind:system />
   </div>
 </div>

@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Volcan extends Lieu {
     name = "Volcan";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15], ["Feu", 15]]);
 

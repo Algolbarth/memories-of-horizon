@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Defrichage extends Action {
     name = "Défrichage";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 60], ["Végétal", 60]]);
 

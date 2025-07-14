@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class TourDArcher extends Batiment {
     name = "Tour d'archer";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15]]);
         this.stat("Vie").base = 10;

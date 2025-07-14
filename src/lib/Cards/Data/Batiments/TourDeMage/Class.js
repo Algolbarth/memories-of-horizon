@@ -3,8 +3,8 @@ import { Batiment } from '../Batiment.js';
 export class TourDeMage extends Batiment {
     name = "Tour de mage";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 20]]);
         this.stat("Vie").base = 20;

@@ -6,8 +6,8 @@ export class Restaurant extends Batiment {
     name = "Restaurant";
     product = undefined;
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 35]]);
         this.stat("Vie").base = 10;
@@ -26,8 +26,8 @@ export class Restaurant extends Batiment {
         }
 
         if (check != undefined) {
-            if (this.owner == this.System.game.player) {
-                this.System.game.use.set(this, Use);
+            if (this.owner == this.system.game.player) {
+                this.system.game.use.set(this, Use);
             }
             else {
                 this.useEffect(check);

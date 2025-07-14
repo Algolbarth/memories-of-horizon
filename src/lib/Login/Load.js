@@ -4,7 +4,7 @@ import { Deck } from "../Decks/Deck.js";
 let step;
 let save;
 
-export async function load(files, System) {
+export async function load(files, system) {
     if (files != undefined) {
         save = await files[0].text();
         step = 0;
@@ -14,33 +14,33 @@ export async function load(files, System) {
             return undefined;
         }
 
-        System.account = new Account(System, readValue());
-        System.account.aventure.victory = readInt();
-        System.account.aventure.defeat = readInt();
-        System.account.construct.victory = readInt();
-        System.account.construct.defeat = readInt();
-        System.music.volume = readInt();
-        System.settings.show_intelligence = readBool();
-        System.settings.autoplay = readBool();
-        System.settings.auto_speed = readInt();
+        system.account = new Account(system, readValue());
+        system.account.aventure.victory = readInt();
+        system.account.aventure.defeat = readInt();
+        system.account.construct.victory = readInt();
+        system.account.construct.defeat = readInt();
+        system.music.volume = readInt();
+        system.settings.show_intelligence = readBool();
+        system.settings.autoplay = readBool();
+        system.settings.auto_speed = readInt();
 
         let number_decks = readInt();
         for (let i = 0; i < number_decks; i++) {
-            let deck = new Deck(System);
+            let deck = new Deck(system);
             deck.changeName(readValue(), 0);
             deck.victory = readInt();
             deck.defeat = readInt();
             let cards = readInt();
             for (let j = 0; j < cards; j++) {
                 let name = readValue();
-                if (System.cards.getByName(name) != undefined) {
+                if (system.cards.getByName(name) != undefined) {
                     deck.add(name);
                 }
             }
-            System.decks.push(deck);
+            system.decks.push(deck);
         }
 
-        System.page = "Menu";
+        system.page = "Menu";
 
         return System;
     }

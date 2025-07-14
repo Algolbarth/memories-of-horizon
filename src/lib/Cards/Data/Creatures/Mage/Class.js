@@ -3,8 +3,8 @@ import { Creature } from '../Creature.js';
 export class Mage extends Creature {
     name = "Mage";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");

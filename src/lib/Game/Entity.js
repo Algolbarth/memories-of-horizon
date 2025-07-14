@@ -17,20 +17,20 @@ export class Entity {
     ressources = [];
     place = undefined;
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
         this.setRessources();
     }
 
     adversary = function () {
-        if (this == this.System.game.player) {
-            return this.System.game.bot;
+        if (this == this.system.game.player) {
+            return this.system.game.bot;
         }
-        return this.System.game.player;
+        return this.system.game.player;
     };
 
     setRessources = function () {
-        for (const r of this.System.ressources) {
+        for (const r of this.system.ressources) {
             this.ressources.push({
                 name: r.name,
                 color: r.color,
@@ -77,9 +77,9 @@ export class Entity {
     };
 
     getCard = function (name) {
-        let card = this.System.cards.getByName(name);
+        let card = this.system.cards.getByName(name);
         card.owner = this;
-        if (this == this.System.game.player) {
+        if (this == this.system.game.player) {
             card.cache = false;
         }
         else {
@@ -90,16 +90,16 @@ export class Entity {
 
     cardList = function (condition = undefined, drawer) {
         let nameList = [];
-        if (this.System.game.deck == undefined) {
-            for (const card of this.System.cards.instance) {
+        if (this.system.game.deck == undefined) {
+            for (const card of this.system.cards.instance) {
                 if (this.place.condition(card) && card.level <= this.zone("Boutique").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (condition == undefined || condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }
         }
         else {
-            for (const c of this.System.game.deck.cards) {
-                let card = this.System.cards.getByName(c);
+            for (const c of this.system.game.deck.cards) {
+                let card = this.system.cards.getByName(c);
                 if (this.place.condition(card) && card.level <= this.zone("Boutique").level) {
                     nameList.push(c);
                 }
@@ -217,9 +217,9 @@ export class Entity {
             ressource.current = ressource.max;
         }
 
-        if (this.System.game.mode != "Entraînement") {
-            if (this.step < this.System.game.chapter.steps.length) {
-                for (const name of this.System.game.chapter.steps[this.step].cards) {
+        if (this.system.game.mode != "Entraînement") {
+            if (this.step < this.system.game.chapter.steps.length) {
+                for (const name of this.system.game.chapter.steps[this.step].cards) {
                     let card = this.getCard(name, this);
                     card.add("Boutique");
                 }

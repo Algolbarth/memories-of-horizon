@@ -1,6 +1,6 @@
 <script>
 	export let card;
-	export let System;
+	export let system;
 </script>
 
 <div class="box">
@@ -8,5 +8,5 @@
 
 	<br />
 
-	<svelte:component this={card.text} bind:System bind:card />
+	<svelte:component this={card.text} bind:system bind:card />
 </div>

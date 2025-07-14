@@ -1,12 +1,12 @@
 <script>
     import { save } from "../Login/Save";
 
-	export let System;
+	export let system;
 
 	function logout() {
-		System.decks = [];
-		System.account = "";
-		System.page = "TitleScreen";
+		system.decks = [];
+		system.account = "";
+		system.page = "TitleScreen";
 	}
 </script>
 
@@ -18,7 +18,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Play";
+						system.page = "Play";
 					}}
 				>
 					Jouer
@@ -29,7 +29,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Decks";
+						system.page = "Decks";
 					}}
 				>
 					Decks
@@ -40,7 +40,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Library";
+						system.page = "Library";
 					}}
 				>
 					Bibliothèque
@@ -51,7 +51,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Universe";
+						system.page = "Universe";
 					}}
 				>
 					Univers
@@ -63,7 +63,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Profil";
+						system.page = "Profil";
 					}}
 				>
 					Profil
@@ -74,7 +74,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "Settings";
+						system.page = "Settings";
 					}}
 				>
 					Options
@@ -85,7 +85,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = "News";
+						system.page = "News";
 					}}
 				>
 					Nouveautés
@@ -96,7 +96,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						save(System);
+						save(system);
 					}}
 				>
 					Sauvegarder

@@ -1,13 +1,13 @@
 <script>
-	export let System;
+	export let system;
 
 	function close() {
-		System.game.use.reset();
-		System = System;
+		system.game.use.reset();
+		system = system;
 	}
 </script>
 
-{#if System.game.use.card != undefined}
+{#if system.game.use.card != undefined}
 	<div id="body">
 		<button
 			class="close"
@@ -22,7 +22,7 @@
 		<br />
 
 		<div id="side">
-			<svelte:component this={System.game.use.svelte} bind:System />
+			<svelte:component this={system.game.use.svelte} bind:system />
 		</div>
 	</div>
 {/if}

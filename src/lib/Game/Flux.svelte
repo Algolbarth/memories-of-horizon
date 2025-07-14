@@ -1,8 +1,8 @@
 <script>
-	export let System;
+	export let system;
 
 	function close() {
-		System.game.flux = false;
+		system.game.flux = false;
 	}
 
 	let tab = [
@@ -21,7 +21,7 @@
 	];
 </script>
 
-{#if System.game.flux}
+{#if system.game.flux}
 	<div class="window">
 		<div id="body" class="center">
 			<div style="text-align:right;">
@@ -42,20 +42,20 @@
 					<div class="ressource">
 						<button
 							style={"background:" +
-								System.game.player.ressource(ressource).color +
+								system.game.player.ressource(ressource).color +
 								";color:" +
-								(System.game.player.ressource(ressource)
+								(system.game.player.ressource(ressource)
 									.light_font
 									? "rgba(255, 255, 255, 1)"
 									: "rgba(0, 0, 0, 1)")}
 							class="big flux"
 							on:click={() => {
-								System.game.player.ressource(ressource)
+								system.game.player.ressource(ressource)
 									.current++;
-								System.game.player.ressource(ressource).max++;
-								System.game.player.flux--;
-								if (System.game.player.flux == 0) {
-									System.game.flux = false;
+								system.game.player.ressource(ressource).max++;
+								system.game.player.flux--;
+								if (system.game.player.flux == 0) {
+									system.game.flux = false;
 								}
 							}}
 						>

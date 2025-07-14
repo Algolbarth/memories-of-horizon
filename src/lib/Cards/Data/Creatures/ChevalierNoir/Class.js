@@ -9,8 +9,8 @@ export class ChevalierNoir extends Creature {
     mounted = false;
     rez = false;
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 30]]);
         this.familles.base.push("Humain", "Chevalier");
@@ -46,8 +46,8 @@ export class ChevalierNoirMonte extends Creature {
     otherForm = "Chevalier noir";
     mounted = true;
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 60]]);
         this.familles.base.push("Humain", "Chevalier");
@@ -61,9 +61,9 @@ export class ChevalierNoirMonte extends Creature {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
+        if (this.owner == this.system.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.System.game.use.set(this, Use);
+                this.system.game.use.set(this, Use);
             }
             else {
                 this.useEffect(undefined);

@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class TortueGéante extends Creature {
     name = "Tortue géante";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 18], ["Eau", 18]]);
         this.familles.base.push("Reptile");

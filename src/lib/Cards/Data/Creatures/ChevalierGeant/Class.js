@@ -6,8 +6,8 @@ export class ChevalierGeant extends Creature {
     otherForm = "Chevalier géant (monté)";
     mounted = false;
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 150]]);
         this.familles.base.push("Géant", "Chevalier");
@@ -24,8 +24,8 @@ export class ChevalierGeantMonte extends Creature {
     otherForm = "Chevalier géant";
     mounted = true;
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 300]]);
         this.familles.base.push("Géant", "Chevalier");

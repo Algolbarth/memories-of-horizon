@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class BaguetteExplosive extends Equipment {
     name = "Baguette explosive";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 40], ["Feu", 40]]);
         this.familles.base.push("Arme");

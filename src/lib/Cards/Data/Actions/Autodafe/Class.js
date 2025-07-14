@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class Autodafe extends Action {
     name = "Autodafé";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15], ["Feu", 15]]);
 
@@ -14,7 +14,7 @@ export class Autodafe extends Action {
     };
 
     select = function () {
-        if (this.owner.zone("Boutique").cards.length > 0 && (this.owner == this.System.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
+        if (this.owner.zone("Boutique").cards.length > 0 && (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
             this.useEffect();
         }
     };

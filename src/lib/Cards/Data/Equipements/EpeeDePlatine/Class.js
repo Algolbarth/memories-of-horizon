@@ -4,8 +4,8 @@ import Text from '../Text.svelte';
 export class EpeeDePlatine extends Equipment {
     name = "Épée de platine";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 100]]);
         this.familles.base.push("Arme");

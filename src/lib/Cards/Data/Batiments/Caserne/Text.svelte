@@ -1,9 +1,9 @@
 <script>
 	import CardInfo from "../../../Info.svelte";
 
-	export let System;
+	export let system;
 	export let card;
 </script>
 
-Au début d'un tour de combat : crée <CardInfo bind:System name={"Soldat"} /> sur
+Au début d'un tour de combat : crée <CardInfo bind:system name={"Soldat"} /> sur
 le terrain.

@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 
 	let story = undefined;
 </script>
@@ -7,7 +7,7 @@
 <button
 	class="close"
 	on:click={() => {
-		System.page = "Menu";
+		system.page = "Menu";
 	}}
 >
 	X
@@ -18,7 +18,7 @@
 
 <div id="zone">
 	<div id="list" class="scroll">
-		{#each System.stories as s}
+		{#each system.stories as s}
 			{#if s.unlock}
 				<div class="preview">
 					<button

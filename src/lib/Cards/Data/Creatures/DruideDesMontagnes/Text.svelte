@@ -1,7 +1,7 @@
 <script>
 	import CardInfo from "../../../Info.svelte";
 
-	export let System;
+	export let system;
 	export let card;
 </script>
 
@@ -9,13 +9,13 @@ Quand posé, au choix :
 <ul>
 	<li>
 		Se transforme en <CardInfo
-			bind:System
+			bind:system
 			name={"Druide des montagnes (forme nain)"}
 		/>.
 	</li>
 	<li>
 		Se transforme en <CardInfo
-			bind:System
+			bind:system
 			name={"Druide des montagnes (forme ours)"}
 		/>.
 	</li>

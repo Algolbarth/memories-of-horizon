@@ -1,11 +1,11 @@
 <script>
-	export let System;
+	export let system;
 </script>
 
 <button
 	class="close"
 	on:click={() => {
-		System.page = "Menu";
+		system.page = "Menu";
 	}}
 >
 	X

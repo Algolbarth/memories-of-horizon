@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class ChefDeClan extends Creature {
     name = "Chef de clan";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 55], ["Feu", 55]]);
         this.familles.base.push("Gobelin");

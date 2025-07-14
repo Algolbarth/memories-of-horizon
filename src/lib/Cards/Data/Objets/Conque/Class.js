@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Conque extends Objet {
     name = "Conque";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10], ["Eau", 10]]);
 

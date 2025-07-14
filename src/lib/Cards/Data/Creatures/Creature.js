@@ -4,8 +4,8 @@ export class Creature extends Unit {
     type = "Créature";
     equipments = [];
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.addStat("Attaque", 0);
 

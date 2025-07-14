@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class ElementaireMarin extends Creature {
     name = "Élémentaire marin";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Eau", 50]]);
         this.familles.base.push("Élémentaire");

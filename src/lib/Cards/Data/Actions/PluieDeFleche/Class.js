@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class PluieDeFleche extends Action {
     name = "Pluie de flèche";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25]]);
 
@@ -13,7 +13,7 @@ export class PluieDeFleche extends Action {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
             this.useEffect();
         }
     };

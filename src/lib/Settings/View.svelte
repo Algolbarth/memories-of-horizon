@@ -1,15 +1,15 @@
 <script lang="ts">
-	export let System: any;
+	export let system: any;
 
 	function close() {
-		if (System.game == undefined) {
-			System.page = "Menu";
+		if (system.game == undefined) {
+			system.page = "Menu";
 		} else {
-			System.page = "Game";
+			system.page = "Game";
 		}
 	}
 
-	let delay = System.settings.auto_speed / 500;
+	let delay = system.settings.auto_speed / 500;
 </script>
 
 <button
@@ -30,14 +30,14 @@
 		type="range"
 		min="0"
 		max="100"
-		bind:value={System.music.volume}
+		bind:value={system.music.volume}
 		on:change={() => {
-			System.music.current.volume = System.music.volume / 100;
+			system.music.current.volume = system.music.volume / 100;
 		}}
 		id="volume"
 	/>
 	<label for="volume" style="text-align:center;">
-		{System.music.volume}%
+		{system.music.volume}%
 	</label>
 </div>
 
@@ -47,7 +47,7 @@
 	<label class="form-control" for="show_intelligence">
 		<input
 			type="checkbox"
-			bind:checked={System.settings.show_intelligence}
+			bind:checked={system.settings.show_intelligence}
 			id="show_intelligence"
 		/>
 		Afficher l'intelligence totale
@@ -56,7 +56,7 @@
 	<label class="form-control" for="autoplay">
 		<input
 			type="checkbox"
-			bind:checked={System.settings.autoplay}
+			bind:checked={system.settings.autoplay}
 			id="autoplay"
 		/>
 		Lance les combats automatiques
@@ -74,7 +74,7 @@
 			max="4"
 			bind:value={delay}
 			on:change={() => {
-				System.settings.auto_speed = delay * 500;
+				system.settings.auto_speed = delay * 500;
 			}}
 			id="delay"
 		/>

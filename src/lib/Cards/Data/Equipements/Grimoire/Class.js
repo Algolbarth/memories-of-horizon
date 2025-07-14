@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Grimoire extends Equipment {
     name = "Grimoire";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 6]]);
 

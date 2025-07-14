@@ -4,8 +4,8 @@ import Text from '../Text.svelte';
 export class BottesEnCuir extends Equipment {
     name = "Bottes en cuir";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10]]);
         this.familles.base.push("Armure");

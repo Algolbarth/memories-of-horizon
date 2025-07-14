@@ -1,8 +1,8 @@
 import { Action } from '../Actions/Action.js';
 
 export class Sort extends Action {
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.familles.base.push("Sort");
     }

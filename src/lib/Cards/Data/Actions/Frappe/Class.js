@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class Frappe extends Action {
     name = "Frappe";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25]]);
 
@@ -23,8 +23,8 @@ export class Frappe extends Action {
         }
 
         if (check) {
-            if (this.owner == this.System.game.player) {
-                this.System.game.use.set(this, Use);
+            if (this.owner == this.system.game.player) {
+                this.system.game.use.set(this, Use);
             }
             else {
                 let target = undefined;

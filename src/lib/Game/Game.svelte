@@ -7,12 +7,12 @@
 	import Pause from "./Pause.svelte";
 	import { onDestroy, onMount } from "svelte";
 
-	export let System;
+	export let system;
 
 	let auto;
 
 	function refresh() {
-		System = System;
+		system = system;
 	}
 
 	onMount(() => {
@@ -27,41 +27,41 @@
 
 <div id="taskbar">
 	<div>
-		{#if System.game.mode != "Entraînement"}
-			Chapitre {System.game.chapter.number}
-			- Étape {System.game.player.step} / {System.game.chapter.steps
+		{#if system.game.mode != "Entraînement"}
+			Chapitre {system.game.chapter.number}
+			- Étape {system.game.player.step} / {system.game.chapter.steps
 				.length}
 			-
 		{/if}
-		{#if !System.game.isBattle()}
+		{#if !system.game.isBattle()}
 			<button
 				on:click={() => {
-					System.view.reset();
-					System.game.newBattle();
-					System = System;
+					system.view.reset();
+					system.game.newBattle();
+					system = system;
 				}}
 			>
 				Combattre
 			</button>
-			{#if System.game.mode == "Entraînement"}
+			{#if system.game.mode == "Entraînement"}
 				-
 				<button
 					on:click={() => {
-						System.view.reset();
-						System.game.bot.play();
-						System = System;
+						system.view.reset();
+						system.game.bot.play();
+						system = system;
 					}}
 				>
 					Tour de l'ordi
 				</button>
 			{/if}
-		{:else if !System.game.isEndBattle()}
-			Tour de combat {System.game.turn}
+		{:else if !system.game.isEndBattle()}
+			Tour de combat {system.game.turn}
 			-
-			{#if System.game.auto != null}
+			{#if system.game.auto != null}
 				<button
 					on:click={() => {
-						System.game.stopAuto();
+						system.game.stopAuto();
 					}}
 				>
 					Désactiver mode auto
@@ -69,7 +69,7 @@
 			{:else}
 				<button
 					on:click={() => {
-						System.game.startAuto();
+						system.game.startAuto();
 					}}
 				>
 					Activer mode auto
@@ -77,8 +77,8 @@
 				-
 				<button
 					on:click={() => {
-						System.view.reset();
-						System.game.actionBattle();
+						system.view.reset();
+						system.game.actionBattle();
 					}}
 				>
 					Prochaine action
@@ -88,9 +88,9 @@
 			Combat fini -
 			<button
 				on:click={() => {
-					System.view.reset();
-					System.game.actionBattle();
-					System = System;
+					system.view.reset();
+					system.game.actionBattle();
+					system = system;
 				}}
 			>
 				Résultats
@@ -100,8 +100,8 @@
 	<div style="text-align:right">
 		<button
 			on:click={() => {
-				System.game.pause = true;
-				System.page = "Game";
+				system.game.pause = true;
+				system.page = "Game";
 			}}
 		>
 			Pause
@@ -114,35 +114,35 @@
 <div id="container" class="scroll">
 	<div class="zone">
 		<div>
-			<Entity bind:System bind:entity={System.game.player} />
+			<Entity bind:system bind:entity={system.game.player} />
 		</div>
 		<div style="text-align:right;">
-			<Entity bind:System bind:entity={System.game.bot} />
+			<Entity bind:system bind:entity={system.game.bot} />
 		</div>
 	</div>
 
-	{#if !System.game.isBattle()}
-		<DoubleZone bind:System zone={"Lieux"} />
-		<DoubleZone bind:System zone={"Boutique"} />
-		<DoubleZone bind:System zone={"Main"} />
+	{#if !system.game.isBattle()}
+		<DoubleZone bind:system zone={"Lieux"} />
+		<DoubleZone bind:system zone={"Boutique"} />
+		<DoubleZone bind:system zone={"Main"} />
 	{/if}
 
-	<DoubleZone bind:System zone={"Terrain"} />
+	<DoubleZone bind:system zone={"Terrain"} />
 
-	{#if !System.game.isBattle()}
-		<DoubleZone bind:System zone={"Défausse"} />
+	{#if !system.game.isBattle()}
+		<DoubleZone bind:system zone={"Défausse"} />
 	{/if}
 </div>
 
-<Use bind:System />
+<Use bind:system />
 
-<Flux bind:System />
+<Flux bind:system />
 
 <div class="center">
-	<View bind:System />
+	<View bind:system />
 </div>
 
-<Pause bind:System />
+<Pause bind:system />
 
 <style>
 	#taskbar {

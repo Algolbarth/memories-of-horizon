@@ -3,8 +3,8 @@ export class Deck {
     victory = 0;
     defeat = 0;
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
 
         this.changeName("Nouveau deck", 0);
     };
@@ -14,7 +14,7 @@ export class Deck {
         if (number > 0) {
             newName += " (" + number + ")";
         }
-        for (const deck of this.System.decks) {
+        for (const deck of this.system.decks) {
             if (deck != this && deck.name == newName) {
                 return this.changeName(name, number + 1);
             }
@@ -53,26 +53,26 @@ export class Deck {
     };
 
     clone = function () {
-        let deck = new Deck(this.System);
+        let deck = new Deck(this.system);
         deck.changeName(this.name, 0);
         for (const card of this.cards) {
             deck.add(card);
         }
-        this.System.decks.push(deck);
+        this.system.decks.push(deck);
     };
 
     delete = function () {
-        for (let i = 0; i < this.System.decks.length; i++) {
-            if (this.System.decks[i].name == this.name) {
-                this.System.decks.splice(i, 1);
+        for (let i = 0; i < this.system.decks.length; i++) {
+            if (this.system.decks[i].name == this.name) {
+                this.system.decks.splice(i, 1);
             }
         }
-        this.System.deck = undefined;
+        this.system.deck = undefined;
     };
 
     playable = function () {
         for (const card of this.cards) {
-            if (this.System.cards.getByName(card).level == 1) {
+            if (this.system.cards.getByName(card).level == 1) {
                 return true;
             }
         }

@@ -21,22 +21,22 @@ export class Game extends Battle {
     phase = "Préparation";
     deck = undefined;
 
-    constructor(System, mode) {
-        super(System);
+    constructor(system, mode) {
+        super(system);
 
         this.mode = mode;
     };
 
     init = function () {
-        this.player = new Entity(this.System);
-        this.bot = new Entity(this.System);
+        this.player = new Entity(this.system);
+        this.bot = new Entity(this.system);
 
         if (this.mode == "Entraînement") {
-            this.player.life.set(this.System.train.player.life);
-            this.player.ressource("Or").max = this.System.train.player.gold;
-            this.player.flux = this.System.train.player.flux;
-            this.player.zone("Boutique").level = this.System.train.player.zones[1].level;
-            for (const zone of this.System.train.player.zones) {
+            this.player.life.set(this.system.train.player.life);
+            this.player.ressource("Or").max = this.system.train.player.gold;
+            this.player.flux = this.system.train.player.flux;
+            this.player.zone("Boutique").level = this.system.train.player.zones[1].level;
+            for (const zone of this.system.train.player.zones) {
                 this.player.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
                     this.player.getCard(card_name).add(zone.name);
@@ -44,12 +44,12 @@ export class Game extends Battle {
             }
             this.player.place = this.player.zone("Lieux").cards[0];
 
-            this.bot.life.set(this.System.train.bot.life);
-            this.bot.ressource("Or").max = this.System.train.bot.gold;
-            this.bot.ressource("Or").current = this.System.train.bot.gold;
-            this.bot.flux = this.System.train.bot.flux;
-            this.bot.zone("Boutique").level = this.System.train.bot.zones[1].level;
-            for (const zone of this.System.train.bot.zones) {
+            this.bot.life.set(this.system.train.bot.life);
+            this.bot.ressource("Or").max = this.system.train.bot.gold;
+            this.bot.ressource("Or").current = this.system.train.bot.gold;
+            this.bot.flux = this.system.train.bot.flux;
+            this.bot.zone("Boutique").level = this.system.train.bot.zones[1].level;
+            for (const zone of this.system.train.bot.zones) {
                 this.bot.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
                     let card = this.bot.getCard(card_name);
@@ -71,7 +71,7 @@ export class Game extends Battle {
 
             this.player.getCard("Humain").add("Terrain");
 
-            this.chapter = new Chapter(this.System, 0);
+            this.chapter = new Chapter(this.system, 0);
 
             this.nextChapter();
         }
@@ -79,14 +79,14 @@ export class Game extends Battle {
 
     nextChapter = function () {
         if (this.chapter.number < 50) {
-            this.bot = new Entity(this.System);
+            this.bot = new Entity(this.system);
 
             let number = this.chapter.number + 1;
             if (number % 10 == 0) {
-                this.chapter = this.System.bosses.getRandom(number);
+                this.chapter = this.system.bosses.getRandom(number);
             }
             else {
-                this.chapter = this.System.chapters.getRandom(number);
+                this.chapter = this.system.chapters.getRandom(number);
             }
 
             this.chapter.init();
@@ -141,14 +141,14 @@ export class Game extends Battle {
         if (this.mode != "Entraînement") {
             let step = this.chapter.steps[this.player.step - 1];
             if (step.dialog < step.dialogs.length) {
-                this.System.page = "Dialog";
+                this.system.page = "Dialog";
             }
             else {
-                this.System.page = "Game";
+                this.system.page = "Game";
             }
         }
         else {
-            this.System.page = "Game";
+            this.system.page = "Game";
         }
     };
 
@@ -180,10 +180,10 @@ export class Game extends Battle {
             if (this.player.step < this.chapter.steps.length) {
                 this.player.step++;
 
-                this.System.game.bot.life.set(this.chapter.steps[this.System.game.player.step - 1].life);
+                this.system.game.bot.life.set(this.chapter.steps[this.system.game.player.step - 1].life);
 
                 this.bot.zone("Lieux").cards = [];
-                this.bot.getCard(this.chapter.steps[this.System.game.player.step - 1].place).add("Lieux");
+                this.bot.getCard(this.chapter.steps[this.system.game.player.step - 1].place).add("Lieux");
                 this.bot.place = this.bot.zone("Lieux").cards[0];
 
                 this.startStep();
@@ -198,23 +198,23 @@ export class Game extends Battle {
 
     victory = function () {
         if (this.mode == "Aventure") {
-            this.System.account.aventure.victory++;
+            this.system.account.aventure.victory++;
         }
         else if (this.mode == "Construit") {
-            this.System.account.construct.victory++;
+            this.system.account.construct.victory++;
         }
         this.deck.victory++;
-        this.System.page = "Victory";
+        this.system.page = "Victory";
     };
 
     defeat = function () {
         if (this.mode == "Aventure") {
-            this.System.account.aventure.defeat++;
+            this.system.account.aventure.defeat++;
         }
         else if (this.mode == "Construit") {
-            this.System.account.construct.defeat++;
+            this.system.account.construct.defeat++;
         }
         this.deck.defeat++;
-        this.System.page = "GameOver";
+        this.system.page = "GameOver";
     };
 }

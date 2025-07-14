@@ -1,17 +1,17 @@
 <script>
 	import CardInfo from "../../../Info.svelte";
 
-	export let System;
+	export let system;
 	export let card;
 </script>
 
 Au choix :
 <ul>
 	<li>
-		Crée un <CardInfo bind:System name={"Élémentaire de caillou"} /> sur le terrain.
+		Crée un <CardInfo bind:system name={"Élémentaire de caillou"} /> sur le terrain.
 	</li>
 	<li>
-		Créé un <CardInfo bind:System name={"Mur de roche"} /> sur le terrain.
+		Créé un <CardInfo bind:system name={"Mur de roche"} /> sur le terrain.
 	</li>
 </ul>
 

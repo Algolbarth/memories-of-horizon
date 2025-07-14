@@ -3,21 +3,21 @@
 	import { Deck } from "./Deck.js";
 	import View from "./View.svelte";
 
-	export let System;
+	export let system;
 
 	function newDeck() {
-		let deck = new Deck(System);
-		System.decks.push(deck);
-		System.deck = deck;
-		System.page = "Deck";
+		let deck = new Deck(system);
+		system.decks.push(deck);
+		system.deck = deck;
+		system.page = "Deck";
 	}
 </script>
 
 <button
 	class="close"
 	on:click={() => {
-		System.view.reset();
-		System.page = "Menu";
+		system.view.reset();
+		system.page = "Menu";
 	}}
 >
 	X
@@ -26,7 +26,7 @@
 <br />
 
 <div id="zone">
-	{several(System.decks.length, "deck")} -
+	{several(system.decks.length, "deck")} -
 	<button
 		on:click={() => {
 			newDeck();
@@ -38,18 +38,18 @@
 	<br />
 
 	<div id="list" class="scroll">
-		{#each System.decks as deck, i}
+		{#each system.decks as deck, i}
 			<div class="preview">
 				<div>
 					<button
 						on:mouseenter={() => {
-							System.view.quick = deck;
+							system.view.quick = deck;
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 						on:click={() => {
-							System.view.card = deck;
+							system.view.card = deck;
 						}}
 					>
 						{deck.name}
@@ -58,9 +58,9 @@
 				<div style="text-align:right">
 					<button
 						on:click={() => {
-							System.deck = deck;
-							System.view.reset();
-							System.page = "Deck";
+							system.deck = deck;
+							system.view.reset();
+							system.page = "Deck";
 						}}
 					>
 						Modifier
@@ -68,9 +68,9 @@
 					{#if i > 0}
 						<button
 							on:click={() => {
-								let temp = System.decks[i - 1];
-								System.decks[i - 1] = deck;
-								System.decks[i] = temp;
+								let temp = system.decks[i - 1];
+								system.decks[i - 1] = deck;
+								system.decks[i] = temp;
 							}}
 						>
 							&#9650
@@ -78,12 +78,12 @@
 					{:else}
 						<button class="classic useless">&#9650</button>
 					{/if}
-					{#if i < System.decks.length - 1}
+					{#if i < system.decks.length - 1}
 						<button
 							on:click={() => {
-								let temp = System.decks[i + 1];
-								System.decks[i + 1] = deck;
-								System.decks[i] = temp;
+								let temp = system.decks[i + 1];
+								system.decks[i + 1] = deck;
+								system.decks[i] = temp;
 							}}
 						>
 							&#9660
@@ -98,7 +98,7 @@
 </div>
 
 <div id="view">
-	<View bind:System />
+	<View bind:system />
 </div>
 
 <style>

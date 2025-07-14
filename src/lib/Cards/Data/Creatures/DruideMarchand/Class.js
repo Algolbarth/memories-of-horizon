@@ -3,8 +3,8 @@ import Text from './Text.svelte';
 import Use from './Use.svelte';
 
 class DruideMarchand extends Creature {
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25]]);
         this.familles.base.push("Druide");
@@ -13,8 +13,8 @@ class DruideMarchand extends Creature {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             this.useEffect("Boeuf");
@@ -37,8 +37,8 @@ export class DruideMarchandHumain extends DruideMarchand {
     name = "Druide marchand (forme humain)";
     otherForm = "Druide marchand (forme boeuf)";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.familles.base.push("Humain");
 
@@ -56,8 +56,8 @@ export class DruideMarchandBoeuf extends DruideMarchand {
     name = "Druide marchand (forme boeuf)";
     otherForm = "Druide marchand (forme humain)";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.familles.base.push("Bête");
 

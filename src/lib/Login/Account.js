@@ -2,8 +2,8 @@ export class Account {
     aventure = new Gamemode();
     construct = new Gamemode();
 
-    constructor(System, name) {
-        this.System = System;
+    constructor(system, name) {
+        this.system = system;
         this.name = name;
     };
 

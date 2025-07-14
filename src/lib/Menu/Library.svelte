@@ -4,7 +4,7 @@
 	import View from "../Cards/View/Main.svelte";
 	import { several } from "../Utils";
 
-	export let System;
+	export let system;
 
 	let filterWindow = false;
 	let sortType = "Nom";
@@ -23,7 +23,7 @@
 	function filter() {
 		let tab = [];
 
-		for (const card of System.cards.instance) {
+		for (const card of system.cards.instance) {
 			if (
 				(levelSelect == "Tous" || card.level == levelSelect) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
@@ -81,8 +81,8 @@
 <button
 	class="close"
 	on:click={() => {
-		System.view.reset();
-		System.page = "Menu";
+		system.view.reset();
+		system.page = "Menu";
 	}}
 >
 	X
@@ -116,13 +116,13 @@
 			<div class="preview">
 				<button
 					on:click={() => {
-						System.view.card = card;
+						system.view.card = card;
 					}}
 					on:mouseenter={() => {
-						System.view.quick = card;
+						system.view.quick = card;
 					}}
 					on:mouseleave={() => {
-						System.view.quick = undefined;
+						system.view.quick = undefined;
 					}}
 				>
 					{card.name}
@@ -133,12 +133,12 @@
 </div>
 
 <div id="view">
-	<View bind:System />
+	<View bind:system />
 </div>
 
 {#if filterWindow}
 	<Filter
-		bind:System
+		bind:system
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

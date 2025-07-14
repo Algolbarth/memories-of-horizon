@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Pelle extends Equipment {
     name = "Pelle";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 18], ["Terre", 18]]);
 

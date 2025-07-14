@@ -3,7 +3,7 @@
 	import { several } from "../Utils";
 	import View from "../Cards/View/Main.svelte";
 
-	export let System;
+	export let system;
 
 	let filterWindow = false;
 
@@ -17,7 +17,7 @@
 
 	function filter() {
 		let tab = [];
-		for (const card of System.cards.instance) {
+		for (const card of system.cards.instance) {
 			if (
 				!card.trait("Rare").value() &&
 				!card.trait("Légendaire").value() &&
@@ -51,8 +51,8 @@
 <button
 	class="close"
 	on:click={() => {
-		System.view.reset();
-		System.page = "Deck";
+		system.view.reset();
+		system.page = "Deck";
 	}}
 >
 	X
@@ -74,31 +74,31 @@
 	<div id="list" class="scroll">
 		{#each cardList as card}
 			<div
-				class={(System.deck.check(card.name) ? "present " : "") +
+				class={(system.deck.check(card.name) ? "present " : "") +
 					"preview"}
 			>
 				<div>
 					<button
-						class={System.deck.check(card.name) ? "present " : ""}
+						class={system.deck.check(card.name) ? "present " : ""}
 						on:click={() => {
-							System.view.card = card;
+							system.view.card = card;
 						}}
 						on:mouseenter={() => {
-							System.view.quick = card;
+							system.view.quick = card;
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 					>
 						{card.name}
 					</button>
 				</div>
 				<div style="text-align:right;">
-					{#if !System.deck.check(card.name)}
+					{#if !system.deck.check(card.name)}
 						<button
 							on:click={() => {
-								System.deck.add(card.name);
-								System = System;
+								system.deck.add(card.name);
+								system = system;
 							}}
 						>
 							Ajouter
@@ -107,8 +107,8 @@
 						<button
 							class="present"
 							on:click={() => {
-								System.deck.remove(card.name);
-								System = System;
+								system.deck.remove(card.name);
+								system = system;
 							}}
 						>
 							Enlever
@@ -121,12 +121,12 @@
 </div>
 
 <div id="view">
-	<View bind:System />
+	<View bind:system />
 </div>
 
 {#if filterWindow}
 	<Filter
-		bind:System
+		bind:system
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

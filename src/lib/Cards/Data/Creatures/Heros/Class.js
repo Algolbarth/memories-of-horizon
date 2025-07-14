@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Heros extends Creature {
     name = "Héros";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");

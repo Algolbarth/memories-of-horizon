@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class GoHoumei extends Boss {
     name = "Go Houmei, reine des tours";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 6;
         this.elements.base = ["Terre"];

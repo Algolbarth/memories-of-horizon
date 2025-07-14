@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class ElementaireDeTerre extends Creature {
     name = "Élémentaire de terre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Terre", 15]]);
         this.familles.base.push("Élémentaire");
@@ -24,9 +24,9 @@ export class ElementaireDeTerre extends Creature {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
+        if (this.owner == this.system.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.System.game.use.set(this, Use);
+                this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
                 this.useEffect(undefined);

@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Restockage extends Action {
     name = "Restockage";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10]]);
 

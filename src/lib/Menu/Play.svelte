@@ -1,19 +1,19 @@
 <script>
 	import { Game } from "../Game/Game.js";
 
-	export let System;
+	export let system;
 
 	function aventure() {
-		System.game = new Game(System, "Aventure");
-		System.game.init();
-		System = System;
+		system.game = new Game(system, "Aventure");
+		system.game.init();
+		system = system;
 	}
 </script>
 
 <button
 	class="close"
 	on:click={() => {
-		System.page = "Menu";
+		system.page = "Menu";
 	}}
 >
 	X
@@ -34,7 +34,7 @@
 	<button
 		class="big menu"
 		on:click={() => {
-			System.page = "Construit";
+			system.page = "Construit";
 		}}
 	>
 		Construit
@@ -46,7 +46,7 @@
 	<button
 		class="big menu"
 		on:click={() => {
-			System.page = "Training";
+			system.page = "Training";
 		}}
 	>
 		Entraînement

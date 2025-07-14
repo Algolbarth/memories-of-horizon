@@ -1,15 +1,15 @@
 <script>
-	export let System;
+	export let system;
 	export let card;
 	export let condition;
 	export let fonction;
 
-	$: isPlayer = card.owner == System.game.player ? true : false;
+	$: isPlayer = card.owner == system.game.player ? true : false;
 </script>
 
 <div
 	class={(isPlayer || fonction != undefined ? "container " : "") +
-		(card == System.game.fighter ? "attacker " : "") +
+		(card == system.game.fighter ? "attacker " : "") +
 		"preview"}
 >
 	<div id={isPlayer || fonction != undefined ? "infos" : ""}>
@@ -19,13 +19,13 @@
 		{#if !card.cache}
 			<button
 				on:click={() => {
-					System.view.card = card;
+					system.view.card = card;
 				}}
 				on:mouseenter={() => {
-					System.view.quick = card;
+					system.view.quick = card;
 				}}
 				on:mouseleave={() => {
-					System.view.quick = undefined;
+					system.view.quick = undefined;
 				}}
 			>
 				{card.name}
@@ -37,12 +37,12 @@
 
 	{#if isPlayer || fonction != undefined}
 		<div id="actions">
-			{#if System.game.phase == "Préparation" && fonction == undefined}
+			{#if system.game.phase == "Préparation" && fonction == undefined}
 				{#if card.zone.name == "Main" || card.zone.name == "Terrain"}
 					<button
 						on:click={() => {
 							card.sell();
-							System = System;
+							system = system;
 						}}
 					>
 						Vendre
@@ -52,7 +52,7 @@
 					<button
 						on:click={() => {
 							card.buy();
-							System = System;
+							system = system;
 						}}
 					>
 						Acheter
@@ -61,7 +61,7 @@
 					<button
 						on:click={() => {
 							card.use();
-							System = System;
+							system = system;
 						}}
 					>
 						Poser
@@ -84,7 +84,7 @@
 						<button
 							on:click={() => {
 								card.up();
-								System = System;
+								system = system;
 							}}
 						>
 							&#9650
@@ -96,7 +96,7 @@
 						<button
 							on:click={() => {
 								card.down();
-								System = System;
+								system = system;
 							}}
 						>
 							&#9660
@@ -111,7 +111,7 @@
 					<button
 						on:click={() => {
 							fonction(card);
-							System = System;
+							system = system;
 						}}
 					>
 						Sélectionner

@@ -1,12 +1,13 @@
 import { Train } from "../Training/Train.js";
 import * as cards from "../Cards/Data/index.js";
-import * as chapters from "../Chapters/Data";
-import * as stories from "../Stories";
+import * as chapters from "../Chapters/Data/index.js";
+import * as stories from "../Stories/index.js";
 import { Music } from "../Music/Class.js";
 import { Settings } from "../Settings/Class.js";
 import { ressources } from "../Ressources/Class.js";
 
 export class System {
+    page: string = "BlackScreen";
     stories = [];
     settings = new Settings();
     decks = [];
@@ -145,14 +146,14 @@ class Cards {
     class = [];
     instance = [];
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
     };
 
     getByName(name) {
         for (let i = 0; i < this.instance.length; i++) {
             if (this.instance[i].name == name) {
-                return new this.class[i](this.System);
+                return new this.class[i](this.system);
             }
         }
         return undefined;
@@ -163,15 +164,15 @@ class Chapters {
     class = [];
     instance = [];
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
     };
 
     getRandom(number) {
         let level = parseInt((number - 1) / 5) + 1;
         return new this.class[level][
             parseInt(Math.random() * this.class[level].length)
-        ](this.System, number);
+        ](this.system, number);
     };
 };
 
@@ -179,15 +180,15 @@ class Bosses {
     class = [];
     instance = [];
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
     };
 
     getRandom(number) {
         let level = parseInt((number - 1) / 10) + 1;
         return new this.class[level][
             parseInt(Math.random() * this.class[level].length)
-        ](this.System, number);
+        ](this.system, number);
     };
 };
 

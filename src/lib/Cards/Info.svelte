@@ -1,13 +1,13 @@
 <script>
-	export let System;
+	export let system;
 	export let name;
 
-	$: card = System.cards.getByName(name);
+	$: card = system.cards.getByName(name);
 </script>
 
 <button
 	on:click={() => {
-		System.view.card = card;
+		system.view.card = card;
 	}}
 >
 	{name}

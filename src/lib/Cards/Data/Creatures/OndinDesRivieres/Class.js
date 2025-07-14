@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class OndinDesRivieres extends Creature {
     name = "Ondin des rivières";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 12], ["Eau", 12]]);
         this.familles.base.push("Ondin");

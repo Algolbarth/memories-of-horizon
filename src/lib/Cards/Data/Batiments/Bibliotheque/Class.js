@@ -3,8 +3,8 @@ import { Batiment } from '../Batiment.js';
 export class Bibliothèque extends Batiment {
     name = "Bibliothèque";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 30]]);
         this.stat("Vie").base = 10;

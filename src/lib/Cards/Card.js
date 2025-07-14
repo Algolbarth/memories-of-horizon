@@ -31,8 +31,8 @@ export class Card {
 
     verrou = false;
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
 
         this.addTrait("Légendaire", false);
 
@@ -41,7 +41,7 @@ export class Card {
         this.addStat("Perpétuité", 0);
         this.stat("Perpétuité").current = 0;
 
-        for (const ressource of System.ressources) {
+        for (const ressource of system.ressources) {
             this.cout.push(new Cout(ressource, 0, this));
             this.vente.push(new Cout(ressource, 0, this));
         }
@@ -253,7 +253,7 @@ export class Card {
     pose = function () {
         this.cache = false;
 
-        for (const entity of [this.System.game.player, this.System.game.bot]) {
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
@@ -352,7 +352,7 @@ export class Card {
     };
 
     transform = function (name) {
-        let newCard = this.System.cards.getByName(name);
+        let newCard = this.system.cards.getByName(name);
         this.zone.cards[this.slot] = newCard;
 
         this.zone.cards[this.slot].owner = this.owner;

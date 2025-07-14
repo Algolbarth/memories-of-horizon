@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class EpeeEnflammee extends Equipment {
     name = "Épée enflammée";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
         this.familles.base.push("Arme");

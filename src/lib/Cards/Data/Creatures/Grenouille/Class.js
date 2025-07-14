@@ -3,8 +3,8 @@ import { Creature } from '../Creature.js';
 export class Grenouille extends Creature {
     name = "Grenouille";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5], ["Eau", 5]]);
 

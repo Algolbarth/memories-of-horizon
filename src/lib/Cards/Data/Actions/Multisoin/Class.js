@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class Multisoin extends Action {
     name = "Multisoin";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25]]);
 
@@ -14,7 +14,7 @@ export class Multisoin extends Action {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
+        if (this.owner == this.system.game.player) {
             this.useEffect();
         }
         else {

@@ -1,8 +1,8 @@
 <script>
-	export let System;
+	export let system;
 
 	$: deck =
-		System.view.quick == undefined ? System.view.card : System.view.quick;
+		system.view.quick == undefined ? system.view.card : system.view.quick;
 </script>
 
 {#if deck != undefined}

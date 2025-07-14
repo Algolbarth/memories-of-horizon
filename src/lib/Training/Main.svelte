@@ -5,15 +5,15 @@
 	import View from "../Cards/View/Main.svelte";
 	import { Game } from "../Game/Game.js";
 
-	export let System;
+	export let system;
 </script>
 
 <div>
 	<button
 		class="close"
 		on:click={() => {
-			System.view.reset();
-			System.page = "Play";
+			system.view.reset();
+			system.page = "Play";
 		}}
 	>
 		X
@@ -23,11 +23,11 @@
 		<button
 			class="big menu"
 			on:click={() => {
-				System.view.reset();
-				System.game = new Game(System, "Entraînement");
-				System.game.deck = System.train.deck;
-				System.game.init();
-				System.page = "Game";
+				system.view.reset();
+				system.game = new Game(system, "Entraînement");
+				system.game.deck = system.train.deck;
+				system.game.init();
+				system.page = "Game";
 			}}
 		>
 			Lancer l'entraînement
@@ -37,26 +37,26 @@
 
 <div id="body" class="scroll">
 	<div class="bi-zone">
-		<Entity bind:entity={System.train.player} />
-		<Entity bind:entity={System.train.bot} />
+		<Entity bind:entity={system.train.player} />
+		<Entity bind:entity={system.train.bot} />
 	</div>
-	{#each System.train.bot.zones as zone, i}
+	{#each system.train.bot.zones as zone, i}
 		<div class="bi-zone">
 			<Zone
-				bind:System
+				bind:system
 				entity="player"
-				bind:zone={System.train.player.zones[i]}
+				bind:zone={system.train.player.zones[i]}
 			/>
-			<Zone bind:System entity="bot" bind:zone />
+			<Zone bind:system entity="bot" bind:zone />
 		</div>
 	{/each}
 </div>
 
-<Add bind:System />
+<Add bind:system />
 
-{#if System.train.add.zone == undefined}
+{#if system.train.add.zone == undefined}
 	<div class="center">
-		<View bind:System />
+		<View bind:system />
 	</div>
 {/if}
 

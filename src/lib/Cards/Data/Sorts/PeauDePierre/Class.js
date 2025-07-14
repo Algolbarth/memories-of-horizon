@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class PeauDePierre extends Sort {
     name = "Peau de pierre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10], ["Terre", 10]]);
 
@@ -14,8 +14,8 @@ export class PeauDePierre extends Sort {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;

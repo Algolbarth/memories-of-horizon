@@ -3,8 +3,8 @@ import { Creature } from '../Creature.js';
 export class SageDeLaForet extends Creature {
     name = "Sage de la forêt";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
         this.familles.base.push("Elfe");

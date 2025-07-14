@@ -1,6 +1,6 @@
 <script>
 	import Zone from "../../../../Game/Zone.svelte";
-	export let System;
+	export let system;
 
 	function condition(card) {
 		if (card.familles.total().includes("Armure")) {
@@ -10,15 +10,15 @@
 	}
 
 	function fonction(card) {
-		System.game.use.card.useEffect(card);
-		System.game.use.reset();
+		system.game.use.card.useEffect(card);
+		system.game.use.reset();
 	}
 </script>
 
 <Zone
-	bind:System
-	bind:entity={System.game.use.card.owner}
-	zone={System.game.use.card.owner.zone("Main")}
+	bind:system
+	bind:entity={system.game.use.card.owner}
+	zone={system.game.use.card.owner.zone("Main")}
 	{condition}
 	{fonction}
 />

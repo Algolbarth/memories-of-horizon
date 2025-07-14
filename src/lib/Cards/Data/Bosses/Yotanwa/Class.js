@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class Yotanwa extends Boss {
     name = "Yotanwa, patronne de la guerre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 12;
         this.elements.base = ["Neutre"];

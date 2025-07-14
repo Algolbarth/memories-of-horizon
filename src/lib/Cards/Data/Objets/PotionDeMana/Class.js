@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class PotionDeMana extends Objet {
     name = "Potion de mana";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5]]);
 

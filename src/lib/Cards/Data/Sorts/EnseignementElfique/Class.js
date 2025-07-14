@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class EnseignementElfique extends Sort {
     name = "Enseignement elfique";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
         this.familles.base.push("Elfe");
@@ -15,8 +15,8 @@ export class EnseignementElfique extends Sort {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;

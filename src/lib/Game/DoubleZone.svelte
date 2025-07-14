@@ -1,23 +1,23 @@
 <script>
 	import Zone from "./Zone.svelte";
 
-	export let System;
+	export let system;
 	export let zone;
 </script>
 
 <div class="zones">
 	<Zone
-		bind:System
-		bind:entity={System.game.player}
-		zone={System.game.player.zone(zone)}
+		bind:system
+		bind:entity={system.game.player}
+		zone={system.game.player.zone(zone)}
 		condition={undefined}
 		fonction={undefined}
 	/>
 	<div style="text-align:right;">
 		<Zone
-			bind:System
-			bind:entity={System.game.bot}
-			zone={System.game.bot.zone(zone)}
+			bind:system
+			bind:entity={system.game.bot}
+			zone={system.game.bot.zone(zone)}
 			condition={undefined}
 			fonction={undefined}
 		/>

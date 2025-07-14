@@ -1,13 +1,13 @@
 <script>
-	export let System;
+	export let system;
 
-	let name = System.account.name;
+	let name = system.account.name;
 </script>
 
 <button
 	class="close"
 	on:click={() => {
-		System.page = "Menu";
+		system.page = "Menu";
 	}}
 >
 	X
@@ -17,10 +17,10 @@
 <br />
 
 <input type="text" bind:value={name} />
-{#if name != System.account.name}
+{#if name != system.account.name}
 	<button
 		on:click={() => {
-			System.account.name = name;
+			system.account.name = name;
 		}}
 	>
 		Renommer
@@ -29,24 +29,24 @@
 
 <br /><br />
 
-Total des parties : {System.account.total_match()}
+Total des parties : {system.account.total_match()}
 <br />
-Victoires : {System.account.total_victory()}
+Victoires : {system.account.total_victory()}
 <br />
-Défaites : {System.account.total_defeat()}
+Défaites : {system.account.total_defeat()}
 
 <br /><br />
 
-Mode aventure : {System.account.aventure.total()}
+Mode aventure : {system.account.aventure.total()}
 <br />
-Victoires : {System.account.aventure.victory}
+Victoires : {system.account.aventure.victory}
 <br />
-Défaites : {System.account.aventure.defeat}
+Défaites : {system.account.aventure.defeat}
 
 <br /><br />
 
-Mode construit : {System.account.construct.total()}
+Mode construit : {system.account.construct.total()}
 <br />
-Victoires : {System.account.construct.victory}
+Victoires : {system.account.construct.victory}
 <br />
-Défaites : {System.account.construct.defeat}
+Défaites : {system.account.construct.defeat}

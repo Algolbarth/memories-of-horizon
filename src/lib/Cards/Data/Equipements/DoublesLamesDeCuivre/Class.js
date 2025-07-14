@@ -4,8 +4,8 @@ import Text from '../Text.svelte';
 export class DoublesLamesDeCuivre extends Equipment {
     name = "Doubles lames de cuivre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 20]]);
         this.familles.base.push("Arme");

@@ -1,10 +1,9 @@
 <script>
-	export let System;
-	System;
+	export let system;
 
 	function fonction(choice) {
-		System.game.use.card.useEffect(choice);
-		System.game.use.reset();
+		system.game.use.card.useEffect(choice);
+		system.game.use.reset();
 	}
 </script>
 

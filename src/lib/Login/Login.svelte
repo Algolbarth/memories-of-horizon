@@ -1,14 +1,14 @@
 <script>
 	import { load } from "./Load";
 
-	export let System;
+	export let system;
 
 	let files;
 
 	async function login() {
-		let log = await load(files, System);
+		let log = await load(files, system);
 		if (log != undefined) {
-			System = log;
+			system = log;
 		}
 	}
 </script>
@@ -20,7 +20,7 @@
 
 	<button
 		on:click={() => {
-			System.page = "TitleScreen";
+			system.page = "TitleScreen";
 		}}
 	>
 		Retour

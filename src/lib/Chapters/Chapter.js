@@ -3,17 +3,17 @@ export class Chapter {
     ressources = [];
     boss = false;
 
-    constructor(System, number) {
-        this.System = System;
+    constructor(system, number) {
+        this.system = system;
         this.number = number;
     };
 
     init = function () {
-        this.System.game.player.step = 1;
-        this.System.game.bot.step = 0;
+        this.system.game.player.step = 1;
+        this.system.game.bot.step = 0;
 
         for (const ressource of this.ressources) {
-            this.System.game.bot.ressource(ressource.name).max = ressource.value;
+            this.system.game.bot.ressource(ressource.name).max = ressource.value;
         }
     };
 
@@ -35,12 +35,12 @@ export class Chapter {
     };
 
     nextDialog = function () {
-        let step = this.steps[this.System.game.player.step - 1];
+        let step = this.steps[this.system.game.player.step - 1];
         if (step.dialog < step.dialogs.length - 1) {
             step.dialog++;
         }
         else {
-            this.System.page = "Game";
+            this.system.page = "Game";
         }
     };
 

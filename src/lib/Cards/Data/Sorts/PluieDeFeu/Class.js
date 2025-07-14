@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class PluieDeFeu extends Sort {
     name = "Pluie de feu";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
         this.familles.base.push("Sort");
@@ -15,7 +15,7 @@ export class PluieDeFeu extends Sort {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
             this.useEffect();
         }
     };

@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class Ruee extends Action {
     name = "Ruée";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 50]]);
 
@@ -14,7 +14,7 @@ export class Ruee extends Action {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player || this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
             this.useEffect();
         }
     };

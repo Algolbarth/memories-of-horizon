@@ -4,8 +4,8 @@ export class Battle {
     fighter = undefined;
     auto = null;
 
-    constructor(System) {
-        this.System = System;
+    constructor(system) {
+        this.system = system;
     }
 
     isBattle = function () {
@@ -36,7 +36,7 @@ export class Battle {
 
             this.nextTurn();
 
-            if (this.System.settings.autoplay) {
+            if (this.system.settings.autoplay) {
                 this.startAuto();
             }
         }
@@ -47,7 +47,7 @@ export class Battle {
 
     startAuto = function () {
         if (!this.isEndBattle()) {
-            this.auto = setInterval(this.actionBattle.bind(this), this.System.settings.auto_speed);
+            this.auto = setInterval(this.actionBattle.bind(this), this.system.settings.auto_speed);
         }
     };
 

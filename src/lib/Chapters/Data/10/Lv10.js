@@ -1,8 +1,8 @@
 import { Chapter } from '../../Chapter.js';
 
 export class Lv10_Reine extends Chapter {
-    constructor(System, number) {
-        super(System, number);
+    constructor(system, number) {
+        super(system, number);
 
         this.addRessource("Or", 550);
 
@@ -18,8 +18,8 @@ export class Lv10_Atlas extends Chapter {
     boss = true;
     level = 10;
 
-    constructor(System, number) {
-        super(System, number);
+    constructor(system, number) {
+        super(system, number);
 
         this.addRessource("Or", 500);
 
@@ -31,8 +31,8 @@ export class Lv10_Godrick extends Chapter {
     boss = true;
     level = 10;
 
-    constructor(System, number) {
-        super(System, number);
+    constructor(system, number) {
+        super(system, number);
 
         this.addRessource("Or", 500);
 

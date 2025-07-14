@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class Ecuyer extends Creature {
     name = "Écuyer";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
@@ -19,7 +19,7 @@ export class Ecuyer extends Creature {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
+        if (this.owner == this.system.game.player) {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
@@ -29,7 +29,7 @@ export class Ecuyer extends Creature {
             }
 
             if (check) {
-                this.System.game.use.set(this, Use);
+                this.system.game.use.set(this, Use);
             }
             else {
                 this.useEffect(undefined);

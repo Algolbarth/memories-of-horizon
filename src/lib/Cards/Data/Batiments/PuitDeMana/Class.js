@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class PuitDeMana extends Batiment {
     name = "Puit de mana";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 15]]);
         this.stat("Vie").base = 10;

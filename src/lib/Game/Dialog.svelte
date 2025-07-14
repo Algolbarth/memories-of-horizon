@@ -1,12 +1,12 @@
 <script>
-	export let System;
+	export let system;
 
-	let step = System.game.chapter.steps[System.game.player.step - 1];
+	let step = system.game.chapter.steps[system.game.player.step - 1];
 </script>
 
 <div id="body" class="center">
-	Chapitre {System.game.chapter.number}
-	- Étape {System.game.player.step} / {System.game.chapter.steps.length}
+	Chapitre {system.game.chapter.number}
+	- Étape {system.game.player.step} / {system.game.chapter.steps.length}
 
 	<br />
 	<br />
@@ -19,9 +19,9 @@
 	<button
 		class="big"
 		on:click={() => {
-			System.game.chapter.nextDialog();
+			system.game.chapter.nextDialog();
 			step = step;
-			System = System;
+			system = system;
 		}}
 	>
 		Suivant

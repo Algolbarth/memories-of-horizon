@@ -6,14 +6,14 @@
 	import Stat from "./Stat.svelte";
 	import Trait from "./Trait.svelte";
 
-	export let System;
+	export let system;
 
 	$: card =
-		System.view.quick == undefined ? System.view.card : System.view.quick;
+		system.view.quick == undefined ? system.view.card : system.view.quick;
 
 	function close() {
-		System.view.card = undefined;
-		System = System;
+		system.view.card = undefined;
+		system = system;
 	}
 </script>
 
@@ -34,7 +34,7 @@
 				<div style="max-height: 80vh;" class="scroll">
 					<Caracteristics bind:card />
 					{#if card.text != undefined}
-						<Effet bind:card bind:System />
+						<Effet bind:card bind:system />
 					{/if}
 					{#if card.hasTrait()}
 						<Trait bind:card />
@@ -58,7 +58,7 @@
 						</div>
 					{/if}
 					{#if card.type == "Créature"}
-						<Equipments bind:card bind:System />
+						<Equipments bind:card bind:system />
 					{/if}
 
 					<br />

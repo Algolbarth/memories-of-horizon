@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class SacEnToile extends Equipment {
     name = "Sac en toile";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5]]);
 

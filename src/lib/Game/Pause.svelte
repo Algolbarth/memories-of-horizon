@@ -1,12 +1,12 @@
 <script>
-	export let System;
+	export let system;
 
 	function close() {
-		System.game.pause = false;
+		system.game.pause = false;
 	}
 </script>
 
-{#if System.game.pause}
+{#if system.game.pause}
 	<div class="window">
 		<div id="body" class="center">
 			<div style="text-align:right;">
@@ -24,19 +24,19 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.page = "Settings";
+						system.page = "Settings";
 					}}
 				>
 					Options
 				</button>
 
-				{#if System.game.mode == "Entraînement"}
+				{#if system.game.mode == "Entraînement"}
 					<button
 						class="big"
 						on:click={() => {
-							System.view.reset();
-							System.page = "Training";
-							System.game = undefined;
+							system.view.reset();
+							system.page = "Training";
+							system.game = undefined;
 						}}
 					>
 						Configurer l'entraînement
@@ -46,9 +46,9 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.view.reset();
-						System.page = "Menu";
-						System.game = undefined;
+						system.view.reset();
+						system.page = "Menu";
+						system.game = undefined;
 					}}
 				>
 					Quitter la partie

@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Phytomancien extends Creature {
     name = "Phytomancien";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 12], ["Végétal", 12]]);
         this.familles.base.push("Elfe");

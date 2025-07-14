@@ -1,11 +1,11 @@
 <script>
 	import { Account } from "./Account.js";
 
-	export let System;
+	export let system;
 
 	function invite() {
-		System.account = new Account(System, "Invité");
-		System.page = "Menu";
+		system.account = new Account(system, "Invité");
+		system.page = "Menu";
 	}
 </script>
 
@@ -17,7 +17,7 @@
 	<button
 		class="big menu"
 		on:click={() => {
-			System.page = "Login";
+			system.page = "Login";
 		}}
 	>
 		Connexion
@@ -28,7 +28,7 @@
 	<button
 		class="big menu"
 		on:click={() => {
-			System.page = "Register";
+			system.page = "Register";
 		}}
 	>
 		Inscription

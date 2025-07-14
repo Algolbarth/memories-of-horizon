@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class TourDeSiege extends Batiment {
     name = "Tour de siège";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 40]]);
         this.stat("Vie").base = 20;

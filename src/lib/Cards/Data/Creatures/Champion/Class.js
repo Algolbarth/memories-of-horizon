@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Champion extends Creature {
     name = "Champion";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 100]]);
         this.familles.base.push("Humain");
@@ -25,7 +25,7 @@ export class Champion extends Creature {
                 }
             }
 
-            if (this.card.System.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
+            if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
                 total += total;
             }
 
@@ -45,7 +45,7 @@ export class Champion extends Creature {
                 }
             }
 
-            if (this.card.System.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
+            if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
                 total += total;
             }
 

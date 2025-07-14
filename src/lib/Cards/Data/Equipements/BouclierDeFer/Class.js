@@ -4,8 +4,8 @@ import Text from '../Text.svelte';
 export class BouclierDeFer extends Equipment {
     name = "Bouclier de fer";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 25]]);
         this.familles.base.push("Armure");

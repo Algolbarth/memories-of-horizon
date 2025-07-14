@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Geomancien extends Creature {
     name = "Geomancien";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 12], ["Terre", 12]]);
         this.familles.base.push("Nain");

@@ -1,13 +1,13 @@
 <script>
-	export let System;
+	export let system;
 </script>
 
 <div id="body">
 	<div class="center">
 		<button
 			on:click={() => {
-				System.music.play();
-				System.page = "TitleScreen";
+				system.music.play();
+				system.page = "TitleScreen";
 			}}
 		>
 			Jouer

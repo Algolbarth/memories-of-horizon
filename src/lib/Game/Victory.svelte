@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 </script>
 
 <div id="body">
@@ -10,7 +10,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			System.page = "Menu";
+			system.page = "Menu";
 		}}
 	>
 		Retour à l'écran titre

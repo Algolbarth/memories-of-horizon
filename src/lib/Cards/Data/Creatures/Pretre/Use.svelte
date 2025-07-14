@@ -1,7 +1,7 @@
 <script>
 	import Zone from "../../../../Game/Zone.svelte";
 
-	export let System;
+	export let system;
 
 	let choice = undefined;
 
@@ -13,8 +13,8 @@
 	}
 
 	function fonction(card) {
-		System.game.use.card.useEffect(card, choice);
-		System.game.use.reset();
+		system.game.use.card.useEffect(card, choice);
+		system.game.use.reset();
 	}
 </script>
 
@@ -41,9 +41,9 @@
 		}}>Retour</button
 	>
 	<Zone
-		bind:System
-		bind:entity={System.game.use.card.owner}
-		zone={System.game.use.card.owner.zone("Terrain")}
+		bind:system
+		bind:entity={system.game.use.card.owner}
+		zone={system.game.use.card.owner.zone("Terrain")}
 		{condition}
 		{fonction}
 	/>

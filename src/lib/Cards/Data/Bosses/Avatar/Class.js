@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class Avatar extends Boss {
     name = "L'Avatar, chapitre final";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 20;
         this.elements.base = ["Neutre"];

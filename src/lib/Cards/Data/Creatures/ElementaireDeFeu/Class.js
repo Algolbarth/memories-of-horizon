@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class ElementaireDeFeu extends Creature {
     name = "Élémentaire de feu";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Feu", 15]]);
         this.familles.base.push("Élémentaire");

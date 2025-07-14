@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class MimiqueDeCoffre extends Creature {
     name = "Mimique de coffre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5]]);
 

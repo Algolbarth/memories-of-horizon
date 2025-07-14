@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class Sifflet extends Objet {
     name = "Sifflet";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 10]]);
 

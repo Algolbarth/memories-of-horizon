@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 	export let card;
 </script>
 
@@ -12,7 +12,7 @@
 	{#each card.equipments as equipment}
 		<button
 			on:click={() => {
-				System.view.card = equipment;
+				system.view.card = equipment;
 			}}
 		>
 			{equipment.name}

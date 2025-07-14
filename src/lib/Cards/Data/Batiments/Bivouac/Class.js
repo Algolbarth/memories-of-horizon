@@ -5,8 +5,8 @@ import Text from './Text.svelte';
 export class Bivouac extends Batiment {
     name = "Bivouac";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 110]]);
         this.stat("Vie").base = 20;

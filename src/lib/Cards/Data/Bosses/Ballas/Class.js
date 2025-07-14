@@ -3,8 +3,8 @@ import { Boss } from '../Boss.js';
 export class Ballas extends Boss {
     name = "Ballas, suprémaciste";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.level = 18;
         this.elements.base = ["Eau"];

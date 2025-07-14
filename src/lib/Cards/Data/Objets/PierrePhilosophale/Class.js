@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class PierrePhilosophale extends Objet {
     name = "Pierre Philosophale";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5]]);
 

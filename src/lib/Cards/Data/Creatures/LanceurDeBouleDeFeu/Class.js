@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class LanceurDeBouleDeFeu extends Creature {
     name = "Lanceur de boule de feu";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 20], ["Feu", 20]]);
         this.familles.base.push("Gobelin");

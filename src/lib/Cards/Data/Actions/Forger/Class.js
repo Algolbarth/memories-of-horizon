@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class Forger extends Action {
     name = "Forger";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 8]]);
 

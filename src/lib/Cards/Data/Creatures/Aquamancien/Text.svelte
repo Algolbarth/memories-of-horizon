@@ -1,5 +1,5 @@
 <script>
-	export let System;
+	export let system;
 	export let card;
 </script>
 

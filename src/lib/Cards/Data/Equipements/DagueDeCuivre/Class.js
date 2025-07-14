@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class DagueDeCuivre extends Equipment {
     name = "Dague de cuivre";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 3]]);
         this.familles.base.push("Arme");
@@ -17,8 +17,8 @@ export class DagueDeCuivre extends Equipment {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;

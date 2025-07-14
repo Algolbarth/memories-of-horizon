@@ -4,8 +4,8 @@ import Text from './Text.svelte';
 export class BassinDeReproduction extends Batiment {
     name = "Bassin de reproduction";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
         this.stat("Vie").base = 20;

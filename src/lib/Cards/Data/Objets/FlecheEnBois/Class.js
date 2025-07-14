@@ -5,8 +5,8 @@ import Use from './Use.svelte';
 export class FlecheEnBois extends Objet {
     name = "Flèche en bois";
 
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.init([["Or", 5]]);
 
@@ -14,8 +14,8 @@ export class FlecheEnBois extends Objet {
     };
 
     select = function () {
-        if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
         }
         else {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {

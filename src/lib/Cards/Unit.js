@@ -2,8 +2,8 @@ import { copy } from '../Utils';
 import { Card } from './Card.js';
 
 export class Unit extends Card {
-    constructor(System) {
-        super(System);
+    constructor(system) {
+        super(system);
 
         this.addTrait("Inactif", false);
         this.trait("Inactif").value = function () {
@@ -97,7 +97,7 @@ export class Unit extends Card {
         this.stat("Vie").current = 0;
 
         this.dieEffect();
-        for (const entity of [this.System.game.player, this.System.game.bot]) {
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {

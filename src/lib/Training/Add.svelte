@@ -3,13 +3,13 @@
 	import Filter from "../Menu/Filter.svelte";
 	import { several } from "../Utils";
 
-	export let System;
+	export let system;
 
 	function closing() {
 		filterWindow = false;
-		System.view.reset();
-		System.train.add.reset();
-		System = System;
+		system.view.reset();
+		system.train.add.reset();
+		system = system;
 	}
 
 	let filterWindow = false;
@@ -24,14 +24,14 @@
 
 	let cardList = [];
 
-	$: zone = System.train.add.zone;
+	$: zone = system.train.add.zone;
 
 	function filter() {
 		let tab = [];
-		for (const card of System.cards.instance) {
+		for (const card of system.cards.instance) {
 			if (
 				(!card.trait("Légendaire").value() ||
-					System.train.add.entity == "bot") &&
+					system.train.add.entity == "bot") &&
 				(levelSelect == "Tous" || card.level == levelSelect) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
 				(card.type == "Lieu" ||
@@ -107,13 +107,13 @@
 						<div>
 							<button
 								on:click={() => {
-									System.view.card = card;
+									system.view.card = card;
 								}}
 								on:mouseenter={() => {
-									System.view.quick = card;
+									system.view.quick = card;
 								}}
 								on:mouseleave={() => {
-									System.view.quick = undefined;
+									system.view.quick = undefined;
 								}}
 							>
 								{card.name}
@@ -124,7 +124,7 @@
 								<button
 									on:click={() => {
 										zone.cards.push(card.name);
-										System = System;
+										system = system;
 									}}
 								>
 									Ajouter
@@ -138,13 +138,13 @@
 	</div>
 
 	<div id="view">
-		<View bind:System />
+		<View bind:system />
 	</div>
 {/if}
 
 {#if filterWindow}
 	<Filter
-		bind:System
+		bind:system
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

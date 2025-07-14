@@ -3,11 +3,11 @@
 	import View from "../Decks/View.svelte";
 	import { several } from "../Utils";
 
-	export let System;
+	export let system;
 
 	let array = [];
 
-	for (const deck of System.decks) {
+	for (const deck of system.decks) {
 		if (deck.playable()) {
 			array.push(deck);
 		}
@@ -17,8 +17,8 @@
 <button
 	class="close"
 	on:click={() => {
-		System.view.reset();
-		System.page = "Play";
+		system.view.reset();
+		system.page = "Play";
 	}}
 >
 	X
@@ -34,13 +34,13 @@
 				<div>
 					<button
 						on:mouseenter={() => {
-							System.view.quick = deck;
+							system.view.quick = deck;
 						}}
 						on:mouseleave={() => {
-							System.view.quick = undefined;
+							system.view.quick = undefined;
 						}}
 						on:click={() => {
-							System.view.card = deck;
+							system.view.card = deck;
 						}}
 					>
 						{deck.name}
@@ -49,11 +49,11 @@
 				<div style="text-align:right">
 					<button
 						on:click={() => {
-							System.view.reset();
-							System.game = new Game(System, "Construit");
-							System.game.deck = deck;
-							System.game.init();
-							System = System;
+							system.view.reset();
+							system.game = new Game(system, "Construit");
+							system.game.deck = deck;
+							system.game.init();
+							system = system;
 						}}
 					>
 						Jouer
@@ -65,7 +65,7 @@
 </div>
 
 <div id="view">
-	<View bind:System />
+	<View bind:system />
 </div>
 
 <style>

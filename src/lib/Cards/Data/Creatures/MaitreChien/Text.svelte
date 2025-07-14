@@ -1,14 +1,14 @@
 <script>
 	import CardInfo from "../../../Info.svelte";
 
-	export let System;
+	export let system;
 	export let card;
 </script>
 
-Quand posé : crée 2 <CardInfo bind:System name={"Chien"} /> sur le terrain.
+Quand posé : crée 2 <CardInfo bind:system name={"Chien"} /> sur le terrain.
 <br />
 <br />
 Au début de la phase de préparation : crée <CardInfo
-	bind:System
+	bind:system
 	name={"Chien"}
 /> sur le terrain.
