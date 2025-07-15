@@ -10,14 +10,15 @@
 
 	{#each entity.ressources as ressource}
 		{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
-			{ressource.name} : {ressource.current}
-			{#if ressource.max > 0}
-				/ {ressource.max}
-			{/if}
-			{#if ressource.stock > 0}
-				+ {ressource.stock}
-			{/if}
-			<br />
+			<div style={"color:" + ressource.font_color}>
+				{ressource.name} : {ressource.current}
+				{#if ressource.max > 0}
+					/ {ressource.max}
+				{/if}
+				{#if ressource.stock > 0}
+					+ {ressource.stock}
+				{/if}
+			</div>
 		{/if}
 	{/each}
 

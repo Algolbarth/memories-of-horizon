@@ -7,15 +7,15 @@
 
 	let tab = [
 		"Feu",
-		"Terre",
+		"Air",
 		"Végétal",
 		"Eau",
-		"Air",
+		"Terre",
 		"Mort",
-		"Metal",
+		"Arcane",
 		"Foudre",
 		"Lumière",
-		"Arcane",
+		"Metal",
 		"Glace",
 		"Ombre",
 	];
@@ -42,7 +42,8 @@
 					<div class="ressource">
 						<button
 							style={"background:" +
-								system.game.player.ressource(ressource).color +
+								system.game.player.ressource(ressource)
+									.background_color +
 								";color:" +
 								(system.game.player.ressource(ressource)
 									.light_font
@@ -95,7 +96,7 @@
 	button.flux {
 		height: 10vh;
 		width: 80%;
-		border-color:black;
+		border-color: black;
 	}
 
 	button.flux:hover {

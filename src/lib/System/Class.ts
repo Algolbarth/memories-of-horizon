@@ -4,27 +4,30 @@ import * as chapters from "../Chapters/Data/index.js";
 import * as stories from "../Stories/index.js";
 import { Music } from "../Music/Class.js";
 import { Settings } from "../Settings/Class.js";
-import { ressources } from "../Ressources/Class.js";
+import { Ressource, ressources } from "../Ressources/Class";
+import type { Deck } from "../Decks/Deck.js";
+import type { Story } from "../Stories/Story.js";
+import type { Game } from "../Game/Game.js";
 
 export class System {
     page: string = "BlackScreen";
-    stories = [];
-    settings = new Settings();
-    decks = [];
-    train = new Train();
-    game = undefined;
-    ressources = ressources;
+    stories: Story[] = [];
+    settings: Settings = new Settings();
+    decks: Deck[] = [];
+    train: Train = new Train();
+    game: undefined | Game = undefined;
+    ressources: Ressource[] = ressources;
     sort = {
         levels: ["Tous"],
         types: ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"],
         familles: ["Toutes"],
         elements: ["Tous"],
     };
-    view = new View();
-    music = new Music(this);
-    cards = new Cards(this);
-    chapters = new Chapters(this);
-    bosses = new Bosses(this);
+    view: View = new View();
+    music: Music = new Music(this);
+    cards: Cards = new Cards(this);
+    chapters: Chapters = new Chapters(this);
+    bosses: Bosses = new Bosses(this);
 
     constructor() {
         for (let i = 0; i < 20; i++) {

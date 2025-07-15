@@ -9,18 +9,20 @@ export class Entity {
             this.max = value;
         }
     };
-    zones = [new Zone("Lieux", 3),
-    new Shop(),
-    new Zone("Main", 10),
-    new Zone("Terrain", 10),
-    new Zone("Défausse")];
+    zones = [
+        new Zone("Lieux", 3),
+        new Shop(),
+        new Zone("Main", 10),
+        new Zone("Terrain", 10),
+        new Zone("Défausse")
+    ];
     ressources = [];
     place = undefined;
 
     constructor(system) {
         this.system = system;
         this.setRessources();
-    }
+    };
 
     adversary = function () {
         if (this == this.system.game.player) {
@@ -33,7 +35,8 @@ export class Entity {
         for (const r of this.system.ressources) {
             this.ressources.push({
                 name: r.name,
-                color: r.color,
+                background_color: r.background_color,
+                font_color: r.font_color,
                 light_font: r.light_font,
                 current: 0,
                 stock: 0,
