@@ -3,4 +3,9 @@
 	export let card;
 </script>
 
-Produit 5 mana.
+Produit 1 mana pour chaque valeur de stack.
+
+<br />
+<br />
+
+<i>Produit {card.stat("Stack").value()} mana.</i>

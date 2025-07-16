@@ -1,6 +1,6 @@
 # Prochaines MAJ
 
-Ajouter les couleurs sur la transfo du flux \
+Ajouter les couleurs sur les évocations des éléments (menu, filtre, éléments, couts/vents). \
 Mettre les getter dans leurs dossiers respectif \
 Changer le logo \
 Modifier l'histoire pour intégrer les planètes et l'espace \
@@ -31,7 +31,8 @@ Mimique de roche : se pose sur le terrain adverse. Quand meurt au combat : crée
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape. \
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
-Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
+Homme d'affaire : produis 5 or quand vend une carte. \
+Banque : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain. \
@@ -53,10 +54,6 @@ Cotte de maille : augmente l'endurance de la créature équipée. \
 Hache lourde : augmente l'intensité de la créature équipée. \
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
-*Revoir les potions* \
-*Chaque potion a 5 compteurs quand créée* \
-*Potion de vie : Soigne 2 blessures pour chaque compteur à une créature alliée sur le terrain* \
-*Potion de mana : produit 1 Mana pour chaque compteur* \
 Potion de force \
 Potion d'endurance \
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \

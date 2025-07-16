@@ -10,6 +10,8 @@ export class PotionDeSoin extends Objet {
 
         this.init([["Or", 5]]);
 
+        this.addStat("Stack", 5);
+
         this.text = Text;
     };
 
@@ -33,7 +35,7 @@ export class PotionDeSoin extends Objet {
     };
 
     useEffect = function (target) {
-        target.heal(10);
+        target.heal(this.stack * 2);
         this.move("Défausse");
         this.pose();
     };

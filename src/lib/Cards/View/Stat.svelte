@@ -92,4 +92,9 @@
 		Perpétuité : {card.stat("Perpétuité").current}
 		<br />
 	{/if}
+
+	{#if card.stat("Stack")}
+		Stack : {card.stat("Stack").value()}
+		<br />
+	{/if}
 </div>
