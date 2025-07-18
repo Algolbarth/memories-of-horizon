@@ -34,7 +34,7 @@ export class Game extends Battle {
         if (this.mode == "Entraînement") {
             this.player.life.set(this.system.train.player.life);
             this.player.ressource("Or").max = this.system.train.player.gold;
-            this.player.flux = this.system.train.player.flux;
+            this.player.ressource("Flux").stock = this.system.train.player.flux;
             this.player.zone("Boutique").level = this.system.train.player.zones[1].level;
             for (const zone of this.system.train.player.zones) {
                 this.player.zone(zone.name).size = zone.size;
@@ -47,7 +47,7 @@ export class Game extends Battle {
             this.bot.life.set(this.system.train.bot.life);
             this.bot.ressource("Or").max = this.system.train.bot.gold;
             this.bot.ressource("Or").current = this.system.train.bot.gold;
-            this.bot.flux = this.system.train.bot.flux;
+            this.bot.ressource("Flux").stock = this.system.train.bot.flux;
             this.bot.zone("Boutique").level = this.system.train.bot.zones[1].level;
             for (const zone of this.system.train.bot.zones) {
                 this.bot.zone(zone.name).size = zone.size;
@@ -64,7 +64,7 @@ export class Game extends Battle {
         else {
             this.player.life.set(100);
             this.player.ressource("Or").max = 4;
-            this.player.flux = 4;
+            this.player.ressource("Flux").stock = 4;
 
             this.player.getCard("Plaine").add("Lieux");
             this.player.place = this.player.zone("Lieux").cards[0];
@@ -100,7 +100,7 @@ export class Game extends Battle {
 
     startChapter = function () {
         this.player.ressource("Or").max++;
-        this.player.flux++;
+        this.player.ressource("Flux").stock++;
 
         for (let i = 0; i < 3; i++) {
             this.bot.play();

@@ -42,11 +42,9 @@
 					<div class="ressource">
 						<button
 							style={"background:" +
-								system.game.player.ressource(ressource)
-									.background_color +
+								system.ressources.find(ressource).color +
 								";color:" +
-								(system.game.player.ressource(ressource)
-									.light_font
+								(system.ressources.find(ressource).light_font
 									? "rgba(255, 255, 255, 1)"
 									: "rgba(0, 0, 0, 1)")}
 							class="big flux"
@@ -54,8 +52,11 @@
 								system.game.player.ressource(ressource)
 									.current++;
 								system.game.player.ressource(ressource).max++;
-								system.game.player.flux--;
-								if (system.game.player.flux == 0) {
+								system.game.player.ressource("Flux").stock--;
+								if (
+									system.game.player.ressource("Flux")
+										.stock == 0
+								) {
 									system.game.flux = false;
 								}
 							}}

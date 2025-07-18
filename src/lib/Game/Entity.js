@@ -32,12 +32,9 @@ export class Entity {
     };
 
     setRessources = function () {
-        for (const r of this.system.ressources) {
+        for (const r of this.system.ressources.list) {
             this.ressources.push({
                 name: r.name,
-                background_color: r.background_color,
-                font_color: r.font_color,
-                light_font: r.light_font,
                 current: 0,
                 stock: 0,
                 total: function () {

@@ -41,9 +41,9 @@ export class Card {
         this.addStat("Perpétuité", 0);
         this.stat("Perpétuité").current = 0;
 
-        for (const ressource of system.ressources) {
-            this.cout.push(new Cout(ressource, 0, this));
-            this.vente.push(new Cout(ressource, 0, this));
+        for (const ressource of system.ressources.list) {
+            this.cout.push(new Cout(ressource.name, 0, this));
+            this.vente.push(new Cout(ressource.name, 0, this));
         }
 
         this.elements = new Elements(this);
@@ -387,16 +387,14 @@ export class Card {
     targetEffect = function (card) {
 
     };
-}
+};
 
 class Cout {
     add = 0;
     base = 0
 
-    constructor(ressource, card) {
-        this.name = ressource.name;
-        this.color = ressource.color;
-        this.light_font = ressource.light_font;
+    constructor(name, card) {
+        this.name = name;
         this.card = card;
     };
 
@@ -404,7 +402,7 @@ class Cout {
         let total = this.base + this.add;
         return total;
     };
-}
+};
 
 class Elements {
     base = [];
@@ -439,7 +437,7 @@ class Elements {
         }
         return array;
     };
-}
+};
 
 export class Stat {
     add = 0;
@@ -497,7 +495,7 @@ export class Stat {
             value--;
         }
     };
-}
+};
 
 export class Trait {
     add = false;
@@ -519,4 +517,4 @@ export class Trait {
         }
         return total;
     };
-}
+};

@@ -32,7 +32,7 @@
 					</button>
 				</div>
 				<div style="max-height: 80vh;" class="scroll">
-					<Caracteristics bind:card />
+					<Caracteristics bind:card bind:system />
 					{#if card.text != undefined}
 						<Effet bind:card bind:system />
 					{/if}

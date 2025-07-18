@@ -19,9 +19,7 @@
 		<div style="text-align:right">
 			<button
 				class="close"
-				on:click={() => {
-					close();
-				}}
+				on:click={close}
 			>
 				X
 			</button>
