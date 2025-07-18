@@ -24,11 +24,13 @@
 {#if choice == undefined}
 	<div class="center">
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "heal";
-			}}>Soigne 20 blessures à un bâtiment allié sur le terrain</button
+			}}
 		>
+			Soigne 20 blessures à un bâtiment allié sur le terrain
+		</button>
 
 		<br />
 
@@ -36,15 +38,19 @@
 			class="big"
 			on:click={() => {
 				choice = "damage";
-			}}>Inflige 20 dégâts à une unité adverse sur le terrain</button
+			}}
 		>
+			Inflige 20 dégâts à une unité adverse sur le terrain
+		</button>
 	</div>
 {:else if choice == "heal"}
 	<button
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
+		Retour
+	</button>
 	<Zone
 		bind:system
 		bind:entity={system.game.use.card.owner}
@@ -56,8 +62,10 @@
 	<button
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
+		Retour
+	</button>
 	<Zone
 		bind:system
 		entity={system.game.use.card.owner.adversary()}

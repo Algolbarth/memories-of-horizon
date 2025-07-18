@@ -40,8 +40,10 @@
 	<button
 		on:click={() => {
 			invite();
-		}}>Jouer en tant qu'invité</button
+		}}
 	>
+		Jouer en tant qu'invité
+	</button>
 </div>
 
 <style>

@@ -30,10 +30,7 @@
 <div style:height="1.4em" style:width={width + "vw"}>
 	<div on:focusout={handleDropdownFocusLoss} class="container">
 		<div>
-			<button
-				class="main"
-				on:click={handleDropdownClick}
-			>
+			<button class="main" on:click={handleDropdownClick}>
 				{#if selected != undefined}
 					{selected}
 				{:else}
@@ -43,10 +40,7 @@
 		</div>
 
 		{#if isDropdownOpen}
-			<div
-				class="list scroll"
-				style:max-height={height + "vh"}
-			>
+			<div class="list scroll" style:max-height={height + "vh"}>
 				{#each array as element}
 					<button
 						class="element"

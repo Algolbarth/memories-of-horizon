@@ -9,16 +9,22 @@
 
 <div class="center" style="text-align:center">
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Créature");
-		}}>Élémentaire de roche</button
+		}}
 	>
+		Élémentaire de roche
+	</button>
+
 	<br />
+	
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Bâtiment");
-		}}>Mur de roche</button
+		}}
 	>
+		Mur de roche
+	</button>
 </div>

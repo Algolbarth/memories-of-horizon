@@ -1,5 +1,5 @@
 <script>
-    import { save } from "../Login/Save";
+	import { save } from "../Login/Save";
 
 	export let system;
 

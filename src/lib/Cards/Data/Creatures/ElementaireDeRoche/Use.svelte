@@ -9,7 +9,7 @@
 
 <div class="center" style="text-align:center">
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Créature");
 		}}
@@ -20,7 +20,7 @@
 	<br />
 
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Effet");
 		}}

@@ -10,18 +10,22 @@
 
 <div class="center" style="text-align:center">
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Gobelin");
-		}}>Forme gobelin</button
+		}}
 	>
+		Forme gobelin
+	</button>
 
 	<br />
 
 	<button
-		class="big"
+		class="big choice"
 		on:click={() => {
 			fonction("Lézard");
-		}}>Forme lézard</button
+		}}
 	>
+		Forme lézard
+	</button>
 </div>

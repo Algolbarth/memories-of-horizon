@@ -18,7 +18,7 @@
 {#if choice == undefined}
 	<div class="center" style="text-align:center">
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				fonction(undefined);
 			}}
@@ -29,7 +29,7 @@
 		<br />
 
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "damage";
 			}}

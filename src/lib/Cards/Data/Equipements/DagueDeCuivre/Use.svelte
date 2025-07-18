@@ -25,20 +25,24 @@
 {#if choice == undefined}
 	<div class="center" style="text-align:center">
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "equip";
-			}}>S'équipe à une créature alliée sur le terrain</button
+			}}
 		>
+			S'équipe à une créature alliée sur le terrain
+		</button>
 
 		<br />
 
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "damage";
-			}}>Inflige 5 dégâts à une unité adverse sur le terrain</button
+			}}
 		>
+			Inflige 5 dégâts à une unité adverse sur le terrain
+		</button>
 	</div>
 {:else if choice == "equip"}
 	<button

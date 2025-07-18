@@ -17,12 +17,7 @@
 <div class="window">
 	<div id="body" class="center">
 		<div style="text-align:right">
-			<button
-				class="close"
-				on:click={close}
-			>
-				X
-			</button>
+			<button class="close" on:click={close}> X </button>
 		</div>
 
 		<br />

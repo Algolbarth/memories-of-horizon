@@ -1,6 +1,5 @@
 # Prochaines MAJ
 
-Ajouter les couleurs sur les évocations des éléments (menu, filtre, éléments, couts/vents). \
 Mettre les getter dans leurs dossiers respectif \
 Changer le logo \
 Modifier l'histoire pour intégrer les planètes et l'espace \

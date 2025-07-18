@@ -21,25 +21,33 @@
 {#if choice == undefined}
 	<div class="center" style="text-align:center">
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "life";
-			}}>Augmenter la vie de 10</button
+			}}
 		>
+			Augmenter la vie de 10
+		</button>
+
 		<br />
+
 		<button
-			class="big"
+			class="big choice"
 			on:click={() => {
 				choice = "heal";
-			}}>Soigner 20 blessures</button
+			}}
 		>
+			Soigner 20 blessures
+		</button>
 	</div>
 {:else}
 	<button
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
+		Retour
+	</button>
 	<Zone
 		bind:system
 		bind:entity={system.game.use.card.owner}
