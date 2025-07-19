@@ -50,7 +50,6 @@ Robe de mage : augmente la magie et la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
-Hache lourde : augmente l'intensité de la créature équipée. \
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 Potion de force \
@@ -68,7 +67,6 @@ Mouton cornu : créature bête, charge et endurance. \
 Berger : créature humain, quand joue : crée Mouton sur le terrain. \
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. \
 Gladiateur : créature humain. \
-Hache lourde : objet équipement, augmente l'intensité de la créature équipée. \
 Armagicien : créature humain, magie. \
 Célébrité : créature humain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
@@ -82,7 +80,6 @@ Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur
 Établi : bâtiment \
 Trône : bâtiment \
 Sort vivant : créature sort \
-Anneau doré :  objet équipement, au début de la phase de préparation : augmente de 2 la vie et l'attaque de la créature équipée. \
 Barbare : créature humain, si n'est pas équipé d'un Objet de famille Armure : sa défense de base est égale à la moitié de sa vie maximale.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \

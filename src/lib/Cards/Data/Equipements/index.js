@@ -39,3 +39,5 @@ export * from './BaguetteDesMarees';
 export * from './Bouee';
 export * from './HeaumeDeFer';
 export * from './DoublesHachettesBarbare';
+export * from './HacheLourde';
+export * from './AnneauEnOr';
