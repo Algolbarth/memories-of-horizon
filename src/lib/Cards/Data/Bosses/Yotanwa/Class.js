@@ -1,4 +1,4 @@
-import { Boss } from '../Boss.js';
+import { Boss } from '../Boss';
 
 export class Yotanwa extends Boss {
     name = "Yotanwa, patronne de la guerre";

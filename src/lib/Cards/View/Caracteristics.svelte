@@ -27,9 +27,10 @@
 	{card.name}
 </div>
 
-<div class="box">
-	Nv {card.level}
-	-
+<div class="container box">
+	<div class="cost">
+		Nv {card.level}
+	</div>
 	{#each card.elements.total() as element, i}
 		<div
 			class="cost"
@@ -47,43 +48,51 @@
 
 {#if cout(card).length > 0 || vente(card).length > 0}
 	<div class="box">
-		{#if cout(card).length > 0}
-			{#each cout(card) as cost, i}
-				<div
-					class="cost"
-					style={"background:" +
-						system.ressources.find(cost.name).color +
-						";color:" +
-						(system.ressources.find(cost.name).light_font
-							? "rgba(255, 255, 255, 1)"
-							: "rgba(0, 0, 0, 1)")}
-				>
-					{cost.name} : {cost.value()}
+		<div class="little-container">
+			{#if cout(card).length > 0}
+				{#each cout(card) as cost, i}
+					<div
+						class="cost"
+						style={"background:" +
+							system.ressources.find(cost.name).color +
+							";color:" +
+							(system.ressources.find(cost.name).light_font
+								? "rgba(255, 255, 255, 1)"
+								: "rgba(0, 0, 0, 1)")}
+					>
+						{cost.value()}
+					</div>
+				{/each}
+			{:else}
+				<div>
+					<i>Rien</i>
 				</div>
-			{/each}
-		{:else}
-			<i>Rien</i>
-		{/if}
+			{/if}
+		</div>
 
 		<hr />
 
-		{#if vente(card).length > 0}
-			{#each vente(card) as sell, i}
-				<div
-					class="cost"
-					style={"background:" +
-						system.ressources.find(sell.name).color +
-						";color:" +
-						(system.ressources.find(sell.name).light_font
-							? "rgba(255, 255, 255, 1)"
-							: "rgba(0, 0, 0, 1)")}
-				>
-					{sell.name} : {sell.value()}
+		<div class="little-container">
+			{#if vente(card).length > 0}
+				{#each vente(card) as sell, i}
+					<div
+						class="cost"
+						style={"background:" +
+							system.ressources.find(sell.name).color +
+							";color:" +
+							(system.ressources.find(sell.name).light_font
+								? "rgba(255, 255, 255, 1)"
+								: "rgba(0, 0, 0, 1)")}
+					>
+						{sell.value()}
+					</div>
+				{/each}
+			{:else}
+				<div>
+					<i>Rien</i>
 				</div>
-			{/each}
-		{:else}
-			<i>Rien</i>
-		{/if}
+			{/if}
+		</div>
 	</div>
 {/if}
 
@@ -98,6 +107,16 @@
 </div>
 
 <style>
+	div.little-container {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	div.container {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+	}
+
 	div.cost {
 		display: inline;
 		padding: 0.2em;

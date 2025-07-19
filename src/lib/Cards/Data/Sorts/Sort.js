@@ -1,4 +1,4 @@
-import { Action } from '../Actions/Action.js';
+import { Action } from '../Actions/Action';
 
 export class Sort extends Action {
     constructor(system) {

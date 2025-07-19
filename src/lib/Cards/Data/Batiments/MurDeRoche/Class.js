@@ -1,4 +1,4 @@
-import { Batiment } from '../Batiment.js';
+import { Batiment } from '../Batiment';
 
 export class MurDeRoche extends Batiment {
     name = "Mur de roche";

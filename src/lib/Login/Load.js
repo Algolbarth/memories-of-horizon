@@ -1,5 +1,5 @@
-import { Account } from "./Account.js";
-import { Deck } from "../Decks/Deck.js";
+import { Account } from "./Account";
+import { Deck } from "../Decks/Deck";
 
 let step;
 let save;

@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Objet } from '../Objet.js';
+import { Objet } from '../Objet';
 import Text from './Text.svelte';
 
 export class Sifflet extends Objet {

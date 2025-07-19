@@ -1,5 +1,5 @@
 <script>
-	import { Game } from "../Game/Game.js";
+	import { Game } from "../Game/Game";
 	import View from "../Decks/View.svelte";
 	import { several } from "../Utils";
 

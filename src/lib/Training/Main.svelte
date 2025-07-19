@@ -3,7 +3,7 @@
 	import Zone from "./Zone.svelte";
 	import Add from "./Add.svelte";
 	import View from "../Cards/View/Main.svelte";
-	import { Game } from "../Game/Game.js";
+	import { Game } from "../Game/Game";
 
 	export let system;
 </script>

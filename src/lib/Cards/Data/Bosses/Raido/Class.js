@@ -1,4 +1,4 @@
-import { Boss } from '../Boss.js';
+import { Boss } from '../Boss';
 import Text from './Text.svelte';
 
 export class Raido extends Boss {

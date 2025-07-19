@@ -1,4 +1,4 @@
-import { Boss } from '../Boss.js';
+import { Boss } from '../Boss';
 
 export class Atlas extends Boss {
     name = "Atlas, marche-cratère";

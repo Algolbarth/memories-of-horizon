@@ -1,4 +1,4 @@
-import { Batiment } from '../Batiment.js';
+import { Batiment } from '../Batiment';
 import Text from './Text.svelte';
 
 export class Charrette extends Batiment {

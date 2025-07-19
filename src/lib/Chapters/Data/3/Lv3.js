@@ -1,4 +1,4 @@
-import { Chapter } from '../../Chapter.js';
+import { Chapter } from '../../Chapter';
 
 export class Lv3_Geant extends Chapter {
     constructor(system, number) {

@@ -1,4 +1,4 @@
-import { Boss } from '../Boss.js';
+import { Boss } from '../Boss';
 
 export class Ballas extends Boss {
     name = "Ballas, suprémaciste";

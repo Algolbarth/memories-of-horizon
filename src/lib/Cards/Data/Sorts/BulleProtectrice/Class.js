@@ -1,4 +1,4 @@
-import { Sort } from '../Sort.js';
+import { Sort } from '../Sort';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 

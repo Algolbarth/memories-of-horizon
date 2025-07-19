@@ -1,5 +1,5 @@
-import { Stat, Trait } from '../../Card.js';
-import { Objet } from '../Objets/Objet.js';
+import { Stat, Trait } from '../../Card';
+import { Objet } from '../Objets/Objet';
 import Use from './Use.svelte';
 
 export class Equipment extends Objet {

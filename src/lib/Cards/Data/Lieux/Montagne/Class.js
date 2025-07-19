@@ -1,4 +1,4 @@
-import { Lieu } from '../Lieu.js';
+import { Lieu } from '../Lieu';
 import Text from './Text.svelte';
 
 export class Montagne extends Lieu {

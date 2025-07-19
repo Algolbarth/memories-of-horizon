@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Creature } from '../Creature.js';
+import { Creature } from '../Creature';
 import Text from './Text.svelte';
 
 export class SeigneurOndin extends Creature {

@@ -75,9 +75,11 @@ export class Chapter {
                 3000
 
             ];
+
             while (total > array[level - 1] && level < 20) {
                 level++;
             }
+            
             return level;
         }
         else {

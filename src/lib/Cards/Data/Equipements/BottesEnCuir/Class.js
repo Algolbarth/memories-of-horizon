@@ -1,4 +1,4 @@
-import { Equipment } from '../Equipement.js';
+import { Equipment } from '../Equipement';
 import Text from '../Text.svelte';
 
 export class BottesEnCuir extends Equipment {

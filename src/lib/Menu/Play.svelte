@@ -1,5 +1,5 @@
 <script>
-	import { Game } from "../Game/Game.js";
+	import { Game } from "../Game/Game";
 
 	export let system;
 

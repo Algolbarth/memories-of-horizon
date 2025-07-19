@@ -1,4 +1,4 @@
-import { Objet } from '../Objet.js';
+import { Objet } from '../Objet';
 import Text from './Text.svelte';
 
 export class CoffreEnOr extends Objet {

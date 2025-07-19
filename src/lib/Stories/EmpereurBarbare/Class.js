@@ -1,4 +1,4 @@
-import { Story } from '../Story.js';
+import { Story } from '../Story';
 import Text from './Text.svelte';
 
 export class EmpereurBarbare extends Story {

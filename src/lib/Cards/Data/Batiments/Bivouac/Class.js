@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Batiment } from '../Batiment.js';
+import { Batiment } from '../Batiment';
 import Text from './Text.svelte';
 
 export class Bivouac extends Batiment {

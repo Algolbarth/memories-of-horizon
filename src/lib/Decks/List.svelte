@@ -1,6 +1,6 @@
 <script>
 	import { several } from "../Utils";
-	import { Deck } from "./Deck.js";
+	import { Deck } from "./Deck";
 	import View from "./View.svelte";
 
 	export let system;

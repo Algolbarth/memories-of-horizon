@@ -1,1 +1,1 @@
-export * from './Lv5.js';
+export * from './Lv5';

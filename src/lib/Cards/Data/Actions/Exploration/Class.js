@@ -1,4 +1,4 @@
-import { Action } from '../Action.js';
+import { Action } from '../Action';
 import Text from './Text.svelte';
 
 export class Exploration extends Action {

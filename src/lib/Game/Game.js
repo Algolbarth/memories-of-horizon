@@ -1,6 +1,6 @@
-import { Entity } from './Entity.js';
-import { Chapter } from '../Chapters/Chapter.js';
-import { Battle } from './Battle.js';
+import { Entity } from './Entity';
+import { Chapter } from '../Chapters/Chapter';
+import { Battle } from './Battle';
 import { copy } from '../Utils';
 
 export class Game extends Battle {

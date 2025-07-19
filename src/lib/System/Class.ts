@@ -1,13 +1,13 @@
-import { Train } from "../Training/Train.js";
-import * as cards from "../Cards/Data/index.js";
-import * as chapters from "../Chapters/Data/index.js";
-import * as stories from "../Stories/index.js";
-import { Music } from "../Music/Class.js";
-import { Settings } from "../Settings/Class.js";
+import { Train } from "../Training/Train";
+import * as cards from "../Cards/Data";
+import * as chapters from "../Chapters/Data";
+import * as stories from "../Stories";
+import { Music } from "../Music/Class";
+import { Settings } from "../Settings/Class";
 import { Ressources } from "../Ressources/Class";
-import type { Deck } from "../Decks/Deck.js";
-import type { Story } from "../Stories/Story.js";
-import type { Game } from "../Game/Game.js";
+import type { Deck } from "../Decks/Deck";
+import type { Story } from "../Stories/Story";
+import type { Game } from "../Game/Game";
 
 export class System {
     page: string = "BlackScreen";

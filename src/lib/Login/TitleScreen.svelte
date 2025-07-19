@@ -1,5 +1,5 @@
 <script>
-	import { Account } from "./Account.js";
+	import { Account } from "./Account";
 
 	export let system;
 

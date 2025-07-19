@@ -1,4 +1,4 @@
-import { Creature } from '../Creature.js';
+import { Creature } from '../Creature';
 
 export class SageDeLaForet extends Creature {
     name = "Sage de la forêt";

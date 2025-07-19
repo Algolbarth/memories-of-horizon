@@ -1,4 +1,4 @@
-import { Creature } from '../Creature.js';
+import { Creature } from '../Creature';
 import Text from './Text.svelte';
 import Text2 from './Text2.svelte';
 import Use from './Use.svelte';

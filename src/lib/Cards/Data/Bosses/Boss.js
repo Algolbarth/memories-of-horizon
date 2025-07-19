@@ -1,4 +1,4 @@
-import { Creature } from '../Creatures/Creature.js';
+import { Creature } from '../Creatures/Creature';
 
 export class Boss extends Creature {
     constructor(system) {

@@ -1,13 +1,15 @@
+import type { System } from '../System/Class';
 import { shuffle } from '../Utils';
 
 export class Music {
-    current = undefined;
-    volume = 50;
-    list = [];
-    slot = 0;
-    number = 4;
+    current: HTMLAudioElement | undefined = undefined;
+    volume: number = 50;
+    list: number[] = [];
+    slot: number = 0;
+    number: number = 4;
+    system: System;
 
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
     };
 

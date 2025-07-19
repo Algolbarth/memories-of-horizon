@@ -1,4 +1,4 @@
-import { Boss } from '../Boss.js';
+import { Boss } from '../Boss';
 
 export class Avatar extends Boss {
     name = "L'Avatar, chapitre final";
