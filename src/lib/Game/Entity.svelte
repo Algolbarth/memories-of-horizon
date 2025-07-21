@@ -1,4 +1,6 @@
 <script>
+    import { several } from "../Utils";
+
 	export let system;
 	export let entity;
 </script>
@@ -19,26 +21,43 @@
 						? "rgba(255, 255, 255, 1)"
 						: "rgba(0, 0, 0, 1)")}
 			>
-				{ressource.name} : {ressource.current}
-				{#if ressource.max > 0}
-					/ {ressource.max}
-				{/if}
-				{#if ressource.stock > 0}
-					+ {ressource.stock}
-				{/if}
+				<div>
+					{ressource.name}
+				</div>
+				<div style="text-align:right;margin-right:0.5em">
+					{#if ressource.current > 0 || ressource.max > 0}
+						{ressource.current}
+					{/if}
+				</div>
+				<div>
+					{#if ressource.max > 0}
+						/ {ressource.max}
+					{/if}
+				</div>
+				<div>
+					{#if ressource.stock > 0}
+						{#if ressource.current > 0 || ressource.max > 0}+ {/if}{several(ressource.stock, "stocké")}
+					{/if}
+				</div>
+				<div>
+					{#if ressource.stock > 0 && ressource.current > 0}
+						= {ressource.current + ressource.stock}
+					{/if}
+				</div>
+				<div style="text-align:right">
+					{#if ressource.name == "Flux" && ressource.stock > 0 && system.game.phase == "Préparation"}
+						<button
+							on:click={() => {
+								system.game.flux = true;
+							}}
+						>
+							Convertir
+						</button>
+					{/if}
+				</div>
 			</div>
 		{/if}
 	{/each}
-
-	{#if entity.ressource("Flux").stock > 0 && system.game.phase == "Préparation"}
-		<button
-			on:click={() => {
-				system.game.flux = true;
-			}}
-		>
-			Convertir le flux
-		</button>
-	{/if}
 
 	{#if system.settings.show_intelligence}
 		Intelligence : {entity.totalIntelligence()}
@@ -51,9 +70,12 @@
 		border: solid;
 		margin: 1%;
 		padding: 1%;
+		text-align: left;
 	}
 
 	div.preview {
 		border-color: black;
+		display: grid;
+		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;
 	}
 </style>

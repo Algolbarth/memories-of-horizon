@@ -74,6 +74,6 @@
 	}
 
 	input[type="number"] {
-		width: 2em;
+		width: 3em;
 	}
 </style>
