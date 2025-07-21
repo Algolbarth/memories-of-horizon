@@ -49,14 +49,20 @@
 					</button>
 				{/if}
 				{#if card.zone.name == "Boutique"}
-					<button
-						on:click={() => {
-							card.buy();
-							system = system;
-						}}
-					>
-						Acheter
-					</button>
+					{#if card.canBuy()}
+						<button
+							on:click={() => {
+								card.buy();
+								system = system;
+							}}
+						>
+							Acheter
+						</button>
+					{:else}
+						<button style="color:darkgrey;">
+							Acheter
+						</button>
+					{/if}
 				{:else if card.zone.name == "Main"}
 					<button
 						on:click={() => {
