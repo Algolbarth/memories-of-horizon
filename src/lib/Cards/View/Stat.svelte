@@ -93,6 +93,11 @@
 		<br />
 	{/if}
 
+	{#if card.type == "Créature" && card.stat("Étourdissement").value() > 0}
+		Étourdissement : {card.stat("Étourdissement").value()}
+		<br />
+	{/if}
+
 	{#if card.stat("Stack")}
 		Stack : {card.stat("Stack").value()}
 		<br />

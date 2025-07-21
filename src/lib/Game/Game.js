@@ -166,6 +166,9 @@ export class Game extends Battle {
                     for (const trait of card.traits) {
                         trait.step = false;
                     }
+                    if (card.type == "Créature" && card.stat("Étourdissement").value() > 0) {
+                        card.stat("Étourdissement").remove(1);
+                    }
                 }
             }
         }

@@ -19,6 +19,9 @@ export class Creature extends Unit {
 
         this.addStat("Critique", 0);
         this.stat("Critique").current = 0;
+
+        this.addStat("Étourdissement", 0);
+        this.stat("Étourdissement").current = 0;
     };
 
     play = function () {
