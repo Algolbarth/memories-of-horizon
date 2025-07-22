@@ -14,6 +14,7 @@
 
 	let filterWindow = false;
 
+	let nameSelect = "";
 	let levelSelect = "Tous";
 	let typeSelect = "Tous";
 	let familleSelect = "Toutes";
@@ -29,7 +30,10 @@
 	function filter() {
 		let tab = [];
 		for (const card of system.cards.instance) {
+			let name = card.name.toLowerCase();
+			
 			if (
+				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
 				(!card.trait("Légendaire").value() ||
 					system.train.add.entity == "bot") &&
 				(levelSelect == "Tous" || card.level == levelSelect) &&
@@ -56,7 +60,8 @@
 		return "";
 	}
 
-	function sorting(level, type, famille, element, commun, rare, legendary) {
+	function sorting(name, level, type, famille, element, commun, rare, legendary) {
+		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
 		familleSelect = famille;
@@ -145,6 +150,7 @@
 {#if filterWindow}
 	<Filter
 		bind:system
+		{nameSelect}
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

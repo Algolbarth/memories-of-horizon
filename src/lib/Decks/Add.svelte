@@ -7,6 +7,7 @@
 
 	let filterWindow = false;
 
+	let nameSelect = "";
 	let levelSelect = "Tous";
 	let typeSelect = "Tous";
 	let familleSelect = "Toutes";
@@ -18,7 +19,10 @@
 	function filter() {
 		let tab = [];
 		for (const card of system.cards.instance) {
+			let name = card.name.toLowerCase();
+			
 			if (
+				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
 				!card.trait("Rare").value() &&
 				!card.trait("Légendaire").value() &&
 				(levelSelect == "Tous" || card.level == levelSelect) &&
@@ -34,7 +38,8 @@
 		cardList = tab;
 	}
 
-	function sorting(level, type, famille, element) {
+	function sorting(name, level, type, famille, element) {
+		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
 		familleSelect = famille;
@@ -127,6 +132,7 @@
 {#if filterWindow}
 	<Filter
 		bind:system
+		{nameSelect}
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

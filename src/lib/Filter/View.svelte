@@ -2,7 +2,8 @@
 	import Dropdown from "../Utils/Dropdown.svelte";
 
 	export let system;
-	export var levelSelect;
+	export let nameSelect;
+	export let levelSelect;
 	export let typeSelect;
 	export let familleSelect;
 	export let elementSelect;
@@ -23,6 +24,12 @@
 		<br />
 
 		<div id="options">
+			<div class="container">
+				Nom
+				<div>
+					<input type="text" bind:value={nameSelect} />
+				</div>
+			</div>
 			<div class="container">
 				Niveau
 				<div>
@@ -115,6 +122,7 @@
 			on:click={() => {
 				if (rarity) {
 					sorting(
+						nameSelect,
 						levelSelect,
 						typeSelect,
 						familleSelect,
@@ -125,6 +133,7 @@
 					);
 				} else {
 					sorting(
+						nameSelect,
 						levelSelect,
 						typeSelect,
 						familleSelect,
