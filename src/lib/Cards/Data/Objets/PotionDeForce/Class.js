@@ -2,8 +2,8 @@ import { Objet } from '../Objet';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PotionDeSoin extends Objet {
-    name = "Potion de soin";
+export class PotionDeForce extends Objet {
+    name = "Potion de force";
 
     constructor(system) {
         super(system);
@@ -23,7 +23,7 @@ export class PotionDeSoin extends Objet {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Vie").current < card.stat("Vie").value()) {
+                if (target == undefined && card.type == "Créature") {
                     target = card;
                 }
             }
@@ -35,7 +35,7 @@ export class PotionDeSoin extends Objet {
     };
 
     useEffect = function (target) {
-        target.heal(this.stat("Stack").value() * 2);
+        target.stat("Attaque").step += this.stat("Stack").value() * 4;
         this.move("Défausse");
         this.pose();
     };
