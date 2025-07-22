@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Fixe la garde d'une créature alliée sur le terrain à 10.
+Augmente de 1 l'esquive d'une créature alliée sur le terrain.
