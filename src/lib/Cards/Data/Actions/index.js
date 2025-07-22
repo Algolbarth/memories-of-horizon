@@ -9,6 +9,7 @@ export * from './Blocage';
 export * from './BriseGarde';
 export * from './CanonAEau';
 export * from './Cauteriser';
+export * from './CerclesMagiques';
 export * from './Charisme';
 export * from './Cibler';
 export * from './CoupDeBouclier';
