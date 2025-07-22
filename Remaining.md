@@ -42,8 +42,8 @@ Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille
 Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain. \
 Carte de la région : objet, pioche des cartes jusqu'à remplir la boutique. \
 Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
-Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique. \
-Requisition : action, diminue la taille de la main et augmente la taille du terrain et de la boutique.
+Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main. \
+Requisition : action, diminue la taille de la main et augmente la taille du terrain.
 
 Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la magie et la résistance de la créature équipée. \
