@@ -1,5 +1,5 @@
 <script>
-	import Filter from "./Filter.svelte";
+	import Filter from "../Filter/View.svelte";
 	import Dropdown from "../Utils/Dropdown.svelte";
 	import View from "../Cards/View/Main.svelte";
 	import { several } from "../Utils";
