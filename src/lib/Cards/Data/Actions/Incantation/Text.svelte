@@ -5,4 +5,4 @@
 
 Produit autant de mana que la valeur de magie d'une créature alliée sur le terrain ayant une valeur d'étourdissement nulle.
 <br />
-Fixe l'étourdissement de la créature à 1.
+Fixe à 1 l'étourdissement de la créature.

@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Fixe l'étourdissement d'une créature adverse sur le terrain à 1.
+Fixe à 1 l'étourdissement d'une créature adverse sur le terrain.

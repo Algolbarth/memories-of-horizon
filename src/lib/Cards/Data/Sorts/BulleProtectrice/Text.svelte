@@ -3,7 +3,7 @@
 	export let card;
 </script>
 
-Fixe la garde d'une créature alliée sur le terrain à 50.
+Fixe à 50 la garde d'une créature alliée sur le terrain.
 <br />
 <br />
-Sorcellerie 25 : fixe la garde à 100 à la place.
+Sorcellerie 25 : fixe à 100 la garde à la place.

@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Réduis à 0 la garde d'une unité adverse sur le terrain.
+Fixe à 0 la garde d'une unité adverse sur le terrain.
