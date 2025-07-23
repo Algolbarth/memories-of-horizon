@@ -28,7 +28,7 @@
 </div>
 
 <div class="container box">
-	<div class="cost">
+	<div class="cost" style="background:rgba(150, 100, 0, 1);">
 		Nv {card.level}
 	</div>
 	{#each card.elements.total() as element, i}
