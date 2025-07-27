@@ -74,13 +74,13 @@
 			max="4"
 			bind:value={delay}
 			on:change={() => {
-				system.settings.auto_speed = delay * 500;
+				system.settings.auto_speed = (5 - delay) * 500;
 			}}
 			id="delay"
 		/>
 	</div>
 	<label for="delay" style="text-align:center;">
-		{delay / 2}s
+		{(5 - delay) / 2}s par action
 	</label>
 </div>
 
@@ -88,6 +88,6 @@
 	div.slidecontainer {
 		width: 50%;
 		display: grid;
-		grid-template-columns: 17em 10fr 3fr;
+		grid-template-columns: 17em 10fr 5fr;
 	}
 </style>
