@@ -27,7 +27,7 @@
 			<div class="container">
 				Nom
 				<div>
-					<input type="text" bind:value={nameSelect} />
+					<input type="text" placeholder={'Exemple: "Dragon"'} bind:value={nameSelect} />
 				</div>
 			</div>
 			<div class="container">
