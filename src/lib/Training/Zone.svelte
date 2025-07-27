@@ -4,6 +4,7 @@
 	export let entity;
 
 	let level = zone.level;
+	let size = zone.size;
 </script>
 
 <div class="zone">
@@ -28,7 +29,21 @@
 	{/if}
 	-
 	{#if zone.name != "Défausse"}
-		({zone.cards.length} / {zone.size}) -
+		({zone.cards.length} /
+		<input
+			type="number"
+			min="1"
+			max="999"
+			bind:value={size}
+			on:change={() => {
+				if (size < 1) {
+					size = 1;
+				} else {
+					zone.size = size;
+				}
+			}}
+		/>
+		) -
 	{/if}
 	<button
 		on:click={() => {
@@ -124,9 +139,5 @@
 
 	.remove:hover {
 		color: var(--close);
-	}
-
-	input[type="number"] {
-		width: 1.5em;
 	}
 </style>
