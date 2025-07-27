@@ -7,7 +7,7 @@ Finir l'histoire impériale (pk c'est souvent des humains)
 
 # Mécaniques
 
-Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
+Ajouter les éléments manquants dans le mode entraînement (deck) \
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) \
 Ajouter une option finir automatiquement pour les combats \
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
@@ -18,7 +18,7 @@ Ajouter les stats des decks (types de carte, éléments, familles, niveau) \
 Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique \
 Ajouter un texte explicatif pour les stats et effets \
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
-Ajouter l'étourdissement, la paralysie et l'aveuglement (paralysie => X actions, gel => X tours, étourdissement => X étapes, auglement => X attaques)
+Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X tours, aveuglement => X attaques)
 
 # Cartes
 
@@ -52,8 +52,6 @@ Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
-Potion de force \
-Potion d'endurance \
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Alchimiste : créature, quand posé : pioche 2 objets potion. \
@@ -127,8 +125,7 @@ Géomarteau : quand la créature équipée attaque : inflige des dégâts à tou
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : inflige des dégâts et applique étourdissement à une créature adverse sur le terrain. \
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. \
-Taupe \
-Elémentaire de caillou : 3/3 ou inflige 5 dégâts.
+Taupe
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
 Salamandre d'acide \

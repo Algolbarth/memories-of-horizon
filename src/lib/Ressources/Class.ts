@@ -14,7 +14,7 @@ export class Ressources {
         new Ressource("Lumière", "rgba(255, 255, 255, 1)"),
         new Ressource("Ombre", "rgba(0, 0, 0, 1)", true),
         new Ressource("Mana", "rgba(0, 255, 255, 1)"),
-        new Ressource("Flux", "rgba(200, 0, 200, 1)"),
+        new Ressource("Flux", "linear-gradient(90deg,rgba(219, 24, 24, 1) 8%, rgba(255, 191, 0, 1) 25%, rgba(35, 199, 30, 1) 40%, rgba(27, 189, 141, 1) 55%, rgba(18, 178, 252, 1) 75%, rgba(182, 23, 255, 1) 90%)"),
     ];
 
     find(name: string = "", element: string = "") {
