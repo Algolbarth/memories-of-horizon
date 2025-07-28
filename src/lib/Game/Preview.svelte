@@ -13,8 +13,8 @@
 		"preview"}
 >
 	<div id={isPlayer || fonction != undefined ? "infos" : ""}>
-		{#if card.verrou}
-			<div id="verrou">&#x1F512</div>
+		{#if card.locked}
+			<div id="locked">&#x1F512</div>
 		{/if}
 		{#if !card.cache}
 			<button
@@ -156,7 +156,7 @@
 		text-align: right;
 	}
 
-	#verrou {
+	#locked {
 		display: inline-block;
 		font-size: small;
 	}

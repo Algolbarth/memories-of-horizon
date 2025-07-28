@@ -166,7 +166,7 @@ export class Entity {
     refreshShop = function () {
         let boutique = copy(this.zone("Boutique").cards);
         for (const card of boutique) {
-            if (!card.verrou) {
+            if (!card.locked) {
                 card.remove();
             }
         }
@@ -178,7 +178,7 @@ export class Entity {
     lock = function () {
         let check = false;
         for (const card of this.zone("Boutique").cards) {
-            if (!card.verrou) {
+            if (!card.locked) {
                 check = true;
             }
         }

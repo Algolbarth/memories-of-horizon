@@ -29,7 +29,7 @@ export class Card {
     traits = [];
     stats = [];
 
-    verrou = false;
+    locked = false;
 
     constructor(system) {
         this.system = system;
@@ -221,13 +221,13 @@ export class Card {
             for (const c of this.cout) {
                 this.owner.ressource(c.name).spend(c.value());
             }
-            this.verrou = false;
+            this.locked = false;
             this.move("Main");
         }
     };
 
     lock = function (state) {
-        this.verrou = state;
+        this.locked = state;
     };
 
     sell = function () {
