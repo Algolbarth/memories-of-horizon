@@ -1,4 +1,4 @@
-import { copy } from '../Utils';
+import { copy } from '../../Utils';
 import { Card } from './Class';
 
 export class Unit extends Card {
@@ -58,7 +58,7 @@ export class Unit extends Card {
         }
     };
 
-    healFull = function () {
+    fullHeal = function () {
         this.stat("Vie").current = this.stat("Vie").value();
     };
 

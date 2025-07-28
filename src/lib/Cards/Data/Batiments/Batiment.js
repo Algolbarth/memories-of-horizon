@@ -1,4 +1,4 @@
-import { Unit } from '../../Unit';
+import { Unit } from '../../Class';
 
 export class Batiment extends Unit {
     type = "Bâtiment";

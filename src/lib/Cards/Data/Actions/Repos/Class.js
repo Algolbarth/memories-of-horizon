@@ -33,7 +33,7 @@ export class Repos extends Action {
     };
 
     useEffect = function (target) {
-        target.healFull();
+        target.fullHeal();
         target.move("Boutique");
         this.move("Défausse");
         this.pose();

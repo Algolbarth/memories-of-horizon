@@ -2,7 +2,7 @@ import { Stat } from "./Stat";
 import { Trait } from "./Trait";
 import { Elements } from "./Element";
 import { Cout } from "./Cost";
-import { copy } from "../Utils";
+import { copy } from "../../Utils";
 import { Families } from "./Family";
 
 export class Card {

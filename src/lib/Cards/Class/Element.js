@@ -1,4 +1,4 @@
-import { deleteDuplicate } from "../Utils";
+import { deleteDuplicate } from "../../Utils";
 
 export class Elements {
     base = [];

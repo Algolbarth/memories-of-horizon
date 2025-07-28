@@ -1,5 +1,5 @@
-import { Stat } from '../../Stat';
-import { Trait } from '../../Trait';
+import { Stat } from '../../Class/Stat';
+import { Trait } from '../../Class/Trait';
 import { Objet } from '../Objets/Objet';
 import Use from './Use.svelte';
 

@@ -1,5 +1,5 @@
 <script>
-	import CardInfo from "../../../Info.svelte";
+	import CardInfo from "../../../Utils/Info.svelte";
 
 	export let system;
 	export let card;

@@ -33,7 +33,7 @@ export class Retablissement extends Action {
     };
 
     useEffect = function (target) {
-        target.healFull();
+        target.fullHeal();
         this.move("Défausse");
         this.pose();
     };
