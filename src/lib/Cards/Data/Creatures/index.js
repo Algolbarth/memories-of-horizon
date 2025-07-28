@@ -3,6 +3,7 @@ export * from './Aquamancien';
 export * from './Archimage';
 export * from './Architecte';
 export * from './Archonte';
+export * from './Aventurier';
 export * from './Bagarreur';
 export * from './Bandit';
 export * from './Barbare';

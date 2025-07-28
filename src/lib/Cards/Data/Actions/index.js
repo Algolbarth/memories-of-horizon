@@ -4,6 +4,7 @@ export * from './Aiguisage';
 export * from './Ambidextrie';
 export * from './Assomage';
 export * from './Autodafe';
+export * from './Aventure';
 export * from './BagarreDeTaverne';
 export * from './Biodiversite';
 export * from './Blocage';
