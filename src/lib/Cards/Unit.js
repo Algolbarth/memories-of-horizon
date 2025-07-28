@@ -1,5 +1,5 @@
 import { copy } from '../Utils';
-import { Card } from './Card';
+import { Card } from './Class';
 
 export class Unit extends Card {
     constructor(system) {
