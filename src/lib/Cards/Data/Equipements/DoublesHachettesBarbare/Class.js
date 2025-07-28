@@ -7,10 +7,10 @@ export class DoublesHachettesBarbare extends Equipment {
     constructor(system) {
         super(system);
 
-        this.init([["Or", 50]]);
+        this.init([["Or", 55]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Adresse").base = 30;
+        this.equipStat("Adresse").base = 35;
         this.equipStat("Multicoup").base = 1;
 
         this.text = Text;
