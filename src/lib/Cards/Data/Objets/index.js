@@ -12,6 +12,7 @@ export * from './Conque';
 export * from './CorDeGuerre';
 export * from './FlecheEnBois';
 export * from './Livre';
+export * from './LivreDeRecette';
 export * from './Pain';
 export * from './PierrePhilosophale';
 export * from './Pomme';
