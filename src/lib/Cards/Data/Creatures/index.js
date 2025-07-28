@@ -54,6 +54,7 @@ export * from './Geant';
 export * from './General';
 export * from './Geomancien';
 export * from './Gobelin';
+export * from './GrandPretre';
 export * from './Grenouille';
 export * from './Guerrier';
 export * from './GuerrierElfe';
