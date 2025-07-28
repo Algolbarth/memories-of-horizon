@@ -1,31 +1,15 @@
+import { Stat } from "./Stat";
+import { Trait } from "./Trait";
+import { Elements } from "./Element";
+import { Cout } from "./Cost";
 import { copy } from "../Utils";
+import { Families } from "./Family";
 
 export class Card {
     name = "Carte";
     cout = [];
     vente = [];
-    familles = {
-        base: [],
-        add: [],
-        step: [],
-        turn: [],
-        total: function () {
-            let array = [];
-            for (const b of this.base) {
-                array.push(b);
-            }
-            for (const a of this.add) {
-                array.push(a);
-            }
-            for (const s of this.step) {
-                array.push(s);
-            }
-            for (const t of this.turn) {
-                array.push(t);
-            }
-            return array;
-        }
-    };
+    familles = new Families(this);
     traits = [];
     stats = [];
 
@@ -386,135 +370,5 @@ export class Card {
 
     targetEffect = function (card) {
 
-    };
-};
-
-class Cout {
-    add = 0;
-    base = 0
-
-    constructor(name, card) {
-        this.name = name;
-        this.card = card;
-    };
-
-    value = function () {
-        let total = this.base + this.add;
-        return total;
-    };
-};
-
-class Elements {
-    base = [];
-    add = [];
-
-    constructor(card) {
-        this.card = card;
-    };
-
-    total = function () {
-        let array = [];
-        for (const b of this.base) {
-            array.push(b);
-        }
-        for (const a of this.add) {
-            array.push(a);
-        }
-        if (this.card.type == "Créature") {
-            for (const e of this.card.equipments) {
-                for (const i of e.equipElements) {
-                    array.push(i);
-                }
-            }
-        }
-        for (let i = 0; i < array.length; i++) {
-            for (let j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    array.splice(j);
-                    j--;
-                }
-            }
-        }
-        return array;
-    };
-};
-
-export class Stat {
-    add = 0;
-    step = 0;
-    turn = 0;
-
-    constructor(name, value, min, card) {
-        this.name = name;
-        this.base = value;
-        this.min = min;
-        this.card = card;
-    };
-
-    value = function () {
-        let total = this.base + this.add + this.step + this.turn;
-        if (this.card.type == "Créature") {
-            for (const equipment of this.card.equipments) {
-                total += equipment.equipStat(this.name).value();
-            }
-        }
-
-        if (total < this.min) {
-            this.add -= total + this.min;
-            total = this.min;
-        }
-
-        if (this.current != undefined && this.current > total) {
-            this.current = total;
-        }
-
-        return total;
-    };
-
-    increase = function (value) {
-        this.add += value;
-    };
-
-    fix = function (value) {
-        if (this.value() < value) {
-            this.add += value - this.value();
-        }
-    };
-
-    remove = function (value) {
-        while (value > 0) {
-            if (this.turn > 0) {
-                this.turn--;
-            }
-            else if (this.step > 0) {
-                this.step--;
-            }
-            else {
-                this.add--;
-            }
-            value--;
-        }
-    };
-};
-
-export class Trait {
-    add = false;
-    step = false;
-    turn = false;
-
-    constructor(name, value, card) {
-        this.name = name;
-        this.base = value;
-        this.card = card;
-    };
-
-    value = function () {
-        let total = this.base + this.add + this.step + this.turn;
-        if (this.card.type == "Créature") {
-            for (const equipment of this.card.equipments) {
-                total += equipment.equipStat(this.name).value();
-            }
-        }
-        return total;
     };
 };

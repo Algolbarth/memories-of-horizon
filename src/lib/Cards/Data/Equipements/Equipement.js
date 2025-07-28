@@ -1,9 +1,11 @@
-import { Stat, Trait } from '../../Card';
+import { Stat } from '../../Stat';
+import { Trait } from '../../Trait';
 import { Objet } from '../Objets/Objet';
 import Use from './Use.svelte';
 
 export class Equipment extends Objet {
     equipElements = [];
+    equipFamilies = [];
     equipTraits = [];
     equipStats = [];
     bearer = undefined;
@@ -128,4 +130,4 @@ export class Equipment extends Objet {
     defendEffect = function () {
 
     };
-}
+};
