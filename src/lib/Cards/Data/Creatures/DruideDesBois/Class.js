@@ -49,8 +49,8 @@ export class DruideDesBoisElfe extends DruideDesBois {
 
     otherPoseEffect = function (card) {
         if (card.owner == this.owner && card.type == "Action") {
-            this.stat("Vie").current += 3;
-            this.stat("Vie").add += 3;
+            this.stat("Vie").current += 6;
+            this.stat("Vie").add += 6;
         }
     };
 }
@@ -66,9 +66,9 @@ export class DruideDesBoisRenard extends DruideDesBois {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 25;
-        this.stat("Vie").current = 25;
-        this.stat("Attaque").base = 25;
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
+        this.stat("Attaque").base = 20;
         this.stat("Intelligence").base = 5;
     };
 }

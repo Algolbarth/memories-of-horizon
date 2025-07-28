@@ -8,7 +8,7 @@ export class Prêtre extends Creature {
     constructor(system) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 20]]);
         this.familles.base.push("Humain");
 
         this.stat("Vie").base = 5;

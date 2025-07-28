@@ -63,8 +63,8 @@ export class DruideMarchandBoeuf extends DruideMarchand {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 30;
-        this.stat("Vie").current = 30;
+        this.stat("Vie").base = 25;
+        this.stat("Vie").current = 25;
         this.stat("Attaque").base = 10;
     };
 }

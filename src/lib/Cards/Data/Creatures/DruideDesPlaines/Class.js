@@ -42,9 +42,9 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Vie").base = 12;
+        this.stat("Vie").current = 12;
+        this.stat("Attaque").base = 12;
     };
 
     startStepEffect = function () {
