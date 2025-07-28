@@ -1,15 +1,15 @@
-<script>
-	export let array = [];
-	export let selected;
-	export let selecting = function () {};
-	export let height = 25;
-	export let width = 15;
+<script lang="ts">
+	export let array: string[] = [];
+	export let selected: string;
+	export let selecting: Function = function (element: string) {};
+	export let height: number = 25;
+	export let width: number = 15;
 
-	let isDropdownOpen = false;
+	let isDropdownOpen: boolean = false;
 
-	const handleDropdownClick = () => {
+	function handleDropdownClick() {
 		isDropdownOpen = !isDropdownOpen;
-	};
+	}
 
 	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
 		if (
@@ -20,7 +20,7 @@
 		isDropdownOpen = false;
 	};
 
-	function select(element) {
+	function select(element: string) {
 		selecting(element);
 		selected = element;
 		isDropdownOpen = false;

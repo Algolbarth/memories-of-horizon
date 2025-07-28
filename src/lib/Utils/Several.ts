@@ -1,4 +1,4 @@
-export function several(value, name) {
+export function several(value: number, name: string) {
     let text = "";
     text += value + " " + name;
     if (value > 1) {

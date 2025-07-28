@@ -8,6 +8,8 @@ import { Ressources } from "../Ressources/Class";
 import type { Deck } from "../Decks/Deck";
 import type { Story } from "../Stories/Story";
 import type { Game } from "../Game/Game";
+import type { Card } from "../Cards/Class";
+import type { Chapter } from "../Chapters/Chapter";
 
 export class System {
     page: string = "BlackScreen";
@@ -17,12 +19,7 @@ export class System {
     train: Train = new Train();
     game: undefined | Game = undefined;
     ressources: Ressources = new Ressources();
-    sort = {
-        levels: ["Tous"],
-        types: ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"],
-        familles: ["Toutes"],
-        elements: ["Tous"],
-    };
+    sort = new Sort();
     view: View = new View();
     music: Music = new Music(this);
     cards: Cards = new Cards(this);
@@ -30,10 +27,6 @@ export class System {
     bosses: Bosses = new Bosses(this);
 
     constructor() {
-        for (let i = 0; i < 20; i++) {
-            this.sort.levels.push(i + 1);
-        }
-
         for (const element of this.ressources.list) {
             if (element.name == "Or") {
                 this.sort.elements.push("Neutre");
@@ -67,15 +60,6 @@ export class System {
                 this.sort.familles[j - 1] = swap;
                 j--;
             }
-        }
-
-        for (let i = 0; i <= 20; i++) {
-            this.chapters.class.push([]);
-            this.chapters.instance.push([]);
-        }
-        for (let i = 0; i <= 10; i++) {
-            this.bosses.class.push([]);
-            this.bosses.instance.push([]);
         }
 
         for (const chapter of Object.keys(chapters)) {
@@ -147,13 +131,14 @@ export class System {
 
 class Cards {
     class = [];
-    instance = [];
+    instance: Card[] = [];
+    system: System;
 
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
     };
 
-    getByName(name) {
+    getByName(name: string) {
         for (let i = 0; i < this.instance.length; i++) {
             if (this.instance[i].name == name) {
                 return new this.class[i](this.system);
@@ -165,32 +150,44 @@ class Cards {
 
 class Chapters {
     class = [];
-    instance = [];
+    instance: Chapter[][] = [];
+    system: System;
 
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
+
+        for (let i = 0; i <= 20; i++) {
+            this.class.push([]);
+            this.instance.push([]);
+        }
     };
 
-    getRandom(number) {
-        let level = parseInt((number - 1) / 5) + 1;
+    getRandom(number: number) {
+        let level = Math.floor((number - 1) / 5) + 1;
         return new this.class[level][
-            parseInt(Math.random() * this.class[level].length)
+            Math.floor(Math.random() * this.class[level].length)
         ](this.system, number);
     };
 };
 
 class Bosses {
     class = [];
-    instance = [];
+    instance: Chapter[][] = [];
+    system: System;
 
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
+
+        for (let i = 0; i <= 10; i++) {
+            this.class.push([]);
+            this.instance.push([]);
+        }
     };
 
-    getRandom(number) {
-        let level = parseInt((number - 1) / 10) + 1;
+    getRandom(number: number) {
+        let level = Math.floor((number - 1) / 10) + 1;
         return new this.class[level][
-            parseInt(Math.random() * this.class[level].length)
+            Math.floor(Math.random() * this.class[level].length)
         ](this.system, number);
     };
 };
@@ -202,5 +199,18 @@ class View {
     reset() {
         this.quick = undefined;
         this.card = undefined;
+    };
+};
+
+class Sort {
+    levels: (string | number)[] = ["Tous"];
+    types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
+    familles: string[] = ["Toutes"];
+    elements: string[] = ["Tous"];
+
+    constructor() {
+        for (let i = 0; i < 20; i++) {
+            this.levels.push(i + 1);
+        }
     };
 };

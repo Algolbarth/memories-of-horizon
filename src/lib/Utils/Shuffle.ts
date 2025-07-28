@@ -1,4 +1,4 @@
-export function shuffle(array) {
+export function shuffle(array: any[]) {
     let i = array.length;
     while (i != 0) {
         let j = Math.floor(Math.random() * i);
