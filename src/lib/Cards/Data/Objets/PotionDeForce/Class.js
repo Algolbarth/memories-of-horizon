@@ -9,8 +9,9 @@ export class PotionDeForce extends Objet {
         super(system);
 
         this.init([["Or", 5]]);
+        this.familles.base.push("Potion");
 
-        this.addStat("Stack", 5);
+        this.addStat("Infusion", 5);
 
         this.text = Text;
     };
@@ -35,7 +36,7 @@ export class PotionDeForce extends Objet {
     };
 
     useEffect = function (target) {
-        target.stat("Attaque").step += this.stat("Stack").value() * 4;
+        target.stat("Attaque").step += this.stat("Infusion").value() * 4;
         this.move("Défausse");
         this.pose();
     };

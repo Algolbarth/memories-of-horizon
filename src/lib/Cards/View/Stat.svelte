@@ -98,8 +98,8 @@
 		<br />
 	{/if}
 
-	{#if card.stat("Stack")}
-		Stack : {card.stat("Stack").value()}
+	{#if card.stat("Infusion")}
+		Infusion : {card.stat("Infusion").value()}
 		<br />
 	{/if}
 </div>

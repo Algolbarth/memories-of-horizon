@@ -3,13 +3,13 @@
 	export let card;
 </script>
 
-Soigne 2 blessures à une créature alliée sur le terrain pour chaque valeur de
-stack.
+Soigne 2 blessures à une créature alliée sur le terrain pour chaque valeur
+d'infusion.
 
 <br />
 <br />
 
 <i>
-	Soigne {card.stat("Stack").value() * 2} blessures à une créature alliée sur le
-	terrain.
+	Soigne {card.stat("Infusion").value() * 2} blessures à une créature alliée sur
+	le terrain.
 </i>

@@ -4,12 +4,12 @@
 </script>
 
 Augmente de 4 l'attaque d'une créature alliée sur le terrain pendant cette étape
-pour chaque valeur de stack.
+pour chaque valeur d'infusion.
 
 <br />
 <br />
 
 <i>
-	Augmente de {card.stat("Stack").value() * 4} l'attaque d'une créature alliée
+	Augmente de {card.stat("Infusion").value() * 4} l'attaque d'une créature alliée
 	sur le terrain pendant cette étape.
 </i>

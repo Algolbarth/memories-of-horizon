@@ -8,14 +8,15 @@ export class PotionDeMana extends Objet {
         super(system);
 
         this.init([["Or", 5]]);
+        this.familles.base.push("Potion");
 
-        this.addStat("Stack", 5);
+        this.addStat("Infusion", 5);
 
         this.text = Text;
     };
 
     useEffect = function (target) {
-        this.owner.ressource("Mana").current += this.stat("Stack").value();
+        this.owner.ressource("Mana").current += this.stat("Infusion").value();
         this.move("Défausse");
         this.pose();
     };

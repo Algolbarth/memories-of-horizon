@@ -1,3 +1,4 @@
+export * from './Alchimiste';
 export * from './AncienSerpent';
 export * from './Aquamancien';
 export * from './Archimage';

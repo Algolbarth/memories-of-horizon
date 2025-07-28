@@ -3,9 +3,9 @@
 	export let card;
 </script>
 
-Produit 1 mana pour chaque valeur de stack.
+Produit 1 mana pour chaque valeur d'infusion.
 
 <br />
 <br />
 
-<i>Produit {card.stat("Stack").value()} mana.</i>
+<i>Produit {card.stat("Infusion").value()} mana.</i>

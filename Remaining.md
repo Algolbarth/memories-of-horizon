@@ -54,7 +54,6 @@ Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
-Alchimiste : créature, quand posé : pioche 2 objets potion. \
 Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. \
 Alambic : objet, créé mélange à partir des potions de la boutique.
 
@@ -78,7 +77,7 @@ Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur
 Établi : bâtiment \
 Trône : bâtiment \
 Sort vivant : créature sort \
-Barbare : créature humain, si n'est pas équipé d'un Objet de famille Armure : sa défense de base est égale à la moitié de sa vie maximale.
+Sauvage : créature humain, si n'est pas équipé : sa défense et son attaque de base est égale à la moitié de sa vie maximale.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
