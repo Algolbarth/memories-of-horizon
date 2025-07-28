@@ -4,7 +4,7 @@
 	export let system;
 
 	function condition(card) {
-		if (card.stat("Vie").current < card.stat("Vie").value()) {
+		if (card.isDamaged()) {
 			return true;
 		}
 		return false;

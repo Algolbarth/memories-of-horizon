@@ -6,7 +6,7 @@
 	function condition(card) {
 		if (
 			card.type == "Créature" &&
-			card.stat("Vie").current < card.stat("Vie").value()
+			card.isDamaged()
 		) {
 			return true;
 		}

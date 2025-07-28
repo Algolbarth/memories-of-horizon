@@ -24,7 +24,7 @@ export class PotionDeSoin extends Objet {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Vie").current < card.stat("Vie").value()) {
+                if (target == undefined && card.type == "Créature" && card.isDamaged()) {
                     target = card;
                 }
             }

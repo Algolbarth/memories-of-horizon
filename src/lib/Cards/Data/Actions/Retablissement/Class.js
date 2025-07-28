@@ -21,7 +21,7 @@ export class Retablissement extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.stat("Vie").current < card.stat("Vie").value()) {
+                if (target == undefined && card.isDamaged()) {
                     target = card;
                 }
             }

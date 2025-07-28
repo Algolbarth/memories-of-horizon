@@ -62,6 +62,10 @@ export class Unit extends Card {
         this.stat("Vie").current = this.stat("Vie").value();
     };
 
+    isDamaged = function() {
+        return this.stat("Vie").current < this.stat("Vie").value();
+    };
+
     damage = function (value) {
         let result = {
             value: value,

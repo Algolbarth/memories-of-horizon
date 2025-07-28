@@ -26,7 +26,7 @@
 				choice = "life";
 			}}
 		>
-			Augmenter la vie de 10
+			Augmente de 10 la vie d'une créature alliée sur le terrain
 		</button>
 
 		<br />
@@ -37,7 +37,7 @@
 				choice = "heal";
 			}}
 		>
-			Soigner 20 blessures
+			Soigne 20 blessures d'une créature alliée sur le terrain
 		</button>
 	</div>
 {:else}
