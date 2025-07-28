@@ -1,12 +1,9 @@
-# Prochaines MAJ
+# Mécaniques
 
 Mettre les getter dans leurs dossiers respectif \
 Changer le logo \
 Modifier l'histoire pour intégrer les planètes et l'espace \
-Finir l'histoire impériale (pk c'est souvent des humains)
-
-# Mécaniques
-
+Finir l'histoire impériale (pk c'est souvent des humains) \
 Ajouter les éléments manquants dans le mode entraînement (deck) \
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) \
 Ajouter une option finir automatiquement pour les combats \
@@ -22,7 +19,10 @@ Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X 
 
 # Cartes
 
+## A modifier
+
 ## A ajouter
+### Mimique
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse. \
 Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la vie de la créature attaquante. \
 Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse. \
@@ -30,6 +30,7 @@ Mimique de roche : se pose sur le terrain adverse. Quand meurt au combat : crée
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape. \
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
+### Voleur
 Homme d'affaire : produis 5 or quand vend une carte. \
 Banque : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
@@ -37,6 +38,7 @@ Dague de voleur : quand la créature tue une unité : augmente sa valeur en or �
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain. \
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la main.
 
+### Zones
 Chercheur : créature, quand posé : pioche 1 carte. si la boutique est pleine, augmente la taille de la boutique. \
 Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille de la main. \
 Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain. \
@@ -45,6 +47,7 @@ Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main. \
 Requisition : action, diminue la taille de la main et augmente la taille du terrain.
 
+### Equipements
 Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la magie et la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
@@ -52,11 +55,13 @@ Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
+### Potion
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. \
 Alambic : objet, créé mélange à partir des potions de la boutique.
 
+### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Mouton : créature bête, endurance. \
 Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la main. \
@@ -79,6 +84,7 @@ Trône : bâtiment \
 Sort vivant : créature sort \
 Sauvage : créature humain, si n'est pas équipé : sa défense et son attaque de base est égale à la moitié de sa vie maximale.
 
+### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
 Enflammer : enflamme une unité adverse sur le terrain. \
@@ -87,6 +93,7 @@ Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse
 Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
 Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
 
+### Vegetal
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
@@ -110,6 +117,7 @@ Cerf : créature bête, vitesse et percée. \
 Hérisson : créature bête, épine. \
 Massue de chêne : objet équipement, charge.
 
+### Eau
 Barrière de corail : créature plante, régénération. \
 Pêcheur : quand posé : pioche 1 créature poisson. \
 Requin : créature poisson. \
@@ -117,6 +125,7 @@ Banc de poisson : crée 5 Sardine dans la main. \
 Sardine : créature poisson. \
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente son attaque pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente son attaque.
 
+### Terre
 Écraseur nain : charge. \
 Carrière de pierre : bâtiment, au début de la phase de préparation : produit de la terre. \
 Masse de pierre : augmente la charge de la créature équipée. \
@@ -126,55 +135,7 @@ Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. \
 Taupe
 
-Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
-Salamandre d'acide \
-Épée des flammes toxiques \
-Salamandre fumante \
-Grande salamandre \
-Souffle de flammes toxiques \
-Plage : lieu pour les cartes d'élément Eau et Feu.
-
-Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu. \
-Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.\
-Assassin du désert \
-Ver des sables : quand attaque : détruis la carte dans la main adverse en première position. quand est attaquée : détruis la carte dans la main en première position. \
-Élémentaire de sable \
-Golem de lave \
-Désert : lieu pour les cartes d'élément Feu et Terre.
-
-Tortue terrestre \
-Barrage \
-Golem de boue
-
-Tyranosaure \
-Brachiosaure \
-Vélociraptor \
-Stégosaure \
-Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente son attaque et sa vie. \
-Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage. \
-Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
-
-Élémentaire d'algue \
-Castor \
-Mangroves : lieu pour les cartes d'élément Eau et Végétal.
-
-Lézard : quand meurt : ajoute une Queue de lézard dans la main. \
-Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main. \
-Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. \
-Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
-Cactus \
-Buisson ardent \
-Fumigation : action, empoisonne et brûle une créature à la fois. \
-Archer charboneux \
-Epeiste de la foret incendiée \
-Mage des spores de feu \
-Feu de forêt \
-Guerrier aux écorces incandescantes \
-Druide des racines noires \
-Savane : lieu pour les cartes d'élément Feu et Végétal.
-
-Jungle : lieu pour les cartes d'élément Feu, Végétal, Eau ou Terre.
-
+### Air
 Sylphe : quand arrive sur le terrain : pioche une carte. \
 Sylphe : quand attaque : pioche une carte et la verrouille. \
 Sylphe : quand attaque : augmente son esquive. \
@@ -188,6 +149,7 @@ Hibours : créature bête oiseau \
 Ascension : pioche une créature wyverne et la verrouille. \
 Ile volante : lieu pour les cartes d'élément Air.
 
+### Mort
 Revenant \
 Légionnaire \
 Squelette : 1 vie. \
@@ -215,6 +177,20 @@ Nécromage \
 Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
+### Metal
+Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
+Mini automate : créature machine. \
+Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain. \
+Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son coût de 10 or. \
+Automate : créature machine, maniement 1. \
+Automate armé : créature machine, maniement 4. \
+Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain. \
+Wyverne d'acier \
+Mage des métaux \
+Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
+Mines : lieu pour les cartes d'élément Métal.
+
+### Foudre
 Satyre : quand arrive sur le terrain : augmente son attaque et sa vie pendant cette étape. \
 Acolyte satyre : quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
 Barde satyre : quand posé : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain pendant cette étape. \
@@ -234,18 +210,19 @@ Mage de foudre \
 Plateau : lieu pour les cartes d'élément Foudre. \
 Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant.
 
-Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
-Mini automate : créature machine. \
-Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain. \
-Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son coût de 10 or. \
-Automate : créature machine, maniement 1. \
-Automate armé : créature machine, maniement 4. \
-Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain. \
-Wyverne d'acier \
-Mage des métaux \
-Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
-Mines : lieu pour les cartes d'élément Métal.
+### Glace
+Goliath : résistance. \
+Jarl \
+Stalactites \
+Nova de glace \
+Berserker \
+Ours des neiges \
+Loup des neiges \
+Wyverne des neiges \
+Manteau de laine \
+Toundra : lieu pour les cartes d'élément Glace.
 
+### Lumiere
 Aasimar : créature, régénération. \
 Rayon de lumière : action, inflige des dégâts à une créature adverse sur le terrain OU soigne une créature alliée sur le terrain. \
 Nova sacrée : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
@@ -261,6 +238,7 @@ Wyverne blanche \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
 
+### Ombre
 Drow \
 Limace : créature ombre, supprime la protection des créatures qu'elle attaque. \
 Vampire \
@@ -270,26 +248,25 @@ Ombromancien \
 Mage sombre \
 Caverne : lieu pour les cartes d'élément Ombre.
 
-Goliath : résistance. \
-Jarl \
-Stalactites \
-Nova de glace \
-Berserker \
-Ours des neiges \
-Loup des neiges \
-Wyverne des neiges \
-Manteau de laine \
-Toundra : lieu pour les cartes d'élément Glace.
+### Feu/Eau
+Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
+Salamandre d'acide \
+Épée des flammes toxiques \
+Salamandre fumante \
+Grande salamandre \
+Souffle de flammes toxiques \
+Plage : lieu pour les cartes d'élément Eau et Feu.
 
-Démon \
-Diablotin \
-Pacte démoniaque \
-Epée vorpale \
-Enfers : lieu pour les cartes d'élément Feu et Mort.
+### Feu/Terre
+Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu. \
+Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.\
+Assassin du désert \
+Ver des sables : quand attaque : détruis la carte dans la main adverse en première position. quand est attaquée : détruis la carte dans la main en première position. \
+Élémentaire de sable \
+Golem de lave \
+Désert : lieu pour les cartes d'élément Feu et Terre.
 
-Ange \
-Paradis : lieu pour les cartes d'élément Air et Lumière.
-
+### Feu/Air
 Dragon \
 Dragonnet \
 Dragonne mère \
@@ -304,25 +281,79 @@ Aigle de feu \
 Proto dragon : créature wyverne dragon \
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
-Champignon \
-Homme champignon \
-Tréant carmin \
-Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
+### Feu/Vegetal
+Lézard : quand meurt : ajoute une Queue de lézard dans la main. \
+Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main. \
+Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. \
+Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
+Cactus \
+Buisson ardent \
+Fumigation : action, empoisonne et brûle une créature à la fois. \
+Archer charboneux \
+Epeiste de la foret incendiée \
+Mage des spores de feu \
+Feu de forêt \
+Guerrier aux écorces incandescantes \
+Druide des racines noires \
+Savane : lieu pour les cartes d'élément Feu et Végétal.
 
-Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
-Glacier : lieu pour les cartes d'élément Glace et Terre.
+### Feu/Mort
+Démon \
+Diablotin \
+Pacte démoniaque \
+Epée vorpale \
+Enfers : lieu pour les cartes d'élément Feu et Mort.
 
+Jungle : lieu pour les cartes d'élément Feu, Végétal, Eau ou Terre.
+
+### Eau/Terre
+Tortue terrestre \
+Barrage \
+Golem de boue
+
+### Eau/Vegetal
+Élémentaire d'algue \
+Castor \
+Mangroves : lieu pour les cartes d'élément Eau et Végétal.
+
+### Eau/Glace
 Requin articque : poisson \
 Kraken \
 Tentacule \
 Banquise : lieu pour les cartes d'élément Glace et Eau.
 
-Armure possédée
-
-Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruis une.
-
+### Air/Vegetal
 Oiseau floral : créature oiseau plante. \
 Jardin suspendu : lieu pour les cartes d'élément Végétal et Air.
+
+### Terre/Vegetal
+Tyranosaure \
+Brachiosaure \
+Vélociraptor \
+Stégosaure \
+Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente son attaque et sa vie. \
+Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage. \
+Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
+
+### Terre/Glace
+Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
+Glacier : lieu pour les cartes d'élément Glace et Terre.
+
+### Vegetal/Ombre
+Champignon \
+Homme champignon \
+Tréant carmin \
+Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
+
+### Air/Lumiere
+Ange \
+Paradis : lieu pour les cartes d'élément Air et Lumière.
+
+### Arcane/Metal
+Armure possédée
+
+### Lumiere/Ombre
+Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruis une.
 
 # Boss
 
