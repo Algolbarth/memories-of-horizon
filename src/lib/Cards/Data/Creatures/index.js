@@ -91,6 +91,7 @@ export * from './Pyromancien';
 export * from './Reine';
 export * from './Renard';
 export * from './Roi';
+export * from './RoiBarbare';
 export * from './Sage';
 export * from './SageDeLaForet';
 export * from './SeigneurOndin';
