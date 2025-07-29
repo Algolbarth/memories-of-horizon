@@ -7,6 +7,7 @@ import { Families } from "./Family";
 import type { System } from "../../System/Class";
 import type { Entity } from "../../Game/Entity";
 import type { Component } from "svelte";
+import type { Zone } from "../../Game/Zone";
 
 export class Card {
     name: string = "Carte";
@@ -20,6 +21,7 @@ export class Card {
     elements: Elements = new Elements(this);
     system: System;
     locked: boolean = false;
+    zone: Zone | undefined;
     owner: Entity | undefined; 
     text: Component | undefined | null;
 

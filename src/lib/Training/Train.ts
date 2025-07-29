@@ -51,5 +51,6 @@ export class Train_Zone {
         this.name = name;
         this.size = size;
         this.level = level;
+        this.cards = cards;
     };
 }

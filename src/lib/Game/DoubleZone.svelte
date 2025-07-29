@@ -1,28 +1,31 @@
-<script>
+<script lang="ts">
+	import type { System } from "../System/Class";
 	import Zone from "./Zone.svelte";
 
-	export let system;
-	export let zone;
+	export let system: System;
+	export let zone: string;
 </script>
 
-<div class="zones">
-	<Zone
-		bind:system
-		bind:entity={system.game.player}
-		zone={system.game.player.zone(zone)}
-		condition={undefined}
-		fonction={undefined}
-	/>
-	<div style="text-align:right;">
+{#if system.game}
+	<div class="zones">
 		<Zone
 			bind:system
-			bind:entity={system.game.bot}
-			zone={system.game.bot.zone(zone)}
+			bind:entity={system.game.player}
+			zone={system.game.player.zone(zone)}
 			condition={undefined}
 			fonction={undefined}
 		/>
+		<div style="text-align:right;">
+			<Zone
+				bind:system
+				bind:entity={system.game.bot}
+				zone={system.game.bot.zone(zone)}
+				condition={undefined}
+				fonction={undefined}
+			/>
+		</div>
 	</div>
-</div>
+{/if}
 
 <style>
 	.zones {

@@ -14,17 +14,18 @@ export class Game extends Battle {
     phase: string = "Préparation";
     deck: Deck | undefined = undefined;
     mode: string;
+    player: Entity = new Entity(this.system);
+    bot: Entity = new Entity(this.system);
+    chapter: Chapter | undefined;
 
-    constructor(system: System, mode: string) {
+    constructor(system: System, mode: string, deck: (Deck | undefined) = undefined) {
         super(system);
 
         this.mode = mode;
+        this.deck = deck;
     };
 
     init = function () {
-        this.player = new Entity(this.system);
-        this.bot = new Entity(this.system);
-
         if (this.mode == "Entraînement") {
             this.player.life.set(this.system.train.player.life);
             this.player.ressource("Or").max = this.system.train.player.gold;
@@ -219,7 +220,7 @@ export class Game extends Battle {
 };
 
 class Use {
-    card = undefined;
+    card: Card | undefined = undefined;
     svelte: Component | undefined = undefined;
 
     set = function (card: Card, svelte: Component) {

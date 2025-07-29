@@ -1,10 +1,12 @@
+import type { System } from '../../../System/Class';
 import { Unit } from '../../Class';
+import type { Equipment } from '../Equipements/Equipement';
 
 export class Creature extends Unit {
     type = "Créature";
     equipments = [];
 
-    constructor(system) {
+    constructor(system: System) {
         super(system);
 
         this.addStat("Attaque", 0);
@@ -42,8 +44,8 @@ export class Creature extends Unit {
         this.fight(defender);
     };
 
-    fight = function (defender) {
-        let isDie = defender.zone.name != "Terrain";
+    fight = function (defender: Unit) {
+        let isDie = defender.zone!.name != "Terrain";
         let repeat = this.stat("Multicoup").value();
         while (!isDie && repeat > 0) {
 
@@ -91,7 +93,7 @@ export class Creature extends Unit {
 
     };
 
-    defend = function (attacker) {
+    defend = function (attacker: Creature) {
         this.defendEffect(attacker);
         if (this.type == "Créature") {
             for (const e of this.equipments) {
@@ -117,7 +119,7 @@ export class Creature extends Unit {
         return false;
     };
 
-    equip = function (equipment) {
+    equip = function (equipment: Equipment) {
         equipment.remove();
         this.equipments.push(equipment);
         equipment.bearer = this;

@@ -1,9 +1,13 @@
+import type { System } from "../System/Class";
+
 export class Chapter {
     steps = [];
     ressources = [];
-    boss = false;
+    boss: boolean = false;
+    system: System;
+    number: number;
 
-    constructor(system, number) {
+    constructor(system: System, number: number) {
         this.system = system;
         this.number = number;
     };
@@ -17,14 +21,14 @@ export class Chapter {
         }
     };
 
-    addRessource = function (name, value) {
+    addRessource = function (name: string, value: number) {
         this.ressources.push({
             name: name,
             value: value
         });
     };
 
-    addStep = function (life, place, cards, dialogs = []) {
+    addStep = function (life: number, place: string, cards: string[], dialogs = []) {
         this.steps.push({
             life: life,
             place: place,

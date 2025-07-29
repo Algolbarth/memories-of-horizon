@@ -25,8 +25,7 @@
 			class="big menu"
 			on:click={() => {
 				system.view.reset();
-				system.game = new Game(system, "Entraînement");
-				system.game.deck = system.train.deck;
+				system.game = new Game(system, "Entraînement", system.train.deck);
 				system.game.init();
 				system.page = "Game";
 			}}

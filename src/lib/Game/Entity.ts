@@ -94,10 +94,11 @@ export class Entity {
     };
 
     cardList = function (condition: (Function | undefined) = undefined, drawer: Card) {
-        let nameList = [];
+        let nameList: string[] = [];
+
         if (this.system.game.deck == undefined) {
             for (const card of this.system.cards.instance) {
-                if (this.place.condition(card) && card.level <= this.zone("Boutique").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (condition == undefined || condition(card, drawer))) {
+                if (this.place && this.place.condition(card) && card.level <= this.zone("Boutique").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (condition == undefined || condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }
@@ -105,21 +106,22 @@ export class Entity {
         else {
             for (const c of this.system.game.deck.cards) {
                 let card = this.system.cards.getByName(c);
-                if (this.place.condition(card) && card.level <= this.zone("Boutique").level) {
+                if (this.place && this.place.condition(card) && card.level <= this.zone("Boutique").level) {
                     nameList.push(c);
                 }
             }
         }
+
         return nameList;
     };
 
-    draw = function (number: number, condition: Function, drawer: Card, array: Card[] = []) {
-        let nameList = this.cardList(condition, drawer);
-        let card = undefined;
+    draw = function (number: number, condition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) {
+        let nameList: string[] = this.cardList(condition, drawer);
+        let card: Card | undefined = undefined;
 
         if (nameList.length > 0) {
             card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card.add("Boutique");
+            card?.add("Boutique");
         }
 
         array.push(card);
@@ -131,7 +133,7 @@ export class Entity {
     };
 
     discover = function (number: number, condition: Function, drawer: Card, array: Card[] = []) {
-        let nameList = this.cardList(condition, drawer);
+        let nameList: string[] = this.cardList(condition, drawer);
         let card = undefined;
 
         for (const card of this.zone("Boutique").cards) {

@@ -1,5 +1,7 @@
+import type { System } from '../../../System/Class';
 import { Stat } from '../../Class/Stat';
 import { Trait } from '../../Class/Trait';
+import type { Creature } from '../Creatures/Creature';
 import { Objet } from '../Objets/Objet';
 import Use from './Use.svelte';
 
@@ -10,7 +12,7 @@ export class Equipment extends Objet {
     equipStats = [];
     bearer = undefined;
 
-    constructor(system) {
+    constructor(system: System) {
         super(system);
 
         this.familles.base.push("Équipement");
@@ -57,7 +59,7 @@ export class Equipment extends Objet {
         }
     };
 
-    useEffect = function (target) {
+    useEffect = function (target: Creature) {
         target.equip(this);
         this.pose();
     };
@@ -83,7 +85,7 @@ export class Equipment extends Objet {
         this.slot = undefined;
     };
 
-    equipStat = function (name) {
+    equipStat = function (name: string) {
         for (const stat of this.equipStats) {
             if (stat.name == name) {
                 return stat;
@@ -91,15 +93,15 @@ export class Equipment extends Objet {
         }
     };
 
-    addEquipStat = function (name, value) {
-        let stat = new Stat(name, value, this);
+    addEquipStat = function (name: string, value: number) {
+        let stat = new Stat(name, value, 0, this);
         stat.value = function () {
             return this.base + this.add;
         };
         this.equipStats.push(stat);
     };
 
-    equipTrait = function (name) {
+    equipTrait = function (name: string) {
         for (const trait of this.equipTraits) {
             if (trait.name == name) {
                 return trait;
@@ -107,7 +109,7 @@ export class Equipment extends Objet {
         }
     };
 
-    addEquipTrait = function (name, value) {
+    addEquipTrait = function (name: string, value: boolean) {
         let trait = new Trait(name, value, this);
         trait.value = function () {
             return this.base;

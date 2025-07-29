@@ -51,8 +51,7 @@
 					<button
 						on:click={() => {
 							system.view.reset();
-							system.game = new Game(system, "Construit");
-							system.game.deck = deck;
+							system.game = new Game(system, "Construit", deck);
 							system.game.init();
 							system = system;
 						}}

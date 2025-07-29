@@ -2,7 +2,7 @@ import { Objet } from '../Objet';
 import Text from './Text.svelte';
 
 export class PierrePhilosophale extends Objet {
-    name = "Pierre Philosophale";
+    name = "Pierre philosophale";
 
     constructor(system) {
         super(system);

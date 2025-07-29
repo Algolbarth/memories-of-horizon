@@ -1,6 +1,9 @@
-<script>
-	export let system;
-	export let card;
+<script lang="ts">
+	import type { System } from "../../../System/Class";
+	import type { Card } from "../../Class";
+
+	export let system: System;
+	export let card: Card;
 </script>
 
 S'équipe sur une créature alliée sur le terrain.
