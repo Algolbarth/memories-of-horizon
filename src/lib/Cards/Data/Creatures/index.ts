@@ -2,6 +2,7 @@ export * from './Alchimiste';
 export * from './AncienSerpent';
 export * from './Aquamancien';
 export * from './Archimage';
+export * from './Archimere';
 export * from './Architecte';
 export * from './Archonte';
 export * from './Aventurier';

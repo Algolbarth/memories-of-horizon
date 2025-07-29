@@ -5,12 +5,12 @@ DIRECTORIES = ["Actions", "Batiments", "Bosses", "Creatures", "Equipements", "Li
 
 def check_items(path):
     nb_item = 0
-    f = open(path + "/index.js", "w")
+    f = open(path + "/index.ts", "w")
     content = ""
 
     array = []
     for file in os.listdir(path):
-        if ".svelte" not in file and ".js" not in file:
+        if ".svelte" not in file and ".ts" not in file:
             array.append(file)
 
     array.sort()
