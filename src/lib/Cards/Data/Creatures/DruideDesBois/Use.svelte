@@ -15,7 +15,7 @@
 			fonction("Elfe");
 		}}
 	>
-		Forme elfe
+		Se transforme en Druide des bois (forme elfe)
 	</button>
 
 	<br />
@@ -26,6 +26,6 @@
 			fonction("Renard");
 		}}
 	>
-		Forme renard
+		Se transforme en Druide des bois (forme renard)
 	</button>
 </div>

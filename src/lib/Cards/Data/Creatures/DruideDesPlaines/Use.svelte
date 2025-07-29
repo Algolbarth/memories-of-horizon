@@ -15,7 +15,7 @@
 			fonction("Humain");
 		}}
 	>
-		Forme humain
+		Se transforme en Druide des plaines (forme humain)
 	</button>
 
 	<br />
@@ -26,6 +26,6 @@
 			fonction("Loup");
 		}}
 	>
-		Forme loup
+		Se transforme en Druide des plaines (forme loup)
 	</button>
 </div>

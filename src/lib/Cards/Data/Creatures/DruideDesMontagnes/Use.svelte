@@ -15,7 +15,7 @@
 			fonction("Nain");
 		}}
 	>
-		Forme nain
+		Se transforme en Druide des montagnes (forme nain)
 	</button>
 
 	<br />
@@ -26,6 +26,6 @@
 			fonction("Ours");
 		}}
 	>
-		Forme ours
+		Se transforme en Druide des montagnes (forme ours)
 	</button>
 </div>

@@ -15,7 +15,7 @@
 			fonction("Gobelin");
 		}}
 	>
-		Forme gobelin
+		Se transforme en Druide de feu (forme gobelin)
 	</button>
 
 	<br />
@@ -26,6 +26,6 @@
 			fonction("Lézard");
 		}}
 	>
-		Forme lézard
+		Se transforme en Druide de feu (forme lézard)
 	</button>
 </div>

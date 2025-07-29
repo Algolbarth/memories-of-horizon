@@ -15,7 +15,7 @@
 			fonction("Ondin");
 		}}
 	>
-		Forme ondin
+		Se transforme en Druide des récifs (forme ondin)
 	</button>
 
 	<br />
@@ -26,6 +26,6 @@
 			fonction("Tortue");
 		}}
 	>
-		Forme tortue
+		Se transforme en Druide des récifs (forme tortue)
 	</button>
 </div>
