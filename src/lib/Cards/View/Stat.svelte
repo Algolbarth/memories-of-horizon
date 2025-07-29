@@ -1,42 +1,44 @@
-<script>
-	export let card;
+<script lang="ts">
+    import { Unit, type Card } from "../Class";
+
+	export let card:Card;
 </script>
 
 <div class="box">
 	<i>Statistiques</i>
 	<br />
 
-	{#if card.isUnit()}
+	{#if card instanceof Unit}
 		Vie : {card.stat("Vie").current} / {card.stat("Vie").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Garde").value() > 0}
+	{#if card instanceof Unit && card.stat("Garde").value() > 0}
 		Garde : {card.stat("Garde").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Défense").value() > 0}
+	{#if card instanceof Unit && card.stat("Défense").value() > 0}
 		Défense : {card.stat("Défense").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Esquive").value() > 0}
+	{#if card instanceof Unit && card.stat("Esquive").value() > 0}
 		Esquive : {card.stat("Esquive").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Protection").value() > 0}
+	{#if card instanceof Unit && card.stat("Protection").value() > 0}
 		Protection : {card.stat("Protection").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Actions").value() > 1}
+	{#if card instanceof Unit && card.stat("Actions").value() > 1}
 		Actions : {card.stat("Actions").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Vitesse").value() > 0}
+	{#if card instanceof Unit && card.stat("Vitesse").value() > 0}
 		Vitesse : {card.stat("Vitesse").value()}
 		<br />
 	{/if}
@@ -68,7 +70,7 @@
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Multicoup").value() > 1}
+	{#if card instanceof Unit && card.stat("Multicoup").value() > 1}
 		Multicoup : {card.stat("Multicoup").value()}
 		<br />
 	{/if}
@@ -78,12 +80,12 @@
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Magie").value() > 0}
+	{#if card instanceof Unit && card.stat("Magie").value() > 0}
 		Magie : {card.stat("Magie").value()}
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat("Intelligence").value() > 0}
+	{#if card instanceof Unit && card.stat("Intelligence").value() > 0}
 		Intelligence : {card.stat("Intelligence").value()}
 		<br />
 	{/if}

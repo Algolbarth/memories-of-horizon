@@ -5,6 +5,7 @@ import { copy } from '../Utils';
 import type { Deck } from '../Decks/Deck';
 import type { System } from '../System/Class';
 import type { Card } from '../Cards/Class';
+import type { Component } from 'svelte';
 
 export class Game extends Battle {
     use: Use = new Use();
@@ -219,9 +220,9 @@ export class Game extends Battle {
 
 class Use {
     card = undefined;
-    svelte = undefined;
+    svelte: Component | undefined = undefined;
 
-    set = function (card: Card, svelte: __sveltets_2_IsomorphicComponent) {
+    set = function (card: Card, svelte: Component) {
         this.card = card;
         this.svelte = svelte;
     };

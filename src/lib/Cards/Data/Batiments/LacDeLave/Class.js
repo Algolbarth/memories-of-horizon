@@ -1,3 +1,4 @@
+import { Unit } from '../../../Class';
 import { Batiment } from '../Batiment';
 import Text from './Text.svelte';
 
@@ -15,7 +16,7 @@ export class LacDeLave extends Batiment {
     };
 
     otherPoseEffect = function (card) {
-        if (this.zone.name == "Terrain" && card.isUnit()) {
+        if (this.zone.name == "Terrain" && card instanceof Unit) {
             if (card.elements.total().includes("Feu") && card.type == "Créature") {
                 card.stat("Attaque").add += 5;
             }

@@ -1,4 +1,8 @@
-<script>
+<script lang="ts">
+	import type { System } from "../../System/Class";
+    import { Card } from "../Class";
+    import { Creature } from "../Data/Creatures/Creature";
+    import { Equipment } from "../Data/Equipements/Equipement";
 	import Caracteristics from "./Caracteristics.svelte";
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";
@@ -6,7 +10,7 @@
 	import Stat from "./Stat.svelte";
 	import Trait from "./Trait.svelte";
 
-	export let system;
+	export let system: System;
 
 	$: card =
 		system.view.quick == undefined ? system.view.card : system.view.quick;
@@ -17,7 +21,7 @@
 	}
 </script>
 
-{#if card != undefined}
+{#if card != undefined && card instanceof Card}
 	<div id="shadow">
 		<div id="body">
 			<div id="content">
@@ -42,7 +46,7 @@
 					{#if card.hasStat()}
 						<Stat bind:card />
 					{/if}
-					{#if card.familles.total().includes("Équipement")}
+					{#if card instanceof Equipment}
 						<div class="box">
 							<i>Statistiques</i>
 
@@ -57,7 +61,7 @@
 							{/each}
 						</div>
 					{/if}
-					{#if card.type == "Créature"}
+					{#if card instanceof Creature}
 						<Equipments bind:card bind:system />
 					{/if}
 

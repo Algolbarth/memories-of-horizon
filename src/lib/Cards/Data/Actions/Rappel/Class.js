@@ -1,3 +1,4 @@
+import { Unit } from '../../../Class';
 import { Action } from '../Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -34,7 +35,7 @@ export class Rappel extends Action {
 
     useEffect = function (target) {
         target.move("Boutique");
-        if (target.isUnit()) {
+        if (target instanceof Unit) {
             target.stat("Vie").current = 1;
         }
         this.move("Défausse");

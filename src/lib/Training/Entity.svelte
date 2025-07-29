@@ -1,9 +1,11 @@
-<script>
-	export let entity;
+<script lang="ts">
+	import type { Train_Entity } from "./Train";
 
-	let life = entity.life;
-	let gold = entity.gold;
-	let flux = entity.flux;
+	export let entity: Train_Entity;
+
+	let life: number = entity.life;
+	let gold: number = entity.gold;
+	let flux: number = entity.flux;
 </script>
 
 <div class="zone">

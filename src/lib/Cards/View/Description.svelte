@@ -1,5 +1,7 @@
-<script>
-	export let card;
+<script lang="ts">
+	import type { Card } from "../Class";
+
+	export let card: Card;
 </script>
 
 <div class="box">

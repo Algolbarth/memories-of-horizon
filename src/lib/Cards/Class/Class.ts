@@ -5,7 +5,8 @@ import { Cout } from "./Cost";
 import { copy } from "../../Utils";
 import { Families } from "./Family";
 import type { System } from "../../System/Class";
-import type Entity from "../../Game/Entity.svelte";
+import type { Entity } from "../../Game/Entity";
+import type { Component } from "svelte";
 
 export class Card {
     name: string = "Carte";
@@ -19,6 +20,8 @@ export class Card {
     elements: Elements = new Elements(this);
     system: System;
     locked: boolean = false;
+    owner: Entity | undefined; 
+    text: Component | undefined | null;
 
     constructor(system: System) {
         this.system = system;
@@ -134,7 +137,7 @@ export class Card {
 
     };
 
-    add = function (zone, entity: Entity = this.owner) {
+    add = function (zone: string, entity: Entity = this.owner) {
         if (!entity.zone(zone).isFull()) {
             this.owner = entity;
             this.zone = entity.zone(zone);
@@ -166,7 +169,7 @@ export class Card {
 
     };
 
-    move = function (zone, entity: Entity = this.owner) {
+    move = function (zone: string, entity: Entity = this.owner) {
         this.remove();
         this.add(zone, entity);
     };

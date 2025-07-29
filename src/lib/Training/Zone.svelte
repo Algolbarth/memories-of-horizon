@@ -1,10 +1,13 @@
-<script>
-	export let system;
-	export let zone;
-	export let entity;
+<script lang="ts">
+	import type { System } from "../System/Class";
+	import type { Train_Zone } from "./Train";
 
-	let level = zone.level;
-	let size = zone.size;
+	export let system: System;
+	export let zone: Train_Zone;
+	export let entity: string;
+
+	let level:number = zone.level!;
+	let size:number = zone.size!;
 </script>
 
 <div class="zone">

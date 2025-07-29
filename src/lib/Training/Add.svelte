@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
+	import { Card, Unit } from "../Cards/Class";
 	import View from "../Cards/View/Main.svelte";
 	import Filter from "../Filter/View.svelte";
+	import type { System } from "../System/Class";
 	import { several } from "../Utils";
 
-	export let system;
+	export let system: System;
 
 	function closing() {
 		filterWindow = false;
@@ -23,7 +25,7 @@
 	let rareSelect = false;
 	let legendarySelect = false;
 
-	let cardList = [];
+	let cardList: Card[] = [];
 
 	$: zone = system.train.add.zone;
 
@@ -31,16 +33,17 @@
 		let tab = [];
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
-			
+
 			if (
 				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
 				(!card.trait("Légendaire").value() ||
 					system.train.add.entity == "bot") &&
-				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(levelSelect == "Tous" ||
+					card.level == parseInt(levelSelect)) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
 				(card.type == "Lieu" ||
 					(zone != undefined && zone.name != "Lieux")) &&
-				(card.isUnit() ||
+				(card instanceof Unit ||
 					(zone != undefined && zone.name != "Terrain")) &&
 				(familleSelect == "Toutes" ||
 					card.familles.total().includes(familleSelect)) &&
@@ -60,7 +63,16 @@
 		return "";
 	}
 
-	function sorting(name, level, type, famille, element, commun, rare, legendary) {
+	function sorting(
+		name: string,
+		level: string,
+		type: string,
+		famille: string,
+		element: string,
+		commun: boolean,
+		rare: boolean,
+		legendary: boolean,
+	) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -125,7 +137,7 @@
 							</button>
 						</div>
 						<div style="text-align:right;">
-							{#if zone.name == "Défausse" || zone.size > zone.cards.length}
+							{#if zone.size != undefined && zone.size > zone.cards.length}
 								<button
 									on:click={() => {
 										zone.cards.push(card.name);

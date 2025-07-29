@@ -1,31 +1,34 @@
-<script>
+<script lang="ts">
 	import Filter from "../Filter/View.svelte";
 	import { several } from "../Utils";
 	import View from "../Cards/View/Main.svelte";
+	import type { System } from "../System/Class";
+	import type { Card } from "../Cards/Class";
 
-	export let system;
+	export let system: System;
 
-	let filterWindow = false;
+	let filterWindow: boolean = false;
 
-	let nameSelect = "";
-	let levelSelect = "Tous";
-	let typeSelect = "Tous";
-	let familleSelect = "Toutes";
-	let elementSelect = "Tous";
+	let nameSelect: string = "";
+	let levelSelect: string = "Tous";
+	let typeSelect: string = "Tous";
+	let familleSelect: string = "Toutes";
+	let elementSelect: string = "Tous";
 
-	let cardList = [];
+	let cardList: Card[] = [];
 	filter();
 
 	function filter() {
 		let tab = [];
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
-			
+
 			if (
 				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
 				!card.trait("Rare").value() &&
 				!card.trait("Légendaire").value() &&
-				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(levelSelect == "Tous" ||
+					card.level == parseInt(levelSelect)) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
 				(familleSelect == "Toutes" ||
 					card.familles.total().includes(familleSelect)) &&
@@ -38,7 +41,13 @@
 		cardList = tab;
 	}
 
-	function sorting(name, level, type, famille, element) {
+	function sorting(
+		name: string,
+		level: string,
+		type: string,
+		famille: string,
+		element: string,
+	) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -65,69 +74,77 @@
 
 <br />
 
-<div id="zone">
-	{several(cardList.length, "carte")}
-	-
-	<button
-		on:click={() => {
-			filterWindow = true;
-		}}
-	>
-		Filtrer
-	</button>
+{#if system.deck}
+	<div id="zone">
+		{several(cardList.length, "carte")}
+		-
+		<button
+			on:click={() => {
+				filterWindow = true;
+			}}
+		>
+			Filtrer
+		</button>
 
-	<div id="list" class="scroll">
-		{#each cardList as card}
-			<div
-				class={(system.deck.check(card.name) ? "present " : "") +
-					"preview"}
-			>
-				<div>
-					<button
-						class={system.deck.check(card.name) ? "present " : ""}
-						on:click={() => {
-							system.view.card = card;
-						}}
-						on:mouseenter={() => {
-							system.view.quick = card;
-						}}
-						on:mouseleave={() => {
-							system.view.quick = undefined;
-						}}
-					>
-						{card.name}
-					</button>
-				</div>
-				<div style="text-align:right;">
-					{#if !system.deck.check(card.name)}
+		<div id="list" class="scroll">
+			{#each cardList as card}
+				<div
+					class={(system.deck.check(card.name) ? "present " : "") +
+						"preview"}
+				>
+					<div>
 						<button
+							class={system.deck.check(card.name)
+								? "present "
+								: ""}
 							on:click={() => {
-								system.deck.add(card.name);
-								system = system;
+								system.view.card = card;
+							}}
+							on:mouseenter={() => {
+								system.view.quick = card;
+							}}
+							on:mouseleave={() => {
+								system.view.quick = undefined;
 							}}
 						>
-							Ajouter
+							{card.name}
 						</button>
-					{:else}
-						<button
-							class="present"
-							on:click={() => {
-								system.deck.remove(card.name);
-								system = system;
-							}}
-						>
-							Enlever
-						</button>
-					{/if}
+					</div>
+					<div style="text-align:right;">
+						{#if !system.deck.check(card.name)}
+							<button
+								on:click={() => {
+									if (system.deck) {
+										system.deck.add(card.name);
+										system = system;
+									}
+								}}
+							>
+								Ajouter
+							</button>
+						{:else}
+							<button
+								class="present"
+								on:click={() => {
+									if (system.deck) {
+										system.deck.remove(card.name);
+										system = system;
+									}
+								}}
+							>
+								Enlever
+							</button>
+						{/if}
+					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
+		</div>
 	</div>
-</div>
 
-<div id="view">
-	<View bind:system />
-</div>
+	<div id="view">
+		<View bind:system />
+	</div>
+{/if}
 
 {#if filterWindow}
 	<Filter
@@ -137,6 +154,7 @@
 		{typeSelect}
 		{familleSelect}
 		{elementSelect}
+		rarity={false}
 		{sorting}
 		{close}
 	/>

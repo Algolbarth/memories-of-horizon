@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
+    import type { System } from "../System/Class";
 	import { several } from "../Utils";
 	import { Deck } from "./Deck";
 	import View from "./View.svelte";
 
-	export let system;
+	export let system:System;
 
 	function newDeck() {
 		let deck = new Deck(system);

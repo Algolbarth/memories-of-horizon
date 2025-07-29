@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import Entity from "./Entity.svelte";
 	import Zone from "./Zone.svelte";
 	import Add from "./Add.svelte";
 	import View from "../Cards/View/Main.svelte";
 	import { Game } from "../Game/Game";
+    import type { System } from "../System/Class";
 
-	export let system;
+	export let system: System;
 </script>
 
 <div>

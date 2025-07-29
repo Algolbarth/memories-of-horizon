@@ -1,10 +1,13 @@
-<script>
-	export let system;
-	export let card;
+<script lang="ts">
+	import type { System } from "../../System/Class";
+	import type { Card } from "../Class";
 
-	function cout(c) {
+	export let system: System;
+	export let card: Card;
+
+	function cout() {
 		let tab = [];
-		for (const cost of c.cout) {
+		for (const cost of card.cout) {
 			if (cost.value() > 0) {
 				tab.push(cost);
 			}
@@ -12,9 +15,9 @@
 		return tab;
 	}
 
-	function vente(c) {
+	function vente() {
 		let tab = [];
-		for (const sell of c.vente) {
+		for (const sell of card.vente) {
 			if (sell.value() > 0) {
 				tab.push(sell);
 			}
@@ -31,13 +34,13 @@
 	<div class="cost" style="background:rgba(150, 100, 0, 1);">
 		Nv {card.level}
 	</div>
-	{#each card.elements.total() as element, i}
+	{#each card.elements.total() as element}
 		<div
 			class="cost"
 			style={"background:" +
-				system.ressources.find("", element).color +
+				system.ressources.find("", element)?.color +
 				";color:" +
-				(system.ressources.find("", element).light_font
+				(system.ressources.find("", element)?.light_font
 					? "rgba(255, 255, 255, 1)"
 					: "rgba(0, 0, 0, 1)")}
 		>
@@ -46,17 +49,17 @@
 	{/each}
 </div>
 
-{#if cout(card).length > 0 || vente(card).length > 0}
+{#if cout().length > 0 || vente().length > 0}
 	<div class="box">
 		<div class="little-container">
-			{#if cout(card).length > 0}
-				{#each cout(card) as cost, i}
+			{#if cout().length > 0}
+				{#each cout() as cost}
 					<div
 						class="cost"
 						style={"background:" +
-							system.ressources.find(cost.name).color +
+							system.ressources.find(cost.name)?.color +
 							";color:" +
-							(system.ressources.find(cost.name).light_font
+							(system.ressources.find(cost.name)?.light_font
 								? "rgba(255, 255, 255, 1)"
 								: "rgba(0, 0, 0, 1)")}
 					>
@@ -73,14 +76,14 @@
 		<hr />
 
 		<div class="little-container">
-			{#if vente(card).length > 0}
-				{#each vente(card) as sell, i}
+			{#if vente().length > 0}
+				{#each vente() as sell, i}
 					<div
 						class="cost"
 						style={"background:" +
-							system.ressources.find(sell.name).color +
+							system.ressources.find(sell.name)?.color +
 							";color:" +
-							(system.ressources.find(sell.name).light_font
+							(system.ressources.find(sell.name)?.light_font
 								? "rgba(255, 255, 255, 1)"
 								: "rgba(0, 0, 0, 1)")}
 					>

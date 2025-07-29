@@ -1,10 +1,12 @@
+import type { Component } from "svelte";
+
 export abstract class Story {
     title: string;
-    text: __sveltets_2_IsomorphicComponent;
+    text: Component | null | undefined;
     id: number = 0;
     unlock: boolean = true;
 
-    constructor(title: string, id: number, text: __sveltets_2_IsomorphicComponent) {
+    constructor(title: string, id: number, text: Component) {
         this.title = title;
         this.id = id;
         this.text = text;

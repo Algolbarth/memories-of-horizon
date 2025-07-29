@@ -1,6 +1,8 @@
-<script>
-	export let system;
-	export let name;
+<script lang="ts">
+	import type { System } from "../../System/Class";
+
+	export let system: System;
+	export let name: string;
 
 	$: card = system.cards.getByName(name);
 </script>

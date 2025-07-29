@@ -1,6 +1,9 @@
-<script>
-	export let system;
-	export let card;
+<script lang="ts">
+	import type { System } from "../../System/Class";
+    import type { Creature } from "../Data/Creatures/Creature";
+
+	export let system: System;
+	export let card: Creature;
 </script>
 
 <div class="box">

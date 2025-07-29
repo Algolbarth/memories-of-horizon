@@ -27,6 +27,7 @@ export class System {
     chapters: Chapters = new Chapters(this);
     bosses: Bosses = new Bosses(this);
     account: Account | undefined;
+    deck: Deck | undefined;
 
     constructor() {
         for (const element of this.ressources.list) {

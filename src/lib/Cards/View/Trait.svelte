@@ -1,5 +1,7 @@
-<script>
-	export let card;
+<script lang="ts">
+	import { Unit, type Card } from "../Class";
+
+	export let card: Card;
 </script>
 
 <div class="box">
@@ -16,7 +18,7 @@
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.trait("Inactif").value()}
+	{#if card instanceof Unit && card.trait("Inactif").value()}
 		Inactif
 		<br />
 	{/if}

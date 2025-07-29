@@ -1,13 +1,17 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { System } from "../System/Class";
+
+	export let system: System;
 
 	function close() {
-		system.game.use.reset();
-		system = system;
+		if (system.game) {
+			system.game.use.reset();
+			system = system;
+		}
 	}
 </script>
 
-{#if system.game.use.card != undefined}
+{#if system.game && system.game.use.card}
 	<div id="body">
 		<button
 			class="close"
