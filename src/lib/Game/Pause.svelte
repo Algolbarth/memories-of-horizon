@@ -1,12 +1,16 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { System } from "../System/Class";
+
+	export let system: System;
 
 	function close() {
-		system.game.pause = false;
+		if (system.game) {
+			system.game.pause = false;
+		}
 	}
 </script>
 
-{#if system.game.pause}
+{#if system.game && system.game.pause}
 	<div class="window">
 		<div id="body" class="center">
 			<div style="text-align:right;">

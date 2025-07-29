@@ -21,7 +21,7 @@ export class Entity {
         new Zone("Défausse")
     ];
     ressources = [];
-    place = undefined;
+    place: Card | undefined = undefined;
     system: System;
     step: number = 0;
 

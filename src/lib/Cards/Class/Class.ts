@@ -21,9 +21,11 @@ export class Card {
     elements: Elements = new Elements(this);
     system: System;
     locked: boolean = false;
+    slot: number | undefined;
     zone: Zone | undefined;
     owner: Entity | undefined; 
     text: Component | undefined | null;
+    cache: boolean = false;
 
     constructor(system: System) {
         this.system = system;

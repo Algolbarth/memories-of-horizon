@@ -6,8 +6,9 @@ export class Battle {
     fighter: Creature | undefined = undefined;
     auto = null;
     system: System;
+    turn: number = 1;
 
-    constructor(system:System) {
+    constructor(system: System) {
         this.system = system;
     }
 

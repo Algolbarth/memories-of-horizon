@@ -1,8 +1,10 @@
-<script>
-    import { several } from "../Utils";
+<script lang="ts">
+	import type { System } from "../System/Class";
+	import { several } from "../Utils";
+	import type { Entity } from "./Entity";
 
-	export let system;
-	export let entity;
+	export let system: System;
+	export let entity: Entity;
 </script>
 
 <div id="player-info">
@@ -36,7 +38,8 @@
 				</div>
 				<div>
 					{#if ressource.stock > 0}
-						{#if ressource.current > 0 || ressource.max > 0}+ {/if}{several(ressource.stock, "stocké")}
+						{#if ressource.current > 0 || ressource.max > 0}+
+						{/if}{several(ressource.stock, "stocké")}
 					{/if}
 				</div>
 				<div>

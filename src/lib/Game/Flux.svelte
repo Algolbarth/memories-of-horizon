@@ -1,10 +1,12 @@
 <script lang="ts">
-    import type { System } from "../System/Class";
+	import type { System } from "../System/Class";
 
-	export let system:System;
+	export let system: System;
 
 	function close() {
-		system.game.flux = false;
+		if (system.game) {
+			system.game.flux = false;
+		}
 	}
 
 	let tab = [
@@ -23,7 +25,7 @@
 	];
 </script>
 
-{#if system.game.flux}
+{#if system.game && system.game.flux}
 	<div class="window">
 		<div id="body" class="center">
 			<div style="text-align:right;">
