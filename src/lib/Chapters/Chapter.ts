@@ -28,23 +28,29 @@ export class Chapter {
         });
     };
 
-    addStep = function (life: number, place: string, cards: string[], dialogs = []) {
-        this.steps.push({
-            life: life,
-            place: place,
-            cards: cards,
-            dialogs: dialogs,
-            dialog: 0,
-            read: false
-        });
+    addStep = function (life: number, place: string, cards: string[], dialogs: string[] = []) {
+        this.steps.push(new Step(life, place, cards, dialogs));
+    };
+
+    startDialog = function() {
+        let step = this.steps[this.system.game.player.step - 1];
+        if (!step.read && step.dialog < step.dialogs.length) {
+            this.system.page = "Dialog";
+        }
+        else {
+            step.read = true;
+            this.system.page = "Game";
+        }
     };
 
     nextDialog = function () {
         let step = this.steps[this.system.game.player.step - 1];
-        if (step.dialog < step.dialogs.length - 1) {
+        if (!step.read && step.dialog < step.dialogs.length - 1) {
             step.dialog++;
+            this.system.page = "Dialog";
         }
         else {
+            step.read = true;
             this.system.page = "Game";
         }
     };
@@ -91,4 +97,20 @@ export class Chapter {
             return this.level;
         }
     };
-}
+};
+
+export class Step {
+    life: number;
+    place: string;
+    cards: string[];
+    dialogs: string[];
+    dialog: number = 0;
+    read: boolean = false;
+
+    constructor(life: number, place: string, cards: string[], dialogs: string[]) {
+        this.life = life;
+        this.place = place;
+        this.cards = cards;
+        this.dialogs = dialogs;
+    };
+};

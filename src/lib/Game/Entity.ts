@@ -23,6 +23,7 @@ export class Entity {
     ressources = [];
     place = undefined;
     system: System;
+    step: number = 0;
 
     constructor(system: System) {
         this.system = system;

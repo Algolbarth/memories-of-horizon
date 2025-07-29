@@ -134,15 +134,7 @@ export class Game extends Battle {
         }
 
         if (this.mode != "Entraînement") {
-            let step = this.chapter.steps[this.player.step - 1];
-            if (!step.read && step.dialog < step.dialogs.length) {
-                this.system.page = "Dialog";
-                console.log("on est d'accord ?")
-            }
-            else {
-                this.system.page = "Game";
-                step.read = true;
-            }
+            this.chapter.startDialog();
         }
         else {
             this.system.page = "Game";

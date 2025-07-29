@@ -1,32 +1,41 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { Step } from "../Chapters/Chapter";
+	import type { System } from "../System/Class";
 
-	let step = system.game.chapter.steps[system.game.player.step - 1];
+	export let system: System;
+
+	let step: Step | undefined =
+		system.game?.chapter?.steps[system.game.player.step - 1];
 </script>
 
-<div id="body" class="center">
-	Chapitre {system.game.chapter.number}
-	- Étape {system.game.player.step} / {system.game.chapter.steps.length}
+{#if system.game && system.game.chapter && step}
+	<div id="body" class="center">
+		Chapitre {system.game.chapter.number}
+		- Étape {system.game.player.step} / {system.game.chapter.steps.length}
 
-	<br />
-	<br />
+		<br />
+		<br />
 
-	{step.dialogs[step.dialog]}
+		{step.dialogs[step.dialog]}
 
-	<br />
-	<br />
+		<br />
+		<br />
 
-	<button
-		class="big"
-		on:click={() => {
-			system.game.chapter.nextDialog();
-			step = step;
-			system = system;
-		}}
-	>
-		Suivant
-	</button>
-</div>
+		<button
+			class="big"
+			on:click={() => {
+				if (system.game && system.game.chapter) {
+					system.game.chapter.nextDialog();
+					step = step;
+					system = system;
+				}
+			}}
+		>
+			Suivant
+			({step.dialog + 1}/{step.dialogs.length})
+		</button>
+	</div>
+{/if}
 
 <style>
 	#body {
