@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import { save } from "../Login/Save";
+	import type { System } from "../System/Class";
 
-	export let system;
+	export let system: System;
 
 	function logout() {
 		system.decks = [];
-		system.account = "";
+		system.account = undefined;
 		system.page = "TitleScreen";
 	}
 </script>

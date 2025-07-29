@@ -13,15 +13,15 @@ export class PierrePhilosophale extends Objet {
     };
 
     select = function () {
-        if (this.owner.flux > 0) {
+        if (this.owner.ressource("Flux").stock > 0) {
             this.useEffect();
         }
     };
 
     useEffect = function () {
-        this.owner.ressource("Or").max += this.owner.flux;
-        this.owner.ressource("Or").current += this.owner.flux;
-        this.owner.flux = 0;
+        this.owner.ressource("Or").max += this.owner.ressource("Flux").stock;
+        this.owner.ressource("Or").current += this.owner.ressource("Flux").stock;
+        this.owner.ressource("Flux").stock = 0;
         this.move("Défausse");
         this.pose();
     };

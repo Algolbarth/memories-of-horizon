@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
 	import { Game } from "../Game/Game";
 	import View from "../Decks/View.svelte";
 	import { several } from "../Utils";
+    import type { System } from "../System/Class";
 
-	export let system;
+	export let system: System;
 
 	let array = [];
 

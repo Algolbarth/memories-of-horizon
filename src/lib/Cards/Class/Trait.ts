@@ -1,9 +1,14 @@
-export class Trait {
-    add = false;
-    step = false;
-    turn = false;
+import type { Card } from "./Class";
 
-    constructor(name, value, card) {
+export class Trait {
+    name: string;
+    base: boolean;
+    add: boolean = false;
+    step: boolean = false;
+    turn: boolean = false;
+    card: Card;
+
+    constructor(name: string, value: boolean, card: Card) {
         this.name = name;
         this.base = value;
         this.card = card;

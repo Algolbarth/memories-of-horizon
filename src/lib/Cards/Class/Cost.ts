@@ -1,8 +1,12 @@
-export class Cout {
-    add = 0;
-    base = 0
+import type { Card } from "./Class";
 
-    constructor(name, card) {
+export class Cout {
+    name: string;
+    add: number = 0;
+    base: number = 0;
+    card: Card;
+
+    constructor(name: string, card: Card) {
         this.name = name;
         this.card = card;
     };

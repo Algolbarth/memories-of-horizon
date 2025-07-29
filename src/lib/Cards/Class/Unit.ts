@@ -1,8 +1,10 @@
+import type { System } from '../../System/Class';
 import { copy } from '../../Utils';
+import type { Creature } from '../Data/Creatures/Creature';
 import { Card } from './Class';
 
 export class Unit extends Card {
-    constructor(system) {
+    constructor(system: System) {
         super(system);
 
         this.addTrait("Inactif", false);
@@ -51,7 +53,7 @@ export class Unit extends Card {
         this.pose();
     };
 
-    heal = function (value) {
+    heal = function (value: number) {
         this.stat("Vie").current += value;
         if (this.stat("Vie").current > this.stat("Vie").value()) {
             this.stat("Vie").current = this.stat("Vie").value();
@@ -62,11 +64,11 @@ export class Unit extends Card {
         this.stat("Vie").current = this.stat("Vie").value();
     };
 
-    isDamaged = function() {
+    isDamaged = function () {
         return this.stat("Vie").current < this.stat("Vie").value();
     };
 
-    damage = function (value) {
+    damage = function (value: number) {
         let result = {
             value: value,
             die: false
@@ -143,11 +145,11 @@ export class Unit extends Card {
 
     };
 
-    defend = function (attacker) {
+    defend = function (attacker: Creature) {
         this.defendEffect(attacker);
     };
 
-    defendEffect = function (attacker) {
+    defendEffect = function (attacker: Creature) {
 
     };
 }

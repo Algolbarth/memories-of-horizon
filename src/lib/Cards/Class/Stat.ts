@@ -1,9 +1,15 @@
-export class Stat {
-    add = 0;
-    step = 0;
-    turn = 0;
+import type { Card } from "./Class";
 
-    constructor(name, value, min, card) {
+export class Stat {
+    name: string;
+    base: number;
+    add: number = 0;
+    step: number = 0;
+    min: number;
+    turn: number = 0;
+    card: Card;
+
+    constructor(name: string, value: number, min: number, card: Card) {
         this.name = name;
         this.base = value;
         this.min = min;
@@ -30,17 +36,21 @@ export class Stat {
         return total;
     };
 
-    increase = function (value) {
+    increase = function (value: number) {
         this.add += value;
     };
 
-    fix = function (value) {
+    decrease = function (value: number) {
+        this.add -= value;
+    };
+
+    fix = function (value: number) {
         if (this.value() < value) {
             this.add += value - this.value();
         }
     };
 
-    remove = function (value) {
+    remove = function (value: number) {
         while (value > 0) {
             if (this.turn > 0) {
                 this.turn--;

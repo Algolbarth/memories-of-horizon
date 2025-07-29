@@ -1,24 +1,26 @@
-<script>
+<script lang="ts">
 	import Filter from "../Filter/View.svelte";
 	import Dropdown from "../Utils/Dropdown.svelte";
 	import View from "../Cards/View/Main.svelte";
 	import { several } from "../Utils";
+	import type { System } from "../System/Class";
+	import type { Card } from "../Cards/Class";
 
-	export let system;
+	export let system: System;
 
-	let filterWindow = false;
-	let sortType = "Nom";
+	let filterWindow: boolean = false;
+	let sortType: string = "Nom";
 
-	let nameSelect = "";
-	let levelSelect = "Tous";
-	let typeSelect = "Tous";
-	let familleSelect = "Toutes";
-	let elementSelect = "Tous";
-	let communSelect = true;
-	let rareSelect = false;
-	let legendarySelect = false;
+	let nameSelect: string = "";
+	let levelSelect: string = "Tous";
+	let typeSelect: string = "Tous";
+	let familleSelect: string = "Toutes";
+	let elementSelect: string = "Tous";
+	let communSelect: boolean = true;
+	let rareSelect: boolean = false;
+	let legendarySelect: boolean = false;
 
-	let cardList = [];
+	let cardList: Card[] = [];
 	filter();
 
 	function filter() {
@@ -29,7 +31,8 @@
 
 			if (
 				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
-				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(levelSelect == "Tous" ||
+					card.level == parseInt(levelSelect)) &&
 				(typeSelect == "Tous" || card.type == typeSelect) &&
 				(familleSelect == "Toutes" ||
 					card.familles.total().includes(familleSelect)) &&
@@ -50,7 +53,7 @@
 		cardList = tab;
 	}
 
-	function sort(tab) {
+	function sort(tab: Card[]) {
 		if (sortType == "Niveau") {
 			for (let i = 0; i < tab.length; i++) {
 				let j = i;
@@ -65,7 +68,16 @@
 		return tab;
 	}
 
-	function sorting(name, level, type, famille, element, commun, rare, legendary) {
+	function sorting(
+		name: string,
+		level: string,
+		type: string,
+		famille: string,
+		element: string,
+		commun: boolean,
+		rare: boolean,
+		legendary: boolean,
+	) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -110,7 +122,7 @@
 		<Dropdown
 			array={["Nom", "Niveau"]}
 			selected={sortType}
-			selecting={function (element) {
+			selecting={function (element: string) {
 				sortType = element;
 				filter();
 			}}

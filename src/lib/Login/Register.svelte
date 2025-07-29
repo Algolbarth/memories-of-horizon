@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
+	import type { System } from "../System/Class";
 	import { Account } from "./Account";
 
-	export let system;
+	export let system: System;
 
-	let name = "";
+	let name: string = "";
 
 	function register() {
 		if (name != "") {

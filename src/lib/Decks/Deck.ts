@@ -1,15 +1,19 @@
-export class Deck {
-    cards = [];
-    victory = 0;
-    defeat = 0;
+import type { System } from "../System/Class";
 
-    constructor(system) {
+export class Deck {
+    name: string;
+    cards: string[] = [];
+    victory: number = 0;
+    defeat: number = 0;
+    system: System;
+
+    constructor(system: System) {
         this.system = system;
 
-        this.changeName("Nouveau deck", 0);
+        this.name = this.changeName("Nouveau deck", 0);
     };
 
-    changeName = function (name, number) {
+    changeName = function (name: string, number: number) {
         let newName = name;
         if (number > 0) {
             newName += " (" + number + ")";
@@ -20,6 +24,8 @@ export class Deck {
             }
         }
         this.name = newName;
+        
+        return this.name;
     };
 
     canModify = function () {
@@ -29,13 +35,13 @@ export class Deck {
         return true;
     };
 
-    add = function (name) {
+    add = function (name: string) {
         if (!this.check(name)) {
             this.cards.push(name);
         }
     };
 
-    remove = function (name) {
+    remove = function (name: string) {
         for (let i = 0; i < this.cards.length; i++) {
             if (this.cards[i] == name) {
                 this.cards.splice(i, 1);
@@ -43,7 +49,7 @@ export class Deck {
         }
     };
 
-    check = function (name) {
+    check = (name: string) => {
         for (const card of this.cards) {
             if (card == name) {
                 return true;

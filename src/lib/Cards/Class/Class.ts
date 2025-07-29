@@ -4,18 +4,23 @@ import { Elements } from "./Element";
 import { Cout } from "./Cost";
 import { copy } from "../../Utils";
 import { Families } from "./Family";
+import type { System } from "../../System/Class";
+import type Entity from "../../Game/Entity.svelte";
 
 export class Card {
-    name = "Carte";
-    cout = [];
-    vente = [];
-    familles = new Families(this);
-    traits = [];
-    stats = [];
+    name: string = "Carte";
+    cout: Cout[] = [];
+    vente: Cout[] = [];
+    level: number = 0;
+    type: string = "Carte";
+    familles: Families = new Families(this);
+    traits: Trait[] = [];
+    stats: Stat[] = [];
+    elements: Elements = new Elements(this);
+    system: System;
+    locked: boolean = false;
 
-    locked = false;
-
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
 
         this.addTrait("Légendaire", false);
@@ -26,11 +31,9 @@ export class Card {
         this.stat("Perpétuité").current = 0;
 
         for (const ressource of system.ressources.list) {
-            this.cout.push(new Cout(ressource.name, 0, this));
-            this.vente.push(new Cout(ressource.name, 0, this));
+            this.cout.push(new Cout(ressource.name, this));
+            this.vente.push(new Cout(ressource.name, this));
         }
-
-        this.elements = new Elements(this);
     };
 
     init = function (array) {
@@ -46,8 +49,8 @@ export class Card {
             this.elements.base.push("Neutre");
         }
 
-        if (this.level == undefined) {
-            this.level = parseInt((total - 1) / 10) + 1;
+        if (this.level == 0) {
+            this.level = Math.floor((total - 1) / 10) + 1;
             if (this.level > 20) {
                 this.level = 20;
             }
@@ -55,15 +58,15 @@ export class Card {
 
         let total_vente = 0;
         for (const element of array) {
-            this.getVente(element[0]).base += parseInt(element[1] / 2);
-            total_vente += parseInt(element[1] / 2);
+            this.getVente(element[0]).base += Math.floor(element[1] / 2);
+            total_vente += Math.floor(element[1] / 2);
         }
         if (total_vente * 2 + 1 < total) {
             this.getVente("Or").base++;
         }
     };
 
-    getCout = function (name) {
+    getCout = function (name: string) {
         for (const c of this.cout) {
             if (c.name == name) {
                 return c;
@@ -72,7 +75,7 @@ export class Card {
         return undefined;
     };
 
-    getVente = function (name) {
+    getVente = function (name: string) {
         for (const v of this.vente) {
             if (v.name == name) {
                 return v;
@@ -89,7 +92,7 @@ export class Card {
         return total;
     };
 
-    coutReduce = function (value) {
+    coutReduce = function (value: number) {
         let best = this.getCout("Or");
         for (const cout of this.cout) {
             if (cout.value() > best.value()) {
@@ -131,7 +134,7 @@ export class Card {
 
     };
 
-    add = function (zone, entity = this.owner) {
+    add = function (zone, entity: Entity = this.owner) {
         if (!entity.zone(zone).isFull()) {
             this.owner = entity;
             this.zone = entity.zone(zone);
@@ -163,7 +166,7 @@ export class Card {
 
     };
 
-    move = function (zone, entity = this.owner) {
+    move = function (zone, entity: Entity = this.owner) {
         this.remove();
         this.add(zone, entity);
     };
@@ -210,7 +213,7 @@ export class Card {
         }
     };
 
-    lock = function (state) {
+    lock = function (state: boolean) {
         this.locked = state;
     };
 
@@ -286,7 +289,7 @@ export class Card {
         return "...";
     };
 
-    stat = function (name) {
+    stat = function (name: string) {
         for (const s of this.stats) {
             if (name == s.name) {
                 return s;
@@ -294,7 +297,7 @@ export class Card {
         }
     };
 
-    addStat = function (name, value, min = 0) {
+    addStat = function (name: string, value: number, min: number = 0) {
         this.stats.push(new Stat(name, value, min, this));
     };
 
@@ -307,7 +310,7 @@ export class Card {
         return false;
     };
 
-    trait = function (name) {
+    trait = function (name: string) {
         for (const t of this.traits) {
             if (name == t.name) {
                 return t;
@@ -315,7 +318,7 @@ export class Card {
         }
     };
 
-    addTrait = function (name, value) {
+    addTrait = function (name: string, value: boolean) {
         this.traits.push(new Trait(name, value, this));
     };
 
@@ -335,7 +338,7 @@ export class Card {
         return false;
     };
 
-    transform = function (name) {
+    transform = function (name: string) {
         let newCard = this.system.cards.getByName(name);
         this.zone.cards[this.slot] = newCard;
 
@@ -363,12 +366,12 @@ export class Card {
         }
     };
 
-    targeting = function (target) {
+    targeting = function (target: Card) {
         target.targetEffect(this);
         return true;
     };
 
-    targetEffect = function (card) {
+    targetEffect = function (card: Card) {
 
     };
 };

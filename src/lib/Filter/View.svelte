@@ -1,18 +1,19 @@
-<script>
+<script lang="ts">
+	import type { System } from "../System/Class";
 	import Dropdown from "../Utils/Dropdown.svelte";
 
-	export let system;
-	export let nameSelect;
-	export let levelSelect;
-	export let typeSelect;
-	export let familleSelect;
-	export let elementSelect;
-	export let rarity = true;
-	export let communSelect = false;
-	export let rareSelect = false;
-	export let legendarySelect = false;
-	export let sorting;
-	export let close;
+	export let system: System;
+	export let nameSelect: string;
+	export let levelSelect: string;
+	export let typeSelect: string;
+	export let familleSelect: string;
+	export let elementSelect: string;
+	export let rarity: boolean = true;
+	export let communSelect: boolean = false;
+	export let rareSelect: boolean = false;
+	export let legendarySelect: boolean = false;
+	export let sorting: Function;
+	export let close: Function;
 </script>
 
 <div class="window">
@@ -27,7 +28,11 @@
 			<div class="container">
 				Nom
 				<div>
-					<input type="text" placeholder={'Exemple: "Dragon"'} bind:value={nameSelect} />
+					<input
+						type="text"
+						placeholder={'Exemple: "Dragon"'}
+						bind:value={nameSelect}
+					/>
 				</div>
 			</div>
 			<div class="container">
@@ -36,7 +41,7 @@
 					<Dropdown
 						array={system.sort.levels}
 						selected={levelSelect}
-						selecting={function (element) {
+						selecting={function (element: string) {
 							levelSelect = element;
 						}}
 					/>
@@ -48,7 +53,7 @@
 					<Dropdown
 						array={system.sort.types}
 						selected={typeSelect}
-						selecting={function (element) {
+						selecting={function (element: string) {
 							typeSelect = element;
 						}}
 					/>
@@ -60,7 +65,7 @@
 					<Dropdown
 						array={system.sort.familles}
 						selected={familleSelect}
-						selecting={function (element) {
+						selecting={function (element: string) {
 							familleSelect = element;
 						}}
 					/>
@@ -72,7 +77,7 @@
 					<Dropdown
 						array={system.sort.elements}
 						selected={elementSelect}
-						selecting={function (element) {
+						selecting={function (element: string) {
 							elementSelect = element;
 						}}
 					/>

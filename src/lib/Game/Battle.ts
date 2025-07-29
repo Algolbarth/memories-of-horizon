@@ -1,10 +1,13 @@
+import type { Creature } from "../Cards/Data/Creatures/Creature";
+import type { System } from "../System/Class";
 import { copy } from "../Utils";
 
 export class Battle {
-    fighter = undefined;
+    fighter: Creature | undefined = undefined;
     auto = null;
+    system: System;
 
-    constructor(system) {
+    constructor(system:System) {
         this.system = system;
     }
 

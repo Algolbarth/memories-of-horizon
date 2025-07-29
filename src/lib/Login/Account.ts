@@ -1,8 +1,12 @@
-export class Account {
-    aventure = new Gamemode();
-    construct = new Gamemode();
+import type { System } from "../System/Class";
 
-    constructor(system, name) {
+export class Account {
+    name: string;
+    aventure: Gamemode = new Gamemode();
+    construct: Gamemode = new Gamemode();
+    system: System;
+
+    constructor(system: System, name: string) {
         this.system = system;
         this.name = name;
     };
@@ -21,8 +25,8 @@ export class Account {
 }
 
 class Gamemode {
-    victory = 0;
-    defeat = 0;
+    victory: number = 0;
+    defeat: number = 0;
 
     total() {
         return this.victory + this.defeat;

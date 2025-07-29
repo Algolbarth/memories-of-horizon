@@ -10,6 +10,7 @@ import type { Story } from "../Stories/Story";
 import type { Game } from "../Game/Game";
 import type { Card } from "../Cards/Class";
 import type { Chapter } from "../Chapters/Chapter";
+import type { Account } from "../Login/Account";
 
 export class System {
     page: string = "BlackScreen";
@@ -25,6 +26,7 @@ export class System {
     cards: Cards = new Cards(this);
     chapters: Chapters = new Chapters(this);
     bosses: Bosses = new Bosses(this);
+    account: Account | undefined;
 
     constructor() {
         for (const element of this.ressources.list) {
@@ -193,8 +195,8 @@ class Bosses {
 };
 
 class View {
-    quick = undefined;
-    card = undefined;
+    quick: Deck | Card | undefined = undefined;
+    card: Deck | Card | undefined = undefined;
 
     reset() {
         this.quick = undefined;
@@ -203,14 +205,14 @@ class View {
 };
 
 class Sort {
-    levels: (string | number)[] = ["Tous"];
+    levels: string[] = ["Tous"];
     types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
     familles: string[] = ["Toutes"];
     elements: string[] = ["Tous"];
 
     constructor() {
         for (let i = 0; i < 20; i++) {
-            this.levels.push(i + 1);
+            this.levels.push("" + (i + 1));
         }
     };
 };

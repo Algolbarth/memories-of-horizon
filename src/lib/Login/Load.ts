@@ -1,10 +1,11 @@
 import { Account } from "./Account";
 import { Deck } from "../Decks/Deck";
+import type { System } from "../System/Class";
 
-let step;
-let save;
+let step: number;
+let save: string;
 
-export async function load(files, system) {
+export async function load(files: FileList, system: System) {
     if (files != undefined) {
         save = await files[0].text();
         step = 0;
@@ -24,7 +25,7 @@ export async function load(files, system) {
         system.settings.autoplay = readBool();
         system.settings.auto_speed = readInt();
 
-        let number_decks = readInt();
+        let number_decks: number = readInt();
         for (let i = 0; i < number_decks; i++) {
             let deck = new Deck(system);
             deck.changeName(readValue(), 0);
@@ -42,9 +43,9 @@ export async function load(files, system) {
 
         system.page = "Menu";
 
-        return System;
+        return system;
     }
-}
+};
 
 function readValue() {
     let value = '';
@@ -54,21 +55,17 @@ function readValue() {
     }
     step++;
 
-    if (value != 'undefined') {
-        return value;
-    } else {
-        return undefined;
-    }
-}
+    return value;
+};
 
 function readInt() {
     let value = readValue();
     if (value != undefined) {
         return parseInt(value);
     } else {
-        return undefined;
+        return 0;
     }
-}
+};
 
 function readBool() {
     let value = readValue();
@@ -77,4 +74,7 @@ function readBool() {
     } else if (value == 'false') {
         return false;
     }
-}
+    else {
+        return true;
+    }
+};

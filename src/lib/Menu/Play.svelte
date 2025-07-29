@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import { Game } from "../Game/Game";
+	import type { System } from "../System/Class";
 
-	export let system;
+	export let system: System;
 
 	function aventure() {
 		system.game = new Game(system, "Aventure");

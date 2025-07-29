@@ -2,26 +2,19 @@ import { Entity } from './Entity';
 import { Chapter } from '../Chapters/Chapter';
 import { Battle } from './Battle';
 import { copy } from '../Utils';
+import type { Deck } from '../Decks/Deck';
+import type { System } from '../System/Class';
+import type { Card } from '../Cards/Class';
 
 export class Game extends Battle {
-    use = {
-        card: undefined,
-        svelte: undefined,
-        set: function (card, svelte) {
-            this.card = card;
-            this.svelte = svelte;
-        },
-        reset: function () {
-            this.card = undefined;
-            this.svelte = undefined;
-        }
-    };
-    flux = false;
-    pause = false;
-    phase = "Préparation";
-    deck = undefined;
+    use: Use = new Use();
+    flux: boolean = false;
+    pause: boolean = false;
+    phase: string = "Préparation";
+    deck: Deck | undefined = undefined;
+    mode: string;
 
-    constructor(system, mode) {
+    constructor(system: System, mode: string) {
         super(system);
 
         this.mode = mode;
@@ -140,11 +133,13 @@ export class Game extends Battle {
 
         if (this.mode != "Entraînement") {
             let step = this.chapter.steps[this.player.step - 1];
-            if (step.dialog < step.dialogs.length) {
+            if (!step.read && step.dialog < step.dialogs.length) {
                 this.system.page = "Dialog";
+                console.log("on est d'accord ?")
             }
             else {
                 this.system.page = "Game";
+                step.read = true;
             }
         }
         else {
@@ -220,4 +215,19 @@ export class Game extends Battle {
         this.deck.defeat++;
         this.system.page = "GameOver";
     };
-}
+};
+
+class Use {
+    card = undefined;
+    svelte = undefined;
+
+    set = function (card: Card, svelte: __sveltets_2_IsomorphicComponent) {
+        this.card = card;
+        this.svelte = svelte;
+    };
+
+    reset = function () {
+        this.card = undefined;
+        this.svelte = undefined;
+    };
+};

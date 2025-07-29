@@ -1,7 +1,10 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { Story } from "../Stories/Story";
+	import type { System } from "../System/Class";
 
-	let story = undefined;
+	export let system: System;
+
+	let story: undefined | Story = undefined;
 </script>
 
 <button

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BlackScreen from "../Login/BlackScreen.svelte";
 	import TitleScreen from "../Login/TitleScreen.svelte";
 	import Login from "../Login/Login.svelte";
@@ -19,8 +19,9 @@
 	import Decks from "../Decks/List.svelte";
 	import Deck from "../Decks/Deck.svelte";
 	import Add from "../Decks/Add.svelte";
+	import type { System } from "../System/Class";
 
-	export let system;
+	export let system: System;
 </script>
 
 {#if system.page == "BlackScreen"}

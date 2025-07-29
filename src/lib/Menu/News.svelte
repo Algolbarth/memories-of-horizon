@@ -1,5 +1,7 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { System } from "../System/Class";
+
+	export let system: System;
 </script>
 
 <button

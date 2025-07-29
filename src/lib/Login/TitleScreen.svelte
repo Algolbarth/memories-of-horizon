@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
+	import type { System } from "../System/Class";
 	import { Account } from "./Account";
 
-	export let system;
+	export let system: System;
 
 	function invite() {
 		system.account = new Account(system, "Invité");

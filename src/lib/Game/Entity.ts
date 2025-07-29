@@ -1,10 +1,14 @@
+import type { Card } from "../Cards/Class";
+import type { System } from "../System/Class";
 import { copy } from "../Utils";
+import { Shop } from "./Shop";
+import { Zone } from "./Zone";
 
 export class Entity {
     life = {
         current: 0,
         max: 0,
-        set: function (value) {
+        set: function (value: number) {
             this.current = value;
             this.max = value;
         }
@@ -18,8 +22,9 @@ export class Entity {
     ];
     ressources = [];
     place = undefined;
+    system: System;
 
-    constructor(system) {
+    constructor(system: System) {
         this.system = system;
         this.setRessources();
     };
@@ -40,7 +45,7 @@ export class Entity {
                 total: function () {
                     return this.current + this.stock;
                 },
-                spend: function (value) {
+                spend: function (value: number) {
                     if (value < this.current) {
                         this.current -= value;
                         value = 0;
@@ -60,7 +65,7 @@ export class Entity {
         }
     };
 
-    zone = function (name) {
+    zone = function (name: string) {
         for (const z of this.zones) {
             if (z.name == name) {
                 return z;
@@ -68,7 +73,7 @@ export class Entity {
         }
     };
 
-    ressource = function (name) {
+    ressource = function (name: string) {
         for (const z of this.ressources) {
             if (z.name == name) {
                 return z;
@@ -76,7 +81,7 @@ export class Entity {
         }
     };
 
-    getCard = function (name) {
+    getCard = function (name: string) {
         let card = this.system.cards.getByName(name);
         card.owner = this;
         if (this == this.system.game.player) {
@@ -88,7 +93,7 @@ export class Entity {
         return card;
     };
 
-    cardList = function (condition = undefined, drawer) {
+    cardList = function (condition: (Function | undefined) = undefined, drawer: Card) {
         let nameList = [];
         if (this.system.game.deck == undefined) {
             for (const card of this.system.cards.instance) {
@@ -108,12 +113,12 @@ export class Entity {
         return nameList;
     };
 
-    draw = function (number, condition, drawer, array = []) {
+    draw = function (number: number, condition: Function, drawer: Card, array: Card[] = []) {
         let nameList = this.cardList(condition, drawer);
         let card = undefined;
 
         if (nameList.length > 0) {
-            card = this.getCard(nameList[parseInt(Math.random() * nameList.length)]);
+            card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
             card.add("Boutique");
         }
 
@@ -125,7 +130,7 @@ export class Entity {
         return array;
     };
 
-    discover = function (number, condition, drawer, array = []) {
+    discover = function (number: number, condition: Function, drawer: Card, array: Card[] = []) {
         let nameList = this.cardList(condition, drawer);
         let card = undefined;
 
@@ -136,7 +141,7 @@ export class Entity {
         }
 
         if (nameList.length > 0) {
-            card = this.getCard(nameList[parseInt(Math.random() * nameList.length)]);
+            card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
             card.add("Boutique");
         }
 
@@ -246,26 +251,5 @@ export class Entity {
             total += card.stat("Intelligence").value();
         }
         return total;
-    };
-}
-
-class Zone {
-    cards = [];
-
-    constructor(name, size = undefined) {
-        this.name = name;
-        this.size = size;
-    };
-
-    isFull = function () {
-        return this.cards.length == this.size;
-    };
-}
-
-class Shop extends Zone {
-    level = 1;
-
-    constructor() {
-        super("Boutique", 10);
     };
 }

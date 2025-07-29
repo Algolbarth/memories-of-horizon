@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
+	import type { System } from "../System/Class";
 	import { load } from "./Load";
 
-	export let system;
+	export let system: System;
 
-	let files;
+	let files : FileList | null | undefined;
 
 	async function login() {
 		let log = await load(files, system);

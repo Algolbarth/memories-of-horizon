@@ -31,6 +31,7 @@ export class Chapter {
             cards: cards,
             dialogs: dialogs,
             dialog: 0,
+            read: false
         });
     };
 
@@ -79,7 +80,7 @@ export class Chapter {
             while (total > array[level - 1] && level < 20) {
                 level++;
             }
-            
+
             return level;
         }
         else {
