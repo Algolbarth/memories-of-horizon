@@ -1,6 +1,8 @@
 <script lang="ts">
+    import type { System } from "../System/Class";
 	import type { Train_Entity } from "./Train";
 
+	export let system: System;
 	export let entity: Train_Entity;
 
 	let life: number = entity.life;
@@ -8,7 +10,7 @@
 	let flux: number = entity.flux;
 </script>
 
-<div class="zone">
+<div class={"zone " + (entity == system.train.player ? "left" : "right")} >
 	<div class="container">
 		<div>Vie :</div>
 		<div>
@@ -64,10 +66,15 @@
 
 <style>
 	.zone {
-		background-color: var(--zone);
-		border: solid;
-		margin: 1%;
-		padding: 1%;
+		margin-bottom: 1%;
+	}
+
+	.left {
+		margin-right: 1%;
+	}
+
+	.right {
+		margin-left: 1%;
 	}
 
 	.container {

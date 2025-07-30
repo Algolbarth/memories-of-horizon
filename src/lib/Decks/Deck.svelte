@@ -82,6 +82,7 @@
 </button>
 
 <br />
+<br />
 
 {#if system.deck != undefined}
 	<div id="head" class="zone">
@@ -244,11 +245,8 @@
 	}
 
 	.zone {
-		background-color: var(--zone);
-		border: solid;
-		margin: 1%;
-		padding: 1%;
 		width: 50vw;
+		margin-bottom: 1%;
 	}
 
 	#list {

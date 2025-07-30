@@ -10,10 +10,11 @@
 	export let entity: Entity;
 	export let condition: Function | undefined;
 	export let fonction: Function | undefined;
+	export let direction: string = "left";
 </script>
 
 {#if system.game}
-	<div id="body">
+	<div class={"zone " + direction}>
 		{zone.name}
 		{#if zone instanceof Shop}
 			Nv {zone.level}
@@ -77,10 +78,15 @@
 {/if}
 
 <style>
-	#body {
-		background-color: var(--zone);
-		border: solid;
-		margin: 1%;
-		padding: 1%;
+	.zone {
+		margin-bottom: 1%;
+	}
+
+	.left {
+		margin-right: 1%;
+	}
+
+	.right {
+		margin-left: 1%;
 	}
 </style>

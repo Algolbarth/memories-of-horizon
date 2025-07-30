@@ -14,6 +14,7 @@
 			zone={system.game.player.zone(zone)}
 			condition={undefined}
 			fonction={undefined}
+			direction={"left"}
 		/>
 		<div style="text-align:right;">
 			<Zone
@@ -22,6 +23,7 @@
 				zone={system.game.bot.zone(zone)}
 				condition={undefined}
 				fonction={undefined}
+				direction={"right"}
 			/>
 		</div>
 	</div>

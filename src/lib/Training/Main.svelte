@@ -35,10 +35,12 @@
 	</div>
 </div>
 
+<br />
+
 <div id="body" class="scroll">
 	<div class="bi-zone">
-		<Entity bind:entity={system.train.player} />
-		<Entity bind:entity={system.train.bot} />
+		<Entity bind:system bind:entity={system.train.player} />
+		<Entity bind:system bind:entity={system.train.bot} />
 	</div>
 	{#each system.train.bot.zones as zone, i}
 		<div class="bi-zone">

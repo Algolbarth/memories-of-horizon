@@ -9,7 +9,7 @@
 		}
 	}
 
-	let delay = system.settings.auto_speed / 500;
+	let delay = 5 - system.settings.auto_speed / 500;
 </script>
 
 <button
@@ -24,64 +24,66 @@
 <br />
 <br />
 
-<div class="slidecontainer">
-	<label for="volume"> Musique </label>
-	<input
-		type="range"
-		min="0"
-		max="100"
-		bind:value={system.music.volume}
-		on:change={() => {
-			system.music.current.volume = system.music.volume / 100;
-		}}
-		id="volume"
-	/>
-	<label for="volume" style="text-align:center;">
-		{system.music.volume}%
-	</label>
-</div>
-
-<br />
-
-<div class="checkbox-container">
-	<label class="form-control" for="show_intelligence">
-		<input
-			type="checkbox"
-			bind:checked={system.settings.show_intelligence}
-			id="show_intelligence"
-		/>
-		Afficher l'intelligence totale
-	</label>
-
-	<label class="form-control" for="autoplay">
-		<input
-			type="checkbox"
-			bind:checked={system.settings.autoplay}
-			id="autoplay"
-		/>
-		Lance les combats automatiques
-	</label>
-</div>
-
-<br />
-
-<div class="slidecontainer">
-	<label for="delay"> Vitesse des combats automatiques </label>
-	<div>
+<div class="zone">
+	<div class="slidecontainer">
+		<label for="volume"> Musique </label>
 		<input
 			type="range"
-			min="1"
-			max="4"
-			bind:value={delay}
+			min="0"
+			max="100"
+			bind:value={system.music.volume}
 			on:change={() => {
-				system.settings.auto_speed = (5 - delay) * 500;
+				system.music.current.volume = system.music.volume / 100;
 			}}
-			id="delay"
+			id="volume"
 		/>
+		<label for="volume" style="text-align:center;">
+			{system.music.volume}%
+		</label>
 	</div>
-	<label for="delay" style="text-align:center;">
-		{(5 - delay) / 2}s par action
-	</label>
+
+	<br />
+
+	<div class="checkbox-container">
+		<label class="form-control" for="show_intelligence">
+			<input
+				type="checkbox"
+				bind:checked={system.settings.show_intelligence}
+				id="show_intelligence"
+			/>
+			Afficher l'intelligence totale
+		</label>
+
+		<label class="form-control" for="autoplay">
+			<input
+				type="checkbox"
+				bind:checked={system.settings.autoplay}
+				id="autoplay"
+			/>
+			Lance les combats automatiques
+		</label>
+	</div>
+
+	<br />
+
+	<div class="slidecontainer">
+		<label for="delay"> Vitesse des combats automatiques </label>
+		<div>
+			<input
+				type="range"
+				min="1"
+				max="4"
+				bind:value={delay}
+				on:change={() => {
+					system.settings.auto_speed = (5 - delay) * 500;
+				}}
+				id="delay"
+			/>
+		</div>
+		<label for="delay" style="text-align:center;">
+			{(5 - delay) / 2}s par action
+		</label>
+	</div>
 </div>
 
 <style>

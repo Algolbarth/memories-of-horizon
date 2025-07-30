@@ -92,64 +92,69 @@
 
 {#if zone != undefined}
 	{filter()}
-	<div id="body">
-		<button
-			class="close"
-			on:click={() => {
-				closing();
-			}}
-		>
-			X
-		</button>
-
-		<div id="side">
-			{zone.name}
-			-
-			{#if zone.name != "Défausse"}
-				({zone.cards.length} / {zone.size}) -
-			{/if}
-			{several(cardList.length, "carte")}
-			-
+	<div class="window">
+		<div class="body">
 			<button
+				class="close"
 				on:click={() => {
-					filterWindow = true;
+					closing();
 				}}
 			>
-				Filtrer
+				X
 			</button>
 
-			<div id="list" class="scroll">
-				{#each cardList as card}
-					<div class="preview">
-						<div>
-							<button
-								on:click={() => {
-									system.view.card = card;
-								}}
-								on:mouseenter={() => {
-									system.view.quick = card;
-								}}
-								on:mouseleave={() => {
-									system.view.quick = undefined;
-								}}
-							>
-								{card.name}
-							</button>
-						</div>
-						<div style="text-align:right;">
-							{#if zone.size != undefined && zone.size > zone.cards.length}
+			<br />
+			<br />
+
+			<div id="side">
+				{zone.name}
+				-
+				{#if zone.name != "Défausse"}
+					({zone.cards.length} / {zone.size}) -
+				{/if}
+				{several(cardList.length, "carte")}
+				-
+				<button
+					on:click={() => {
+						filterWindow = true;
+					}}
+				>
+					Filtrer
+				</button>
+
+				<div id="list" class="scroll">
+					{#each cardList as card}
+						<div class="preview">
+							<div>
 								<button
 									on:click={() => {
-										zone.cards.push(card.name);
-										system = system;
+										system.view.card = card;
+									}}
+									on:mouseenter={() => {
+										system.view.quick = card;
+									}}
+									on:mouseleave={() => {
+										system.view.quick = undefined;
 									}}
 								>
-									Ajouter
+									{card.name}
 								</button>
-							{/if}
+							</div>
+							<div style="text-align:right;">
+								{#if zone.size != undefined && zone.size > zone.cards.length}
+									<button
+										on:click={() => {
+											zone.cards.push(card.name);
+											system = system;
+										}}
+									>
+										Ajouter
+									</button>
+								{/if}
+							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -194,7 +199,7 @@
 	}
 
 	#list {
-		max-height: 85vh;
+		max-height: 80vh;
 	}
 
 	.preview {

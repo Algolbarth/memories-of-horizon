@@ -25,32 +25,46 @@
 <br />
 
 {#if system.account}
-	<input type="text" bind:value={name} />
-	{#if name != system.account.name}
-		<button on:click={rename}> Renommer </button>
-	{/if}
+	<div class="zone">
+		<input type="text" bind:value={name} />
+		{#if name != system.account.name}
+			<button on:click={rename}> Renommer </button>
+		{/if}
 
-	<br /><br />
+		<br />
+		<br />
 
-	Total des parties : {system.account.total_match()}
-	<br />
-	Victoires : {system.account.total_victory()}
-	<br />
-	Défaites : {system.account.total_defeat()}
+		<div class="container">
+			<div>
+				Total des parties : {system.account.total_match()}
+				<br />
+				Victoires : {system.account.total_victory()}
+				<br />
+				Défaites : {system.account.total_defeat()}
+			</div>
 
-	<br /><br />
+			<div>
+				Mode aventure : {system.account.aventure.total()}
+				<br />
+				Victoires : {system.account.aventure.victory}
+				<br />
+				Défaites : {system.account.aventure.defeat}
+			</div>
 
-	Mode aventure : {system.account.aventure.total()}
-	<br />
-	Victoires : {system.account.aventure.victory}
-	<br />
-	Défaites : {system.account.aventure.defeat}
-
-	<br /><br />
-
-	Mode construit : {system.account.construct.total()}
-	<br />
-	Victoires : {system.account.construct.victory}
-	<br />
-	Défaites : {system.account.construct.defeat}
+			<div>
+				Mode construit : {system.account.construct.total()}
+				<br />
+				Victoires : {system.account.construct.victory}
+				<br />
+				Défaites : {system.account.construct.defeat}
+			</div>
+		</div>
+	</div>
 {/if}
+
+<style>
+	div.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+</style>

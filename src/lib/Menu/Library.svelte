@@ -105,6 +105,9 @@
 	X
 </button>
 
+<br />
+<br />
+
 <div id="zone">
 	<div style="display:flex;margin-bottom:2%;">
 		<div style="transform:translate(0,25%);margin-right:1%;">
@@ -173,7 +176,6 @@
 	#zone {
 		background-color: var(--zone);
 		border: solid;
-		margin: 1%;
 		padding: 1%;
 		width: 50vw;
 	}

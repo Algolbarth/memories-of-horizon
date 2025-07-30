@@ -130,10 +130,10 @@
 	<div id="container" class="scroll">
 		<div class="zone">
 			<div>
-				<Entity bind:system bind:entity={system.game.player} />
+				<Entity bind:system bind:entity={system.game.player} direction={"left"} />
 			</div>
 			<div style="text-align:right;">
-				<Entity bind:system bind:entity={system.game.bot} />
+				<Entity bind:system bind:entity={system.game.bot} direction={"right"} />
 			</div>
 		</div>
 

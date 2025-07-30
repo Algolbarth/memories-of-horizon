@@ -6,11 +6,11 @@
 	export let zone: Train_Zone;
 	export let entity: string;
 
-	let level:number = zone.level!;
-	let size:number = zone.size!;
+	let level: number = zone.level!;
+	let size: number = zone.size!;
 </script>
 
-<div class="zone">
+<div class={"zone " + (entity == "player" ? "left" : "right")}>
 	{zone.name}
 	{#if zone.name == "Boutique"}
 		Nv
@@ -125,10 +125,15 @@
 
 <style>
 	.zone {
-		background-color: var(--zone);
-		border: solid;
-		margin: 1%;
-		padding: 1%;
+		margin-bottom: 1%;
+	}
+
+	.left {
+		margin-right: 1%;
+	}
+
+	.right {
+		margin-left: 1%;
 	}
 
 	.preview {

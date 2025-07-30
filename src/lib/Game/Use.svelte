@@ -12,36 +12,28 @@
 </script>
 
 {#if system.game && system.game.use.card}
-	<div id="body">
-		<button
-			class="close"
-			on:click={() => {
-				close();
-			}}
-		>
-			X
-		</button>
+	<div class="window">
+		<div class="body">
+			<button
+				class="close"
+				on:click={() => {
+					close();
+				}}
+			>
+				X
+			</button>
 
-		<br />
-		<br />
+			<br />
+			<br />
 
-		<div id="side">
-			<svelte:component this={system.game.use.svelte} bind:system />
+			<div id="side">
+				<svelte:component this={system.game.use.svelte} bind:system />
+			</div>
 		</div>
 	</div>
 {/if}
 
 <style>
-	#body {
-		position: fixed;
-		background: var(--background);
-		top: 0%;
-		left: 0%;
-		width: 100%;
-		height: 100%;
-		padding: 1%;
-	}
-
 	#side {
 		width: 50%;
 	}

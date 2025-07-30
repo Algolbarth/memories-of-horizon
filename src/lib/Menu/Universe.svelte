@@ -75,7 +75,6 @@
 	#zone {
 		background-color: var(--zone);
 		border: solid;
-		margin: 1%;
 		padding: 1%;
 		width: 50vw;
 	}
