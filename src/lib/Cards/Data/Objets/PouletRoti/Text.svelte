@@ -4,4 +4,4 @@
 </script>
 
 Soigne 10 blessures à une créature alliée sur le terrain. Si cette créature
-n'est pas blessée, augmente de 10 son attaque.
+n'est pas blessée, augmente de 10 son attaque à la place.

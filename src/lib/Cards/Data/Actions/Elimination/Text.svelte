@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Détruis une créature adverse sur le terrain.
+Détruit une créature adverse sur le terrain.

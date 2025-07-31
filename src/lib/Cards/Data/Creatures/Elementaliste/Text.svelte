@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Quand posé : pioche 1 carte de famille Élémentaire et réduis le coût de cette carte de 10.
+Quand posé : pioche 1 carte de famille Élémentaire et réduit le coût de cette carte de 10.

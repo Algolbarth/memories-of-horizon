@@ -41,6 +41,7 @@ export * from './ElementaireDeCaillou';
 export * from './ElementaireDeFeu';
 export * from './ElementaireDeRoche';
 export * from './ElementaireDeTerre';
+export * from './ElementaireDesEboulis';
 export * from './ElementaireDesHerbes';
 export * from './ElementaireDesRacines';
 export * from './ElementaireExplosif';

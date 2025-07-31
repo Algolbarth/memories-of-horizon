@@ -6,7 +6,10 @@
 	let choice = undefined;
 
 	function condition(card) {
-		return true;
+		if (card.type == "Créature") {
+			return true;
+		}
+		return false;
 	}
 
 	function fonction(card) {
@@ -34,7 +37,8 @@
 				choice = "damage";
 			}}
 		>
-			Se détruit pour infliger 3 dégâts à une unité adverse sur le terrain
+			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature
+			adverse sur le terrain
 		</button>
 	</div>
 {:else}

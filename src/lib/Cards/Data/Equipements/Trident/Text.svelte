@@ -6,4 +6,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Si la créature équipée détruis une unité au combat : stocke 5 eau.
+Si la créature équipée détruit une unité au combat : stocke 5 eau.

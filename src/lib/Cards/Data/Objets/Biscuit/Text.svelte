@@ -7,4 +7,4 @@
 
 Soigne 25 blessures à une créature alliée sur le terrain. Si cette créature
 n'est pas blessée, crée un <CardInfo bind:system name={"Bonhomme biscuit"} /> sur
-le terrain.
+le terrain à la place.

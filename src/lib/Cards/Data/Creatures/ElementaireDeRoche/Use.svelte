@@ -25,6 +25,6 @@
 			fonction("Effet");
 		}}
 	>
-		Se détruis pour infliger 5 dégâts à toutes les unités adverses
+		Se détruit pour infliger 5 dégâts à toutes les unités adverses
 	</button>
 </div>

@@ -31,7 +31,7 @@ Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'inte
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
 ### Voleur
-Homme d'affaire : produis 5 or quand vend une carte. \
+Homme d'affaire : produit 5 or quand vend une carte. \
 Banque : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
@@ -57,7 +57,7 @@ Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 ### Potion
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
-Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
+Mélange : action, détruit deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. \
 Alambic : objet, créé mélange à partir des potions de la boutique.
 
@@ -74,7 +74,7 @@ Célébrité : créature humain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
 Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
-Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
+Avarice : détruit une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque. \
 Lignes de ley : bâtiment, quand une créature de famille Elementaire alliée est posée : augmente la capacité de chaque élément de cette créature. \
@@ -98,14 +98,14 @@ Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
-Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle. \
+Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle. \
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée. \
 Mur de haie : créature plante. 0 atk inactif \
 Rose : créature plante, 0 atk inactif, épine, quand se fait attaquer : applique poison à la créature attaquante. \
 Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain. \
 Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain. \
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain. \
-Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduis son cout. \
+Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout. \
 Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la main. \
 Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain. \
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération. \
@@ -181,7 +181,7 @@ Cimetière : lieu pour les cartes d'élément Mort.
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
 Mini automate : créature machine. \
 Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain. \
-Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son coût de 10 or. \
+Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or. \
 Automate : créature machine, maniement 1. \
 Automate armé : créature machine, maniement 4. \
 Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain. \
@@ -261,7 +261,7 @@ Plage : lieu pour les cartes d'élément Eau et Feu.
 Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu. \
 Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.\
 Assassin du désert \
-Ver des sables : quand attaque : détruis la carte dans la main adverse en première position. quand est attaquée : détruis la carte dans la main en première position. \
+Ver des sables : quand attaque : détruit la carte dans la main adverse en première position. quand est attaquée : détruit la carte dans la main en première position. \
 Élémentaire de sable \
 Golem de lave \
 Désert : lieu pour les cartes d'élément Feu et Terre.
@@ -353,7 +353,7 @@ Paradis : lieu pour les cartes d'élément Air et Lumière.
 Armure possédée
 
 ### Lumiere/Ombre
-Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruis une.
+Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruit une.
 
 # Boss
 
@@ -383,7 +383,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Progenitus` : dieu hydre de la régénération, peux régénérer sans effort chaque partie de son corps. Peux également dupliquer ses membres à volonté. \
 `Adama` : déesse phoenix de la résurection, peux revenir à la vie à partir d'une simple cendre laissée par ses ailes. Peux également ressuciter ses propres flammes, créant des feux éternels ou les faisant réapparaitre à n'importe quel moment.
 
-`Ananta` : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant, il a été chargé de récupérer un metal précieux dans la caverne de tragoedia. En s'alliant avec le dragon ils réussissent à obtenir l'acier. En rapportant le butin aux récifs noirs, le néant forge l'acier afin de fabriquer une baguette et un casque. Ananta hérite de la baguette, le recouvrant d'une armure dès qu'il la saisit. Plus le temps passe plus la baguette peux détruire des âmes facilement. Envahit par un sentiment de puissance, d'avidité et perdant en lucidité, les deux suivront les ordres du néant demandant de détruire des îles ou tuer des dieux. En s'interposant dans un combat qui oppose Progenitus et Adama, fâchés de voir leurs semblable smourir alors que leur race est quasi immortelle et qui étaient en train de s'accuser mutuellement, ils feront face à Borealis qui les repoussera sans difficulté. Avide de se venger de lui, ils absorberont plus de puissance offert par le néant mais perdront toute trace de lucidité. Après avoir tué plusieurs dieux, une coallition se formera entre divinité et héros afin de les vaincre. Après qu'un piège ai échoué, il sera décidé de les suivre pour les attaquer aux récifs noirs. Ananta vaincra Sartorias en "duel", ainsi que Gabriela. Nana utilisera ses pouvoirs pour que ananta détruise sa propre âme. \
+`Ananta` : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant, il a été chargé de récupérer un metal précieux dans la caverne de tragoedia. En s'alliant avec le dragon ils réussissent à obtenir l'acier. En rapportant le butin aux récifs noirs, le néant forge l'acier afin de fabriquer une baguette et un casque. Ananta hérite de la baguette, le recouvrant d'une armure dès qu'il la saisit. Plus le temps passe plus la baguette peux détruire des âmes facilement. Envahit par un sentiment de puissance, d'avidité et perdant en lucidité, les deux suivront les ordres du néant demandant de détruire des îles ou tuer des dieux. En s'interposant dans un combat qui oppose Progenitus et Adama, fâchés de voir leurs semblable smourir alors que leur race est quasi immortelle et qui étaient en train de s'accuser mutuellement, ils feront face à Borealis qui les repoussera sans difficulté. Avide de se venger de lui, ils absorberont plus de puissance offert par le néant mais perdront toute trace de lucidité. Après avoir tué plusieurs dieux, une coallition se formera entre divinité et héros afin de les vaincre. Après qu'un piège ai échoué, il sera décidé de les suivre pour les attaquer aux récifs noirs. Ananta vaincra Sartorias en "duel", ainsi que Gabriela. Nana utilisera ses pouvoirs pour que ananta détruite sa propre âme. \
 `Tragoedia` : dragon corrompue par le néant. Régnait sur un volcan situé par dessus une faille du néant. Après avoir récupéré l'acier caché sous sa caverne, il a reçu le casque forgé par le néant qui recouvre tragoedia d'une épaisse armure. Plus le temps passe plus l'armure fusionne avec son porteur, devenant une seconde peau impenetrable. Ses flammes deviennent capables de détruire les âmes de n'importe qui. Lors du siège des récifs noirs, tragoedia semble intuable et détruira les flottes armées en s'amusant, ne prenant rien au sérieux. Il incinerera Carole qui tentait de soigner Gidéon. Après que ce dernier face un pacte avec Rakdos, ils attaqueront ensemble pour démolir le monstre et son armure.
 
 ## Saga des gemmes de la guerre
@@ -409,7 +409,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa vie, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros. \
 `Atlanta` : centaure archère chasseuse, soeur d'artéma. veux se venger d'orion qui profite de l'absence de sa soeur pour semer la terreur. le blessera lourdement à l'épaule et  la tribu. \
 `Saphira` : vampire habitant dans les terres du Heaume-Blanc, un fief de paladin. en raison de sa race elle est persecutée et cherche à se défendre de l'ordre quand le héros la trouve. luther découvrira que c'est en réalité une puissante gargouille, quatramanus, qui manipule les paladins en se faisant passer comme un envoyé des anges. perdra contre quatramanus, ce dernier étant en pierre, lé héros s'en chargera. continue à suivre le héros. \
-`Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruis petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir. \
+`Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruit petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir. \
 `Emperina` : wyverne de gammes vivant dans une cité nain, Khaziel. est la descendante des créateurs des gemmes. cherche à stopper l'archonte de Khaziel qui souhaite continuer à creuser alors qu'un golem de lave, gorgotha, y est enfermé. après avoir révélé que gorgotha servait à forger les gemmes grâce à s achaleur, emperina comprends qu'elle peux le controler grâce à ses ancêtres. cependant elle devine aussi que beaucoup de créature ou pouvoir liés aux gemmes se réveillent un peu partout et qu'il faut enquêter sur ces phénomènes. \
 `Raven` : frère de tyri et assassin. \
 `Brian` : barde lâche capable de se changer en coq. connait des chants pour augmenter la chance d'une personne. sera kidnapé par les gobelins pour son talent. le héros sauvera brian et sympathisera avec les gobelins, qui utiliseront le chant de brian pour guérir les maux d'estomac du chef de clan. suivra le héros pour trouver des artefacts à l'aide de sa chance. \

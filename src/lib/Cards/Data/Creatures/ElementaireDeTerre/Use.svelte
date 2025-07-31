@@ -34,7 +34,7 @@
 				choice = "damage";
 			}}
 		>
-			Se détruis pour infliger 30 dégâts à une unité adverse sur le
+			Se détruit pour infliger 30 dégâts à une unité adverse sur le
 			terrain
 		</button>
 	</div>

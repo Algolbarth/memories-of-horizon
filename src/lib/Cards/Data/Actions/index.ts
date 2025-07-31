@@ -19,6 +19,7 @@ export * from './CoupDeBoule';
 export * from './Croissance';
 export * from './Defrichage';
 export * from './Desarmer';
+export * from './Eboulement';
 export * from './Ecrasement';
 export * from './Elimination';
 export * from './Entrainement';

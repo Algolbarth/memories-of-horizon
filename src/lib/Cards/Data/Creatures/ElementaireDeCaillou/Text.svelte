@@ -7,6 +7,6 @@ Quand posé, au choix :
 <ul>
 	<li>Se place sur le terrain.</li>
 	<li>
-		Se détruis pour infliger 3 dégâts à une unité adverse sur le terrain.
+		Se détruit pour infliger 3 dégâts à une unité adverse sur le terrain.
 	</li>
 </ul>
