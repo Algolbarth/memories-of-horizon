@@ -1,4 +1,4 @@
-import { Batiment } from '../Batiment';
+import { Batiment } from '../../../Class/Batiment';
 import Text from './Text.svelte';
 
 export class Charrette extends Batiment {

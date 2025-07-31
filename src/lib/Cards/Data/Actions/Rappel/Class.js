@@ -1,5 +1,5 @@
 import { Unit } from '../../../Class';
-import { Action } from '../Action';
+import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 

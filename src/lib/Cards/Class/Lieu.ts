@@ -1,4 +1,4 @@
-import { Card } from '../../Class/Class';
+import { Card } from './Class';
 
 export class Lieu extends Card {
     type = "Lieu";

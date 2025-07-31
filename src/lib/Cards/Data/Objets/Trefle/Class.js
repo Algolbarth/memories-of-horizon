@@ -1,4 +1,4 @@
-import { Objet } from '../Objet';
+import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 
 export class Trefle extends Objet {

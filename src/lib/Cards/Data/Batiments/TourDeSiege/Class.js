@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Batiment } from '../Batiment';
+import { Batiment } from '../../../Class/Batiment';
 import Text from './Text.svelte';
 
 export class TourDeSiege extends Batiment {

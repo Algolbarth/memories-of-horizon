@@ -1,4 +1,4 @@
-import { Equipment } from '../Equipement';
+import { Equipment } from '../../../Class/Equipement';
 import Text from './Text.svelte';
 
 export class HeaumeDeFer extends Equipment {

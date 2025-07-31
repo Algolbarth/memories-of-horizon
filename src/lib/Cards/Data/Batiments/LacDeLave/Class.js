@@ -1,5 +1,5 @@
 import { Unit } from '../../../Class';
-import { Batiment } from '../Batiment';
+import { Batiment } from '../../../Class/Batiment';
 import Text from './Text.svelte';
 
 export class LacDeLave extends Batiment {

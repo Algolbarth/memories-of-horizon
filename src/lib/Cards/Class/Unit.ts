@@ -1,6 +1,6 @@
 import type { System } from '../../System/Class';
 import { copy } from '../../Utils';
-import type { Creature } from '../Data/Creatures/Creature';
+import type { Creature } from './Creature';
 import { Card } from './Class';
 
 export class Unit extends Card {

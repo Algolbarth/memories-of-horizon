@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Sort } from '../Sort';
+import { Sort } from '../../../Class/Sort';
 import Text from './Text.svelte';
 
 export class PluieDeFeu extends Sort {

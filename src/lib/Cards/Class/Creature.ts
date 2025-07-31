@@ -1,6 +1,6 @@
-import type { System } from '../../../System/Class';
-import { Unit } from '../../Class';
-import type { Equipment } from '../Equipements/Equipement';
+import type { System } from '../../System/Class';
+import { Unit } from '.';
+import type { Equipment } from './Equipement';
 
 export class Creature extends Unit {
     type = "Créature";

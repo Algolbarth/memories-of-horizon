@@ -1,4 +1,4 @@
-import { Action } from '../Action';
+import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
 export class Restockage extends Action {

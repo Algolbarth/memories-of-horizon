@@ -1,4 +1,4 @@
-import { Lieu } from '../Lieu';
+import { Lieu } from '../../../Class/Lieu';
 import Text from './Text.svelte';
 
 export class VilleDesGeants extends Lieu {

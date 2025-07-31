@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { System } from "../../System/Class";
 	import { Card } from "../Class";
-	import { Creature } from "../Data/Creatures/Creature";
-	import { Equipment } from "../Data/Equipements/Equipement";
+	import { Creature } from "../Class/Creature";
+	import { Equipment } from "../Class/Equipement";
 	import Caracteristics from "./Caracteristics.svelte";
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";

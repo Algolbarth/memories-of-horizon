@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Creature } from '../Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Archonte extends Creature {

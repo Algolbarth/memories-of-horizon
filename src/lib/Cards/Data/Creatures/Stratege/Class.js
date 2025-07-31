@@ -1,4 +1,4 @@
-import { Creature } from '../Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Stratège extends Creature {

@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Creature } from '../Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 

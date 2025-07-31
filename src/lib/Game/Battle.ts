@@ -1,4 +1,4 @@
-import type { Creature } from "../Cards/Data/Creatures/Creature";
+import type { Creature } from "../Cards/Class/Creature";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
 

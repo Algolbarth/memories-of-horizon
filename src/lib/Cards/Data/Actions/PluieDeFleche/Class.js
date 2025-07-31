@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Action } from '../Action';
+import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
 export class PluieDeFleche extends Action {

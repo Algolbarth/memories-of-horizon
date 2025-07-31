@@ -1,5 +1,5 @@
-import type { System } from '../../../System/Class';
-import { Unit } from '../../Class';
+import type { System } from '../../System/Class';
+import { Unit } from '.';
 
 export class Batiment extends Unit {
     type = "Bâtiment";

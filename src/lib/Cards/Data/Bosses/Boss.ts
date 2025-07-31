@@ -1,5 +1,5 @@
 import type { System } from '../../../System/Class';
-import { Creature } from '../Creatures/Creature';
+import { Creature } from '../../Class/Creature';
 
 export class Boss extends Creature {
     constructor(system: System) {

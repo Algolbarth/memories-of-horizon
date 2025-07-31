@@ -1,5 +1,5 @@
 import { copy } from '../../../../Utils';
-import { Objet } from '../Objet';
+import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 
 export class CorDeGuerre extends Objet {

@@ -1,5 +1,5 @@
-import type { System } from '../../../System/Class';
-import { Action } from '../Actions/Action';
+import type { System } from '../../System/Class';
+import { Action } from './Action';
 
 export class Sort extends Action {
     constructor(system: System) {

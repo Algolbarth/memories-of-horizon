@@ -1,4 +1,4 @@
-import { Batiment } from '../Batiment';
+import { Batiment } from '../../../Class/Batiment';
 
 export class MurDePierre extends Batiment {
     name = "Mur de pierre";

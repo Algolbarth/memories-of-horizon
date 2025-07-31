@@ -1,5 +1,5 @@
-import { Equipment } from '../Equipement';
-import Text from '../Text.svelte';
+import { Equipment } from '../../../Class/Equipement';
+import Text from '../../../Utils/Text.svelte';
 
 export class PlastronEnPlatine extends Equipment {
     name = "Plastron en platine";

@@ -1,9 +1,9 @@
-import type { System } from '../../../System/Class';
-import { Stat } from '../../Class/Stat';
-import { Trait } from '../../Class/Trait';
-import type { Creature } from '../Creatures/Creature';
-import { Objet } from '../Objets/Objet';
-import Use from './Use.svelte';
+import type { System } from '../../System/Class';
+import { Stat } from './Stat';
+import { Trait } from './Trait';
+import type { Creature } from './Creature';
+import { Objet } from './Objet';
+import Use from '../Utils/Use.svelte';
 
 export class Equipment extends Objet {
     equipElements = [];
