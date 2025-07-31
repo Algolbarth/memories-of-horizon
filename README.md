@@ -5,7 +5,6 @@ For install project on local : npm install --legacy-peer-deps && npm run dev
 
 ## Roadmap
 - New cards for Rogue archetype and Sell effects ;
-- Refacto of statistic system ;
 - New cards for Stun effect ;
 - New mecanics : Poison/Toxicity and Burn effects (Fire and Plant cards), damaging units each combat/turn ;
 - New cards for clean debuff ;

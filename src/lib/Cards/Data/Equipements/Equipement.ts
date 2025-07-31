@@ -34,6 +34,7 @@ export class Equipment extends Objet {
         this.addEquipStat("Garde", 0);
         this.addEquipStat("Perpétuité", 0);
         this.addEquipStat("Esquive", 0);
+        this.addEquipStat("Critique", 0);
         this.addEquipStat("Étourdissement", 0);
 
         this.addEquipTrait("Rare", false);
@@ -99,6 +100,15 @@ export class Equipment extends Objet {
             return this.base + this.add;
         };
         this.equipStats.push(stat);
+    };
+
+    hasEquipStat = function () {
+        for (const stat of this.equipStats) {
+            if (stat.value() > 0) {
+                return true;
+            }
+        }
+        return false;
     };
 
     equipTrait = function (name: string) {

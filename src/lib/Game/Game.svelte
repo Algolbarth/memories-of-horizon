@@ -128,7 +128,7 @@
 	<br />
 
 	<div id="container" class="scroll">
-		<div class="zone">
+		<div class="entities">
 			<div>
 				<Entity bind:system bind:entity={system.game.player} direction={"left"} />
 			</div>
@@ -172,7 +172,7 @@
 		height: 94vh;
 	}
 
-	.zone {
+	.entities {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}

@@ -33,7 +33,7 @@ export class Parade extends Action {
     };
 
     useEffect = function (target) {
-        target.stat("Esquive").current += 1;
+        target.stat("Esquive").add += 1;
         this.move("Défausse");
         this.pose();
     };

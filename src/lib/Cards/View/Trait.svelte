@@ -8,18 +8,10 @@
 	<i>Traits</i>
 	<br />
 
-	{#if card.trait("Légendaire").value()}
-		Légendaire
-		<br />
-	{/if}
-
-	{#if card.trait("Rare").value()}
-		Rare
-		<br />
-	{/if}
-
-	{#if card instanceof Unit && card.trait("Inactif").value()}
-		Inactif
-		<br />
-	{/if}
+	{#each card.traits as trait}
+		{#if trait.value()}
+			{trait.name}
+			<br />
+		{/if}
+	{/each}
 </div>

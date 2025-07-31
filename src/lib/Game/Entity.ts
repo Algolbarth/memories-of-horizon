@@ -239,11 +239,11 @@ export class Entity {
     checkPerpetuite = function () {
         let defausse = copy(this.zone("Défausse").cards);
         for (const card of defausse) {
-            if (card.stat("Perpétuité").current == 1) {
+            if (card.stat("Perpétuité").value() == 1) {
                 card.remove();
             }
             else {
-                card.stat("Perpétuité").current--;
+                card.stat("Perpétuité").remove(1);
             }
         }
     };

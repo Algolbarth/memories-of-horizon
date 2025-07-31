@@ -33,7 +33,7 @@ export class BriseGarde extends Action {
     };
 
     useEffect = function (target) {
-        target.stat("Garde").remove(target.stat("Garde").value());
+        target.stat("Garde").set(0);
         this.move("Défausse");
         this.pose();
     };

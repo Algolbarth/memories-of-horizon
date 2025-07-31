@@ -179,7 +179,6 @@ export class Game extends Battle {
                 this.bot.place = this.bot.zone("Lieux").cards[0];
 
                 this.startStep();
-
                 this.bot.play();
             }
             else {

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { System } from "../../System/Class";
-    import { Card } from "../Class";
-    import { Creature } from "../Data/Creatures/Creature";
-    import { Equipment } from "../Data/Equipements/Equipement";
+	import { Card } from "../Class";
+	import { Creature } from "../Data/Creatures/Creature";
+	import { Equipment } from "../Data/Equipements/Equipement";
 	import Caracteristics from "./Caracteristics.svelte";
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";
@@ -46,9 +46,9 @@
 					{#if card.hasStat()}
 						<Stat bind:card />
 					{/if}
-					{#if card instanceof Equipment}
+					{#if card instanceof Equipment && card.hasEquipStat()}
 						<div class="box">
-							<i>Statistiques</i>
+							<i>Statistiques d'équipement</i>
 
 							<br />
 

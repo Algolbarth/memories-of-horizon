@@ -15,17 +15,32 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Défense", 0);
-
         this.addStat("Vie", 1, 1);
         this.stat("Vie").current = 1;
+        this.stat("Vie").condition = function () {
+            return true;
+        };
+
+        this.addStat("Défense", 0);
 
         this.addStat("Garde", 0);
 
         this.addStat("Actions", 1);
         this.stat("Actions").current = 1;
+        this.stat("Actions").condition = function () {
+            if (this.value() > 1) {
+                return true;
+            }
+            return false;
+        };
 
         this.addStat("Multicoup", 1);
+        this.stat("Multicoup").condition = function () {
+            if (this.value() > 1) {
+                return true;
+            }
+            return false;
+        };
 
         this.addStat("Vitesse", 0);
 

@@ -10,20 +10,40 @@ export class Creature extends Unit {
         super(system);
 
         this.addStat("Attaque", 0);
+        this.stat("Attaque").condition = function () {
+            return true;
+        };
 
         this.addStat("Maniement", 1);
+        this.stat("Maniement").condition = function () {
+            if (this.value() > 1) {
+                return true;
+            }
+            return false;
+        };
 
         this.addStat("Percée", 0);
 
         this.addStat("Adresse", 0);
 
         this.addStat("Intensité", 2);
+        this.stat("Intensité").condition = function () {
+            if (this.value() != 2) {
+                return true;
+            }
+            return false;
+        };
 
-        this.addStat("Critique", 0);
+        this.addStat("Critique", 100);
         this.stat("Critique").current = 0;
+        this.stat("Critique").condition = function () {
+            if (this.current > 0 || this.card.stat("Adresse").value() > 0) {
+                return true;
+            }
+            return false;
+        };
 
         this.addStat("Étourdissement", 0);
-        this.stat("Étourdissement").current = 0;
     };
 
     play = function () {

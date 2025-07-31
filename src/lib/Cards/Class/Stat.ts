@@ -5,8 +5,9 @@ export class Stat {
     base: number;
     add: number = 0;
     step: number = 0;
-    min: number;
     turn: number = 0;
+    min: number;
+    current: number | undefined;
     card: Card;
 
     constructor(name: string, value: number, min: number, card: Card) {
@@ -46,8 +47,12 @@ export class Stat {
 
     fix = function (value: number) {
         if (this.value() < value) {
-            this.add += value - this.value();
+            this.set(value);
         }
+    };
+
+    set = function (value: number) {
+        this.add = value - this.value();
     };
 
     remove = function (value: number) {
@@ -62,6 +67,12 @@ export class Stat {
                 this.add--;
             }
             value--;
+        }
+    };
+
+    condition = function () {
+        if (this.value() > 0 || this.current > 0) {
+            return true;
         }
     };
 };
