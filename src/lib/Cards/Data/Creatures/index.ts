@@ -26,6 +26,7 @@ export * from './ChevalierGeant';
 export * from './ChevalierNoir';
 export * from './Chien';
 export * from './Chimere';
+export * from './CommissairePriseur';
 export * from './Cuisinier';
 export * from './Danseuse';
 export * from './Doyen';
