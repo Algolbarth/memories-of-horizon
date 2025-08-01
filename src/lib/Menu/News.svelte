@@ -17,6 +17,15 @@
 <br />
 
 <div class="zone">
+	Fonctionnalités récentes :
+	<ul>
+		<li>
+			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 attaque -> 50 attaque, 10 vie -> 50 vie.
+		</li>
+	</ul>
+</div>
+
+<div class="zone">
 	Fonctionnalités à venir :
 	<ul>
 		<li>
@@ -32,6 +41,10 @@
 </div>
 
 <style>
+	div.zone {
+		margin-bottom: 8px;
+	}
+	
 	span.card {
 		color: green;
 	}
