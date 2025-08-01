@@ -19,8 +19,8 @@ export class General extends Creature {
     };
 
     startStepEffect = function () {
-        let terrain = copy(this.owner.zone("Terrain").cards);
         if (this.zone.name == "Terrain") {
+            let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {
                 if (card.type == "Créature") {
                     card.stat("Attaque").add += 5;

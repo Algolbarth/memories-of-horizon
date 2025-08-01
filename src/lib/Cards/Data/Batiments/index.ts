@@ -13,6 +13,7 @@ export * from './FeuDeCamp';
 export * from './Fontaine';
 export * from './GarnisonDesMonts';
 export * from './LacDeLave';
+export * from './Marche';
 export * from './MurDeBrique';
 export * from './MurDePierre';
 export * from './MurDeRoche';
