@@ -83,6 +83,7 @@ export * from './MimiqueDeCoffre';
 export * from './MimiqueDeJarre';
 export * from './MinistreOndin';
 export * from './Nain';
+export * from './Negociant';
 export * from './Ondin';
 export * from './OndinDesRivieres';
 export * from './OursDesMontagnes';
