@@ -2,18 +2,18 @@ import { copy } from '../../../../Utils';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
-export class RoiBarbare extends Creature {
-    name = "Roi barbare";
+export class ChefBarbare extends Creature {
+    name = "Chef barbare";
 
     constructor(system) {
         super(system);
 
-        this.init([["Or", 110]]);
+        this.init([["Or", 150]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Vie").base = 50;
+        this.stat("Vie").current = 50;
+        this.stat("Attaque").base = 50;
 
         this.text = Text;
     };
