@@ -23,7 +23,7 @@ export class Card {
     locked: boolean = false;
     slot: number | undefined;
     zone: Zone | undefined;
-    owner: Entity | undefined; 
+    owner: Entity | undefined;
     text: Component | undefined | null;
     cache: boolean = false;
 
@@ -224,10 +224,37 @@ export class Card {
     };
 
     sell = function () {
+        this.sellEffect();
+
         for (const v of this.vente) {
             this.owner.ressource(v.name).current += v.value();
         }
+
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+                    if (card != this) {
+                        card.otherSellEffect(this);
+                        if (card.type == "Créature") {
+                            for (const e of card.equipments) {
+                                e.otherSellEffect(this);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         this.remove();
+    };
+
+    sellEffect = function () {
+
+    };
+
+    otherSellEffect = function () {
+
     };
 
     use = function () {

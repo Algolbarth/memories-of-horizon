@@ -5,7 +5,7 @@
 	export let system: System;
 	export let card: Card;
 
-	function cout() {
+	function cout(card) {
 		let tab = [];
 		for (const cost of card.cout) {
 			if (cost.value() > 0) {
@@ -15,7 +15,7 @@
 		return tab;
 	}
 
-	function vente() {
+	function vente(card) {
 		let tab = [];
 		for (const sell of card.vente) {
 			if (sell.value() > 0) {
@@ -49,11 +49,11 @@
 	{/each}
 </div>
 
-{#if cout().length > 0 || vente().length > 0}
+{#if cout(card).length > 0 || vente(card).length > 0}
 	<div class="box">
 		<div class="little-container">
-			{#if cout().length > 0}
-				{#each cout() as cost}
+			{#if cout(card).length > 0}
+				{#each cout(card) as cost}
 					<div
 						class="cost"
 						style={"background:" +
@@ -76,8 +76,8 @@
 		<hr />
 
 		<div class="little-container">
-			{#if vente().length > 0}
-				{#each vente() as sell, i}
+			{#if vente(card).length > 0}
+				{#each vente(card) as sell, i}
 					<div
 						class="cost"
 						style={"background:" +
