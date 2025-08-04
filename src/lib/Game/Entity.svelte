@@ -19,9 +19,9 @@
 				<div
 					class="preview"
 					style={"background:" +
-						system.ressources.find(ressource.name).color +
+						system.ressources.find(ressource.name)?.color +
 						";color:" +
-						(system.ressources.find(ressource.name).light_font
+						(system.ressources.find(ressource.name)?.light_font
 							? "rgba(255, 255, 255, 1)"
 							: "rgba(0, 0, 0, 1)")}
 				>
@@ -53,7 +53,9 @@
 						{#if ressource.name == "Flux" && ressource.stock > 0 && system.game.phase == "Préparation"}
 							<button
 								on:click={() => {
-									system.game.flux = true;
+									if (system.game) {
+										system.game.show_flux = true;
+									}
 								}}
 							>
 								Convertir

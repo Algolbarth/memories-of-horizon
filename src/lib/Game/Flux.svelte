@@ -5,7 +5,7 @@
 
 	function close() {
 		if (system.game) {
-			system.game.flux = false;
+			system.game.show_flux = false;
 		}
 	}
 
@@ -25,7 +25,7 @@
 	];
 </script>
 
-{#if system.game && system.game.flux}
+{#if system.game && system.game.show_flux}
 	<div class="window">
 		<div id="body" class="center">
 			<div style="text-align:right;">
@@ -61,7 +61,7 @@
 									system.game.player.ressource("Flux")
 										.stock == 0
 								) {
-									system.game.flux = false;
+									system.game.show_flux = false;
 								}
 							}}
 						>

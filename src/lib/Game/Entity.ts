@@ -20,7 +20,7 @@ export class Entity {
         new Zone("Terrain", 10),
         new Zone("Défausse")
     ];
-    ressources = [];
+    ressources: Ressource[] = [];
     place: Card | undefined = undefined;
     system: System;
     step: number = 0;
@@ -39,30 +39,7 @@ export class Entity {
 
     setRessources = function () {
         for (const r of this.system.ressources.list) {
-            this.ressources.push({
-                name: r.name,
-                current: 0,
-                stock: 0,
-                total: function () {
-                    return this.current + this.stock;
-                },
-                spend: function (value: number) {
-                    if (value < this.current) {
-                        this.current -= value;
-                        value = 0;
-                    }
-                    else {
-                        value -= this.current;
-                        this.current = 0;
-                    }
-
-                    this.stock -= value;
-                    if (this.stock < 0) {
-                        this.stock = 0;
-                    }
-                },
-                max: 0
-            });
+            this.ressources.push(new Ressource(r.name));
         }
     };
 
@@ -254,5 +231,36 @@ export class Entity {
             total += card.stat("Intelligence").value();
         }
         return total;
+    };
+}
+
+class Ressource {
+    name: string;
+    current: number = 0;
+    stock: number = 0;
+    max: number = 0;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    total = function () {
+        return this.current + this.stock;
+    };
+
+    spend = function (value: number) {
+        if (value < this.current) {
+            this.current -= value;
+            value = 0;
+        }
+        else {
+            value -= this.current;
+            this.current = 0;
+        }
+
+        this.stock -= value;
+        if (this.stock < 0) {
+            this.stock = 0;
+        }
     };
 }
