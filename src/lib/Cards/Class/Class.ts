@@ -6,7 +6,6 @@ import { copy } from "../../Utils";
 import { Families } from "./Family";
 import type { System } from "../../System/Class";
 import type { Entity } from "../../Game/Entity";
-import type { Component } from "svelte";
 import type { Zone } from "../../Game/Zone";
 
 export class Card {
@@ -24,7 +23,7 @@ export class Card {
     slot: number | undefined;
     zone: Zone | undefined;
     owner: Entity | undefined;
-    text: Component | undefined | null;
+    text: __sveltets_2_IsomorphicComponent<{ system: System; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string> | undefined;
     cache: boolean = false;
 
     constructor(system: System) {
