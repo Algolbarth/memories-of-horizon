@@ -6,10 +6,10 @@ import { Objet } from './Objet';
 import Use from '../Utils/Use.svelte';
 
 export class Equipment extends Objet {
-    equipElements = [];
-    equipFamilies = [];
-    equipTraits = [];
-    equipStats = [];
+    equipElements: string[] = [];
+    equipFamilies: string[] = [];
+    equipTraits: Trait[] = [];
+    equipStats: Stat[] = [];
     bearer = undefined;
 
     constructor(system: System) {

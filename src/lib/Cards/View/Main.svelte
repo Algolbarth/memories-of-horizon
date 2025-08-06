@@ -7,6 +7,7 @@
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";
 	import Equipments from "./Equipments.svelte";
+    import EquipStat from "./EquipStat.svelte";
 	import Stat from "./Stat.svelte";
 	import Trait from "./Trait.svelte";
 
@@ -46,19 +47,7 @@
 						<Stat bind:card />
 					{/if}
 					{#if card instanceof Equipment && card.hasEquipStat()}
-						<div class="box">
-							<i>Statistiques d'équipement</i>
-
-							<br />
-
-							{#each card.equipStats as e}
-								{#if e.value() > 0}
-									{e.name} : {e.value()}
-
-									<br />
-								{/if}
-							{/each}
-						</div>
+						<EquipStat bind:card />
 					{/if}
 					{#if card instanceof Creature}
 						<Equipments bind:card bind:system />
