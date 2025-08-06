@@ -62,12 +62,7 @@
 		<div id="list">
 			{#if zone.cards.length > 0}
 				{#each zone.cards as card}
-					<Preview
-						bind:system
-						bind:card
-						bind:condition
-						bind:fonction
-					/>
+					<Preview bind:system bind:card bind:condition bind:fonction />
 				{/each}
 			{:else}
 				<i>Vide</i>

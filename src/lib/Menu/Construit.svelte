@@ -2,7 +2,7 @@
 	import { Game } from "../Game/Game";
 	import View from "../Decks/View.svelte";
 	import { several } from "../Utils";
-    import type { System } from "../System/Class";
+	import type { System } from "../System/Class";
 
 	export let system: System;
 

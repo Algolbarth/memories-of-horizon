@@ -1,11 +1,10 @@
 <script lang="ts">
-    import type { System } from "../System/Class";
-    import { Deck } from "./Deck";
+	import type { System } from "../System/Class";
+	import { Deck } from "./Deck";
 
-	export let system:System;
+	export let system: System;
 
-	$: deck =
-		system.view.quick == undefined ? system.view.card : system.view.quick;
+	$: deck = system.view.quick == undefined ? system.view.card : system.view.quick;
 </script>
 
 {#if deck != undefined && deck instanceof Deck}

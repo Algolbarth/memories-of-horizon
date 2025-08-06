@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
-Au début d'un tour de combat : crée <CardInfo
-	bind:system
-	name={"Soldat nain"}
-/> sur le terrain.
+Au début d'un tour de combat : crée <CardInfo bind:system name={"Soldat nain"} /> sur le terrain.

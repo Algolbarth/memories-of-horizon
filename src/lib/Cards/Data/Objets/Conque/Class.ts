@@ -1,0 +1,24 @@
+import type { System } from '../../../../System/Class';
+import { Objet } from '../../../Class/Objet';
+import Text from './Text.svelte';
+
+export class Conque extends Objet {
+    name = "Conque";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 10], ["Eau", 10]]);
+
+        this.text = Text;
+    };
+
+    useEffect = function () {
+        if (this.owner.ressource("Or").max > 5) {
+            this.owner.ressource("Or").max -= 5;
+            this.owner.ressource("Eau").max += 5;
+        }
+        this.move("Défausse");
+        this.pose();
+    };
+}

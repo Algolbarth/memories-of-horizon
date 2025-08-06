@@ -12,11 +12,7 @@
 	}
 
 	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
-		if (
-			relatedTarget instanceof HTMLElement &&
-			currentTarget.contains(relatedTarget)
-		)
-			return;
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
 		isDropdownOpen = false;
 	};
 

@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	let choice = undefined;
+	let choice: string | undefined = undefined;
 
-	function condition(card) {
+	function condition(card: Card) {
 		return true;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card);
 		system.game.use.reset();
 	}
@@ -27,15 +28,14 @@
 		</button>
 
 		<br />
-		
+
 		<button
 			class="big choice"
 			on:click={() => {
 				choice = "damage";
 			}}
 		>
-			Se détruit pour infliger 30 dégâts à une unité adverse sur le
-			terrain
+			Se détruit pour infliger 30 dégâts à une unité adverse sur le terrain
 		</button>
 	</div>
 {:else}
@@ -46,11 +46,5 @@
 	>
 		Retour
 	</button>
-	<Zone
-		bind:system
-		entity={system.game.use.card.owner.adversary()}
-		zone={system.game.use.card.owner.adversary().zone("Terrain")}
-		{condition}
-		{fonction}
-	/>
+	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} {condition} {fonction} />
 {/if}

@@ -35,11 +35,7 @@
 			<div class="container">
 				Nom
 				<div>
-					<input
-						type="text"
-						placeholder={'Exemple: "Dragon"'}
-						bind:value={nameSelect}
-					/>
+					<input type="text" placeholder={'Exemple: "Dragon"'} bind:value={nameSelect} />
 				</div>
 			</div>
 			<div class="container">
@@ -99,29 +95,17 @@
 				<div>Rareté</div>
 
 				<div>
-					<input
-						type="checkbox"
-						bind:checked={communSelect}
-						id="commun"
-					/>
+					<input type="checkbox" bind:checked={communSelect} id="commun" />
 					<label for="commun">Commune</label>
 				</div>
 
 				<div>
-					<input
-						type="checkbox"
-						bind:checked={rareSelect}
-						id="rare"
-					/>
+					<input type="checkbox" bind:checked={rareSelect} id="rare" />
 					<label for="rare">Rare</label>
 				</div>
 
 				<div>
-					<input
-						type="checkbox"
-						bind:checked={legendarySelect}
-						id="legendary"
-					/>
+					<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
 					<label for="legendary">Légendaire</label>
 				</div>
 			</div>
@@ -133,24 +117,9 @@
 			class="big"
 			on:click={() => {
 				if (rarity) {
-					sorting(
-						nameSelect,
-						levelSelect,
-						typeSelect,
-						familleSelect,
-						elementSelect,
-						communSelect,
-						rareSelect,
-						legendarySelect,
-					);
+					sorting(nameSelect, levelSelect, typeSelect, familleSelect, elementSelect, communSelect, rareSelect, legendarySelect);
 				} else {
-					sorting(
-						nameSelect,
-						levelSelect,
-						typeSelect,
-						familleSelect,
-						elementSelect,
-					);
+					sorting(nameSelect, levelSelect, typeSelect, familleSelect, elementSelect);
 				}
 			}}
 		>

@@ -2,7 +2,9 @@
 	import type { Card } from "../Cards/Class";
 	import type { System } from "../System/Class";
 
+	// svelte-ignore export_let_unused
 	export let system: System;
+	// svelte-ignore export_let_unused
 	export let card: Card;
 	export let condition: Function | undefined;
 	export let fonction: Function | undefined;
@@ -11,11 +13,7 @@
 </script>
 
 {#if system.game && card.zone}
-	<div
-		class={(isPlayer || fonction != undefined ? "container " : "") +
-			(card == system.game.fighter ? "attacker " : "") +
-			"preview"}
-	>
+	<div class={(isPlayer || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
 		<div id={isPlayer || fonction != undefined ? "infos" : ""}>
 			{#if card.locked}
 				<div id="locked">&#x1F512</div>

@@ -1,0 +1,28 @@
+import type { System } from '../../../../System/Class';
+import { Creature } from '../../../Class/Creature';
+import Text from './Text.svelte';
+
+export class Heros extends Creature {
+    name = "Héros";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 110]]);
+        this.familles.base.push("Humain");
+
+        this.stat("Vie").base = 10;
+        this.stat("Vie").current = 10;
+        this.stat("Attaque").base = 10;
+
+        this.text = Text;
+    };
+
+    otherPoseEffect = function (card: Card) {
+        if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
+            this.stat("Vie").current += 10;
+            this.stat("Vie").add += 10;
+            this.stat("Attaque").add += 10;
+        }
+    };
+}

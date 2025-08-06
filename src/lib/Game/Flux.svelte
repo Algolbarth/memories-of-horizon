@@ -9,20 +9,7 @@
 		}
 	}
 
-	let tab = [
-		"Feu",
-		"Air",
-		"Végétal",
-		"Eau",
-		"Terre",
-		"Mort",
-		"Arcane",
-		"Foudre",
-		"Lumière",
-		"Metal",
-		"Glace",
-		"Ombre",
-	];
+	let tab = ["Feu", "Air", "Végétal", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
 </script>
 
 {#if system.game && system.game.show_flux}
@@ -45,22 +32,13 @@
 				{#each tab as ressource}
 					<div class="ressource">
 						<button
-							style={"background:" +
-								system.ressources.find(ressource).color +
-								";color:" +
-								(system.ressources.find(ressource).light_font
-									? "rgba(255, 255, 255, 1)"
-									: "rgba(0, 0, 0, 1)")}
+							style={"background:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
 							class="big flux"
 							on:click={() => {
-								system.game.player.ressource(ressource)
-									.current++;
+								system.game.player.ressource(ressource).current++;
 								system.game.player.ressource(ressource).max++;
 								system.game.player.ressource("Flux").stock--;
-								if (
-									system.game.player.ressource("Flux")
-										.stock == 0
-								) {
+								if (system.game.player.ressource("Flux").stock == 0) {
 									system.game.show_flux = false;
 								}
 							}}

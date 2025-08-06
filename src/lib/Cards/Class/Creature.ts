@@ -4,7 +4,7 @@ import type { Equipment } from './Equipement';
 
 export class Creature extends Unit {
     type = "Créature";
-    equipments = [];
+    equipments: Equipment[] = [];
 
     constructor(system: System) {
         super(system);
@@ -56,9 +56,13 @@ export class Creature extends Unit {
 
         let defender = this.findTarget();
 
-        this.playEffect(defender);
+        if (this.playEffect != undefined) {
+            this.playEffect(defender);
+        }
         for (const e of this.equipments) {
-            e.playEffect(defender);
+            if (e.playEffect != undefined) {
+                e.playEffect(defender);
+            }
         }
 
         this.fight(defender);
@@ -69,9 +73,13 @@ export class Creature extends Unit {
         let repeat = this.stat("Multicoup").value();
         while (!isDie && repeat > 0) {
 
-            this.fightEffect(defender);
+            if (this.fightEffect != undefined) {
+                this.fightEffect(defender);
+            }
             for (const e of this.equipments) {
-                e.fightEffect(defender);
+                if (e.fightEffect != undefined) {
+                    e.fightEffect(defender);
+                }
             }
 
             defender.defend(this);
@@ -91,9 +99,14 @@ export class Creature extends Unit {
             let damage_result = defender.damage(difDamage);
             if (damage_result.die) {
                 isDie = true;
-                this.killEffect(defender);
-                for (const card of this.equipments) {
-                    card.killEffect(defender);
+
+                if (this.killEffect != undefined) {
+                    this.killEffect(defender);
+                }
+                for (const e of this.equipments) {
+                    if (e.killEffect != undefined) {
+                        e.killEffect(defender);
+                    }
                 }
             }
 
@@ -101,26 +114,11 @@ export class Creature extends Unit {
         }
     };
 
-    playEffect = function () {
+    playEffect: Function | undefined;
 
-    };
+    fightEffect: Function | undefined;
 
-    fightEffect = function () {
-
-    };
-
-    killEffect = function () {
-
-    };
-
-    defend = function (attacker: Creature) {
-        this.defendEffect(attacker);
-        if (this.type == "Créature") {
-            for (const e of this.equipments) {
-                e.defendEffect(this);
-            }
-        }
-    };
+    killEffect: Function | undefined;
 
     findTarget = function () {
         let target = undefined;

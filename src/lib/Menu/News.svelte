@@ -20,7 +20,9 @@
 	Fonctionnalités récentes :
 	<ul>
 		<li>
-			Ajouts de 4 cartes neutres : <span class="card">Homme d'affaires</span>, <span class="card">Marché</span>, <span class="card">Commissaire priseur</span> et <span class="card">Négociant</span>.
+			Ajouts de 4 cartes neutres : <span class="card">Homme d'affaires</span>, <span class="card">Marché</span>,
+			<span class="card">Commissaire priseur</span>
+			et <span class="card">Négociant</span>.
 		</li>
 		<li>
 			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 attaque -> 50 attaque, 10 vie -> 50 vie.
@@ -74,7 +76,8 @@
 					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la main.
 				</li>
 				<li>
-					<span class="card">Chaudron</span> est un bâtiment créant <span class="card">Mélange</span> dans la main à chaque tour.
+					<span class="card">Chaudron</span> est un bâtiment créant
+					<span class="card">Mélange</span> dans la main à chaque tour.
 				</li>
 				<li>
 					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en main à chaque étape.
@@ -91,7 +94,7 @@
 	div.zone {
 		margin-bottom: 8px;
 	}
-	
+
 	span.card {
 		color: green;
 	}

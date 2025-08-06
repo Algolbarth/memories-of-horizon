@@ -1,28 +1,20 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	function condition(card) {
-		if (
-			card.type == "Objet" &&
-			card.familles.total().includes("Nourriture")
-		) {
+	function condition(card: Card) {
+		if (card.type == "Objet" && card.familles.total().includes("Nourriture")) {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card);
 		system.game.use.reset();
 	}
 </script>
 
-<Zone
-	bind:system
-	bind:entity={system.game.use.card.owner}
-	zone={system.game.use.card.owner.zone("Main")}
-	{condition}
-	{fonction}
-/>
+<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Main")} {condition} {fonction} />

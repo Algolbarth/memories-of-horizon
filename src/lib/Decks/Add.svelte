@@ -23,31 +23,14 @@
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
 
-			if (
-				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
-				!card.trait("Rare").value() &&
-				!card.trait("Légendaire").value() &&
-				(levelSelect == "Tous" ||
-					card.level == parseInt(levelSelect)) &&
-				(typeSelect == "Tous" || card.type == typeSelect) &&
-				(familleSelect == "Toutes" ||
-					card.familles.total().includes(familleSelect)) &&
-				(elementSelect == "Tous" ||
-					card.elements.total().includes(elementSelect))
-			) {
+			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familleSelect == "Toutes" || card.familles.total().includes(familleSelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
 				tab.push(card);
 			}
 		}
 		cardList = tab;
 	}
 
-	function sorting(
-		name: string,
-		level: string,
-		type: string,
-		famille: string,
-		element: string,
-	) {
+	function sorting(name: string, level: string, type: string, famille: string, element: string) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -89,15 +72,10 @@
 
 		<div id="list" class="scroll">
 			{#each cardList as card}
-				<div
-					class={(system.deck.check(card.name) ? "present " : "") +
-						"preview"}
-				>
+				<div class={(system.deck.check(card.name) ? "present " : "") + "preview"}>
 					<div>
 						<button
-							class={system.deck.check(card.name)
-								? "present "
-								: ""}
+							class={system.deck.check(card.name) ? "present " : ""}
 							on:click={() => {
 								system.view.card = card;
 							}}
@@ -148,17 +126,7 @@
 {/if}
 
 {#if filterWindow}
-	<Filter
-		bind:system
-		{nameSelect}
-		{levelSelect}
-		{typeSelect}
-		{familleSelect}
-		{elementSelect}
-		rarity={false}
-		{sorting}
-		{close}
-	/>
+	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familleSelect} {elementSelect} rarity={false} {sorting} {close} />
 {/if}
 
 <style>

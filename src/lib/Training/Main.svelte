@@ -4,7 +4,7 @@
 	import Add from "./Add.svelte";
 	import View from "../Cards/View/Main.svelte";
 	import { Game } from "../Game/Game";
-    import type { System } from "../System/Class";
+	import type { System } from "../System/Class";
 
 	export let system: System;
 </script>
@@ -44,11 +44,7 @@
 	</div>
 	{#each system.train.bot.zones as zone, i}
 		<div class="bi-zone">
-			<Zone
-				bind:system
-				entity="player"
-				bind:zone={system.train.player.zones[i]}
-			/>
+			<Zone bind:system entity="player" bind:zone={system.train.player.zones[i]} />
 			<Zone bind:system entity="bot" bind:zone />
 		</div>
 	{/each}

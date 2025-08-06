@@ -1,7 +1,11 @@
-<script>
-	export let system;
-	export let card;
+<script lang="ts">
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
+
+	// svelte-ignore export_let_unused
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
-Augmente de 5 l'attaque et la vie de toutes les créatures alliées sur le terrain
-pour chaque famille différentes parmi elles.
+Augmente de 5 l'attaque et la vie de toutes les créatures alliées sur le terrain pour chaque famille différentes parmi elles.

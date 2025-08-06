@@ -4,7 +4,7 @@
 
 	export let system: System;
 
-	let files : FileList | null | undefined;
+	let files: FileList | null | undefined;
 
 	async function login() {
 		let log = await load(files, system);

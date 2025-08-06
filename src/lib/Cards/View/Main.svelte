@@ -12,8 +12,7 @@
 
 	export let system: System;
 
-	$: card =
-		system.view.quick == undefined ? system.view.card : system.view.quick;
+	$: card = system.view.quick == undefined ? system.view.card : system.view.quick;
 
 	function close() {
 		system.view.card = undefined;

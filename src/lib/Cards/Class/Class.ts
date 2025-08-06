@@ -42,7 +42,7 @@ export class Card {
         }
     };
 
-    init = function (array) {
+    init = function (array: any[]) {
         let total = 0;
         for (const element of array) {
             this.getCout(element[0]).base += element[1];
@@ -126,7 +126,9 @@ export class Card {
             this.owner.ressource("Mana").max -= this.stat("Magie").value();
         }
 
-        this.removeEffect(this.zone.name);
+        if (this.removeEffect != undefined) {
+            this.removeEffect(this.zone.name);
+        }
 
         this.zone.cards.splice(this.slot, 1);
         for (let i = this.slot; i < this.zone.cards.length; i++) {
@@ -136,9 +138,7 @@ export class Card {
         this.slot = undefined;
     };
 
-    removeEffect = function () {
-
-    };
+    removeEffect: Function | undefined;
 
     add = function (zone: string, entity: Entity = this.owner) {
         if (!entity.zone(zone).isFull()) {
@@ -162,15 +162,15 @@ export class Card {
                 entity.ressource("Mana").max += this.stat("Magie").value();
             }
 
-            this.addEffect(zone);
+            if (this.addEffect != undefined) {
+                this.addEffect(zone);
+            }
 
             entity.zone(zone).cards.push(this);
         }
     };
 
-    addEffect = function () {
-
-    };
+    addEffect: Function | undefined;
 
     move = function (zone: string, entity: Entity = this.owner) {
         this.remove();
@@ -224,7 +224,9 @@ export class Card {
     };
 
     sell = function () {
-        this.sellEffect();
+        if (this.sellEffect != undefined) {
+            this.sellEffect();
+        }
 
         for (const v of this.vente) {
             this.owner.ressource(v.name).current += v.value();
@@ -235,10 +237,16 @@ export class Card {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     if (card != this) {
-                        card.otherSellEffect(this);
+
+                        if (card.otherSellEffect != undefined) {
+                            card.otherSellEffect(this);
+                        }
+
                         if (card.type == "Créature") {
                             for (const e of card.equipments) {
-                                e.otherSellEffect(this);
+                                if (e.otherSellEffect != undefined) {
+                                    e.otherSellEffect(this);
+                                }
                             }
                         }
                     }
@@ -249,13 +257,9 @@ export class Card {
         this.remove();
     };
 
-    sellEffect = function () {
+    sellEffect: Function | undefined;
 
-    };
-
-    otherSellEffect = function () {
-
-    };
+    otherSellEffect: Function | undefined;
 
     use = function () {
         this.select();
@@ -265,7 +269,7 @@ export class Card {
         this.useEffect();
     };
 
-    useEffect = function () {
+    useEffect: Function = function () {
         this.move("Défausse");
         this.pose();
     };
@@ -278,10 +282,15 @@ export class Card {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     if (card != this) {
-                        card.otherPoseEffect(this);
+                        if (card.otherPoseEffect != undefined) {
+                            card.otherPoseEffect(this);
+                        }
+
                         if (card.type == "Créature") {
                             for (const e of card.equipments) {
-                                e.otherPoseEffect(this);
+                                if (e.otherPoseEffect != undefined) {
+                                    e.otherPoseEffect(this);
+                                }
                             }
                         }
                     }
@@ -290,9 +299,7 @@ export class Card {
         }
     };
 
-    otherPoseEffect = function () {
-
-    };
+    otherPoseEffect: Function | undefined;
 
     destroy = function () {
         if (!this.trait("Légendaire").value()) {
@@ -300,23 +307,13 @@ export class Card {
         }
     };
 
-    otherDieEffect = function () {
+    otherDieEffect: Function | undefined;
 
-    };
+    startStepEffect: Function | undefined;
 
-    startStepEffect = function () {
+    startBattleEffect: Function | undefined;
 
-    };
-
-    startBattleEffect = function () {
-
-    };
-
-    turnEffect = function () {
-
-    };
-
-    text = undefined;
+    turnEffect: Function | undefined;
 
     description = function () {
         return "...";
@@ -400,11 +397,11 @@ export class Card {
     };
 
     targeting = function (target: Card) {
-        target.targetEffect(this);
+        if (target.targetEffect != undefined) {
+            target.targetEffect(this);
+        }
         return true;
     };
 
-    targetEffect = function (card: Card) {
-
-    };
+    targetEffect: Function | undefined;
 };

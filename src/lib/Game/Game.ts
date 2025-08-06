@@ -123,10 +123,16 @@ export class Game extends Battle {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
-                    card.startStepEffect();
+
+                    if (card.startStepEffect != undefined) {
+                        card.startStepEffect();
+                    }
+                    
                     if (card.type == "Créature") {
                         for (const e of card.equipments) {
-                            e.startStepEffect();
+                            if (e.startStepEffect != undefined) {
+                                e.startStepEffect();
+                            }
                         }
                     }
                 }

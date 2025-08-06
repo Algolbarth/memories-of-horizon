@@ -16,15 +16,7 @@
 
 		{#each entity.ressources as ressource}
 			{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
-				<div
-					class="preview"
-					style={"background:" +
-						system.ressources.find(ressource.name)?.color +
-						";color:" +
-						(system.ressources.find(ressource.name)?.light_font
-							? "rgba(255, 255, 255, 1)"
-							: "rgba(0, 0, 0, 1)")}
-				>
+				<div class="preview" style={"background:" + system.ressources.find(ressource.name)?.color + ";color:" + (system.ressources.find(ressource.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 					<div>
 						{ressource.name}
 					</div>

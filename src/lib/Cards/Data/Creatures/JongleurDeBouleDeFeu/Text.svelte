@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
-Quand <CardInfo bind:system name={"Boule de feu"} /> est posée : crée <CardInfo
-	bind:system
-	name={"Boule de feu"}
-/> dans la boutique.
+Quand <CardInfo bind:system name={"Boule de feu"} /> est posée : crée <CardInfo bind:system name={"Boule de feu"} /> dans la boutique.

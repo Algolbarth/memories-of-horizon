@@ -32,7 +32,7 @@ export class Chapter {
         this.steps.push(new Step(life, place, cards, dialogs));
     };
 
-    startDialog = function() {
+    startDialog = function () {
         let step = this.steps[this.system.game.player.step - 1];
         if (!step.read && step.dialog < step.dialogs.length) {
             this.system.page = "Dialog";

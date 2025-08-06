@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
-Soigne 25 blessures à une créature alliée sur le terrain. Si cette créature
-n'est pas blessée, crée un <CardInfo bind:system name={"Bonhomme biscuit"} /> sur
-le terrain à la place.
+Soigne 25 blessures à une créature alliée sur le terrain. Si cette créature n'est pas blessée, crée un <CardInfo bind:system name={"Bonhomme biscuit"} /> sur le terrain à la place.

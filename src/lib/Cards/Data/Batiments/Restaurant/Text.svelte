@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	export let card: Card;
 </script>
 
 Quand posé : choisit un objet allié de famille Nourriture dans la main.

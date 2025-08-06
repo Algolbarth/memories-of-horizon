@@ -1,18 +1,19 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	let choice = undefined;
+	let choice: string | undefined = undefined;
 
-	function condition(card) {
+	function condition(card: Card) {
 		if (card.type == "Créature") {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card, choice);
 		system.game.use.reset();
 	}
@@ -48,11 +49,5 @@
 	>
 		Retour
 	</button>
-	<Zone
-		bind:system
-		bind:entity={system.game.use.card.owner}
-		zone={system.game.use.card.owner.zone("Terrain")}
-		{condition}
-		{fonction}
-	/>
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
 {/if}

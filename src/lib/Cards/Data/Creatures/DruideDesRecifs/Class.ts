@@ -1,0 +1,74 @@
+import type { System } from '../../../../System/Class';
+import { Creature } from '../../../Class/Creature';
+import Text from './Text.svelte';
+import Use from './Use.svelte';
+
+class DruideDesRecifs extends Creature {
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 25], ["Eau", 25]]);
+        this.familles.base.push("Druide");
+
+        this.text = Text;
+    };
+
+    select = function () {
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
+        }
+        else {
+            this.useEffect("Tortue");
+        }
+    };
+
+    useEffect = function (choice) {
+        if (choice == "Ondin") {
+            this.transform("Druide des récifs (forme ondin)");
+        }
+        else if (choice == "Tortue") {
+            this.transform("Druide des récifs (forme tortue)");
+        }
+        this.zone.cards[this.slot].move("Terrain");
+        this.pose();
+    };
+}
+
+export class DruideDesRecifsOndin extends DruideDesRecifs {
+    name = "Druide des récifs (forme ondin)";
+    otherForm = "Druide des récifs (forme tortue)";
+
+    constructor(system: System) {
+        super(system);
+
+        this.familles.base.push("Ondin");
+
+        this.stat("Vie").base = 25;
+        this.stat("Vie").current = 25;
+        this.stat("Attaque").base = 25;
+    };
+
+    startStepEffect = function () {
+        if (this.zone.name == "Terrain") {
+            this.owner.ressource("Eau").max += 2;
+        }
+    };
+}
+
+export class DruideDesRecifsTortue extends DruideDesRecifs {
+    name = "Druide des récifs (forme tortue)";
+    otherForm = "Druide des récifs (forme ondin)";
+
+    constructor(system: System) {
+        super(system);
+
+        this.familles.base.push("Reptile");
+
+        this.trait("Rare").base = true;
+
+        this.stat("Vie").base = 35;
+        this.stat("Vie").current = 35;
+        this.stat("Attaque").base = 35;
+        this.stat("Défense").base = 10;
+    };
+}

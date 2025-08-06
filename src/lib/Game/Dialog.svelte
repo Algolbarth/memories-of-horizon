@@ -4,8 +4,7 @@
 
 	export let system: System;
 
-	let step: Step | undefined =
-		system.game?.chapter?.steps[system.game.player.step - 1];
+	let step: Step | undefined = system.game?.chapter?.steps[system.game.player.step - 1];
 </script>
 
 {#if system.game && system.game.chapter && step}
@@ -31,8 +30,7 @@
 				}
 			}}
 		>
-			Suivant
-			({step.dialog + 1}/{step.dialogs.length})
+			Suivant ({step.dialog + 1}/{step.dialogs.length})
 		</button>
 	</div>
 {/if}

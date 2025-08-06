@@ -1,7 +1,11 @@
-<script>
-	export let system;
-	export let card;
+<script lang="ts">
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
+
+	// svelte-ignore export_let_unused
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
-Au début de la phase de préparation : diminue de 10 le coût en or de toutes les
-cartes alliées dans la boutique.
+Au début de la phase de préparation : diminue de 10 le coût en or de toutes les cartes alliées dans la boutique.

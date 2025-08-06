@@ -1,23 +1,19 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	export let card: Card;
 </script>
 
 Quand posé, au choix :
 <ul>
 	<li>
-		Se transforme en <CardInfo
-			bind:system
-			name={"Druide des plaines (forme humain)"}
-		/>.
+		Se transforme en <CardInfo bind:system name={"Druide des plaines (forme humain)"} />.
 	</li>
 	<li>
-		Se transforme en <CardInfo
-			bind:system
-			name={"Druide des plaines (forme loup)"}
-		/>.
+		Se transforme en <CardInfo bind:system name={"Druide des plaines (forme loup)"} />.
 	</li>
 </ul>
 

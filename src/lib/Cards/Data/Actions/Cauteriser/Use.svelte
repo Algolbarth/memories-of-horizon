@@ -1,28 +1,20 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	function condition(card) {
-		if (
-			card.type == "Créature" &&
-			card.isDamaged()
-		) {
+	function condition(card: Card) {
+		if (card.type == "Créature" && card.isDamaged()) {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card);
 		system.game.use.reset();
 	}
 </script>
 
-<Zone
-	bind:system
-	entity={system.game.use.card.owner.adversary()}
-	zone={system.game.use.card.owner.adversary().zone("Terrain")}
-	{condition}
-	{fonction}
-/>
+<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} {condition} {fonction} />

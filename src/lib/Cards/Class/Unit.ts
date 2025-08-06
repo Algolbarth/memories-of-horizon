@@ -63,7 +63,7 @@ export class Unit extends Card {
         this.useEffect();
     };
 
-    useEffect = function () {
+    useEffect: Function = function () {
         this.move("Terrain");
         this.pose();
     };
@@ -117,16 +117,24 @@ export class Unit extends Card {
     die = function () {
         this.stat("Vie").current = 0;
 
-        this.dieEffect();
+        if (this.dieEffect != undefined) {
+            this.dieEffect();
+        }
+
         for (const entity of [this.system.game.player, this.system.game.bot]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     if (card != this) {
-                        card.otherDieEffect(this);
+                        if (card.otherDieEffect != undefined) {
+                            card.otherDieEffect(this);
+                        }
+
                         if (card.type == "Créature") {
                             for (const e of card.equipments) {
-                                e.otherDieEffect(this);
+                                if (e.otherDieEffect != undefined) {
+                                    e.otherDieEffect(this);
+                                }
                             }
                         }
                     }
@@ -141,10 +149,6 @@ export class Unit extends Card {
         this.move("Défausse");
     };
 
-    dieEffect = function () {
-
-    };
-
     destroy = function () {
         if (!this.trait("Légendaire").value()) {
             this.die();
@@ -153,18 +157,24 @@ export class Unit extends Card {
 
     play = function () {
         this.stat("Actions").current--;
-        this.playEffect();
-    };
 
-    playEffect = function () {
-
+        if (this.playEffect != undefined) {
+            this.playEffect();
+        }
     };
 
     defend = function (attacker: Creature) {
-        this.defendEffect(attacker);
+        if (this.defendEffect != undefined) {
+            this.defendEffect(attacker);
+        }
+        if (this.type == "Créature") {
+            for (const e of this.equipments) {
+                if (e.defendEffect != undefined) {
+                    e.defendEffect(this);
+                }
+            }
+        }
     };
 
-    defendEffect = function (attacker: Creature) {
-
-    };
+    defendEffect: Function | undefined;
 }

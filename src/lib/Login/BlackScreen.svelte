@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { System } from "../System/Class";
+	import type { System } from "../System/Class";
 
 	export let system: System;
 </script>

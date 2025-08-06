@@ -1,18 +1,19 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	let choice = undefined;
+	let choice: string | undefined = undefined;
 
-	function condition(card) {
+	function condition(card: Card) {
 		if (card.type == "Créature") {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card);
 		system.game.use.reset();
 	}
@@ -37,8 +38,7 @@
 				choice = "damage";
 			}}
 		>
-			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature
-			adverse sur le terrain
+			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature adverse sur le terrain
 		</button>
 	</div>
 {:else}
@@ -49,11 +49,5 @@
 	>
 		Retour
 	</button>
-	<Zone
-		bind:system
-		entity={system.game.use.card.owner.adversary()}
-		zone={system.game.use.card.owner.adversary().zone("Terrain")}
-		{condition}
-		{fonction}
-	/>
+	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} {condition} {fonction} />
 {/if}

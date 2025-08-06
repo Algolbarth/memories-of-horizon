@@ -29,21 +29,7 @@
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
 
-			if (
-				(nameSelect == "" || name.includes(nameSelect.toLowerCase())) &&
-				(levelSelect == "Tous" ||
-					card.level == parseInt(levelSelect)) &&
-				(typeSelect == "Tous" || card.type == typeSelect) &&
-				(familleSelect == "Toutes" ||
-					card.familles.total().includes(familleSelect)) &&
-				(elementSelect == "Tous" ||
-					card.elements.total().includes(elementSelect)) &&
-				((legendarySelect && card.trait("Légendaire").value()) ||
-					(rareSelect && card.trait("Rare").value()) ||
-					(communSelect &&
-						!card.trait("Légendaire").value() &&
-						!card.trait("Rare").value()))
-			) {
+			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familleSelect == "Toutes" || card.familles.total().includes(familleSelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
 				tab.push(card);
 			}
 		}
@@ -68,16 +54,7 @@
 		return tab;
 	}
 
-	function sorting(
-		name: string,
-		level: string,
-		type: string,
-		famille: string,
-		element: string,
-		commun: boolean,
-		rare: boolean,
-		legendary: boolean,
-	) {
+	function sorting(name: string, level: string, type: string, famille: string, element: string, commun: boolean, rare: boolean, legendary: boolean) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -157,19 +134,7 @@
 </div>
 
 {#if filterWindow}
-	<Filter
-		bind:system
-		{nameSelect}
-		{levelSelect}
-		{typeSelect}
-		{familleSelect}
-		{elementSelect}
-		{communSelect}
-		{rareSelect}
-		{legendarySelect}
-		{sorting}
-		{close}
-	/>
+	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familleSelect} {elementSelect} {communSelect} {rareSelect} {legendarySelect} {sorting} {close} />
 {/if}
 
 <style>

@@ -24,7 +24,7 @@ export class Deck {
             }
         }
         this.name = newName;
-        
+
         return this.name;
     };
 

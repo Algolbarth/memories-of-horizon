@@ -1,6 +1,7 @@
 import type { Creature } from "../Cards/Class/Creature";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
+import { Entity } from "./Entity";
 
 export class Battle {
     fighter: Creature | undefined = undefined;
@@ -28,10 +29,16 @@ export class Battle {
                 for (const zone of entity.zones) {
                     let cpy = copy(zone.cards);
                     for (const card of cpy) {
-                        card.startBattleEffect();
+
+                        if (card.startBattleEffect != undefined) {
+                            card.startBattleEffect();
+                        }
+
                         if (card.type == "Créature") {
                             for (const e of card.equipments) {
-                                e.startBattleEffect();
+                                if (e.startBattleEffect != undefined) {
+                                    e.startBattleEffect();
+                                }
                             }
                         }
                     }
@@ -70,10 +77,16 @@ export class Battle {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
-                    card.turnEffect();
+
+                    if (card.turnEffect != undefined) {
+                        card.turnEffect();
+                    }
+
                     if (card.type == "Créature") {
                         for (const e of card.equipments) {
-                            e.turnEffect();
+                            if (e.turnEffect != undefined) {
+                                e.turnEffect();
+                            }
                         }
                     }
                 }
@@ -107,15 +120,8 @@ export class Battle {
         }
     };
 
-    nextFighter = function (camp = undefined) {
-        if (camp == undefined) {
-            if (this.fighter == undefined) {
-                camp = this.player;
-            }
-            else {
-                camp = this.fighter.owner.adversary();
-            }
-        }
+    nextFighter = function (previousCamp = undefined) {
+        let camp: Entity = this.choiceCamp(previousCamp);
 
         let speed = this.bestSpeed();
         this.fighter = undefined;
@@ -129,6 +135,18 @@ export class Battle {
         if (this.fighter == undefined) {
             this.nextFighter(camp.adversary());
         }
+    };
+
+    choiceCamp = function (previousCamp: Entity | undefined) {
+        if (previousCamp == undefined) {
+            if (this.fighter == undefined) {
+                return this.player;
+            }
+            else {
+                return this.fighter.owner.adversary();
+            }
+        }
+        return previousCamp;
     };
 
     bestSpeed = function () {

@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
+	import type { System } from "../../../../System/Class";
 
-	export let system;
+	export let system: System;
 
-	let choice = undefined;
+	let choice: string | undefined = undefined;
 
-	function condition(card) {
+	function condition(card: Card) {
 		if (card.type == "Créature" && card.canEquip()) {
 			return true;
 		}
@@ -16,7 +17,7 @@
 		return true;
 	}
 
-	function fonction(card) {
+	function fonction(card: Card) {
 		system.game.use.card.useEffect(card, choice);
 		system.game.use.reset();
 	}
@@ -52,13 +53,7 @@
 	>
 		Retour
 	</button>
-	<Zone
-		bind:system
-		bind:entity={system.game.use.card.owner}
-		zone={system.game.use.card.owner.zone("Terrain")}
-		{condition}
-		{fonction}
-	/>
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
 {:else if choice == "damage"}
 	<button
 		on:click={() => {
@@ -67,11 +62,5 @@
 	>
 		Retour
 	</button>
-	<Zone
-		bind:system
-		entity={system.game.use.card.owner.adversary()}
-		zone={system.game.use.card.owner.adversary().zone("Terrain")}
-		condition={condition2}
-		{fonction}
-	/>
+	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} condition={condition2} {fonction} />
 {/if}

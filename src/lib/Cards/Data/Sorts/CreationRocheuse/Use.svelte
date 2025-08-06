@@ -1,5 +1,7 @@
-<script>
-	export let system;
+<script lang="ts">
+	import type { System } from "../../../../System/Class";
+
+	export let system: System;
 
 	function fonction(choice) {
 		system.game.use.card.useEffect(choice);
@@ -18,7 +20,7 @@
 	</button>
 
 	<br />
-	
+
 	<button
 		class="big choice"
 		on:click={() => {

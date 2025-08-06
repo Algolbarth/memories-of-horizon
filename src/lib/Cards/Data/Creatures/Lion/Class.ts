@@ -1,0 +1,34 @@
+import { copy } from '../../../../Utils';
+import type { System } from '../../../../System/Class';
+import { Creature } from '../../../Class/Creature';
+import Text from './Text.svelte';
+
+export class Lion extends Creature {
+    name = "Lion";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 30], ["Feu", 30]]);
+        this.familles.base.push("Bête");
+
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
+        this.stat("Attaque").base = 20;
+
+        this.text = Text;
+    };
+
+    useEffect = function () {
+        let terrain = copy(this.owner.zone("Terrain").cards);
+        for (const card of terrain) {
+            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
+                card.stat("Attaque").add += 5;
+                card.stat("Vie").current += 5;
+                card.stat("Vie").add += 5;
+            }
+        }
+        this.move("Terrain");
+        this.pose();
+    };
+}

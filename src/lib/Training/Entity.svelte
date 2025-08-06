@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { System } from "../System/Class";
+	import type { System } from "../System/Class";
 	import type { Train_Entity } from "./Train";
 
 	export let system: System;
@@ -10,7 +10,7 @@
 	let flux: number = entity.flux;
 </script>
 
-<div class={"zone " + (entity == system.train.player ? "left" : "right")} >
+<div class={"zone " + (entity == system.train.player ? "left" : "right")}>
 	<div class="container">
 		<div>Vie :</div>
 		<div>

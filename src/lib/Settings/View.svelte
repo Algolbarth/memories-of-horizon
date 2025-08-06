@@ -46,20 +46,12 @@
 
 	<div class="checkbox-container">
 		<label class="form-control" for="show_intelligence">
-			<input
-				type="checkbox"
-				bind:checked={system.settings.show_intelligence}
-				id="show_intelligence"
-			/>
+			<input type="checkbox" bind:checked={system.settings.show_intelligence} id="show_intelligence" />
 			Afficher l'intelligence totale
 		</label>
 
 		<label class="form-control" for="autoplay">
-			<input
-				type="checkbox"
-				bind:checked={system.settings.autoplay}
-				id="autoplay"
-			/>
+			<input type="checkbox" bind:checked={system.settings.autoplay} id="autoplay" />
 			Lance les combats automatiques
 		</label>
 	</div>

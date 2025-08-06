@@ -127,19 +127,11 @@ export class Equipment extends Objet {
         this.equipStats.push(trait);
     };
 
-    playEffect = function () {
+    playEffect: Function | undefined;
 
-    };
+    fightEffect: Function | undefined;
 
-    fightEffect = function () {
+    killEffect: Function | undefined;
 
-    };
-
-    killEffect = function () {
-
-    };
-
-    defendEffect = function () {
-
-    };
+    defendEffect: Function | undefined;
 };

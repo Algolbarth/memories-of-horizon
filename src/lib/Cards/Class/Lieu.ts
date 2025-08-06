@@ -14,7 +14,7 @@ export class Lieu extends Card {
         this.pose();
     };
 
-    condition = function (card:Card) {
+    condition = function (card: Card) {
         return true;
     };
 }

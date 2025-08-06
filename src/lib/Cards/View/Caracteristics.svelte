@@ -2,7 +2,9 @@
 	import type { System } from "../../System/Class";
 	import type { Card } from "../Class";
 
+	// svelte-ignore export_let_unused
 	export let system: System;
+	// svelte-ignore export_let_unused
 	export let card: Card;
 
 	function cout(card) {
@@ -35,15 +37,7 @@
 		Nv {card.level}
 	</div>
 	{#each card.elements.total() as element}
-		<div
-			class="cost"
-			style={"background:" +
-				system.ressources.find("", element)?.color +
-				";color:" +
-				(system.ressources.find("", element)?.light_font
-					? "rgba(255, 255, 255, 1)"
-					: "rgba(0, 0, 0, 1)")}
-		>
+		<div class="cost" style={"background:" + system.ressources.find("", element)?.color + ";color:" + (system.ressources.find("", element)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 			{element}
 		</div>
 	{/each}
@@ -54,15 +48,7 @@
 		<div class="little-container">
 			{#if cout(card).length > 0}
 				{#each cout(card) as cost}
-					<div
-						class="cost"
-						style={"background:" +
-							system.ressources.find(cost.name)?.color +
-							";color:" +
-							(system.ressources.find(cost.name)?.light_font
-								? "rgba(255, 255, 255, 1)"
-								: "rgba(0, 0, 0, 1)")}
-					>
+					<div class="cost" style={"background:" + system.ressources.find(cost.name)?.color + ";color:" + (system.ressources.find(cost.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{cost.value()}
 					</div>
 				{/each}
@@ -78,15 +64,7 @@
 		<div class="little-container">
 			{#if vente(card).length > 0}
 				{#each vente(card) as sell, i}
-					<div
-						class="cost"
-						style={"background:" +
-							system.ressources.find(sell.name)?.color +
-							";color:" +
-							(system.ressources.find(sell.name)?.light_font
-								? "rgba(255, 255, 255, 1)"
-								: "rgba(0, 0, 0, 1)")}
-					>
+					<div class="cost" style={"background:" + system.ressources.find(sell.name)?.color + ";color:" + (system.ressources.find(sell.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{sell.value()}
 					</div>
 				{/each}

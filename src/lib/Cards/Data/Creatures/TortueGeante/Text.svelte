@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
 	import CardInfo from "../../../Utils/Info.svelte";
+	import type { System } from "../../../../System/Class";
+	import type { Card } from "../../../Class";
 
-	export let system;
-	export let card;
+	export let system: System;
+	// svelte-ignore export_let_unused
+	export let card: Card;
 </script>
 
 Quand meurt : crée <CardInfo bind:system name={"Carapace de tortue"} /> dans la main.

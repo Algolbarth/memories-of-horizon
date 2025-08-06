@@ -32,16 +32,7 @@
 				let card = system.cards.getByName(cardName);
 				let name = card.name.toLowerCase();
 
-				if (
-					(nameSelect == "" ||
-						name.includes(nameSelect.toLowerCase())) &&
-					(levelSelect == "Tous" || card.level == levelSelect) &&
-					(typeSelect == "Tous" || card.type == typeSelect) &&
-					(familleSelect == "Toutes" ||
-						card.familles.total().includes(familleSelect)) &&
-					(elementSelect == "Tous" ||
-						card.elements.total().includes(elementSelect))
-				) {
+				if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == levelSelect) && (typeSelect == "Tous" || card.type == typeSelect) && (familleSelect == "Toutes" || card.familles.total().includes(familleSelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
 					tab.push(cardName);
 				}
 			}
@@ -50,13 +41,7 @@
 		cardList = tab;
 	}
 
-	function sorting(
-		name: string,
-		level: string,
-		type: string,
-		famille: string,
-		element: string,
-	) {
+	function sorting(name: string, level: string, type: string, famille: string, element: string) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
@@ -162,8 +147,7 @@
 								system.view.card = system.cards.getByName(card);
 							}}
 							on:mouseenter={() => {
-								system.view.quick =
-									system.cards.getByName(card);
+								system.view.quick = system.cards.getByName(card);
 							}}
 							on:mouseleave={() => {
 								system.view.quick = undefined;
@@ -217,17 +201,7 @@
 {/if}
 
 {#if sorted}
-	<Filter
-		bind:system
-		{nameSelect}
-		{levelSelect}
-		{typeSelect}
-		{familleSelect}
-		{elementSelect}
-		rarity={false}
-		{sorting}
-		{close}
-	/>
+	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familleSelect} {elementSelect} rarity={false} {sorting} {close} />
 {/if}
 
 <style>
