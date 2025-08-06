@@ -23,7 +23,7 @@ export class Assomage extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
+                if (target == undefined && target.type == "Créature") {
                     target = card;
                 }
             }

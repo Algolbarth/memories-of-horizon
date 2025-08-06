@@ -1,11 +1,15 @@
 <script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
+    import type { Card } from "../../../Class";
 
 	export let system: System;
 
-	function condition() {
-		return true;
+	function condition(card: Card) {
+		if (card.type == "Créature") {
+			return true;
+		}
+		return false;
 	}
 
 	function fonction(card: Card) {

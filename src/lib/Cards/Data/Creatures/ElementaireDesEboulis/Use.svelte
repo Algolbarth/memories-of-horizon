@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
+    import type { Card } from "../../../Class";
 
 	export let system: System;
 
@@ -13,14 +14,14 @@
 		return false;
 	}
 
-	function fonction(card: Card) {
+	function fonction(card: Card | undefined) {
 		system.game.use.card.useEffect(card);
 		system.game.use.reset();
 	}
 </script>
 
 {#if choice == undefined}
-	<div class="center" style="text-align:center">
+	<div class="center">
 		<button
 			class="big choice"
 			on:click={() => {
@@ -35,7 +36,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "damage";
+				choice = "stun";
 			}}
 		>
 			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature adverse sur le terrain
@@ -49,5 +50,6 @@
 	>
 		Retour
 	</button>
+
 	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} {condition} {fonction} />
 {/if}

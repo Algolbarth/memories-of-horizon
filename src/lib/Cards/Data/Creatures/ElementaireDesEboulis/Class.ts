@@ -1,5 +1,4 @@
 import type { System } from '../../../../System/Class';
-import type { Unit } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -26,8 +25,15 @@ export class ElementaireDesEboulis extends Creature {
     };
 
     select = function () {
+        let check = undefined;
+        for (const card of this.owner.adversary().zone("Terrain").cards) {
+            if (check == undefined && card.type == "Créature") {
+                check = true;
+            }
+        }
+
         if (this.owner == this.system.game.player) {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (check) {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
@@ -35,8 +41,14 @@ export class ElementaireDesEboulis extends Creature {
             }
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            if (check) {
+                let target = undefined;
+                for (const card of this.owner.adversary().zone("Terrain").cards) {
+                    if (target == undefined && card.type == "Créature") {
+                        target = card;
+                    }
+                }
+                this.useEffect(target);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
                 this.useEffect(undefined);
@@ -44,7 +56,7 @@ export class ElementaireDesEboulis extends Creature {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = function (target: Creature | undefined) {
         if (target != undefined) {
             target.stat("Étourdissement").fix(1);
             this.destroy();
