@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
+    import { Game } from "./Game";
 
 	export let system: System;
 
@@ -45,6 +46,17 @@
 					>
 						Configurer l'entraînement
 					</button>
+
+					<button
+						class="big"
+						on:click={() => {
+							system.view.reset();
+							system.game = new Game(system, "Entraînement", system.train.deck);
+							system.game.init();
+						}}
+					>
+						Relancer l'entraînement
+					</button>
 				{/if}
 
 				<button
@@ -70,7 +82,7 @@
 	#body {
 		background-color: var(--card);
 		width: 20vw;
-		height: 40vh;
+		height: 50vh;
 		padding: 1%;
 		border: solid;
 		border-width: 5px;
