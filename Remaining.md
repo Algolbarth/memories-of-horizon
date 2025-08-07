@@ -31,7 +31,6 @@ Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'inte
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
 ### Voleur
-Homme d'affaire : produit 5 or quand vend une carte. 
 Banque : augmente la valeur de vente des unités alliées sur le terrain. 
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. 
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. 
@@ -93,8 +92,6 @@ Louve : créature bête, quand meurt : crée 2 Louveteau sur le terrain. 8/5
 Louveteau : créature bête, 5/3
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente l'attaque de la créature alliée.
-Remède : enlève un effet négatif (poison, brûlure, toxicité, étourdissement, paralysie) d'une créature alliée sur le terrain.
-Panacée : enlève tous les effets négatifs d'une creature alliée sur le terrain.
 
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée. 
@@ -142,11 +139,9 @@ Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque cart
 
 ### Terre
 Écraseur nain : charge. 
-Carrière de pierre : bâtiment, au début de la phase de préparation : produit de la terre. 
 Masse de pierre : augmente la charge de la créature équipée. 
 Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses. 
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. 
-Éboulement : inflige des dégâts et applique étourdissement à une créature adverse sur le terrain. 
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. 
 Taupe
 Mère ours : créature bête, protection
