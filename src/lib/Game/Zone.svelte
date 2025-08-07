@@ -25,26 +25,36 @@
 		{#if zone instanceof Shop}
 			{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
 				-
-				<button
-					on:click={() => {
-						entity.actualiseShop();
-						system = system;
-					}}
-				>
+				{#if entity.canActualiseShop()}
+					<button
+						class="check"
+						on:click={() => {
+							entity.actualiseShop();
+							system = system;
+						}}
+					>
+						Actualiser
+					</button>
+				{:else}
 					Actualiser
-				</button>
+				{/if}
 				{10} Or
 			{/if}
 			{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
 				-
-				<button
-					on:click={() => {
-						entity.upShop();
-						system = system;
-					}}
-				>
+				{#if entity.canUpShop()}
+					<button
+						class="check"
+						on:click={() => {
+							entity.upShop();
+							system = system;
+						}}
+					>
+						Améliorer
+					</button>
+				{:else}
 					Améliorer
-				</button>
+				{/if}
 				{zone.level * 10} Or
 			{/if}
 			{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
@@ -55,7 +65,11 @@
 						system = system;
 					}}
 				>
-					Verrouiller
+					{#if entity.isFullLocked()}
+						Déverrouiller
+					{:else}
+						Verrouiller
+					{/if}
 				</button>
 			{/if}
 		{/if}
@@ -83,5 +97,13 @@
 
 	.right {
 		margin-left: 1%;
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

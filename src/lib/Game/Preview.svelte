@@ -16,7 +16,7 @@
 	<div class={(isPlayer || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
 		<div id={isPlayer || fonction != undefined ? "infos" : ""}>
 			{#if card.locked}
-				<div id="locked">&#x1F512</div>
+				<img src="./src/assets/Pictures/lock.svg" alt="locked" class="locked" />
 			{/if}
 			{#if !card.cache}
 				<button
@@ -53,6 +53,7 @@
 					{#if card.zone.name == "Boutique"}
 						{#if card.canBuy()}
 							<button
+								class="check"
 								on:click={() => {
 									card.buy();
 									system = system;
@@ -61,7 +62,7 @@
 								Acheter
 							</button>
 						{:else}
-							<button style="color:darkgrey;"> Acheter </button>
+							Acheter
 						{/if}
 					{:else if card.zone.name == "Main"}
 						<button
@@ -74,7 +75,7 @@
 						</button>
 					{:else if card.zone.name == "Lieux"}
 						{#if card == card.owner?.place}
-							Actif
+							<span style="color:darkgreen">Actif</span>
 						{:else}
 							<button
 								on:click={() => {
@@ -159,8 +160,16 @@
 		text-align: right;
 	}
 
-	#locked {
-		display: inline-block;
-		font-size: small;
+	img.locked {
+		width: 1em;
+		transform: translate(0, 10%);
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

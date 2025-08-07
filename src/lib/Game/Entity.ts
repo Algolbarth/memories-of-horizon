@@ -13,7 +13,7 @@ export class Entity {
             this.max = value;
         }
     };
-    zones = [
+    zones: Zone[] = [
         new Zone("Lieux", 3),
         new Shop(),
         new Zone("Main", 10),
@@ -133,16 +133,30 @@ export class Entity {
         return array
     };
 
-    upShop = function () {
+    canUpShop = function () {
         if (this.ressource("Or").total() >= this.zone("Boutique").level * 10) {
+            return true;
+        }
+        return false;
+    };
+
+    upShop = function () {
+        if (this.canUpShop()) {
             this.ressource("Or").spend(this.zone("Boutique").level * 10);
             this.zone("Boutique").level++;
             this.refreshShop();
         }
     };
 
-    actualiseShop = function () {
+    canActualiseShop = function () {
         if (this.ressource("Or").total() >= 10) {
+            return true;
+        }
+        return false;
+    };
+
+    actualiseShop = function () {
+        if (this.canActualiseShop()) {
             this.ressource("Or").spend(10);
             this.refreshShop();
         }
@@ -160,22 +174,25 @@ export class Entity {
         }
     };
 
-    lock = function () {
-        let check = false;
+    isFullLocked = function () {
+        let check = true;
         for (const card of this.zone("Boutique").cards) {
             if (!card.locked) {
-                check = true;
+                check = false;
             }
         }
+        return check;
+    };
 
-        if (check) {
+    lock = function () {
+        if (this.isFullLocked()) {
             for (const card of this.zone("Boutique").cards) {
-                card.lock(true);
+                card.lock(false);
             }
         }
         else {
             for (const card of this.zone("Boutique").cards) {
-                card.lock(false);
+                card.lock(true);
             }
         }
     };
