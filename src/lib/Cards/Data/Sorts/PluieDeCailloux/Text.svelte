@@ -11,11 +11,11 @@
 Au choix :
 <ul>
 	<li>
-		Crée un <CardInfo bind:system name={"Élémentaire de roche"} /> sur le terrain.
+		Remplit le terrain allié de <CardInfo bind:system name={"Élémentaire de caillou"} />.
 	</li>
 	<li>
-		Créé un <CardInfo bind:system name={"Mur de roche"} /> sur le terrain.
+		Inflige 6 dégâts à toutes les unités adverses sur le terrain.
 	</li>
 </ul>
 
-Sorcellerie 50 : crée les deux sur le terrain à la place.
+Sorcellerie 30 : les deux effets s'activent à la place.

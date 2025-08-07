@@ -28,7 +28,7 @@ export class CreationRocheuse extends Sort {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = function (choice: string) {
         if (this.owner.ressource("Mana").total() >= this.manaCost(50)) {
             this.owner.ressource("Mana").spend(this.manaCost(50));
             this.owner.getCard("Élémentaire de roche").add("Terrain");

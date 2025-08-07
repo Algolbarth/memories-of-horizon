@@ -13,10 +13,10 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Créature");
+			fonction("creature");
 		}}
 	>
-		Crée un Élémentaire de roche sur le terrain
+		Remplit le terrain allié d'Élémentaire de caillou
 	</button>
 
 	<br />
@@ -24,9 +24,9 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Bâtiment");
+			fonction("damage");
 		}}
 	>
-		Créé un Mur de roche sur le terrain
+		Inflige 6 dégâts à toutes les unités adverses sur le terrain
 	</button>
 </div>

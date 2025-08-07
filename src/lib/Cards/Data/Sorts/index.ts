@@ -5,4 +5,5 @@ export * from './Ecoulement';
 export * from './EnseignementElfique';
 export * from './PeauDEcorce';
 export * from './PeauDePierre';
+export * from './PluieDeCailloux';
 export * from './PluieDeFeu';
