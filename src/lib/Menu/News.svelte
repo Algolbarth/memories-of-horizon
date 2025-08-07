@@ -20,6 +20,25 @@
 	Fonctionnalités récentes :
 	<ul>
 		<li>
+			L'objectif est de donner plus d'outils de résilience à l'élément Végétal qui a toujours du mal à rester sur le terrain.
+			<ul>
+				<li>
+					<span class="card">Herbes médicinales</span> est un objet soignant 50 blessures à une créature.
+				</li>
+			</ul>
+		</li>
+		<li>
+			Ajouter des cartes Neutre pour enlever des debuffs facilement.
+			<ul>
+				<li>
+					<span class="card">Remède</span> est un objet enlevant un debuff à une créature.
+				</li>
+				<li>
+					<span class="card">Panacée</span> est un objet enlevant tous les debuffs d'une créature.
+				</li>
+			</ul>
+		</li>
+		<li>
 			Ajouts de 4 cartes neutres : <span class="card">Homme d'affaires</span>, <span class="card">Marché</span>,
 			<span class="card">Commissaire priseur</span>
 			et <span class="card">Négociant</span>.
@@ -33,28 +52,6 @@
 <div class="zone">
 	Fonctionnalités à venir :
 	<ul>
-		<li>
-			Ajouter des cartes Neutre pour enlever des debuffs facilement.
-			<ul>
-				<li>
-					<span class="card">Remède</span> est un objet enlevant un debuff à une créature.
-				</li>
-				<li>
-					<span class="card">Panacée</span> est un objet enlevant tous les debuffs d'une créature.
-				</li>
-			</ul>
-		</li>
-		<li>
-			L'objectif est de donner plus d'outils de résilience à l'élément Végétal qui a toujours du mal à rester sur le terrain.
-			<ul>
-				<li>
-					<span class="card">Herbes médicinales</span> est un objet soignant 50 blessures à une créature.
-				</li>
-				<li>
-					<span class="card">Herbes curatives</span> est un objet enlevant un debuff à une créature.
-				</li>
-			</ul>
-		</li>
 		<li>
 			Dans l'optique de gérer le terrain adverse, l'élément Terre pourra plus facilement infliger des dégâts de zone.
 			<ul>
