@@ -14,6 +14,7 @@ export * from './FlecheEnBois';
 export * from './Livre';
 export * from './LivreDeRecette';
 export * from './Pain';
+export * from './Panacee';
 export * from './PierrePhilosophale';
 export * from './Pomme';
 export * from './PommeDeTerre';
