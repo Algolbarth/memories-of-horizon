@@ -23,6 +23,7 @@ export * from './PotionDeMana';
 export * from './PotionDeSoin';
 export * from './PotionDeSolidite';
 export * from './PouletRoti';
+export * from './Remede';
 export * from './SardinesEnBoite';
 export * from './Sifflet';
 export * from './Torche';

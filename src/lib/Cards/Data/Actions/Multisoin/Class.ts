@@ -22,7 +22,7 @@ export class Multisoin extends Action {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == undefined && card.type == "Créature" && card.isDamaged()) {
+                if (check == false && card.type == "Créature" && card.isDamaged()) {
                     check = true;
                 }
             }

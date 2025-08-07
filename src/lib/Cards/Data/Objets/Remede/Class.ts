@@ -1,16 +1,17 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
 import { Objet } from '../../../Class/Objet';
+import type { Stat } from '../../../Class/Stat';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Panacee extends Objet {
-    name = "Panacée";
+export class Remede extends Objet {
+    name = "Remède";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50]]);
+        this.init([["Or", 10]]);
 
         this.text = Text;
     };
@@ -32,7 +33,11 @@ export class Panacee extends Objet {
 
                 for (const card of this.owner.zone("Terrain").cards) {
                     if (target == undefined && card instanceof Creature && card.hasDebuff()) {
-                        target = card;
+                        for (const stat of card.stats) {
+                            if (stat.debuff && stat.condition()) {
+                                target = stat;
+                            }
+                        }
                     }
                 }
 
@@ -43,12 +48,8 @@ export class Panacee extends Objet {
         }
     };
 
-    useEffect = function (target: Creature) {
-        for (const stat of target.stats) {
-            if (stat.debuff) {
-                stat.set(stat.min);
-            }
-        }
+    useEffect = function (stat: Stat) {
+        stat.set(stat.min);
         this.move("Défausse");
         this.pose();
     };

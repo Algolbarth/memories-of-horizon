@@ -25,9 +25,9 @@ export class ElementaireDesEboulis extends Creature {
     };
 
     select = function () {
-        let check = undefined;
+        let check = false;
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (check == undefined && card.type == "Créature") {
+            if (check == false && card.type == "Créature") {
                 check = true;
             }
         }

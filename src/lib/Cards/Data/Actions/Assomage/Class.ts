@@ -16,20 +16,29 @@ export class Assomage extends Action {
     };
 
     select = function () {
-        if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
-
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && target.type == "Créature") {
-                    target = card;
-                }
+        let check = false;
+        for (const card of this.owner.adversary().zone("Terrain").cards) {
+            if (check == false && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+                check = true;
             }
+        }
 
-            if (target != undefined) {
-                this.useEffect(target);
+        if (check) {
+            if (this.owner == this.system.game.player) {
+                this.system.game.use.set(this, Use);
+            }
+            else {
+                let target = undefined;
+
+                for (const card of this.owner.adversary().zone("Terrain").cards) {
+                    if (target == undefined && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+                        target = card;
+                    }
+                }
+
+                if (target != undefined) {
+                    this.useEffect(target);
+                }
             }
         }
     };
