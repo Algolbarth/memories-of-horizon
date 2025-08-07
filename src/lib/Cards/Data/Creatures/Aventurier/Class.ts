@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -28,7 +29,7 @@ export class Aventurier extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = function (choice: string) {
         let condition = function (card: Card) {
             if (card.type == choice) {
                 return true;

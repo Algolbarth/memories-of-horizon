@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -19,7 +20,7 @@ export class MageDeLaNature extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (c) {
+    otherPoseEffect = function (c: Card) {
         if (this.zone.name == "Terrain" && c.familles.total().includes("Sort") && c.owner == this.owner) {
             let condition = function (card: Card) {
                 if (card.type == "Créature" && c.level == card.level) {

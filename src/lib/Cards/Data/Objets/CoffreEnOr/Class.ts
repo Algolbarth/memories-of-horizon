@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 
@@ -14,8 +15,8 @@ export class CoffreEnOr extends Objet {
     };
 
     useEffect = function () {
-        let condition = function (card, drawer) {
-            if (drawer.owner.zone("Boutique").level == card.level) {
+        let condition = function (card: Card, drawer: Card) {
+            if (drawer.owner?.zone("Boutique").level == card.level) {
                 return true;
             }
             return false;

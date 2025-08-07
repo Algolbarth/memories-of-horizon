@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
+import type { Card } from '../../../Class';
 
 export class Sifflet extends Objet {
     name = "Sifflet";

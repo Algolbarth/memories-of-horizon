@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Equipment } from '../../../Class/Equipement';
 import Text from './Text.svelte';
 

@@ -9,6 +9,7 @@ export class Stat {
     min: number;
     current: number | undefined;
     card: Card;
+    debuff: boolean = false;
 
     constructor(name: string, value: number, min: number, card: Card) {
         this.name = name;

@@ -44,6 +44,7 @@ export class Creature extends Unit {
         };
 
         this.addStat("Étourdissement", 0);
+        this.stat("Étourdissement").debuff = true;
     };
 
     play = function () {

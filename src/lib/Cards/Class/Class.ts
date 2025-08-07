@@ -339,6 +339,15 @@ export class Card {
         return false;
     };
 
+    hasDebuff = function () {
+        for (const s of this.stats) {
+            if (s.condition() && s.debuff) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     trait = function (name: string) {
         for (const t of this.traits) {
             if (name == t.name) {
