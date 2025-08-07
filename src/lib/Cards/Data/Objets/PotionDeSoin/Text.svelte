@@ -4,7 +4,6 @@
 
 	// svelte-ignore export_let_unused
 	export let system: System;
-	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
