@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { save } from "../Login/Save";
 	import type { System } from "../System/Class";
+    import Logo from "./Logo.svelte";
 
 	export let system: System;
 
@@ -12,7 +13,7 @@
 </script>
 
 <div id="body">
-	<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
+	<Logo />
 	<div id="list">
 		<div class="column">
 			<div>

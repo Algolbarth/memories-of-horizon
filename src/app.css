@@ -351,9 +351,3 @@ input::-webkit-inner-spin-button {
 label {
   cursor: url('./assets/Pictures/Select.cur'), pointer;
 }
-
-img.logo {
-  height: 30vh;
-  margin: 2%;
-  border: solid;
-}

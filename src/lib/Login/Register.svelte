@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Logo from "../Menu/Logo.svelte";
 	import type { System } from "../System/Class";
 	import { Account } from "./Account";
 
@@ -15,7 +16,7 @@
 </script>
 
 <div id="body">
-	<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
+	<Logo />
 
 	<br />
 
