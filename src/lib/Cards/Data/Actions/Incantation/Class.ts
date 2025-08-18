@@ -23,7 +23,7 @@ export class Incantation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Magie").value() > 0) {
+                if (target == undefined && card.type == "Créature" && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
                     target = card;
                 }
             }
