@@ -43,9 +43,9 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
 
         this.familles.base.push("Nain");
 
-        this.stat("Vie").base = 25;
-        this.stat("Vie").current = 25;
-        this.stat("Attaque").base = 25;
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
+        this.stat("Attaque").base = 20;
         this.stat("Défense").base = 5;
     };
 

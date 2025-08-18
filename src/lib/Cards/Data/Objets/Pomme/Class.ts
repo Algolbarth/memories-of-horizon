@@ -12,6 +12,7 @@ export class Pomme extends Objet {
 
         this.init([["Or", 4], ["Végétal", 4]]);
         this.familles.base.push("Nourriture");
+        this.familles.base.push("Plante");
 
         this.text = Text;
     };

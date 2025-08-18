@@ -11,6 +11,7 @@ export class HerbesMedicinales extends Objet {
         super(system);
 
         this.init([["Or", 12], ["Végétal", 12]]);
+        this.familles.base.push("Plante");
 
         this.text = Text;
     };

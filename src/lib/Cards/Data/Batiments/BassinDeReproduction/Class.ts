@@ -9,6 +9,8 @@ export class BassinDeReproduction extends Batiment {
         super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
+        this.familles.base.push("Ondin");
+        
         this.stat("Vie").base = 20;
         this.stat("Vie").current = 20;
 
