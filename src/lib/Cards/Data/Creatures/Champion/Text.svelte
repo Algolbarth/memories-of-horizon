@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Si est placé sur le terrain en première position : double son attaque et sa défense.
+Tant qu'il est placé sur le terrain en première position : double son attaque et sa défense.

@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Augmente l'intelligence d'une créature alliée de 5.
+Augmente de 5 l'intelligence d'une créature alliée sur le terrain.
 <br />
 <br />
-Sorcellerie 25 : augmente l'intelligence de 10 à la place.
+Sorcellerie 25 : augmente de 10 l'intelligence à la place.
