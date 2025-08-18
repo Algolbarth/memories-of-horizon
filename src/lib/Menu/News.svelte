@@ -20,6 +20,17 @@
 	Fonctionnalités récentes :
 	<ul>
 		<li>
+			Dans l'optique de gérer le terrain adverse, l'élément Terre pourra plus facilement infliger des dégâts de zone.
+			<ul>
+				<li>
+					<span class="card">Pluie de caillou</span> est une action infligeant des dégâts à toutes les unités adverses ou remplissant le terrain d'<span class="card">Élémentaire de caillou</span>.
+				</li>
+				<li>
+					<span class="card">Tremblement de terre</span> est une action infligeant des dégâts à toutes les unités, alliées comme adverses.
+				</li>
+			</ul>
+		</li>
+		<li>
 			L'objectif est de donner plus d'outils de résilience à l'élément Végétal qui a toujours du mal à rester sur le terrain.
 			<ul>
 				<li>
@@ -52,17 +63,6 @@
 <div class="zone">
 	Fonctionnalités à venir :
 	<ul>
-		<li>
-			Dans l'optique de gérer le terrain adverse, l'élément Terre pourra plus facilement infliger des dégâts de zone.
-			<ul>
-				<li>
-					<span class="card">Pluie de caillou</span> est une action infligeant des dégâts à toutes les unités adverses ou remplissant le terrain d'<span class="card">élémentaire de caillou</span>.
-				</li>
-				<li>
-					<span class="card">Tremblement de terre</span> est une action infligeant des dégâts à toutes les unités, alliées comme adverses.
-				</li>
-			</ul>
-		</li>
 		<li>
 			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
 			<ul>

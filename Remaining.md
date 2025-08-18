@@ -140,8 +140,7 @@ Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque cart
 ### Terre
 Écraseur nain : charge. 
 Masse de pierre : augmente la charge de la créature équipée. 
-Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses. 
-Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. 
+Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses.  
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. 
 Taupe
 Mère ours : créature bête, protection

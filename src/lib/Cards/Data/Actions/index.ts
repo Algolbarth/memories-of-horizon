@@ -55,4 +55,5 @@ export * from './SouffleEnflamme';
 export * from './Sprint';
 export * from './TirHydraulique';
 export * from './TourneeGenerale';
+export * from './TremblementDeTerre';
 export * from './VagueDeferlante';
