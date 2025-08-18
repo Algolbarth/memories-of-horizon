@@ -41,7 +41,7 @@ export class Biscuit extends Objet {
             this.owner.getCard("Bonhomme biscuit").add("Terrain");
         }
         else {
-            target.heal(25);
+            target.heal(20);
         }
         this.move("Défausse");
         this.pose();

@@ -4,13 +4,13 @@ import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Biere extends Objet {
-    name = "Bière";
+export class Vin extends Objet {
+    name = "Vin";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 25]]);
         this.familles.base.push("Nourriture");
 
         this.text = Text;
@@ -38,13 +38,10 @@ export class Biere extends Objet {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (target.stat("Vie").current == target.stat("Vie").value()) {
-            target.stat("Critique").current += 50;
-            if (target.stat("Critique").current > 100) {
-                target.stat("Critique").current = 100;
-            }
+            target.stat("Critique").current = 100;
         }
         else {
-            target.heal(20);
+            target.heal(30);
         }
         this.move("Défausse");
         this.pose();

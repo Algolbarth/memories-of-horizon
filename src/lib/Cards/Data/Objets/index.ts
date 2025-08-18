@@ -30,3 +30,4 @@ export * from './Sifflet';
 export * from './Torche';
 export * from './Trefle';
 export * from './Tresor';
+export * from './Vin';
