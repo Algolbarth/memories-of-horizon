@@ -11,6 +11,7 @@ export * from './CoffreEnOr';
 export * from './Concoction';
 export * from './Conque';
 export * from './CorDeGuerre';
+export * from './FioleDeVerre';
 export * from './FlecheEnBois';
 export * from './HerbesMedicinales';
 export * from './Livre';
