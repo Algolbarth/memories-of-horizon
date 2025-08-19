@@ -8,6 +8,7 @@ export * from './Brique';
 export * from './Chocolat';
 export * from './CoffreEnBois';
 export * from './CoffreEnOr';
+export * from './Concoction';
 export * from './Conque';
 export * from './CorDeGuerre';
 export * from './FlecheEnBois';

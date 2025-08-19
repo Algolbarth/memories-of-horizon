@@ -32,6 +32,7 @@ export * from './Hydratation';
 export * from './Incantation';
 export * from './Inondation';
 export * from './Malefice';
+export * from './Melange';
 export * from './Menace';
 export * from './Metamorphose';
 export * from './MilieuAquatique';

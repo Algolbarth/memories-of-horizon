@@ -1,0 +1,53 @@
+import type { System } from '../../../../System/Class';
+import { Action } from '../../../Class/Action';
+import type { Objet } from '../../../Class/Objet';
+import Text from './Text.svelte';
+import Use from './Use.svelte';
+
+export class Melange extends Action {
+    name = "Mélange";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 10]]);
+
+        this.text = Text;
+    };
+
+    select = function () {
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
+        }
+        else {
+            let potion_1 = undefined;
+            let potion_2 = undefined;
+
+            for (const card of this.owner.zone("Main").cards) {
+                if (potion_1 == undefined && card.familles.total().includes("Potion")) {
+                    potion_1 = card;
+                }
+                if (card != potion_1 && potion_2 == undefined && card.familles.total().includes("Potion")) {
+                    potion_2 = card;
+                }
+            }
+
+            if (potion_1 != undefined && potion_2 != undefined) {
+                this.useEffect(potion_1, potion_2);
+            }
+        }
+    };
+
+    useEffect = function (potion_1: Objet, potion_2: Objet) {
+        potion_1.remove();
+        potion_2.remove();
+
+        let concoction = this.owner.getCard("Concoction");
+        concoction.infuse(potion_1);
+        concoction.infuse(potion_2);
+
+        concoction.add("Main");
+        this.move("Défausse");
+        this.pose();
+    };
+}
