@@ -201,10 +201,12 @@ export class Entity {
         let playable = true;
         while (playable) {
             playable = false;
-            let main = copy(this.zone("Main").cards);
-            for (const card of main) {
+
+            for (let i = 0; i < this.zone("Main").cards.length; i++) {
+                let card = this.zone("Main").cards[i];
                 card.use();
                 if (card.zone == undefined || card.zone.name != "Main") {
+                    i--;
                     playable = true;
                 }
             }

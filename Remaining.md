@@ -55,8 +55,6 @@ Cotte de maille : augmente l'endurance de la créature équipée.
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 ### Potion
-Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. 
-Mélange : action, détruit deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. 
 Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. 
 Alambic : objet, créé mélange à partir des potions de la boutique.
 
