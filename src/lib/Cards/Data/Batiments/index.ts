@@ -8,6 +8,7 @@ export * from './Cascade';
 export * from './Caserne';
 export * from './Catapulte';
 export * from './Charrette';
+export * from './Chaudron';
 export * from './Epouvantail';
 export * from './FeuDeCamp';
 export * from './Fontaine';

@@ -55,7 +55,6 @@ Cotte de maille : augmente l'endurance de la créature équipée.
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 ### Potion
-Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. 
 Alambic : objet, créé mélange à partir des potions de la boutique.
 
 ### Neutre
