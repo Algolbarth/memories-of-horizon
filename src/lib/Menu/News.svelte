@@ -20,6 +20,27 @@
 	Fonctionnalités récentes :
 	<ul>
 		<li>
+			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
+			<ul>
+				<li>
+					<span class="card">Concotion</span> est un objet potion regroupant plusieurs effets de potions différentes.
+				</li>
+				<li>
+					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la main.
+				</li>
+				<li>
+					<span class="card">Chaudron</span> est un bâtiment créant
+					<span class="card">Mélange</span> dans la main à chaque tour.
+				</li>
+				<li>
+					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en main à chaque étape.
+				</li>
+				<li>
+					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en main.
+				</li>
+			</ul>
+		</li>
+		<li>
 			Dans l'optique de gérer le terrain adverse, l'élément Terre pourra plus facilement infliger des dégâts de zone.
 			<ul>
 				<li>
@@ -64,25 +85,7 @@
 	Fonctionnalités à venir :
 	<ul>
 		<li>
-			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
-			<ul>
-				<li>
-					<span class="card">Concotion</span> est un objet potion regroupant plusieurs effets de potions différentes.
-				</li>
-				<li>
-					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la main.
-				</li>
-				<li>
-					<span class="card">Chaudron</span> est un bâtiment créant
-					<span class="card">Mélange</span> dans la main à chaque tour.
-				</li>
-				<li>
-					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en main à chaque étape.
-				</li>
-				<li>
-					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en main.
-				</li>
-			</ul>
+			Rien pour le moment
 		</li>
 	</ul>
 </div>

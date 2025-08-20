@@ -54,9 +54,6 @@ Plastron de piques : augmente la vie et l'épine de la créature équipée.
 Cotte de maille : augmente l'endurance de la créature équipée. 
 Cape de cuir : augmente la défense et la résistance de la créature équipée
 
-### Potion
-Alambic : objet, créé mélange à partir des potions de la boutique.
-
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. 
 Mouton : créature bête, endurance. 
