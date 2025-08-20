@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte d'élément Eau alliée est posée : produit 2 or.
+Quand une carte d'élément Eau alliée est posée : pioche 1 carte.
