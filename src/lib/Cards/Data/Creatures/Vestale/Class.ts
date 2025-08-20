@@ -3,14 +3,14 @@ import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Prêtre extends Creature {
-    name = "Prêtre";
+export class Vestale extends Creature {
+    name = "Vestale";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
-        this.familles.base.push("Humain");
+        this.init([["Or", 10], ["Feu", 10]]);
+        this.familles.base.push("Gobelin");
 
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
@@ -46,7 +46,7 @@ export class Prêtre extends Creature {
             }
 
             if (target != undefined) {
-                this.useEffect(target, "life");
+                this.useEffect(target, "attack");
             }
             else {
                 this.useEffect(target, undefined);
@@ -55,9 +55,8 @@ export class Prêtre extends Creature {
     };
 
     useEffect = function (target, choice) {
-        if (choice == "life") {
-            target.stat("Vie").add += 15;
-            target.stat("Vie").current += 15;
+        if (choice == "attack") {
+            target.stat("Attaque").add += 20;
         }
         else if (choice == "heal") {
             target.heal(20);

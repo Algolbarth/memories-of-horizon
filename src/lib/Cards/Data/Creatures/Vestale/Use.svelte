@@ -25,10 +25,10 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "life";
+				choice = "attack";
 			}}
 		>
-			Augmente de 15 la vie d'une créature alliée sur le terrain
+			Augmente de 20 l'attaque d'une créature alliée sur le terrain
 		</button>
 
 		<br />

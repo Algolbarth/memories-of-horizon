@@ -109,6 +109,7 @@ export * from './Tortue';
 export * from './TortueGeante';
 export * from './Troubadour';
 export * from './Vache';
+export * from './Vestale';
 export * from './Voleur';
 export * from './Wyverne';
 export * from './WyverneMage';

@@ -10,6 +10,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Augmente de 15 la vie d'une créature alliée sur le terrain.</li>
+	<li>Augmente de 20 l'attaque d'une créature alliée sur le terrain.</li>
 	<li>Soigne 20 blessures d'une créature alliée sur le terrain.</li>
 </ul>
