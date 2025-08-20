@@ -1,3 +1,4 @@
+export * from './Alambic';
 export * from './Baliste';
 export * from './BassinDeReproduction';
 export * from './Bibliotheque';
