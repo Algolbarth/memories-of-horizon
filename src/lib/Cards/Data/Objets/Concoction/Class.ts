@@ -25,7 +25,21 @@ export class Concoction extends Objet {
 
     select = function () {
         if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
+            let check = false;
+
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (!check && card.type == "Créature") {
+                    check = true;
+                }
+            }
+
+            if (check) {
+                this.system.game.use.set(this, Use);
+            }
+            else {
+                this.useEffect(undefined);
+            }
+
         }
         else {
             let target = undefined;
@@ -36,17 +50,26 @@ export class Concoction extends Objet {
                 }
             }
 
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+            this.useEffect(target);
         }
     };
 
-    useEffect = function (target: Creature) {
-        target.heal(this.stat("Infusion de soin").value() * 2);
+    hasInfusion = function () {
+        for (const stat of this.stats) {
+            if (stat.name.includes("Infusion") && stat.value() > 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    useEffect = function (target: Creature | undefined) {
         this.owner.ressource("Mana").current += this.stat("Infusion de mana").value();
-        target.stat("Attaque").step += this.stat("Infusion de force").value() * 4;
-        target.stat("Défense").step += this.stat("Infusion de solidité").value() * 2;
+        if (target != undefined) {
+            target.heal(this.stat("Infusion de soin").value() * 2);
+            target.stat("Attaque").step += this.stat("Infusion de force").value() * 4;
+            target.stat("Défense").step += this.stat("Infusion de solidité").value() * 2;
+        }
 
         this.move("Défausse");
         this.pose();

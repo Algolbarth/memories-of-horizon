@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
-	import type { Card } from "../../../Class";
+    import type { Card } from "../../../Class";
+    import { Concoction } from "./Class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -9,8 +10,10 @@
 
 S'utilise sur une créature alliée sur le terrain. Applique des effets en fonction des différentes valeurs d'infusion.
 
-<br />
-<br />
+{#if card instanceof Concoction && card.hasInfusion()}
+	<br />
+	<br />
+{/if}
 
 <i>
 	{#if card.stat("Infusion de soin").value() > 0}
