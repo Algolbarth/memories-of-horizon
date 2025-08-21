@@ -68,6 +68,7 @@ export * from './Heros';
 export * from './HommeDAffaires';
 export * from './Humain';
 export * from './JongleurDeBouleDeFeu';
+export * from './Juge';
 export * from './LanceurDeBouleDeFeu';
 export * from './Lion';
 export * from './LoupDesMontagnes';
