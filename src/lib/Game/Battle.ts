@@ -127,7 +127,7 @@ export class Battle {
         this.fighter = undefined;
         for (let i = 0; i < camp.zone("Terrain").cards.length; i++) {
             let card = camp.zone("Terrain").cards[i];
-            if (this.fighter == undefined && card.stat("Étourdissement").value() == 0 && card.stat("Actions").current > 0 && speed == card.stat("Vitesse").value()) {
+            if (this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Actions").current > 0 && speed == card.stat("Vitesse").value()) {
                 this.fighter = card;
             }
         }
@@ -153,12 +153,12 @@ export class Battle {
         let best = 0;
 
         for (const card of this.player.zone("Terrain").cards) {
-            if (card.stat("Actions").current > 0 && card.stat("Étourdissement").value() == 0 && card.stat("Vitesse").value() > best) {
+            if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Vitesse").value() > best) {
                 best = card.stat("Vitesse").value();
             }
         }
         for (const card of this.bot.zone("Terrain").cards) {
-            if (card.stat("Actions").current > 0 && card.stat("Étourdissement").value() == 0 && card.stat("Vitesse").value() > best) {
+            if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Vitesse").value() > best) {
                 best = card.stat("Vitesse").value();
             }
         }
@@ -168,12 +168,12 @@ export class Battle {
 
     isEndTurn = function () {
         for (const card of this.player.zone("Terrain").cards) {
-            if (card.stat("Actions").current > 0 && card.stat("Étourdissement").value() == 0) {
+            if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
                 return false;
             }
         }
         for (const card of this.bot.zone("Terrain").cards) {
-            if (card.stat("Actions").current > 0 && card.stat("Étourdissement").value() == 0) {
+            if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
                 return false;
             }
         }

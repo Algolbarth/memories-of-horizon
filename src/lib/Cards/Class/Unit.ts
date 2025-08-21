@@ -34,14 +34,6 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Multicoup", 1);
-        this.stat("Multicoup").condition = function () {
-            if (this.value() > 1) {
-                return true;
-            }
-            return false;
-        };
-
         this.addStat("Vitesse", 0);
 
         this.addStat("Protection", 0);

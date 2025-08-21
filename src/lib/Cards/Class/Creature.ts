@@ -9,6 +9,22 @@ export class Creature extends Unit {
     constructor(system: System) {
         super(system);
 
+        this.addTrait("Pacifiste", false);
+        this.trait("Pacifiste").value = function () {
+            if (this.card.stat("Multicoup").value() == 0) {
+                return true;
+            }
+            return false;
+        };
+
+        this.addStat("Multicoup", 1);
+        this.stat("Multicoup").condition = function () {
+            if (this.value() > 1) {
+                return true;
+            }
+            return false;
+        };
+
         this.addStat("Attaque", 0);
         this.stat("Attaque").condition = function () {
             return true;

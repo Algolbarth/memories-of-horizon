@@ -128,11 +128,9 @@ Requin : créature poisson.
 Banc de poisson : crée 5 Sardine dans la main. 
 Sardine : créature poisson. 
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente son attaque pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente son attaque.
-Fontaine de bambou : bâtiment, au début de la phase de préparation : crée écoulement dans la main.
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la main.
 
 ### Terre
-Écraseur nain : charge. 
 Masse de pierre : augmente la charge de la créature équipée. 
 Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses.  
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. 
