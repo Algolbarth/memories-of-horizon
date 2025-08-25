@@ -23,6 +23,10 @@ export class Unit extends Card {
 
         this.addStat("Défense", 0);
 
+        this.addStat("Résistance", 0);
+
+        this.addStat("Endurance", 0);
+
         this.addStat("Garde", 0);
 
         this.addStat("Actions", 1);
@@ -76,6 +80,10 @@ export class Unit extends Card {
     };
 
     damageByEffect = function (value: number) {
+        value -= this.stat("Résistance").value();
+        if (value < 0) {
+            value = 0;
+        }
         this.damage(value);
     };
 
@@ -90,6 +98,11 @@ export class Unit extends Card {
         }
 
         if (this.stat("Esquive").value() == 0) {
+            result.value -= this.stat("Endurance").value();
+            if (result.value < 0) {
+                result.value = 0;
+            }
+
             if (this.stat("Garde").value() > result.value) {
                 this.stat("Garde").remove(result.value);
                 result.value = 0;
@@ -145,7 +158,7 @@ export class Unit extends Card {
         this.dieGo();
     };
 
-    
+
 
     dieGo = function () {
         this.move("Défausse");
