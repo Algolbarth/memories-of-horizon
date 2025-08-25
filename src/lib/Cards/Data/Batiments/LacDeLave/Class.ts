@@ -22,7 +22,7 @@ export class LacDeLave extends Batiment {
                 card.stat("Attaque").add += 5;
             }
             else {
-                card.damage(5);
+                card.damageByEffect(5);
             }
         }
     };

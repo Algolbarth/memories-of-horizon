@@ -27,13 +27,13 @@ export class SouffleEnflamme extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.damage(20);
+        target.damageByEffect(20);
         if (target.slot && target.zone) {
             if (target.slot > 0) {
-                target.zone.cards[target.slot - 1].damage(20);
+                target.zone.cards[target.slot - 1].damageByEffect(20);
             }
             if (target.slot < target.zone.cards.length - 1) {
-                target.zone.cards[target.slot + 1].damage(20);
+                target.zone.cards[target.slot + 1].damageByEffect(20);
             }
         }
 

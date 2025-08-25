@@ -36,7 +36,7 @@ export class Eboulement extends Action {
 
     useEffect = function (target: Unit) {
         if (target.type == "Bâtiment" && target.stat("Étourdissement").value() >= 1) {
-            target.damage(20);
+            target.damageByEffect(20);
         }
         else {
             target.stat("Étourdissement").fix(1);

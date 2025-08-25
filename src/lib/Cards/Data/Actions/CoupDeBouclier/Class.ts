@@ -53,7 +53,7 @@ export class CoupDeBouclier extends Action {
             }
         }
 
-        target.damage(2 * value);
+        target.damageByEffect(2 * value);
 
         this.move("Défausse");
         this.pose();

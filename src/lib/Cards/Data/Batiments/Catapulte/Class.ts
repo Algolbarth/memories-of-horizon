@@ -17,7 +17,7 @@ export class Catapulte extends Batiment {
 
     turnEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.owner.adversary().zone("Terrain").cards[0].damage(20);
+            this.owner.adversary().zone("Terrain").cards[0].damageByEffect(20);
         }
     };
 }

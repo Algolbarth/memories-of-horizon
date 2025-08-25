@@ -29,7 +29,7 @@ export class VagueDeferlante extends Action {
 
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
-            card.damage(value);
+            card.damageByEffect(value);
         }
 
         this.move("Défausse");

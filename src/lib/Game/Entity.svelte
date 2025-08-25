@@ -6,6 +6,7 @@
 	export let system: System;
 	export let entity: Entity;
 	export let direction: string;
+	export let show_flux: boolean;
 </script>
 
 {#if system.game}
@@ -45,9 +46,7 @@
 						{#if ressource.name == "Flux" && ressource.stock > 0 && system.game.phase == "Préparation"}
 							<button
 								on:click={() => {
-									if (system.game) {
-										system.game.show_flux = true;
-									}
+									show_flux = true;
 								}}
 							>
 								Convertir

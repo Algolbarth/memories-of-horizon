@@ -32,7 +32,7 @@ export class CanonAEau extends Action {
         value += 2 * this.owner.ressource("Eau").total();
         this.owner.ressource("Eau").spend(this.owner.ressource("Eau").total());
 
-        target.damage(value);
+        target.damageByEffect(value);
 
         this.move("Défausse");
         this.pose();

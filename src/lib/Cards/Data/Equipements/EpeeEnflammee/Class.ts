@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Equipment } from '../../../Class/Equipement';
 import Text from './Text.svelte';
 
@@ -16,7 +17,7 @@ export class EpeeEnflammee extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function (defender) {
-        defender.damage(20);
+    fightEffect = function (defender: Unit) {
+        defender.damageByEffect(20);
     };
 }

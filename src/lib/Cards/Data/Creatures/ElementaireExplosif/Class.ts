@@ -24,7 +24,7 @@ export class ElementaireExplosif extends Creature {
             this.owner.ressource("Feu").max -= 5;
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
-                card.damage(5);
+                card.damageByEffect(5);
             }
         }
     };

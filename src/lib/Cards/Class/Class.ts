@@ -218,8 +218,12 @@ export class Card {
         }
     };
 
-    lock = function (state: boolean) {
-        this.locked = state;
+    lock = function () {
+        this.locked = true;
+    };
+
+    unlock = function () {
+        this.locked = false;
     };
 
     sell = function () {

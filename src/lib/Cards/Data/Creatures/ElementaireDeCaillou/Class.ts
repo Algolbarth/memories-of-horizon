@@ -45,7 +45,7 @@ export class ElementaireDeCaillou extends Creature {
 
     useEffect = function (target: Unit) {
         if (target != undefined) {
-            target.damage(6);
+            target.damageByEffect(6);
             this.destroy();
         }
         else {

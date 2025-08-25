@@ -38,7 +38,7 @@ export class PluieDeCailloux extends Sort {
             }
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
-                card.damage(6);
+                card.damageByEffect(6);
             }
         }
         else {
@@ -51,7 +51,7 @@ export class PluieDeCailloux extends Sort {
             else if (choice == "damage") {
                 let terrain = copy(this.owner.adversary().zone("Terrain").cards);
                 for (const card of terrain) {
-                    card.damage(6);
+                    card.damageByEffect(6);
                 }
             }
         }

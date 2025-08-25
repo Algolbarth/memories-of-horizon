@@ -75,6 +75,14 @@ export class Unit extends Card {
         return this.stat("Vie").current < this.stat("Vie").value();
     };
 
+    damageByEffect = function (value: number) {
+        this.damage(value);
+    };
+
+    physicalDamage = function (value: number) {
+        this.damage(value);
+    };
+
     damage = function (value: number) {
         let result = {
             value: value,
@@ -136,6 +144,8 @@ export class Unit extends Card {
 
         this.dieGo();
     };
+
+    
 
     dieGo = function () {
         this.move("Défausse");

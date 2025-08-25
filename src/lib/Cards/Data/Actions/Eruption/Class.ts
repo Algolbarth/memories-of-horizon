@@ -27,7 +27,7 @@ export class Eruption extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.damage(300);
+        target.damageByEffect(300);
         this.move("Défausse");
         this.pose();
     };

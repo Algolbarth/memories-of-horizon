@@ -88,7 +88,7 @@ export class ChevalierNoirMonte extends Creature {
                 value = this.owner.ressource("Or").total();
             }
             this.owner.ressource("Or").spend(value);
-            target.damage(value);
+            target.damageByEffect(value);
         }
         this.move("Terrain");
         this.pose();

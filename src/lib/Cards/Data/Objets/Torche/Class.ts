@@ -31,7 +31,7 @@ export class Torche extends Objet {
             this.owner.ressource("Feu").max += 2;
         }
         else {
-            target.damage(20);
+            target.damageByEffect(20);
         }
         this.move("Défausse");
         this.pose();

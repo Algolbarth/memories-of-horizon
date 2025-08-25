@@ -51,7 +51,7 @@ export class ElementaireDeRoche extends Creature {
         else if (choice == "Effet") {
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
-                card.damage(5);
+                card.damageByEffect(5);
             }
             this.destroy();
         }

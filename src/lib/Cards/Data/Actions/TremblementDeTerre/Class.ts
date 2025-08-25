@@ -25,7 +25,7 @@ export class TremblementDeTerre extends Action {
         terrain = terrain.concat(copy(this.owner.adversary().zone("Terrain").cards));
 
         for (const card of terrain) {
-            card.damage(10);
+            card.damageByEffect(10);
         }
         
         this.move("Défausse");

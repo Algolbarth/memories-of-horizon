@@ -29,10 +29,10 @@ export class TirHydraulique extends Action {
     useEffect = function (target: Unit) {
         if (this.owner.ressource("Eau").total() >= 15) {
             this.owner.ressource("Eau").spend(15);
-            target.damage(60);
+            target.damageByEffect(60);
         }
         else {
-            target.damage(30);
+            target.damageByEffect(30);
         }
         this.move("Défausse");
         this.pose();

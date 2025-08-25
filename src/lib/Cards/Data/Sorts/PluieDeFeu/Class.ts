@@ -33,7 +33,7 @@ export class PluieDeFeu extends Sort {
 
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
-            card.damage(damage);
+            card.damageByEffect(damage);
         }
 
         this.move("Défausse");

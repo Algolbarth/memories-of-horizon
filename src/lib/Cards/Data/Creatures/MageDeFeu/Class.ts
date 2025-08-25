@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -21,7 +22,7 @@ export class MageDeFeu extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.familles.total().includes("Sort") && card.owner == this.owner && this.owner.adversary().zone("Terrain").cards.length > 0) {
-            this.owner.adversary().zone("Terrain").cards[0].damage(5);
+            this.owner.adversary().zone("Terrain").cards[0].damageByEffect(5);
         }
     };
 }

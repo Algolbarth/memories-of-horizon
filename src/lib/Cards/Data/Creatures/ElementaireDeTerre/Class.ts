@@ -46,7 +46,7 @@ export class ElementaireDeTerre extends Creature {
 
     useEffect = function (target: Unit) {
         if (target != undefined) {
-            target.damage(30);
+            target.damageByEffect(30);
             this.destroy();
         }
         else {

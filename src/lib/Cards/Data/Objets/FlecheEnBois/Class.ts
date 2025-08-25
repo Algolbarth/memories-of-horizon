@@ -27,7 +27,7 @@ export class FlecheEnBois extends Objet {
     };
 
     useEffect = function (target: Unit) {
-        target.damage(10);
+        target.damageByEffect(10);
         this.move("Défausse");
         this.pose();
     };

@@ -10,6 +10,7 @@
 
 	export let system: System;
 
+	let show_flux: boolean = false;
 	let auto: number | undefined;
 
 	function refresh() {
@@ -129,10 +130,10 @@
 	<div id="container" class="scroll">
 		<div class="entities">
 			<div>
-				<Entity bind:system bind:entity={system.game.player} direction={"left"} />
+				<Entity bind:system bind:entity={system.game.player} direction={"left"} bind:show_flux />
 			</div>
 			<div style="text-align:right;">
-				<Entity bind:system bind:entity={system.game.bot} direction={"right"} />
+				<Entity bind:system bind:entity={system.game.bot} direction={"right"} bind:show_flux />
 			</div>
 		</div>
 
@@ -151,7 +152,9 @@
 
 	<Use bind:system />
 
-	<Flux bind:system />
+	{#if show_flux}
+		<Flux bind:system bind:show_flux />
+	{/if}
 
 	<div class="center">
 		<View bind:system />

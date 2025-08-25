@@ -187,12 +187,12 @@ export class Entity {
     lock = function () {
         if (this.isFullLocked()) {
             for (const card of this.zone("Boutique").cards) {
-                card.lock(false);
+                card.unlock();
             }
         }
         else {
             for (const card of this.zone("Boutique").cards) {
-                card.lock(true);
+                card.lock();
             }
         }
     };

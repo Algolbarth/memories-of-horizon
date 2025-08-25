@@ -9,7 +9,6 @@ import type { Component } from 'svelte';
 
 export class Game extends Battle {
     use: Use = new Use();
-    show_flux: boolean = false;
     pause: boolean = false;
     phase: string = "Préparation";
     deck: Deck | undefined = undefined;

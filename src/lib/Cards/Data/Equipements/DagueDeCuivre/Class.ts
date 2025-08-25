@@ -46,7 +46,7 @@ export class DagueDeCuivre extends Equipment {
             target.equip(this);
         }
         else if (choice == "damage") {
-            target.damage(5);
+            target.damageByEffect(5);
             this.move("Défausse");
         }
         this.pose();

@@ -86,9 +86,10 @@ export class Creature extends Unit {
     };
 
     fight = function (defender: Unit) {
-        let isDie = defender.zone!.name != "Terrain";
-        let repeat = this.stat("Multicoup").value();
-        while (!isDie && repeat > 0) {
+        let isDie: boolean = defender.zone!.name != "Terrain";
+        let nb_hit: number = this.stat("Multicoup").value();
+
+        while (!isDie && nb_hit > 0) {
 
             if (this.fightEffect != undefined) {
                 this.fightEffect(defender);
@@ -113,7 +114,9 @@ export class Creature extends Unit {
             if (difDamage < 0) {
                 difDamage = 0;
             }
-            let damage_result = defender.damage(difDamage);
+
+            let damage_result = defender.physicalDamage(difDamage);
+
             if (damage_result.die) {
                 isDie = true;
 
@@ -127,7 +130,7 @@ export class Creature extends Unit {
                 }
             }
 
-            repeat--;
+            nb_hit--;
         }
     };
 

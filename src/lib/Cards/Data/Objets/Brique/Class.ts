@@ -30,7 +30,7 @@ export class Brique extends Objet {
             target.heal(20);
         }
         else {
-            target.damage(20);
+            target.damageByEffect(20);
         }
         this.move("Défausse");
         this.pose();

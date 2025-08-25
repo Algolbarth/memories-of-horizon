@@ -53,7 +53,7 @@ export class Frappe extends Action {
             }
         }
 
-        target.damage(value);
+        target.damageByEffect(value);
 
         this.move("Défausse");
         this.pose();

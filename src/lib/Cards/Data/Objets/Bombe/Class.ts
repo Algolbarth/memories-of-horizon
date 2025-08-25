@@ -27,7 +27,7 @@ export class Bombe extends Objet {
     };
 
     useEffect = function (target: Unit) {
-        target.damage(30);
+        target.damageByEffect(30);
         this.move("Défausse");
         this.pose();
     };

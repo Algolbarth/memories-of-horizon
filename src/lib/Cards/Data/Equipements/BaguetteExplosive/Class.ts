@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Equipment } from '../../../Class/Equipement';
 import Text from './Text.svelte';
 
@@ -16,7 +17,7 @@ export class BaguetteExplosive extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function (defender) {
-        defender.damage(this.bearer.stat("Magie").value());
+    fightEffect = function (defender: Unit) {
+        defender.damageByEffect(this.bearer.stat("Magie").value());
     };
 }

@@ -9,12 +9,12 @@
 	export let condition: Function | undefined;
 	export let fonction: Function | undefined;
 
-	$: isPlayer = card.owner == system.game?.player ? true : false;
+	$: is_player = card.owner == system.game?.player ? true : false;
 </script>
 
 {#if system.game && card.zone}
-	<div class={(isPlayer || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
-		<div id={isPlayer || fonction != undefined ? "infos" : ""}>
+	<div class={(is_player || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
+		<div id={is_player || fonction != undefined ? "infos" : ""}>
 			{#if card.locked}
 				<img src="./src/assets/Pictures/lock.svg" alt="locked" class="locked" />
 			{/if}
@@ -37,7 +37,7 @@
 			{/if}
 		</div>
 
-		{#if isPlayer || fonction != undefined}
+		{#if is_player || fonction != undefined}
 			<div id="actions">
 				{#if system.game.phase == "Préparation" && fonction == undefined}
 					{#if card.zone.name == "Main" || card.zone.name == "Terrain"}

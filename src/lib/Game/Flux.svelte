@@ -2,10 +2,11 @@
 	import type { System } from "../System/Class";
 
 	export let system: System;
+	export let show_flux: boolean;
 
 	function close() {
 		if (system.game) {
-			system.game.show_flux = false;
+			show_flux = false;
 		}
 	}
 
@@ -14,73 +15,70 @@
 	let tab = ["Feu", "Air", "Végétal", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
 </script>
 
-{#if system.game && system.game.show_flux}
-	<div class="window">
-		<div id="body" class="center">
-			<div class="options">
-				<div class="number">
-					{#each numbers as number}
-						<button
-							class={"number" + (number_selected == number ? " selected" : "")}
-							on:click={() => {
-								number_selected = number;
-							}}
-						>
-							{number}
-						</button>
-					{/each}
-				</div>
-
-				<div style="text-align:right;">
+<div class="window">
+	<div id="body" class="center">
+		<div class="options">
+			<div class="number">
+				{#each numbers as number}
 					<button
-						class="close"
+						class={"number" + (number_selected == number ? " selected" : "")}
 						on:click={() => {
-							close();
+							number_selected = number;
 						}}
 					>
-						X
+						{number}
 					</button>
-				</div>
-			</div>
-
-			<br />
-
-			<div class="container">
-				{#each tab as ressource}
-					<div class="ressource">
-						<button
-							style={"background:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
-							class="big flux"
-							on:click={() => {
-								let add: number;
-
-								if (number_selected == "Max") {
-									add = system.game.player.ressource("Flux").stock;
-								}
-								else {
-									add = parseInt(number_selected);
-									if (add > system.game.player.ressource("Flux").stock) {
-										add = system.game.player.ressource("Flux").stock;
-									}
-								}
-
-								system.game.player.ressource(ressource).current += add;
-								system.game.player.ressource(ressource).max += add;
-								system.game.player.ressource("Flux").stock -= add;
-
-								if (system.game.player.ressource("Flux").stock == 0) {
-									system.game.show_flux = false;
-								}
-							}}
-						>
-							{ressource}
-						</button>
-					</div>
 				{/each}
 			</div>
+
+			<div style="text-align:right;">
+				<button
+					class="close"
+					on:click={() => {
+						close();
+					}}
+				>
+					X
+				</button>
+			</div>
+		</div>
+
+		<br />
+
+		<div class="container">
+			{#each tab as ressource}
+				<div class="ressource">
+					<button
+						style={"background:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
+						class="big flux"
+						on:click={() => {
+							let add: number;
+
+							if (number_selected == "Max") {
+								add = system.game.player.ressource("Flux").stock;
+							} else {
+								add = parseInt(number_selected);
+								if (add > system.game.player.ressource("Flux").stock) {
+									add = system.game.player.ressource("Flux").stock;
+								}
+							}
+
+							system.game.player.ressource(ressource).current += add;
+							system.game.player.ressource(ressource).max += add;
+							system.game.player.ressource("Flux").stock -= add;
+
+							if (system.game.player.ressource("Flux").stock == 0) {
+								show_flux = false;
+							}
+						}}
+					>
+						{ressource}
+					</button>
+				</div>
+			{/each}
 		</div>
 	</div>
-{/if}
+</div>
 
 <style>
 	.window {
