@@ -22,7 +22,7 @@ export class WyverneMage extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Boutique" && card.owner == this.owner && card.familles.total().includes("Sort")) {
-            this.coutReduce(6);
+            this.costReduce(6);
         }
     };
 }

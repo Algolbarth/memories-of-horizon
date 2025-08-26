@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Equipment } from '../../../Class/Equipement';
-import Text from '../../../Utils/Text.svelte';
+import Text from '../../../Utils/EquipText.svelte';
 
 export class HacheDeCuivre extends Equipment {
     name = "Hache de cuivre";

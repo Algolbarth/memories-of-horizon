@@ -1,7 +1,7 @@
 import { Stat } from "./Stat";
 import { Trait } from "./Trait";
 import { Elements } from "./Element";
-import { Cout } from "./Cost";
+import { Cost } from "./Cost";
 import { copy } from "../../Utils";
 import { Families } from "./Family";
 import type { System } from "../../System/Class";
@@ -10,8 +10,8 @@ import type { Zone } from "../../Game/Zone";
 
 export class Card {
     name: string = "Carte";
-    cout: Cout[] = [];
-    vente: Cout[] = [];
+    cost: Cost[] = [];
+    sale: Cost[] = [];
     level: number = 0;
     type: string = "Carte";
     familles: Families = new Families(this);
@@ -36,15 +36,15 @@ export class Card {
         this.addStat("Perpétuité", 0);
 
         for (const ressource of system.ressources.list) {
-            this.cout.push(new Cout(ressource.name, this));
-            this.vente.push(new Cout(ressource.name, this));
+            this.cost.push(new Cost(ressource.name, this));
+            this.sale.push(new Cost(ressource.name, this));
         }
     };
 
     init = function (array: any[]) {
         let total = 0;
         for (const element of array) {
-            this.getCout(element[0]).base += element[1];
+            this.getCost(element[0]).base += element[1];
             total += element[1];
             if (element[0] != "Or") {
                 this.elements.base.push(element[0]);
@@ -61,18 +61,18 @@ export class Card {
             }
         }
 
-        let total_vente = 0;
+        let total_sale = 0;
         for (const element of array) {
-            this.getVente(element[0]).base += Math.floor(element[1] / 2);
-            total_vente += Math.floor(element[1] / 2);
+            this.getSale(element[0]).base += Math.floor(element[1] / 2);
+            total_sale += Math.floor(element[1] / 2);
         }
-        if (total_vente * 2 + 1 < total) {
-            this.getVente("Or").base++;
+        if (total_sale * 2 + 1 < total) {
+            this.getSale("Or").base++;
         }
     };
 
-    getCout = function (name: string) {
-        for (const c of this.cout) {
+    getCost = function (name: string) {
+        for (const c of this.cost) {
             if (c.name == name) {
                 return c;
             }
@@ -80,8 +80,8 @@ export class Card {
         return undefined;
     };
 
-    getVente = function (name: string) {
-        for (const v of this.vente) {
+    getSale = function (name: string) {
+        for (const v of this.sale) {
             if (v.name == name) {
                 return v;
             }
@@ -89,33 +89,33 @@ export class Card {
         return undefined;
     };
 
-    coutTotal = function () {
+    costTotal = function () {
         let total = 0;
-        for (const cout of this.cout) {
-            total += cout.value();
+        for (const cost of this.cost) {
+            total += cost.value();
         }
         return total;
     };
 
-    coutReduce = function (value: number) {
-        let best = this.getCout("Or");
-        for (const cout of this.cout) {
-            if (cout.value() > best.value()) {
-                best = cout;
+    costReduce = function (value: number) {
+        let best = this.getCost("Or");
+        for (const cost of this.cost) {
+            if (cost.value() > best.value()) {
+                best = cost;
             }
         }
         best.base--;
         value--;
 
         if (value > 0) {
-            this.coutReduce(value);
+            this.costReduce(value);
         }
     };
 
-    venteTotal = function () {
+    saleTotal = function () {
         let total = 0;
-        for (const vente of this.vente) {
-            total += vente.value();
+        for (const sale of this.sale) {
+            total += sale.value();
         }
         return total;
     };
@@ -197,7 +197,7 @@ export class Card {
     };
 
     canBuy = function () {
-        for (const c of this.cout) {
+        for (const c of this.cost) {
             if (c.value() > this.owner.ressource(c.name).total()) {
                 return false;
             }
@@ -210,7 +210,7 @@ export class Card {
 
     buy = function () {
         if (this.canBuy()) {
-            for (const c of this.cout) {
+            for (const c of this.cost) {
                 this.owner.ressource(c.name).spend(c.value());
             }
             this.locked = false;
@@ -231,7 +231,7 @@ export class Card {
             this.sellEffect();
         }
 
-        for (const v of this.vente) {
+        for (const v of this.sale) {
             this.owner.ressource(v.name).current += v.value();
         }
 

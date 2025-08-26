@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardInfo from "../../../Utils/Info.svelte";
+	import CardInfo from "../../../Utils/CardInfo.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 

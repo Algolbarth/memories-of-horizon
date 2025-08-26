@@ -1,6 +1,6 @@
 import type { Card } from "./Class";
 
-export class Cout {
+export class Cost {
     name: string;
     add: number = 0;
     base: number = 0;

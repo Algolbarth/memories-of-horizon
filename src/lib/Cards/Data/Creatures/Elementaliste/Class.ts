@@ -29,7 +29,7 @@ export class Elementaliste extends Creature {
         let cards = this.owner.draw(1, condition);
 
         if (cards[0] != undefined) {
-            cards[0].coutReduce(10);
+            cards[0].costReduce(10);
         }
 
         this.move("Terrain");

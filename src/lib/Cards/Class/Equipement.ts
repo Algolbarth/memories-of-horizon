@@ -3,7 +3,7 @@ import { Stat } from './Stat';
 import { Trait } from './Trait';
 import type { Creature } from './Creature';
 import { Objet } from './Objet';
-import Use from '../Utils/Use.svelte';
+import Use from '../Utils/EquipUse.svelte';
 
 export class Equipment extends Objet {
     equipElements: string[] = [];
@@ -20,6 +20,8 @@ export class Equipment extends Objet {
         this.addEquipStat("Attaque", 0);
         this.addEquipStat("Vie", 0);
         this.addEquipStat("Défense", 0);
+        this.addEquipStat("Résistance", 0);
+        this.addEquipStat("Endurance", 0);
         this.addEquipStat("Actions", 0);
         this.addEquipStat("Multicoup", 0);
         this.addEquipStat("Vitesse", 0);
@@ -62,6 +64,9 @@ export class Equipment extends Objet {
 
     useEffect = function (target: Creature) {
         target.equip(this);
+        if (this.equipStat("Vie").value() > 0) {
+            target.stat("Vie").current += this.equipStat("Vie").value();
+        }
         this.pose();
     };
 

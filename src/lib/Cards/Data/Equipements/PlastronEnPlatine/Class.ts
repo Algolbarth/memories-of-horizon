@@ -1,7 +1,6 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipement';
-import Text from '../../../Utils/Text.svelte';
+import Text from '../../../Utils/EquipText.svelte';
 
 export class PlastronEnPlatine extends Equipment {
     name = "Plastron en platine";
@@ -15,11 +14,5 @@ export class PlastronEnPlatine extends Equipment {
         this.equipStat("Vie").base = 150;
 
         this.text = Text;
-    };
-
-    useEffect = function (target: Creature) {
-        target.equip(this);
-        target.stat("Vie").current += this.equipStat("Vie").base;
-        this.pose();
     };
 }

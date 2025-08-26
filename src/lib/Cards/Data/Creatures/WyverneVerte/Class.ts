@@ -21,7 +21,7 @@ export class WyverneVerte extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Boutique" && card.owner == this.owner && card.elements.total().includes("Végétal")) {
-            this.coutReduce(6);
+            this.costReduce(6);
         }
     };
 }

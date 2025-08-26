@@ -7,9 +7,9 @@
 	// svelte-ignore export_let_unused
 	export let card: Card;
 
-	function cout(card) {
+	function costs(card: Card) {
 		let tab = [];
-		for (const cost of card.cout) {
+		for (const cost of card.cost) {
 			if (cost.value() > 0) {
 				tab.push(cost);
 			}
@@ -17,11 +17,11 @@
 		return tab;
 	}
 
-	function vente(card) {
+	function sales(card: Card) {
 		let tab = [];
-		for (const sell of card.vente) {
-			if (sell.value() > 0) {
-				tab.push(sell);
+		for (const sale of card.sale) {
+			if (sale.value() > 0) {
+				tab.push(sale);
 			}
 		}
 		return tab;
@@ -43,11 +43,11 @@
 	{/each}
 </div>
 
-{#if cout(card).length > 0 || vente(card).length > 0}
+{#if costs(card).length > 0 || sales(card).length > 0}
 	<div class="box">
 		<div class="little-container">
-			{#if cout(card).length > 0}
-				{#each cout(card) as cost}
+			{#if costs(card).length > 0}
+				{#each costs(card) as cost}
 					<div class="cost" style={"background:" + system.ressources.find(cost.name)?.color + ";color:" + (system.ressources.find(cost.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{cost.value()}
 					</div>
@@ -62,8 +62,8 @@
 		<hr />
 
 		<div class="little-container">
-			{#if vente(card).length > 0}
-				{#each vente(card) as sell, i}
+			{#if sales(card).length > 0}
+				{#each sales(card) as sell, i}
 					<div class="cost" style={"background:" + system.ressources.find(sell.name)?.color + ";color:" + (system.ressources.find(sell.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{sell.value()}
 					</div>

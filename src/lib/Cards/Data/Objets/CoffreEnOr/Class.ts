@@ -22,7 +22,7 @@ export class CoffreEnOr extends Objet {
             return false;
         };
         let cards = this.owner.draw(1, condition, this);
-        cards[0].coutReduce(20);
+        cards[0].costReduce(20);
         this.move("Défausse");
         this.pose();
     };

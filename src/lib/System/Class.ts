@@ -83,19 +83,19 @@ export class System {
                         console.log("Invalid card in a chapter : " + card);
                         error = true;
                     } else {
-                        for (let i = 0; i < this.cards.getByName(card).cout.length; i++) {
-                            ressources[i].value += this.cards.getByName(card).cout[i].value();
+                        for (let i = 0; i < this.cards.getByName(card).cost.length; i++) {
+                            ressources[i].value += this.cards.getByName(card).cost[i].value();
                         }
                     }
                 }
                 for (const ressource of chapterInstance.ressources) {
-                    for (const cout of ressources) {
-                        if (cout.name == ressource.name && cout.value > ressource.value) {
+                    for (const cost of ressources) {
+                        if (cost.name == ressource.name && cost.value > ressource.value) {
                             console.log(
                                 "Invalid ressources in a chapter : " +
                                 ressource.name +
                                 " " +
-                                (cout.value - ressource.value),
+                                (cost.value - ressource.value),
                             );
                             error = true;
                         }
