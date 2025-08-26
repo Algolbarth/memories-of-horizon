@@ -37,7 +37,7 @@ export class SardinesEnBoite extends Objet {
 
     useEffect = function (target: Creature) {
         this.targeting(target);
-        if (target.stat("Vie").current == target.stat("Vie").value()) {
+        if (!target.isDamaged()) {
             target.owner.ressource("Eau").current += 5;
         }
         else {

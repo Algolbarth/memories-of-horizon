@@ -37,7 +37,7 @@ export class Vin extends Objet {
 
     useEffect = function (target: Creature) {
         this.targeting(target);
-        if (target.stat("Vie").current == target.stat("Vie").value()) {
+        if (!target.isDamaged()) {
             target.stat("Critique").current = 100;
         }
         else {

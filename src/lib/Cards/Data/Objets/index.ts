@@ -14,6 +14,7 @@ export * from './CorDeGuerre';
 export * from './FioleDeVerre';
 export * from './FlecheEnBois';
 export * from './HerbesMedicinales';
+export * from './Lait';
 export * from './Livre';
 export * from './LivreDeRecette';
 export * from './Pain';
