@@ -84,11 +84,11 @@ export class Unit extends Card {
         if (value < 0) {
             value = 0;
         }
-        this.damage(value);
+        return this.damage(value);
     };
 
     physicalDamage = function (value: number) {
-        this.damage(value);
+        return this.damage(value);
     };
 
     damage = function (value: number) {
