@@ -63,7 +63,6 @@ Berger : créature humain, quand joue : crée Mouton sur le terrain.
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. 
 Gladiateur : créature humain. 
 Armagicien : créature humain, magie. 
-Célébrité : créature humain. 
 Colère : inflige autant dégâts que les blessures du meneur. 
 Envie : vole une carte dans la main adverse. 
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. 
