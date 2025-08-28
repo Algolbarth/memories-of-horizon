@@ -8,4 +8,8 @@
 	export let card: Card;
 </script>
 
-Augmente de 50 l'attaque et la vie d'une créature alliée sur le terrain.
+Au choix :
+<ul>
+	<li>Augmente de 75 la vie d'une créature alliée sur le terrain.</li>
+	<li>Augmente de 50 l'attaque et la vie d'une créature alliée sur le terrain.</li>
+</ul>

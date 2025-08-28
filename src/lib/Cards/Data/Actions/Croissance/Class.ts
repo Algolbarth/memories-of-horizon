@@ -38,15 +38,27 @@ export class Croissance extends Action {
             }
 
             if (target != undefined) {
-                this.useEffect(target);
+                if (target.familles.total().includes("Plante")) {
+                    this.useEffect(target, "life");
+                }
+                else {
+                    this.useEffect(target, "balance");
+                }
             }
         }
     };
 
-    useEffect = function (target: Creature) {
-        target.stat("Attaque").add += 50;
-        target.stat("Vie").add += 50;
-        target.stat("Vie").current += 50;
+    useEffect = function (target: Creature, choice: string) {
+        if (choice == "life") {
+            target.stat("Vie").add += 75;
+            target.stat("Vie").current += 75;
+        }
+        else if (choice == "balance") {
+            target.stat("Attaque").add += 50;
+            target.stat("Vie").add += 50;
+            target.stat("Vie").current += 50;
+        }
+
         this.move("Défausse");
         this.pose();
     };

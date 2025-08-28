@@ -9,6 +9,7 @@ export class Bourse extends Objet {
         super(system);
 
         this.init([["Or", 5]]);
+        this.getSale("Or").base = 0;
 
         this.text = Text;
     };
