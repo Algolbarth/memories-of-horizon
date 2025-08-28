@@ -32,6 +32,7 @@ export * from './HacheDePlatine';
 export * from './HacheLourde';
 export * from './HeaumeDeFer';
 export * from './LanceDeFer';
+export * from './MasseDeFer';
 export * from './PeauDOurs';
 export * from './Pelle';
 export * from './PlastronEnCuir';

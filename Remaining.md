@@ -47,7 +47,6 @@ Savoir interdit : action, diminue la taille du terrain et augmente la taille de 
 Requisition : action, diminue la taille de la main et augmente la taille du terrain.
 
 ### Equipements
-Masse de fer : augmente la charge de la créature équipée. 
 Robe de mage : augmente la magie et la résistance de la créature équipée. 
 Brassard de santé : augmente la régénération de la créature équipée. 
 Plastron de piques : augmente la vie et l'épine de la créature équipée. 
