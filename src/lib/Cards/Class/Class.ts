@@ -264,6 +264,10 @@ export class Card {
 
     otherSellEffect: Function | undefined;
 
+    canUse = function () {
+        return true;
+    };
+
     use = function () {
         this.select();
     };

@@ -21,8 +21,11 @@ export class ElementaireDeTerre extends Creature {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
+    canUse = function () {
+        if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        return false
     };
 
     select = function () {

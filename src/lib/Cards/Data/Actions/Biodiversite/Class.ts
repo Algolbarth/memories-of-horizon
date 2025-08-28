@@ -14,10 +14,11 @@ export class Biodiversite extends Action {
         this.text = Text;
     };
 
-    select = function () {
+    canUse = function () {
         if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
-            this.useEffect();
+            return true;
         }
+        return false;
     };
 
     useEffect = function () {

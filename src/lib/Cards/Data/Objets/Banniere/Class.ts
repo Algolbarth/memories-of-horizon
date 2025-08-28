@@ -14,10 +14,11 @@ export class Banniere extends Objet {
         this.text = Text;
     };
 
-    select = function () {
-        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
-            this.useEffect();
+    canUse = function () {
+        if (this.owner.zone("Terrain").cards.length > 0) {
+            return true;
         }
+        return false;
     };
 
     useEffect = function () {

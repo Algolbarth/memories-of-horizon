@@ -3,10 +3,11 @@ import { Card } from './Class';
 export class Lieu extends Card {
     type = "Lieu";
 
-    use = function () {
+    canUse = function () {
         if (!this.owner.zone("Lieux").isFull()) {
-            this.select();
+            return true;
         }
+        return false;
     };
 
     useEffect = function () {
@@ -17,4 +18,4 @@ export class Lieu extends Card {
     condition = function (card: Card) {
         return true;
     };
-}
+};

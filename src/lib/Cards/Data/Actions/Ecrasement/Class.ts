@@ -15,31 +15,33 @@ export class Ecrasement extends Action {
         this.text = Text;
     };
 
-    select = function () {
-        let check = false;
-
+    canUse = function () {
+        if (this.owner.adversary().zone("Terrain").cards.length == 0) {
+            return false;
+        }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (!check && card.type == "Créature") {
-                check = true;
+            if (card.type == "Créature") {
+                return true;
             }
         }
+        return false;
+    };
 
-        if (check) {
-            if (this.owner == this.system.game.player) {
-                this.system.game.use.set(this, Use);
+    select = function () {
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
+        }
+        else {
+            let target = undefined;
+
+            for (const card of this.owner.adversary().zone("Terrain").cards) {
+                if (target == undefined) {
+                    target = card;
+                }
             }
-            else {
-                let target = undefined;
 
-                for (const card of this.owner.adversary().zone("Terrain").cards) {
-                    if (target == undefined) {
-                        target = card;
-                    }
-                }
-
-                if (target != undefined) {
-                    this.useEffect(target);
-                }
+            if (target != undefined) {
+                this.useEffect(target);
             }
         }
     };

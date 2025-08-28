@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -14,6 +15,18 @@ export class Brique extends Objet {
         this.text = Text;
     };
 
+    canUse = function () {
+        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Bâtiment" && card.isDamaged()) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
@@ -25,7 +38,7 @@ export class Brique extends Objet {
         }
     };
 
-    useEffect = function (target, choice) {
+    useEffect = function (target: Unit, choice: string) {
         if (choice == "heal") {
             target.heal(20);
         }

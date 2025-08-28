@@ -15,6 +15,15 @@ export class Charisme extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature" && card.stat("Protection").value() > 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
@@ -23,7 +32,7 @@ export class Charisme extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card.type == "Créature" && card.stat("Protection").value() > 0) {
                     target = card;
                 }
             }

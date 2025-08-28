@@ -14,6 +14,13 @@ export class CreationRocheuse extends Sort {
         this.text = Text;
     };
 
+    canUse = function () {
+        if (!this.owner.zone("Terrain").isFull()) {
+            return true;
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner.ressource("Mana").total() >= 50) {
             this.useEffect();

@@ -13,18 +13,16 @@ export class CoupDeBoule extends Action {
         this.text = Text;
     };
 
-    select = function () {
-        let check = false;
-
+    canUse = function () {
+        if (this.owner.adversary().zone("Terrain").cards.length == 0) {
+            return false;
+        }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (!check && card.type == "Créature") {
-                check = true;
+            if (card.type == "Créature") {
+                return true;
             }
         }
-
-        if (check && this.owner.adversary().zone("Terrain").cards.length > 0) {
-            this.useEffect();
-        }
+        return false;
     };
 
     useEffect = function () {

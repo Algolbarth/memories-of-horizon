@@ -13,10 +13,11 @@ export class PierrePhilosophale extends Objet {
         this.text = Text;
     };
 
-    select = function () {
+    canUse = function () {
         if (this.owner.ressource("Flux").stock > 0) {
-            this.useEffect();
+            return true;
         }
+        return false;
     };
 
     useEffect = function () {

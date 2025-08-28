@@ -65,14 +65,19 @@
 							Acheter
 						{/if}
 					{:else if card.zone.name == "Main"}
-						<button
-							on:click={() => {
-								card.use();
-								system = system;
-							}}
-						>
+						{#if card.canUse()}
+							<button
+								class="check"
+								on:click={() => {
+									card.use();
+									system = system;
+								}}
+							>
+								Poser
+							</button>
+						{:else}
 							Poser
-						</button>
+						{/if}
 					{:else if card.zone.name == "Lieux"}
 						{#if card == card.owner?.place}
 							<span style="color:darkgreen">Actif</span>

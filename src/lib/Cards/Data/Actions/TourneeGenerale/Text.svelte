@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+    import CardInfo from "../../../Utils/CardInfo.svelte";
 
-	// svelte-ignore export_let_unused
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Augmente de 5 l'attaque et la vie de toutes les créatures alliées sur le terrain pour chaque famille différentes parmi elles.
+Crée autant de <CardInfo bind:system name={"Bière"} /> dans la main que de créature alliées sur le terrain.

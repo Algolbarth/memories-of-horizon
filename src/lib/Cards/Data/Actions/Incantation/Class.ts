@@ -15,6 +15,15 @@ export class Incantation extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature" && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

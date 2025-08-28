@@ -15,6 +15,13 @@ export class Eboulement extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

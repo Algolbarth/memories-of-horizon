@@ -49,10 +49,11 @@ export class Unit extends Card {
         this.addStat("Intelligence", 0);
     };
 
-    use = function () {
+    canUse = function () {
         if (!this.owner.zone("Terrain").isFull()) {
-            this.select();
+            return true;
         }
+        return false;
     };
 
     select = function () {

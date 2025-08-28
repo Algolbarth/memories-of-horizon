@@ -13,11 +13,16 @@ export class Conque extends Objet {
         this.text = Text;
     };
 
-    useEffect = function () {
-        if (this.owner.ressource("Or").max > 5) {
-            this.owner.ressource("Or").max -= 5;
-            this.owner.ressource("Eau").max += 5;
+    canUse = function () {
+        if (this.owner.ressource("Or").max >= 5) {
+            return true;
         }
+        return false;
+    };
+
+    useEffect = function () {
+        this.owner.ressource("Or").max -= 5;
+        this.owner.ressource("Eau").max += 5;
         this.move("Défausse");
         this.pose();
     };

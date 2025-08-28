@@ -20,14 +20,22 @@ export class ElementaireDesEboulis extends Creature {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
+    canUse = function () {
+        if (!this.owner.zone("Terrain").isFull()) {
+            return true;
+        }
+        for (const card of this.owner.adversary().zone("Terrain").cards) {
+            if (card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+                return true;
+            }
+        }
+        return false
     };
 
     select = function () {
         let check = false;
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (check == false && card.type == "Créature") {
+            if (check == false && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
                 check = true;
             }
         }

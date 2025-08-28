@@ -15,6 +15,19 @@ export class Melange extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        let nb_potion = 0;
+        for (const card of this.owner.zone("Main").cards) {
+            if (card.familles.total().includes("Potion")) {
+                nb_potion++;
+                if (nb_potion > 1) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

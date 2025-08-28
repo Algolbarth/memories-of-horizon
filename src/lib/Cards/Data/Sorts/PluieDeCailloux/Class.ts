@@ -15,6 +15,13 @@ export class PluieDeCailloux extends Sort {
         this.text = Text;
     };
 
+    canUse = function () {
+        if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner.ressource("Mana").total() >= 30) {
             this.useEffect();

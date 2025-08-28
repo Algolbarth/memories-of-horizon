@@ -15,6 +15,15 @@ export class Aiguisage extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.zone("Main").cards) {
+            if (card.familles.total().includes("Arme")) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

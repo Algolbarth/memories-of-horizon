@@ -17,6 +17,15 @@ export class Lait extends Objet {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         let check = false;
         for (const card of this.owner.zone("Terrain").cards) {

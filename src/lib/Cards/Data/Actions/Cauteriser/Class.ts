@@ -15,6 +15,15 @@ export class Cauteriser extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.adversary().zone("Terrain").cards) {
+            if (card.type == "Créature" && card.isDamaged()) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

@@ -15,6 +15,15 @@ export class BriseGarde extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.adversary().zone("Terrain").cards) {
+            if (card.type == "Créature" && card.stat("Garde").value() > 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
@@ -23,7 +32,7 @@ export class BriseGarde extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
+                if (target == undefined && card.stat("Garde").value() > 0) {
                     target = card;
                 }
             }

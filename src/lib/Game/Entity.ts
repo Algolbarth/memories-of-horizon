@@ -204,10 +204,12 @@ export class Entity {
 
             for (let i = 0; i < this.zone("Main").cards.length; i++) {
                 let card = this.zone("Main").cards[i];
-                card.use();
-                if (card.zone == undefined || card.zone.name != "Main") {
-                    i--;
-                    playable = true;
+                if (card.canUse()) {
+                    card.use();
+                    if (card.zone == undefined || card.zone.name != "Main") {
+                        i--;
+                        playable = true;
+                    }
                 }
             }
         }

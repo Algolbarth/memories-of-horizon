@@ -14,10 +14,11 @@ export class Autodafe extends Action {
         this.text = Text;
     };
 
-    select = function () {
+    canUse = function () {
         if (this.owner.zone("Boutique").cards.length > 0 && (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
-            this.useEffect();
+            return true;
         }
+        return false;
     };
 
     useEffect = function () {

@@ -14,10 +14,13 @@ export class Ruee extends Action {
         this.text = Text;
     };
 
-    select = function () {
-        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
-            this.useEffect();
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature") {
+                return true;
+            }
         }
+        return false;
     };
 
     useEffect = function () {

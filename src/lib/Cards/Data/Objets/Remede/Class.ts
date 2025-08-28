@@ -16,34 +16,34 @@ export class Remede extends Objet {
         this.text = Text;
     };
 
-    select = function () {
-        let check = false;
+    canUse = function () {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (check == false && card instanceof Creature && card.hasDebuff()) {
-                check = true;
+            if (card.type == "Créature" && card.hasDebuff()) {
+                return true;
             }
         }
+        return false;
+    };
 
-        if (check) {
-            if (this.owner == this.system.game.player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                let target = undefined;
+    select = function () {
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
+        }
+        else {
+            let target = undefined;
 
-                for (const card of this.owner.zone("Terrain").cards) {
-                    if (target == undefined && card instanceof Creature && card.hasDebuff()) {
-                        for (const stat of card.stats) {
-                            if (stat.debuff && stat.condition()) {
-                                target = stat;
-                            }
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.hasDebuff()) {
+                    for (const stat of card.stats) {
+                        if (stat.debuff && stat.condition()) {
+                            target = stat;
                         }
                     }
                 }
+            }
 
-                if (target != undefined) {
-                    this.useEffect(target);
-                }
+            if (target != undefined) {
+                this.useEffect(target);
             }
         }
     };

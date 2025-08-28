@@ -14,6 +14,15 @@ export class FioleDeVerre extends Objet {
         this.text = Text;
     };
 
+    canUse = function () {
+        for (const card of this.owner.zone("Main").cards) {
+            if (card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

@@ -15,6 +15,13 @@ export class Rappel extends Action {
         this.text = Text;
     };
 
+    canUse = function () {
+        if (this.owner.zone("Défausse").cards.length > 0) {
+            return true;
+        }
+        return false;
+    };
+
     select = function () {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

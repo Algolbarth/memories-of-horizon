@@ -14,23 +14,13 @@ export class Multisoin extends Action {
         this.text = Text;
     };
 
-    select = function () {
-        if (this.owner == this.system.game.player) {
-            this.useEffect();
-        }
-        else {
-            let check = false;
-
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature" && card.isDamaged()) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.useEffect();
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature" && card.isDamaged()) {
+                return true;
             }
         }
+        return false;
     };
 
     useEffect = function () {

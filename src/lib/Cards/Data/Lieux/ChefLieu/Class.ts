@@ -3,8 +3,8 @@ import type { Card } from '../../../Class';
 import { Lieu } from '../../../Class/Lieu';
 import Text from './Text.svelte';
 
-export class VilleDesGeants extends Lieu {
-    name = "Ville des géants";
+export class ChefLieu extends Lieu {
+    name = "Chef-lieu";
 
     constructor(system: System) {
         super(system);

@@ -8,5 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : crée <CardInfo bind:system name={"Mue"} />
-sur le terrain.
+Au début de la phase de préparation : crée <CardInfo bind:system name={"Mue"} /> sur le terrain.
