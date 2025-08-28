@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
-	import type { Train_Entity } from "./Train";
+	import type { TrainEntity } from "./Train";
 
 	export let system: System;
-	export let entity: Train_Entity;
+	export let entity: TrainEntity;
 
 	let life: number = entity.life;
 	let gold: number = entity.gold;

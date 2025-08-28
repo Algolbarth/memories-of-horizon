@@ -4,7 +4,7 @@ import * as chapters from "../Chapters/Data";
 import * as stories from "../Stories";
 import { Music } from "../Music/Class";
 import { Settings } from "../Settings/Class";
-import { Ressources } from "../Ressources/Class";
+import { RessourceList } from "../Ressources/Class";
 import type { Deck } from "../Decks/Deck";
 import type { Story } from "../Stories/Story";
 import type { Game } from "../Game/Game";
@@ -19,7 +19,7 @@ export class System {
     decks: Deck[] = [];
     train: Train = new Train();
     game: undefined | Game = undefined;
-    ressources: Ressources = new Ressources();
+    ressources: RessourceList = new RessourceList();
     sort = new Sort();
     view: View = new View();
     music: Music = new Music(this);

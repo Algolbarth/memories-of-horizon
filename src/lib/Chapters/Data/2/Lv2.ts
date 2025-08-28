@@ -8,7 +8,7 @@ export class Lv2_Mur extends Chapter {
         this.addRessource("Or", 25);
 
         this.addStep(20, "Plaine", ["Soldat", "Garde"], ["Un mur vous barre la route tandis que des gardes s'avancent vers vous."]);
-        this.addStep(20, "Plaine", ["Mur de brique", "Soldat", "Soldat"]);
+        this.addStep(20, "Plaine", ["Barricade", "Soldat", "Soldat"]);
     }
 }
 

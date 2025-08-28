@@ -1,8 +1,8 @@
 import type { System } from "../System/Class";
 
 export class Chapter {
-    steps = [];
-    ressources = [];
+    steps: Step[] = [];
+    ressources: ChapterRessource[] = [];
     boss: boolean = false;
     system: System;
     number: number;
@@ -22,10 +22,7 @@ export class Chapter {
     };
 
     addRessource = function (name: string, value: number) {
-        this.ressources.push({
-            name: name,
-            value: value
-        });
+        this.ressources.push(new ChapterRessource(name, value));
     };
 
     addStep = function (life: number, place: string, cards: string[], dialogs: string[] = []) {
@@ -112,5 +109,15 @@ export class Step {
         this.place = place;
         this.cards = cards;
         this.dialogs = dialogs;
+    };
+};
+
+class ChapterRessource {
+    name: string;
+    value: number;
+
+    constructor(name: string, value: number) {
+        this.name = name;
+        this.value = value;
     };
 };

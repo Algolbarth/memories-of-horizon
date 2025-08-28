@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
-	import type { Train_Zone } from "./Train";
+	import type { TrainZone } from "./Train";
 
 	export let system: System;
-	export let zone: Train_Zone;
+	export let zone: TrainZone;
 	export let entity: string;
 
 	let level: number = zone.level!;

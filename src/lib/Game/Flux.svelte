@@ -5,9 +5,7 @@
 	export let show_flux: boolean;
 
 	function close() {
-		if (system.game) {
-			show_flux = false;
-		}
+		show_flux = false;
 	}
 
 	let number_selected = "1";

@@ -1,4 +1,4 @@
-export class Ressources {
+export class RessourceList {
     list: Ressource[] = [
         new Ressource("Or", "rgba(150, 100, 0, 1)"),
         new Ressource("Feu", "rgba(150, 0, 0, 1)"),

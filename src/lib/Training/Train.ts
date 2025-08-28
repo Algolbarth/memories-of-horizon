@@ -2,8 +2,8 @@ import type { Deck } from "../Decks/Deck";
 
 export class Train {
     deck: Deck | undefined = undefined;
-    player: Train_Entity;
-    bot: Train_Entity;
+    player: TrainEntity;
+    bot: TrainEntity;
     add = new Train_Add();
 
     constructor() {
@@ -15,33 +15,33 @@ export class Train {
     };
 
     entity = function () {
-        return new Train_Entity();
+        return new TrainEntity();
     };
 }
 
 class Train_Add {
     entity: string | undefined = undefined;
-    zone: Train_Zone | undefined = undefined;
+    zone: TrainZone | undefined = undefined;
 
     reset = function () {
         this.zone = undefined;
     };
 }
 
-export class Train_Entity {
+export class TrainEntity {
     life: number = 100;
     gold: number = 0;
     flux: number = 0;
-    zones: Train_Zone[] = [
-        new Train_Zone("Lieux", 3, undefined, ["Plaine"]),
-        new Train_Zone("Boutique", 10, 1),
-        new Train_Zone("Main", 10),
-        new Train_Zone("Terrain", 10),
-        new Train_Zone("Défausse"),
+    zones: TrainZone[] = [
+        new TrainZone("Lieux", 3, undefined, ["Plaine"]),
+        new TrainZone("Boutique", 10, 1),
+        new TrainZone("Main", 10),
+        new TrainZone("Terrain", 10),
+        new TrainZone("Défausse"),
     ];
 }
 
-export class Train_Zone {
+export class TrainZone {
     name: string;
     cards: string[] = [];
     level: number | undefined;

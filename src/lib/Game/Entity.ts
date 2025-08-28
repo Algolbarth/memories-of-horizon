@@ -20,7 +20,7 @@ export class Entity {
         new Zone("Terrain", 10),
         new Zone("Défausse")
     ];
-    ressources: Ressource[] = [];
+    ressources: EntityRessource[] = [];
     place: Card | undefined = undefined;
     system: System;
     step: number = 0;
@@ -39,7 +39,7 @@ export class Entity {
 
     setRessources = function () {
         for (const r of this.system.ressources.list) {
-            this.ressources.push(new Ressource(r.name));
+            this.ressources.push(new EntityRessource(r.name));
         }
     };
 
@@ -255,7 +255,7 @@ export class Entity {
     };
 }
 
-class Ressource {
+class EntityRessource {
     name: string;
     current: number = 0;
     stock: number = 0;
