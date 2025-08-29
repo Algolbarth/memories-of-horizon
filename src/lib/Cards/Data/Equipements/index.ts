@@ -34,6 +34,7 @@ export * from './HacheLourde';
 export * from './HeaumeDeFer';
 export * from './HeaumeDePlatine';
 export * from './LanceDeFer';
+export * from './LanceDePlatine';
 export * from './MasseDeFer';
 export * from './MasseDePierre';
 export * from './MassueDeChene';
