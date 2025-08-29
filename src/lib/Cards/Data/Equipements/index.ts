@@ -33,6 +33,7 @@ export * from './HacheLourde';
 export * from './HeaumeDeFer';
 export * from './LanceDeFer';
 export * from './MasseDeFer';
+export * from './MasseDePierre';
 export * from './MassueDeChene';
 export * from './PeauDOurs';
 export * from './Pelle';
