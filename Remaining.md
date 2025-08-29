@@ -128,7 +128,6 @@ Leviathan : quand posé : change l'élément terre de toutes les unités sur le 
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la main.
 
 ### Terre
-Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses.  
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. 
 Taupe
 Mère ours : créature bête, protection
