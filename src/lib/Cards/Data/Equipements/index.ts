@@ -25,6 +25,7 @@ export * from './EpeeDePlatine';
 export * from './EpeeEnflammee';
 export * from './FauxDePaysan';
 export * from './GanteletsEnCuir';
+export * from './Geomarteau';
 export * from './Grimoire';
 export * from './HacheDeCuivre';
 export * from './HacheDeFer';
