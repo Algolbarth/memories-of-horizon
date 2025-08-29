@@ -116,7 +116,6 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête, charge.
 Cerf : créature bête, vitesse et percée.
 Hérisson : créature bête, épine.
-Massue de chêne : objet équipement, charge.
 Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la vie max et de X la régénération de cette créature.
 
 ### Eau
