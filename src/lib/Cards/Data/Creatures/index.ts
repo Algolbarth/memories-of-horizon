@@ -66,6 +66,7 @@ export * from './GuerrierGeant';
 export * from './GuerrierGobelin';
 export * from './Heros';
 export * from './HommeDAffaires';
+export * from './Homonculus';
 export * from './Humain';
 export * from './JongleurDeBouleDeFeu';
 export * from './Juge';

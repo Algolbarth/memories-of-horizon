@@ -27,6 +27,7 @@ export * from './PotionDeForce';
 export * from './PotionDeMana';
 export * from './PotionDeSoin';
 export * from './PotionDeSolidite';
+export * from './PotionInterdite';
 export * from './PouletRoti';
 export * from './Remede';
 export * from './SardinesEnBoite';

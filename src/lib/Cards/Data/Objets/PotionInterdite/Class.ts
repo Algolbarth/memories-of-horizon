@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Objet } from '../../../Class/Objet';
 import Text from './Text.svelte';
 
-export class PotionDeMana extends Objet {
-    name = "Potion de mana";
+export class PotionInterdite extends Objet {
+    name = "Potion interdite";
 
     constructor(system: System) {
         super(system);
@@ -17,7 +17,13 @@ export class PotionDeMana extends Objet {
     };
 
     useEffect = function () {
-        this.owner.ressource("Mana").current += this.stat("Infusion").value();
+        let homonculus = this.owner.getCard("Homonculus");
+
+        homonculus.stat("Vie").current = this.stat("Infusion").value();
+        homonculus.stat("Vie").base = this.stat("Infusion").value();
+        homonculus.stat("Attaque").base = this.stat("Infusion").value();
+        
+        homonculus.add("Terrain");
         this.move("Défausse");
         this.pose();
     };

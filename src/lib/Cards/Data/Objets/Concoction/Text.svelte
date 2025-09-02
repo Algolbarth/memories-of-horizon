@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
     import type { Card } from "../../../Class";
+    import CardInfo from "../../../Utils/CardInfo.svelte";
     import { Concoction } from "./Class";
 
-	// svelte-ignore export_let_unused
 	export let system: System;
 	export let card: Card;
 </script>
@@ -33,6 +33,11 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 
 	{#if card.stat("Infusion de solidité").value() > 0}
 		Augmente de {card.stat("Infusion de solidité").value() * 2} la défense d'une créature alliée sur le terrain pendant cette étape.
+		<br />
+	{/if}
+
+	{#if card.stat("Infusion interdite").value() > 0}
+		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} l'attaque et la vie de cette carte.
 		<br />
 	{/if}
 </i>

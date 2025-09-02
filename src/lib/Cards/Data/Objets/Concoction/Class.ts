@@ -17,6 +17,7 @@ export class Concoction extends Objet {
         this.addStat("Infusion de mana", 0);
         this.addStat("Infusion de force", 0);
         this.addStat("Infusion de solidité", 0);
+        this.addStat("Infusion interdite", 0);
 
         this.trait("Rare").base = true;
 
@@ -24,6 +25,9 @@ export class Concoction extends Objet {
     };
 
     canUse = function () {
+        if (this.stat("Infusion de mana").value() > 0 || this.stat("Infusion interdite").value() > 0) {
+            return true;
+        }
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature") {
                 return true;
@@ -59,7 +63,12 @@ export class Concoction extends Objet {
                 }
             }
 
-            this.useEffect(target);
+            if (target != undefined) {
+                this.useEffect(target);
+            }
+            else {
+                this.useEffect(undefined);
+            }
         }
     };
 
@@ -74,6 +83,15 @@ export class Concoction extends Objet {
 
     useEffect = function (target: Creature | undefined) {
         this.owner.ressource("Mana").current += this.stat("Infusion de mana").value();
+
+        if (this.stat("Infusion interdite").value() > 0) {
+            let homonculus = this.owner.getCard("Homonculus");
+            homonculus.stat("Vie").current = this.stat("Infusion interdite").value();
+            homonculus.stat("Vie").base = this.stat("Infusion interdite").value();
+            homonculus.stat("Attaque").base = this.stat("Infusion interdite").value();
+            homonculus.add("Terrain");
+        }
+
         if (target != undefined) {
             target.heal(this.stat("Infusion de soin").value() * 2);
             target.stat("Attaque").step += this.stat("Infusion de force").value() * 4;
