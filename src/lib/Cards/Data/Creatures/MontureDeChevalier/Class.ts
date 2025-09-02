@@ -3,18 +3,18 @@ import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Ecuyer extends Creature {
-    name = "Écuyer";
+export class MontureDeChevalier extends Creature {
+    name = "Monture de chevalier";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 110]]);
-        this.familles.base.push("Humain");
+        this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Vie").base = 10;
+        this.stat("Vie").current = 10;
+        this.stat("Attaque").base = 10;
 
         this.text = Text;
     };
