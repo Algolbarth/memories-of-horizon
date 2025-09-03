@@ -40,4 +40,9 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} l'attaque et la vie de cette carte.
 		<br />
 	{/if}
+
+	{#if card.stat("Infusion explosive").value() > 0}
+		Inflige {card.stat("Infusion explosive").value() * 2} dégâts à une créature adverse sur le terrain.
+		<br />
+	{/if}
 </i>

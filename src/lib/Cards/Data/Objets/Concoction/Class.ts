@@ -18,6 +18,7 @@ export class Concoction extends Objet {
         this.addStat("Infusion de force", 0);
         this.addStat("Infusion de solidité", 0);
         this.addStat("Infusion interdite", 0);
+        this.addStat("Infusion explosive", 0);
 
         this.trait("Rare").base = true;
 
@@ -28,9 +29,11 @@ export class Concoction extends Objet {
         if (this.stat("Infusion de mana").value() > 0 || this.stat("Infusion interdite").value() > 0) {
             return true;
         }
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
-                return true;
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card.type == "Créature") {
+                    return true;
+                }
             }
         }
         return false;
@@ -40,9 +43,11 @@ export class Concoction extends Objet {
         if (this.owner == this.system.game.player) {
             let check = false;
 
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (!check && card.type == "Créature") {
-                    check = true;
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const card of entity.zone("Terrain").cards) {
+                    if (card.type == "Créature") {
+                        check = true;
+                    }
                 }
             }
 
@@ -93,6 +98,7 @@ export class Concoction extends Objet {
         }
 
         if (target != undefined) {
+            target.damageByEffect(this.stat("Infusion explosive").value() * 2);
             target.heal(this.stat("Infusion de soin").value() * 2);
             target.stat("Attaque").step += this.stat("Infusion de force").value() * 4;
             target.stat("Défense").step += this.stat("Infusion de solidité").value() * 2;
