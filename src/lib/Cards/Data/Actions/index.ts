@@ -29,6 +29,7 @@ export * from './Exploration';
 export * from './Forger';
 export * from './Frappe';
 export * from './Hydratation';
+export * from './Ignorer';
 export * from './Incantation';
 export * from './Inondation';
 export * from './Malefice';

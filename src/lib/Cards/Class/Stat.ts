@@ -53,7 +53,9 @@ export class Stat {
     };
 
     set = function (value: number) {
-        this.add = value - this.value();
+        this.step = 0;
+        this.turn = 0;
+        this.add = this.base - value;
     };
 
     remove = function (value: number) {
