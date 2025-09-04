@@ -1,4 +1,5 @@
 export * from './AnneauEnOr';
+export * from './BagueDeFiancaille';
 export * from './BaguetteDArchimage';
 export * from './BaguetteDeMage';
 export * from './BaguetteDesMarees';
