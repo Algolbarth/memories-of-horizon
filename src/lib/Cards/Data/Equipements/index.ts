@@ -4,6 +4,7 @@ export * from './BaguetteDeMage';
 export * from './BaguetteDesMarees';
 export * from './BaguetteEnBois';
 export * from './BaguetteExplosive';
+export * from './BottesDAgilite';
 export * from './BottesEnCuir';
 export * from './BouclierDeFer';
 export * from './BouclierDePlatine';
