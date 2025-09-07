@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Batiment } from '../../../Class/Batiment';
+import type { Batiment } from '../../../Class/Building';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 

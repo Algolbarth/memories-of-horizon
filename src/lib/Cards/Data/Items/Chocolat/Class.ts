@@ -1,0 +1,60 @@
+import type { System } from '../../../../System/Class';
+import type { Creature } from '../../../Class/Creature';
+import { Objet } from '../../../Class/Item';
+import Text from './Text.svelte';
+import Use from './Use.svelte';
+
+export class Chocolat extends Objet {
+    name = "Chocolat";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 8]]);
+        this.familles.base.push("Nourriture");
+
+        this.text = Text;
+    };
+
+    canUse = function () {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature") {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    select = function () {
+        if (this.owner == this.system.game.player) {
+            this.system.game.use.set(this, Use);
+        }
+        else {
+            let target = undefined;
+
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (target == undefined && card.type == "Créature") {
+                    target = card;
+                }
+            }
+
+            if (target != undefined) {
+                this.useEffect(target);
+            }
+        }
+    };
+
+    useEffect = function (target: Creature) {
+        this.targeting(target);
+        if (!target.isDamaged()) {
+            target.stat("Vie").add += 5;
+            target.stat("Vie").current += 5;
+            target.stat("Attaque").add += 5;
+        }
+        else {
+            target.heal(10);
+        }
+        this.move("Défausse");
+        this.pose();
+    };
+}

@@ -2,7 +2,7 @@
 	import type { System } from "../../System/Class";
 	import { Card } from "../Class";
 	import { Creature } from "../Class/Creature";
-	import { Equipment } from "../Class/Equipement";
+	import { Equipment } from "../Class/Equipment";
 	import Caracteristics from "./Caracteristics.svelte";
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";

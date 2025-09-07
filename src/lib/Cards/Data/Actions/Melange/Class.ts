@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Objet } from '../../../Class/Objet';
+import type { Objet } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 

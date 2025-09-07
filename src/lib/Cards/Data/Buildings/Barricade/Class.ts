@@ -1,0 +1,14 @@
+import type { System } from '../../../../System/Class';
+import { Batiment } from '../../../Class/Building';
+
+export class Barricade extends Batiment {
+    name = "Barricade";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 10]]);
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
+    };
+}

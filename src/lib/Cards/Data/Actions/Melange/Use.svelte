@@ -2,7 +2,7 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-	import type { Objet } from "../../../Class/Objet";
+	import type { Objet } from "../../../Class/Item";
 
 	export let system: System;
 
