@@ -22,8 +22,8 @@ export class Pelle extends Equipment {
                 }
                 return false;
             }
-            let cards = this.owner.discover(1, condition);
-            this.owner.ressource("Terre").current += cards[0].level;
+            this.owner.discover(1, condition);
+            this.owner.ressource("Terre").current += 10;
         }
     };
 }
