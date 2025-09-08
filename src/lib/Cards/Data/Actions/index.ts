@@ -18,6 +18,7 @@ export * from './CoupDeBouclier';
 export * from './CoupDeBoule';
 export * from './Croissance';
 export * from './Defrichage';
+export * from './Demolition';
 export * from './Desarmer';
 export * from './Eboulement';
 export * from './Ecrasement';
