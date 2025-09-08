@@ -10,7 +10,7 @@ export class Equipment extends Item {
     equipFamilies: string[] = [];
     equipTraits: Trait[] = [];
     equipStats: Stat[] = [];
-    bearer = undefined;
+    bearer: Creature | undefined = undefined;
 
     constructor(system: System) {
         super(system);

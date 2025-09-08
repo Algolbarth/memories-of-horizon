@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Equipment } from '../../../Class/Equipment';
-import Text from '../../../Utils/EquipText.svelte';
+import Text from './Text.svelte';
 
 export class Egide extends Equipment {
     name = "Égide";
@@ -8,10 +8,17 @@ export class Egide extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 30]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Protection").base = 1;
+        this.equipStat("Endurance").value = () => {
+            if (this.bearer != undefined) {
+                return this.bearer.stat("Protection").value() * 10;
+            }
+            else {
+                return 0;
+            }
+        };
 
         this.text = Text;
     };
