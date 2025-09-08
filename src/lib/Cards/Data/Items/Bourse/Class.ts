@@ -20,7 +20,7 @@ export class Bourse extends Objet {
 
     startStepEffect = function () {
         if (this.zone.name == "Main") {
-            this.getVente("Or").add += 5;
+            this.getSale("Or").add += 5;
         }
     };
 }

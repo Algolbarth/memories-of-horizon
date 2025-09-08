@@ -25,7 +25,7 @@ export class Negociant extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Boutique").cards) {
-                if (check == false && card.getCout("Or").value() > 0) {
+                if (check == false && card.getCost("Or").value() > 0) {
                     check = true;
                 }
             }
@@ -41,7 +41,7 @@ export class Negociant extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Boutique").cards) {
-                if (target == undefined && card.getCout("Or") > 0) {
+                if (target == undefined && card.getCost("Or") > 0) {
                     target = card;
                 }
             }
@@ -57,7 +57,7 @@ export class Negociant extends Creature {
 
     useEffect = function (target: Card) {
         if (target != undefined) {
-            target.getCout("Or").add -= 10;
+            target.getCost("Or").add -= 10;
         }
         this.move("Terrain");
         this.pose();

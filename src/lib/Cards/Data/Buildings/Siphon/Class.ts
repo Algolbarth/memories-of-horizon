@@ -17,7 +17,7 @@ export class Siphon extends Batiment {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
-            this.getVente("Eau").base += 5;
+            this.getSale("Eau").base += 5;
         }
     };
 }

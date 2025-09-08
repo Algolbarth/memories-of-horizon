@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.getCout("Or").value() > 0) {
+		if (card.getCost("Or").value() > 0) {
 			return true;
 		}
 		return false;
