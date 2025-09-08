@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte de famille Nourriture est posée : produit 3 ressources de chaque élément de cette carte.
+Quand une carte de famille Nourriture est posée : produit 10 ressources de chaque élément de cette carte.

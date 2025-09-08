@@ -1,7 +1,7 @@
 import os
 
 CARD_DIRECTORY = './src/lib/Cards/Data'
-DIRECTORIES = ["Actions", "Buildings", "Bosses", "Creatures", "Equipments", "Locations", "Items", "Spells"]
+DIRECTORIES = ["Actions", "Bosses", "Buildings", "Creatures", "Equipments", "Items", "Locations", "Spells"]
 
 def check_items(path):
     nb_item = 0

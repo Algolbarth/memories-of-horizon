@@ -1,14 +1,15 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
-export class Cuisinier extends Creature {
-    name = "Cuisinier";
+export class ChefCuisinier extends Creature {
+    name = "Chef cuisinier";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 85]]);
         this.familles.base.push("Humain");
 
         this.stat("Santé").base = 5;
@@ -20,12 +21,12 @@ export class Cuisinier extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.familles.total().includes("Nourriture") && card.owner == this.owner) {
-            for (const e of card.elements) {
+            for (const e of card.elements.total()) {
                 if (e != "Neutre") {
-                    this.owner.ressource(e).current += 3;
+                    this.owner.ressource(e).current += 10;
                 }
                 else {
-                    this.owner.ressource("Or").current += 3;
+                    this.owner.ressource("Or").current += 10;
                 }
             }
         }
