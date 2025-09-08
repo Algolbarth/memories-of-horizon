@@ -27,7 +27,6 @@ export class Stat {
         }
 
         if (total < this.min) {
-            this.add -= total + this.min;
             total = this.min;
         }
 

@@ -108,7 +108,7 @@ export class Equipment extends Objet {
     };
 
     addEquipStat = function (name: string, value: number) {
-        let stat = new Stat(name, value, 0, this);
+        let stat: Stat = new Stat(name, value, 0, this);
         stat.value = function () {
             return this.base + this.add;
         };

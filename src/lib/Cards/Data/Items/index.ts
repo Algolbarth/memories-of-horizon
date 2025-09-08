@@ -23,6 +23,7 @@ export * from './LivreDeRecette';
 export * from './Pain';
 export * from './Panacee';
 export * from './PierrePhilosophale';
+export * from './Piment';
 export * from './Pomme';
 export * from './PommeDeTerre';
 export * from './PotionDEndurance';
