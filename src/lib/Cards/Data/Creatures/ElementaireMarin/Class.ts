@@ -21,8 +21,8 @@ export class ElementaireMarin extends Creature {
     startStepEffect = function () {
         if (this.zone == "Terrain" && this.owner.ressource("Eau").total() >= 5) {
             this.owner.ressource("Eau").spend(5);
-            this.stat("Force").add += 5;
-            this.stat("Santé").add += 5;
+            this.stat("Force").increase(5);
+            this.stat("Santé").increase(5);
             this.stat("Santé").current += 5;
         }
     };

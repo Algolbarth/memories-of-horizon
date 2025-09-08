@@ -33,9 +33,9 @@ export class Chimere extends Creature {
             }
         }
 
-        this.stat("Force").add += 10 * list.length;
+        this.stat("Force").increase(10 * list.length);
         this.stat("Santé").current += 10 * list.length;
-        this.stat("Santé").add += 10 * list.length;
+        this.stat("Santé").increase(10 * list.length);
 
         this.move("Terrain");
         this.pose();

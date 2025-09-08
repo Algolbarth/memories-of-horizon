@@ -23,7 +23,7 @@ export class CommissairePriseur extends Creature {
         if (this.zone.name == "Terrain") {
             let hand = copy(this.owner.zone("Main").cards);
             for (const card of hand) {
-                card.getSale("Or").add += 10;
+                card.getSale("Or").increase(10);
             }
         }
     };

@@ -32,7 +32,7 @@ export class Renforcement extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.stat("Santé").add += 15;
+        target.stat("Santé").increase(15);
         target.stat("Santé").current += 15;
         this.move("Défausse");
         this.pose();

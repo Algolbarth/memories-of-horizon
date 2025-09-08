@@ -24,12 +24,12 @@ export class Alambic extends Building {
                     if (card.name == "Concoction") {
                         for (const stat of card.stats) {
                             if (stat.name.includes("Infusion") && stat.value() > 0) {
-                                card.stat(stat.name).add += 1;
+                                card.stat(stat.name).increase(1);
                             }
                         }
                     }
                     else {
-                        card.stat("Infusion").add += 1;
+                        card.stat("Infusion").increase(1);
                     }
                 }
             }

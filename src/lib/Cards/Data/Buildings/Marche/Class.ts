@@ -20,7 +20,7 @@ export class Marche extends Building {
         if (this.zone.name == "Terrain") {
             let hand = copy(this.owner.zone("Boutique").cards);
             for (const card of hand) {
-                card.getCost("Or").add -= 5;
+                card.getCost("Or").decrease(5);
             }
         }
     };

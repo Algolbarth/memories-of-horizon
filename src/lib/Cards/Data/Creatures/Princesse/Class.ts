@@ -20,9 +20,9 @@ export class Princesse extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
-            card.stat("Santé").add += 10;
+            card.stat("Santé").increase(10);
             card.stat("Santé").current += 10;
-            card.stat("Force").add += 10;
+            card.stat("Force").increase(10);
         }
     };
 }

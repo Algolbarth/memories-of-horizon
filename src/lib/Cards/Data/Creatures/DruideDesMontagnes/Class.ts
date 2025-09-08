@@ -51,9 +51,9 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.stat("Santé").add += 10;
+            this.stat("Santé").increase(10);
             this.stat("Santé").current += 10;
-            this.stat("Force").add += 10;
+            this.stat("Force").increase(10);
         }
     };
 }

@@ -51,7 +51,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
     otherPoseEffect = function (card: Card) {
         if (card.owner == this.owner && card.type == "Action") {
             this.stat("Santé").current += 6;
-            this.stat("Santé").add += 6;
+            this.stat("Santé").increase(6);
         }
     };
 }

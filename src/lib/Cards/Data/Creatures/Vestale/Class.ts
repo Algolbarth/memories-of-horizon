@@ -56,7 +56,7 @@ export class Vestale extends Creature {
 
     useEffect = function (target, choice) {
         if (choice == "attack") {
-            target.stat("Force").add += 20;
+            target.stat("Force").increase(20);
         }
         else if (choice == "heal") {
             target.heal(20);

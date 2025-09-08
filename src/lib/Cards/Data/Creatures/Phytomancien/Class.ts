@@ -20,7 +20,7 @@ export class Phytomancien extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Végétal") && card.owner == this.owner) {
-            this.stat("Santé").add += 3;
+            this.stat("Santé").increase(3);
             this.stat("Santé").current += 3;
         }
     };

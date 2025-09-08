@@ -23,9 +23,9 @@ export class Roi extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Force").add += 10;
+                card.stat("Force").increase(10);
                 card.stat("Santé").current += 10;
-                card.stat("Santé").add += 10;
+                card.stat("Santé").increase(10);
             }
         }
         this.move("Terrain");

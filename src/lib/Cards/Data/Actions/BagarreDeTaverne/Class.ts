@@ -26,7 +26,7 @@ export class BagarreDeTaverne extends Action {
         for (const card of terrain) {
             card.damageByEffect(5);
             if (card.type == "Créature") {
-                card.stat("Force").add += 10;
+                card.stat("Force").increase(10);
             }
         }
         this.move("Défausse");

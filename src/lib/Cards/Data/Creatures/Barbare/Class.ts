@@ -19,6 +19,6 @@ export class Barbare extends Creature {
     };
 
     fightEffect = function () {
-        this.stat("Force").add += 2;
+        this.stat("Force").increase(2);
     };
 }

@@ -44,7 +44,7 @@ export class Parade extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Esquive").add += 1;
+        target.stat("Esquive").increase(1);
         this.move("Défausse");
         this.pose();
     };

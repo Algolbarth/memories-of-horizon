@@ -44,8 +44,8 @@ export class Entrainement extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Force").add += 10;
-        target.stat("Santé").add += 10;
+        target.stat("Force").increase(10);
+        target.stat("Santé").increase(10);
         target.stat("Santé").current += 10;
         this.move("Défausse");
         this.pose();

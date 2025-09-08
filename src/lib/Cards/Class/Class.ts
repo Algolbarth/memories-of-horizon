@@ -98,17 +98,15 @@ export class Card {
     };
 
     costReduce = function (value: number) {
-        let best = this.getCost("Or");
-        for (const cost of this.cost) {
-            if (cost.value() > best.value()) {
-                best = cost;
+        while (value > 0) {
+            let best = this.getCost("Or");
+            for (const cost of this.cost) {
+                if (cost.value() > best.value()) {
+                    best = cost;
+                }
             }
-        }
-        best.base--;
-        value--;
-
-        if (value > 0) {
-            this.costReduce(value);
+            best.base--;
+            value--;
         }
     };
 

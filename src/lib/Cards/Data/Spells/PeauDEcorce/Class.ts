@@ -46,10 +46,10 @@ export class PeauDEcorce extends Spell {
     useEffect = function (target: Creature) {
         if (this.owner.ressource("Mana").total() >= this.manaCost(15)) {
             this.owner.ressource("Mana").spend(this.manaCost(15));
-            target.stat("Santé").add += 45;
+            target.stat("Santé").increase(45);
         }
         else {
-            target.stat("Santé").add += 20;
+            target.stat("Santé").increase(20);
         }
         this.move("Défausse");
         this.pose();

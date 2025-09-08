@@ -17,6 +17,6 @@ export class MasseDePierre extends Equipment {
     };
 
     fightEffect = function () {
-        this.bearer.stat("Endurance").add += 5;
+        this.bearer.stat("Endurance").increase(5);
     };
 }

@@ -42,7 +42,7 @@ export class Menace extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.stat("Protection").add += 5;
+        target.stat("Protection").increase(5);
         this.move("Défausse");
         this.pose();
     };

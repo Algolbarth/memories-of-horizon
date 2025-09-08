@@ -43,7 +43,7 @@ export class FioleDeVerre extends Item {
     };
 
     useEffect = function (target: Objet) {
-        target.stat("Infusion").add += 5;
+        target.stat("Infusion").increase(5);
         this.move("Défausse");
         this.pose();
     };

@@ -18,6 +18,6 @@ export class MassueDeChene extends Equipment {
 
     fightEffect = function () {
         this.bearer.stat("Santé").current += 10;
-        this.bearer.stat("Santé").add += 10;
+        this.bearer.stat("Santé").increase(10);
     };
 }

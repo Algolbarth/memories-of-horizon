@@ -21,7 +21,7 @@ export class CavalierElfe extends Creature {
 
     useEffect = function () {
         if (this.owner.totalIntelligence() >= 20) {
-            this.stat("Vitesse").add += 1;
+            this.stat("Vitesse").increase(1);
         }
         this.move("Défausse");
         this.pose();

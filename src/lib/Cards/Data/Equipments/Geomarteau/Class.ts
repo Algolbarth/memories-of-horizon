@@ -21,7 +21,7 @@ export class Geomarteau extends Equipment {
     };
 
     fightEffect = function () {
-        this.stat("Secousses").add += 3;
+        this.stat("Secousses").increase(3);
 
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {

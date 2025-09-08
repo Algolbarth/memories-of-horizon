@@ -22,8 +22,8 @@ export class Archimere extends Creature {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
             for (let i = 0; i < card.familles.total().length; i++) {
                 this.stat("Santé").current += 5;
-                this.stat("Santé").add += 5;
-                this.stat("Force").add += 5;
+                this.stat("Santé").increase(5);
+                this.stat("Force").increase(5);
             }
         }
     };

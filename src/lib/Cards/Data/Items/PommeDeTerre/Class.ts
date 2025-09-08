@@ -48,7 +48,7 @@ export class PommeDeTerre extends Item {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Endurance").add += 5;
+            target.stat("Endurance").increase(5);
         }
         else {
             target.heal(10);

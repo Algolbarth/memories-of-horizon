@@ -24,9 +24,9 @@ export class SeigneurOndin extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 this.owner.ressource("Eau").current += 5;
-                card.stat("Force").add += 5;
+                card.stat("Force").increase(5);
                 card.stat("Santé").current += 5;
-                card.stat("Santé").add += 5;
+                card.stat("Santé").increase(5);
             }
         }
         this.move("Terrain");

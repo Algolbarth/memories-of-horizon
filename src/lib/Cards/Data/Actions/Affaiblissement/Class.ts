@@ -44,7 +44,7 @@ export class Affaiblissement extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Force").add -= 20;
+        target.stat("Force").decrease(20);
         this.move("Défausse");
         this.pose();
     };

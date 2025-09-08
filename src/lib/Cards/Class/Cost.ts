@@ -2,8 +2,8 @@ import type { Card } from "./Class";
 
 export class Cost {
     name: string;
-    add: number = 0;
     base: number = 0;
+    add: number = 0;
     card: Card;
 
     constructor(name: string, card: Card) {
@@ -14,5 +14,13 @@ export class Cost {
     value = function () {
         let total = this.base + this.add;
         return total;
+    };
+
+    increase = function (value: number) {
+        this.add += value;
+    };
+
+    decrease = function (value: number) {
+        this.add -= value;
     };
 };

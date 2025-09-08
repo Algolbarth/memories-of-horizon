@@ -21,7 +21,7 @@ export class Geomancien extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Terre") && card.owner == this.owner) {
-            this.stat("Endurance").add += 2;
+            this.stat("Endurance").increase(2);
         }
     };
 }

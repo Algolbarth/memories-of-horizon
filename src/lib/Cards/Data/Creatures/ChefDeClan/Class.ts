@@ -23,7 +23,7 @@ export class ChefDeClan extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Force").add += 20;
+                card.stat("Force").increase(20);
             }
         }
         this.move("Terrain");

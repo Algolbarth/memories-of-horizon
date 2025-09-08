@@ -24,7 +24,7 @@ export class Doyen extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 card.stat("Santé").current += 15;
-                card.stat("Santé").add += 15;
+                card.stat("Santé").increase(15);
             }
         }
         this.move("Terrain");

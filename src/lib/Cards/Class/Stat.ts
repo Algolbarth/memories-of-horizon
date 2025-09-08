@@ -45,18 +45,6 @@ export class Stat {
         this.add -= value;
     };
 
-    fix = function (value: number) {
-        if (this.value() < value) {
-            this.set(value);
-        }
-    };
-
-    set = function (value: number) {
-        this.step = 0;
-        this.turn = 0;
-        this.add = value - this.base;
-    };
-
     remove = function (value: number) {
         while (value > 0) {
             if (this.turn > 0) {
@@ -70,6 +58,18 @@ export class Stat {
             }
             value--;
         }
+    };
+
+    fix = function (value: number) {
+        if (this.value() < value) {
+            this.set(value);
+        }
+    };
+
+    set = function (value: number) {
+        this.step = 0;
+        this.turn = 0;
+        this.add = value - this.base;
     };
 
     condition = function () {

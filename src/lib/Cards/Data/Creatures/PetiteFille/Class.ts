@@ -56,7 +56,7 @@ export class PetiteFille extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Protection").add += 1;
+            target.stat("Protection").increase(1);
         }
         this.move("Terrain");
         this.pose();

@@ -46,10 +46,10 @@ export class PeauDePierre extends Spell {
     useEffect = function (target: Creature) {
         if (this.owner.ressource("Mana").total() >= this.manaCost(15)) {
             this.owner.ressource("Mana").spend(this.manaCost(15));
-            target.stat("Endurance").add += 30;
+            target.stat("Endurance").increase(30);
         }
         else {
-            target.stat("Endurance").add += 15;
+            target.stat("Endurance").increase(15);
         }
         this.move("Défausse");
         this.pose();

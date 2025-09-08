@@ -47,7 +47,7 @@ export class Piment extends Item {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Intensité").add += 0.5;
+            target.stat("Intensité").increase(0.5);
         }
         else {
             target.heal(25);

@@ -21,7 +21,7 @@ export class Sage extends Creature {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.stat("Intelligence").add += 1;
+            this.stat("Intelligence").increase(1);
         }
     };
 }

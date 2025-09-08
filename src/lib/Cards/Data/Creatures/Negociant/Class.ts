@@ -57,7 +57,7 @@ export class Negociant extends Creature {
 
     useEffect = function (target: Card) {
         if (target != undefined) {
-            target.getCost("Or").add -= 10;
+            target.getCost("Or").decrease(10);
         }
         this.move("Terrain");
         this.pose();

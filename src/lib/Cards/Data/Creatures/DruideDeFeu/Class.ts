@@ -50,7 +50,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.stat("Force").add += 10;
+            this.stat("Force").increase(10);
         }
     };
 }

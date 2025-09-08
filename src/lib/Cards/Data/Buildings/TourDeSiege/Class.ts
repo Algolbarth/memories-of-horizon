@@ -28,8 +28,8 @@ export class TourDeSiege extends Building {
             }
 
             if (target != undefined) {
-                target.stat("Force").add += 10;
-                target.stat("Santé").add += 10;
+                target.stat("Force").increase(10);
+                target.stat("Santé").increase(10);
                 target.stat("Santé").current += 10;
             }
         }

@@ -24,9 +24,9 @@ export class General extends Creature {
             let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {
                 if (card.type == "Créature") {
-                    card.stat("Force").add += 5;
+                    card.stat("Force").increase(5);
                     card.stat("Santé").current += 5;
-                    card.stat("Santé").add += 5;
+                    card.stat("Santé").increase(5);
                 }
             }
         }

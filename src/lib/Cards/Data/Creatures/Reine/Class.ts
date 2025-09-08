@@ -57,8 +57,8 @@ export class Reine extends Creature {
     useEffect = function (target: Creature) {
         if (target != undefined) {
             target.stat("Santé").current += 100;
-            target.stat("Santé").add += 100;
-            target.stat("Force").add += 100;
+            target.stat("Santé").increase(100);
+            target.stat("Force").increase(100);
         }
         this.move("Terrain");
         this.pose();

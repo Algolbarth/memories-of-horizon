@@ -56,7 +56,7 @@ export class Prêtre extends Creature {
 
     useEffect = function (target, choice) {
         if (choice == "life") {
-            target.stat("Santé").add += 15;
+            target.stat("Santé").increase(15);
             target.stat("Santé").current += 15;
         }
         else if (choice == "heal") {

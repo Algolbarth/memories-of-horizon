@@ -28,8 +28,8 @@ export class ElementaireDesRacines extends Creature {
         }
 
         if (target != undefined) {
-            target.stat("Force").add += this.stat("Force").value();
-            target.stat("Santé").add += this.stat("Santé").value();
+            target.stat("Force").increase(this.stat("Force").value());
+            target.stat("Santé").increase(this.stat("Santé").value());
             target.stat("Santé").current += this.stat("Santé").value();
         }
     };

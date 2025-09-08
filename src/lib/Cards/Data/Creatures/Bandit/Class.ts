@@ -21,8 +21,8 @@ export class Bandit extends Creature {
     useEffect = function () {
         if (this.owner.ressource("Or").total() >= 5) {
             this.owner.ressource("Or").spend(5);
-            this.stat("Force").add += 5;
-            this.stat("Santé").add += 5;
+            this.stat("Force").increase(5);
+            this.stat("Santé").increase(5);
             this.stat("Santé").current += 5;
         }
         this.move("Terrain");

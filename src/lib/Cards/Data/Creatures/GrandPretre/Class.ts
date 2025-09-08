@@ -54,7 +54,7 @@ export class GrandPretre extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 if (choice == "life") {
-                    card.stat("Santé").add += 10;
+                    card.stat("Santé").increase(10);
                     card.stat("Santé").current += 10;
                 }
                 else if (choice == "heal") {

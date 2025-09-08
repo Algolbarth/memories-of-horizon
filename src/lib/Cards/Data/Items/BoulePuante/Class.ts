@@ -44,7 +44,7 @@ export class BoulePuante extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.stat("Protection").add -= 5;
+        target.stat("Protection").decrease(5);
         this.move("Défausse");
         this.pose();
     };

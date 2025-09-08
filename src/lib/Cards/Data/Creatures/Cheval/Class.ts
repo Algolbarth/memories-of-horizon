@@ -57,7 +57,7 @@ export class Cheval extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Vitesse").add += 1;
+            target.stat("Vitesse").increase(1);
         }
         this.move("Terrain");
         this.pose();

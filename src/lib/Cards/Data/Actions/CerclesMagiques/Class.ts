@@ -44,7 +44,7 @@ export class CerclesMagiques extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Magie").add += 10;
+        target.stat("Magie").increase(10);
         this.move("Défausse");
         this.pose();
     };

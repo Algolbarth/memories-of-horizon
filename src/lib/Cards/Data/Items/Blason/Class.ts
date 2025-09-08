@@ -24,7 +24,7 @@ export class Blason extends Item {
     useEffect = function () {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
-            card.stat("Endurance").add += 3;
+            card.stat("Endurance").increase(3);
         }
         this.move("Défausse");
         this.pose();

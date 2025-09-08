@@ -112,13 +112,13 @@ export class Concoction extends Item {
         if (potion.name == "Concoction") {
             for (const stat of potion.stats) {
                 if (stat.name.includes("Infusion")) {
-                    this.stat(stat.name).add += stat.value();
+                    this.stat(stat.name).increase(stat.value());
                 }
             }
         }
         else {
             let infusion_name = potion.name.replace('Potion', 'Infusion');
-            this.stat(infusion_name).add += potion.stat("Infusion").value();
+            this.stat(infusion_name).increase(potion.stat("Infusion").value());
         }
     };
 }

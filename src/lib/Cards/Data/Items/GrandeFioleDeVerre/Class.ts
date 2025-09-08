@@ -43,7 +43,7 @@ export class GrandeFioleDeVerre extends Item {
     };
 
     useEffect = function (target: Objet) {
-        target.stat("Infusion").add += 25;
+        target.stat("Infusion").increase(25);
         this.move("Défausse");
         this.pose();
     };
