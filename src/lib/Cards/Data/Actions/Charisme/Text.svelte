@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente la force et la santé d'une créature alliée sur le terrain de 10 d'autant que sa protection.
+Augmente la force et la santé d'une créature alliée sur le terrain de 10 fois la valeur de protection de cette créature.

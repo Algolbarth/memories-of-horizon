@@ -75,7 +75,7 @@ Dague magique : objet équipement, s'équipe à une créature alliée sur le ter
 Louve : créature bête, quand meurt : crée 2 Louveteau sur le terrain. 8/5.
 Louveteau : créature bête, 5/3.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
-??? barbare : créature humain, quand une créature alliée force : augmente la force de la créature alliée.
+??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
 Gladiateur : créature humain.
 Armagicien : créature humain, magie.
 Établi : bâtiment.
@@ -89,13 +89,13 @@ Enflammer : enflamme une unité adverse sur le terrain.
 Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
-Lance incendiaire : quand la créature équipée force : applique brûlure sur l'unité attaquée.
+Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
 Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse.
 Jarre de flamme : objet, .
 
 ### Vegetal
 Spores : empoisonne une créature adverse sur le terrain.
-Dague empoisonnée : quand la créature équipée force : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
+Dague empoisonnée : Quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain.
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
@@ -230,7 +230,7 @@ Cierge : objet, pioche des cartes OU produit de la lumière.
 Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
-Épée de pure lumière : objet équipement, quand la créature équipée force : si pas blessée alors inflige des dégaâts.
+Épée de pure lumière : objet équipement, Quand la créature équipée attaque : si pas blessée alors inflige des dégaâts.
 Révélations de lumière : action, révèle toutes les cartes dans la main et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
@@ -360,7 +360,7 @@ Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruit
 
 Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
 Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
-Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier force : augmente la santé de gyoun
+Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la santé de gyoun
 
 # Lore
 
