@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Soigne 25 blessures à une créature alliée sur le terrain. Si cette créature n'est pas blessée, augmente de 0.5 son intensité à la place.
+Soigne 40 blessures à une créature alliée sur le terrain. Si cette créature n'est pas blessée, augmente jusqu'à 1 son étourdissement.

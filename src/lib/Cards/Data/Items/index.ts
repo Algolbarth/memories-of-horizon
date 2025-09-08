@@ -20,6 +20,7 @@ export * from './HerbesMedicinales';
 export * from './Lait';
 export * from './Livre';
 export * from './LivreDeRecette';
+export * from './NoixDeCoco';
 export * from './Pain';
 export * from './Panacee';
 export * from './PierrePhilosophale';
