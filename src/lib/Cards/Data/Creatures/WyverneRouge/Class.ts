@@ -12,9 +12,9 @@ export class WyverneRouge extends Creature {
         this.init([["Or", 30], ["Feu", 30]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 40;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 40;
 
         this.text = Text;
     };

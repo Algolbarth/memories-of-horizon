@@ -12,9 +12,9 @@ export class MageDeLaNature extends Creature {
         this.init([["Or", 20], ["Végétal", 20]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 5;
         this.stat("Magie").base = 5;
 
         this.text = Text;

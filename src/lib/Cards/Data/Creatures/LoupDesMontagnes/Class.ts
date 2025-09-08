@@ -11,16 +11,16 @@ export class LoupDesMontagnes extends Creature {
         this.init([["Or", 8], ["Terre", 8]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 15;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 15;
 
         this.text = Text;
     };
 
     fightEffect = function (defender) {
-        if (defender.stat("Défense").value() > 0) {
-            this.stat('Attaque').add += 5;
+        if (defender.stat("Endurance").value() > 0) {
+            this.stat('Force').add += 5;
         }
     };
 }

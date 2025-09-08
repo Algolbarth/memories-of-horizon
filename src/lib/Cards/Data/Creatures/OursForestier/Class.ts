@@ -10,8 +10,8 @@ export class OursForestier extends Creature {
         this.init([["Or", 20], ["Végétal", 20]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
-        this.stat("Attaque").base = 30;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
+        this.stat("Force").base = 30;
     };
 }

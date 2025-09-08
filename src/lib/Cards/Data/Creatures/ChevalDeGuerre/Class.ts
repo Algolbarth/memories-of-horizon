@@ -12,9 +12,9 @@ export class ChevalDeGuerre extends Creature {
         this.init([["Or", 40]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
         this.stat("Vitesse").base = 1;
 
         this.text = Text;
@@ -57,9 +57,9 @@ export class ChevalDeGuerre extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Vie").add += 10;
-            target.stat("Vie").add += 10;
-            target.stat("Attaque").add += 10;
+            target.stat("Santé").add += 10;
+            target.stat("Santé").add += 10;
+            target.stat("Force").add += 10;
             target.stat("Vitesse").add += 1;
         }
         this.move("Terrain");

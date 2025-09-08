@@ -28,7 +28,7 @@
 				choice = "attack";
 			}}
 		>
-			Augmente de 20 l'attaque d'une créature alliée sur le terrain
+			Augmente de 20 la force d'une créature alliée sur le terrain
 		</button>
 
 		<br />

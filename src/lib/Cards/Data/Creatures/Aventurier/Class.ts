@@ -13,9 +13,9 @@ export class Aventurier extends Creature {
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 8;
-        this.stat("Vie").current = 8;
-        this.stat("Attaque").base = 8;
+        this.stat("Santé").base = 8;
+        this.stat("Santé").current = 8;
+        this.stat("Force").base = 8;
 
         this.text = Text;
     };

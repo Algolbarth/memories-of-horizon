@@ -12,9 +12,9 @@ export class ChefBarbare extends Creature {
         this.init([["Or", 150]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
-        this.stat("Attaque").base = 50;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
+        this.stat("Force").base = 50;
 
         this.text = Text;
     };
@@ -23,7 +23,7 @@ export class ChefBarbare extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Attaque").add += 5;
+                card.stat("Force").add += 5;
             }
         }
     };

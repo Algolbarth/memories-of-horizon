@@ -12,9 +12,9 @@ export class MontureDeChevalier extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
 
         this.text = Text;
     };

@@ -10,8 +10,8 @@ export class Vache extends Creature {
         this.init([["Or", 8]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 5;
     };
 }

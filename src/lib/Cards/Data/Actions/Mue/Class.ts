@@ -18,7 +18,7 @@ export class Mue extends Action {
     canUse = function () {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.familles.total().includes("Reptile")) {
-                return false;
+                return true;
             }
         }
         return false;
@@ -44,7 +44,7 @@ export class Mue extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Vie").add += 15;
+        target.stat("Santé").add += 15;
         this.move("Défausse");
         this.pose();
     };

@@ -27,7 +27,7 @@ export class CorDeGuerre extends Objet {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Attaque").add += 5;
+                card.stat("Force").add += 5;
             }
         }
         this.move("Défausse");

@@ -48,8 +48,8 @@ export class Pomme extends Objet {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Vie").add += 5;
-            target.stat("Vie").current += 5;
+            target.stat("Santé").add += 5;
+            target.stat("Santé").current += 5;
         }
         else {
             target.heal(10);

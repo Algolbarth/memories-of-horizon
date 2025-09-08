@@ -27,9 +27,9 @@ export class Sifflet extends Objet {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
-                card.stat("Attaque").add += 1;
-                card.stat("Vie").current += 1;
-                card.stat("Vie").add += 1;
+                card.stat("Force").add += 1;
+                card.stat("Santé").current += 1;
+                card.stat("Santé").add += 1;
             }
         }
 

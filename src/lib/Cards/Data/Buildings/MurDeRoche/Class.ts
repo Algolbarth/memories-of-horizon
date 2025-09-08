@@ -8,7 +8,7 @@ export class MurDeRoche extends Batiment {
         super(system);
 
         this.init([["Or", 25], ["Terre", 25]]);
-        this.stat("Vie").base = 100;
-        this.stat("Vie").current = 100;
+        this.stat("Santé").base = 100;
+        this.stat("Santé").current = 100;
     };
 }

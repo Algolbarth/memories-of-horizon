@@ -12,16 +12,16 @@ export class Bagarreur extends Creature {
         this.init([["Or", 30]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
-            card.stat("Attaque").step += 5;
+            card.stat("Force").step += 10;
         }
     };
 }

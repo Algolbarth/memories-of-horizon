@@ -44,7 +44,7 @@ export class Aiguisage extends Action {
     };
 
     useEffect = function (target: Equipment) {
-        target.equipStat("Attaque").add += 20;
+        target.equipStat("Force").add += 20;
         this.move("Défausse");
         this.pose();
     };

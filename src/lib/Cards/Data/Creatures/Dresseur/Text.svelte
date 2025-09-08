@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : pioche 1 créature de famille Bête et augmente de 10 l'attaque et la vie de cette créature.
+Quand posé : pioche 1 créature de famille Bête et augmente de 10 la force et la santé de cette créature.

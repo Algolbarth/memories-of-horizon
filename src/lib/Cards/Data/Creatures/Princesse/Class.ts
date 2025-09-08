@@ -11,18 +11,18 @@ export class Princesse extends Creature {
         this.init([["Or", 105]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
-            card.stat("Vie").add += 10;
-            card.stat("Vie").current += 10;
-            card.stat("Attaque").add += 10;
+            card.stat("Santé").add += 10;
+            card.stat("Santé").current += 10;
+            card.stat("Force").add += 10;
         }
     };
 }

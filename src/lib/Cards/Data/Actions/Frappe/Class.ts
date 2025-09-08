@@ -20,7 +20,7 @@ export class Frappe extends Action {
             return false;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Attaque").value() > 0) {
+            if (card.type == "Créature" && card.stat("Force").value() > 0) {
                 return true;
             }
         }
@@ -50,8 +50,8 @@ export class Frappe extends Action {
         let value = 0;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && value < card.stat("Attaque").value()) {
-                value = card.stat("Attaque").value();
+            if (card.type == "Créature" && value < card.stat("Force").value()) {
+                value = card.stat("Force").value();
             }
         }
 

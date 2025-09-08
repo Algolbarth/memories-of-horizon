@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand attaque une unité ayant une défense nulle : augmente son attaque de 5.
+Quand attaque une unité ayant une endurance nulle : augmente sa force de 5.

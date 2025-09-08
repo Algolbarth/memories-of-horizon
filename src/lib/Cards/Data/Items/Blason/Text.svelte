@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 3 la défense de toutes les créatures alliées sur le terrain.
+Augmente de 3 l'endurance de toutes les créatures alliées sur le terrain.

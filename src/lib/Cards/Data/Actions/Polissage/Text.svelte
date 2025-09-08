@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 10 la défense d'une carte alliée de famille Armure dans la main.
+Augmente de 10 l'endurance d'une carte alliée de famille Armure dans la main.

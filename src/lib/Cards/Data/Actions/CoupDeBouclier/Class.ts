@@ -20,7 +20,7 @@ export class CoupDeBouclier extends Action {
             return false;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Défense").value() > 0) {
+            if (card.type == "Créature" && card.stat("Endurance").value() > 0) {
                 return true;
             }
         }
@@ -50,8 +50,8 @@ export class CoupDeBouclier extends Action {
         let value = 0;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && value < card.stat("Défense").value()) {
-                value = card.stat("Défense").value();
+            if (card.type == "Créature" && value < card.stat("Endurance").value()) {
+                value = card.stat("Endurance").value();
             }
         }
 

@@ -15,9 +15,9 @@ export class Couronne extends Equipment {
 
     otherPoseEffect = function (card: Card) {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner) {
-            card.stat("Attaque").add += this.bearer.level;
-            card.stat("Vie").add += this.bearer.level;
-            card.stat("Vie").current += this.bearer.level;
+            card.stat("Force").add += this.bearer.level;
+            card.stat("Santé").add += this.bearer.level;
+            card.stat("Santé").current += this.bearer.level;
         }
     };
 }

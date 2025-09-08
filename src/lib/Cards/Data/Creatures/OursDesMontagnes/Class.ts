@@ -10,9 +10,9 @@ export class OursDesMontagnes extends Creature {
         this.init([["Or", 20], ["Terre", 20]]);
         this.familles.base.push("Bête");
 
-        this.stat("Vie").base = 35;
-        this.stat("Vie").current = 35;
-        this.stat("Attaque").base = 35;
-        this.stat("Défense").base = 5;
+        this.stat("Santé").base = 35;
+        this.stat("Santé").current = 35;
+        this.stat("Force").base = 35;
+        this.stat("Endurance").base = 5;
     };
 }

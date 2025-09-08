@@ -44,9 +44,9 @@ export class Charisme extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Attaque").add += 10 * target.stat("Protection").value();
-        target.stat("Vie").add += 10 * target.stat("Protection").value();
-        target.stat("Vie").current += 10 * target.stat("Protection").value();
+        target.stat("Force").add += 10 * target.stat("Protection").value();
+        target.stat("Santé").add += 10 * target.stat("Protection").value();
+        target.stat("Santé").current += 10 * target.stat("Protection").value();
         this.move("Défausse");
         this.pose();
     };

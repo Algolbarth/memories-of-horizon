@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand attaque : augmente de 2 son attaque.
+Quand attaque : augmente de 2 sa force.

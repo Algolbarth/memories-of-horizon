@@ -11,9 +11,9 @@ export class AncienSerpent extends Creature {
         this.init([["Or", 15], ["Végétal", 15]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Vie").base = 15;
-        this.stat("Vie").current = 15;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 15;
+        this.stat("Santé").current = 15;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };

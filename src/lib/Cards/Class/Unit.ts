@@ -15,17 +15,15 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Vie", 1, 1);
-        this.stat("Vie").current = 1;
-        this.stat("Vie").condition = function () {
+        this.addStat("Santé", 1, 1);
+        this.stat("Santé").current = 1;
+        this.stat("Santé").condition = function () {
             return true;
         };
 
-        this.addStat("Défense", 0);
+        this.addStat("Endurance", 0);
 
         this.addStat("Résistance", 0);
-
-        this.addStat("Endurance", 0);
 
         this.addStat("Garde", 0);
 
@@ -66,18 +64,18 @@ export class Unit extends Card {
     };
 
     heal = function (value: number) {
-        this.stat("Vie").current += value;
-        if (this.stat("Vie").current > this.stat("Vie").value()) {
-            this.stat("Vie").current = this.stat("Vie").value();
+        this.stat("Santé").current += value;
+        if (this.stat("Santé").current > this.stat("Santé").value()) {
+            this.stat("Santé").current = this.stat("Santé").value();
         }
     };
 
     fullHeal = function () {
-        this.stat("Vie").current = this.stat("Vie").value();
+        this.stat("Santé").current = this.stat("Santé").value();
     };
 
     isDamaged = function () {
-        return this.stat("Vie").current < this.stat("Vie").value();
+        return this.stat("Santé").current < this.stat("Santé").value();
     };
 
     damageByEffect = function (value: number) {
@@ -113,9 +111,9 @@ export class Unit extends Card {
                 this.stat("Garde").remove(this.stat("Garde").value());
             }
 
-            this.stat("Vie").current -= result.value;
+            this.stat("Santé").current -= result.value;
 
-            if (this.stat("Vie").current <= 0) {
+            if (this.stat("Santé").current <= 0) {
                 result.die = true;
                 this.die();
             }
@@ -129,7 +127,7 @@ export class Unit extends Card {
     };
 
     die = function () {
-        this.stat("Vie").current = 0;
+        this.stat("Santé").current = 0;
 
         if (this.dieEffect != undefined) {
             this.dieEffect();

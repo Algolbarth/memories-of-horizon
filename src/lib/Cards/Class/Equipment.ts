@@ -17,11 +17,10 @@ export class Equipment extends Objet {
 
         this.familles.base.push("Équipement");
 
-        this.addEquipStat("Attaque", 0);
-        this.addEquipStat("Vie", 0);
-        this.addEquipStat("Défense", 0);
-        this.addEquipStat("Résistance", 0);
+        this.addEquipStat("Force", 0);
+        this.addEquipStat("Santé", 0);
         this.addEquipStat("Endurance", 0);
+        this.addEquipStat("Résistance", 0);
         this.addEquipStat("Actions", 0);
         this.addEquipStat("Multicoup", 0);
         this.addEquipStat("Vitesse", 0);
@@ -73,8 +72,8 @@ export class Equipment extends Objet {
 
     useEffect = function (target: Creature) {
         target.equip(this);
-        if (this.equipStat("Vie").value() > 0) {
-            target.stat("Vie").current += this.equipStat("Vie").value();
+        if (this.equipStat("Santé").value() > 0) {
+            target.stat("Santé").current += this.equipStat("Santé").value();
         }
         this.pose();
     };

@@ -11,18 +11,18 @@ export class Heros extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
-            this.stat("Vie").current += 10;
-            this.stat("Vie").add += 10;
-            this.stat("Attaque").add += 10;
+            this.stat("Santé").current += 10;
+            this.stat("Santé").add += 10;
+            this.stat("Force").add += 10;
         }
     };
 }

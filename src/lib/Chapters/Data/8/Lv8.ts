@@ -21,6 +21,6 @@ export class Lv8_GoHoumei extends Chapter {
         this.addRessource("Or", 150);
         this.addRessource("Terre", 150);
 
-        this.addStep(80, "Montagne", ["Go Houmei, reine des tours"], ["Dans les montagnes du pays de Wei, la plus grande cheffe de guerre est Go Houmei.", "Redoutée pour ses initiatives et son utilisation d'engin de siège, elle n'a jamais été défaite en défense."]);
+        this.addStep(80, "Montagne", ["Go Houmei, reine des tours"], ["Dans les montagnes du pays de Wei, la plus grande cheffe de guerre est Go Houmei.", "Redoutée pour ses initiatives et son utilisation d'engin de siège, elle n'a jamais été défaite quand il s'agissait de prôtéger une ville contre des envahisseurs."]);
     }
 }

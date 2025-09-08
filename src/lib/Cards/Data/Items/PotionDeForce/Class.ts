@@ -47,7 +47,7 @@ export class PotionDeForce extends Objet {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Attaque").step += this.stat("Infusion").value() * 4;
+        target.stat("Force").step += this.stat("Infusion").value() * 4;
         this.move("Défausse");
         this.pose();
     };

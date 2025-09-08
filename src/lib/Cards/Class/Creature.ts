@@ -25,8 +25,8 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Attaque", 0);
-        this.stat("Attaque").condition = function () {
+        this.addStat("Force", 0);
+        this.stat("Force").condition = function () {
             return true;
         };
 
@@ -102,11 +102,11 @@ export class Creature extends Unit {
 
             defender.defend(this);
 
-            let reduceDamage = defender.stat("Défense").value() - this.stat("Percée").value();
+            let reduceDamage = defender.stat("Endurance").value() - this.stat("Percée").value();
             if (reduceDamage < 0) {
                 reduceDamage = 0;
             }
-            let difDamage = this.stat("Attaque").value() - reduceDamage;
+            let difDamage = this.stat("Force").value() - reduceDamage;
             if (this.stat("Critique").current == 100) {
                 this.stat("Critique").current = 0;
                 difDamage = difDamage * this.stat("Intensité").value();

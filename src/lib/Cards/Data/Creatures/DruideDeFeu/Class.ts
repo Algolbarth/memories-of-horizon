@@ -43,14 +43,14 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
 
         this.familles.base.push("Gobelin");
 
-        this.stat("Vie").base = 35;
-        this.stat("Vie").current = 35;
-        this.stat("Attaque").base = 35;
+        this.stat("Santé").base = 35;
+        this.stat("Santé").current = 35;
+        this.stat("Force").base = 35;
     };
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.stat("Attaque").add += 10;
+            this.stat("Force").add += 10;
         }
     };
 }
@@ -66,9 +66,9 @@ export class DruideDeFeuLezard extends DruideDeFeu {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 20;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 20;
         this.stat("Adresse").base = 25;
     };
 }

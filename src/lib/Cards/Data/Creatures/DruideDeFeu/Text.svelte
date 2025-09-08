@@ -18,5 +18,5 @@ Quand posé, au choix :
 </ul>
 
 {#if card.name == "Druide de feu (forme gobelin)"}
-	Au début de la phase de préparation : augmente son attaque de 10.
+	Au début de la phase de préparation : augmente sa force de 10.
 {/if}

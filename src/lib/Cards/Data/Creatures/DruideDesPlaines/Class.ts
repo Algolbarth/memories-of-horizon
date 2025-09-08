@@ -43,9 +43,9 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 12;
-        this.stat("Vie").current = 12;
-        this.stat("Attaque").base = 12;
+        this.stat("Santé").base = 12;
+        this.stat("Santé").current = 12;
+        this.stat("Force").base = 12;
     };
 
     startStepEffect = function () {
@@ -66,8 +66,8 @@ export class DruideDesPlainesLoup extends DruideDesPlaines {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 30;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 30;
     };
 }

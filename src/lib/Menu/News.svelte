@@ -76,7 +76,7 @@
 			et <span class="card">Négociant</span>.
 		</li>
 		<li>
-			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 attaque -> 50 attaque, 10 vie -> 50 vie.
+			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 force -> 50 force, 10 santé -> 50 santé.
 		</li>
 	</ul>
 </div>

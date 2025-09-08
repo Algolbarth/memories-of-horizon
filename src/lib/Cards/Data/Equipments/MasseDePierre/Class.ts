@@ -11,12 +11,12 @@ export class MasseDePierre extends Equipment {
         this.init([["Or", 12], ["Terre", 12]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Attaque").base = 10;
+        this.equipStat("Force").base = 10;
 
         this.text = Text;
     };
 
     fightEffect = function () {
-        this.bearer.stat("Défense").add += 5;
+        this.bearer.stat("Endurance").add += 5;
     };
 }

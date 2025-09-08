@@ -13,4 +13,4 @@ S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
 
-Au début de la phase de préparation, quand équipé : augmente de 1 l'attaque et la vie de la créature équipée.
+Au début de la phase de préparation, quand équipé : augmente de 1 la force et la santé de la créature équipée.

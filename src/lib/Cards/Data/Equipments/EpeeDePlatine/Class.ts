@@ -11,7 +11,7 @@ export class EpeeDePlatine extends Equipment {
         this.init([["Or", 100]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Attaque").base = 200;
+        this.equipStat("Force").base = 200;
 
         this.text = Text;
     };

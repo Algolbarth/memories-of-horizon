@@ -11,8 +11,8 @@ export class Homonculus extends Creature {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 1;
-        this.stat("Vie").current = 1;
-        this.stat("Attaque").base = 0;
+        this.stat("Santé").base = 1;
+        this.stat("Santé").current = 1;
+        this.stat("Force").base = 0;
     };
 }

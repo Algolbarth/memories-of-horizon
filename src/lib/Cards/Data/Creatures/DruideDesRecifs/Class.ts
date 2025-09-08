@@ -43,9 +43,9 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
         this.familles.base.push("Ondin");
 
-        this.stat("Vie").base = 25;
-        this.stat("Vie").current = 25;
-        this.stat("Attaque").base = 25;
+        this.stat("Santé").base = 25;
+        this.stat("Santé").current = 25;
+        this.stat("Force").base = 25;
     };
 
     startStepEffect = function () {
@@ -66,9 +66,9 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 35;
-        this.stat("Vie").current = 35;
-        this.stat("Attaque").base = 35;
-        this.stat("Défense").base = 10;
+        this.stat("Santé").base = 35;
+        this.stat("Santé").current = 35;
+        this.stat("Force").base = 35;
+        this.stat("Endurance").base = 10;
     };
 }

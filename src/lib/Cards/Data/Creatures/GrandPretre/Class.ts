@@ -13,9 +13,9 @@ export class GrandPretre extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
@@ -54,8 +54,8 @@ export class GrandPretre extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 if (choice == "life") {
-                    card.stat("Vie").add += 10;
-                    card.stat("Vie").current += 10;
+                    card.stat("Santé").add += 10;
+                    card.stat("Santé").current += 10;
                 }
                 else if (choice == "heal") {
                     card.heal(20);

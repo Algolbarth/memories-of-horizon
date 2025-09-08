@@ -9,8 +9,8 @@ export class Catapulte extends Batiment {
         super(system);
 
         this.init([["Or", 20], ["Terre", 20]]);
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
 
         this.text = Text;
     };

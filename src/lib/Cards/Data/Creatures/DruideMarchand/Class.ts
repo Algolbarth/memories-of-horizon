@@ -43,9 +43,9 @@ export class DruideMarchandHumain extends DruideMarchand {
 
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
     };
 
     startStepEffect = function () {
@@ -64,8 +64,8 @@ export class DruideMarchandBoeuf extends DruideMarchand {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 25;
-        this.stat("Vie").current = 25;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 25;
+        this.stat("Santé").current = 25;
+        this.stat("Force").base = 10;
     };
 }

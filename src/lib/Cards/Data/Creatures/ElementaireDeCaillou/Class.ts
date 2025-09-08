@@ -13,9 +13,9 @@ export class ElementaireDeCaillou extends Creature {
         this.init([["Terre", 3]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Vie").base = 3;
-        this.stat("Vie").current = 3;
-        this.stat("Attaque").base = 3;
+        this.stat("Santé").base = 3;
+        this.stat("Santé").current = 3;
+        this.stat("Force").base = 3;
 
         this.text = Text;
     };

@@ -24,7 +24,7 @@ Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X 
 ## A ajouter
 ### Mimique
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
-Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la vie de la créature attaquante.
+Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la santé de la créature attaquante.
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
@@ -47,9 +47,9 @@ Requisition : action, diminue la taille de la main et augmente la taille du terr
 ### Equipements
 Robe de mage : augmente la magie et la résistance de la créature équipée.
 Brassard de santé : augmente la régénération de la créature équipée.
-Plastron de piques : augmente la vie et l'épine de la créature équipée.
+Plastron de piques : augmente la santé et l'épine de la créature équipée.
 Cotte de maille : augmente l'endurance de la créature équipée.
-Cape de cuir : augmente la défense et la résistance de la créature équipée
+Cape de cuir : augmente l'endurance et la résistance de la créature équipée
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
@@ -60,14 +60,14 @@ Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans la main adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
-Avarice : détruit une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite.
+Avarice : détruit une créature alliée sur le terrain et augmente la force et la santé d'une autre créature alliée sur le terrain d'autant que la santé et la force de la créature détruite.
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
-Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
+Paresse : soigne une créature alliée d'autant que la différence entre sa santé maximale et sa force.
 Lignes de ley : bâtiment, quand une créature de famille Elementaire alliée est posée : augmente la capacité de chaque élément de cette créature.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
-Sauvage : créature humain, si n'est pas équipé : sa défense et son attaque de base est égale à la moitié de sa vie maximale.
-Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête alliée sur le terrain.
-Arbalète : objet équipement, crée des carreaux dans la main qui scalent selon l'attaque du mob.
+Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa santé maximale.
+Crocs baveux : action bête, augmente le vol de santé d'une créature de famille Bête alliée sur le terrain.
+Arbalète : objet équipement, crée des carreaux dans la main qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
@@ -75,7 +75,7 @@ Dague magique : objet équipement, s'équipe à une créature alliée sur le ter
 Louve : créature bête, quand meurt : crée 2 Louveteau sur le terrain. 8/5.
 Louveteau : créature bête, 5/3.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
-??? barbare : créature humain, quand une créature alliée attaque : augmente l'attaque de la créature alliée.
+??? barbare : créature humain, quand une créature alliée force : augmente la force de la créature alliée.
 Gladiateur : créature humain.
 Armagicien : créature humain, magie.
 Établi : bâtiment.
@@ -89,13 +89,13 @@ Enflammer : enflamme une unité adverse sur le terrain.
 Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
-Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
+Lance incendiaire : quand la créature équipée force : applique brûlure sur l'unité attaquée.
 Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse.
 Jarre de flamme : objet, .
 
 ### Vegetal
 Spores : empoisonne une créature adverse sur le terrain.
-Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
+Dague empoisonnée : quand la créature équipée force : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain.
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
@@ -115,7 +115,7 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
 Cerf : créature bête, vitesse et percée.
 Hérisson : créature bête, épine.
-Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la vie max et de X la régénération de cette créature.
+Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la santé max et de X la régénération de cette créature.
 
 ### Eau
 Barrière de corail : créature plante, régénération.
@@ -123,7 +123,7 @@ Pêcheur : quand posé : pioche 1 créature poisson.
 Requin : créature poisson.
 Banc de poisson : crée 5 Sardine dans la main.
 Sardine : créature poisson.
-Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente son attaque pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente son attaque.
+Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la main.
 
 ### Terre
@@ -137,7 +137,7 @@ Sylphe : quand arrive sur le terrain : pioche une carte.
 Sylphe : quand attaque : pioche une carte et la verrouille.
 Sylphe : quand attaque : augmente son esquive.
 Archer sylphe : créature, portée.
-Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique.
+Griffon : quand posé : augmente sa force et sa santé suivant le niveau de la boutique.
 Aigle 
 Envol : action, applique esquive à une créature Air alliée sur le terrain.
 Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la boutique.
@@ -149,16 +149,16 @@ Ile volante : lieu pour les cartes d'élément Air.
 ### Mort
 Revenant 
 Légionnaire 
-Squelette : 1 vie.
+Squelette : 1 santé.
 Chevalier squelette 
 Garde squelette 
 Squelette mage 
 Serpent squelette 
 Cheval squelette 
-Zombie : 1 attaque.
+Zombie : 1 force.
 Zombie recousu : créature, régénération.
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement.
-Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie.
+Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa force et sa santé.
 Faucheuse 
 Fantôme : créature, éphémère.
 Rat : créature, quand attaque : applique maladie à la créature attaquée.
@@ -178,26 +178,26 @@ Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
 ### Metal
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain.
 Mini automate : créature machine.
-Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain.
+Ingénieur : créature, augmente la force et la santé d'une créature de famille machine alliée sur le terrain.
 Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or.
 Automate : créature machine, maniement 1.
 Automate armé : créature machine, maniement 4.
 Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain.
 Wyverne d'acier 
 Mage des métaux 
-Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie.
+Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa force et sa santé.
 Mines : lieu pour les cartes d'élément Métal.
 
 ### Foudre
-Satyre : quand arrive sur le terrain : augmente son attaque et sa vie pendant cette étape.
-Acolyte satyre : quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape.
-Barde satyre : quand posé : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain pendant cette étape.
+Satyre : quand arrive sur le terrain : augmente sa force et sa santé pendant cette étape.
+Acolyte satyre : quand posé : augmente la force et la santé d'une créature alliée sur le terrain pendant cette étape.
+Barde satyre : quand posé : augmente la force et la santé de toutes les créatures alliées sur le terrain pendant cette étape.
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
 Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée.
 Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée.
-Lances de foudre : objet équipement, augmente l'attaque de la créature équipée selon sa vitesse.
+Lances de foudre : objet équipement, augmente la force de la créature équipée selon sa vitesse.
 Centaure : créature, vitesse.
 Meneur centaure : créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain.
 Chasseur centaure : créature, quand attaque : inflige autant de dégâts que sa vitesse à la créature attaquée.
@@ -230,7 +230,7 @@ Cierge : objet, pioche des cartes OU produit de la lumière.
 Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
-Épée de pure lumière : objet équipement, quand la créature équipée attaque : si pas blessée alors inflige des dégaâts.
+Épée de pure lumière : objet équipement, quand la créature équipée force : si pas blessée alors inflige des dégaâts.
 Révélations de lumière : action, révèle toutes les cartes dans la main et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
@@ -238,7 +238,7 @@ Terre sacrée : lieu pour les cartes d'élément Lumière.
 
 ### Ombre
 Drow 
-Limace : créature ombre, supprime la protection des créatures qu'elle attaque.
+Limace : créature ombre, supprime la protection des créatures qu'elle force.
 Vampire 
 Oni 
 Wyverne noire 
@@ -257,7 +257,7 @@ Plage : lieu pour les cartes d'élément Eau et Feu.
 
 ### Feu/Terre
 Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu.
-Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.
+Guerrier du désert : quand se fait attaquer : augmente son endurance. Quand attaque : augmente sa force.
 Assassin du désert 
 Ver des sables : quand attaque : détruit la carte dans la main adverse en première position. quand est attaquée : détruit la carte dans la main en première position.
 Élémentaire de sable 
@@ -283,7 +283,7 @@ Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 Lézard : quand meurt : ajoute une Queue de lézard dans la main.
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main.
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main.
-Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain.
+Queue de lézard : augmente la force ou la santé d'une créature alliée sur le terrain.
 Cactus 
 Buisson ardent 
 Fumigation : action, empoisonne et brûle une créature à la fois.
@@ -332,7 +332,7 @@ Tyranosaure
 Brachiosaure 
 Vélociraptor 
 Stégosaure 
-Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente son attaque et sa vie.
+Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa force et sa santé.
 Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage.
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
@@ -358,9 +358,9 @@ Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruit
 
 # Boss
 
-Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produit autant d'or que de vie 
-Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : attaque, objet : vie) 
-Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'attaque des cavaliers, quand un cavalier attaque : augmente la vie de gyoun
+Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
+Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
+Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier force : augmente la santé de gyoun
 
 # Lore
 
@@ -471,7 +471,7 @@ leur peau est jaunie et parsemé de motifs brillants similaires à des tatouages
 ces tâches de naissance grandissent jusqu'à l'âge adulte.
 fonctionnent en communauté.
 un élu est choisi dès la naissance pour assurer la fonction de dirigeant, designé par des symboles particuliers sur son corps.
-l'élu a pour rôle de montrer l'exemple par son comportement et ses décisions dans la vie de groupe.
+l'élu a pour rôle de montrer l'exemple par son comportement et ses décisions dans la santé de groupe.
 les aasimars ont un corps très robustes aux blessures et aux maladies. cependant ils meurent plus tôt que les humains à cause de cancer.
 les guerriers aasimar utilisent leur capacité de régénération avec des armures adaptées et des armes risquées mais efficaces.
 
@@ -503,7 +503,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 
 `Boréalis` : ryu dieu de la météo. Parmi les plus puissants dieux. Nomade mais discrets malgré sa taille (il se camoufle grâce à des mirages) il vit dans un monastère laboratoire qui sert à ses fidèles pour étudier la météo.
 `Progenitus` : dieu hydre de la régénération, peux régénérer sans effort chaque partie de son corps. Peux également dupliquer ses membres à volonté.
-`Adama` : déesse phoenix de la résurection, peux revenir à la vie à partir d'une simple cendre laissée par ses ailes. Peux également ressuciter ses propres flammes, créant des feux éternels ou les faisant réapparaitre à n'importe quel moment.
+`Adama` : déesse phoenix de la résurection, peux revenir à la santé à partir d'une simple cendre laissée par ses ailes. Peux également ressuciter ses propres flammes, créant des feux éternels ou les faisant réapparaitre à n'importe quel moment.
 
 `Ananta` : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant, il a été chargé de récupérer un metal précieux dans la caverne de tragoedia. En s'alliant avec le dragon ils réussissent à obtenir l'acier. En rapportant le butin aux récifs noirs, le néant forge l'acier afin de fabriquer une baguette et un casque. Ananta hérite de la baguette, le recouvrant d'une armure dès qu'il la saisit. Plus le temps passe plus la baguette peux détruire des âmes facilement. Envahit par un sentiment de puissance, d'avidité et perdant en lucidité, les deux suivront les ordres du néant demandant de détruire des îles ou tuer des dieux. En s'interposant dans un combat qui oppose Progenitus et Adama, fâchés de voir leurs semblable smourir alors que leur race est quasi immortelle et qui étaient en train de s'accuser mutuellement, ils feront face à Borealis qui les repoussera sans difficulté. Avide de se venger de lui, ils absorberont plus de puissance offert par le néant mais perdront toute trace de lucidité. Après avoir tué plusieurs dieux, une coallition se formera entre divinité et héros afin de les vaincre. Après qu'un piège ai échoué, il sera décidé de les suivre pour les attaquer aux récifs noirs. Ananta vaincra Sartorias en "duel", ainsi que Gabriela. Nana utilisera ses pouvoirs pour que ananta détruite sa propre âme.
 `Tragoedia` : dragon corrompue par le néant. Régnait sur un volcan situé par dessus une faille du néant. Après avoir récupéré l'acier caché sous sa caverne, il a reçu le casque forgé par le néant qui recouvre tragoedia d'une épaisse armure. Plus le temps passe plus l'armure fusionne avec son porteur, devenant une seconde peau impenetrable. Ses flammes deviennent capables de détruire les âmes de n'importe qui. Lors du siège des récifs noirs, tragoedia semble intuable et détruira les flottes armées en s'amusant, ne prenant rien au sérieux. Il incinerera Carole qui tentait de soigner Gidéon. Après que ce dernier face un pacte avec Rakdos, ils attaqueront ensemble pour démolir le monstre et son armure.
@@ -528,7 +528,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 
 `Luther` : vieux chevalier devenu mercenaire auprès de royaumes. mentor du héros, rencontré durant la campagne des pics brisés.
 `Poncemine` : gnome spécialisé dans la construction d'un automate invincible dont il a conçu les plans. le héros parvient à stopper la machine inachevée lors de son voyage à Adana, ville des gnomes. accompagne le héros par grattitude mais aussi pour apprendre à perfectionner son automate et prôtéger les plans.
-`Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa vie, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros.
+`Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa santé, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros.
 `Atlanta` : centaure archère chasseuse, soeur d'artéma. veux se venger d'orion qui profite de l'absence de sa soeur pour semer la terreur. le blessera lourdement à l'épaule et  la tribu.
 `Saphira` : vampire habitant dans les terres du Heaume-Blanc, un fief de paladin. en raison de sa race elle est persecutée et cherche à se défendre de l'ordre quand le héros la trouve. luther découvrira que c'est en réalité une puissante gargouille, quatramanus, qui manipule les paladins en se faisant passer comme un envoyé des anges. perdra contre quatramanus, ce dernier étant en pierre, lé héros s'en chargera. continue à suivre le héros.
 `Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruit petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir.
@@ -537,8 +537,8 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Brian` : barde lâche capable de se changer en coq. connait des chants pour augmenter la chance d'une personne. sera kidnapé par les gobelins pour son talent. le héros sauvera brian et sympathisera avec les gobelins, qui utiliseront le chant de brian pour guérir les maux d'estomac du chef de clan. suivra le héros pour trouver des artefacts à l'aide de sa chance.
 `Tassarion` : sorcier aasimar servant le royaume haut elfe de la clairière d'argent. est en mision aux pics glacés pour convaincre la jarl Mab de ne pas déclencher une guerre contre les vikings de Stormheim. suivra le héros et emperina pour découvrir la source des événements récents autour des gemmes. est le tuteur d'elspeth mais n'est pas souvent là pour l'encadrer.
 `Amira` : loup garou de type renard, c'est un assassin recruté pour tuer l'empereur de léonis par les rebelles donc indirectement par Dao. Rencontre le héros sans lui dire son véritable rôle mais finit par abandonner son objectif et aide l'empereur à s'enfuir de la capitale. plus tard Dao retrouvera sa trace à cause des affrontements entre la compagnie et la cabale. amira décide de fuir en conséquence afin de ne pas mettre en danger ses camarades.
-`Ethoras` : prince elfe en voyage diplomatique dans le royaume des fées (dirigée par titania et oberron). dois épouser la princesse Eastatem. peu concerné par son rôle princier il garde un bon fond et est coutageux au combat. après avoir affronter des ennemis des fées, il a décliner son mariage (pour le moment) Eastratem n'étant pas prête non plus. devra encaisser un coup de titania pour refuser le mariage mais suna arrivera à convaincre oberon de laisser du temps aux jeunes. ethoras choisira une vie d'aventure, suivant le héros et promettant de revenir pour donner sa décision finale.
-`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette attaque.
+`Ethoras` : prince elfe en voyage diplomatique dans le royaume des fées (dirigée par titania et oberron). dois épouser la princesse Eastatem. peu concerné par son rôle princier il garde un bon fond et est coutageux au combat. après avoir affronter des ennemis des fées, il a décliner son mariage (pour le moment) Eastratem n'étant pas prête non plus. devra encaisser un coup de titania pour refuser le mariage mais suna arrivera à convaincre oberon de laisser du temps aux jeunes. ethoras choisira une santé d'aventure, suivant le héros et promettant de revenir pour donner sa décision finale.
+`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette force.
 `Scarlet` : chasseuse adoptée par des loups garous. aidera le héros pour chercher du secours après l'agression d'elspeth et pour affronter la cabale. les loups garous font partis de ceux qui s'opposent au conseil. peux absorber le sang afin d'en faire un tissu qu'elle porte comme cape (et donc cacher l'odeur du sang).
 `Cernunnos` : Goliath capable de forger des armes en glace. aidera le héros à joindre les vikings avec l'aide de tassarion.
 
@@ -547,7 +547,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Orion` : chef de sa tribu. arrive à prédire les déplacements de ses proies. pille les peuples des les champs de divinion mais sera vaincu par atlanta. sera finalement tué par oneiros.
 `Marid` : guide le héros pour traverser le désert. ils devront affronter la grande gueule, un ver des sables gigantesque.
 `Squelette de dragon` : n'a pas d'identité particulière mais est un très puissant squelette situé dans khetar.
-`Seth` : homme lézard type crocodile affrontant le conseil car il considère que les gemmes sont un source trop dangereuse de pouvoir. peux modifier la résistance des matériaux à l'aide d'un artefact, le rouage fondateur, contenu dans son bras gauche artificiel. après avoir été repoussé une première fois par le dragon squelette, il cherchera à aller à khetar. alastair ne le laisant pas faire, il profitera plus tard de l'intervention de la cabale pour les stopper. plus tard quand le héros arrivera à convaincre alastair après un duel, seth l'affrontera à nouveau mais soldera par un match nul là aussi. après une attaque du dragon squelette, il s'enfuit.
+`Seth` : homme lézard type crocodile affrontant le conseil car il considère que les gemmes sont un source trop dangereuse de pouvoir. peux modifier la résistance des matériaux à l'aide d'un artefact, le rouage fondateur, contenu dans son bras gauche artificiel. après avoir été repoussé une première fois par le dragon squelette, il cherchera à aller à khetar. alastair ne le laisant pas faire, il profitera plus tard de l'intervention de la cabale pour les stopper. plus tard quand le héros arrivera à convaincre alastair après un duel, seth l'affrontera à nouveau mais soldera par un match nul là aussi. après une force du dragon squelette, il s'enfuit.
 `Penlong` : ryu voulant destituer l'empereur Yoa Guai du trone de shentang. le héros parvenant à tuer Yao Guai, Liang pu reprendre son poste.
 `Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant créer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth.
 `Ahriman` : dragonien surnommé le rouge, d'origine étrangère au continent. gère l'immigration des personnalités atypiques. fera rentrer morrigan sur le territoire pour vérifier la menace de la cabale.
@@ -622,4 +622,4 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Jodratoa` : lézard pouvant agglomérer les matières inertes à son corps, devenu gigantesque avec les siècles.
 `Epoch` : baudroie affiliée à la lune. dieu de la lanterne sombre il peux générer une obscurité totale dans l'eau ou de l'eau dans le noir. il peux se camoufler et nager dans l'eau comme dans le noir, ressemble à une téléportation.
 `Margoth` : dieu solaire 
-`Elise` : enfant couvert d'une toison d'or et d'une couronne en feuilles dorées. capable de manipuler la source de vie, des avatars dorés d'animaux.
+`Elise` : enfant couvert d'une toison d'or et d'une couronne en feuilles dorées. capable de manipuler la source de santé, des avatars dorés d'animaux.

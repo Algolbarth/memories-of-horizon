@@ -9,8 +9,8 @@ export class Siphon extends Batiment {
         super(system);
 
         this.init([["Or", 12], ["Eau", 12]]);
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
 
         this.text = Text;
     };

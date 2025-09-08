@@ -10,9 +10,9 @@ export class Nain extends Creature {
         this.init([["Or", 4], ["Terre", 4]]);
         this.familles.base.push("Nain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
-        this.stat("Défense").base = 3;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
+        this.stat("Endurance").base = 3;
     };
 }

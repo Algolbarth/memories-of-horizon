@@ -12,9 +12,9 @@ export class Bouffon extends Creature {
         this.init([["Or", 105]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
@@ -56,9 +56,9 @@ export class Bouffon extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Vie").current += 200;
-            target.stat("Vie").step += 200;
-            target.stat("Attaque").step += 200;
+            target.stat("Santé").current += 200;
+            target.stat("Santé").step += 200;
+            target.stat("Force").step += 200;
         }
         this.move("Terrain");
         this.pose();

@@ -18,5 +18,5 @@ Quand posé, au choix :
 </ul>
 
 {#if card.name == "Druide des montagnes (forme nain)"}
-	Au début de la phase de préparation : augmente son attaque et sa vie de 10.
+	Au début de la phase de préparation : augmente sa force et sa santé de 10.
 {/if}

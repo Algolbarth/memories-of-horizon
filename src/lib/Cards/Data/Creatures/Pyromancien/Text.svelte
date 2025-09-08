@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Feu est posée : augmente de 5 son attaque.
+Quand une carte alliée d'élément Feu est posée : augmente de 5 sa force.

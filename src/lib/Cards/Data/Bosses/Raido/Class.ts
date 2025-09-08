@@ -13,33 +13,33 @@ export class Raido extends Boss {
         this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
-        this.stat("Attaque").base = 10;
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
+        this.stat("Force").base = 10;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.owner == this.owner && card.type == "Créature") {
-            card.stat("Attaque").base += 5;
-            card.stat("Vie").current += 5;
-            card.stat("Vie").base += 5;
+            card.stat("Force").base += 5;
+            card.stat("Santé").current += 5;
+            card.stat("Santé").base += 5;
         }
     };
 
     otherDieEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.owner != this.owner) {
-            this.owner.ressource("Or").current += card.stat("Vie").value();
+            this.owner.ressource("Or").current += card.stat("Santé").value();
         }
     };
 
     playEffect = function () {
         while (this.owner.ressource("Or").total() >= 1) {
             this.owner.ressource("Or").spend(1);
-            this.stat("Attaque").base++;
-            this.stat("Vie").current++;
-            this.stat("Vie").base++;
+            this.stat("Force").base++;
+            this.stat("Santé").current++;
+            this.stat("Santé").base++;
         }
     };
 }

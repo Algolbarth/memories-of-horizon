@@ -11,13 +11,13 @@ export class MassueDeChene extends Equipment {
         this.init([["Or", 18], ["Végétal", 18]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Vie").base = 15;
+        this.equipStat("Santé").base = 15;
 
         this.text = Text;
     };
 
     fightEffect = function () {
-        this.bearer.stat("Vie").current += 10;
-        this.bearer.stat("Vie").add += 10;
+        this.bearer.stat("Santé").current += 10;
+        this.bearer.stat("Santé").add += 10;
     };
 }

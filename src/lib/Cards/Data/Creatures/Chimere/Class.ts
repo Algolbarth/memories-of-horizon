@@ -12,9 +12,9 @@ export class Chimere extends Creature {
         this.init([["Or", 50]]);
         this.familles.base.push("Bête", "Reptile");
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 20;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 20;
 
         this.text = Text;
     };
@@ -33,9 +33,9 @@ export class Chimere extends Creature {
             }
         }
 
-        this.stat("Attaque").add += 10 * list.length;
-        this.stat("Vie").current += 10 * list.length;
-        this.stat("Vie").add += 10 * list.length;
+        this.stat("Force").add += 10 * list.length;
+        this.stat("Santé").current += 10 * list.length;
+        this.stat("Santé").add += 10 * list.length;
 
         this.move("Terrain");
         this.pose();

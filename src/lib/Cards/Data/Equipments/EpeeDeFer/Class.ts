@@ -11,7 +11,7 @@ export class EpeeDeFer extends Equipment {
         this.init([["Or", 25]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Attaque").base = 50;
+        this.equipStat("Force").base = 50;
 
         this.text = Text;
     };

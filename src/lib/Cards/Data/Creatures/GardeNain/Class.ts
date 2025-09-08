@@ -11,10 +11,10 @@ export class GardeNain extends Creature {
         this.init([["Or", 18], ["Terre", 18]]);
         this.familles.base.push("Nain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
-        this.stat("Défense").base = 5;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
+        this.stat("Endurance").base = 5;
         this.stat("Protection").base = 1;
 
         this.text = Text;
@@ -22,7 +22,7 @@ export class GardeNain extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Bâtiment" && card.owner == this.owner) {
-            this.stat("Défense").add += 1;
+            this.stat("Endurance").add += 1;
         }
     };
 }

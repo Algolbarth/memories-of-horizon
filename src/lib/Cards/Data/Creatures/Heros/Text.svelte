@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une créature alliée est posée : augmente de 10 son attaque et sa vie.
+Quand une créature alliée est posée : augmente de 10 sa force et sa santé.

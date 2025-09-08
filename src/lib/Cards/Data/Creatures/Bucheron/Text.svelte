@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une unité d'élément végétal est détruite : augmente de 2 son attaque et stocke 1 végétal.
+Quand une unité d'élément végétal est détruite : augmente de 2 sa force et stocke 1 végétal.

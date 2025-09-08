@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 10 son attaque et sa vie pour chaque famille différentes parmi les créatures alliées sur le terrain.
+Quand posé : augmente de 10 sa force et sa santé pour chaque famille différentes parmi les créatures alliées sur le terrain.

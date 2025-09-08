@@ -23,14 +23,14 @@ Pour que ces éléments puissent agir entre eux, la foudre leur incita le mouvem
 <br />
 <br />
 
-Une fois que le changement et la continuité arrivèrent dans l'univers, la vie put prendre son essor et les végétaux poussèrent partout où ils pouvaient.
+Une fois que le changement et la continuité arrivèrent dans l'univers, la santé put prendre son essor et les végétaux poussèrent partout où ils pouvaient.
 
 <br />
 <br />
 
-Mais la vie implique la mort et cette dernière emporta les êtres vivants trop faibles, ne laissant que les plus robustes pour dévellopper la faune et la flore.
+Mais la santé implique la mort et cette dernière emporta les êtres vivants trop faibles, ne laissant que les plus robustes pour dévellopper la faune et la flore.
 
 <br />
 <br />
 
-Enfin la vie donna naissance à la conscience, et avec elle les croyances de l'arcane et les sciences des métaux.
+Enfin la santé donna naissance à la conscience, et avec elle les croyances de l'arcane et les sciences des métaux.

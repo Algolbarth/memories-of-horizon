@@ -50,8 +50,8 @@ export class Ecrasement extends Action {
         let value = 0;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && value < card.stat("Vie").value()) {
-                value = card.stat("Vie").value();
+            if (card.type == "Créature" && value < card.stat("Santé").value()) {
+                value = card.stat("Santé").value();
             }
         }
 

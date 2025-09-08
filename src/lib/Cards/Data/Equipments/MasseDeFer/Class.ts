@@ -11,15 +11,15 @@ export class MasseDeFer extends Equipment {
         this.init([["Or", 25]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Attaque").base = 5;
-        this.equipStat("Vie").base = 5;
+        this.equipStat("Force").base = 5;
+        this.equipStat("Santé").base = 5;
 
         this.text = Text;
     };
 
     fightEffect = function () {
-        this.bearer.stat("Attaque").add += 5;
-        this.bearer.stat("Vie").current += 5;
-        this.bearer.stat("Vie").add += 5;
+        this.bearer.stat("Force").add += 5;
+        this.bearer.stat("Santé").current += 5;
+        this.bearer.stat("Santé").add += 5;
     };
 }

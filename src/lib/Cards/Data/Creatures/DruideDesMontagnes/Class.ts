@@ -43,17 +43,17 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
 
         this.familles.base.push("Nain");
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 20;
-        this.stat("Défense").base = 5;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 20;
+        this.stat("Endurance").base = 5;
     };
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.stat("Vie").add += 10;
-            this.stat("Vie").current += 10;
-            this.stat("Attaque").add += 10;
+            this.stat("Santé").add += 10;
+            this.stat("Santé").current += 10;
+            this.stat("Force").add += 10;
         }
     };
 }
@@ -69,8 +69,8 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
 
         this.trait("Rare").base = true;
 
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
-        this.stat("Attaque").base = 50;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
+        this.stat("Force").base = 50;
     };
 }

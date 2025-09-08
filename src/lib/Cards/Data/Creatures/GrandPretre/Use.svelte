@@ -16,7 +16,7 @@
 			fonction("life");
 		}}
 	>
-		Augmente de 10 la vie de toutes les créatures alliées sur le terrain
+		Augmente de 10 la santé de toutes les créatures alliées sur le terrain
 	</button>
 
 	<br />

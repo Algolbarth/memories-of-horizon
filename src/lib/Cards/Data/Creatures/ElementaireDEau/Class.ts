@@ -11,9 +11,9 @@ export class ElementaireDEau extends Creature {
         this.init([["Eau", 15]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Vie").base = 15;
-        this.stat("Vie").current = 15;
-        this.stat("Attaque").base = 15;
+        this.stat("Santé").base = 15;
+        this.stat("Santé").current = 15;
+        this.stat("Force").base = 15;
 
         this.text = Text;
     };
@@ -25,9 +25,9 @@ export class ElementaireDEau extends Creature {
     addEffect = function (zone: string) {
         if (zone == "Terrain" && this.owner.ressource("Eau").total() >= 5) {
             this.owner.ressource("Eau").spend(5);
-            this.stat("Attaque").add += 5;
-            this.stat("Vie").add += 5;
-            this.stat("Vie").current += 5;
+            this.stat("Force").add += 5;
+            this.stat("Santé").add += 5;
+            this.stat("Santé").current += 5;
         }
     };
 }

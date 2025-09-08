@@ -8,7 +8,7 @@ export class MurDeBrique extends Batiment {
         super(system);
 
         this.init([["Or", 25]]);
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
     };
 }

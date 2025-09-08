@@ -12,9 +12,9 @@ export class General extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
 
         this.text = Text;
     };
@@ -24,9 +24,9 @@ export class General extends Creature {
             let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {
                 if (card.type == "Créature") {
-                    card.stat("Attaque").add += 5;
-                    card.stat("Vie").current += 5;
-                    card.stat("Vie").add += 5;
+                    card.stat("Force").add += 5;
+                    card.stat("Santé").current += 5;
+                    card.stat("Santé").add += 5;
                 }
             }
         }

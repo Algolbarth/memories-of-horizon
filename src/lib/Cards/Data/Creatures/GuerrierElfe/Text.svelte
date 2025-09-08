@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Ruse 20 : Quand posé : Augmente de 10 son attaque et sa vie et augmente de 5 sa défense.
+Ruse 20 : Quand posé : Augmente de 10 sa force et sa santé et augmente de 5 son endurance.

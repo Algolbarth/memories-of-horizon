@@ -44,7 +44,7 @@ export class Polissage extends Action {
     };
 
     useEffect = function (target: Equipment) {
-        target.equipStat("Défense").add += 10;
+        target.equipStat("Endurance").add += 10;
         this.move("Défausse");
         this.pose();
     };

@@ -47,7 +47,7 @@ export class PouletRoti extends Objet {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Attaque").add += 10;
+            target.stat("Force").add += 10;
         }
         else {
             target.heal(10);

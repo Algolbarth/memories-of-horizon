@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 15 la vie maximale d'une créature alliée de famille Reptile sur le terrain.
+Augmente de 15 la santé maximale d'une créature alliée de famille Reptile sur le terrain.

@@ -16,7 +16,7 @@ export class Concoction extends Objet {
         this.addStat("Infusion de soin", 0);
         this.addStat("Infusion de mana", 0);
         this.addStat("Infusion de force", 0);
-        this.addStat("Infusion de solidité", 0);
+        this.addStat("Infusion d'endurance", 0);
         this.addStat("Infusion interdite", 0);
         this.addStat("Infusion explosive", 0);
 
@@ -91,17 +91,17 @@ export class Concoction extends Objet {
 
         if (this.stat("Infusion interdite").value() > 0) {
             let homonculus = this.owner.getCard("Homonculus");
-            homonculus.stat("Vie").current = this.stat("Infusion interdite").value();
-            homonculus.stat("Vie").base = this.stat("Infusion interdite").value();
-            homonculus.stat("Attaque").base = this.stat("Infusion interdite").value();
+            homonculus.stat("Santé").current = this.stat("Infusion interdite").value();
+            homonculus.stat("Santé").base = this.stat("Infusion interdite").value();
+            homonculus.stat("Force").base = this.stat("Infusion interdite").value();
             homonculus.add("Terrain");
         }
 
         if (target != undefined) {
             target.damageByEffect(this.stat("Infusion explosive").value() * 2);
             target.heal(this.stat("Infusion de soin").value() * 2);
-            target.stat("Attaque").step += this.stat("Infusion de force").value() * 4;
-            target.stat("Défense").step += this.stat("Infusion de solidité").value() * 2;
+            target.stat("Force").step += this.stat("Infusion de force").value() * 4;
+            target.stat("Endurance").step += this.stat("Infusion d'endurance").value() * 2;
         }
 
         this.move("Défausse");

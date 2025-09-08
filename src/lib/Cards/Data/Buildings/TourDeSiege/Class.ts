@@ -10,8 +10,8 @@ export class TourDeSiege extends Batiment {
         super(system);
 
         this.init([["Or", 40]]);
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
 
         this.text = Text;
     };
@@ -28,9 +28,9 @@ export class TourDeSiege extends Batiment {
             }
 
             if (target != undefined) {
-                target.stat("Attaque").add += 10;
-                target.stat("Vie").add += 10;
-                target.stat("Vie").current += 10;
+                target.stat("Force").add += 10;
+                target.stat("Santé").add += 10;
+                target.stat("Santé").current += 10;
             }
         }
     };

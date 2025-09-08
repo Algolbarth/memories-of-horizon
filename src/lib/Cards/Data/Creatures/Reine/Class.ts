@@ -12,9 +12,9 @@ export class Reine extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 10;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 10;
 
         this.text = Text;
     };
@@ -56,9 +56,9 @@ export class Reine extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Vie").current += 100;
-            target.stat("Vie").add += 100;
-            target.stat("Attaque").add += 100;
+            target.stat("Santé").current += 100;
+            target.stat("Santé").add += 100;
+            target.stat("Force").add += 100;
         }
         this.move("Terrain");
         this.pose();

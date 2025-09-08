@@ -12,7 +12,7 @@
 
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
 	<div class="container">
-		<div>Vie :</div>
+		<div>Santé :</div>
 		<div>
 			<input
 				type="number"

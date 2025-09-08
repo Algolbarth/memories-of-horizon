@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : augmente de 3 ses secousses. Inflige autant de dégâts à toutes les unités adverses sur le terrain que sa valeur de secousses.
+Quand la créature équipée force : augmente de 3 ses secousses. Inflige autant de dégâts à toutes les unités adverses sur le terrain que sa valeur de secousses.

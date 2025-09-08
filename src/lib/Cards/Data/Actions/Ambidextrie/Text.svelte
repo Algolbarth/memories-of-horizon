@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 1 le Maniement d'une créature alliée sur le terrain ayant exactement un Maniement de 1.
+Augmente de 1 le maniement d'une créature alliée sur le terrain ayant exactement un maniement de 1.

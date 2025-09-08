@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Augmente de 15 la défense d'une créature alliée sur le terrain.
+Augmente de 15 l'endurance d'une créature alliée sur le terrain.
 <br />
 <br />
-Sorcellerie 15 : augmente la défense de 30 à la place.
+Sorcellerie 15 : augmente l'endurance de 30 à la place.

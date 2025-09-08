@@ -10,7 +10,7 @@ export class CarapaceDeTortue extends Equipment {
 
         this.init([["Or", 8], ["Eau", 8]]);
         this.familles.base.push("Armure", "Reptile");
-        this.equipStat("Défense").base = 15;
+        this.equipStat("Endurance").base = 15;
 
         this.text = Text;
     };

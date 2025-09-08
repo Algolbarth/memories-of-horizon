@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Place dans la boutique une carte alliée située dans la défausse. Si c'est une unité, fixe à 1 la vie de cette carte.
+Place dans la boutique une carte alliée située dans la défausse. Si c'est une unité, fixe à 1 la santé de cette carte.

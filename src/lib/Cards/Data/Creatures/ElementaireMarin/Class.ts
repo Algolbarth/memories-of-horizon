@@ -11,9 +11,9 @@ export class ElementaireMarin extends Creature {
         this.init([["Eau", 50]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Vie").base = 50;
-        this.stat("Vie").current = 50;
-        this.stat("Attaque").base = 50;
+        this.stat("Santé").base = 50;
+        this.stat("Santé").current = 50;
+        this.stat("Force").base = 50;
 
         this.text = Text;
     };
@@ -21,9 +21,9 @@ export class ElementaireMarin extends Creature {
     startStepEffect = function () {
         if (this.zone == "Terrain" && this.owner.ressource("Eau").total() >= 5) {
             this.owner.ressource("Eau").spend(5);
-            this.stat("Attaque").add += 5;
-            this.stat("Vie").add += 5;
-            this.stat("Vie").current += 5;
+            this.stat("Force").add += 5;
+            this.stat("Santé").add += 5;
+            this.stat("Santé").current += 5;
         }
     };
 }

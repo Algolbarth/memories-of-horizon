@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 15 la vie d'une unité alliée sur le terrain.
+Augmente de 15 la santé d'une unité alliée sur le terrain.

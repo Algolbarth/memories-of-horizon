@@ -4,8 +4,8 @@ import { Objet } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PotionDeSolidite extends Objet {
-    name = "Potion de solidité";
+export class PotionDEndurance extends Objet {
+    name = "Potion d'endurance";
 
     constructor(system: System) {
         super(system);
@@ -47,7 +47,7 @@ export class PotionDeSolidite extends Objet {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Défense").step += this.stat("Infusion").value() * 2;
+        target.stat("Endurance").step += this.stat("Infusion").value() * 2;
         this.move("Défausse");
         this.pose();
     };

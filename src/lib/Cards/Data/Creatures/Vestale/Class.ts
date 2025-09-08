@@ -12,9 +12,9 @@ export class Vestale extends Creature {
         this.init([["Or", 10], ["Feu", 10]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
@@ -56,7 +56,7 @@ export class Vestale extends Creature {
 
     useEffect = function (target, choice) {
         if (choice == "attack") {
-            target.stat("Attaque").add += 20;
+            target.stat("Force").add += 20;
         }
         else if (choice == "heal") {
             target.heal(20);

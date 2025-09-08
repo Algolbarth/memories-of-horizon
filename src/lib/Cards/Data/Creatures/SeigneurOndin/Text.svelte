@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 5 l'attaque et la vie de toutes les créatures sur le terrain, et produit 5 eau pour chaque créatures sur le terrain.
+Quand posé : augmente de 5 la force et la santé de toutes les créatures sur le terrain, et produit 5 eau pour chaque créatures sur le terrain.

@@ -12,9 +12,9 @@ export class Doyen extends Creature {
         this.init([["Or", 55], ["Végétal", 55]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Vie").base = 15;
-        this.stat("Vie").current = 15;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 15;
+        this.stat("Santé").current = 15;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
@@ -23,8 +23,8 @@ export class Doyen extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Vie").current += 15;
-                card.stat("Vie").add += 15;
+                card.stat("Santé").current += 15;
+                card.stat("Santé").add += 15;
             }
         }
         this.move("Terrain");

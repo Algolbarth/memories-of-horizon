@@ -10,4 +10,4 @@
 
 Inflige 5 dégâts à toutes les unités alliées sur le terrain.
 <br />
-Augmente de 10 l'attaque de toutes les créatures alliées sur le terrain.
+Augmente de 10 la force de toutes les créatures alliées sur le terrain.

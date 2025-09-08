@@ -12,9 +12,9 @@ export class MageDeFeu extends Creature {
         this.init([["Or", 20], ["Feu", 20]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Vie").base = 3;
-        this.stat("Vie").current = 3;
-        this.stat("Attaque").base = 20;
+        this.stat("Santé").base = 3;
+        this.stat("Santé").current = 3;
+        this.stat("Force").base = 20;
         this.stat("Magie").base = 5;
 
         this.text = Text;

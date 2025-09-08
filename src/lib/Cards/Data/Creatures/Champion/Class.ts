@@ -11,14 +11,14 @@ export class Champion extends Creature {
         this.init([["Or", 100]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 20;
-        this.stat("Défense").base = 5;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 20;
+        this.stat("Endurance").base = 5;
 
         this.text = Text;
 
-        this.stat("Attaque").value = function () {
+        this.stat("Force").value = function () {
             let total = this.base + this.add + this.step;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {
@@ -38,7 +38,7 @@ export class Champion extends Creature {
             }
         };
 
-        this.stat("Défense").value = function () {
+        this.stat("Endurance").value = function () {
             let total = this.base + this.add + this.step;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {

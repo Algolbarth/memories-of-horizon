@@ -10,9 +10,9 @@ export class SageDeLaForet extends Creature {
         this.init([["Or", 25], ["Végétal", 25]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Vie").base = 35;
-        this.stat("Vie").current = 35;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 35;
+        this.stat("Santé").current = 35;
+        this.stat("Force").base = 5;
         this.stat("Intelligence").base = 5;
     };
 }

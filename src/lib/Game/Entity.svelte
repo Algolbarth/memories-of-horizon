@@ -12,7 +12,7 @@
 {#if system.game}
 	<div class={"zone " + direction}>
 		<div class="preview life">
-			<div>Vie</div>
+			<div>Santé</div>
 			<div style="text-align:right;margin-right:0.5em">
 				{entity.life.current}
 			</div>

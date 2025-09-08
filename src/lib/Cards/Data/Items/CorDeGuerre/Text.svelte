@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 5 l'attaque de toutes les créatures alliées sur le terrain.
+Augmente de 5 la force de toutes les créatures alliées sur le terrain.

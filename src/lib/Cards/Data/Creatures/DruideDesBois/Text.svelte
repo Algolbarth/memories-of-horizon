@@ -18,5 +18,5 @@ Quand posé, au choix :
 </ul>
 
 {#if card.name == "Druide des bois (forme elfe)"}
-	Quand une action alliée est jouée : augmente de 6 sa vie.
+	Quand une action alliée est jouée : augmente de 6 sa santé.
 {/if}

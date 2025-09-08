@@ -12,9 +12,9 @@ export class Barde extends Creature {
         this.init([["Or", 30]]);
         this.familles.base.push("Humain");
 
-        this.stat("Vie").base = 5;
-        this.stat("Vie").current = 5;
-        this.stat("Attaque").base = 5;
+        this.stat("Santé").base = 5;
+        this.stat("Santé").current = 5;
+        this.stat("Force").base = 5;
 
         this.text = Text;
     };
@@ -23,9 +23,9 @@ export class Barde extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Attaque").step += 5;
-                card.stat("Vie").current += 5;
-                card.stat("Vie").step += 5;
+                card.stat("Force").step += 5;
+                card.stat("Santé").current += 5;
+                card.stat("Santé").step += 5;
             }
         }
         this.move("Terrain");

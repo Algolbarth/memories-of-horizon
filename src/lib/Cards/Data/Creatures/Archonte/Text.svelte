@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 10 la défense de toutes les unités sur le terrain.
+Quand posé : augmente de 10 l'endurance de toutes les unités sur le terrain.

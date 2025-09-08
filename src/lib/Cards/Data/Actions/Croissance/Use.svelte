@@ -28,7 +28,7 @@
 				choice = "life";
 			}}
 		>
-			Augmente de 75 la vie d'une créature alliée sur le terrain
+			Augmente de 75 la santé d'une créature alliée sur le terrain
 		</button>
 
 		<br />
@@ -39,7 +39,7 @@
 				choice = "balance";
 			}}
 		>
-			Augmente de 50 l'attaque et la vie d'une créature alliée sur le terrain
+			Augmente de 50 la force et la santé d'une créature alliée sur le terrain
 		</button>
 	</div>
 {:else}

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand un bâtiment allié est posé : augmente de 1 sa défense.
+Quand un bâtiment allié est posé : augmente de 1 son endurance.

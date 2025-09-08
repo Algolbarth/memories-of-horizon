@@ -17,10 +17,10 @@ export class ChevalierNoir extends Creature {
         this.init([["Or", 30]]);
         this.familles.base.push("Humain", "Chevalier");
 
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
-        this.stat("Attaque").base = 20;
-        this.stat("Défense").base = 5;
+        this.stat("Santé").base = 20;
+        this.stat("Santé").current = 20;
+        this.stat("Force").base = 20;
+        this.stat("Endurance").base = 5;
 
         this.text = Text2;
     };
@@ -28,7 +28,7 @@ export class ChevalierNoir extends Creature {
     dieEffect = function () {
         if (this.owner.ressource("Or").total() >= 20) {
             this.owner.ressource("Or").spend(20);
-            this.stat("Vie").current = 1;
+            this.stat("Santé").current = 1;
             this.rez = true;
         }
     };
@@ -54,9 +54,9 @@ export class ChevalierNoirMonte extends Creature {
         this.init([["Or", 60]]);
         this.familles.base.push("Humain", "Chevalier");
 
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
-        this.stat("Attaque").base = 20;
+        this.stat("Santé").base = 10;
+        this.stat("Santé").current = 10;
+        this.stat("Force").base = 20;
         this.stat("Vitesse").base = 1;
 
         this.text = Text;
@@ -83,7 +83,7 @@ export class ChevalierNoirMonte extends Creature {
 
     useEffect = function (target: Unit) {
         if (target != undefined) {
-            let value = target.stat("Vie").current;
+            let value = target.stat("Santé").current;
             if (this.owner.ressource("Or").total() < value) {
                 value = this.owner.ressource("Or").total();
             }
@@ -96,7 +96,7 @@ export class ChevalierNoirMonte extends Creature {
 
     dieEffect = function () {
         this.transform("Chevalier noir");
-        this.zone.cards[this.slot].stat("Vie").current = this.zone.cards[this.slot].stat("Vie").value();
+        this.zone.cards[this.slot].stat("Santé").current = this.zone.cards[this.slot].stat("Santé").value();
     };
 
     dieGo = function () {

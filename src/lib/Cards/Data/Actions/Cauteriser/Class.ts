@@ -44,7 +44,7 @@ export class Cauteriser extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Vie").add -= target.stat("Vie").value() - target.stat("Vie").current;
+        target.stat("Santé").add -= target.stat("Santé").value() - target.stat("Santé").current;
         this.move("Défausse");
         this.pose();
     };

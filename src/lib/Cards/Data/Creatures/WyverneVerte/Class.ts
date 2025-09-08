@@ -12,9 +12,9 @@ export class WyverneVerte extends Creature {
         this.init([["Or", 30], ["Végétal", 30]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Vie").base = 35;
-        this.stat("Vie").current = 35;
-        this.stat("Attaque").base = 20;
+        this.stat("Santé").base = 35;
+        this.stat("Santé").current = 35;
+        this.stat("Force").base = 20;
 
         this.text = Text;
     };

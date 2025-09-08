@@ -27,17 +27,17 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 	{/if}
 
 	{#if card.stat("Infusion de force").value() > 0}
-		Augmente de {card.stat("Infusion de force").value() * 4} l'attaque d'une créature alliée sur le terrain pendant cette étape.
+		Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature alliée sur le terrain pendant cette étape.
 		<br />
 	{/if}
 
-	{#if card.stat("Infusion de solidité").value() > 0}
-		Augmente de {card.stat("Infusion de solidité").value() * 2} la défense d'une créature alliée sur le terrain pendant cette étape.
+	{#if card.stat("Infusion d'endurance").value() > 0}
+		Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature alliée sur le terrain pendant cette étape.
 		<br />
 	{/if}
 
 	{#if card.stat("Infusion interdite").value() > 0}
-		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} l'attaque et la vie de cette carte.
+		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la force et la santé de cette carte.
 		<br />
 	{/if}
 
