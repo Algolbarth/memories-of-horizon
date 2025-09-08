@@ -11,9 +11,15 @@
 
 {#if system.game}
 	<div class={"zone " + direction}>
-		Vie : {entity.life.current} / {entity.life.max}
-
-		<br />
+		<div class="preview life">
+			<div>Vie</div>
+			<div style="text-align:right;margin-right:0.5em">
+				{entity.life.current}
+			</div>
+			<div>
+				/ {entity.life.max}
+			</div>
+		</div>
 
 		{#each entity.ressources as ressource}
 			{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
@@ -58,7 +64,12 @@
 		{/each}
 
 		{#if system.settings.show_intelligence}
-			Intelligence : {entity.totalIntelligence()}
+			<div class="preview stat">
+				<div>Intelligence</div>
+				<div style="text-align:right;margin-right:0.5em">
+					{entity.totalIntelligence()}
+				</div>
+			</div>
 		{/if}
 	</div>
 {/if}
@@ -75,6 +86,14 @@
 
 	.right {
 		margin-left: 1%;
+	}
+
+	div.life {
+		background: pink;
+	}
+
+	div.stat {
+		background: var(--background);
 	}
 
 	div.preview {
