@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Sort } from '../../../Class/Spell';
+import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 
-export class Ecoulement extends Sort {
+export class Ecoulement extends Spell {
     name = "Écoulement";
 
     constructor(system: System) {

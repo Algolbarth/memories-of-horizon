@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Lieu } from '../../../Class/Location';
+import { Location } from '../../../Class/Location';
 import Text from './Text.svelte';
 
-export class Plaine extends Lieu {
+export class Plaine extends Location {
     name = "Plaine";
 
     constructor(system: System) {

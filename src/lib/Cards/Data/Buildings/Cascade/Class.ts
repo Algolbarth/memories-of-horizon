@@ -1,9 +1,9 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class Cascade extends Batiment {
+export class Cascade extends Building {
     name = "Cascade";
 
     constructor(system: System) {

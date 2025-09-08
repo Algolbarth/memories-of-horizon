@@ -1,9 +1,9 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
-import { Lieu } from '../../../Class/Location';
+import { Location } from '../../../Class/Location';
 import Text from './Text.svelte';
 
-export class Village extends Lieu {
+export class Village extends Location {
     name = "Village";
 
     constructor(system: System) {

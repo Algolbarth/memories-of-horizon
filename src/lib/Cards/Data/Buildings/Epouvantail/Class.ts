@@ -1,7 +1,7 @@
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 
-export class Epouvantail extends Batiment {
+export class Epouvantail extends Building {
     name = "Épouvantail";
 
     constructor(system: System) {

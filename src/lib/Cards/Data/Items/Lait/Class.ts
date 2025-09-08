@@ -1,11 +1,11 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import { Stat } from '../../../Class/Stat';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Lait extends Objet {
+export class Lait extends Item {
     name = "Lait";
 
     constructor(system: System) {

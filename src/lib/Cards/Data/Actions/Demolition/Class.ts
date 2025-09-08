@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Batiment } from '../../../Class/Building';
+import type { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -43,7 +43,7 @@ export class Demolition extends Action {
         }
     };
 
-    useEffect = function (target: Batiment) {
+    useEffect = function (target: Building) {
         target.destroy();
         this.move("Défausse");
         this.pose();

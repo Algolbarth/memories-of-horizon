@@ -1,9 +1,9 @@
 import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class Alambic extends Batiment {
+export class Alambic extends Building {
     name = "Alambic";
 
     constructor(system: System) {

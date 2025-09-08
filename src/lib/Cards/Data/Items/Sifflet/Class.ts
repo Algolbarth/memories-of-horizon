@@ -1,10 +1,10 @@
 import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import type { Card } from '../../../Class';
 
-export class Sifflet extends Objet {
+export class Sifflet extends Item {
     name = "Sifflet";
 
     constructor(system: System) {

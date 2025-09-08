@@ -2,10 +2,10 @@ import type { System } from '../../System/Class';
 import { Stat } from './Stat';
 import { Trait } from './Trait';
 import type { Creature } from './Creature';
-import { Objet } from './Item';
+import { Item } from './Item';
 import Use from '../Utils/EquipUse.svelte';
 
-export class Equipment extends Objet {
+export class Equipment extends Item {
     equipElements: string[] = [];
     equipFamilies: string[] = [];
     equipTraits: Trait[] = [];

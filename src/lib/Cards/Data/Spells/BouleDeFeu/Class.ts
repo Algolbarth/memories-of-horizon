@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
-import { Sort } from '../../../Class/Spell';
+import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class BouleDeFeu extends Sort {
+export class BouleDeFeu extends Spell {
     name = "Boule de feu";
 
     constructor(system: System) {

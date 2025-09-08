@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
-export class PotionDeMana extends Objet {
+export class PotionDeMana extends Item {
     name = "Potion de mana";
 
     constructor(system: System) {

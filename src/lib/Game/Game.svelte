@@ -167,7 +167,7 @@
 	#taskbar {
 		height: 2vh;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: auto 1fr;
 	}
 
 	#container {

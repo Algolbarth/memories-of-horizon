@@ -1,9 +1,9 @@
 import type { System } from '../../../../System/Class';
-import { Sort } from '../../../Class/Spell';
+import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class CreationRocheuse extends Sort {
+export class CreationRocheuse extends Spell {
     name = "Création rocheuse";
 
     constructor(system: System) {

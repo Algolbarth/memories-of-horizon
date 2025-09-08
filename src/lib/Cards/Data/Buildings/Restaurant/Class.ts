@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import type { Objet } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Restaurant extends Batiment {
+export class Restaurant extends Building {
     name = "Restaurant";
     product = undefined;
 

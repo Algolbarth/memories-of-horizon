@@ -1,7 +1,7 @@
 import type { System } from '../../System/Class';
 import { Unit } from '.';
 
-export class Batiment extends Unit {
+export class Building extends Unit {
     type = "Bâtiment";
 
     constructor(system: System) {

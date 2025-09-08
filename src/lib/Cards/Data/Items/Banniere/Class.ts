@@ -1,9 +1,9 @@
 import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
-export class Banniere extends Objet {
+export class Banniere extends Item {
     name = "Bannière";
 
     constructor(system: System) {

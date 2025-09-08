@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Brique extends Objet {
+export class Brique extends Item {
     name = "Brique";
 
     constructor(system: System) {

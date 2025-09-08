@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
 import type { Creature } from '../../../Class/Creature';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Torche extends Objet {
+export class Torche extends Item {
     name = "Torche";
 
     constructor(system: System) {

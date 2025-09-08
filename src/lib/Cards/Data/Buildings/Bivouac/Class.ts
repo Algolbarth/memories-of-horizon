@@ -1,9 +1,9 @@
 import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class Bivouac extends Batiment {
+export class Bivouac extends Building {
     name = "Bivouac";
 
     constructor(system: System) {

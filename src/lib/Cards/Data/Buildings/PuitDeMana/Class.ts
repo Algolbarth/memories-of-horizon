@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class PuitDeMana extends Batiment {
+export class PuitDeMana extends Building {
     name = "Puit de mana";
 
     constructor(system: System) {

@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
 import { copy } from '../../../../Utils';
-import { Sort } from '../../../Class/Spell';
+import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PluieDeCailloux extends Sort {
+export class PluieDeCailloux extends Spell {
     name = "Pluie de cailloux";
 
     constructor(system: System) {

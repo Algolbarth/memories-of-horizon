@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Batiment } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class TourDArcher extends Batiment {
+export class TourDArcher extends Building {
     name = "Tour d'archer";
 
     constructor(system: System) {

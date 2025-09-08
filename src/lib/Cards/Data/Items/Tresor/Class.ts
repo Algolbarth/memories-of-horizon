@@ -1,8 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
-export class Tresor extends Objet {
+export class Tresor extends Item {
     name = "Trésor";
 
     constructor(system: System) {

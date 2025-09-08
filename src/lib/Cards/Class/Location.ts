@@ -1,6 +1,6 @@
 import { Card } from './Class';
 
-export class Lieu extends Card {
+export class Location extends Card {
     type = "Lieu";
 
     canUse = function () {

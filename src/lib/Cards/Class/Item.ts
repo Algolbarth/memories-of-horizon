@@ -1,5 +1,5 @@
 import { Card } from './Class';
 
-export class Objet extends Card {
+export class Item extends Card {
     type = "Objet";
 }

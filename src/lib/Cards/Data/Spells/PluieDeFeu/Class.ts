@@ -1,9 +1,9 @@
 import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
-import { Sort } from '../../../Class/Spell';
+import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 
-export class PluieDeFeu extends Sort {
+export class PluieDeFeu extends Spell {
     name = "Pluie de feu";
 
     constructor(system: System) {

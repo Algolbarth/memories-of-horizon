@@ -1,10 +1,10 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
-import { Objet } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PotionExplosive extends Objet {
+export class PotionExplosive extends Item {
     name = "Potion explosive";
 
     constructor(system: System) {
