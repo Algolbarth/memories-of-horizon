@@ -18,6 +18,6 @@ export class Lv7_Reine extends Chapter {
 
         this.addRessource("Or", 280);
 
-        this.addStep(80, "Ville", ["Chevalier géant", "Reine"], "Le chevalier favori de la reine exige un duel pour présenter une audience au souverain local.");
+        this.addStep(80, "Ville", ["Chevalier géant", "Reine"], ["Le chevalier favori de la reine exige un duel pour présenter une audience au souverain local."]);
     }
 }

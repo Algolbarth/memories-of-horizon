@@ -24,7 +24,7 @@ export class Lv10_Atlas extends Chapter {
 
         this.addRessource("Or", 500);
 
-        this.addStep(80, "Montagne", ["Atlas, marche-cratère"], "Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et bête, écrasant des paysages par inattention.");
+        this.addStep(80, "Montagne", ["Atlas, marche-cratère"], ["Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et bête, écrasant des paysages par inattention."]);
     }
 }
 
@@ -37,6 +37,6 @@ export class Lv10_Godrick extends Chapter {
 
         this.addRessource("Or", 500);
 
-        this.addStep(80, "Ville", ["Godrick, roi des rois"], "");
+        this.addStep(80, "Ville", ["Godrick, roi des rois"], ["Avant la création de l'Empire, durant la grande guerre, les royaumes étaient encore rivaux.", "Un humain parvient cependant à créer la plus grande alliance de tout le conflit, un espoir de paix dans une période de pure violence.", "Celui qui l'on nomma le roi des rois fut sans aucun doute un précurseur, et ses efforts eurent un effet décisif pour le renouveau de l'Horizon."]);
     }
 }
