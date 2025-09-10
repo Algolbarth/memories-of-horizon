@@ -11,52 +11,64 @@
 </script>
 
 <div class={"zone " + (entity == "player" ? "left" : "right")}>
-	{zone.name}
-	{#if zone.name == "Pile"}
-		Nv
-		<input
-			type="number"
-			min="1"
-			max="20"
-			bind:value={level}
-			on:change={() => {
-				if (level < 1) {
-					level = 1;
-				} else if (level > 20) {
-					level = 20;
-				} else {
-					zone.level = level;
-				}
-			}}
-		/>
-	{/if}
-	-
-	{#if zone.name != "Défausse"}
-		({zone.cards.length} /
-		<input
-			type="number"
-			min="1"
-			max="999"
-			bind:value={size}
-			on:change={() => {
-				if (size < 1) {
-					size = 1;
-				} else {
-					zone.size = size;
-				}
-			}}
-		/>
-		) -
-	{/if}
-	<button
-		on:click={() => {
-			system.view.reset();
-			system.train.add.entity = entity;
-			system.train.add.zone = zone;
-		}}
-	>
-		Ajouter une carte
-	</button>
+	<div class="taskbar">
+		<div class="infos">
+			<div>
+				{zone.name}
+			</div>
+			<div>
+				{#if zone.name == "Pile"}
+					Nv
+					<input
+						type="number"
+						min="1"
+						max="20"
+						bind:value={level}
+						on:change={() => {
+							if (level < 1) {
+								level = 1;
+							} else if (level > 20) {
+								level = 20;
+							} else {
+								zone.level = level;
+							}
+						}}
+					/>
+				{/if}
+			</div>
+			<div>
+				{#if zone.name != "Défausse"}
+					(
+					{zone.cards.length} /
+					<input
+						type="number"
+						min="1"
+						max="999"
+						bind:value={size}
+						on:change={() => {
+							if (size < 1) {
+								size = 1;
+							} else {
+								zone.size = size;
+							}
+						}}
+					/>
+					)
+				{/if}
+			</div>
+		</div>
+		<div style="text-align:right;">
+			<button
+				on:click={() => {
+					system.view.reset();
+					system.train.add.entity = entity;
+					system.train.add.zone = zone;
+				}}
+			>
+				Ajouter une carte
+			</button>
+		</div>
+	</div>
 
 	{#each zone.cards as card, i}
 		<div class="preview">
@@ -136,7 +148,17 @@
 		margin-left: 1%;
 	}
 
-	.preview {
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	div.infos {
+		display: grid;
+		grid-template-columns: 0.5fr 4em 1fr;
+	}
+
+	div.preview {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
