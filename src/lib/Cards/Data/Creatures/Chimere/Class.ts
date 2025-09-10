@@ -32,9 +32,8 @@ export class Chimere extends Creature {
             }
         }
 
+        this.stat("Constitution").increase(10 * list.length);
         this.stat("Force").increase(10 * list.length);
-        this.stat("Santé").increase(10 * list.length);
-        this.stat("Vitalité").increase(10 * list.length);
 
         this.move("Terrain");
         this.pose();

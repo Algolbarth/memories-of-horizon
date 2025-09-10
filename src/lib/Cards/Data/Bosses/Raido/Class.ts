@@ -21,9 +21,8 @@ export class Raido extends Boss {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.owner == this.owner && card.type == "Créature") {
-            card.stat("Force").base += 5;
-            card.stat("Vitalité").increase(5);
-            card.stat("Santé").base += 5;
+            card.stat("Force").increase(5);
+            card.stat("Constitution").increase(5);
         }
     };
 
@@ -37,8 +36,7 @@ export class Raido extends Boss {
         while (this.owner.ressource("Or").total() >= 1) {
             this.owner.ressource("Or").spend(1);
             this.stat("Force").increase(1);
-            this.stat("Santé").increase(1);
-            this.stat("Vitalité").increase(1);
+            this.stat("Constitution").increase(1);
         }
     };
 }

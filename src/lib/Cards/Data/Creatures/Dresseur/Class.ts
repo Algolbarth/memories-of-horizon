@@ -28,8 +28,7 @@ export class Dresseur extends Creature {
         let cards = this.owner.draw(1, condition);
 
         if (cards[0] != undefined) {
-            cards[0].stat("Santé").increase(10);
-            cards[0].stat("Vitalité").increase(10);
+            cards[0].stat("Constitution").increase(10);
             cards[0].stat("Force").increase(10);
         }
 

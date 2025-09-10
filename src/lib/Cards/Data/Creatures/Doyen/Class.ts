@@ -22,8 +22,7 @@ export class Doyen extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Vitalité").increase(15);
-                card.stat("Santé").increase(15);
+                card.stat("Constitution").increase(15);
             }
         }
         this.move("Terrain");

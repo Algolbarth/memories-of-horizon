@@ -37,9 +37,8 @@ export class Biodiversite extends Action {
 
         for (const card of terrain) {
             if (card.type == "Créature") {
+                card.stat("Constitution").increase(list.length * 5);
                 card.stat("Force").increase(list.length * 5);
-                card.stat("Santé").increase(list.length * 5);
-                card.stat("Vitalité").increase(list.length * 5);
             }
         }
 

@@ -18,8 +18,7 @@ export class MasseDeFer extends Equipment {
     };
 
     fightEffect = function () {
+        this.bearer.stat("Constitution").increase(5);
         this.bearer.stat("Force").increase(5);
-        this.bearer.stat("Vitalité").increase(5);
-        this.bearer.stat("Santé").increase(5);
     };
 }

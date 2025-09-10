@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -19,8 +20,7 @@ export class Princesse extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
-            card.stat("Santé").increase(10);
-            card.stat("Vitalité").increase(10);
+            card.stat("Constitution").increase(10);
             card.stat("Force").increase(10);
         }
     };

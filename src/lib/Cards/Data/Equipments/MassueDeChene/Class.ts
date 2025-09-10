@@ -17,7 +17,6 @@ export class MassueDeChene extends Equipment {
     };
 
     fightEffect = function () {
-        this.bearer.stat("Vitalité").increase(10);
-        this.bearer.stat("Santé").increase(10);
+        this.bearer.stat("Constitution").increase(10);
     };
 }

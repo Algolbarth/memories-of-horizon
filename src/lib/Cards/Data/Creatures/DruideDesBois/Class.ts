@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -22,7 +23,7 @@ class DruideDesBois extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = function (choice: string) {
         if (choice == "Elfe") {
             this.transform("Druide des bois (forme elfe)");
         }
@@ -49,8 +50,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
 
     otherPoseEffect = function (card: Card) {
         if (card.owner == this.owner && card.type == "Action") {
-            this.stat("Vitalité").increase(6);
-            this.stat("Santé").increase(6);
+            this.stat("Constitution").increase(6);
         }
     };
 }

@@ -56,8 +56,7 @@ export class ChevalDeGuerre extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Santé").increase(10);
-            target.stat("Santé").increase(10);
+            target.stat("Constitution").increase(10);
             target.stat("Force").increase(10);
             target.stat("Vitesse").increase(1);
         }

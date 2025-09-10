@@ -22,9 +22,8 @@ export class Prince extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
+                this.stat("Constitution").increase(10);
                 this.stat("Force").increase(10);
-                this.stat("Vitalité").increase(10);
-                this.stat("Santé").increase(10);
             }
         }
         this.move("Terrain");

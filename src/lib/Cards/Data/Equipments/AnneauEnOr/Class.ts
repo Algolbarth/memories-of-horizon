@@ -15,9 +15,8 @@ export class AnneauEnOr extends Equipment {
 
     startStepEffect = function () {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+            this.bearer.stat("Constitution").increase(1);
             this.bearer.stat("Force").increase(1);
-            this.bearer.stat("Vitalité").increase(1);
-            this.bearer.stat("Santé").increase(1);
         }
     };
 }

@@ -22,9 +22,8 @@ export class Lion extends Creature {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
+                card.stat("Constitution").increase(5);
                 card.stat("Force").increase(5);
-                card.stat("Vitalité").increase(5);
-                card.stat("Santé").increase(5);
             }
         }
         this.move("Terrain");

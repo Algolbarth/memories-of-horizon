@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -19,8 +20,7 @@ export class Phytomancien extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Végétal") && card.owner == this.owner) {
-            this.stat("Santé").increase(3);
-            this.stat("Vitalité").increase(3);
+            this.stat("Constitution").increase(3);
         }
     };
 }

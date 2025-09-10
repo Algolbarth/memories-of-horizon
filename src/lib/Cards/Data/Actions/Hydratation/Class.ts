@@ -51,8 +51,7 @@ export class Hydratation extends Action {
             value = 30;
         }
 
-        target.stat("Santé").increase(value);
-        target.stat("Vitalité").increase(value);
+        target.stat("Constitution").increase(value);
         target.stat("Force").increase(value);
 
         this.move("Défausse");

@@ -25,8 +25,7 @@ export class Banniere extends Item {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {
-                card.stat("Santé").increase(3);
-                card.stat("Vitalité").increase(3);
+                card.stat("Constitution").increase(3);
                 card.stat("Force").increase(3);
             }
         }

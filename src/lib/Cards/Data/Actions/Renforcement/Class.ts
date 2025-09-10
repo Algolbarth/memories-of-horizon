@@ -32,8 +32,7 @@ export class Renforcement extends Action {
     };
 
     useEffect = function (target: Unit) {
-        target.stat("Santé").increase(15);
-        target.stat("Vitalité").increase(15);
+        target.stat("Constitution").increase(15);
         this.move("Défausse");
         this.pose();
     };
