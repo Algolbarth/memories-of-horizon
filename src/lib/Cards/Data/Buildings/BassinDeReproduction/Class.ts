@@ -11,8 +11,7 @@ export class BassinDeReproduction extends Building {
         this.init([["Or", 20], ["Eau", 20]]);
         this.familles.base.push("Ondin");
         
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

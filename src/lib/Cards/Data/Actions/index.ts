@@ -1,5 +1,5 @@
 export * from './Affaiblissement';
-export * from './Agrandissement';
+export * from './AgrandissementDInventaire';
 export * from './Aiguisage';
 export * from './Ambidextrie';
 export * from './Assomage';
@@ -25,8 +25,8 @@ export * from './Ecrasement';
 export * from './Elimination';
 export * from './Entrainement';
 export * from './Eruption';
-export * from './Etendre';
 export * from './Exploration';
+export * from './ExtensionDeTerritoire';
 export * from './Forger';
 export * from './Frappe';
 export * from './Hydratation';

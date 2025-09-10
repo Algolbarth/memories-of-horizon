@@ -11,8 +11,7 @@ export class AncienSerpent extends Creature {
         this.init([["Or", 15], ["Végétal", 15]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Santé").base = 15;
-        this.stat("Santé").current = 15;
+        this.stat("Constitution").init(15);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -20,7 +19,7 @@ export class AncienSerpent extends Creature {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Mue").add("Main");
+            this.owner.getCard("Mue").add("Réserve");
         }
     };
 }

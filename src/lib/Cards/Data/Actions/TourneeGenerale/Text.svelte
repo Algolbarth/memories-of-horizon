@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Crée autant de <CardInfo bind:system name={"Bière"} /> dans la main que de créature alliées sur le terrain.
+Crée autant de <CardInfo bind:system name={"Bière"} /> dans la réserve que de créature alliées sur le terrain.

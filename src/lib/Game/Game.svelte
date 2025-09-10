@@ -138,9 +138,9 @@
 		</div>
 
 		{#if !system.game.isBattle()}
-			<DoubleZone bind:system zone={"Lieux"} />
-			<DoubleZone bind:system zone={"Boutique"} />
-			<DoubleZone bind:system zone={"Main"} />
+			<DoubleZone bind:system zone={"Région"} />
+			<DoubleZone bind:system zone={"Pile"} />
+			<DoubleZone bind:system zone={"Réserve"} />
 		{/if}
 
 		<DoubleZone bind:system zone={"Terrain"} />

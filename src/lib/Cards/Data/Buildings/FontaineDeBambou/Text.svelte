@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : crée <CardInfo bind:system name={"Écoulement"} /> dans la main.
+Au début de la phase de préparation : crée <CardInfo bind:system name={"Écoulement"} /> dans la réserve.

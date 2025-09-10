@@ -12,8 +12,7 @@ export class DefenseurDeLaCite extends Creature {
         this.init([["Or", 15], ["Terre", 15]]);
         this.familles.base.push("Nain");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
         this.stat("Endurance").base = 5;
 

@@ -11,8 +11,7 @@ export class Champion extends Creature {
         this.init([["Or", 100]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
         this.stat("Force").base = 20;
         this.stat("Endurance").base = 5;
 

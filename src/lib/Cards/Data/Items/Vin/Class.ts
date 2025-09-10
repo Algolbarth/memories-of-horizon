@@ -18,7 +18,7 @@ export class Vin extends Item {
 
     canUse = function () {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").current < 100)) {
+            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                 return true;
             }
         }
@@ -47,7 +47,7 @@ export class Vin extends Item {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Critique").current = 100;
+            target.stat("Critique").set(100);
         }
         else {
             target.heal(30);

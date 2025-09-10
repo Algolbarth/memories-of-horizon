@@ -12,8 +12,7 @@ export class Troubadour extends Creature {
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -56,8 +55,8 @@ export class Troubadour extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.stat("Santé").current += 20;
             target.stat("Santé").step += 20;
+            target.stat("Vitalité").step += 20;
             target.stat("Force").step += 20;
         }
         this.move("Terrain");

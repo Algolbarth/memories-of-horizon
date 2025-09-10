@@ -13,8 +13,7 @@ export class ChevalierGeant extends Creature {
         this.init([["Or", 150]]);
         this.familles.base.push("Géant", "Chevalier");
 
-        this.stat("Santé").base = 120;
-        this.stat("Santé").current = 120;
+        this.stat("Constitution").init(120);
         this.stat("Force").base = 120;
         this.stat("Endurance").base = 30;
     };
@@ -33,8 +32,7 @@ export class ChevalierGeantMonte extends Creature {
 
         this.trait("Rare").base = true;
 
-        this.stat("Santé").base = 200;
-        this.stat("Santé").current = 200;
+        this.stat("Constitution").init(200);
         this.stat("Force").base = 200;
         this.stat("Endurance").base = 50;
         this.stat("Vitesse").base = 5;
@@ -44,7 +42,7 @@ export class ChevalierGeantMonte extends Creature {
 
     dieEffect = function () {
         this.transform("Chevalier géant");
-        this.zone.cards[this.slot].stat("Santé").current = this.zone.cards[this.slot].stat("Santé").value();
+        this.zone.cards[this.slot].stat("Santé").base = this.zone.cards[this.slot].stat("Vitalité").value();
     };
 
     dieGo = function () {

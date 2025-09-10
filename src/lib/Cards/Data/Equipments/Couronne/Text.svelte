@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Quand une créature alliée est posée : augmente la force et la santé de cette créature du même montant que le niveau de la créature équipée.
+Quand une créature alliée est posée : augmente la force et la constitution de cette créature du même montant que le niveau de la créature équipée.

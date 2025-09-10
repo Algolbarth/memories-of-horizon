@@ -14,7 +14,7 @@ export class Restockage extends Action {
     };
 
     useEffect = function () {
-        this.owner.refreshShop();
+        this.owner.refreshStack();
         this.move("Défausse");
         this.pose();
     };

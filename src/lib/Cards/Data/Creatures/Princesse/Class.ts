@@ -11,8 +11,7 @@ export class Princesse extends Creature {
         this.init([["Or", 105]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -21,7 +20,7 @@ export class Princesse extends Creature {
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
             card.stat("Santé").increase(10);
-            card.stat("Santé").current += 10;
+            card.stat("Vitalité").increase(10);
             card.stat("Force").increase(10);
         }
     };

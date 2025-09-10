@@ -9,8 +9,7 @@ export class GarnisonDesMonts extends Building {
         super(system);
 
         this.init([["Or", 60], ["Terre", 60]]);
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };

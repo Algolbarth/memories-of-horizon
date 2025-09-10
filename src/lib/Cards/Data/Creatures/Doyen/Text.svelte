@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 15 la santé de toutes les créatures sur le terrain.
+Quand posé : augmente de 15 la constitution de toutes les créatures sur le terrain.

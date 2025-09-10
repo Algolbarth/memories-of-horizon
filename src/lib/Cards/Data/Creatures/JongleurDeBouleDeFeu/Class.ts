@@ -11,8 +11,7 @@ export class JongleurDeBouleDeFeu extends Creature {
         this.init([["Or", 20], ["Feu", 20]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Santé").base = 3;
-        this.stat("Santé").current = 3;
+        this.stat("Constitution").init(3);
         this.stat("Force").base = 10;
         this.stat("Magie").base = 15;
 
@@ -21,7 +20,7 @@ export class JongleurDeBouleDeFeu extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (card.owner == this.owner && card.name == "Boule de feu") {
-            this.owner.getCard("Boule de feu").add("Boutique");
+            this.owner.getCard("Boule de feu").add("Pile");
         }
     };
 }

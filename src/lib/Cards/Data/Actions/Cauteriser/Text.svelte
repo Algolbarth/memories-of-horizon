@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Fixe la santé maximale à la santé courante d'une créature adverse sur le terrain.
+Fixe la vitalité d'une créature adverse sur le terrain à la valeur de santé de cette créature.

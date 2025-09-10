@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Détruit toutes les cartes alliées dans la boutique. Inflige autant de dégâts à toutes les unités adverses sur le terrain que de cartes détruites.
+Détruit toutes les cartes alliées dans la pile. Inflige autant de dégâts à toutes les unités adverses sur le terrain que de cartes détruites.

@@ -11,8 +11,7 @@ export class Pyromancien extends Creature {
         this.init([["Or", 12], ["Feu", 12]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Santé").base = 3;
-        this.stat("Santé").current = 3;
+        this.stat("Constitution").init(3);
         this.stat("Force").base = 10;
 
         this.text = Text;

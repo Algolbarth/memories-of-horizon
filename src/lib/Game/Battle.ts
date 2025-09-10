@@ -97,7 +97,7 @@ export class Battle {
     resetAction = function () {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                card.stat("Actions").current = card.stat("Actions").value();
+                card.stat("Initiative").set(card.stat("Maîtrise").value());
             }
         }
     };
@@ -126,7 +126,7 @@ export class Battle {
         this.fighter = undefined;
         for (let i = 0; i < entity.zone("Terrain").cards.length; i++) {
             let card = entity.zone("Terrain").cards[i];
-            if (this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Actions").current > 0 && speed == card.stat("Vitesse").value()) {
+            if (this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Initiative").value() > 0 && speed == card.stat("Vitesse").value()) {
                 this.fighter = card;
             }
         }
@@ -153,7 +153,7 @@ export class Battle {
 
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Vitesse").value() > best_speed) {
+                if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Vitesse").value() > best_speed) {
                     best_speed = card.stat("Vitesse").value();
                 }
             }
@@ -165,7 +165,7 @@ export class Battle {
     isEndTurn = function () {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card.stat("Actions").current > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
+                if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
                     return false;
                 }
             }

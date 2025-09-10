@@ -18,4 +18,4 @@
 	}
 </script>
 
-<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Boutique")} {condition} {fonction} />
+<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Pile")} {condition} {fonction} />

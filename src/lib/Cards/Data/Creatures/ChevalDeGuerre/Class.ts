@@ -12,8 +12,7 @@ export class ChevalDeGuerre extends Creature {
         this.init([["Or", 40]]);
         this.familles.base.push("Bête");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
         this.stat("Vitesse").base = 1;
 

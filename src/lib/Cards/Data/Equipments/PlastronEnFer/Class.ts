@@ -11,7 +11,7 @@ export class PlastronEnFer extends Equipment {
         this.init([["Or", 30]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Santé").base = 45;
+        this.equipStat("Vitalité").base = 45;
 
         this.text = Text;
     };

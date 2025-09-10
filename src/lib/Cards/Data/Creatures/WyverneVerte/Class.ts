@@ -12,15 +12,14 @@ export class WyverneVerte extends Creature {
         this.init([["Or", 30], ["Végétal", 30]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Santé").base = 35;
-        this.stat("Santé").current = 35;
+        this.stat("Constitution").init(35);
         this.stat("Force").base = 20;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
-        if (this.zone.name == "Boutique" && card.owner == this.owner && card.elements.total().includes("Végétal")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.elements.total().includes("Végétal")) {
             this.costReduce(6);
         }
     };

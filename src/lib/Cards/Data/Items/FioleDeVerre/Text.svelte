@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 5 l'infusion d'un objet allié de famille Potion (sauf <CardInfo bind:system name={"Concoction"} />) dans la main.
+Augmente de 5 l'infusion d'un objet allié de famille Potion (sauf <CardInfo bind:system name={"Concoction"} />) dans la réserve.

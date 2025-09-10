@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Equipment } from '../../../Class/Equipment';
 import Text from '../../../Utils/EquipText.svelte';
 
-export class BottesDAgilite extends Equipment {
-    name = "Bottes d'agilité";
+export class BottesDeGrandPas extends Equipment {
+    name = "Bottes de grand pas";
 
     constructor(system: System) {
         super(system);

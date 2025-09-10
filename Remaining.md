@@ -7,12 +7,12 @@ Finir l'histoire impériale (pk c'est souvent des humains)
 Ajouter les éléments manquants dans le mode entraînement (deck) 
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) 
 Ajouter une option finir automatiquement pour les combats 
-Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) 
-Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique)  
+Ajouter les options pour afficher des infos lors des combats (ressources, défausse, réserve) 
+Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
 Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) 
 Ajouter ces stats pour le compte 
 Ajouter les stats des decks (types de carte, éléments, familles, niveau) 
-Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique 
+Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la pile 
 Ajouter un texte explicatif pour les stats et effets 
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu 
 Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X tours, aveuglement => X attaques)
@@ -24,7 +24,7 @@ Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X 
 ## A ajouter
 ### Mimique
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
-Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la santé de la créature attaquante.
+Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la constitution de la créature attaquante.
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
@@ -33,41 +33,41 @@ Banque : augmente la valeur de vente des unités alliées sur le terrain.
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée.
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité.
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
-Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la main.
+Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
 
 ### Zones
-Chercheur : créature, quand posé : pioche 1 carte. si la boutique est pleine, augmente la taille de la boutique.
-Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille de la main.
+Chercheur : créature, quand posé : pioche 1 carte. si la pile est pleine, augmente la taille de la pile.
+Entrepôt : bâtiment, quand acheté : si la réserve est pleine, augmente la taille de la réserve.
 Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain.
-Carte de la région : objet, pioche des cartes jusqu'à remplir la boutique.
-Omniscience : action, découvre des cartes jusqu'à remplir la boutique.
-Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main.
-Requisition : action, diminue la taille de la main et augmente la taille du terrain.
+Carte de la région : objet, pioche des cartes jusqu'à remplir la pile.
+Omniscience : action, découvre des cartes jusqu'à remplir la pile.
+Savoir interdit : action, diminue la taille du terrain et augmente la taille de la réserve.
+Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
 
 ### Equipements
 Robe de mage : augmente la magie et la résistance de la créature équipée.
 Brassard de santé : augmente la régénération de la créature équipée.
-Plastron de piques : augmente la santé et l'épine de la créature équipée.
+Plastron de piques : augmente la constitution et l'épine de la créature équipée.
 Cotte de maille : augmente l'endurance de la créature équipée.
 Cape de cuir : augmente l'endurance et la résistance de la créature équipée
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
 Mouton : créature bête, endurance.
-Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la main.
+Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la réserve.
 Berger : créature humain, au début de chaque phase de préparation : crée Mouton sur le terrain.
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain.
 Colère : inflige autant dégâts que les blessures du meneur.
-Envie : vole une carte dans la main adverse.
+Envie : vole une carte dans la réserve adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
-Avarice : détruit une créature alliée sur le terrain et augmente la force et la santé d'une autre créature alliée sur le terrain d'autant que la santé et la force de la créature détruite.
+Avarice : détruit une créature alliée sur le terrain et augmente la force et la constitution d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
-Paresse : soigne une créature alliée d'autant que la différence entre sa santé maximale et sa force.
+Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
 Lignes de ley : bâtiment, quand une créature de famille Elementaire alliée est posée : augmente la capacité de chaque élément de cette créature.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
-Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa santé maximale.
+Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de santé d'une créature de famille Bête alliée sur le terrain.
-Arbalète : objet équipement, crée des carreaux dans la main qui scalent selon la force du mob.
+Arbalète : objet équipement, crée des carreaux dans la réserve qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
@@ -90,7 +90,7 @@ Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
-Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse.
+Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la réserve adverse.
 Jarre de flamme : objet, .
 
 ### Vegetal
@@ -106,7 +106,7 @@ Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat 
 Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
-Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la main.
+Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la réserve.
 Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain.
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
@@ -115,16 +115,16 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
 Cerf : créature bête, vitesse et percée.
 Hérisson : créature bête, épine.
-Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la santé max et de X la régénération de cette créature.
+Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la constitution max et de X la régénération de cette créature.
 
 ### Eau
 Barrière de corail : créature plante, régénération.
 Pêcheur : quand posé : pioche 1 créature poisson.
 Requin : créature poisson.
-Banc de poisson : crée 5 Sardine dans la main.
+Banc de poisson : crée 5 Sardine dans la réserve.
 Sardine : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
-Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la main.
+Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la réserve.
 
 ### Terre
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain.
@@ -137,10 +137,10 @@ Sylphe : quand arrive sur le terrain : pioche une carte.
 Sylphe : quand attaque : pioche une carte et la verrouille.
 Sylphe : quand attaque : augmente son esquive.
 Archer sylphe : créature, portée.
-Griffon : quand posé : augmente sa force et sa santé suivant le niveau de la boutique.
+Griffon : quand posé : augmente sa force et sa constitution suivant le niveau de la pile.
 Aigle 
 Envol : action, applique esquive à une créature Air alliée sur le terrain.
-Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la boutique.
+Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la pile.
 Mage des airs 
 Hibours : créature bête oiseau 
 Ascension : pioche une créature wyverne et la verrouille.
@@ -158,7 +158,7 @@ Cheval squelette
 Zombie : 1 force.
 Zombie recousu : créature, régénération.
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement.
-Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa force et sa santé.
+Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa force et sa constitution.
 Faucheuse 
 Fantôme : créature, éphémère.
 Rat : créature, quand attaque : applique maladie à la créature attaquée.
@@ -178,25 +178,25 @@ Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
 ### Metal
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain.
 Mini automate : créature machine.
-Ingénieur : créature, augmente la force et la santé d'une créature de famille machine alliée sur le terrain.
+Ingénieur : créature, augmente la force et la constitution d'une créature de famille machine alliée sur le terrain.
 Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or.
 Automate : créature machine, maniement 1.
 Automate armé : créature machine, maniement 4.
 Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain.
 Wyverne d'acier 
 Mage des métaux 
-Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa force et sa santé.
+Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa force et sa constitution.
 Mines : lieu pour les cartes d'élément Métal.
 
 ### Foudre
-Satyre : quand arrive sur le terrain : augmente sa force et sa santé pendant cette étape.
-Acolyte satyre : quand posé : augmente la force et la santé d'une créature alliée sur le terrain pendant cette étape.
-Barde satyre : quand posé : augmente la force et la santé de toutes les créatures alliées sur le terrain pendant cette étape.
+Satyre : quand arrive sur le terrain : augmente sa force et sa constitution pendant cette étape.
+Acolyte satyre : quand posé : augmente la force et la constitution d'une créature alliée sur le terrain pendant cette étape.
+Barde satyre : quand posé : augmente la force et la constitution de toutes les créatures alliées sur le terrain pendant cette étape.
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
 Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée.
-Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée.
+Lames d'éclairs : objet équipement, augmente l'agilité de la créature équipée.
 Lances de foudre : objet équipement, augmente la force de la créature équipée selon sa vitesse.
 Centaure : créature, vitesse.
 Meneur centaure : créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain.
@@ -231,7 +231,7 @@ Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
 Épée de pure lumière : objet équipement, Quand la créature équipée attaque : si pas blessée alors inflige des dégaâts.
-Révélations de lumière : action, révèle toutes les cartes dans la main et étourdis toutes les créatures sur le terrain.
+Révélations de lumière : action, révèle toutes les cartes dans la réserve et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
 Terre sacrée : lieu pour les cartes d'élément Lumière.
@@ -259,7 +259,7 @@ Plage : lieu pour les cartes d'élément Eau et Feu.
 Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu.
 Guerrier du désert : quand se fait attaquer : augmente son endurance. Quand attaque : augmente sa force.
 Assassin du désert 
-Ver des sables : quand attaque : détruit la carte dans la main adverse en première position. quand est attaquée : détruit la carte dans la main en première position.
+Ver des sables : quand attaque : détruit la carte dans la réserve adverse en première position. quand est attaquée : détruit la carte dans la réserve en première position.
 Élémentaire de sable 
 Golem de lave 
 Désert : lieu pour les cartes d'élément Feu et Terre.
@@ -280,10 +280,10 @@ Proto dragon : créature wyverne dragon
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
 ### Feu/Vegetal
-Lézard : quand meurt : ajoute une Queue de lézard dans la main.
-Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main.
-Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main.
-Queue de lézard : augmente la force ou la santé d'une créature alliée sur le terrain.
+Lézard : quand meurt : ajoute une Queue de lézard dans la réserve.
+Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la réserve.
+Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la réserve.
+Queue de lézard : augmente la force ou la constitution d'une créature alliée sur le terrain.
 Cactus 
 Buisson ardent 
 Fumigation : action, empoisonne et brûle une créature à la fois.
@@ -332,7 +332,7 @@ Tyranosaure
 Brachiosaure 
 Vélociraptor 
 Stégosaure 
-Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa force et sa santé.
+Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa force et sa constitution.
 Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage.
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
@@ -354,13 +354,13 @@ Paradis : lieu pour les cartes d'élément Air et Lumière.
 Armure possédée
 
 ### Lumiere/Ombre
-Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruit une.
+Eclipse solaire : révèle toutes les cartes dans la réserve adverse et en détruit une.
 
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
 Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
-Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la santé de gyoun
+Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la constitution de gyoun
 
 # Lore
 
@@ -471,7 +471,7 @@ leur peau est jaunie et parsemé de motifs brillants similaires à des tatouages
 ces tâches de naissance grandissent jusqu'à l'âge adulte.
 fonctionnent en communauté.
 un élu est choisi dès la naissance pour assurer la fonction de dirigeant, designé par des symboles particuliers sur son corps.
-l'élu a pour rôle de montrer l'exemple par son comportement et ses décisions dans la santé de groupe.
+l'élu a pour rôle de montrer l'exemple par son comportement et ses décisions dans la constitution de groupe.
 les aasimars ont un corps très robustes aux blessures et aux maladies. cependant ils meurent plus tôt que les humains à cause de cancer.
 les guerriers aasimar utilisent leur capacité de régénération avec des armures adaptées et des armes risquées mais efficaces.
 
@@ -503,7 +503,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 
 `Boréalis` : ryu dieu de la météo. Parmi les plus puissants dieux. Nomade mais discrets malgré sa taille (il se camoufle grâce à des mirages) il vit dans un monastère laboratoire qui sert à ses fidèles pour étudier la météo.
 `Progenitus` : dieu hydre de la régénération, peux régénérer sans effort chaque partie de son corps. Peux également dupliquer ses membres à volonté.
-`Adama` : déesse phoenix de la résurection, peux revenir à la santé à partir d'une simple cendre laissée par ses ailes. Peux également ressuciter ses propres flammes, créant des feux éternels ou les faisant réapparaitre à n'importe quel moment.
+`Adama` : déesse phoenix de la résurection, peux revenir à la constitution à partir d'une simple cendre laissée par ses ailes. Peux également ressuciter ses propres flammes, créant des feux éternels ou les faisant réapparaitre à n'importe quel moment.
 
 `Ananta` : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant, il a été chargé de récupérer un metal précieux dans la caverne de tragoedia. En s'alliant avec le dragon ils réussissent à obtenir l'acier. En rapportant le butin aux récifs noirs, le néant forge l'acier afin de fabriquer une baguette et un casque. Ananta hérite de la baguette, le recouvrant d'une armure dès qu'il la saisit. Plus le temps passe plus la baguette peux détruire des âmes facilement. Envahit par un sentiment de puissance, d'avidité et perdant en lucidité, les deux suivront les ordres du néant demandant de détruire des îles ou tuer des dieux. En s'interposant dans un combat qui oppose Progenitus et Adama, fâchés de voir leurs semblable smourir alors que leur race est quasi immortelle et qui étaient en train de s'accuser mutuellement, ils feront face à Borealis qui les repoussera sans difficulté. Avide de se venger de lui, ils absorberont plus de puissance offert par le néant mais perdront toute trace de lucidité. Après avoir tué plusieurs dieux, une coallition se formera entre divinité et héros afin de les vaincre. Après qu'un piège ai échoué, il sera décidé de les suivre pour les attaquer aux récifs noirs. Ananta vaincra Sartorias en "duel", ainsi que Gabriela. Nana utilisera ses pouvoirs pour que ananta détruite sa propre âme.
 `Tragoedia` : dragon corrompue par le néant. Régnait sur un volcan situé par dessus une faille du néant. Après avoir récupéré l'acier caché sous sa caverne, il a reçu le casque forgé par le néant qui recouvre tragoedia d'une épaisse armure. Plus le temps passe plus l'armure fusionne avec son porteur, devenant une seconde peau impenetrable. Ses flammes deviennent capables de détruire les âmes de n'importe qui. Lors du siège des récifs noirs, tragoedia semble intuable et détruira les flottes armées en s'amusant, ne prenant rien au sérieux. Il incinerera Carole qui tentait de soigner Gidéon. Après que ce dernier face un pacte avec Rakdos, ils attaqueront ensemble pour démolir le monstre et son armure.
@@ -528,7 +528,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 
 `Luther` : vieux chevalier devenu mercenaire auprès de royaumes. mentor du héros, rencontré durant la campagne des pics brisés.
 `Poncemine` : gnome spécialisé dans la construction d'un automate invincible dont il a conçu les plans. le héros parvient à stopper la machine inachevée lors de son voyage à Adana, ville des gnomes. accompagne le héros par grattitude mais aussi pour apprendre à perfectionner son automate et prôtéger les plans.
-`Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa santé, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros.
+`Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa constitution, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros.
 `Atlanta` : centaure archère chasseuse, soeur d'artéma. veux se venger d'orion qui profite de l'absence de sa soeur pour semer la terreur. le blessera lourdement à l'épaule et  la tribu.
 `Saphira` : vampire habitant dans les terres du Heaume-Blanc, un fief de paladin. en raison de sa race elle est persecutée et cherche à se défendre de l'ordre quand le héros la trouve. luther découvrira que c'est en réalité une puissante gargouille, quatramanus, qui manipule les paladins en se faisant passer comme un envoyé des anges. perdra contre quatramanus, ce dernier étant en pierre, lé héros s'en chargera. continue à suivre le héros.
 `Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruit petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir.

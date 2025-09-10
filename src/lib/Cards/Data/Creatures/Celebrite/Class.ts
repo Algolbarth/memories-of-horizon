@@ -11,8 +11,7 @@ export class Celebrite extends Creature {
         this.init([["Or", 45]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;

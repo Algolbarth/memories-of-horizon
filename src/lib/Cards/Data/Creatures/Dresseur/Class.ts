@@ -12,8 +12,7 @@ export class Dresseur extends Creature {
         this.init([["Or", 10], ["Végétal", 10]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
 
         this.text = Text;
@@ -30,7 +29,7 @@ export class Dresseur extends Creature {
 
         if (cards[0] != undefined) {
             cards[0].stat("Santé").increase(10);
-            cards[0].stat("Santé").current += 10;
+            cards[0].stat("Vitalité").increase(10);
             cards[0].stat("Force").increase(10);
         }
 

@@ -50,13 +50,11 @@ export class Croissance extends Action {
 
     useEffect = function (target: Creature, choice: string) {
         if (choice == "life") {
-            target.stat("Santé").increase(75);
-            target.stat("Santé").current += 75;
+            target.stat("Constitution").increase(75);
         }
         else if (choice == "balance") {
             target.stat("Force").increase(50);
-            target.stat("Santé").increase(50);
-            target.stat("Santé").current += 50;
+            target.stat("Constitution").increase(50);
         }
 
         this.move("Défausse");

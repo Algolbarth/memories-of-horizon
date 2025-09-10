@@ -12,8 +12,7 @@ export class Archonte extends Creature {
         this.init([["Or", 55], ["Terre", 55]]);
         this.familles.base.push("Nain");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 5;
         this.stat("Endurance").base = 3;
 

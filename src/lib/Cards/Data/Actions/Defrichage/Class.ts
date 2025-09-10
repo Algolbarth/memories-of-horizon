@@ -14,10 +14,10 @@ export class Defrichage extends Action {
     };
 
     useEffect = function () {
-        this.owner.zone("Boutique").size++;
+        this.owner.zone("Pile").size++;
         this.owner.zone("Terrain").size++;
 
-        this.owner.ressource("Or").current += this.owner.zone("Boutique").size;
+        this.owner.ressource("Or").current += this.owner.zone("Pile").size;
         this.owner.ressource("Végétal").current += this.owner.zone("Terrain").size;
 
         this.move("Défausse");

@@ -9,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Fusionne 2 objets alliés de famille Potion dans la main en <CardInfo bind:system name={"Concoction"} />.
+Fusionne 2 objets alliés de famille Potion dans la réserve en <CardInfo bind:system name={"Concoction"} />.

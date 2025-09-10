@@ -12,8 +12,7 @@ export class WyverneTerrestre extends Creature {
         this.init([["Or", 30], ["Terre", 30]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
         this.stat("Force").base = 20;
         this.stat("Endurance").base = 10;
 
@@ -21,7 +20,7 @@ export class WyverneTerrestre extends Creature {
     };
 
     otherPoseEffect = function (card: Card) {
-        if (this.zone.name == "Boutique" && card.owner == this.owner && card.elements.total().includes("Terre")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.elements.total().includes("Terre")) {
             this.costReduce(6);
         }
     };

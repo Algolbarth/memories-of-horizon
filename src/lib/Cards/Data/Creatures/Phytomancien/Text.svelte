@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Végétal est posée : augmente de 3 sa santé.
+Quand une carte alliée d'élément Végétal est posée : augmente de 3 sa constitution.

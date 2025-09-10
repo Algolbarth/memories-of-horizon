@@ -8,7 +8,6 @@ export class MurDEnceinte extends Building {
         super(system);
 
         this.init([["Or", 50]]);
-        this.stat("Santé").base = 100;
-        this.stat("Santé").current = 100;
+        this.stat("Constitution").init(100);
     };
 }

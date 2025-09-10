@@ -150,7 +150,7 @@ export class Card {
                 this.stat("Perpétuité").set(0);
             }
 
-            if (!["Main", "Boutique"].includes(zone)) {
+            if (!["Réserve", "Pile"].includes(zone)) {
                 this.cache = false;
             }
 
@@ -200,7 +200,7 @@ export class Card {
                 return false;
             }
         }
-        if (this.owner.zone("Main").isFull()) {
+        if (this.owner.zone("Réserve").isFull()) {
             return false;
         }
         return true;
@@ -212,7 +212,7 @@ export class Card {
                 this.owner.ressource(c.name).spend(c.value());
             }
             this.locked = false;
-            this.move("Main");
+            this.move("Réserve");
         }
     };
 
@@ -397,10 +397,6 @@ export class Card {
             newCard.stat(stat.name).add = stat.add;
             newCard.stat(stat.name).step = stat.step;
             newCard.stat(stat.name).turn = stat.turn;
-            newCard.stat(stat.name).current = stat.current;
-            if (newCard.stat(stat.name).current > newCard.stat(stat.name).value()) {
-                newCard.stat(stat.name).current = newCard.stat(stat.name).value();
-            }
         }
         if (this.zone.cards[this.slot].type == "Créature") {
             for (const e of this.equipments) {

@@ -15,7 +15,7 @@ export class GrandeFioleDeVerre extends Item {
     };
 
     canUse = function () {
-        for (const card of this.owner.zone("Main").cards) {
+        for (const card of this.owner.zone("Réserve").cards) {
             if (card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
                 return true;
             }
@@ -30,7 +30,7 @@ export class GrandeFioleDeVerre extends Item {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Main").cards) {
+            for (const card of this.owner.zone("Réserve").cards) {
                 if (target == undefined && card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
                     target = card;
                 }
@@ -42,7 +42,7 @@ export class GrandeFioleDeVerre extends Item {
         }
     };
 
-    useEffect = function (target: Objet) {
+    useEffect = function (target: Item) {
         target.stat("Infusion").increase(25);
         this.move("Défausse");
         this.pose();

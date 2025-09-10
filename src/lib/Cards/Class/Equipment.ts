@@ -18,11 +18,11 @@ export class Equipment extends Item {
         this.familles.base.push("Équipement");
 
         this.addEquipStat("Force", 0);
-        this.addEquipStat("Santé", 0);
+        this.addEquipStat("Vitalité", 0);
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
-        this.addEquipStat("Actions", 0);
-        this.addEquipStat("Multicoup", 0);
+        this.addEquipStat("Maîtrise", 0);
+        this.addEquipStat("Agilité", 0);
         this.addEquipStat("Vitesse", 0);
         this.addEquipStat("Protection", 0);
         this.addEquipStat("Maniement", 0);
@@ -32,6 +32,8 @@ export class Equipment extends Item {
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
 
+        this.addEquipStat("Santé", 0);
+        this.addEquipStat("Initiative", 0);
         this.addEquipStat("Garde", 0);
         this.addEquipStat("Perpétuité", 0);
         this.addEquipStat("Esquive", 0);
@@ -70,10 +72,13 @@ export class Equipment extends Item {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         target.equip(this);
-        if (this.equipStat("Santé").value() > 0) {
-            target.stat("Santé").current += this.equipStat("Santé").value();
+        if (this.equipStat("Vitalité").value() > 0) {
+            target.stat("Santé").increase(this.equipStat("Vitalité").value());
+        }
+        if (this.equipStat("Maîtrise").value() > 0) {
+            target.stat("Initiative").increase(this.equipStat("Maîtrise").value());
         }
         this.pose();
     };

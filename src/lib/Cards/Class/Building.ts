@@ -7,6 +7,7 @@ export class Building extends Unit {
     constructor(system: System) {
         super(system);
 
-        this.stat("Actions").base = 0;
+        this.stat("Initiative").base = 0;
+        this.stat("Maîtrise").base = 0;
     }
 }

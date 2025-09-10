@@ -9,15 +9,14 @@ export class TourDArcher extends Building {
         super(system);
 
         this.init([["Or", 15]]);
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Flèche en bois").add("Main");
+            this.owner.getCard("Flèche en bois").add("Réserve");
         }
     };
 }

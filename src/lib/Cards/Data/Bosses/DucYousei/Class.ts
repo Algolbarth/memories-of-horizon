@@ -12,7 +12,6 @@ export class DucYousei extends Boss {
         this.familles.base.push("Gobelin");
 
         this.stat("Force").base = 10;
-        this.stat("Santé").base = 50;
-        this.stat("Santé").current = 50;
+        this.stat("Constitution").init(50);
     };
 }

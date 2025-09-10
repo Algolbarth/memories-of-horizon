@@ -47,8 +47,7 @@ export class Chocolat extends Item {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Santé").increase(5);
-            target.stat("Santé").current += 5;
+            target.stat("Constitution").increase(5);
             target.stat("Force").increase(5);
         }
         else {

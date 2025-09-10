@@ -12,8 +12,7 @@ export class CommissairePriseur extends Creature {
         this.init([["Or", 105]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -21,8 +20,8 @@ export class CommissairePriseur extends Creature {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            let hand = copy(this.owner.zone("Main").cards);
-            for (const card of hand) {
+            let reserve = copy(this.owner.zone("Réserve").cards);
+            for (const card of reserve) {
                 card.getSale("Or").increase(10);
             }
         }

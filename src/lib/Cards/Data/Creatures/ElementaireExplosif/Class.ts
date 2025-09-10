@@ -12,8 +12,7 @@ export class ElementaireExplosif extends Creature {
         this.init([["Feu", 50]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Santé").base = 50;
-        this.stat("Santé").current = 50;
+        this.stat("Constitution").init(50);
         this.stat("Force").base = 50;
 
         this.text = Text;

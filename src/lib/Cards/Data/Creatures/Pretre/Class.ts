@@ -12,8 +12,7 @@ export class Prêtre extends Creature {
         this.init([["Or", 20]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -56,8 +55,7 @@ export class Prêtre extends Creature {
 
     useEffect = function (target, choice) {
         if (choice == "life") {
-            target.stat("Santé").increase(15);
-            target.stat("Santé").current += 15;
+            target.stat("Constitution").increase(15);
         }
         else if (choice == "heal") {
             target.heal(20);

@@ -12,8 +12,7 @@ export class MageDesEaux extends Creature {
         this.init([["Or", 20], ["Eau", 20]]);
         this.familles.base.push("Ondin");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
         this.stat("Magie").base = 5;
 

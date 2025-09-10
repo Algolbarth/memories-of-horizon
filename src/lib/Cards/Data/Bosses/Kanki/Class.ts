@@ -12,7 +12,6 @@ export class Kanki extends Boss {
         this.familles.base.push("Humain");
 
         this.stat("Force").base = 25;
-        this.stat("Santé").base = 100;
-        this.stat("Santé").current = 100;
+        this.stat("Constitution").init(100);
     };
 }

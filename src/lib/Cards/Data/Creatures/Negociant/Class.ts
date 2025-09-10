@@ -13,8 +13,7 @@ export class Negociant extends Creature {
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -24,7 +23,7 @@ export class Negociant extends Creature {
         if (this.owner == this.system.game.player) {
             let check = false;
 
-            for (const card of this.owner.zone("Boutique").cards) {
+            for (const card of this.owner.zone("Pile").cards) {
                 if (check == false && card.getCost("Or").value() > 0) {
                     check = true;
                 }
@@ -40,7 +39,7 @@ export class Negociant extends Creature {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Boutique").cards) {
+            for (const card of this.owner.zone("Pile").cards) {
                 if (target == undefined && card.getCost("Or") > 0) {
                     target = card;
                 }

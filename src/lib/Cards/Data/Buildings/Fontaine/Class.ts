@@ -10,8 +10,7 @@ export class Fontaine extends Building {
         super(system);
 
         this.init([["Or", 10], ["Eau", 10]]);
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };

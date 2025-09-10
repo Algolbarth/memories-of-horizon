@@ -12,8 +12,7 @@ export class Barde extends Creature {
         this.init([["Or", 30]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -24,7 +23,7 @@ export class Barde extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 card.stat("Force").step += 5;
-                card.stat("Santé").current += 5;
+                card.stat("Vitalité").step += 5;
                 card.stat("Santé").step += 5;
             }
         }

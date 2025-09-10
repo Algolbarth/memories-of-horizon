@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 1 la taille du terrain allié.
+Augmente de 1 la taille de la réserve alliée.

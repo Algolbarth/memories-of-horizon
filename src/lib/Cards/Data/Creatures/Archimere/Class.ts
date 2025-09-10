@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -11,8 +12,7 @@ export class Archimere extends Creature {
         this.init([["Or", 100]]);
         this.familles.base.push("Bête", "Reptile");
 
-        this.stat("Santé").base = 25;
-        this.stat("Santé").current = 25;
+        this.stat("Constitution").init(25);
         this.stat("Force").base = 25;
 
         this.text = Text;
@@ -21,7 +21,7 @@ export class Archimere extends Creature {
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
             for (let i = 0; i < card.familles.total().length; i++) {
-                this.stat("Santé").current += 5;
+                this.stat("Vitalité").increase(5);
                 this.stat("Santé").increase(5);
                 this.stat("Force").increase(5);
             }

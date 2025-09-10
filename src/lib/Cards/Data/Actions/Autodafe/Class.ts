@@ -15,7 +15,7 @@ export class Autodafe extends Action {
     };
 
     canUse = function () {
-        if (this.owner.zone("Boutique").cards.length > 0 && (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
+        if (this.owner.zone("Pile").cards.length > 0 && (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
             return true;
         }
         return false;
@@ -24,8 +24,8 @@ export class Autodafe extends Action {
     useEffect = function () {
         let value = 0;
 
-        let shop = copy(this.owner.zone("Boutique").cards);
-        for (const card of shop) {
+        let stack = copy(this.owner.zone("Pile").cards);
+        for (const card of stack) {
             card.destroy();
             value++;
         }

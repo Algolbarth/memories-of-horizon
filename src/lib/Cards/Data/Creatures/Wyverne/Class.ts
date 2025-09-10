@@ -12,15 +12,14 @@ export class Wyverne extends Creature {
         this.init([["Or", 50]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Santé").base = 25;
-        this.stat("Santé").current = 25;
+        this.stat("Constitution").init(25);
         this.stat("Force").base = 25;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card: Card) {
-        if (this.zone.name == "Boutique" && card.owner == this.owner) {
+        if (this.zone.name == "Pile" && card.owner == this.owner) {
             this.costReduce(5);
         }
     };

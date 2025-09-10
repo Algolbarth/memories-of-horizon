@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
@@ -11,8 +12,7 @@ export class BibliothequeElfique extends Building {
         this.init([["Or", 25], ["Végétal", 25]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

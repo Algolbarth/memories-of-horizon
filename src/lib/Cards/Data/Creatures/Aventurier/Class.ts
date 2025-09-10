@@ -13,8 +13,7 @@ export class Aventurier extends Creature {
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 8;
-        this.stat("Santé").current = 8;
+        this.stat("Constitution").init(8);
         this.stat("Force").base = 8;
 
         this.text = Text;

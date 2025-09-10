@@ -9,16 +9,37 @@ export class Unit extends Card {
 
         this.addTrait("Inactif", false);
         this.trait("Inactif").value = function () {
-            if (this.card.stat("Actions").value() == 0) {
+            if (this.card.stat("Maîtrise").value() == 0) {
                 return true;
             }
             return false;
         };
 
-        this.addStat("Santé", 1, 1);
-        this.stat("Santé").current = 1;
+        this.addStat("Santé", 1);
         this.stat("Santé").condition = function () {
             return true;
+        };
+
+        this.addStat("Vitalité", 1, 1);
+        this.stat("Vitalité").condition = function () {
+            return true;
+        };
+
+        this.addStat("Constitution", 0);
+        this.stat("Constitution").condition = function () {
+            return false;
+        };
+        this.stat("Constitution").increase = function (value: number) {
+            this.card.stat("Santé").increase(value);
+            this.card.stat("Vitalité").increase(value);
+        };
+        this.stat("Constitution").decrease = function (value: number) {
+            this.card.stat("Santé").decrease(value);
+            this.card.stat("Vitalité").decrease(value);
+        };
+        this.stat("Constitution").init = function (value: number) {
+            this.card.stat("Santé").base = value;
+            this.card.stat("Vitalité").base = value;
         };
 
         this.addStat("Endurance", 0);
@@ -27,9 +48,16 @@ export class Unit extends Card {
 
         this.addStat("Garde", 0);
 
-        this.addStat("Actions", 1);
-        this.stat("Actions").current = 1;
-        this.stat("Actions").condition = function () {
+        this.addStat("Initiative", 1);
+        this.stat("Initiative").condition = function () {
+            if (this.card.system.game?.phase == "Combat" || this.value() != this.card.stat("Maîtrise").value()) {
+                return true;
+            }
+            return false;
+        };
+
+        this.addStat("Maîtrise", 1);
+        this.stat("Maîtrise").condition = function () {
             if (this.value() > 1) {
                 return true;
             }
@@ -64,18 +92,18 @@ export class Unit extends Card {
     };
 
     heal = function (value: number) {
-        this.stat("Santé").current += value;
-        if (this.stat("Santé").current > this.stat("Santé").value()) {
-            this.stat("Santé").current = this.stat("Santé").value();
+        this.stat("Santé").increase(value);
+        if (this.stat("Santé").value() > this.stat("Vitalité").value()) {
+            this.stat("Santé").set(this.stat("Vitalité").value());
         }
     };
 
     fullHeal = function () {
-        this.stat("Santé").current = this.stat("Santé").value();
+        this.stat("Santé").set(this.stat("Vitalité").value());
     };
 
     isDamaged = function () {
-        return this.stat("Santé").current < this.stat("Santé").value();
+        return this.stat("Santé").value() < this.stat("Vitalité").value();
     };
 
     damageByEffect = function (value: number) {
@@ -97,7 +125,6 @@ export class Unit extends Card {
         }
 
         if (this.stat("Esquive").value() == 0) {
-            result.value -= this.stat("Endurance").value();
             if (result.value < 0) {
                 result.value = 0;
             }
@@ -111,9 +138,9 @@ export class Unit extends Card {
                 this.stat("Garde").remove(this.stat("Garde").value());
             }
 
-            this.stat("Santé").current -= result.value;
+            this.stat("Santé").remove(result.value);
 
-            if (this.stat("Santé").current <= 0) {
+            if (this.stat("Santé").value() <= 0) {
                 result.die = true;
                 this.die();
             }
@@ -127,7 +154,7 @@ export class Unit extends Card {
     };
 
     die = function () {
-        this.stat("Santé").current = 0;
+        this.stat("Santé").base = 0;
 
         if (this.dieEffect != undefined) {
             this.dieEffect();
@@ -157,8 +184,6 @@ export class Unit extends Card {
         this.dieGo();
     };
 
-
-
     dieGo = function () {
         this.move("Défausse");
     };
@@ -170,7 +195,7 @@ export class Unit extends Card {
     };
 
     play = function () {
-        this.stat("Actions").current--;
+        this.stat("Initiative").decrease(1);
 
         if (this.playEffect != undefined) {
             this.playEffect();

@@ -10,8 +10,7 @@ export class TourDeSiege extends Building {
         super(system);
 
         this.init([["Or", 40]]);
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };
@@ -30,7 +29,7 @@ export class TourDeSiege extends Building {
             if (target != undefined) {
                 target.stat("Force").increase(10);
                 target.stat("Santé").increase(10);
-                target.stat("Santé").current += 10;
+                target.stat("Vitalité").increase(10);
             }
         }
     };

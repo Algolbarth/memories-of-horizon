@@ -8,7 +8,6 @@ export class Muraille extends Building {
         super(system);
 
         this.init([["Or", 100]]);
-        this.stat("Santé").base = 200;
-        this.stat("Santé").current = 200;
+        this.stat("Constitution").init(200);
     };
 }

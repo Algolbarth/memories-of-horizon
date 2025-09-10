@@ -11,8 +11,7 @@ export class Phytomancien extends Creature {
         this.init([["Or", 12], ["Végétal", 12]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -21,7 +20,7 @@ export class Phytomancien extends Creature {
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Végétal") && card.owner == this.owner) {
             this.stat("Santé").increase(3);
-            this.stat("Santé").current += 3;
+            this.stat("Vitalité").increase(3);
         }
     };
 }

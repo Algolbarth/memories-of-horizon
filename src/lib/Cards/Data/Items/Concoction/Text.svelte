@@ -37,7 +37,7 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 	{/if}
 
 	{#if card.stat("Infusion interdite").value() > 0}
-		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la force et la santé de cette carte.
+		Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la force et la constitution de cette carte.
 		<br />
 	{/if}
 

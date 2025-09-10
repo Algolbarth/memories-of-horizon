@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Augmente de 15 la santé d'une créature alliée sur le terrain.
+Augmente de 15 la constitution d'une créature alliée sur le terrain.
 <br />
 <br />
-Sorcellerie 15 : augmente la santé de 30 à la place.
+Sorcellerie 15 : augmente la constitution de 30 à la place.

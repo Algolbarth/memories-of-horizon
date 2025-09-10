@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 5 la force et la santé de toutes les créatures de famille Bête sur le terrain.
+Quand posé : augmente de 5 la force et la constitution de toutes les créatures de famille Bête sur le terrain.

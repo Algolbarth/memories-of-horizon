@@ -12,8 +12,7 @@ export class Roi extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
 
         this.text = Text;
@@ -24,7 +23,7 @@ export class Roi extends Creature {
         for (const card of terrain) {
             if (card.type == "Créature") {
                 card.stat("Force").increase(10);
-                card.stat("Santé").current += 10;
+                card.stat("Vitalité").increase(10);
                 card.stat("Santé").increase(10);
             }
         }

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : dépense 20 or pour fixer à 1 sa santé courante et rester sur le terrain.
+Quand meurt : dépense 20 or pour fixer à 1 sa constitution courante et rester sur le terrain.

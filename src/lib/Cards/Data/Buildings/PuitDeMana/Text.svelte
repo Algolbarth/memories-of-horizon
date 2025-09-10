@@ -10,4 +10,4 @@
 
 Au début de la phase de préparation : crée
 <CardInfo bind:system name={"Potion de mana"} />
-dans la main.
+dans la réserve.

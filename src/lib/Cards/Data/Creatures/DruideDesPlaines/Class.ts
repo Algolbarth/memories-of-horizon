@@ -43,8 +43,7 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 12;
-        this.stat("Santé").current = 12;
+        this.stat("Constitution").init(12);
         this.stat("Force").base = 12;
     };
 
@@ -66,8 +65,7 @@ export class DruideDesPlainesLoup extends DruideDesPlaines {
 
         this.trait("Rare").base = true;
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 30;
     };
 }

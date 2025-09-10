@@ -13,8 +13,7 @@ export class ElementaireDeRoche extends Creature {
         this.init([["Terre", 50]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Santé").base = 40;
-        this.stat("Santé").current = 40;
+        this.stat("Constitution").init(40);
         this.stat("Force").base = 40;
         this.stat("Endurance").base = 10;
 

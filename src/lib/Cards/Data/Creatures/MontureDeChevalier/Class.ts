@@ -12,8 +12,7 @@ export class MontureDeChevalier extends Creature {
         this.init([["Or", 110]]);
         this.familles.base.push("Bête");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
 
         this.text = Text;
@@ -56,7 +55,7 @@ export class MontureDeChevalier extends Creature {
 
     useEffect = function (target: Creature) {
         if (target != undefined) {
-            target.move("Main");
+            target.move("Réserve");
             target.transform(target.otherForm);
         }
         this.move("Terrain");

@@ -18,7 +18,7 @@ export class Biere extends Item {
 
     canUse = function () {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").current < 100)) {
+            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class Biere extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                     target = card;
                 }
             }
@@ -47,9 +47,9 @@ export class Biere extends Item {
     useEffect = function (target: Creature) {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Critique").current += 50;
-            if (target.stat("Critique").current > 100) {
-                target.stat("Critique").current = 100;
+            target.stat("Critique").increase(50);
+            if (target.stat("Critique").value() > 100) {
+                target.stat("Critique").set(100);
             }
         }
         else {

@@ -28,7 +28,7 @@
 				choice = "life";
 			}}
 		>
-			Augmente de 15 la santé d'une créature alliée sur le terrain
+			Augmente de 15 la constitution d'une créature alliée sur le terrain
 		</button>
 
 		<br />

@@ -45,7 +45,7 @@ export class PasseDArmes extends Action {
 
     useEffect = function (target: Creature) {
         for (const equipment of target.equipments) {
-            equipment.move("Main");
+            equipment.move("Réserve");
         }
         this.move("Défausse");
         this.pose();

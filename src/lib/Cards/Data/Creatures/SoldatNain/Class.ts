@@ -12,8 +12,7 @@ export class SoldatNain extends Creature {
         this.init([["Or", 18], ["Terre", 18]]);
         this.familles.base.push("Nain");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
         this.stat("Endurance").base = 5;
 
@@ -26,7 +25,7 @@ export class SoldatNain extends Creature {
             for (const card of terrain) {
                 if (card.type == "Bâtiment") {
                     this.stat("Force").increase(2);
-                    this.stat("Santé").current += 2;
+                    this.stat("Vitalité").increase(2);
                     this.stat("Santé").increase(2);
                 }
             }

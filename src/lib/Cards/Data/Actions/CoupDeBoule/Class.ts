@@ -36,7 +36,7 @@ export class CoupDeBoule extends Action {
         }
 
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (target.stat("Santé").value() < card.stat("Santé").value()) {
+            if (target.stat("Vitalité").value() < card.stat("Vitalité").value()) {
                 target = card;
             }
         }

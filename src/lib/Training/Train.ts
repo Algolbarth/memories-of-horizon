@@ -33,9 +33,9 @@ export class TrainEntity {
     gold: number = 0;
     flux: number = 0;
     zones: TrainZone[] = [
-        new TrainZone("Lieux", 3, undefined, ["Plaine"]),
-        new TrainZone("Boutique", 10, 1),
-        new TrainZone("Main", 10),
+        new TrainZone("Région", 3, undefined, ["Plaine"]),
+        new TrainZone("Pile", 10, 1),
+        new TrainZone("Réserve", 10),
         new TrainZone("Terrain", 10),
         new TrainZone("Défausse"),
     ];

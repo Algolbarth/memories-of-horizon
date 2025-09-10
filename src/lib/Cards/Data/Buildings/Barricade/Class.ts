@@ -8,7 +8,6 @@ export class Barricade extends Building {
         super(system);
 
         this.init([["Or", 10]]);
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
     };
 }

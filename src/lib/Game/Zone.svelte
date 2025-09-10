@@ -2,7 +2,7 @@
 	import type { System } from "../System/Class";
 	import type { Entity } from "./Entity";
 	import Preview from "./Preview.svelte";
-	import { Shop } from "./Shop";
+	import { Stack } from "./Stack";
 	import type { Zone } from "./Zone";
 
 	export let system: System;
@@ -16,20 +16,20 @@
 {#if system.game}
 	<div class={"zone " + direction}>
 		{zone.name}
-		{#if zone instanceof Shop}
+		{#if zone instanceof Stack}
 			Nv {zone.level}
 		{/if}
 		{#if zone.name != "Défausse"}
 			- ({zone.cards.length} / {zone.size})
 		{/if}
-		{#if zone instanceof Shop}
+		{#if zone instanceof Stack}
 			{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
 				-
-				{#if entity.canActualiseShop()}
+				{#if entity.canActualiseStack()}
 					<button
 						class="check"
 						on:click={() => {
-							entity.actualiseShop();
+							entity.actualiseStack();
 							system = system;
 						}}
 					>
@@ -42,11 +42,11 @@
 			{/if}
 			{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
 				-
-				{#if entity.canUpShop()}
+				{#if entity.canUpStack()}
 					<button
 						class="check"
 						on:click={() => {
-							entity.upShop();
+							entity.upStack();
 							system = system;
 						}}
 					>

@@ -11,8 +11,7 @@ export class LanceurDeBouleDeFeu extends Creature {
         this.init([["Or", 20], ["Feu", 20]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Santé").base = 3;
-        this.stat("Santé").current = 3;
+        this.stat("Constitution").init(3);
         this.stat("Force").base = 10;
         this.stat("Magie").base = 15;
 
@@ -21,7 +20,7 @@ export class LanceurDeBouleDeFeu extends Creature {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Boule de feu").add("Boutique");
+            this.owner.getCard("Boule de feu").add("Pile");
         }
     };
 }

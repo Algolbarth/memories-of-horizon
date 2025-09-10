@@ -29,20 +29,20 @@ export class Game extends Battle {
             this.player.life.set(this.system.train.player.life);
             this.player.ressource("Or").max = this.system.train.player.gold;
             this.player.ressource("Flux").stock = this.system.train.player.flux;
-            this.player.zone("Boutique").level = this.system.train.player.zones[1].level;
+            this.player.zone("Pile").level = this.system.train.player.zones[1].level;
             for (const zone of this.system.train.player.zones) {
                 this.player.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
                     this.player.getCard(card_name).add(zone.name);
                 }
             }
-            this.player.place = this.player.zone("Lieux").cards[0];
+            this.player.place = this.player.zone("Région").cards[0];
 
             this.bot.life.set(this.system.train.bot.life);
             this.bot.ressource("Or").max = this.system.train.bot.gold;
             this.bot.ressource("Or").current = this.system.train.bot.gold;
             this.bot.ressource("Flux").stock = this.system.train.bot.flux;
-            this.bot.zone("Boutique").level = this.system.train.bot.zones[1].level;
+            this.bot.zone("Pile").level = this.system.train.bot.zones[1].level;
             for (const zone of this.system.train.bot.zones) {
                 this.bot.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
@@ -51,7 +51,7 @@ export class Game extends Battle {
                     card.cache = false;
                 }
             }
-            this.bot.place = this.bot.zone("Lieux").cards[0];
+            this.bot.place = this.bot.zone("Région").cards[0];
 
             this.startStep();
         }
@@ -60,8 +60,8 @@ export class Game extends Battle {
             this.player.ressource("Or").max = 4;
             this.player.ressource("Flux").stock = 4;
 
-            this.player.getCard("Plaine").add("Lieux");
-            this.player.place = this.player.zone("Lieux").cards[0];
+            this.player.getCard("Plaine").add("Région");
+            this.player.place = this.player.zone("Région").cards[0];
 
             this.player.getCard("Humain").add("Terrain");
 
@@ -102,9 +102,9 @@ export class Game extends Battle {
 
         this.bot.life.set(this.chapter.steps[0].life);
 
-        this.bot.zone("Lieux").cards = [];
-        this.bot.getCard(this.chapter.steps[0].place).add("Lieux");
-        this.bot.place = this.bot.zone("Lieux").cards[0];
+        this.bot.zone("Région").cards = [];
+        this.bot.getCard(this.chapter.steps[0].place).add("Région");
+        this.bot.place = this.bot.zone("Région").cards[0];
 
         this.startStep();
     };
@@ -115,7 +115,7 @@ export class Game extends Battle {
         }
 
         if (this.mode != "Entraînement") {
-            this.player.refreshShop();
+            this.player.refreshStack();
         }
 
         for (const entity of [this.player, this.bot]) {
@@ -179,9 +179,9 @@ export class Game extends Battle {
 
                 this.system.game.bot.life.set(this.chapter.steps[this.system.game.player.step - 1].life);
 
-                this.bot.zone("Lieux").cards = [];
-                this.bot.getCard(this.chapter.steps[this.system.game.player.step - 1].place).add("Lieux");
-                this.bot.place = this.bot.zone("Lieux").cards[0];
+                this.bot.zone("Région").cards = [];
+                this.bot.getCard(this.chapter.steps[this.system.game.player.step - 1].place).add("Région");
+                this.bot.place = this.bot.zone("Région").cards[0];
 
                 this.startStep();
                 this.bot.play();

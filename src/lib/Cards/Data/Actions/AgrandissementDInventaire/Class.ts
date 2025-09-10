@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class Etendre extends Action {
-    name = "Étendre";
+export class AgrandissementDInventaire extends Action {
+    name = "Agrandissement d'inventaire";
 
     constructor(system: System) {
         super(system);
@@ -14,7 +14,7 @@ export class Etendre extends Action {
     };
 
     useEffect = function () {
-        this.owner.zone("Terrain").size++;
+        this.owner.zone("Réserve").size++;
 
         this.move("Défausse");
         this.pose();

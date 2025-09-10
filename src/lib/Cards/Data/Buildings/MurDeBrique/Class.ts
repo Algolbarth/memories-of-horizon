@@ -8,7 +8,6 @@ export class MurDeBrique extends Building {
         super(system);
 
         this.init([["Or", 25]]);
-        this.stat("Santé").base = 50;
-        this.stat("Santé").current = 50;
+        this.stat("Constitution").init(50);
     };
 }

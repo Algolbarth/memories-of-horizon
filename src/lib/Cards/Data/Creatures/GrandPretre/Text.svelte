@@ -10,6 +10,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Augmente de 10 la santé de toutes les créatures alliées sur le terrain.</li>
+	<li>Augmente de 10 la constitution de toutes les créatures alliées sur le terrain.</li>
 	<li>Soigne 20 blessures à toutes les créatures alliées sur le terrain.</li>
 </ul>

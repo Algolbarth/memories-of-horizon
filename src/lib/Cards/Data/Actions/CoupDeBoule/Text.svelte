@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige à l'unité adverse avec la plus haute santé maximale sur le terrain autant de dégâts que la valeur de force la plus haute parmi les créatures alliées sur le terrain.
+Inflige à l'unité adverse avec la plus haute vitalité sur le terrain autant de dégâts que la valeur de force la plus haute parmi les créatures alliées sur le terrain.

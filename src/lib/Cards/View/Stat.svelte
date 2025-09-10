@@ -8,14 +8,29 @@
 	<i>Statistiques</i>
 	<br />
 
-	{#each card.stats as stat}
-		{#if stat.condition()}
-			{stat.name} :
-			{#if stat.current != undefined}
-				{stat.current} /
+	<div class="container">
+		{#each card.stats as stat}
+			{#if stat.condition()}
+				<div class="row">
+					<div>
+						{stat.name}
+					</div>
+					<div>
+						{stat.value()}
+					</div>
+				</div>
 			{/if}
-			{stat.value()}
-			<br />
-		{/if}
-	{/each}
+		{/each}
+	</div>
 </div>
+
+<style>
+	div.container {
+		display: grid;
+	}
+
+	div.row {
+		display: grid;
+		grid-template-columns: 12em 4fr;
+	}
+</style>

@@ -11,7 +11,7 @@ export class DoublesLamesDeCuivre extends Equipment {
         this.init([["Or", 20]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Multicoup").base = 1;
+        this.equipStat("Agilité").base = 1;
 
         this.text = Text;
     };

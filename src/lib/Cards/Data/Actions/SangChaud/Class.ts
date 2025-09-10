@@ -44,7 +44,7 @@ export class SangChaud extends Action {
     };
 
     useEffect = function (target: Creature) {
-        target.stat("Critique").current = 100;
+        target.stat("Critique").set(100);
         this.move("Défausse");
         this.pose();
     };

@@ -11,8 +11,7 @@ export class MageDeLaTerre extends Creature {
         this.init([["Or", 20], ["Terre", 20]]);
         this.familles.base.push("Nain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
         this.stat("Endurance").base = 3;
         this.stat("Magie").base = 5;
@@ -22,7 +21,7 @@ export class MageDeLaTerre extends Creature {
 
     otherPoseEffect = function (card: Card) {
         if (this.zone.name == "Terrain" && card.familles.total().includes("Sort") && card.owner == this.owner) {
-            this.owner.getCard("Élémentaire de caillou").add("Main");
+            this.owner.getCard("Élémentaire de caillou").add("Réserve");
         }
     };
 }

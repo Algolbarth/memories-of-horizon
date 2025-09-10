@@ -45,7 +45,7 @@ export class Repos extends Action {
 
     useEffect = function (target: Creature) {
         target.fullHeal();
-        target.move("Boutique");
+        target.move("Pile");
         this.move("Défausse");
         this.pose();
     };

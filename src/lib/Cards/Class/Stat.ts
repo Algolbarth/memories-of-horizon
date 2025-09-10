@@ -7,7 +7,6 @@ export class Stat {
     step: number = 0;
     turn: number = 0;
     min: number;
-    current: number | undefined;
     card: Card;
     debuff: boolean = false;
 
@@ -28,10 +27,6 @@ export class Stat {
 
         if (total < this.min) {
             total = this.min;
-        }
-
-        if (this.current != undefined && this.current > total) {
-            this.current = total;
         }
 
         return total;
@@ -73,7 +68,7 @@ export class Stat {
     };
 
     condition = function () {
-        if (this.value() > 0 || this.current > 0) {
+        if (this.value() > this.min) {
             return true;
         }
     };

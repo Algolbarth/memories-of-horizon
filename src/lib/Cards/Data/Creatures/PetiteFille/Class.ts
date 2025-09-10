@@ -12,8 +12,7 @@ export class PetiteFille extends Creature {
         this.init([["Or", 10]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 1;
-        this.stat("Santé").current = 1;
+        this.stat("Constitution").init(1);
         this.stat("Force").base = 1;
 
         this.text = Text;

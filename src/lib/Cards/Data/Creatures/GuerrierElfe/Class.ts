@@ -11,8 +11,7 @@ export class GuerrierElfe extends Creature {
         this.init([["Or", 8], ["Végétal", 8]]);
         this.familles.base.push("Elfe");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
         this.stat("Endurance").base = 5;
 
@@ -21,7 +20,7 @@ export class GuerrierElfe extends Creature {
 
     useEffect = function () {
         if (this.owner.totalIntelligence() >= 20) {
-            this.stat("Santé").current += 10;
+            this.stat("Vitalité").increase(10);
             this.stat("Santé").increase(10);
             this.stat("Force").increase(10);
             this.stat("Endurance").increase(5);

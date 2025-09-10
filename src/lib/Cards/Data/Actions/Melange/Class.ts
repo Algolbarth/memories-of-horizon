@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Objet } from '../../../Class/Item';
+import type { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Melange extends Action {
 
     canUse = function () {
         let nb_potion = 0;
-        for (const card of this.owner.zone("Main").cards) {
+        for (const card of this.owner.zone("Réserve").cards) {
             if (card.familles.total().includes("Potion")) {
                 nb_potion++;
                 if (nb_potion > 1) {
@@ -36,7 +36,7 @@ export class Melange extends Action {
             let potion_1 = undefined;
             let potion_2 = undefined;
 
-            for (const card of this.owner.zone("Main").cards) {
+            for (const card of this.owner.zone("Réserve").cards) {
                 if (potion_1 == undefined && card.familles.total().includes("Potion")) {
                     potion_1 = card;
                 }
@@ -51,7 +51,7 @@ export class Melange extends Action {
         }
     };
 
-    useEffect = function (potion_1: Objet, potion_2: Objet) {
+    useEffect = function (potion_1: Item, potion_2: Item) {
         potion_1.remove();
         potion_2.remove();
 
@@ -59,7 +59,7 @@ export class Melange extends Action {
         concoction.infuse(potion_1);
         concoction.infuse(potion_2);
 
-        concoction.add("Main");
+        concoction.add("Réserve");
         this.move("Défausse");
         this.pose();
     };

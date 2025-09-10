@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand <CardInfo bind:system name={"Boule de feu"} /> est posée : crée <CardInfo bind:system name={"Boule de feu"} /> dans la boutique.
+Quand <CardInfo bind:system name={"Boule de feu"} /> est posée : crée <CardInfo bind:system name={"Boule de feu"} /> dans la pile.

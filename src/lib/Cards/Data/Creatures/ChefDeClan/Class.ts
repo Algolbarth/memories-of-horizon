@@ -12,8 +12,7 @@ export class ChefDeClan extends Creature {
         this.init([["Or", 55], ["Feu", 55]]);
         this.familles.base.push("Gobelin");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
 
         this.text = Text;

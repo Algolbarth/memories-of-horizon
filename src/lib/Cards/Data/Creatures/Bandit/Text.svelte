@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : dépense 5 or pour augmenter de 5 sa force et sa santé.
+Quand posé : dépense 5 or pour augmenter de 5 sa force et sa constitution.

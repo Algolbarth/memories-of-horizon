@@ -26,17 +26,17 @@
 					<span class="card">Concotion</span> est un objet potion regroupant plusieurs effets de potions différentes.
 				</li>
 				<li>
-					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la main.
+					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la réserve.
 				</li>
 				<li>
 					<span class="card">Chaudron</span> est un bâtiment créant
-					<span class="card">Mélange</span> dans la main à chaque tour.
+					<span class="card">Mélange</span> dans la réserve à chaque tour.
 				</li>
 				<li>
-					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en main à chaque étape.
+					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en réserve à chaque étape.
 				</li>
 				<li>
-					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en main.
+					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en réserve.
 				</li>
 			</ul>
 		</li>
@@ -76,7 +76,7 @@
 			et <span class="card">Négociant</span>.
 		</li>
 		<li>
-			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 force -> 50 force, 10 santé -> 50 santé.
+			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 force -> 50 force, 10 constitution -> 50 constitution.
 		</li>
 	</ul>
 </div>

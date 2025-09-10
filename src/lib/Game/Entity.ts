@@ -1,7 +1,7 @@
 import type { Card } from "../Cards/Class";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
-import { Shop } from "./Shop";
+import { Stack } from "./Stack";
 import { Zone } from "./Zone";
 
 export class Entity {
@@ -14,9 +14,9 @@ export class Entity {
         }
     };
     zones: Zone[] = [
-        new Zone("Lieux", 3),
-        new Shop(),
-        new Zone("Main", 10),
+        new Zone("Région", 3),
+        new Stack(),
+        new Zone("Réserve", 10),
         new Zone("Terrain", 10),
         new Zone("Défausse")
     ];
@@ -76,7 +76,7 @@ export class Entity {
 
         if (this.system.game.deck == undefined) {
             for (const card of this.system.cards.instance) {
-                if (this.place && this.place.condition(card) && card.level <= this.zone("Boutique").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (condition == undefined || condition(card, drawer))) {
+                if (this.place && this.place.condition(card) && card.level <= this.zone("Pile").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (condition == undefined || condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }
@@ -84,7 +84,7 @@ export class Entity {
         else {
             for (const c of this.system.game.deck.cards) {
                 let card = this.system.cards.getByName(c);
-                if (this.place && this.place.condition(card) && card.level <= this.zone("Boutique").level) {
+                if (this.place && this.place.condition(card) && card.level <= this.zone("Pile").level) {
                     nameList.push(c);
                 }
             }
@@ -99,7 +99,7 @@ export class Entity {
 
         if (nameList.length > 0) {
             card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card?.add("Boutique");
+            card?.add("Pile");
         }
 
         array.push(card);
@@ -114,7 +114,7 @@ export class Entity {
         let nameList: string[] = this.cardList(condition, drawer);
         let card = undefined;
 
-        for (const card of this.zone("Boutique").cards) {
+        for (const card of this.zone("Pile").cards) {
             if (nameList.includes(card.name)) {
                 nameList.splice(nameList.indexOf(card.name), 1);
             }
@@ -122,7 +122,7 @@ export class Entity {
 
         if (nameList.length > 0) {
             card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card.add("Boutique");
+            card.add("Pile");
         }
 
         array.push(card);
@@ -133,50 +133,50 @@ export class Entity {
         return array
     };
 
-    canUpShop = function () {
-        if (this.ressource("Or").total() >= this.zone("Boutique").level * 10) {
+    canUpStack = function () {
+        if (this.ressource("Or").total() >= this.zone("Pile").level * 10) {
             return true;
         }
         return false;
     };
 
-    upShop = function () {
-        if (this.canUpShop()) {
-            this.ressource("Or").spend(this.zone("Boutique").level * 10);
-            this.zone("Boutique").level++;
-            this.refreshShop();
+    upStack = function () {
+        if (this.canUpStack()) {
+            this.ressource("Or").spend(this.zone("Pile").level * 10);
+            this.zone("Pile").level++;
+            this.refreshStack();
         }
     };
 
-    canActualiseShop = function () {
+    canActualiseStack = function () {
         if (this.ressource("Or").total() >= 10) {
             return true;
         }
         return false;
     };
 
-    actualiseShop = function () {
-        if (this.canActualiseShop()) {
+    actualiseStack = function () {
+        if (this.canActualiseStack()) {
             this.ressource("Or").spend(10);
-            this.refreshShop();
+            this.refreshStack();
         }
     };
 
-    refreshShop = function () {
-        let boutique = copy(this.zone("Boutique").cards);
-        for (const card of boutique) {
+    refreshStack = function () {
+        let stack = copy(this.zone("Pile").cards);
+        for (const card of stack) {
             if (!card.locked) {
                 card.remove();
             }
         }
-        if (this.zone("Boutique").cards.length < 5) {
-            this.draw(5 - this.zone("Boutique").cards.length);
+        if (this.zone("Pile").cards.length < 5) {
+            this.draw(5 - this.zone("Pile").cards.length);
         }
     };
 
     isFullLocked = function () {
         let check = true;
-        for (const card of this.zone("Boutique").cards) {
+        for (const card of this.zone("Pile").cards) {
             if (!card.locked) {
                 check = false;
             }
@@ -186,12 +186,12 @@ export class Entity {
 
     lock = function () {
         if (this.isFullLocked()) {
-            for (const card of this.zone("Boutique").cards) {
+            for (const card of this.zone("Pile").cards) {
                 card.unlock();
             }
         }
         else {
-            for (const card of this.zone("Boutique").cards) {
+            for (const card of this.zone("Pile").cards) {
                 card.lock();
             }
         }
@@ -202,11 +202,11 @@ export class Entity {
         while (playable) {
             playable = false;
 
-            for (let i = 0; i < this.zone("Main").cards.length; i++) {
-                let card = this.zone("Main").cards[i];
+            for (let i = 0; i < this.zone("Réserve").cards.length; i++) {
+                let card = this.zone("Réserve").cards[i];
                 if (card.canUse()) {
                     card.use();
-                    if (card.zone == undefined || card.zone.name != "Main") {
+                    if (card.zone == undefined || card.zone.name != "Réserve") {
                         i--;
                         playable = true;
                     }
@@ -214,8 +214,8 @@ export class Entity {
             }
         }
 
-        let boutique = copy(this.zone("Boutique").cards);
-        for (const card of boutique) {
+        let stack = copy(this.zone("Pile").cards);
+        for (const card of stack) {
             card.buy();
         }
 
@@ -227,7 +227,7 @@ export class Entity {
             if (this.step < this.system.game.chapter.steps.length) {
                 for (const name of this.system.game.chapter.steps[this.step].cards) {
                     let card = this.getCard(name, this);
-                    card.add("Boutique");
+                    card.add("Pile");
                 }
             }
             this.step++;

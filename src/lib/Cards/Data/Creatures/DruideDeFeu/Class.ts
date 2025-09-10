@@ -43,8 +43,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
 
         this.familles.base.push("Gobelin");
 
-        this.stat("Santé").base = 35;
-        this.stat("Santé").current = 35;
+        this.stat("Constitution").init(35);
         this.stat("Force").base = 35;
     };
 
@@ -66,8 +65,7 @@ export class DruideDeFeuLezard extends DruideDeFeu {
 
         this.trait("Rare").base = true;
 
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
         this.stat("Force").base = 20;
         this.stat("Adresse").base = 25;
     };

@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation, quand équipé : crée une créature du même nom que la créature équipée dans la boutique.
+Au début de la phase de préparation, quand équipé : crée une créature du même nom que la créature équipée dans la pile.

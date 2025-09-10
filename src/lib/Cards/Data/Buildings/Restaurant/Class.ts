@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
-import type { Objet } from '../../../Class/Item';
+import type { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -12,8 +12,7 @@ export class Restaurant extends Building {
         super(system);
 
         this.init([["Or", 35]]);
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };
@@ -21,7 +20,7 @@ export class Restaurant extends Building {
     select = function () {
         let check = undefined;
 
-        for (const card of this.owner.zone("Main").cards) {
+        for (const card of this.owner.zone("Réserve").cards) {
             if (check == undefined && card.type == "Objet" && card.familles.total().includes("Nourriture")) {
                 check = card;
             }
@@ -40,7 +39,7 @@ export class Restaurant extends Building {
         }
     };
 
-    useEffect = function (target: Objet | undefined) {
+    useEffect = function (target: Item | undefined) {
         if (target != undefined) {
             this.product = target.name;
         }
@@ -50,7 +49,7 @@ export class Restaurant extends Building {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain" && this.product != undefined) {
-            this.owner.getCard(this.product).add("Main");
+            this.owner.getCard(this.product).add("Réserve");
         }
     };
 }

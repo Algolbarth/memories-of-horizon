@@ -10,8 +10,7 @@ export class CarriereDePierre extends Building {
 
         this.init([["Or", 15], ["Terre", 15]]);
 
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

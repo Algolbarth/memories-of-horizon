@@ -11,8 +11,7 @@ export class Bandit extends Creature {
         this.init([["Or", 5]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 5;
-        this.stat("Santé").current = 5;
+        this.stat("Constitution").init(5);
         this.stat("Force").base = 5;
 
         this.text = Text;
@@ -23,7 +22,7 @@ export class Bandit extends Creature {
             this.owner.ressource("Or").spend(5);
             this.stat("Force").increase(5);
             this.stat("Santé").increase(5);
-            this.stat("Santé").current += 5;
+            this.stat("Vitalité").increase(5);
         }
         this.move("Terrain");
         this.pose();

@@ -12,8 +12,7 @@ export class SeigneurOndin extends Creature {
         this.init([["Or", 55], ["Eau", 55]]);
         this.familles.base.push("Ondin");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
 
         this.text = Text;
@@ -25,7 +24,7 @@ export class SeigneurOndin extends Creature {
             if (card.type == "Créature") {
                 this.owner.ressource("Eau").current += 5;
                 card.stat("Force").increase(5);
-                card.stat("Santé").current += 5;
+                card.stat("Vitalité").increase(5);
                 card.stat("Santé").increase(5);
             }
         }

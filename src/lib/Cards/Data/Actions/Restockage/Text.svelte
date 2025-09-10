@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Actualise la boutique.
+Actualise la pile.

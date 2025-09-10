@@ -2,12 +2,12 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-	import type { Objet } from "../../../Class/Item";
+	import type { Item } from "../../../Class/Item";
 
 	export let system: System;
 
-	let potion_1: Objet | undefined;
-	let potion_2: Objet | undefined;
+	let potion_1: Item | undefined;
+	let potion_2: Item | undefined;
 
 	function condition(card: Card) {
 		if (card.type == "Objet" && card.familles.total().includes("Potion") && (potion_1 == undefined || card != potion_1)) {
@@ -29,7 +29,7 @@
 </script>
 
 {#if potion_1 == undefined}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Main")} {condition} {fonction} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} {fonction} />
 {:else}
 	<button
 		on:click={() => {
@@ -38,5 +38,5 @@
 	>
 		Retour
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Main")} {condition} fonction={fonction2} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} fonction={fonction2} />
 {/if}

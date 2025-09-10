@@ -17,7 +17,7 @@ export class Couronne extends Equipment {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner) {
             card.stat("Force").increase(this.bearer.level);
             card.stat("Santé").increase(this.bearer.level);
-            card.stat("Santé").current += this.bearer.level;
+            card.stat("Vitalité").increase(this.bearer.level);
         }
     };
 }

@@ -10,8 +10,7 @@ export class Garde extends Creature {
         this.init([["Or", 20]]);
         this.familles.base.push("Humain");
 
-        this.stat("Santé").base = 10;
-        this.stat("Santé").current = 10;
+        this.stat("Constitution").init(10);
         this.stat("Force").base = 10;
         this.stat("Protection").base = 1;
     };

@@ -40,7 +40,7 @@
 		{#if is_player || fonction != undefined}
 			<div id="actions">
 				{#if system.game.phase == "Préparation" && fonction == undefined}
-					{#if card.zone.name == "Main" || card.zone.name == "Terrain"}
+					{#if card.zone.name == "Réserve" || card.zone.name == "Terrain"}
 						<button
 							on:click={() => {
 								card.sell();
@@ -50,7 +50,7 @@
 							Vendre
 						</button>
 					{/if}
-					{#if card.zone.name == "Boutique"}
+					{#if card.zone.name == "Pile"}
 						{#if card.canBuy()}
 							<button
 								class="check"
@@ -64,7 +64,7 @@
 						{:else}
 							Acheter
 						{/if}
-					{:else if card.zone.name == "Main"}
+					{:else if card.zone.name == "Réserve"}
 						{#if card.canUse()}
 							<button
 								class="check"
@@ -78,7 +78,7 @@
 						{:else}
 							Poser
 						{/if}
-					{:else if card.zone.name == "Lieux"}
+					{:else if card.zone.name == "Région"}
 						{#if card == card.owner?.place}
 							<span style="color:darkgreen">Actif</span>
 						{:else}
@@ -93,7 +93,7 @@
 							</button>
 						{/if}
 					{/if}
-					{#if card.zone.name == "Main" || (card.zone.name == "Terrain" && card.type == "Créature")}
+					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card.type == "Créature")}
 						{#if card.slot && card.slot > 0}
 							<button
 								on:click={() => {

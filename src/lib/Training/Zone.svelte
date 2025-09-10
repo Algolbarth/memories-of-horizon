@@ -12,7 +12,7 @@
 
 <div class={"zone " + (entity == "player" ? "left" : "right")}>
 	{zone.name}
-	{#if zone.name == "Boutique"}
+	{#if zone.name == "Pile"}
 		Nv
 		<input
 			type="number"
@@ -77,7 +77,7 @@
 					</button>
 				</div>
 				<div style="text-align:right;">
-					{#if zone.name != "Lieux" || zone.cards.length > 1}
+					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
 							class="remove"
 							on:click={() => {
@@ -91,7 +91,7 @@
 				</div>
 			{:else}
 				<div>
-					{#if zone.name != "Lieux" || zone.cards.length > 1}
+					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
 							class="remove"
 							on:click={() => {

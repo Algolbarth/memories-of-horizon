@@ -1,9 +1,9 @@
 import { Zone } from "./Zone";
 
-export class Shop extends Zone {
+export class Stack extends Zone {
     level: number = 1;
 
     constructor() {
-        super("Boutique", 10);
+        super("Pile", 10);
     };
 }

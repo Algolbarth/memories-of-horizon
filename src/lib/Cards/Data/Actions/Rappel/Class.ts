@@ -42,9 +42,9 @@ export class Rappel extends Action {
     };
 
     useEffect = function (target: Card) {
-        target.move("Boutique");
+        target.move("Pile");
         if (target instanceof Unit) {
-            target.stat("Santé").current = 1;
+            target.stat("Santé").base = 1;
         }
         this.move("Défausse");
         this.pose();

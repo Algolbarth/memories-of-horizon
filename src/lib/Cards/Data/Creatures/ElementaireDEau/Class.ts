@@ -11,8 +11,7 @@ export class ElementaireDEau extends Creature {
         this.init([["Eau", 15]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Santé").base = 15;
-        this.stat("Santé").current = 15;
+        this.stat("Constitution").init(15);
         this.stat("Force").base = 15;
 
         this.text = Text;
@@ -27,7 +26,7 @@ export class ElementaireDEau extends Creature {
             this.owner.ressource("Eau").spend(5);
             this.stat("Force").increase(5);
             this.stat("Santé").increase(5);
-            this.stat("Santé").current += 5;
+            this.stat("Vitalité").increase(5);
         }
     };
 }

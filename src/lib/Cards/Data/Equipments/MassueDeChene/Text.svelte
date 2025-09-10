@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : augmente de 10 la santé de la créature équipée.
+Quand la créature équipée attaque : augmente de 10 la constitution de la créature équipée.

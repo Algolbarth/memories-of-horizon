@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 5 la force et la santé de toutes les créatures alliées sur le terrain pour chaque famille différentes parmi elles.
+Augmente de 5 la force et la constitution de toutes les créatures alliées sur le terrain pour chaque famille différentes parmi elles.

@@ -91,8 +91,8 @@ export class Concoction extends Item {
 
         if (this.stat("Infusion interdite").value() > 0) {
             let homonculus = this.owner.getCard("Homonculus");
-            homonculus.stat("Santé").current = this.stat("Infusion interdite").value();
             homonculus.stat("Santé").base = this.stat("Infusion interdite").value();
+            homonculus.stat("Vitalité").base = this.stat("Infusion interdite").value();
             homonculus.stat("Force").base = this.stat("Infusion interdite").value();
             homonculus.add("Terrain");
         }
@@ -108,7 +108,7 @@ export class Concoction extends Item {
         this.pose();
     };
 
-    infuse = function (potion: Objet) {
+    infuse = function (potion: Item) {
         if (potion.name == "Concoction") {
             for (const stat of potion.stats) {
                 if (stat.name.includes("Infusion")) {

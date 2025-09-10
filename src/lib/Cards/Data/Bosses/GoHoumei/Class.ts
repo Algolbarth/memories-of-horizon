@@ -12,7 +12,6 @@ export class GoHoumei extends Boss {
         this.familles.base.push("Nain");
 
         this.stat("Force").base = 25;
-        this.stat("Santé").base = 500;
-        this.stat("Santé").current = 500;
+        this.stat("Constitution").init(500);
     };
 }

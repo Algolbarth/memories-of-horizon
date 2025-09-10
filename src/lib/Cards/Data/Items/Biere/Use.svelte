@@ -2,11 +2,12 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
     import type { Card } from "../../../Class";
+    import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.type == "Créature") {
+		if (card instanceof Creature && (card.isDamaged() || card.stat("Critique").value() < 100)) {
 			return true;
 		}
 		return false;

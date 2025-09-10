@@ -10,16 +10,15 @@ export class Alambic extends Building {
         super(system);
 
         this.init([["Or", 110]]);
-        this.stat("Santé").base = 20;
-        this.stat("Santé").current = 20;
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            let hand = copy(this.owner.zone("Main").cards);
-            for (const card of hand) {
+            let reserve = copy(this.owner.zone("Réserve").cards);
+            for (const card of reserve) {
                 if (card.type == "Objet" && card.familles.total().includes("Potion")) {
                     if (card.name == "Concoction") {
                         for (const stat of card.stats) {
