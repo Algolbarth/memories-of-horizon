@@ -5,7 +5,7 @@
 	import Register from "../Login/Register.svelte";
 	import Menu from "../Menu/Menu.svelte";
 	import Play from "../Menu/Play.svelte";
-	import Construit from "../Menu/Construit.svelte";
+	import Construit from "../Menu/Construct.svelte";
 	import Library from "../Menu/Library.svelte";
 	import Profil from "../Menu/Profil.svelte";
 	import Universe from "../Menu/Universe.svelte";

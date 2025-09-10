@@ -26,9 +26,26 @@
 </button>
 
 <br />
+<br />
 
 <div id="zone">
-	{several(array.length, "deck")} jouable{#if array.length > 1}s{/if}
+	<div class="taskbar">
+		<div>
+			{several(array.length, "Deck")} jouable{#if array.length > 1}s{/if}
+		</div>
+
+		<div style="text-align: right;">
+			<button
+				class="check"
+				on:click={() => {
+					system.page = "Decks";
+				}}
+			>
+			Consulter les decks
+		</button>
+		</div>
+	</div>
+	
 	<div id="list" class="scroll">
 		{#each array as deck}
 			<div class="preview">
@@ -72,9 +89,13 @@
 	#zone {
 		background-color: var(--zone);
 		border: solid;
-		margin: 1%;
 		padding: 1%;
 		width: 50vw;
+	}
+
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	#list {
@@ -85,7 +106,6 @@
 		border: solid;
 		margin-top: 1%;
 		margin-bottom: 1%;
-		margin-right: 2%;
 		padding: 1%;
 		background-color: var(--preview_deck);
 		display: grid;
@@ -96,5 +116,13 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

@@ -115,29 +115,42 @@
 			</button>
 		</div>
 	</div>
+
 	<div class="zone">
-		{cardList.length}
-		/
-		{several(system.deck.cards.length, "carte")}
-		-
-		<button
-			on:click={() => {
-				sorted = true;
-			}}
-		>
-			Filtrer
-		</button>
-		{#if system.deck.canModify()}
-			-
-			<button
-				on:click={() => {
-					system.view.reset();
-					system.page = "Add";
-				}}
-			>
-				Modifier les cartes
-			</button>
-		{/if}
+		<div class="taskbar">
+			<div>
+				{#if system.deck?.cards.length == 0}
+					0 Carte
+				{:else}
+					{cardList.length}
+					/
+					{several(system.deck.cards.length, "Carte")}
+					-
+					<button
+						on:click={() => {
+							sorted = true;
+						}}
+					>
+						Filtrer
+					</button>
+				{/if}
+			</div>
+
+			<div style="text-align: right;">
+				{#if system.deck.canModify()}
+					<button
+						class="check"
+						on:click={() => {
+							system.view.reset();
+							system.page = "Add";
+						}}
+					>
+						Modifier les cartes
+					</button>
+				{/if}
+			</div>
+		</div>
+
 		<div id="list" class="scroll">
 			{#each cardList as card, i}
 				<div class="preview">
@@ -223,6 +236,11 @@
 		margin-bottom: 1%;
 	}
 
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
 	#list {
 		max-height: 70vh;
 	}
@@ -240,5 +258,13 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

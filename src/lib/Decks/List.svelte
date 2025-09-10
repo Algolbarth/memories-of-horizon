@@ -28,16 +28,22 @@
 <br />
 
 <div id="zone">
-	{several(system.decks.length, "deck")} -
-	<button
-		on:click={() => {
-			newDeck();
-		}}
-	>
-		Créer un nouveau deck
-	</button>
+	<div class="taskbar">
+		<div>
+			{several(system.decks.length, "Deck")}
+		</div>
 
-	<br />
+		<div style="text-align: right;">
+			<button
+				class="check"
+				on:click={() => {
+					newDeck();
+				}}
+			>
+				Créer un nouveau deck
+			</button>
+		</div>
+	</div>
 
 	<div id="list" class="scroll">
 		{#each system.decks as deck, i}
@@ -111,6 +117,11 @@
 		width: 50vw;
 	}
 
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
 	#list {
 		max-height: 80vh;
 	}
@@ -119,7 +130,6 @@
 		border: solid;
 		margin-top: 1%;
 		margin-bottom: 1%;
-		margin-right: 2%;
 		padding: 1%;
 		background-color: var(--preview_deck);
 		display: grid;
@@ -134,5 +144,13 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

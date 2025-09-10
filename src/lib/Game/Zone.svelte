@@ -15,64 +15,75 @@
 
 {#if system.game}
 	<div class={"zone " + direction}>
-		{zone.name}
-		{#if zone instanceof Stack}
-			Nv {zone.level}
-		{/if}
-		{#if zone.name != "Défausse"}
-			- ({zone.cards.length} / {zone.size})
-		{/if}
-		{#if zone instanceof Stack}
-			{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
-				-
-				{#if entity.canActualiseStack()}
-					<button
-						class="check"
-						on:click={() => {
-							entity.actualiseStack();
-							system = system;
-						}}
-					>
-						Actualiser
-					</button>
-				{:else}
-					Actualiser
-				{/if}
-				{10} Or
-			{/if}
-			{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
-				-
-				{#if entity.canUpStack()}
-					<button
-						class="check"
-						on:click={() => {
-							entity.upStack();
-							system = system;
-						}}
-					>
-						Améliorer
-					</button>
-				{:else}
-					Améliorer
-				{/if}
-				{zone.level * 10} Or
-			{/if}
-			{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
-				-
-				<button
-					on:click={() => {
-						entity.lock();
-						system = system;
-					}}
-				>
-					{#if entity.isFullLocked()}
-						Déverrouiller
-					{:else}
-						Verrouiller
+		<div class="taskbar">
+			<div class="infos">
+				<div>
+					{zone.name}
+				</div>
+				<div>
+					{#if zone instanceof Stack}
+						Nv {zone.level}
 					{/if}
-				</button>
-			{/if}
-		{/if}
+				</div>
+				<div>
+					{#if zone.name != "Défausse"}
+						({zone.cards.length} / {zone.size})
+					{/if}
+				</div>
+			</div>
+			<div style="text-align:right;">
+				{#if zone instanceof Stack}
+					{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
+						{#if entity.canUpStack()}
+							<button
+								class="check"
+								on:click={() => {
+									entity.upStack();
+									system = system;
+								}}
+							>
+								Améliorer
+							</button>
+						{:else}
+							Améliorer
+						{/if}
+						{zone.level * 10} Or -
+					{/if}
+					{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
+						{#if entity.canActualiseStack()}
+							<button
+								class="check"
+								on:click={() => {
+									entity.actualiseStack();
+									system = system;
+								}}
+							>
+								Actualiser
+							</button>
+						{:else}
+							Actualiser
+						{/if}
+						{10} Or
+					{/if}
+					{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
+						-
+						<button
+							on:click={() => {
+								entity.lock();
+								system = system;
+							}}
+						>
+							{#if entity.isFullLocked()}
+								Déverrouiller
+							{:else}
+								Verrouiller
+							{/if}
+						</button>
+					{/if}
+				{/if}
+			</div>
+		</div>
+
 		<div id="list">
 			{#if zone.cards.length > 0}
 				{#each zone.cards as card}
@@ -97,6 +108,17 @@
 
 	.right {
 		margin-left: 1%;
+	}
+
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		text-align: left;
+	}
+
+	div.infos {
+		display: grid;
+		grid-template-columns: 0.75fr 4em 1fr;
 	}
 
 	button.check {

@@ -59,6 +59,7 @@
 		</div>
 		<div style="text-align:right;">
 			<button
+				class="check"
 				on:click={() => {
 					system.view.reset();
 					system.train.add.entity = entity;
@@ -155,7 +156,7 @@
 
 	div.infos {
 		display: grid;
-		grid-template-columns: 0.5fr 4em 1fr;
+		grid-template-columns: 0.75fr 4em 1fr;
 	}
 
 	div.preview {
@@ -169,5 +170,13 @@
 
 	.remove:hover {
 		color: var(--close);
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>

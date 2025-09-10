@@ -32,11 +32,19 @@
 		<div>
 			{#if system.game.mode != "Entraînement" && system.game.chapter}
 				Chapitre {system.game.chapter.number}
-				- Étape {system.game.player.step} / {system.game.chapter.steps.length}
 				-
+				Étape {system.game.player.step} / {system.game.chapter.steps.length}
 			{/if}
+			{#if system.game.isBattle() && !system.game.isEndBattle()}
+				-
+				Tour de combat {system.game.turn}
+			{/if}
+		</div>
+
+		<div style="text-align:center;">
 			{#if !system.game.isBattle()}
 				<button
+					class="fight"
 					on:click={() => {
 						if (system.game) {
 							system.view.reset();
@@ -50,6 +58,7 @@
 				{#if system.game.mode == "Entraînement"}
 					-
 					<button
+						class="check"
 						on:click={() => {
 							if (system.game) {
 								system.view.reset();
@@ -62,8 +71,6 @@
 					</button>
 				{/if}
 			{:else if !system.game.isEndBattle()}
-				Tour de combat {system.game.turn}
-				-
 				{#if system.game.auto != null}
 					<button
 						on:click={() => {
@@ -97,7 +104,6 @@
 					</button>
 				{/if}
 			{:else}
-				Combat fini -
 				<button
 					on:click={() => {
 						if (system.game) {
@@ -111,6 +117,7 @@
 				</button>
 			{/if}
 		</div>
+		
 		<div style="text-align:right">
 			<button
 				on:click={() => {
@@ -124,8 +131,6 @@
 			</button>
 		</div>
 	</div>
-
-	<br />
 
 	<div id="container" class="scroll">
 		<div class="entities">
@@ -165,17 +170,36 @@
 
 <style>
 	#taskbar {
-		height: 2vh;
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: 1fr auto 1fr;
+		background: var(--card);
+		padding: 0.5%;
+		border: solid;
+		margin-bottom: 1%;
 	}
 
 	#container {
-		height: 94vh;
+		height: 90vh;
 	}
 
 	.entities {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	button.fight {
+		color: darkred;
+	}
+
+	button.fight:hover {
+		color: red;
+	}
+
+	button.check {
+		color: darkgreen;
+	}
+
+	button.check:hover {
+		color: greenyellow;
 	}
 </style>
