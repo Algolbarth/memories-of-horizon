@@ -11,8 +11,8 @@
 </script>
 
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
-	<div class="container">
-		<div>Santé :</div>
+	<div class="preview life">
+		<div>Santé</div>
 		<div>
 			<input
 				type="number"
@@ -28,8 +28,8 @@
 			/>
 		</div>
 	</div>
-	<div class="container">
-		<div>Or :</div>
+	<div class="preview">
+		<div>Or</div>
 		<div>
 			<input
 				type="number"
@@ -45,8 +45,8 @@
 			/>
 		</div>
 	</div>
-	<div class="container">
-		<div>Flux :</div>
+	<div class="preview" style={"background:" + system.ressources.find("Flux")?.color + ";color:" + (system.ressources.find("Flux")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+		<div>Flux</div>
 		<div>
 			<input
 				type="number"
@@ -77,9 +77,14 @@
 		margin-left: 1%;
 	}
 
-	.container {
+	div.preview {
+		border-color: black;
 		display: grid;
-		grid-template-columns: 0.15fr 1fr;
+		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;
+	}
+
+	div.life {
+		background: pink;
 	}
 
 	input[type="number"] {
