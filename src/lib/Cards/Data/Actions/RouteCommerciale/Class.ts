@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class Boutique extends Action {
-    name = "Boutique";
+export class RouteCommerciale extends Action {
+    name = "Route commerciale";
 
     constructor(system: System) {
         super(system);

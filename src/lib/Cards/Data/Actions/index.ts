@@ -52,6 +52,7 @@ export * from './Repos';
 export * from './Restockage';
 export * from './Retablissement';
 export * from './Roulade';
+export * from './RouteCommerciale';
 export * from './Ruee';
 export * from './SangChaud';
 export * from './SouffleEnflamme';
