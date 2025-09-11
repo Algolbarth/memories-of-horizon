@@ -8,6 +8,8 @@ export * from './BaguetteEnBois';
 export * from './BaguetteExplosive';
 export * from './BottesDeGrandPas';
 export * from './BottesEnCuir';
+export * from './BouclierDeCorindon';
+export * from './BouclierDeCristal';
 export * from './BouclierDeFer';
 export * from './BouclierDePlatine';
 export * from './BouclierDeRoche';
