@@ -2,16 +2,16 @@ import type { System } from '../../../../System/Class';
 import { Equipment } from '../../../Class/Equipment';
 import Text from '../../../Utils/EquipText.svelte';
 
-export class CapeDeCuir extends Equipment {
-    name = "Cape de cuir";
+export class OrbeDeCorindon extends Equipment {
+    name = "Orbe de corindon";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 100]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Résistance").base = 25;
+        this.equipStat("Résistance").base = 100;
 
         this.text = Text;
     };
