@@ -3,8 +3,8 @@ import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class GrandeFioleDeVerre extends Item {
-    name = "Grande fiole de verre";
+export class FioleDeCristal extends Item {
+    name = "Fiole de cristal";
 
     constructor(system: System) {
         super(system);

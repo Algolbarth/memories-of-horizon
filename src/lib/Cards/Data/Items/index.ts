@@ -15,7 +15,7 @@ export * from './Conque';
 export * from './CorDeGuerre';
 export * from './FioleDeVerre';
 export * from './FlecheEnBois';
-export * from './GrandeFioleDeVerre';
+export * from './FioleDeCristal';
 export * from './HerbesMedicinales';
 export * from './Lait';
 export * from './Livre';
