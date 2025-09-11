@@ -32,6 +32,7 @@ export class TrainEntity {
     life: number = 100;
     gold: number = 0;
     flux: number = 0;
+    mana: number = 0;
     zones: TrainZone[] = [
         new TrainZone("Région", 3, undefined, ["Plaine"]),
         new TrainZone("Pile", 10, 1),

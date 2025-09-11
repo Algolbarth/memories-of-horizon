@@ -8,6 +8,7 @@
 	let life: number = entity.life;
 	let gold: number = entity.gold;
 	let flux: number = entity.flux;
+	let mana: number = entity.mana;
 </script>
 
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
@@ -30,14 +31,15 @@
 	</div>
 	<div class="preview">
 		<div>Or</div>
+		<div></div>
 		<div>
 			<input
 				type="number"
 				min="0"
 				bind:value={gold}
 				on:change={() => {
-					if (gold < 1) {
-						gold = 1;
+					if (gold < 0) {
+						gold = 0;
 					} else {
 						entity.gold = gold;
 					}
@@ -47,16 +49,37 @@
 	</div>
 	<div class="preview" style={"background:" + system.ressources.find("Flux")?.color + ";color:" + (system.ressources.find("Flux")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 		<div>Flux</div>
+		<div></div>
+		<div></div>
 		<div>
 			<input
 				type="number"
 				min="0"
 				bind:value={flux}
 				on:change={() => {
-					if (flux < 1) {
-						flux = 1;
+					if (flux < 0) {
+						flux = 0;
 					} else {
 						entity.flux = flux;
+					}
+				}}
+			/>
+		</div>
+	</div>
+	<div class="preview" style={"background:" + system.ressources.find("Mana")?.color + ";color:" + (system.ressources.find("Mana")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+		<div>Mana</div>
+		<div></div>
+		<div></div>
+		<div>
+			<input
+				type="number"
+				min="0"
+				bind:value={mana}
+				on:change={() => {
+					if (mana < 0) {
+						mana = 0;
+					} else {
+						entity.mana = mana;
 					}
 				}}
 			/>

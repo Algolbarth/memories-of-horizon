@@ -6,6 +6,7 @@ import type { Deck } from '../Decks/Deck';
 import type { System } from '../System/Class';
 import type { Card } from '../Cards/Class';
 import type { Component } from 'svelte';
+import type { TrainEntity } from '../Training/Train';
 
 export class Game extends Battle {
     use: Use = new Use();
@@ -26,34 +27,7 @@ export class Game extends Battle {
 
     init = function () {
         if (this.mode == "Entraînement") {
-            this.player.life.set(this.system.train.player.life);
-            this.player.ressource("Or").max = this.system.train.player.gold;
-            this.player.ressource("Flux").stock = this.system.train.player.flux;
-            this.player.zone("Pile").level = this.system.train.player.zones[1].level;
-            for (const zone of this.system.train.player.zones) {
-                this.player.zone(zone.name).size = zone.size;
-                for (const card_name of zone.cards) {
-                    this.player.getCard(card_name).add(zone.name);
-                }
-            }
-            this.player.place = this.player.zone("Région").cards[0];
-
-            this.bot.life.set(this.system.train.bot.life);
-            this.bot.ressource("Or").max = this.system.train.bot.gold;
-            this.bot.ressource("Or").current = this.system.train.bot.gold;
-            this.bot.ressource("Flux").stock = this.system.train.bot.flux;
-            this.bot.zone("Pile").level = this.system.train.bot.zones[1].level;
-            for (const zone of this.system.train.bot.zones) {
-                this.bot.zone(zone.name).size = zone.size;
-                for (const card_name of zone.cards) {
-                    let card = this.bot.getCard(card_name);
-                    card.add(zone.name);
-                    card.cache = false;
-                }
-            }
-            this.bot.place = this.bot.zone("Région").cards[0];
-
-            this.startStep();
+            this.trainInit();
         }
         else {
             this.player.life.set(100);
@@ -69,6 +43,31 @@ export class Game extends Battle {
 
             this.nextChapter();
         }
+    };
+
+    trainInit = function () {
+        this.trainInitEntity(this.player, this.system.train.player);
+        this.trainInitEntity(this.bot, this.system.train.bot);
+
+        this.startStep();
+    };
+
+    trainInitEntity = function (entity: Entity, train_entity: TrainEntity) {
+        entity.life.set(train_entity.life);
+
+        entity.ressource("Or").max = train_entity.gold;
+        entity.ressource("Or").current = train_entity.gold;
+        entity.ressource("Flux").stock = train_entity.flux;
+        entity.ressource("Mana").stock = train_entity.mana;
+
+        entity.zone("Pile").level = train_entity.zones[1].level;
+        for (const zone of train_entity.zones) {
+            entity.zone(zone.name).size = zone.size;
+            for (const card_name of zone.cards) {
+                entity.getCard(card_name).add(zone.name);
+            }
+        }
+        entity.place = entity.zone("Région").cards[0];
     };
 
     nextChapter = function () {
@@ -126,7 +125,7 @@ export class Game extends Battle {
                     if (card.startStepEffect != undefined) {
                         card.startStepEffect();
                     }
-                    
+
                     if (card.type == "Créature") {
                         for (const e of card.equipments) {
                             if (e.startStepEffect != undefined) {
