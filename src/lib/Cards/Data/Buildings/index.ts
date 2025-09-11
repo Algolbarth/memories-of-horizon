@@ -5,6 +5,7 @@ export * from './BassinDeReproduction';
 export * from './Bibliotheque';
 export * from './BibliothequeElfique';
 export * from './Bivouac';
+export * from './Boutique';
 export * from './CarriereDePierre';
 export * from './Cascade';
 export * from './Caserne';
