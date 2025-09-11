@@ -37,8 +37,8 @@ export class PluieDeCailloux extends Spell {
     };
 
     useEffect = function (choice: string) {
-        if (this.owner.ressource("Mana").total() >= this.manaCost(30)) {
-            this.owner.ressource("Mana").spend(this.manaCost(30));
+        if (this.owner.ressource("Mana").total() >= 30) {
+            this.owner.ressource("Mana").spend(30);
             let nb_creature = this.owner.zone("Terrain").size - this.owner.zone("Terrain").cards.length;
             for (let i = 0; i < nb_creature; i++) {
                 this.owner.getCard("Élémentaire de caillou").add("Terrain");

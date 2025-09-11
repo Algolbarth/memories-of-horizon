@@ -44,8 +44,8 @@ export class BulleProtectrice extends Spell {
     };
 
     useEffect = function (target: Creature) {
-        if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
-            this.owner.ressource("Mana").spend(this.manaCost(25));
+        if (this.owner.ressource("Mana").total() >= 25) {
+            this.owner.ressource("Mana").spend(25);
             target.stat("Garde").fix(100);
         }
         else {

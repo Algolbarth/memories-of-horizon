@@ -2,9 +2,9 @@
 	import CardInfo from "../../../Utils/CardInfo.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+    import Sorcery from "../../../Utils/Sorcery.svelte";
 
 	export let system: System;
-	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
@@ -18,4 +18,4 @@ Au choix :
 	</li>
 </ul>
 
-Sorcellerie 30 : les deux effets s'activent à la place.
+<Sorcery bind:system bind:card cost={30} text={"les deux effets s'activent à la place."} />

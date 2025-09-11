@@ -1,14 +1,15 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+    import Sorcery from "../../../Utils/Sorcery.svelte";
 
-	// svelte-ignore export_let_unused
 	export let system: System;
-	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
 Inflige 30 dégâts à une unité adverse sur le terrain.
+
 <br />
 <br />
-Sorcellerie 15 : inflige 60 dégâts à la place.
+
+<Sorcery bind:system bind:card cost={15} text={"inflige 60 dégâts à la place."} />

@@ -7,12 +7,4 @@ export class Spell extends Action {
 
         this.familles.base.push("Sort");
     }
-
-    manaCost = function (value: number) {
-        if (value < 0) {
-            value = 0;
-        }
-
-        return value;
-    };
 }

@@ -45,8 +45,8 @@ export class EnseignementElfique extends Spell {
     };
 
     useEffect = function (target: Creature) {
-        if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
-            this.owner.ressource("Mana").spend(this.manaCost(25));
+        if (this.owner.ressource("Mana").total() >= 25) {
+            this.owner.ressource("Mana").spend(25);
             target.stat("Intelligence").increase(10);
         }
         else {

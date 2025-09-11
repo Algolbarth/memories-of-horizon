@@ -14,10 +14,9 @@ export class Ecoulement extends Spell {
     };
 
     useEffect = function () {
-        if (this.owner.ressource("Mana").total() >= 15 && this.owner.ressource("Eau").total() >= this.manaCost(15)) {
-            this.owner.ressource("Mana").spend(this.manaCost(15));
-            this.owner.ressource("Eau").spend(15);
-            this.owner.ressource("Eau").max += 10;
+        if (this.owner.ressource("Mana").total() >= 10) {
+            this.owner.ressource("Mana").spend(10);
+            this.owner.ressource("Eau").max += 5;
         }
         else {
             this.owner.ressource("Eau").max += 3;

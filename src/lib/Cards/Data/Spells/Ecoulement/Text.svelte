@@ -1,11 +1,15 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+    import Sorcery from "../../../Utils/Sorcery.svelte";
 
-	// svelte-ignore export_let_unused
 	export let system: System;
-	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Augmente la capacité en eau de 3. Sorcellerie 15 : dépense 15 eau pour augmenter la capacité en eau de 10 à la place.
+Augmente la capacité en eau de 3.
+
+<br />
+<br />
+
+<Sorcery bind:system bind:card cost={10} text={"augmente la capacité en eau de 5 à la place."} />

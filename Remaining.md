@@ -49,7 +49,6 @@ Robe de mage : augmente la magie et la résistance de la créature équipée.
 Brassard de santé : augmente la régénération de la créature équipée.
 Plastron de piques : augmente la constitution et l'épine de la créature équipée.
 Cotte de maille : augmente l'endurance de la créature équipée.
-Cape de cuir : augmente l'endurance et la résistance de la créature équipée
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
@@ -91,7 +90,7 @@ Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
 Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la réserve adverse.
-Jarre de flamme : objet, .
+Jarre de flamme : objet.
 
 ### Vegetal
 Spores : empoisonne une créature adverse sur le terrain.
