@@ -14,7 +14,7 @@
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
 	<div class="preview life">
 		<div>Santé</div>
-		<div>
+		<div style="text-align:right;margin-right:0.5em">
 			<input
 				type="number"
 				min="1"
@@ -28,11 +28,13 @@
 				}}
 			/>
 		</div>
+		<div>/ 100</div>
 	</div>
 	<div class="preview">
 		<div>Or</div>
-		<div></div>
+		<div>{gold}</div>
 		<div>
+			/
 			<input
 				type="number"
 				min="0"
