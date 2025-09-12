@@ -308,10 +308,15 @@ export class Card {
 
     otherPoseEffect: Function | undefined;
 
-    destroy = () => {
+    canDestroy = () => {
         if (!this.trait("Légendaire").value()) {
-            this.move("Défausse");
+            return true;
         }
+        return false;
+    };
+
+    destroy = () => {
+        this.move("Défausse");
     };
 
     otherDieEffect: Function | undefined;

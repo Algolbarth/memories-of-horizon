@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.type == "Créature" && !card.elements.total().includes("Eau")) {
+		if (card.type == "Créature" && card.canDestroy() && !card.elements.total().includes("Eau")) {
 			return true;
 		}
 		return false;

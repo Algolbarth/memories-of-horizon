@@ -17,7 +17,7 @@ export class Demolition extends Action {
 
     canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Bâtiment") {
+            if (card.type == "Bâtiment" && card.canDestroy()) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Demolition extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Bâtiment") {
+                if (target == undefined && card.type == "Bâtiment" && card.canDestroy()) {
                     target = card;
                 }
             }

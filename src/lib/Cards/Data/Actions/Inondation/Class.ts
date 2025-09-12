@@ -17,7 +17,7 @@ export class Inondation extends Action {
 
     canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Bâtiment" && !card.elements.total().includes("Eau")) {
+            if (card.type == "Bâtiment" && card.canDestroy() && !card.elements.total().includes("Eau")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Inondation extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Bâtiment" && !card.elements.total().includes("Eau")) {
+                if (target == undefined && card.type == "Bâtiment" && card.canDestroy() && !card.elements.total().includes("Eau")) {
                     target = card;
                 }
             }

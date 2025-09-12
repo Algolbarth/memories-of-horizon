@@ -189,9 +189,7 @@ export class Unit extends Card {
     };
 
     destroy = () => {
-        if (!this.trait("Légendaire").value()) {
-            this.die();
-        }
+        this.die();
     };
 
     play = () => {

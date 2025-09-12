@@ -17,7 +17,7 @@ export class Elimination extends Action {
 
     canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card.type == "Créature" && card.canDestroy()) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Elimination extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card.type == "Créature" && card.canDestroy()) {
                     target = card;
                 }
             }

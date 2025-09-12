@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.type == "Créature") {
+		if (card.type == "Créature" && card.canDestroy()) {
 			return true;
 		}
 		return false;

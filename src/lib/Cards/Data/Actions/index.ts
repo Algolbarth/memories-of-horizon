@@ -17,6 +17,7 @@ export * from './Cibler';
 export * from './CoupDeBouclier';
 export * from './CoupDeBoule';
 export * from './Croissance';
+export * from './Decapitation';
 export * from './Defrichage';
 export * from './Demolition';
 export * from './Desarmer';

@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,8 +17,12 @@ export class Desarmer extends Action {
 
     canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.equipments.length > 0) {
-                return true;
+            if (card instanceof Creature) {
+                for (const e of card.equipments) {
+                    if (e.canDestroy()) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -32,8 +36,12 @@ export class Desarmer extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.equipments.length > 0) {
-                    target = card;
+                if (target == undefined && card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.canDestroy()) {
+                            target = card;
+                        }
+                    }
                 }
             }
 
@@ -45,7 +53,9 @@ export class Desarmer extends Action {
 
     useEffect = (target: Creature) => {
         for (const equipment of target.equipments) {
-            equipment.destroy();
+            if (equipment.canDestroy()) {
+                equipment.destroy();
+            }
         }
         this.move("Défausse");
         this.pose();
