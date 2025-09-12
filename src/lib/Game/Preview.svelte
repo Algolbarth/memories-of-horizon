@@ -104,7 +104,7 @@
 								&#9650
 							</button>
 						{:else}
-							<button class="classic useless">&#9650</button>
+							<button class="useless">&#9650</button>
 						{/if}
 						{#if card.slot && card.slot < card.zone.cards.length - 1}
 							<button
@@ -116,7 +116,7 @@
 								&#9660
 							</button>
 						{:else}
-							<button class="classic useless">&#9660</button>
+							<button class="useless">&#9660</button>
 						{/if}
 					{/if}
 				{/if}

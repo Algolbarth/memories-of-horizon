@@ -73,6 +73,7 @@
 					>
 						Modifier
 					</button>
+					
 					{#if i > 0}
 						<button
 							on:click={() => {
@@ -84,7 +85,7 @@
 							&#9650
 						</button>
 					{:else}
-						<button class="classic useless">&#9650</button>
+						<button class="useless">&#9650</button>
 					{/if}
 					{#if i < system.decks.length - 1}
 						<button
@@ -97,7 +98,7 @@
 							&#9660
 						</button>
 					{:else}
-						<button class="classic useless">&#9660</button>
+						<button class="useless">&#9660</button>
 					{/if}
 				</div>
 			</div>

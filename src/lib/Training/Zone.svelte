@@ -103,9 +103,63 @@
 							Enlever
 						</button>
 					{/if}
+
+					{#if i > 0}
+						<button
+							on:click={() => {
+								let temp = zone.cards[i - 1];
+								zone.cards[i - 1] = card;
+								zone.cards[i] = temp;
+							}}
+						>
+							&#9650
+						</button>
+					{:else}
+						<button class="useless">&#9650</button>
+					{/if}
+					{#if i < zone.cards.length - 1}
+						<button
+							on:click={() => {
+								let temp = zone.cards[i + 1];
+								zone.cards[i + 1] = card;
+								zone.cards[i] = temp;
+							}}
+						>
+							&#9660
+						</button>
+					{:else}
+						<button class="useless">&#9660</button>
+					{/if}
 				</div>
 			{:else}
 				<div>
+					{#if i > 0}
+						<button
+							on:click={() => {
+								let temp = zone.cards[i - 1];
+								zone.cards[i - 1] = card;
+								zone.cards[i] = temp;
+							}}
+						>
+							&#9650
+						</button>
+					{:else}
+						<button class="useless">&#9650</button>
+					{/if}
+					{#if i < zone.cards.length - 1}
+						<button
+							on:click={() => {
+								let temp = zone.cards[i + 1];
+								zone.cards[i + 1] = card;
+								zone.cards[i] = temp;
+							}}
+						>
+							&#9660
+						</button>
+					{:else}
+						<button class="useless">&#9660</button>
+					{/if}
+					
 					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
 							class="remove"
@@ -180,5 +234,9 @@
 
 	button.check:hover {
 		color: greenyellow;
+	}
+
+	button.useless {
+		color: white;
 	}
 </style>

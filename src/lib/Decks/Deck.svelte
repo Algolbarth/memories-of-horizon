@@ -101,7 +101,7 @@
 		</div>
 		<div style="text-align:right;">
 			<button
-				class="classic delete"
+				class="delete"
 				on:click={() => {
 					if (system.deck != undefined) {
 						system.view.reset();
@@ -184,7 +184,7 @@
 								&#9650
 							</button>
 						{:else}
-							<button class="classic useless">&#9650</button>
+							<button class="useless">&#9650</button>
 						{/if}
 						{#if i < system.deck.cards.length - 1}
 							<button
@@ -200,7 +200,7 @@
 								&#9660
 							</button>
 						{:else}
-							<button class="classic useless">&#9660</button>
+							<button class="useless">&#9660</button>
 						{/if}
 					</div>
 				</div>
