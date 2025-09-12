@@ -2,9 +2,9 @@ import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
-export class Chevalier extends Creature {
-    name = "Chevalier";
-    otherForm = "Chevalier (monté)";
+export class ChevalierRoyal extends Creature {
+    name = "Chevalier royal";
+    otherForm = "Chevalier royal (monté)";
     mounted = false;
 
     constructor(system: System) {
@@ -13,21 +13,22 @@ export class Chevalier extends Creature {
         this.init([["Or", 100]]);
         this.familles.base.push("Humain", "Chevalier");
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
-        this.stat("Endurance").init(5);
+        this.stat("Constitution").init(60);
+        this.stat("Force").init(60);
+        this.stat("Endurance").init(20);
+        this.stat("Résistance").init(20);
     };
 }
 
-export class ChevalierMonte extends Creature {
-    name = "Chevalier (monté)";
-    otherForm = "Chevalier";
+export class ChevalierRoyalMonte extends Creature {
+    name = "Chevalier royal (monté)";
+    otherForm = "Chevalier royal";
     mounted = true;
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 150]]);
+        this.init([["Or", 200]]);
         this.familles.base.push("Humain", "Chevalier");
 
         this.stat("Constitution").init(10);
@@ -38,7 +39,7 @@ export class ChevalierMonte extends Creature {
     };
 
     dieEffect = () => {
-        this.transform("Chevalier");
+        this.transform("Chevalier royal");
         this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
     };
 

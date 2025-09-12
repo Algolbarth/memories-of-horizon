@@ -13,9 +13,10 @@ export class Chevalier extends Creature {
         this.init([["Or", 25]]);
         this.familles.base.push("Humain", "Chevalier");
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(15);
+        this.stat("Force").init(15);
         this.stat("Endurance").init(5);
+        this.stat("Résistance").init(5);
     };
 }
 
