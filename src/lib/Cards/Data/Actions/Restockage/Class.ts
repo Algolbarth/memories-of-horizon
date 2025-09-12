@@ -13,7 +13,7 @@ export class Restockage extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.refreshStack();
         this.move("Défausse");
         this.pose();

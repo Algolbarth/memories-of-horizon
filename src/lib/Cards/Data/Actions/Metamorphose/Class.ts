@@ -16,7 +16,7 @@ export class Metamorphose extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.familles.total().includes("Druide")) {
                 return true;
@@ -25,7 +25,7 @@ export class Metamorphose extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -44,7 +44,7 @@ export class Metamorphose extends Action {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         target.transform(target.otherForm);
         this.move("Défausse");
         this.pose();

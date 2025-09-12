@@ -14,7 +14,7 @@ export class PuitDeMana extends Building {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Potion de mana").add("Réserve");
         }

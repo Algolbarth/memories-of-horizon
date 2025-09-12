@@ -15,14 +15,14 @@ export class Eboulement extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -41,7 +41,7 @@ export class Eboulement extends Action {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         if (target.type == "Bâtiment" && target.stat("Étourdissement").value() >= 1) {
             target.damageByEffect(20);
         }

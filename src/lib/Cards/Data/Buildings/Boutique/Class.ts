@@ -14,7 +14,7 @@ export class Boutique extends Building {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Restockage").add("Réserve");
         }

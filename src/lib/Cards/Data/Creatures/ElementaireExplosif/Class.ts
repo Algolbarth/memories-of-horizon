@@ -18,7 +18,7 @@ export class ElementaireExplosif extends Creature {
         this.text = Text;
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         if (this.owner.ressource("Feu").max >= 5) {
             this.owner.ressource("Feu").max -= 5;
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);

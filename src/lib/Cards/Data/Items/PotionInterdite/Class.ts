@@ -16,7 +16,7 @@ export class PotionInterdite extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let homonculus = this.owner.getCard("Homonculus");
 
         homonculus.stat("Constitution").init(this.stat("Infusion").value());

@@ -14,14 +14,14 @@ export class RazDeMaree extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let value = 20;
         while (this.owner.ressource("Eau").total() >= 5) {
             this.owner.ressource("Eau").spend(5);

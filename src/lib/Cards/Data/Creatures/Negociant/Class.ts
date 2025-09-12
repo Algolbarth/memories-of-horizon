@@ -19,7 +19,7 @@ export class Negociant extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             let check = false;
 
@@ -54,7 +54,7 @@ export class Negociant extends Creature {
         }
     };
 
-    useEffect = function (target: Card) {
+    useEffect = (target: Card) => {
         if (target != undefined) {
             target.getCost("Or").decrease(10);
         }

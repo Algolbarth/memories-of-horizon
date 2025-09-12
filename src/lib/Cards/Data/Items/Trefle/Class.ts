@@ -14,7 +14,7 @@ export class Trefle extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.discover(4);
         this.move("Défausse");
         this.pose();

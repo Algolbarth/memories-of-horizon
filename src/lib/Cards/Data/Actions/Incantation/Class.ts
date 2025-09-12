@@ -15,7 +15,7 @@ export class Incantation extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
                 return true;
@@ -24,7 +24,7 @@ export class Incantation extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class Incantation extends Action {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         this.owner.ressource("Mana").current += target.stat("Magie").value();
         target.stat("Étourdissement").fix(1);
         this.move("Défausse");

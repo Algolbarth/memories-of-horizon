@@ -13,7 +13,7 @@ export class AnneauEnOr extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.bearer.stat("Constitution").increase(1);
             this.bearer.stat("Force").increase(1);

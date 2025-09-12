@@ -11,16 +11,16 @@ export class Cost {
         this.card = card;
     };
 
-    value = function () {
+    value = () => {
         let total = this.base + this.add;
         return total;
     };
 
-    increase = function (value: number) {
+    increase = (value: number) => {
         this.add += value;
     };
 
-    decrease = function (value: number) {
+    decrease = (value: number) => {
         this.add -= value;
     };
 };

@@ -18,7 +18,7 @@ export class General extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {

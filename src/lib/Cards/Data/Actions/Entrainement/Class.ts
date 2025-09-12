@@ -15,7 +15,7 @@ export class Entrainement extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature") {
                 return true;
@@ -24,7 +24,7 @@ export class Entrainement extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class Entrainement extends Action {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         target.stat("Constitution").increase(10);
         target.stat("Force").increase(10);
         this.move("Défausse");

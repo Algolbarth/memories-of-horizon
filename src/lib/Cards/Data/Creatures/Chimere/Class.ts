@@ -18,7 +18,7 @@ export class Chimere extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let list = [];
         let terrain = copy(this.owner.zone("Terrain").cards);
 

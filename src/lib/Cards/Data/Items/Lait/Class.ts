@@ -17,7 +17,7 @@ export class Lait extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
                 return true;
@@ -26,7 +26,7 @@ export class Lait extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         let check = false;
         for (const card of this.owner.zone("Terrain").cards) {
             if (check == false && card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
@@ -63,7 +63,7 @@ export class Lait extends Item {
 
     };
 
-    useEffect = function (target: Creature, stat: Stat | undefined) {
+    useEffect = (target: Creature, stat: Stat | undefined) => {
         this.targeting(target);
         if (!target.isDamaged()) {
             stat.set(stat.min);

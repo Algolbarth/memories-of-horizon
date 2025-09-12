@@ -15,18 +15,23 @@ export class Torche extends Item {
         this.text = Text;
     };
 
-    select = function () {
+    canUse = () => {
+        if (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        return false;
+    };
+
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
-            }
+            this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
         }
     };
 
-    useEffect = function (target: Creature | undefined) {
+    useEffect = (target: Creature | undefined) => {
         if (target == undefined) {
             this.owner.ressource("Feu").max += 2;
         }

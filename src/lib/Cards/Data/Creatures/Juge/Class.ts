@@ -18,7 +18,7 @@ export class Juge extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         let check = false;
 
         for (const entity of [this.owner, this.owner.adversary()]) {
@@ -55,7 +55,7 @@ export class Juge extends Creature {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         if (target != undefined) {
             let max_protection = 0;
             for (const entity of [this.owner, this.owner.adversary()]) {

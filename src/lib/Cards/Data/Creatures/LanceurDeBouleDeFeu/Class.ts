@@ -18,7 +18,7 @@ export class LanceurDeBouleDeFeu extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Boule de feu").add("Pile");
         }

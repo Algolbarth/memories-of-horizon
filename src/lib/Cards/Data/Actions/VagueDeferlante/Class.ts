@@ -14,14 +14,14 @@ export class VagueDeferlante extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let value = 5;
         if (this.owner.ressource("Eau").total() >= 25) {
             this.owner.ressource("Eau").spend(25);

@@ -16,7 +16,7 @@ export class NoixDeCoco extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner == this.system.game.player) {
             for (const entity of [this.owner, this.owner.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
@@ -41,7 +41,7 @@ export class NoixDeCoco extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -65,7 +65,7 @@ export class NoixDeCoco extends Item {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
             target.stat("Étourdissement").fix(1);

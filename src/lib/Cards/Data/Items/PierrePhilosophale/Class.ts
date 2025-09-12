@@ -13,14 +13,14 @@ export class PierrePhilosophale extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.ressource("Flux").stock > 0) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.ressource("Or").max += this.owner.ressource("Flux").stock;
         this.owner.ressource("Or").current += this.owner.ressource("Flux").stock;
         this.owner.ressource("Flux").stock = 0;

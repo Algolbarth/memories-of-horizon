@@ -19,7 +19,7 @@ export class ChevalDeGuerre extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             let check = false;
 
@@ -54,7 +54,7 @@ export class ChevalDeGuerre extends Creature {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         if (target != undefined) {
             target.stat("Constitution").increase(10);
             target.stat("Force").increase(10);

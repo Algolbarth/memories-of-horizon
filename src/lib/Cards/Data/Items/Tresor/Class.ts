@@ -13,7 +13,7 @@ export class Tresor extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.draw(5);
         this.owner.ressource("Or").current += 10;
         this.move("Défausse");

@@ -18,7 +18,7 @@ export class Barde extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {

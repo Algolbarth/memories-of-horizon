@@ -16,7 +16,7 @@ export class MasseDePierre extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         this.bearer.stat("Endurance").increase(5);
     };
 }

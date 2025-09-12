@@ -12,7 +12,7 @@ export class Chapter {
         this.number = number;
     };
 
-    init = function () {
+    init = () => {
         this.system.game.player.step = 1;
         this.system.game.bot.step = 0;
 
@@ -21,15 +21,15 @@ export class Chapter {
         }
     };
 
-    addRessource = function (name: string, value: number) {
+    addRessource = (name: string, value: number) => {
         this.ressources.push(new ChapterRessource(name, value));
     };
 
-    addStep = function (life: number, place: string, cards: string[], dialogs: string[] = []) {
+    addStep = (life: number, place: string, cards: string[], dialogs: string[] = []) => {
         this.steps.push(new Step(life, place, cards, dialogs));
     };
 
-    startDialog = function () {
+    startDialog = () => {
         let step = this.steps[this.system.game.player.step - 1];
         if (!step.read && step.dialog < step.dialogs.length) {
             this.system.page = "Dialog";
@@ -40,7 +40,7 @@ export class Chapter {
         }
     };
 
-    nextDialog = function () {
+    nextDialog = () => {
         let step = this.steps[this.system.game.player.step - 1];
         if (!step.read && step.dialog < step.dialogs.length - 1) {
             step.dialog++;
@@ -52,7 +52,7 @@ export class Chapter {
         }
     };
 
-    getLevel = function () {
+    getLevel = () => {
         if (this.level == undefined) {
             let total = 0;
             for (const ressource of this.ressources) {

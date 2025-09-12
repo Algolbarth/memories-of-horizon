@@ -17,7 +17,7 @@ export class Restaurant extends Building {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         let check = undefined;
 
         for (const card of this.owner.zone("Réserve").cards) {
@@ -39,7 +39,7 @@ export class Restaurant extends Building {
         }
     };
 
-    useEffect = function (target: Item | undefined) {
+    useEffect = (target: Item | undefined) => {
         if (target != undefined) {
             this.product = target.name;
         }
@@ -47,7 +47,7 @@ export class Restaurant extends Building {
         this.pose();
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain" && this.product != undefined) {
             this.owner.getCard(this.product).add("Réserve");
         }

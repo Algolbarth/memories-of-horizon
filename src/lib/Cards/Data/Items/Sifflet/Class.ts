@@ -15,8 +15,8 @@ export class Sifflet extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
-        let condition = function (card: Card) {
+    useEffect = () => {
+        let condition = (card: Card) => {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 return true;
             }

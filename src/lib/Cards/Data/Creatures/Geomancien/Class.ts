@@ -18,7 +18,7 @@ export class Geomancien extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Terre") && card.owner == this.owner) {
             this.stat("Endurance").increase(2);
         }

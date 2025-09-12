@@ -18,7 +18,7 @@ export class Heros extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);

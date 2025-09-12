@@ -13,7 +13,7 @@ export class Exploration extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.zone("Terrain").size++;
 
         this.move("Défausse");

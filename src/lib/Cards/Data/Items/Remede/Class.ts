@@ -16,7 +16,7 @@ export class Remede extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.hasDebuff()) {
                 return true;
@@ -25,7 +25,7 @@ export class Remede extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -48,7 +48,7 @@ export class Remede extends Item {
         }
     };
 
-    useEffect = function (stat: Stat) {
+    useEffect = (stat: Stat) => {
         stat.set(stat.min);
         this.move("Défausse");
         this.pose();

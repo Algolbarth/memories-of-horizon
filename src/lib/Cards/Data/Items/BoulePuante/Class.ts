@@ -15,7 +15,7 @@ export class BoulePuante extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (card.type == "Créature" && card.stat("Protection").value() > 0) {
                 return true;
@@ -24,7 +24,7 @@ export class BoulePuante extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class BoulePuante extends Action {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         target.stat("Protection").decrease(5);
         this.move("Défausse");
         this.pose();

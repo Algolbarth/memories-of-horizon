@@ -14,14 +14,14 @@ export class PluieDeFleche extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
             card.damageByEffect(5);

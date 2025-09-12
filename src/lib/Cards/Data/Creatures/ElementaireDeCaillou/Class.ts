@@ -19,14 +19,14 @@ export class ElementaireDeCaillou extends Creature {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
@@ -45,7 +45,7 @@ export class ElementaireDeCaillou extends Creature {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         if (target != undefined) {
             target.damageByEffect(6);
             this.destroy();

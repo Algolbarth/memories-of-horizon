@@ -8,19 +8,24 @@ export class Battle {
     auto = null;
     system: System;
     turn: number = 1;
+    phase: string = "Préparation";
+    player: Entity;
+    bot: Entity;
 
     constructor(system: System) {
         this.system = system;
+        this.player = new Entity(this.system);
+        this.bot = new Entity(this.system);
     }
 
-    isBattle = function () {
+    isBattle = () => {
         if (this.phase == "Combat") {
             return true;
         }
         return false;
     };
 
-    newBattle = function () {
+    newBattle = () => {
         if (this.player.zone("Terrain").cards.length > 0 && this.bot.zone("Terrain").cards.length > 0) {
             this.phase = "Combat";
             this.turn = 0;
@@ -56,18 +61,18 @@ export class Battle {
         }
     };
 
-    startAuto = function () {
+    startAuto = () => {
         if (!this.isEndBattle()) {
             this.auto = setInterval(this.actionBattle.bind(this), this.system.settings.auto_speed);
         }
     };
 
-    stopAuto = function () {
+    stopAuto = () => {
         clearInterval(this.auto);
         this.auto = null;
     };
 
-    nextTurn = function () {
+    nextTurn = () => {
         this.turn++;
         this.fighter = undefined;
 
@@ -94,7 +99,7 @@ export class Battle {
         }
     };
 
-    resetAction = function () {
+    resetAction = () => {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
                 card.stat("Initiative").set(card.stat("Maîtrise").value());
@@ -102,7 +107,7 @@ export class Battle {
         }
     };
 
-    actionBattle = function () {
+    actionBattle = () => {
         if (!this.isEndBattle()) {
             if (!this.isEndTurn()) {
                 this.nextFighter();
@@ -119,7 +124,7 @@ export class Battle {
         }
     };
 
-    nextFighter = function (previous_entity = undefined) {
+    nextFighter = (previous_entity = undefined) => {
         let entity: Entity = this.choiceEntity(previous_entity);
 
         let speed = this.getBestSpeed();
@@ -136,7 +141,7 @@ export class Battle {
         }
     };
 
-    choiceEntity = function (previous_entity: Entity | undefined) {
+    choiceEntity = (previous_entity: Entity | undefined) => {
         if (previous_entity == undefined) {
             if (this.fighter == undefined) {
                 return this.player;
@@ -148,7 +153,7 @@ export class Battle {
         return previous_entity;
     };
 
-    getBestSpeed = function () {
+    getBestSpeed = () => {
         let best_speed = 0;
 
         for (const entity of [this.player, this.bot]) {
@@ -162,7 +167,7 @@ export class Battle {
         return best_speed;
     };
 
-    isEndTurn = function () {
+    isEndTurn = () => {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
                 if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
@@ -174,7 +179,7 @@ export class Battle {
         return true;
     };
 
-    endTurn = function () {
+    endTurn = () => {
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
@@ -190,7 +195,7 @@ export class Battle {
         }
     }
 
-    isEndBattle = function () {
+    isEndBattle = () => {
         if (this.player.zone("Terrain").cards.length == 0) {
             return true;
         }
@@ -200,13 +205,13 @@ export class Battle {
         return false;
     };
 
-    isVictory = function () {
+    isVictory = () => {
         if (this.bot.zone("Terrain").cards.length == 0) {
             return true;
         }
     };
 
-    endBattle = function () {
+    endBattle = () => {
         this.phase = "Préparation";
         this.fighter = undefined;
 

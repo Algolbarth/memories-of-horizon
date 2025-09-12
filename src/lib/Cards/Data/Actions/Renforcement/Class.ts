@@ -15,14 +15,14 @@ export class Renforcement extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -31,7 +31,7 @@ export class Renforcement extends Action {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         target.stat("Constitution").increase(15);
         this.move("Défausse");
         this.pose();

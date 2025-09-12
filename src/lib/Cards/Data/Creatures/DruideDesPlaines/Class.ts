@@ -13,7 +13,7 @@ class DruideDesPlaines extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -22,7 +22,7 @@ class DruideDesPlaines extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = (choice) => {
         if (choice == "Humain") {
             this.transform("Druide des plaines (forme humain)");
         }
@@ -47,7 +47,7 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
         this.stat("Force").base = 12;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.draw(2);
         }

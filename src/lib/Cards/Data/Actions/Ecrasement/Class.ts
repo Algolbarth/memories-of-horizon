@@ -15,7 +15,7 @@ export class Ecrasement extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length == 0) {
             return false;
         }
@@ -27,7 +27,7 @@ export class Ecrasement extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -46,7 +46,7 @@ export class Ecrasement extends Action {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         let value = 0;
 
         for (const card of this.owner.zone("Terrain").cards) {

@@ -14,7 +14,7 @@ export class Trait {
         this.card = card;
     };
 
-    value = function () {
+    value = () => {
         let total = this.base + this.add + this.step + this.turn;
         if (this.card.type == "Créature") {
             for (const equipment of this.card.equipments) {

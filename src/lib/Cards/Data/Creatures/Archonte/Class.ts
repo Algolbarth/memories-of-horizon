@@ -19,7 +19,7 @@ export class Archonte extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             card.stat("Endurance").increase(10);

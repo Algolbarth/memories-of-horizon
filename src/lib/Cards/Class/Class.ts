@@ -41,7 +41,7 @@ export class Card {
         }
     };
 
-    init = function (array: any[]) {
+    init = (array: any[]) => {
         let total = 0;
         for (const element of array) {
             this.getCost(element[0]).base += element[1];
@@ -71,25 +71,25 @@ export class Card {
         }
     };
 
-    getCost = function (name: string) {
+    getCost = (name: string) => {
         for (const c of this.cost) {
             if (c.name == name) {
                 return c;
             }
         }
-        return undefined;
+        return new Cost(name, this);
     };
 
-    getSale = function (name: string) {
+    getSale = (name: string) => {
         for (const v of this.sale) {
             if (v.name == name) {
                 return v;
             }
         }
-        return undefined;
+        return new Cost(name, this);
     };
 
-    costTotal = function () {
+    costTotal = () => {
         let total = 0;
         for (const cost of this.cost) {
             total += cost.value();
@@ -97,7 +97,7 @@ export class Card {
         return total;
     };
 
-    costReduce = function (value: number) {
+    costReduce = (value: number) => {
         while (value > 0) {
             let best = this.getCost("Or");
             for (const cost of this.cost) {
@@ -110,7 +110,7 @@ export class Card {
         }
     };
 
-    saleTotal = function () {
+    saleTotal = () => {
         let total = 0;
         for (const sale of this.sale) {
             total += sale.value();
@@ -118,26 +118,28 @@ export class Card {
         return total;
     };
 
-    remove = function () {
-        if (this.isUnit() && this.zone.name == "Terrain") {
-            this.owner.ressource("Mana").max -= this.stat("Magie").value();
-        }
+    remove = () => {
+        if (this.owner && this.zone && this.slot) {
+            if (this.isUnit() && this.zone.name == "Terrain") {
+                this.owner.ressource("Mana").max -= this.stat("Magie").value();
+            }
 
-        if (this.removeEffect != undefined) {
-            this.removeEffect(this.zone.name);
-        }
+            if (this.removeEffect != undefined) {
+                this.removeEffect(this.zone.name);
+            }
 
-        this.zone.cards.splice(this.slot, 1);
-        for (let i = this.slot; i < this.zone.cards.length; i++) {
-            this.zone.cards[i].slot--;
+            this.zone.cards.splice(this.slot, 1);
+            for (let i = this.slot; i < this.zone.cards.length; i++) {
+                this.zone.cards[i].slot--;
+            }
+            this.zone = undefined;
+            this.slot = undefined;
         }
-        this.zone = undefined;
-        this.slot = undefined;
     };
 
     removeEffect: Function | undefined;
 
-    add = function (zone: string, entity: Entity = this.owner) {
+    add = (zone: string, entity: Entity = this.owner) => {
         if (!entity.zone(zone).isFull()) {
             this.owner = entity;
             this.zone = entity.zone(zone);
@@ -169,12 +171,12 @@ export class Card {
 
     addEffect: Function | undefined;
 
-    move = function (zone: string, entity: Entity = this.owner) {
+    move = (zone: string, entity: Entity = this.owner) => {
         this.remove();
         this.add(zone, entity);
     };
 
-    up = function () {
+    up = () => {
         let temp = this.zone.cards[this.slot - 1];
 
         this.zone.cards[this.slot - 1] = this;
@@ -184,7 +186,7 @@ export class Card {
         this.slot--;
     };
 
-    down = function () {
+    down = () => {
         let temp = this.zone.cards[this.slot + 1];
 
         this.zone.cards[this.slot + 1] = this;
@@ -194,7 +196,7 @@ export class Card {
         this.slot++;
     };
 
-    canBuy = function () {
+    canBuy = () => {
         for (const c of this.cost) {
             if (c.value() > this.owner.ressource(c.name).total()) {
                 return false;
@@ -206,7 +208,7 @@ export class Card {
         return true;
     };
 
-    buy = function () {
+    buy = () => {
         if (this.canBuy()) {
             for (const c of this.cost) {
                 this.owner.ressource(c.name).spend(c.value());
@@ -216,15 +218,15 @@ export class Card {
         }
     };
 
-    lock = function () {
+    lock = () => {
         this.locked = true;
     };
 
-    unlock = function () {
+    unlock = () => {
         this.locked = false;
     };
 
-    sell = function () {
+    sell = () => {
         if (this.sellEffect != undefined) {
             this.sellEffect();
         }
@@ -262,24 +264,24 @@ export class Card {
 
     otherSellEffect: Function | undefined;
 
-    canUse = function () {
+    canUse = () => {
         return true;
     };
 
-    use = function () {
+    use = () => {
         this.select();
     };
 
-    select = function () {
+    select = () => {
         this.useEffect();
     };
 
-    useEffect: Function = function () {
+    useEffect: Function = () => {
         this.move("Défausse");
         this.pose();
     };
 
-    pose = function () {
+    pose = () => {
         this.cache = false;
 
         for (const entity of [this.system.game.player, this.system.game.bot]) {
@@ -306,7 +308,7 @@ export class Card {
 
     otherPoseEffect: Function | undefined;
 
-    destroy = function () {
+    destroy = () => {
         if (!this.trait("Légendaire").value()) {
             this.move("Défausse");
         }
@@ -320,23 +322,24 @@ export class Card {
 
     turnEffect: Function | undefined;
 
-    description = function () {
+    description = () => {
         return "...";
     };
 
-    stat = function (name: string) {
+    stat = (name: string) => {
         for (const s of this.stats) {
             if (name == s.name) {
                 return s;
             }
         }
+        return new Stat(name, 0, 0, this);
     };
 
-    addStat = function (name: string, value: number, min: number = 0) {
+    addStat = (name: string, value: number, min: number = 0) => {
         this.stats.push(new Stat(name, value, min, this));
     };
 
-    hasStat = function () {
+    hasStat = () => {
         for (const s of this.stats) {
             if (s.condition()) {
                 return true;
@@ -345,7 +348,7 @@ export class Card {
         return false;
     };
 
-    hasDebuff = function () {
+    hasDebuff = () => {
         for (const s of this.stats) {
             if (s.condition() && s.debuff) {
                 return true;
@@ -354,19 +357,20 @@ export class Card {
         return false;
     };
 
-    trait = function (name: string) {
+    trait = (name: string) => {
         for (const t of this.traits) {
             if (name == t.name) {
                 return t;
             }
         }
+        return new Trait(name, false, this);
     };
 
-    addTrait = function (name: string, value: boolean) {
+    addTrait = (name: string, value: boolean) => {
         this.traits.push(new Trait(name, value, this));
     };
 
-    hasTrait = function () {
+    hasTrait = () => {
         for (const t of this.traits) {
             if (t.value()) {
                 return true;
@@ -375,14 +379,14 @@ export class Card {
         return false;
     };
 
-    isUnit = function () {
+    isUnit = () => {
         if (this.type == "Créature" || this.type == "Bâtiment") {
             return true;
         }
         return false;
     };
 
-    transform = function (name: string) {
+    transform = (name: string) => {
         let newCard = this.system.cards.getByName(name);
         this.zone.cards[this.slot] = newCard;
 
@@ -406,7 +410,7 @@ export class Card {
         }
     };
 
-    targeting = function (target: Card) {
+    targeting = (target: Card) => {
         if (target.targetEffect != undefined) {
             target.targetEffect(this);
         }

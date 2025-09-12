@@ -17,7 +17,7 @@ export class PeauDOurs extends Equipment {
         this.text = Text;
     };
 
-    otherDieEffect = function (card: Card) {
+    otherDieEffect = (card: Card) => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.total().includes("Bête")) {
             this.bearer.stat("Constitution").increase(10);
         }

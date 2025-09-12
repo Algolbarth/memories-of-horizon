@@ -37,12 +37,12 @@ export class ChevalierMonte extends Creature {
         this.text = Text;
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         this.transform("Chevalier");
         this.zone.cards[this.slot].stat("Santé").base = this.zone.cards[this.slot].stat("Vitalité").value();
     };
 
-    dieGo = function () {
+    dieGo = () => {
 
     };
 }

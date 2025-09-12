@@ -11,11 +11,8 @@ import type { TrainEntity } from '../Training/Train';
 export class Game extends Battle {
     use: Use = new Use();
     pause: boolean = false;
-    phase: string = "Préparation";
     deck: Deck | undefined = undefined;
     mode: string;
-    player: Entity = new Entity(this.system);
-    bot: Entity = new Entity(this.system);
     chapter: Chapter | undefined;
 
     constructor(system: System, mode: string, deck: (Deck | undefined) = undefined) {
@@ -25,7 +22,7 @@ export class Game extends Battle {
         this.deck = deck;
     };
 
-    init = function () {
+    init = () => {
         if (this.mode == "Entraînement") {
             this.trainInit();
         }
@@ -45,14 +42,14 @@ export class Game extends Battle {
         }
     };
 
-    trainInit = function () {
+    trainInit = () => {
         this.trainInitEntity(this.player, this.system.train.player);
         this.trainInitEntity(this.bot, this.system.train.bot);
 
         this.startStep();
     };
 
-    trainInitEntity = function (entity: Entity, train_entity: TrainEntity) {
+    trainInitEntity = (entity: Entity, train_entity: TrainEntity) => {
         entity.life.set(train_entity.life);
 
         entity.ressource("Or").max = train_entity.gold;
@@ -70,7 +67,7 @@ export class Game extends Battle {
         entity.place = entity.zone("Région").cards[0];
     };
 
-    nextChapter = function () {
+    nextChapter = () => {
         if (this.chapter.number < 50) {
             this.bot = new Entity(this.system);
 
@@ -91,7 +88,7 @@ export class Game extends Battle {
         }
     };
 
-    startChapter = function () {
+    startChapter = () => {
         this.player.ressource("Or").max++;
         this.player.ressource("Flux").stock++;
 
@@ -108,7 +105,7 @@ export class Game extends Battle {
         this.startStep();
     };
 
-    startStep = function () {
+    startStep = () => {
         for (const ressource of this.player.ressources) {
             ressource.current = ressource.max;
         }
@@ -145,7 +142,7 @@ export class Game extends Battle {
         }
     };
 
-    endStep = function () {
+    endStep = () => {
         this.player.checkPerpetuite();
         this.bot.checkPerpetuite();
 
@@ -167,7 +164,7 @@ export class Game extends Battle {
         }
     };
 
-    nextStep = function () {
+    nextStep = () => {
         if (this.mode == "Entraînement") {
             this.startStep();
             this.bot.play();
@@ -191,7 +188,7 @@ export class Game extends Battle {
         }
     };
 
-    victory = function () {
+    victory = () => {
         if (this.mode == "Aventure") {
             this.system.account.aventure.victory++;
         }
@@ -202,7 +199,7 @@ export class Game extends Battle {
         this.system.page = "Victory";
     };
 
-    defeat = function () {
+    defeat = () => {
         if (this.mode == "Aventure") {
             this.system.account.aventure.defeat++;
         }
@@ -218,12 +215,12 @@ class Use {
     card: Card | undefined = undefined;
     svelte: Component | undefined = undefined;
 
-    set = function (card: Card, svelte: Component) {
+    set = (card: Card, svelte: Component) => {
         this.card = card;
         this.svelte = svelte;
     };
 
-    reset = function () {
+    reset = () => {
         this.card = undefined;
         this.svelte = undefined;
     };

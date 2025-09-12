@@ -19,20 +19,20 @@ export class Raido extends Boss {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.owner == this.owner && card.type == "Créature") {
             card.stat("Force").increase(5);
             card.stat("Constitution").increase(5);
         }
     };
 
-    otherDieEffect = function (card: Card) {
+    otherDieEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.owner != this.owner) {
             this.owner.ressource("Or").current += card.stat("Vitalité").value();
         }
     };
 
-    playEffect = function () {
+    playEffect = () => {
         while (this.owner.ressource("Or").total() >= 1) {
             this.owner.ressource("Or").spend(1);
             this.stat("Force").increase(1);

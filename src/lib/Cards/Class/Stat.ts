@@ -17,7 +17,7 @@ export class Stat {
         this.card = card;
     };
 
-    value = function () {
+    value = () => {
         let total = this.base + this.add + this.step + this.turn;
         if (this.card.type == "Créature") {
             for (const equipment of this.card.equipments) {
@@ -32,15 +32,15 @@ export class Stat {
         return total;
     };
 
-    increase = function (value: number) {
+    increase = (value: number) => {
         this.add += value;
     };
 
-    decrease = function (value: number) {
+    decrease = (value: number) => {
         this.add -= value;
     };
 
-    remove = function (value: number) {
+    remove = (value: number) => {
         while (value > 0) {
             if (this.turn > 0) {
                 this.turn--;
@@ -55,21 +55,22 @@ export class Stat {
         }
     };
 
-    fix = function (value: number) {
+    fix = (value: number) => {
         if (this.value() < value) {
             this.set(value);
         }
     };
 
-    set = function (value: number) {
+    set = (value: number) => {
         this.step = 0;
         this.turn = 0;
         this.add = value - this.base;
     };
 
-    condition = function () {
+    condition = () => {
         if (this.value() > this.min) {
             return true;
         }
+        return false;
     };
 };

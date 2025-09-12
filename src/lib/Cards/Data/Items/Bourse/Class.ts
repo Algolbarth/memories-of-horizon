@@ -14,11 +14,11 @@ export class Bourse extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         return false;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Réserve") {
             this.getSale("Or").increase(5);
         }

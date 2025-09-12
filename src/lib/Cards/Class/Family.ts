@@ -12,7 +12,7 @@ export class Families {
         this.card = card;
     };
 
-    total = function () {
+    total = () => {
         let array = [];
 
         for (const b of this.base) {

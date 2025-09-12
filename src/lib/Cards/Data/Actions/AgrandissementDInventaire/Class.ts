@@ -13,7 +13,7 @@ export class AgrandissementDInventaire extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.zone("Réserve").size++;
 
         this.move("Défausse");

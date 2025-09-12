@@ -15,14 +15,14 @@ export class PluieDeCailloux extends Spell {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner.ressource("Mana").total() >= 30) {
             this.useEffect();
         }
@@ -36,7 +36,7 @@ export class PluieDeCailloux extends Spell {
         }
     };
 
-    useEffect = function (choice: string) {
+    useEffect = (choice: string) => {
         if (this.owner.ressource("Mana").total() >= 30) {
             this.owner.ressource("Mana").spend(30);
             let nb_creature = this.owner.zone("Terrain").size - this.owner.zone("Terrain").cards.length;

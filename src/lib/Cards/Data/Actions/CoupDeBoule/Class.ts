@@ -13,7 +13,7 @@ export class CoupDeBoule extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length == 0) {
             return false;
         }
@@ -25,7 +25,7 @@ export class CoupDeBoule extends Action {
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let value = 0;
         let target = this.owner.adversary().zone("Terrain").cards[0];
 

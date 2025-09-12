@@ -19,8 +19,8 @@ export class Architecte extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
-        let condition = function (card: Card) {
+    useEffect = () => {
+        let condition = (card: Card) => {
             if (card.type == "Bâtiment") {
                 return true;
             }

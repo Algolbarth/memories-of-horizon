@@ -25,7 +25,7 @@ export class Concoction extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.stat("Infusion de mana").value() > 0 || this.stat("Infusion interdite").value() > 0) {
             return true;
         }
@@ -39,7 +39,7 @@ export class Concoction extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             let check = false;
 
@@ -77,7 +77,7 @@ export class Concoction extends Item {
         }
     };
 
-    hasInfusion = function () {
+    hasInfusion = () => {
         for (const stat of this.stats) {
             if (stat.name.includes("Infusion") && stat.value() > 0) {
                 return true;
@@ -86,7 +86,7 @@ export class Concoction extends Item {
         return false;
     };
 
-    useEffect = function (target: Creature | undefined) {
+    useEffect = (target: Creature | undefined) => {
         this.owner.ressource("Mana").current += this.stat("Infusion de mana").value();
 
         if (this.stat("Infusion interdite").value() > 0) {
@@ -107,7 +107,7 @@ export class Concoction extends Item {
         this.pose();
     };
 
-    infuse = function (potion: Item) {
+    infuse = (potion: Item) => {
         if (potion.name == "Concoction") {
             for (const stat of potion.stats) {
                 if (stat.name.includes("Infusion")) {

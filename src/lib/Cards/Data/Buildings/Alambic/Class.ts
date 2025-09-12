@@ -15,7 +15,7 @@ export class Alambic extends Building {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             let reserve = copy(this.owner.zone("Réserve").cards);
             for (const card of reserve) {

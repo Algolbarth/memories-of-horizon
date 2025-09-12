@@ -14,7 +14,7 @@ export class Village extends Location {
         this.text = Text;
     };
 
-    condition = function (card: Card) {
+    condition = (card: Card) => {
         if (card.level <= 5) {
             return true;
         }

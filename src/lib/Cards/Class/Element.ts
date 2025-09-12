@@ -10,7 +10,7 @@ export class Elements {
         this.card = card;
     };
 
-    total = function () {
+    total = () => {
         let array = [];
         for (const b of this.base) {
             array.push(b);

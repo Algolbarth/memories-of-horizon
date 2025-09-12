@@ -17,7 +17,7 @@ export class Voleur extends Creature {
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         this.getSale("Or").increase(2);
     };
 }

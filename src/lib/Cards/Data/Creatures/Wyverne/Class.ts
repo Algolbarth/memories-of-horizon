@@ -18,7 +18,7 @@ export class Wyverne extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Pile" && card.owner == this.owner) {
             this.costReduce(5);
         }

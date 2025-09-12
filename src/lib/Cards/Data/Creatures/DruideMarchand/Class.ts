@@ -13,7 +13,7 @@ class DruideMarchand extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -22,7 +22,7 @@ class DruideMarchand extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = (choice) => {
         if (choice == "Humain") {
             this.transform("Druide marchand (forme humain)");
         }
@@ -47,7 +47,7 @@ export class DruideMarchandHumain extends DruideMarchand {
         this.stat("Force").base = 10;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         this.owner.ressource("Or").max += 1;
     };
 }

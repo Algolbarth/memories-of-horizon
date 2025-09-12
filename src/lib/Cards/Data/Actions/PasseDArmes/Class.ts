@@ -15,7 +15,7 @@ export class PasseDArmes extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.equipments.length > 0) {
                 return true;
@@ -24,7 +24,7 @@ export class PasseDArmes extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class PasseDArmes extends Action {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         for (const equipment of target.equipments) {
             equipment.move("Réserve");
         }

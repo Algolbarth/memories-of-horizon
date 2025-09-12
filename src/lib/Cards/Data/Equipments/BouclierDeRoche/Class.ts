@@ -16,7 +16,7 @@ export class BouclierDeRoche extends Equipment {
         this.text = Text;
     };
 
-    defendEffect = function () {
+    defendEffect = () => {
         this.bearer.stat("Endurance").increase(2);
     };
 }

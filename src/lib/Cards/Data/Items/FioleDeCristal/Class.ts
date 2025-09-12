@@ -14,7 +14,7 @@ export class FioleDeCristal extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
             if (card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
                 return true;
@@ -23,7 +23,7 @@ export class FioleDeCristal extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -42,7 +42,7 @@ export class FioleDeCristal extends Item {
         }
     };
 
-    useEffect = function (target: Item) {
+    useEffect = (target: Item) => {
         target.stat("Infusion").increase(25);
         this.move("Défausse");
         this.pose();

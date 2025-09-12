@@ -16,7 +16,7 @@ export class PotionDeMana extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.ressource("Mana").current += this.stat("Infusion").value();
         this.move("Défausse");
         this.pose();

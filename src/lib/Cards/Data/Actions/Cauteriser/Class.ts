@@ -15,7 +15,7 @@ export class Cauteriser extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (card.type == "Créature" && card.isDamaged()) {
                 return true;
@@ -24,7 +24,7 @@ export class Cauteriser extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class Cauteriser extends Action {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         target.stat("Vitalité").set(target.stat("Santé").value());
         this.move("Défausse");
         this.pose();

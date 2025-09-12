@@ -14,7 +14,7 @@ export class TourDArcher extends Building {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Flèche en bois").add("Réserve");
         }

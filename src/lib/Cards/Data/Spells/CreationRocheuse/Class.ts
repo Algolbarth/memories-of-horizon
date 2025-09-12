@@ -14,14 +14,14 @@ export class CreationRocheuse extends Spell {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Terrain").isFull()) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner.ressource("Mana").total() >= 50) {
             this.useEffect();
         }
@@ -35,7 +35,7 @@ export class CreationRocheuse extends Spell {
         }
     };
 
-    useEffect = function (choice: string) {
+    useEffect = (choice: string) => {
         if (this.owner.ressource("Mana").total() >= 50) {
             this.owner.ressource("Mana").spend(50);
             this.owner.getCard("Élémentaire de roche").add("Terrain");

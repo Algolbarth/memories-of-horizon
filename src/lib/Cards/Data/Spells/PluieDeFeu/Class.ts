@@ -15,14 +15,14 @@ export class PluieDeFeu extends Spell {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let damage;
         if (this.owner.ressource("Mana").total() >= 50) {
             this.owner.ressource("Mana").spend(50);

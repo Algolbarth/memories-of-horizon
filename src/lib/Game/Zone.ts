@@ -10,7 +10,7 @@ export class Zone {
         this.size = size;
     };
 
-    isFull = function () {
+    isFull = () => {
         return this.cards.length == this.size;
     };
 }

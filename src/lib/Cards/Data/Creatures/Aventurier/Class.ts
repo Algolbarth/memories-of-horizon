@@ -19,7 +19,7 @@ export class Aventurier extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -28,8 +28,8 @@ export class Aventurier extends Creature {
         }
     };
 
-    useEffect = function (choice: string) {
-        let condition = function (card: Card) {
+    useEffect = (choice: string) => {
+        let condition = (card: Card) => {
             if (card.type == choice) {
                 return true;
             }

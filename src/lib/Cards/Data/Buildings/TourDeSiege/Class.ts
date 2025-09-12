@@ -15,7 +15,7 @@ export class TourDeSiege extends Building {
         this.text = Text;
     };
 
-    turnEffect = function () {
+    turnEffect = () => {
         if (this.zone.name == "Terrain") {
             let target = undefined;
             let terrain = copy(this.zone.cards);

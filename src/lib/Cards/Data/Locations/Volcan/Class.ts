@@ -14,7 +14,7 @@ export class Volcan extends Location {
         this.text = Text;
     };
 
-    condition = function (card: Card) {
+    condition = (card: Card) => {
         if (card.elements.total().includes("Feu")) {
             return true;
         }

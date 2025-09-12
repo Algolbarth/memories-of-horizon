@@ -13,7 +13,7 @@ export class Deck {
         this.name = this.changeName("Nouveau deck", 0);
     };
 
-    changeName = function (name: string, number: number) {
+    changeName = (name: string, number: number) => {
         let newName = name;
         if (number > 0) {
             newName += " (" + number + ")";
@@ -28,20 +28,20 @@ export class Deck {
         return this.name;
     };
 
-    canModify = function () {
+    canModify = () => {
         if (this.victory > 0 || this.defeat > 0) {
             return false;
         }
         return true;
     };
 
-    add = function (name: string) {
+    add = (name: string) => {
         if (!this.check(name)) {
             this.cards.push(name);
         }
     };
 
-    remove = function (name: string) {
+    remove = (name: string) => {
         for (let i = 0; i < this.cards.length; i++) {
             if (this.cards[i] == name) {
                 this.cards.splice(i, 1);
@@ -58,7 +58,7 @@ export class Deck {
         return false;
     };
 
-    clone = function () {
+    clone = () => {
         let deck = new Deck(this.system);
         deck.changeName(this.name, 0);
         for (const card of this.cards) {
@@ -67,7 +67,7 @@ export class Deck {
         this.system.decks.push(deck);
     };
 
-    delete = function () {
+    delete = () => {
         for (let i = 0; i < this.system.decks.length; i++) {
             if (this.system.decks[i].name == this.name) {
                 this.system.decks.splice(i, 1);
@@ -76,7 +76,7 @@ export class Deck {
         this.system.deck = undefined;
     };
 
-    playable = function () {
+    playable = () => {
         for (const card of this.cards) {
             if (this.system.cards.getByName(card).level == 1) {
                 return true;
@@ -85,7 +85,7 @@ export class Deck {
         return false;
     };
 
-    code = function () {
+    code = () => {
         let code = this.name + "_";
         for (const card of this.cards) {
             code += card + "_";

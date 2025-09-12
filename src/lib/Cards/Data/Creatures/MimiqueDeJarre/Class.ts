@@ -16,12 +16,12 @@ export class MimiqueDeJarre extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.move("Terrain", this.owner.adversary());
         this.pose();
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         this.owner.adversary().ressource("Or").stock += 10;
     };
 }

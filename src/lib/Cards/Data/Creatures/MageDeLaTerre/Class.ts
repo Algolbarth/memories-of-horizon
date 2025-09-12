@@ -19,7 +19,7 @@ export class MageDeLaTerre extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.familles.total().includes("Sort") && card.owner == this.owner) {
             this.owner.getCard("Élémentaire de caillou").add("Réserve");
         }

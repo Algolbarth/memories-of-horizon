@@ -16,7 +16,7 @@ export class ElementaireDeFeu extends Creature {
         this.text = Text;
     };
 
-    addEffect = function (zone: string) {
+    addEffect = (zone: string) => {
         if (zone == "Terrain" && this.owner.ressource("Feu").max >= 1) {
             this.owner.ressource("Feu").max--;
         }

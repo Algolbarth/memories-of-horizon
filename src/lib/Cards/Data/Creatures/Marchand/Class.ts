@@ -17,13 +17,13 @@ export class Marchand extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.ressource("Or").max++;
         this.move("Terrain");
         this.pose();
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Or").max++;
         }

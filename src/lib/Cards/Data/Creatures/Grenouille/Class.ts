@@ -13,7 +13,7 @@ export class Grenouille extends Creature {
         this.stat("Force").base = 5;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.move("Réserve");
         }

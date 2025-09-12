@@ -14,7 +14,7 @@ export class FeuDeCamp extends Building {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             if (this.slot > 0 && this.zone.cards[this.slot - 1].type == "Créature") {
                 this.zone.cards[this.slot - 1].heal(5);

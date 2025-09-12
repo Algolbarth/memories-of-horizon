@@ -20,7 +20,7 @@ export class CarteDeLaRegion extends Item {
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.draw(this.owner.zone("Pile").size - this.owner.zone("Pile").cards.length);
         this.move("Défausse");
         this.pose();

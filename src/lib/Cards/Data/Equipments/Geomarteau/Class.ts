@@ -13,14 +13,14 @@ export class Geomarteau extends Equipment {
         this.familles.base.push("Arme");
 
         this.addStat("Secousses", 0);
-        this.stat("Secousses").condition = function () {
+        this.stat("Secousses").condition = () => {
             return true;
         };
 
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         this.stat("Secousses").increase(3);
 
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);

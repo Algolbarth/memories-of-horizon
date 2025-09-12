@@ -18,7 +18,7 @@ export class Archimere extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
             for (let i = 0; i < card.familles.total().length; i++) {
                 this.stat("Constitution").increase(5);

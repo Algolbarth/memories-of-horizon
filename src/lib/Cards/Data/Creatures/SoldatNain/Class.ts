@@ -19,7 +19,7 @@ export class SoldatNain extends Creature {
         this.text = Text;
     };
 
-    addEffect = function (zone: string) {
+    addEffect = (zone: string) => {
         if (zone == "Terrain") {
             let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {

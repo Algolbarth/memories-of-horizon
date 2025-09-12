@@ -15,7 +15,7 @@ export class Melange extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         let nb_potion = 0;
         for (const card of this.owner.zone("Réserve").cards) {
             if (card.familles.total().includes("Potion")) {
@@ -28,7 +28,7 @@ export class Melange extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -51,7 +51,7 @@ export class Melange extends Action {
         }
     };
 
-    useEffect = function (potion_1: Item, potion_2: Item) {
+    useEffect = (potion_1: Item, potion_2: Item) => {
         potion_1.remove();
         potion_2.remove();
 

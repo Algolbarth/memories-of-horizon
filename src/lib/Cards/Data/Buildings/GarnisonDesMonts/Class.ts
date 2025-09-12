@@ -14,7 +14,7 @@ export class GarnisonDesMonts extends Building {
         this.text = Text;
     };
 
-    turnEffect = function () {
+    turnEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Soldat nain").add("Terrain");
         }

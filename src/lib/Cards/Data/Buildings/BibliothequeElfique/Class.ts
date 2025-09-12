@@ -17,7 +17,7 @@ export class BibliothequeElfique extends Building {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Elfe")) {
             this.stat("Intelligence").increase(1);
         }

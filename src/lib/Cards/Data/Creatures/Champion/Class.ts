@@ -17,7 +17,7 @@ export class Champion extends Creature {
 
         this.text = Text;
 
-        this.stat("Force").value = function () {
+        this.stat("Force").value = () => {
             let total = this.base + this.add + this.step;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {
@@ -37,7 +37,7 @@ export class Champion extends Creature {
             }
         };
 
-        this.stat("Endurance").value = function () {
+        this.stat("Endurance").value = () => {
             let total = this.base + this.add + this.step;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {

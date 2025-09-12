@@ -15,7 +15,7 @@ export class Inondation extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (card.type == "Bâtiment" && !card.elements.total().includes("Eau")) {
                 return true;
@@ -24,7 +24,7 @@ export class Inondation extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class Inondation extends Action {
         }
     };
 
-    useEffect = function (target: Building) {
+    useEffect = (target: Building) => {
         target.destroy();
         this.move("Défausse");
         this.pose();

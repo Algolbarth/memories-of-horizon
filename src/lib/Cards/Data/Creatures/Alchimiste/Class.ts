@@ -18,8 +18,8 @@ export class Alchimiste extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
-        let condition = function (card: Card) {
+    useEffect = () => {
+        let condition = (card: Card) => {
             if (card.familles.total().includes("Potion")) {
                 return true;
             }

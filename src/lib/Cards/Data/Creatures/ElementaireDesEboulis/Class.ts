@@ -19,7 +19,7 @@ export class ElementaireDesEboulis extends Creature {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Terrain").isFull()) {
             return true;
         }
@@ -31,7 +31,7 @@ export class ElementaireDesEboulis extends Creature {
         return false
     };
 
-    select = function () {
+    select = () => {
         let check = false;
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (check == false && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
@@ -63,7 +63,7 @@ export class ElementaireDesEboulis extends Creature {
         }
     };
 
-    useEffect = function (target: Creature | undefined) {
+    useEffect = (target: Creature | undefined) => {
         if (target != undefined) {
             target.stat("Étourdissement").fix(1);
             this.destroy();

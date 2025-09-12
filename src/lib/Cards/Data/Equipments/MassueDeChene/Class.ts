@@ -16,7 +16,7 @@ export class MassueDeChene extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         this.bearer.stat("Constitution").increase(10);
     };
 }

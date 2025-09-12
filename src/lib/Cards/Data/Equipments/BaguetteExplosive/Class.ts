@@ -17,7 +17,7 @@ export class BaguetteExplosive extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function (defender: Unit) {
+    fightEffect = (defender: Unit) => {
         defender.damageByEffect(this.bearer.stat("Magie").value());
     };
 }

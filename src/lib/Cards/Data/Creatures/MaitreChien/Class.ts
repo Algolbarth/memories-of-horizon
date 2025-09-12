@@ -17,14 +17,14 @@ export class MaitreChien extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.move("Terrain");
         this.owner.getCard("Chien").add("Terrain");
         this.owner.getCard("Chien").add("Terrain");
         this.pose();
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Chien").add("Terrain");
         }

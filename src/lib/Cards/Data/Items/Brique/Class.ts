@@ -15,7 +15,7 @@ export class Brique extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
@@ -27,7 +27,7 @@ export class Brique extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -38,7 +38,7 @@ export class Brique extends Item {
         }
     };
 
-    useEffect = function (target: Unit, choice: string) {
+    useEffect = (target: Unit, choice: string) => {
         if (choice == "heal") {
             target.heal(20);
         }

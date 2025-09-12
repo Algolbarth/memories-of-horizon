@@ -18,7 +18,7 @@ export class ChefBarbare extends Creature {
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {

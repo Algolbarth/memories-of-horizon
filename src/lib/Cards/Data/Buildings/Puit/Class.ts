@@ -15,7 +15,7 @@ export class Puit extends Building {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
             this.owner.ressource("Or").current += 5;
         }

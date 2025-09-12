@@ -15,7 +15,7 @@ export class Pont extends Building {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Créature" && this.owner == card.owner) {
             this.owner.draw(1);
         }

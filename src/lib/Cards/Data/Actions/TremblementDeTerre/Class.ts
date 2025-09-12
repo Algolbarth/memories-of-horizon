@@ -14,14 +14,14 @@ export class TremblementDeTerre extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0 || (this.owner == this.system.game.player && this.owner.zone("Terrain").cards.length > 0)) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         terrain = terrain.concat(copy(this.owner.adversary().zone("Terrain").cards));
 

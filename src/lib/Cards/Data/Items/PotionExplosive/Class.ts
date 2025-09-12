@@ -18,14 +18,14 @@ export class PotionExplosive extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -34,7 +34,7 @@ export class PotionExplosive extends Item {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         target.damageByEffect(this.stat("Infusion").value() * 2);
         this.move("Défausse");
         this.pose();

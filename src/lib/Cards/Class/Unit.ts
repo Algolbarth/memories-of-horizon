@@ -16,17 +16,17 @@ export class Unit extends Card {
         };
 
         this.addStat("Santé", 1);
-        this.stat("Santé").condition = function () {
+        this.stat("Santé").condition = () => {
             return true;
         };
 
         this.addStat("Vitalité", 1, 1);
-        this.stat("Vitalité").condition = function () {
+        this.stat("Vitalité").condition = () => {
             return true;
         };
 
         this.addStat("Constitution", 0);
-        this.stat("Constitution").condition = function () {
+        this.stat("Constitution").condition = () => {
             return false;
         };
         this.stat("Constitution").increase = function (value: number) {
@@ -75,38 +75,38 @@ export class Unit extends Card {
         this.addStat("Intelligence", 0);
     };
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Terrain").isFull()) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         this.useEffect();
     };
 
-    useEffect: Function = function () {
+    useEffect: Function = () => {
         this.move("Terrain");
         this.pose();
     };
 
-    heal = function (value: number) {
+    heal = (value: number) => {
         this.stat("Santé").increase(value);
         if (this.stat("Santé").value() > this.stat("Vitalité").value()) {
             this.stat("Santé").set(this.stat("Vitalité").value());
         }
     };
 
-    fullHeal = function () {
+    fullHeal = () => {
         this.stat("Santé").set(this.stat("Vitalité").value());
     };
 
-    isDamaged = function () {
+    isDamaged = () => {
         return this.stat("Santé").value() < this.stat("Vitalité").value();
     };
 
-    damageByEffect = function (value: number) {
+    damageByEffect = (value: number) => {
         value -= this.stat("Résistance").value();
         if (value < 0) {
             value = 0;
@@ -114,11 +114,11 @@ export class Unit extends Card {
         return this.damage(value);
     };
 
-    physicalDamage = function (value: number) {
+    physicalDamage = (value: number) => {
         return this.damage(value);
     };
 
-    damage = function (value: number) {
+    damage = (value: number) => {
         let result = {
             value: value,
             die: false
@@ -153,7 +153,7 @@ export class Unit extends Card {
         return result;
     };
 
-    die = function () {
+    die = () => {
         this.stat("Santé").base = 0;
 
         if (this.dieEffect != undefined) {
@@ -184,17 +184,17 @@ export class Unit extends Card {
         this.dieGo();
     };
 
-    dieGo = function () {
+    dieGo = () => {
         this.move("Défausse");
     };
 
-    destroy = function () {
+    destroy = () => {
         if (!this.trait("Légendaire").value()) {
             this.die();
         }
     };
 
-    play = function () {
+    play = () => {
         this.stat("Initiative").decrease(1);
 
         if (this.playEffect != undefined) {
@@ -202,7 +202,7 @@ export class Unit extends Card {
         }
     };
 
-    defend = function (attacker: Creature) {
+    defend = (attacker: Creature) => {
         if (this.defendEffect != undefined) {
             this.defendEffect(attacker);
         }

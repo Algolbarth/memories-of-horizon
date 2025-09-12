@@ -14,8 +14,8 @@ export class Forger extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
-        let condition = function (card: Card) {
+    useEffect = () => {
+        let condition = (card: Card) => {
             if (card.familles.total().includes("Équipement")) {
                 return true;
             }

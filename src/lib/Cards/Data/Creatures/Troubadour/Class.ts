@@ -18,7 +18,7 @@ export class Troubadour extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             let check = false;
 
@@ -53,7 +53,7 @@ export class Troubadour extends Creature {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         if (target != undefined) {
             target.stat("Santé").step += 20;
             target.stat("Vitalité").step += 20;

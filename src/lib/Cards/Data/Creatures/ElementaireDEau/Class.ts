@@ -17,7 +17,7 @@ export class ElementaireDEau extends Creature {
         this.text = Text;
     };
 
-    addEffect = function (zone: string) {
+    addEffect = (zone: string) => {
         if (zone == "Terrain" && this.owner.ressource("Eau").total() >= 5) {
             this.owner.ressource("Eau").spend(5);
             this.stat("Constitution").increase(5);

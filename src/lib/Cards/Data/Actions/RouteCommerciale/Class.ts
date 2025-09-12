@@ -13,7 +13,7 @@ export class RouteCommerciale extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.zone("Pile").size++;
 
         this.move("Défausse");

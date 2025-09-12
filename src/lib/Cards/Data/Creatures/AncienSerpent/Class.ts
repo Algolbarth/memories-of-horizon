@@ -17,7 +17,7 @@ export class AncienSerpent extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Mue").add("Réserve");
         }

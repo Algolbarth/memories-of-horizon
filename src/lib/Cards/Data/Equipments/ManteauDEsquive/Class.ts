@@ -14,7 +14,7 @@ export class ManteauDEsquive extends Equipment {
         this.text = Text;
     };
 
-    turnEffect = function () {
+    turnEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.bearer.stat("Esquive").turn += 1;
         }

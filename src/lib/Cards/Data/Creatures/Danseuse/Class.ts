@@ -17,7 +17,7 @@ export class Danseuse extends Creature {
         this.text = Text;
     };
 
-    startBattleEffect = function () {
+    startBattleEffect = () => {
         this.stat("Esquive").step += 1;
     };
 }

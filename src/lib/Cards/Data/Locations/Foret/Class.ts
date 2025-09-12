@@ -14,7 +14,7 @@ export class Foret extends Location {
         this.text = Text;
     };
 
-    condition = function (card: Card) {
+    condition = (card: Card) => {
         if (card.elements.total().includes("Végétal")) {
             return true;
         }

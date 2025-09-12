@@ -14,7 +14,7 @@ export class Train {
         this.bot = this.entity();
     };
 
-    entity = function () {
+    entity = () => {
         return new TrainEntity();
     };
 }
@@ -23,7 +23,7 @@ class Train_Add {
     entity: string | undefined = undefined;
     zone: TrainZone | undefined = undefined;
 
-    reset = function () {
+    reset = () => {
         this.zone = undefined;
     };
 }

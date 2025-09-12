@@ -15,7 +15,7 @@ export class PeauDePierre extends Spell {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature") {
                 return true;
@@ -24,7 +24,7 @@ export class PeauDePierre extends Spell {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class PeauDePierre extends Spell {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         if (this.owner.ressource("Mana").total() >= 15) {
             this.owner.ressource("Mana").spend(15);
             target.stat("Endurance").increase(30);

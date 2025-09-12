@@ -19,7 +19,7 @@ export class DefenseurDeLaCite extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Bâtiment" && card.owner == this.owner) {
             this.stat("Endurance").increase(2);
         }

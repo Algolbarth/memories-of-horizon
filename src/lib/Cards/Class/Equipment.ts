@@ -44,7 +44,7 @@ export class Equipment extends Item {
         this.addEquipTrait("Légendaire", false);
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.canEquip()) {
                 return true;
@@ -53,7 +53,7 @@ export class Equipment extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -83,7 +83,7 @@ export class Equipment extends Item {
         this.pose();
     };
 
-    remove = function () {
+    remove = () => {
         if (this.bearer != undefined) {
             this.owner.ressource("Mana").max -= this.equipStat("Magie").value();
             for (let i = 0; i < this.bearer.equipments.length; i++) {
@@ -104,7 +104,7 @@ export class Equipment extends Item {
         this.slot = undefined;
     };
 
-    equipStat = function (name: string) {
+    equipStat = (name: string) => {
         for (const stat of this.equipStats) {
             if (stat.name == name) {
                 return stat;
@@ -112,15 +112,15 @@ export class Equipment extends Item {
         }
     };
 
-    addEquipStat = function (name: string, value: number) {
+    addEquipStat = (name: string, value: number) => {
         let stat: Stat = new Stat(name, value, 0, this);
-        stat.value = function () {
+        stat.value = () => {
             return this.base + this.add;
         };
         this.equipStats.push(stat);
     };
 
-    hasEquipStat = function () {
+    hasEquipStat = () => {
         for (const stat of this.equipStats) {
             if (stat.value() > 0) {
                 return true;
@@ -129,7 +129,7 @@ export class Equipment extends Item {
         return false;
     };
 
-    equipTrait = function (name: string) {
+    equipTrait = (name: string) => {
         for (const trait of this.equipTraits) {
             if (trait.name == name) {
                 return trait;
@@ -137,9 +137,9 @@ export class Equipment extends Item {
         }
     };
 
-    addEquipTrait = function (name: string, value: boolean) {
+    addEquipTrait = (name: string, value: boolean) => {
         let trait = new Trait(name, value, this);
-        trait.value = function () {
+        trait.value = () => {
             return this.base;
         };
         this.equipStats.push(trait);

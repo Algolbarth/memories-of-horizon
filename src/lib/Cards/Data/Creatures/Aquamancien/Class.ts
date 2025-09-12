@@ -18,7 +18,7 @@ export class Aquamancien extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && card.owner == this.owner) {
             this.owner.ressource("Eau").stock += 1;
         }

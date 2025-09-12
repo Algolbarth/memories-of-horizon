@@ -13,7 +13,7 @@ export class Defrichage extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.zone("Pile").size++;
         this.owner.zone("Terrain").size++;
 

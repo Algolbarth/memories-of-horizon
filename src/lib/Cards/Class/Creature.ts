@@ -62,7 +62,7 @@ export class Creature extends Unit {
         this.stat("Étourdissement").debuff = true;
     };
 
-    play = function () {
+    play = () => {
         this.stat("Initiative").decrease(1);
 
         this.stat("Critique").increase(this.stat("Adresse").value());
@@ -72,19 +72,21 @@ export class Creature extends Unit {
 
         let defender = this.findTarget();
 
-        if (this.playEffect != undefined) {
-            this.playEffect(defender);
-        }
-        for (const e of this.equipments) {
-            if (e.playEffect != undefined) {
-                e.playEffect(defender);
+        if (defender != undefined) {
+            if (this.playEffect != undefined) {
+                this.playEffect(defender);
             }
-        }
+            for (const e of this.equipments) {
+                if (e.playEffect != undefined) {
+                    e.playEffect(defender);
+                }
+            }
 
-        this.fight(defender);
+            this.fight(defender);
+        }
     };
 
-    fight = function (defender: Unit) {
+    fight = (defender: Unit) => {
         let isDie: boolean = defender.zone!.name != "Terrain";
         let nb_hit: number = this.stat("Agilité").value();
 
@@ -139,7 +141,7 @@ export class Creature extends Unit {
 
     killEffect: Function | undefined;
 
-    findTarget = function () {
+    findTarget = () => {
         let target = undefined;
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (target == undefined || card.stat("Protection").value() > target.stat("Protection").value()) {
@@ -149,14 +151,14 @@ export class Creature extends Unit {
         return target;
     };
 
-    canEquip = function () {
+    canEquip = () => {
         if (this.equipments.length < this.stat("Maniement").value()) {
             return true;
         }
         return false;
     };
 
-    equip = function (equipment: Equipment) {
+    equip = (equipment: Equipment) => {
         equipment.remove();
         this.equipments.push(equipment);
         equipment.bearer = this;

@@ -11,15 +11,15 @@ export class Account {
         this.name = name;
     };
 
-    total_victory = function () {
+    total_victory = () => {
         return this.aventure.victory + this.construct.victory;
     };
 
-    total_defeat = function () {
+    total_defeat = () => {
         return this.aventure.defeat + this.construct.defeat;
     };
 
-    total_match = function () {
+    total_match = () => {
         return this.aventure.total() + this.construct.total();
     };
 }

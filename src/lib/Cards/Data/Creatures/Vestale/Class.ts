@@ -18,7 +18,7 @@ export class Vestale extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             let check = false;
 
@@ -53,7 +53,7 @@ export class Vestale extends Creature {
         }
     };
 
-    useEffect = function (target, choice) {
+    useEffect = (target, choice) => {
         if (choice == "attack") {
             target.stat("Force").increase(20);
         }

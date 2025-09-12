@@ -17,7 +17,7 @@ export class Ondin extends Creature {
         this.text = Text;
     };
 
-    addEffect = function (zone: string) {
+    addEffect = (zone: string) => {
         if (zone == "Terrain") {
             this.owner.ressource("Eau").current += 5;
         }

@@ -14,14 +14,14 @@ export class Autodafe extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.zone("Pile").cards.length > 0 && (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0)) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let value = 0;
 
         let stack = copy(this.owner.zone("Pile").cards);

@@ -18,7 +18,7 @@ export class TortueGéante extends Creature {
         this.text = Text;
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         this.owner.getCard("Carapace de tortue").add("Réserve");
     };
 }

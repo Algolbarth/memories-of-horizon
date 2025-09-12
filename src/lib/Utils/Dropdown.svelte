@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let array: string[] = [];
 	export let selected: string;
-	export let selecting: Function = function (element: string) {};
+	export let selecting: Function = (element: string) => {};
 	export let height: number = 25;
 	export let width: number = 15;
 

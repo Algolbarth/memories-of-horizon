@@ -14,7 +14,7 @@ export class HeaumeDeFer extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.bearer.stat("Garde").fix(25);
         }

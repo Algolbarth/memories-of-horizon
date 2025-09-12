@@ -17,7 +17,7 @@ export class Fermier extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Or").current += 5;
         }

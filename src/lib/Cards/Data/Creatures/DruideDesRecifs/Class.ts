@@ -13,7 +13,7 @@ class DruideDesRecifs extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -22,7 +22,7 @@ class DruideDesRecifs extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = (choice) => {
         if (choice == "Ondin") {
             this.transform("Druide des récifs (forme ondin)");
         }
@@ -47,7 +47,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
         this.stat("Force").base = 25;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Eau").max += 2;
         }

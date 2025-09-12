@@ -19,7 +19,7 @@ export class GanteletsDeFer extends Equipment {
         this.text = Text;
     };
 
-    playEffect = function () {
+    playEffect = () => {
         this.bearer.stat("Garde").fix(20);
     };
 }

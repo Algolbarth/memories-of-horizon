@@ -15,7 +15,7 @@ export class Option extends Action {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -24,7 +24,7 @@ export class Option extends Action {
         }
     };
 
-    useEffect = function (choice: string) {
+    useEffect = (choice: string) => {
         if (choice == "draw") {
             this.owner.draw(3);
         }

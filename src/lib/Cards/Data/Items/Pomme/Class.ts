@@ -17,7 +17,7 @@ export class Pomme extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature") {
                 return true;
@@ -26,7 +26,7 @@ export class Pomme extends Item {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -45,7 +45,7 @@ export class Pomme extends Item {
         }
     };
 
-    useEffect = function (target: Creature) {
+    useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
             target.stat("Constitution").increase(5);

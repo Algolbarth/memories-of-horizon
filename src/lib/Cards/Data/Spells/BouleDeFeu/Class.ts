@@ -15,14 +15,14 @@ export class BouleDeFeu extends Spell {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -31,7 +31,7 @@ export class BouleDeFeu extends Spell {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         if (this.owner.ressource("Mana").total() >= 15) {
             this.owner.ressource("Mana").spend(15);
             target.damageByEffect(60);

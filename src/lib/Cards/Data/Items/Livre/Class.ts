@@ -13,7 +13,7 @@ export class Livre extends Item {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         if (this.owner.totalIntelligence() >= 10) {
             this.owner.discover(2);
         }

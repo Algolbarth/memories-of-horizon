@@ -24,7 +24,7 @@ export class ChevalierNoir extends Creature {
         this.text = Text2;
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         if (this.owner.ressource("Or").total() >= 20) {
             this.owner.ressource("Or").spend(20);
             this.stat("Santé").base = 1;
@@ -32,7 +32,7 @@ export class ChevalierNoir extends Creature {
         }
     };
 
-    dieGo = function () {
+    dieGo = () => {
         if (this.rez) {
             this.rez = false;
         }
@@ -60,7 +60,7 @@ export class ChevalierNoirMonte extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
@@ -79,7 +79,7 @@ export class ChevalierNoirMonte extends Creature {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         if (target != undefined) {
             let value = target.stat("Santé").value();
             if (this.owner.ressource("Or").total() < value) {
@@ -92,12 +92,12 @@ export class ChevalierNoirMonte extends Creature {
         this.pose();
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         this.transform("Chevalier noir");
         this.zone.cards[this.slot].stat("Santé").base = this.zone.cards[this.slot].stat("Vitalité").value();
     };
 
-    dieGo = function () {
+    dieGo = () => {
 
     };
 }

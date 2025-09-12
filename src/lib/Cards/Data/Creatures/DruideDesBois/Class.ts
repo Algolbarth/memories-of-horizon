@@ -14,7 +14,7 @@ class DruideDesBois extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -23,7 +23,7 @@ class DruideDesBois extends Creature {
         }
     };
 
-    useEffect = function (choice: string) {
+    useEffect = (choice: string) => {
         if (choice == "Elfe") {
             this.transform("Druide des bois (forme elfe)");
         }
@@ -48,7 +48,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
         this.stat("Force").base = 20;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (card.owner == this.owner && card.type == "Action") {
             this.stat("Constitution").increase(6);
         }

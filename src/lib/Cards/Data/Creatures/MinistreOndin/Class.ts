@@ -17,7 +17,7 @@ export class MinistreOndin extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card: Card) {
+    otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Ondin") && card.owner == this.owner) {
             this.owner.ressource("Eau").current += 5;
         }

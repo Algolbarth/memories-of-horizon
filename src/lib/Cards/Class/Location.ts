@@ -3,19 +3,19 @@ import { Card } from './Class';
 export class Location extends Card {
     type = "Lieu";
 
-    canUse = function () {
+    canUse = () => {
         if (!this.owner.zone("Région").isFull()) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.move("Région");
         this.pose();
     };
 
-    condition = function (card: Card) {
+    condition = (card: Card) => {
         return true;
     };
 };

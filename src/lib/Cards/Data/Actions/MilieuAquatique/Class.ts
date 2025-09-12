@@ -14,7 +14,7 @@ export class MilieuAquatique extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
          for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.elements.total().includes("Eau")) {
                 return true;
@@ -23,7 +23,7 @@ export class MilieuAquatique extends Action {
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let value = 5;
         if (this.owner.ressource("Eau").total() >= 50) {
             this.owner.ressource("Eau").spend(50);

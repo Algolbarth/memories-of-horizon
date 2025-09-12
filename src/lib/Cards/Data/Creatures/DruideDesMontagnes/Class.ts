@@ -13,7 +13,7 @@ class DruideDesMontagnes extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -22,7 +22,7 @@ class DruideDesMontagnes extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = (choice) => {
         if (choice == "Nain") {
             this.transform("Druide des montagnes (forme nain)");
         }
@@ -48,7 +48,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
         this.stat("Endurance").base = 5;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);

@@ -17,7 +17,7 @@ export class Trident extends Equipment {
         this.text = Text;
     };
 
-    killEffect = function () {
+    killEffect = () => {
         this.owner.ressource("Eau").stock += 5;
     };
 }

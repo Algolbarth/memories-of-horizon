@@ -14,10 +14,10 @@ export class Aventure extends Action {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let types = ["Action", "Bâtiment", "Créature", "Lieu", "Objet"];
         for (let i = 0; i < types.length; i++) {
-            let condition = function (card: Card) {
+            let condition = (card: Card) => {
                 if (card.type == types[i]) {
                     return true;
                 }

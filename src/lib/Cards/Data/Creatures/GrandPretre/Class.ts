@@ -19,7 +19,7 @@ export class GrandPretre extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         let check = false;
 
         for (const card of this.owner.zone("Terrain").cards) {
@@ -48,7 +48,7 @@ export class GrandPretre extends Creature {
         }
     };
 
-    useEffect = function (choice: string | undefined) {
+    useEffect = (choice: string | undefined) => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {

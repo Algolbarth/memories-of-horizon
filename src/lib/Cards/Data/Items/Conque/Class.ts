@@ -13,14 +13,14 @@ export class Conque extends Item {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.ressource("Or").max >= 5) {
             return true;
         }
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.owner.ressource("Or").max -= 5;
         this.owner.ressource("Eau").max += 5;
         this.move("Défausse");

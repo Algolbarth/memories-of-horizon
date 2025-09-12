@@ -14,7 +14,7 @@ export class Ruee extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature") {
                 return true;
@@ -23,7 +23,7 @@ export class Ruee extends Action {
         return false;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature") {

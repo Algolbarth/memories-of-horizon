@@ -13,7 +13,7 @@ class DruideDeFeu extends Creature {
         this.text = Text;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -22,7 +22,7 @@ class DruideDeFeu extends Creature {
         }
     };
 
-    useEffect = function (choice) {
+    useEffect = (choice) => {
         if (choice == "Gobelin") {
             this.transform("Druide de feu (forme gobelin)");
         }
@@ -47,7 +47,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
         this.stat("Force").base = 35;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.zone.name == "Terrain") {
             this.stat("Force").increase(10);
         }

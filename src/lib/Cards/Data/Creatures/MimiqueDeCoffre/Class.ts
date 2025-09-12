@@ -16,12 +16,12 @@ export class MimiqueDeCoffre extends Creature {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         this.move("Terrain", this.owner.adversary());
         this.pose();
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         this.owner.adversary().draw(5);
     };
 }

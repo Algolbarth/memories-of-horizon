@@ -17,7 +17,7 @@ export class ElementaireDesHerbes extends Creature {
         this.text = Text;
     };
 
-    dieEffect = function () {
+    dieEffect = () => {
         let target = undefined;
 
         for (const card of this.owner.zone("Terrain").cards) {

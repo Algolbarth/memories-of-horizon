@@ -15,7 +15,7 @@ export class Aiguisage extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
             if (card.familles.total().includes("Arme")) {
                 return true;
@@ -24,7 +24,7 @@ export class Aiguisage extends Action {
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -43,7 +43,7 @@ export class Aiguisage extends Action {
         }
     };
 
-    useEffect = function (target: Equipment) {
+    useEffect = (target: Equipment) => {
         target.equipStat("Force").increase(20);
         this.move("Défausse");
         this.pose();

@@ -13,7 +13,7 @@ export class Ecoulement extends Spell {
         this.text = Text;
     };
 
-    useEffect = function () {
+    useEffect = () => {
         if (this.owner.ressource("Mana").total() >= 10) {
             this.owner.ressource("Mana").spend(10);
             this.owner.ressource("Eau").max += 5;

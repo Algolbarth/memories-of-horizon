@@ -15,14 +15,14 @@ export class SouffleEnflamme extends Action {
         this.text = Text;
     };
 
-    canUse = function () {
+    canUse = () => {
         if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
-    select = function () {
+    select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
@@ -31,7 +31,7 @@ export class SouffleEnflamme extends Action {
         }
     };
 
-    useEffect = function (target: Unit) {
+    useEffect = (target: Unit) => {
         target.damageByEffect(20);
         if (target.slot && target.zone) {
             if (target.slot > 0) {

@@ -17,7 +17,7 @@ export class MasseDeFer extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function () {
+    fightEffect = () => {
         this.bearer.stat("Constitution").increase(5);
         this.bearer.stat("Force").increase(5);
     };

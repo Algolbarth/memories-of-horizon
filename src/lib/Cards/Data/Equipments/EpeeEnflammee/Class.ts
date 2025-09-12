@@ -17,7 +17,7 @@ export class EpeeEnflammee extends Equipment {
         this.text = Text;
     };
 
-    fightEffect = function (defender: Unit) {
+    fightEffect = (defender: Unit) => {
         defender.damageByEffect(20);
     };
 }

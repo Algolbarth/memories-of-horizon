@@ -30,36 +30,38 @@ export class Entity {
         this.setRessources();
     };
 
-    adversary = function () {
+    adversary = () => {
         if (this == this.system.game.player) {
             return this.system.game.bot;
         }
         return this.system.game.player;
     };
 
-    setRessources = function () {
+    setRessources = () => {
         for (const r of this.system.ressources.list) {
             this.ressources.push(new EntityRessource(r.name));
         }
     };
 
-    zone = function (name: string) {
+    zone = (name: string) => {
         for (const z of this.zones) {
             if (z.name == name) {
                 return z;
             }
         }
+        return new Zone(name);
     };
 
-    ressource = function (name: string) {
+    ressource = (name: string) => {
         for (const z of this.ressources) {
             if (z.name == name) {
                 return z;
             }
         }
+        return new EntityRessource(name);
     };
 
-    getCard = function (name: string) {
+    getCard = (name: string) => {
         let card = this.system.cards.getByName(name);
         card.owner = this;
         if (this == this.system.game.player) {
@@ -71,7 +73,7 @@ export class Entity {
         return card;
     };
 
-    cardList = function (condition: (Function | undefined) = undefined, drawer: Card) {
+    cardList = (condition: (Function | undefined) = undefined, drawer: Card) => {
         let nameList: string[] = [];
 
         if (this.system.game.deck == undefined) {
@@ -93,7 +95,7 @@ export class Entity {
         return nameList;
     };
 
-    draw = function (number: number, condition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) {
+    draw = (number: number, condition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
         let nameList: string[] = this.cardList(condition, drawer);
         let card: Card | undefined = undefined;
 
@@ -110,7 +112,7 @@ export class Entity {
         return array;
     };
 
-    discover = function (number: number, condition: Function, drawer: Card, array: Card[] = []) {
+    discover = (number: number, condition: Function, drawer: Card, array: Card[] = []) => {
         let nameList: string[] = this.cardList(condition, drawer);
         let card = undefined;
 
@@ -133,14 +135,14 @@ export class Entity {
         return array
     };
 
-    canUpStack = function () {
+    canUpStack = () => {
         if (this.ressource("Or").total() >= this.zone("Pile").level * 10) {
             return true;
         }
         return false;
     };
 
-    upStack = function () {
+    upStack = () => {
         if (this.canUpStack()) {
             this.ressource("Or").spend(this.zone("Pile").level * 10);
             this.zone("Pile").level++;
@@ -148,21 +150,21 @@ export class Entity {
         }
     };
 
-    canActualiseStack = function () {
+    canActualiseStack = () => {
         if (this.ressource("Or").total() >= 10) {
             return true;
         }
         return false;
     };
 
-    actualiseStack = function () {
+    actualiseStack = () => {
         if (this.canActualiseStack()) {
             this.ressource("Or").spend(10);
             this.refreshStack();
         }
     };
 
-    refreshStack = function () {
+    refreshStack = () => {
         let stack = copy(this.zone("Pile").cards);
         for (const card of stack) {
             if (!card.locked) {
@@ -174,7 +176,7 @@ export class Entity {
         }
     };
 
-    isFullLocked = function () {
+    isFullLocked = () => {
         let check = true;
         for (const card of this.zone("Pile").cards) {
             if (!card.locked) {
@@ -184,7 +186,7 @@ export class Entity {
         return check;
     };
 
-    lock = function () {
+    lock = () => {
         if (this.isFullLocked()) {
             for (const card of this.zone("Pile").cards) {
                 card.unlock();
@@ -197,7 +199,7 @@ export class Entity {
         }
     };
 
-    play = function () {
+    play = () => {
         let playable = true;
         while (playable) {
             playable = false;
@@ -234,7 +236,7 @@ export class Entity {
         }
     };
 
-    checkPerpetuite = function () {
+    checkPerpetuite = () => {
         let defausse = copy(this.zone("Défausse").cards);
         for (const card of defausse) {
             if (card.stat("Perpétuité").value() == 1) {
@@ -246,7 +248,7 @@ export class Entity {
         }
     };
 
-    totalIntelligence = function () {
+    totalIntelligence = () => {
         let total = 0;
         for (const card of this.zone("Terrain").cards) {
             total += card.stat("Intelligence").value();
@@ -265,11 +267,11 @@ class EntityRessource {
         this.name = name;
     }
 
-    total = function () {
+    total = () => {
         return this.current + this.stock;
     };
 
-    spend = function (value: number) {
+    spend = (value: number) => {
         if (value < this.current) {
             this.current -= value;
             value = 0;

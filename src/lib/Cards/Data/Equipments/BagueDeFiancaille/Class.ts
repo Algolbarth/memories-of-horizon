@@ -13,7 +13,7 @@ export class BagueDeFiancailles extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.owner.getCard(this.bearer.name).add("Pile");
         }
