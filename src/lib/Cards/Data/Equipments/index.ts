@@ -34,6 +34,7 @@ export * from './FauxDePaysan';
 export * from './GanteletsDeFer';
 export * from './GanteletsEnCuir';
 export * from './Geomarteau';
+export * from './GrandCarquois';
 export * from './Grimoire';
 export * from './HacheDeCuivre';
 export * from './HacheDeFer';
