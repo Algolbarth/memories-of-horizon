@@ -110,11 +110,12 @@ export class Equipment extends Item {
                 return stat;
             }
         }
+        return new Stat(name, 0, 0, this);
     };
 
     addEquipStat = (name: string, value: number) => {
         let stat: Stat = new Stat(name, value, 0, this);
-        stat.value = () => {
+        stat.value = function () {
             return this.base + this.add;
         };
         this.equipStats.push(stat);
@@ -122,7 +123,7 @@ export class Equipment extends Item {
 
     hasEquipStat = () => {
         for (const stat of this.equipStats) {
-            if (stat.value() > 0) {
+            if (stat.condition()) {
                 return true;
             }
         }
@@ -135,14 +136,24 @@ export class Equipment extends Item {
                 return trait;
             }
         }
+        return new Trait(name, false, this);
     };
 
     addEquipTrait = (name: string, value: boolean) => {
         let trait = new Trait(name, value, this);
-        trait.value = () => {
+        trait.value = function () {
             return this.base;
         };
         this.equipStats.push(trait);
+    };
+
+    hasEquipTrait = () => {
+        for (const trait of this.equipTraits) {
+            if (trait.condition()) {
+                return true;
+            }
+        }
+        return false;
     };
 
     playEffect: Function | undefined;

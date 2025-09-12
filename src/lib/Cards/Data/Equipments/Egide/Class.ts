@@ -11,9 +11,9 @@ export class Egide extends Equipment {
         this.init([["Or", 30]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Endurance").value = () => {
-            if (this.bearer != undefined) {
-                return this.bearer.stat("Protection").value() * 10;
+        this.equipStat("Endurance").value = function () {
+            if (this.card.bearer != undefined) {
+                return this.card.bearer.stat("Protection").value() * 10;
             }
             else {
                 return 0;

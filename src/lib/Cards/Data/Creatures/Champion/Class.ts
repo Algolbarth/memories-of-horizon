@@ -17,8 +17,8 @@ export class Champion extends Creature {
 
         this.text = Text;
 
-        this.stat("Force").value = () => {
-            let total = this.base + this.add + this.step;
+        this.stat("Force").value = function () {
+            let total = this.base + this.add + this.step + this.turn;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {
                     total += equipment.equipStat(this.name).value();
@@ -26,19 +26,18 @@ export class Champion extends Creature {
             }
 
             if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
-                total += total;
+                total = total * 2;
             }
 
-            if (total > 0) {
-                return total;
+            if (total < this.min) {
+                total = this.min;
             }
-            else {
-                return 0;
-            }
+
+            return total;
         };
 
-        this.stat("Endurance").value = () => {
-            let total = this.base + this.add + this.step;
+        this.stat("Endurance").value = function () {
+            let total = this.base + this.add + this.step + this.turn;
             if (this.card.type == "Créature") {
                 for (const equipment of this.card.equipments) {
                     total += equipment.equipStat(this.name).value();
@@ -46,15 +45,14 @@ export class Champion extends Creature {
             }
 
             if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
-                total += total;
+                total = total * 2;
             }
 
-            if (total > 0) {
-                return total;
+            if (total < this.min) {
+                total = this.min;
             }
-            else {
-                return 0;
-            }
+
+            return total;
         };
     };
 }

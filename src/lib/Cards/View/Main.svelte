@@ -8,6 +8,7 @@
 	import Effet from "./Effet.svelte";
 	import Equipments from "./Equipments.svelte";
     import EquipStat from "./EquipStat.svelte";
+	import EquipTrait from "./EquipTrait.svelte";
 	import Stat from "./Stat.svelte";
 	import Trait from "./Trait.svelte";
 
@@ -45,6 +46,9 @@
 					{/if}
 					{#if card.hasStat()}
 						<Stat bind:card />
+					{/if}
+					{#if card instanceof Equipment && card.hasEquipTrait()}
+						<EquipTrait bind:card />
 					{/if}
 					{#if card instanceof Equipment && card.hasEquipStat()}
 						<EquipStat bind:card />

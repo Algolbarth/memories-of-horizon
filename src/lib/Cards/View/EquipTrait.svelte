@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { Card } from "../Class";
+    import type { Equipment } from "../Class/Equipment";
 
-	export let card: Card;
+    export let card: Equipment;
 </script>
 
 <div class="box">
-	<i>Traits</i>
+    <i>Traits d'équipement</i>
 
-	<br />
+    <br />
 
 	<div class="container">
-		{#each card.traits as trait}
+		{#each card.equipTraits as trait}
 			{#if trait.condition()}
 				<div>
 					{trait.name}
