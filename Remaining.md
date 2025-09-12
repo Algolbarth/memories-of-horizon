@@ -39,8 +39,6 @@ Marchand de miracle : créature humain, quand trois cartes alliées de même nom
 Chercheur : créature, quand posé : pioche 1 carte. si la pile est pleine, augmente la taille de la pile.
 Entrepôt : bâtiment, quand acheté : si la réserve est pleine, augmente la taille de la réserve.
 Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain.
-Carte de la région : objet, pioche des cartes jusqu'à remplir la pile.
-Omniscience : action, découvre des cartes jusqu'à remplir la pile.
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la réserve.
 Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
 
@@ -87,7 +85,6 @@ Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
-Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la réserve adverse.
 Jarre de flamme : objet.
 
 ### Vegetal
@@ -110,7 +107,7 @@ Manteau de ronce : objet équipement, augmente l'épine de la créature équipé
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
-Cerf : créature bête, vitesse et percée.
+Cerf : créature bête.
 Hérisson : créature bête, épine.
 Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la constitution max et de X la régénération de cette créature.
 

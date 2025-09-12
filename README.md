@@ -9,4 +9,3 @@ For install project on local : npm install --legacy-peer-deps && npm run dev
 - New cards for playing with zone sizes ;
 - New mecanic : Thorn effect (Plant cards), units damaging attacker when hit ;
 - New mecanic : Regeneration effect (Plant cards), healing unit each combat turn ;
-- Refacto of damage system ;

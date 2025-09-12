@@ -7,6 +7,7 @@ export * from './Bombe';
 export * from './BoulePuante';
 export * from './Bourse';
 export * from './Brique';
+export * from './CarteDeLaRegion';
 export * from './Chocolat';
 export * from './CoffreEnBois';
 export * from './CoffreEnOr';
