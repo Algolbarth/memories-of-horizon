@@ -119,7 +119,7 @@ export class Card {
     };
 
     remove = () => {
-        if (this.owner && this.zone && this.slot) {
+        if (this.owner != undefined && this.zone != undefined && this.slot != undefined) {
             if (this.isUnit() && this.zone.name == "Terrain") {
                 this.owner.ressource("Mana").max -= this.stat("Magie").value();
             }
