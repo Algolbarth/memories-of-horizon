@@ -31,9 +31,9 @@ export class ChevalierRoyalMonte extends Creature {
         this.init([["Or", 200]]);
         this.familles.base.push("Humain", "Chevalier");
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(20);
-        this.stat("Vitesse").init(1);
+        this.stat("Constitution").init(40);
+        this.stat("Force").init(100);
+        this.stat("Vitesse").init(3);
 
         this.text = Text;
     };

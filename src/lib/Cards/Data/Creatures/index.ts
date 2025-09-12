@@ -24,6 +24,7 @@ export * from './ChefDeClan';
 export * from './Cheval';
 export * from './ChevalDeGuerre';
 export * from './Chevalier';
+export * from './ChevalierDElite';
 export * from './ChevalierGeant';
 export * from './ChevalierNoir';
 export * from './ChevalierRoyal';
