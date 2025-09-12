@@ -26,6 +26,7 @@ export * from './DagueDeCuivre';
 export * from './DoublesHachettesBarbare';
 export * from './DoublesLamesDeFer';
 export * from './Egide';
+export * from './EpaulieresDecorees';
 export * from './EpeeDeCuivre';
 export * from './EpeeDeFer';
 export * from './EpeeDePlatine';
