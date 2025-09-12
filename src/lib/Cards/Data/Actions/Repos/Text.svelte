@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Soigne toutes les blessures d'une créature alliée sur le terrain et la place dans la pile.
+Soigne toutes les blessures d'une créature alliée sur le terrain et la place sur la pile.

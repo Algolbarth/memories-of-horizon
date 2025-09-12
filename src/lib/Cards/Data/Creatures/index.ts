@@ -96,6 +96,7 @@ export * from './Ondin';
 export * from './OndinDesRivieres';
 export * from './OursDesMontagnes';
 export * from './OursForestier';
+export * from './Palefrenier';
 export * from './PetiteFille';
 export * from './Phytomancien';
 export * from './PiquierGobelin';

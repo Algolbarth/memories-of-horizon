@@ -139,8 +139,8 @@ export class Card {
 
     removeEffect: Function | undefined;
 
-    add = (zone: string, entity: Entity = this.owner) => {
-        if (!entity.zone(zone).isFull()) {
+    add = (zone: string, entity: Entity | undefined = this.owner) => {
+        if (entity != undefined && !entity.zone(zone).isFull()) {
             this.owner = entity;
             this.zone = entity.zone(zone);
             this.slot = entity.zone(zone).cards.length;
@@ -171,7 +171,7 @@ export class Card {
 
     addEffect: Function | undefined;
 
-    move = (zone: string, entity: Entity = this.owner) => {
+    move = (zone: string, entity: Entity | undefined  = this.owner) => {
         this.remove();
         this.add(zone, entity);
     };

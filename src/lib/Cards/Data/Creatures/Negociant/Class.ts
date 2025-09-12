@@ -40,7 +40,7 @@ export class Negociant extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Pile").cards) {
-                if (target == undefined && card.getCost("Or") > 0) {
+                if (target == undefined && card.getCost("Or").value() > 0) {
                     target = card;
                 }
             }
@@ -54,9 +54,10 @@ export class Negociant extends Creature {
         }
     };
 
-    useEffect = (target: Card) => {
+    useEffect = (target: Card | undefined) => {
         if (target != undefined) {
             target.getCost("Or").decrease(10);
+            target.lock();
         }
         this.move("Terrain");
         this.pose();

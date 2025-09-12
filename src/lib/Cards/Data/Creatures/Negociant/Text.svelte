@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : diminue de 10 le coût en or d'une carte alliée dans la pile.
+Quand posé : verrouille et diminue de 10 le coût en or d'une carte alliée sur la pile.

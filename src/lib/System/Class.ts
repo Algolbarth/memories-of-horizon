@@ -8,8 +8,8 @@ import { RessourceList } from "../Ressources/Class";
 import type { Deck } from "../Decks/Deck";
 import type { Story } from "../Stories/Story";
 import type { Game } from "../Game/Game";
-import type { Card } from "../Cards/Class";
-import type { Chapter } from "../Chapters/Chapter";
+import { Card } from "../Cards/Class";
+import { Chapter } from "../Chapters/Chapter";
 import type { Account } from "../Login/Account";
 
 export class System {
@@ -133,7 +133,7 @@ export class System {
 };
 
 class Cards {
-    class = [];
+    class: any[] = [];
     instance: Card[] = [];
     system: System;
 
@@ -141,18 +141,18 @@ class Cards {
         this.system = system;
     };
 
-    getByName(name: string) {
+    getByName(name: string): Card {
         for (let i = 0; i < this.instance.length; i++) {
             if (this.instance[i].name == name) {
                 return new this.class[i](this.system);
             }
         }
-        return undefined;
+        return new Card(this.system);
     };
 };
 
 class Chapters {
-    class = [];
+    class: any[][] = [];
     instance: Chapter[][] = [];
     system: System;
 
@@ -174,7 +174,7 @@ class Chapters {
 };
 
 class Bosses {
-    class = [];
+    class: any[][] = [];
     instance: Chapter[][] = [];
     system: System;
 
