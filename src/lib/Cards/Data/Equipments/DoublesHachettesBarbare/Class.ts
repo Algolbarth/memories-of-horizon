@@ -8,7 +8,7 @@ export class DoublesHachettesBarbare extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 55]]);
+        this.init([["Or", 60]]);
         this.familles.base.push("Arme");
 
         this.equipStat("Adresse").base = 35;
