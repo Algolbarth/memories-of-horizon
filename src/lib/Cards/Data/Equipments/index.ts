@@ -55,6 +55,7 @@ export * from './PlastronEnCuir';
 export * from './PlastronEnFer';
 export * from './PlastronEnPlatine';
 export * from './Rapiere';
+export * from './RobeDeMage';
 export * from './RobeDeVelours';
 export * from './RobeEnSoie';
 export * from './SacEnToile';

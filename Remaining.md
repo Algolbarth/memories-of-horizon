@@ -45,10 +45,8 @@ Savoir interdit : action, diminue la taille du terrain et augmente la taille de 
 Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
 
 ### Equipements
-Robe de mage : augmente la magie et la résistance de la créature équipée.
 Brassard de santé : augmente la régénération de la créature équipée.
 Plastron de piques : augmente la constitution et l'épine de la créature équipée.
-Cotte de maille : augmente l'endurance de la créature équipée.
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
