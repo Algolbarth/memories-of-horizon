@@ -92,7 +92,7 @@ export class Concoction extends Item {
         if (this.stat("Infusion interdite").value() > 0) {
             let homonculus = this.owner.getCard("Homonculus");
             homonculus.stat("Constitution").init(this.stat("Infusion interdite").value());
-            homonculus.stat("Force").base = this.stat("Infusion interdite").value();
+            homonculus.stat("Force").init(this.stat("Infusion interdite").value());
             homonculus.add("Terrain");
         }
 

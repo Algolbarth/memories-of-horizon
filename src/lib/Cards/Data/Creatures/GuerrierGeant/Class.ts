@@ -11,7 +11,7 @@ export class GuerrierGeant extends Creature {
         this.familles.base.push("Géant");
 
         this.stat("Constitution").init(75);
-        this.stat("Force").base = 75;
-        this.stat("Endurance").base = 25;
+        this.stat("Force").init(75);
+        this.stat("Endurance").init(25);
     };
 }

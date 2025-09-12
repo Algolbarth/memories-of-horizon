@@ -12,8 +12,8 @@ export class Sage extends Creature {
         this.familles.base.push("Humain");
 
         this.stat("Constitution").init(5);
-        this.stat("Force").base = 5;
-        this.stat("Intelligence").base = 1;
+        this.stat("Force").init(5);
+        this.stat("Intelligence").init(1);
 
         this.text = Text;
     };

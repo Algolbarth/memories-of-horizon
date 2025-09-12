@@ -12,8 +12,8 @@ export class CavalierElfe extends Creature {
         this.familles.base.push("Elfe");
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
-        this.stat("Vitesse").base = 1;
+        this.stat("Force").init(20);
+        this.stat("Vitesse").init(1);
 
         this.text = Text;
     };

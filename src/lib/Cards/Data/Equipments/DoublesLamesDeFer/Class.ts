@@ -12,8 +12,8 @@ export class DoublesLamesDeFer extends Equipment {
 
         this.familles.base.push("Arme");
 
-        this.equipStat("Force").base = 10;
-        this.equipStat("Agilité").base = 1;
+        this.equipStat("Force").init(10);
+        this.equipStat("Agilité").init(1);
 
         this.text = Text;
     };

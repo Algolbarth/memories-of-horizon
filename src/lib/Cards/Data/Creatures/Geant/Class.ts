@@ -11,6 +11,6 @@ export class Geant extends Creature {
         this.familles.base.push("Géant");
 
         this.stat("Constitution").init(50);
-        this.stat("Force").base = 50;
+        this.stat("Force").init(50);
     };
 }

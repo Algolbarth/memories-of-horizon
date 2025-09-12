@@ -11,7 +11,7 @@ export class BaguetteDArchimage extends Equipment {
         this.init([["Or", 100]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Magie").base = 50;
+        this.equipStat("Magie").init(50);
 
         this.text = Text;
     };

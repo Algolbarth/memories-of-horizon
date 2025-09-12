@@ -11,7 +11,7 @@ export class Gyoun extends Boss {
         this.elements.base = ["Végétal"];
         this.familles.base.push("Elfe");
 
-        this.stat("Force").base = 50;
+        this.stat("Force").init(50);
         this.stat("Constitution").init(250);
     };
 }

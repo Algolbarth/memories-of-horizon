@@ -11,7 +11,7 @@ export class Atlas extends Boss {
         this.elements.base = ["Neutre"];
         this.familles.base.push("Géant");
 
-        this.stat("Force").base = 100;
+        this.stat("Force").init(100);
         this.stat("Constitution").init(1000);
     };
 }

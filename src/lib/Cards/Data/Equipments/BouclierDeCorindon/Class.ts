@@ -11,8 +11,8 @@ export class BouclierDeCorindon extends Equipment {
         this.init([["Or", 100]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Endurance").base = 50;
-        this.equipStat("Résistance").base = 50;
+        this.equipStat("Endurance").init(50);
+        this.equipStat("Résistance").init(50);
 
         this.text = Text;
     };

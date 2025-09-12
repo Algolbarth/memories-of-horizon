@@ -13,8 +13,8 @@ export class WyverneMage extends Creature {
         this.familles.base.push("Reptile");
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
-        this.stat("Magie").base = 5;
+        this.stat("Force").init(20);
+        this.stat("Magie").init(5);
 
         this.text = Text;
     };

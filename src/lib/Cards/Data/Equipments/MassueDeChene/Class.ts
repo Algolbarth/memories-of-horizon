@@ -11,7 +11,7 @@ export class MassueDeChene extends Equipment {
         this.init([["Or", 18], ["Végétal", 18]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Vitalité").base = 15;
+        this.equipStat("Vitalité").init(15);
 
         this.text = Text;
     };

@@ -12,7 +12,7 @@ export class ElementaireDeFeu extends Creature {
         this.familles.base.push("Élémentaire");
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
+        this.stat("Force").init(20);
         this.text = Text;
     };
 

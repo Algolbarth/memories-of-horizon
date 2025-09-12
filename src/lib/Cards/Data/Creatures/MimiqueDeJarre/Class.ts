@@ -11,7 +11,7 @@ export class MimiqueDeJarre extends Creature {
         this.init([["Or", 10]]);
 
         this.stat("Constitution").init(10);
-        this.stat("Force").base = 10;
+        this.stat("Force").init(10);
 
         this.text = Text;
     };

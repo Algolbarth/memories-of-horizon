@@ -13,7 +13,7 @@ export class SeigneurOndin extends Creature {
         this.familles.base.push("Ondin");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").base = 10;
+        this.stat("Force").init(10);
 
         this.text = Text;
     };

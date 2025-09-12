@@ -38,8 +38,8 @@ export class Unit extends Card {
             this.card.stat("Vitalité").decrease(value);
         };
         this.stat("Constitution").init = function (value: number) {
-            this.card.stat("Santé").base = value;
-            this.card.stat("Vitalité").base = value;
+            this.card.stat("Santé").init(value);
+            this.card.stat("Vitalité").init(value);
         };
 
         this.addStat("Endurance", 0);
@@ -154,7 +154,7 @@ export class Unit extends Card {
     };
 
     die = () => {
-        this.stat("Santé").base = 0;
+        this.stat("Santé").init(0);
 
         if (this.dieEffect != undefined) {
             this.dieEffect();

@@ -11,6 +11,6 @@ export class OursForestier extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(50);
-        this.stat("Force").base = 30;
+        this.stat("Force").init(30);
     };
 }

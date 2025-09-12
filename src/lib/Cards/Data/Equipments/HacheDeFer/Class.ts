@@ -11,8 +11,8 @@ export class HacheDeFer extends Equipment {
         this.init([["Or", 50]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Adresse").base = 30;
-        this.equipStat("Intensité").base = 1;
+        this.equipStat("Adresse").init(30);
+        this.equipStat("Intensité").init(1);
 
         this.text = Text;
     };

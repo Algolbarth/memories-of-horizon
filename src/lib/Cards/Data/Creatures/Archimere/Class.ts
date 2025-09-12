@@ -13,7 +13,7 @@ export class Archimere extends Creature {
         this.familles.base.push("Bête", "Reptile");
 
         this.stat("Constitution").init(25);
-        this.stat("Force").base = 25;
+        this.stat("Force").init(25);
 
         this.text = Text;
     };

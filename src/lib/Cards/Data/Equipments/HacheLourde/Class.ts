@@ -11,7 +11,7 @@ export class HacheLourde extends Equipment {
         this.init([["Or", 75]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Intensité").base = 3;
+        this.equipStat("Intensité").init(3);
 
         this.text = Text;
     };

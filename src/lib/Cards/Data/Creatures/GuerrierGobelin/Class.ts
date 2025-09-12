@@ -11,7 +11,7 @@ export class GuerrierGobelin extends Creature {
         this.familles.base.push("Gobelin");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").base = 20;
-        this.stat("Endurance").base = 5;
+        this.stat("Force").init(20);
+        this.stat("Endurance").init(5);
     };
 }

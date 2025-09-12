@@ -11,7 +11,7 @@ export class OursDesMontagnes extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(35);
-        this.stat("Force").base = 35;
-        this.stat("Endurance").base = 5;
+        this.stat("Force").init(35);
+        this.stat("Endurance").init(5);
     };
 }

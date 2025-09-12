@@ -13,7 +13,7 @@ export class PetiteFille extends Creature {
         this.familles.base.push("Humain");
 
         this.stat("Constitution").init(1);
-        this.stat("Force").base = 1;
+        this.stat("Force").init(1);
 
         this.text = Text;
     };

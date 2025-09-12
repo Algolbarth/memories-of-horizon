@@ -13,7 +13,7 @@ export class ChefBarbare extends Creature {
         this.familles.base.push("Humain");
 
         this.stat("Constitution").init(50);
-        this.stat("Force").base = 50;
+        this.stat("Force").init(50);
 
         this.text = Text;
     };

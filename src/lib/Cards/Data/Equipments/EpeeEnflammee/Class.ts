@@ -12,7 +12,7 @@ export class EpeeEnflammee extends Equipment {
         this.init([["Or", 25], ["Feu", 25]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Force").base = 20;
+        this.equipStat("Force").init(20);
 
         this.text = Text;
     };

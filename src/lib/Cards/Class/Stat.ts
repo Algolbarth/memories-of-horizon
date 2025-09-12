@@ -73,4 +73,8 @@ export class Stat {
         }
         return false;
     };
+
+    init = (value: number) => {
+        this.base = value;
+    };
 };

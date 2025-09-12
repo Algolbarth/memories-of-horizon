@@ -11,8 +11,8 @@ export class CotteDeMaillesEnPlatine extends Equipment {
         this.init([["Or", 100]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Vitalité").base = 75;
-        this.equipStat("Endurance").base = 50;
+        this.equipStat("Vitalité").init(75);
+        this.equipStat("Endurance").init(50);
 
         this.text = Text;
     };

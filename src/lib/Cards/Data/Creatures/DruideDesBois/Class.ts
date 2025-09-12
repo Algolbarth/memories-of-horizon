@@ -45,7 +45,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
         this.familles.base.push("Elfe");
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
+        this.stat("Force").init(20);
     };
 
     otherPoseEffect = (card: Card) => {
@@ -67,7 +67,7 @@ export class DruideDesBoisRenard extends DruideDesBois {
         this.trait("Rare").base = true;
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
-        this.stat("Intelligence").base = 5;
+        this.stat("Force").init(20);
+        this.stat("Intelligence").init(5);
     };
 }

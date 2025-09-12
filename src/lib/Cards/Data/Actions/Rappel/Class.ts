@@ -44,7 +44,7 @@ export class Rappel extends Action {
     useEffect = (target: Card) => {
         target.move("Pile");
         if (target instanceof Unit) {
-            target.stat("Santé").base = 1;
+            target.stat("Santé").init(1);
         }
         this.move("Défausse");
         this.pose();

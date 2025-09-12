@@ -13,7 +13,7 @@ export class Lion extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
+        this.stat("Force").init(20);
 
         this.text = Text;
     };

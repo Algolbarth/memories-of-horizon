@@ -11,6 +11,6 @@ export class Chien extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(3);
-        this.stat("Force").base = 3;
+        this.stat("Force").init(3);
     };
 }

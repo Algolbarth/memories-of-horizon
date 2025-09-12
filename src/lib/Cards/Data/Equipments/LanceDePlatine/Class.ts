@@ -11,8 +11,8 @@ export class LanceDePlatine extends Equipment {
         this.init([["Or", 100]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Force").base = 150;
-        this.equipStat("Percée").base = 100;
+        this.equipStat("Force").init(150);
+        this.equipStat("Percée").init(100);
 
         this.text = Text;
     };

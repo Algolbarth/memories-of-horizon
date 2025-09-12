@@ -11,7 +11,7 @@ export class BottesEnCuir extends Equipment {
         this.init([["Or", 30]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Vitesse").base = 3;
+        this.equipStat("Vitesse").init(3);
 
         this.text = Text;
     };

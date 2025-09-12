@@ -9,6 +9,6 @@ export class Bibliothèque extends Building {
 
         this.init([["Or", 30]]);
         this.stat("Constitution").init(10);
-        this.stat("Intelligence").base = 5;
+        this.stat("Intelligence").init(5);
     };
 }

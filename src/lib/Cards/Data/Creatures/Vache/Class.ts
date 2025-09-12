@@ -11,6 +11,6 @@ export class Vache extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").base = 5;
+        this.stat("Force").init(5);
     };
 }

@@ -9,6 +9,6 @@ export class TourDeMage extends Building {
 
         this.init([["Or", 20]]);
         this.stat("Constitution").init(20);
-        this.stat("Magie").base = 5;
+        this.stat("Magie").init(5);
     };
 }

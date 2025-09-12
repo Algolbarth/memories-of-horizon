@@ -12,9 +12,9 @@ export class GanteletsDeFer extends Equipment {
 
         this.familles.base.push("Armure");
 
-        this.equipStat("Vitalité").base = 30;
-        this.equipStat("Endurance").base = 15;
-        this.equipStat("Maîtrise").base = 1;
+        this.equipStat("Vitalité").init(30);
+        this.equipStat("Endurance").init(15);
+        this.equipStat("Maîtrise").init(1);
 
         this.text = Text;
     };

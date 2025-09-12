@@ -11,7 +11,7 @@ export class OrbeDeCristal extends Equipment {
         this.init([["Or", 25]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Résistance").base = 25;
+        this.equipStat("Résistance").init(25);
 
         this.text = Text;
     };

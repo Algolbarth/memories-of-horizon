@@ -11,7 +11,7 @@ export class SageDeLaForet extends Creature {
         this.familles.base.push("Elfe");
 
         this.stat("Constitution").init(35);
-        this.stat("Force").base = 5;
-        this.stat("Intelligence").base = 5;
+        this.stat("Force").init(5);
+        this.stat("Intelligence").init(5);
     };
 }

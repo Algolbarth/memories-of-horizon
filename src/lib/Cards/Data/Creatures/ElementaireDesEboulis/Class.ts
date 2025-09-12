@@ -13,8 +13,8 @@ export class ElementaireDesEboulis extends Creature {
         this.familles.base.push("Élémentaire");
 
         this.stat("Constitution").init(15);
-        this.stat("Force").base = 15;
-        this.stat("Endurance").base = 5;
+        this.stat("Force").init(15);
+        this.stat("Endurance").init(5);
 
         this.text = Text;
     };

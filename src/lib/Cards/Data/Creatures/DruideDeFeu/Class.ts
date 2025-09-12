@@ -44,7 +44,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
         this.familles.base.push("Gobelin");
 
         this.stat("Constitution").init(35);
-        this.stat("Force").base = 35;
+        this.stat("Force").init(35);
     };
 
     startStepEffect = () => {
@@ -66,7 +66,7 @@ export class DruideDeFeuLezard extends DruideDeFeu {
         this.trait("Rare").base = true;
 
         this.stat("Constitution").init(20);
-        this.stat("Force").base = 20;
-        this.stat("Adresse").base = 25;
+        this.stat("Force").init(20);
+        this.stat("Adresse").init(25);
     };
 }

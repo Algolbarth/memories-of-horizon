@@ -13,8 +13,8 @@ export class Cheval extends Creature {
         this.familles.base.push("Bête");
 
         this.stat("Constitution").init(5);
-        this.stat("Force").base = 5;
-        this.stat("Vitesse").base = 1;
+        this.stat("Force").init(5);
+        this.stat("Vitesse").init(1);
 
         this.text = Text;
     };

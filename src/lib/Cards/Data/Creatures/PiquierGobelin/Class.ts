@@ -11,7 +11,7 @@ export class PiquierGobelin extends Creature {
         this.familles.base.push("Gobelin");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").base = 15;
-        this.stat("Percée").base = 10;
+        this.stat("Force").init(15);
+        this.stat("Percée").init(10);
     };
 }

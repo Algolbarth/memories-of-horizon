@@ -11,7 +11,7 @@ export class Archimage extends Creature {
         this.familles.base.push("Humain");
 
         this.stat("Constitution").init(50);
-        this.stat("Force").base = 50;
-        this.stat("Magie").base = 25;
+        this.stat("Force").init(50);
+        this.stat("Magie").init(25);
     };
 }

@@ -12,7 +12,7 @@ export class GanteletsEnCuir extends Equipment {
 
         this.familles.base.push("Armure");
 
-        this.equipStat("Maîtrise").base = 1;
+        this.equipStat("Maîtrise").init(1);
 
         this.text = Text;
     };

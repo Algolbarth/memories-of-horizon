@@ -11,7 +11,7 @@ export class GoHoumei extends Boss {
         this.elements.base = ["Terre"];
         this.familles.base.push("Nain");
 
-        this.stat("Force").base = 25;
+        this.stat("Force").init(25);
         this.stat("Constitution").init(500);
     };
 }

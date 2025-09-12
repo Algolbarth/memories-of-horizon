@@ -11,7 +11,7 @@ export class EpeeDeCuivre extends Equipment {
         this.init([["Or", 5]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Force").base = 10;
+        this.equipStat("Force").init(10);
 
         this.text = Text;
     };

@@ -20,7 +20,7 @@ export class PotionInterdite extends Item {
         let homonculus = this.owner.getCard("Homonculus");
 
         homonculus.stat("Constitution").init(this.stat("Infusion").value());
-        homonculus.stat("Force").base = this.stat("Infusion").value();
+        homonculus.stat("Force").init(this.stat("Infusion").value());
         
         homonculus.add("Terrain");
         this.move("Défausse");
