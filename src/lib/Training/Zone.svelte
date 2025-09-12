@@ -58,16 +58,18 @@
 			</div>
 		</div>
 		<div style="text-align:right;">
-			<button
-				class="check"
-				on:click={() => {
-					system.view.reset();
-					system.train.add.entity = entity;
-					system.train.add.zone = zone;
-				}}
-			>
-				Ajouter une carte
-			</button>
+			{#if zone.size == undefined || zone.cards.length < zone.size}
+				<button
+					class="check"
+					on:click={() => {
+						system.view.reset();
+						system.train.add.entity = entity;
+						system.train.add.zone = zone;
+					}}
+				>
+					Ajouter une carte
+				</button>
+			{/if}
 		</div>
 	</div>
 
