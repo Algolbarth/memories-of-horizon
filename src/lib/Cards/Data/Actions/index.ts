@@ -52,6 +52,7 @@ export * from './Polissage';
 export * from './Preparation';
 export * from './Rappel';
 export * from './RazDeMaree';
+export * from './Rembourrage';
 export * from './Renforcement';
 export * from './Repos';
 export * from './Restockage';
