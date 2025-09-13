@@ -9,7 +9,7 @@ export class Bombardement extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 75]]);
+        this.init([["Or", 100]]);
 
         this.text = Text;
     };
@@ -24,7 +24,7 @@ export class Bombardement extends Action {
     useEffect = () => {
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
-            card.damageByEffect(15);
+            card.damageByEffect(20);
         }
         this.move("Défausse");
         this.pose();

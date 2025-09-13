@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige 15 dégâts à toutes les unités adverses sur le terrain.
+Inflige 20 dégâts à toutes les unités adverses sur le terrain.

@@ -62,6 +62,7 @@ export * from './Rapiere';
 export * from './RobeDeMage';
 export * from './RobeDeVelours';
 export * from './RobeEnSoie';
+export * from './SacDeBombe';
 export * from './SacEnToile';
 export * from './SacocheEnCuir';
 export * from './Sandales';
