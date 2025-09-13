@@ -27,6 +27,7 @@ export * from './Pain';
 export * from './Panacee';
 export * from './PierrePhilosophale';
 export * from './Piment';
+export * from './PlaqueDArmure';
 export * from './Pomme';
 export * from './PommeDeTerre';
 export * from './PotionDEndurance';

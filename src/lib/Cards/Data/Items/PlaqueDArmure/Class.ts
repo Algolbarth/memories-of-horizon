@@ -1,11 +1,11 @@
 import type { System } from '../../../../System/Class';
-import { Action } from '../../../Class/Action';
+import { Item } from '../../../Class/Item';
 import type { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Polissage extends Action {
-    name = "Polissage";
+export class PlaqueDArmure extends Item {
+    name = "Plaque d'armure";
 
     constructor(system: System) {
         super(system);
@@ -44,7 +44,7 @@ export class Polissage extends Action {
     };
 
     useEffect = (target: Equipment) => {
-        target.equipStat("Résistance").increase(10);
+        target.equipStat("Endurance").increase(10);
         this.move("Défausse");
         this.pose();
     };
