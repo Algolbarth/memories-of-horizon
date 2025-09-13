@@ -3,36 +3,29 @@ import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class TourneeGenerale extends Action {
-    name = "Tournée générale";
+export class Bombardement extends Action {
+    name = "Bombardement";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 150]]);
+        this.init([["Or", 75]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        let number = 0;
-        let terrain = copy(this.owner.zone("Terrain").cards);
+        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
-            if (card.type == "Créature") {
-                number++;
-            }
+            card.damageByEffect(15);
         }
-        for (let i = 0; i < number; i++) {
-            this.owner.getCard("Bière").add("Réserve");
-        }
-
         this.move("Défausse");
         this.pose();
     };
