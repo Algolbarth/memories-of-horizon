@@ -13,6 +13,7 @@ export * from './Catapulte';
 export * from './Charrette';
 export * from './Chaudron';
 export * from './Epouvantail';
+export * from './Etable';
 export * from './FeuDeCamp';
 export * from './Fontaine';
 export * from './FontaineDeBambou';
