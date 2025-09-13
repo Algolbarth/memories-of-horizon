@@ -49,6 +49,7 @@ export * from './Parade';
 export * from './PasseDArmes';
 export * from './PluieDeFleche';
 export * from './Polissage';
+export * from './Preparation';
 export * from './Rappel';
 export * from './RazDeMaree';
 export * from './Renforcement';
