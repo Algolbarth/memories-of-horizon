@@ -36,9 +36,9 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Vole
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
 
 ### Zones
-Chercheur : créature, quand posé : pioche 1 carte. si la pile est pleine, augmente la taille de la pile.
-Entrepôt : bâtiment, quand acheté : si la réserve est pleine, augmente la taille de la réserve.
-Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain.
+Innovation : action, si la pile est pleine, augmente la taille de la pile.
+Gestion des stocks : action, si la réserve est pleine, augmente la taille de la réserve.
+Conquête : action, si le terrain est plein, augmente la taille du terrain.
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la réserve.
 Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
 
@@ -101,7 +101,7 @@ Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de comba
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
 Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la réserve.
-Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain.
+Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
@@ -109,7 +109,8 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
 Cerf : créature bête.
 Hérisson : créature bête, épine.
-Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la constitution max et de X la régénération de cette créature.
+Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la vitalité et de X la régénération de cette créature.
+Herbes curatives: objet plante, 
 
 ### Eau
 Barrière de corail : créature plante, régénération.

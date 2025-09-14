@@ -41,7 +41,7 @@
 			Website
 		</button>
 		<br />
-		version BETA - 2024
+		version 0.0.1 - 2025
 	</div>
 </div>
 
