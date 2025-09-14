@@ -35,6 +35,7 @@ export * from './Hydratation';
 export * from './Ignorer';
 export * from './Incantation';
 export * from './Inondation';
+export * from './JetDAcide';
 export * from './Malefice';
 export * from './Melange';
 export * from './Menace';

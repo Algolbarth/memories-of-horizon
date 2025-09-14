@@ -1,23 +1,23 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Affaiblissement extends Action {
-    name = "Affaiblissement";
+export class JetDAcide extends Action {
+    name = "Jet d'acide";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 20]]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Force").value() > 0) {
+            if (card.stat("Endurance").value() > 0) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Affaiblissement extends Action {
             let target = undefined;
 
             for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Force").value() > 0) {
+                if (target == undefined && card.stat("Endurance").value() > 0) {
                     target = card;
                 }
             }
@@ -43,8 +43,8 @@ export class Affaiblissement extends Action {
         }
     };
 
-    useEffect = (target: Creature) => {
-        target.stat("Force").decrease(20);
+    useEffect = (target: Unit) => {
+        target.stat("Endurance").decrease(20);
         this.move("Défausse");
         this.pose();
     };

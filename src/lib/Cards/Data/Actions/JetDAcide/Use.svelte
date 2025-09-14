@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.type == "Créature" && card.stat("Force").value() > 0) {
+		if (card.stat("Endurance").value() > 0) {
 			return true;
 		}
 		return false;
