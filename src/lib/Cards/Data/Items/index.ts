@@ -25,6 +25,7 @@ export * from './LivreDeRecette';
 export * from './NoixDeCoco';
 export * from './Pain';
 export * from './Panacee';
+export * from './ParcheminDeSagesse';
 export * from './PierrePhilosophale';
 export * from './Piment';
 export * from './PlaqueDArmure';
