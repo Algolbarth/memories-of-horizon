@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : crée <CardInfo bind:system name={"Monture de chevalier"} /> sur la pile et réduis de 20 le coût de cette carte.
+Au début de la phase de préparation : crée <CardInfo bind:system name={"Tir de canon"} /> dans la réserve.
