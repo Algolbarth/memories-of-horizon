@@ -64,6 +64,7 @@ export * from './SangChaud';
 export * from './SouffleEnflamme';
 export * from './Sprint';
 export * from './TirDeCanon';
+export * from './TirEnPleineTete';
 export * from './TirHydraulique';
 export * from './TourneeGenerale';
 export * from './TremblementDeTerre';
