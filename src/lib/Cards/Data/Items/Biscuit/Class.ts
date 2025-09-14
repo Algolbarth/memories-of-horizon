@@ -10,7 +10,7 @@ export class Biscuit extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 10]]);
         this.familles.base.push("Nourriture");
 
         this.text = Text;

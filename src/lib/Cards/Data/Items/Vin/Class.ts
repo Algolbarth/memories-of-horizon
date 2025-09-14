@@ -50,7 +50,7 @@ export class Vin extends Item {
             target.stat("Critique").set(100);
         }
         else {
-            target.heal(30);
+            target.heal(50);
         }
         this.move("Défausse");
         this.pose();

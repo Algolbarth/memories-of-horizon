@@ -10,7 +10,7 @@ export class PouletRoti extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 4], ["Feu", 4]]);
+        this.init([["Or", 3], ["Feu", 2]]);
         this.familles.base.push("Nourriture");
 
         this.text = Text;

@@ -20,8 +20,8 @@ export class BonhommeBiscuit extends Creature {
 
     targetEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.familles.total().includes("Nourriture")) {
-            this.stat("Constitution").increase(3);
-            this.stat("Force").increase(3);
+            this.stat("Constitution").increase(5);
+            this.stat("Force").increase(5);
         }
     };
 }

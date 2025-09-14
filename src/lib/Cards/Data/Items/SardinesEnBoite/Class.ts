@@ -10,7 +10,7 @@ export class SardinesEnBoite extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 4], ["Eau", 4]]);
+        this.init([["Or", 3], ["Eau", 2]]);
         this.familles.base.push("Nourriture");
 
         this.text = Text;

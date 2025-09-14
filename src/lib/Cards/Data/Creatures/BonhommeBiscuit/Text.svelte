@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand un objet de famille Nourriture est utilisé sur lui : augmente de 3 sa force et sa constitution.
+Quand un objet de famille Nourriture est utilisé sur lui : augmente de 5 sa force et sa constitution.

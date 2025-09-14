@@ -10,7 +10,7 @@ export class Piment extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Feu", 8]]);
+        this.init([["Or", 6], ["Feu", 6]]);
         this.familles.base.push("Nourriture", "Plante");
 
         this.text = Text;

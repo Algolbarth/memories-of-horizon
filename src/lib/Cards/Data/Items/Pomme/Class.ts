@@ -10,7 +10,7 @@ export class Pomme extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 4], ["Végétal", 4]]);
+        this.init([["Or", 3], ["Végétal", 2]]);
         this.familles.base.push("Nourriture");
         this.familles.base.push("Plante");
 
