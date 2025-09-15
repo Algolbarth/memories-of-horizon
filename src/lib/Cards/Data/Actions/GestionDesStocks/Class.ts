@@ -1,27 +1,28 @@
 import type { System } from '../../../../System/Class';
-import { Item } from '../../../Class/Item';
+import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class ParcheminDeSagesse extends Item {
-    name = "Parchemin de sagesse";
+export class GestionDesStocks extends Action {
+    name = "Gestion des stocks";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 75]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        if (this.owner.totalIntelligence() > 0) {
+        if (this.owner?.zone("Réserve").isFull()) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.draw(this.owner.totalIntelligence());
+        this.owner.zone("Réserve").size += 2;
+
         this.move("Défausse");
         this.pose();
     };

@@ -36,9 +36,6 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Vole
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
 
 ### Zones
-Innovation : action, si la pile est pleine, augmente la taille de la pile.
-Gestion des stocks : action, si la réserve est pleine, augmente la taille de la réserve.
-Conquête : action, si le terrain est plein, augmente la taille du terrain.
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la réserve.
 Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
 
