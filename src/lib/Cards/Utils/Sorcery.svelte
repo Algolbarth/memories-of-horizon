@@ -4,8 +4,8 @@
 
 	export let system: System;
 	export let card: Card;
-    export let text: string;
-    export let cost: number;
+	export let text: string;
+	export let cost: number;
 </script>
 
 {#if system.game != undefined && card.owner.ressource("Mana").total() >= cost}

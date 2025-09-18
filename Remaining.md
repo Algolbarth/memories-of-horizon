@@ -35,10 +35,6 @@ Dague de voleur : quand la créature tue une unité : augmente sa valeur en or �
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
 
-### Zones
-Savoir interdit : action, diminue la taille du terrain et augmente la taille de la réserve.
-Requisition : action, diminue la taille de la réserve et augmente la taille du terrain.
-
 ### Equipements
 Brassard de santé : augmente la régénération de la créature équipée.
 Plastron de piques : augmente la constitution et l'épine de la créature équipée.

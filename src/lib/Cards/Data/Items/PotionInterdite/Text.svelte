@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-    import CardInfo from "../../../Utils/CardInfo.svelte";
+	import CardInfo from "../../../Utils/CardInfo.svelte";
 
 	export let system: System;
 	export let card: Card;

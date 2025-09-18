@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CardInfo from "../../../Utils/CardInfo.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 
@@ -9,4 +8,7 @@
 	export let card: Card;
 </script>
 
-Fusionne 2 objets alliés de famille Potion dans la réserve en <CardInfo bind:system name={"Concoction"} />.
+S'équipe sur une créature alliée sur le terrain.
+<br />
+<br />
+Au début de la phase de préparation, quand équipé : pioche 1 action.

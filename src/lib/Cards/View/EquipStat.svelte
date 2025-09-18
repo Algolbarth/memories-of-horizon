@@ -1,13 +1,13 @@
 <script lang="ts">
-    import type { Equipment } from "../Class/Equipment";
+	import type { Equipment } from "../Class/Equipment";
 
-    export let card: Equipment;
+	export let card: Equipment;
 </script>
 
 <div class="box">
-    <i>Statistiques d'équipement</i>
+	<i>Statistiques d'équipement</i>
 
-    <br />
+	<br />
 
 	<div class="container">
 		{#each card.equipStats as stat}

@@ -28,7 +28,7 @@ export class TremblementDeTerre extends Action {
         for (const card of terrain) {
             card.damageByEffect(10);
         }
-        
+
         this.move("Défausse");
         this.pose();
     };

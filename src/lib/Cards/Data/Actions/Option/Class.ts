@@ -1,5 +1,4 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';

@@ -41,11 +41,11 @@
 					system.page = "Decks";
 				}}
 			>
-			Consulter les decks
-		</button>
+				Consulter les decks
+			</button>
 		</div>
 	</div>
-	
+
 	<div id="list" class="scroll">
 		{#each array as deck}
 			<div class="preview">

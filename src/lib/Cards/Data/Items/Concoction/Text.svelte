@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
-    import type { Card } from "../../../Class";
-    import CardInfo from "../../../Utils/CardInfo.svelte";
-    import { Concoction } from "./Class";
+	import type { Card } from "../../../Class";
+	import CardInfo from "../../../Utils/CardInfo.svelte";
+	import { Concoction } from "./Class";
 
 	export let system: System;
 	export let card: Card;

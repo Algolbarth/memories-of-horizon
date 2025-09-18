@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
-    import type { Card } from "../../../Class";
-    import { Creature } from "../../../Class/Creature";
+	import type { Card } from "../../../Class";
+	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
 

@@ -7,7 +7,7 @@
 	import Description from "./Description.svelte";
 	import Effet from "./Effet.svelte";
 	import Equipments from "./Equipments.svelte";
-    import EquipStat from "./EquipStat.svelte";
+	import EquipStat from "./EquipStat.svelte";
 	import EquipTrait from "./EquipTrait.svelte";
 	import Stat from "./Stat.svelte";
 	import Trait from "./Trait.svelte";

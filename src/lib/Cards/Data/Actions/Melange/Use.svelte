@@ -22,7 +22,7 @@
 
 	function fonction2(card: Card) {
 		potion_2 = card;
-		
+
 		system.game.use.card.useEffect(potion_1, potion_2);
 		system.game.use.reset();
 	}

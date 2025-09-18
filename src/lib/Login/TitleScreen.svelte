@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Logo from "../Menu/Logo.svelte";
+	import Logo from "../Menu/Logo.svelte";
 	import type { System } from "../System/Class";
 	import { Account } from "./Account";
 

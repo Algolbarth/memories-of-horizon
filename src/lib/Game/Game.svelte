@@ -32,12 +32,10 @@
 		<div>
 			{#if system.game.mode != "Entraînement" && system.game.chapter}
 				Chapitre {system.game.chapter.number}
-				-
-				Étape {system.game.player.step} / {system.game.chapter.steps.length}
+				- Étape {system.game.player.step} / {system.game.chapter.steps.length}
 			{/if}
 			{#if system.game.isBattle() && !system.game.isEndBattle()}
-				-
-				Tour de combat {system.game.turn}
+				- Tour de combat {system.game.turn}
 			{/if}
 		</div>
 
@@ -117,7 +115,7 @@
 				</button>
 			{/if}
 		</div>
-		
+
 		<div style="text-align:right">
 			<button
 				on:click={() => {

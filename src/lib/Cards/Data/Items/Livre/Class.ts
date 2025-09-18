@@ -23,4 +23,4 @@ export class Livre extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

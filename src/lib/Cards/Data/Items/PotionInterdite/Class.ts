@@ -21,7 +21,7 @@ export class PotionInterdite extends Item {
 
         homonculus.stat("Constitution").init(this.stat("Infusion").value());
         homonculus.stat("Force").init(this.stat("Infusion").value());
-        
+
         homonculus.add("Terrain");
         this.move("Défausse");
         this.pose();

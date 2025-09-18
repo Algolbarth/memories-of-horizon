@@ -84,9 +84,7 @@
 <div class="zone">
 	Fonctionnalités à venir :
 	<ul>
-		<li>
-			Rien pour le moment
-		</li>
+		<li>Rien pour le moment</li>
 	</ul>
 </div>
 

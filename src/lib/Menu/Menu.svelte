@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { save } from "../Login/Save";
 	import type { System } from "../System/Class";
-    import Logo from "./Logo.svelte";
+	import Logo from "./Logo.svelte";
 
 	export let system: System;
 

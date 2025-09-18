@@ -171,7 +171,7 @@ export class Card {
 
     addEffect: Function | undefined;
 
-    move = (zone: string, entity: Entity | undefined  = this.owner) => {
+    move = (zone: string, entity: Entity | undefined = this.owner) => {
         this.remove();
         this.add(zone, entity);
     };

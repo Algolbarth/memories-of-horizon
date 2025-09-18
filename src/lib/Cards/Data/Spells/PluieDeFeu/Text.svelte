@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-    import Sorcery from "../../../Utils/Sorcery.svelte";
+	import Sorcery from "../../../Utils/Sorcery.svelte";
 
 	export let system: System;
 	export let card: Card;

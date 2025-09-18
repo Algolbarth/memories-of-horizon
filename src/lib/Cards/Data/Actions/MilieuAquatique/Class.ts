@@ -15,7 +15,7 @@ export class MilieuAquatique extends Action {
     };
 
     canUse = () => {
-         for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner.zone("Terrain").cards) {
             if (card.type == "Créature" && card.elements.total().includes("Eau")) {
                 return true;
             }

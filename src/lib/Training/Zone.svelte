@@ -159,7 +159,7 @@
 					{:else}
 						<button class="useless">&#9660</button>
 					{/if}
-					
+
 					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
 							class="remove"

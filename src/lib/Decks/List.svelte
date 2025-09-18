@@ -73,7 +73,7 @@
 					>
 						Modifier
 					</button>
-					
+
 					{#if i > 0}
 						<button
 							on:click={() => {

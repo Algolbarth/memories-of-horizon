@@ -5,7 +5,6 @@
 </script>
 
 <div class="box">
-	
 	<i>Statistiques</i>
 	<br />
 
