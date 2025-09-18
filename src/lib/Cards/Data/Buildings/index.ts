@@ -6,6 +6,7 @@ export * from './Bibliotheque';
 export * from './BibliothequeElfique';
 export * from './Bivouac';
 export * from './Boutique';
+export * from './Canon';
 export * from './CarriereDePierre';
 export * from './Cascade';
 export * from './Caserne';
