@@ -41,6 +41,7 @@ export * from './PouletRoti';
 export * from './Remede';
 export * from './SardinesEnBoite';
 export * from './Sifflet';
+export * from './Tomate';
 export * from './Torche';
 export * from './Trefle';
 export * from './Tresor';
