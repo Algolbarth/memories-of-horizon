@@ -3,6 +3,7 @@ export * from './AgrandissementDInventaire';
 export * from './Aiguisage';
 export * from './Ambidextrie';
 export * from './Assomage';
+export * from './AttaqueResiliente';
 export * from './Autodafe';
 export * from './Aventure';
 export * from './BagarreDeTaverne';
