@@ -10,7 +10,7 @@ export class Tomate extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5], ["Eau", 5]]);
+        this.init([["Or", 5], ["Végétal", 5]]);
         this.familles.base.push("Nourriture", "Plante");
 
         this.text = Text;
