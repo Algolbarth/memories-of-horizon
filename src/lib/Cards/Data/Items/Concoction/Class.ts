@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import type { Unit } from '../../../Class';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -19,6 +19,7 @@ export class Concoction extends Item {
         this.addStat("Infusion d'endurance", 0);
         this.addStat("Infusion interdite", 0);
         this.addStat("Infusion explosive", 0);
+        this.addStat("Infusion parfumée", 0);
 
         this.trait("Rare").base = true;
 
@@ -28,6 +29,11 @@ export class Concoction extends Item {
     canUse = () => {
         if (this.stat("Infusion de mana").value() > 0 || this.stat("Infusion interdite").value() > 0) {
             return true;
+        }
+        if (this.stat("Infusion explosive").value() > 0) {
+            if (this.owner?.zone("Terrain").cards.length > 0 || this.owner?.adversary().zone("Terrain").cards.length > 0) {
+                return true;
+            }
         }
         for (const entity of [this.system.game.player, this.system.game.bot]) {
             for (const card of entity.zone("Terrain").cards) {
@@ -43,6 +49,11 @@ export class Concoction extends Item {
         if (this.owner == this.system.game.player) {
             let check = false;
 
+            if (this.stat("Infusion explosive").value() > 0) {
+                if (this.owner?.zone("Terrain").cards.length > 0 || this.owner?.adversary().zone("Terrain").cards.length > 0) {
+                    check = true;
+                }
+            }
             for (const entity of [this.system.game.player, this.system.game.bot]) {
                 for (const card of entity.zone("Terrain").cards) {
                     if (card.type == "Créature") {
@@ -57,7 +68,6 @@ export class Concoction extends Item {
             else {
                 this.useEffect(undefined);
             }
-
         }
         else {
             let target = undefined;
@@ -86,7 +96,7 @@ export class Concoction extends Item {
         return false;
     };
 
-    useEffect = (target: Creature | undefined) => {
+    useEffect = (target: Unit | undefined) => {
         this.owner.ressource("Mana").current += this.stat("Infusion de mana").value();
 
         if (this.stat("Infusion interdite").value() > 0) {
@@ -98,9 +108,12 @@ export class Concoction extends Item {
 
         if (target != undefined) {
             target.damageByEffect(this.stat("Infusion explosive").value() * 2);
-            target.heal(this.stat("Infusion de soin").value() * 2);
-            target.stat("Force").step += this.stat("Infusion de force").value() * 4;
-            target.stat("Endurance").step += this.stat("Infusion d'endurance").value() * 2;
+            if (target.type == "Créature") {
+                target.heal(this.stat("Infusion de soin").value() * 2);
+                target.stat("Force").step += this.stat("Infusion de force").value() * 4;
+                target.stat("Endurance").step += this.stat("Infusion d'endurance").value() * 2;
+                target.stat("Protection").step += Math.floor(this.stat("Infusion parfumée").value() / 5);
+            }
         }
 
         this.move("Défausse");

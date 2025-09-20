@@ -6,6 +6,10 @@
 	export let system: System;
 
 	function condition(card: Card) {
+		let potion = system.game.use.card;
+		if (potion?.stat("Infusion explosive").value() > 0) {
+			return true;
+		}
 		if (card.type == "Créature") {
 			return true;
 		}

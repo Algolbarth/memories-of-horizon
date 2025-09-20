@@ -37,6 +37,7 @@ export * from './PotionDeMana';
 export * from './PotionDeSoin';
 export * from './PotionExplosive';
 export * from './PotionInterdite';
+export * from './PotionParfumee';
 export * from './PouletRoti';
 export * from './Remede';
 export * from './SardinesEnBoite';

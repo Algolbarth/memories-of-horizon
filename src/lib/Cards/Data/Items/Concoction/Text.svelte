@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'utilise sur une créature alliée sur le terrain. Applique des effets en fonction des différentes valeurs d'infusion.
+Applique des effets en fonction des différentes valeurs d'infusion.
 
 {#if card instanceof Concoction && card.hasInfusion()}
 	<br />
@@ -16,23 +16,8 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 {/if}
 
 <i>
-	{#if card.stat("Infusion de soin").value() > 0}
-		Soigne {card.stat("Infusion de soin").value() * 2} blessures à une créature alliée sur le terrain.
-		<br />
-	{/if}
-
 	{#if card.stat("Infusion de mana").value() > 0}
 		Produit {card.stat("Infusion de mana").value()} mana.
-		<br />
-	{/if}
-
-	{#if card.stat("Infusion de force").value() > 0}
-		Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature alliée sur le terrain pendant cette étape.
-		<br />
-	{/if}
-
-	{#if card.stat("Infusion d'endurance").value() > 0}
-		Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature alliée sur le terrain pendant cette étape.
 		<br />
 	{/if}
 
@@ -42,7 +27,27 @@ S'utilise sur une créature alliée sur le terrain. Applique des effets en fonct
 	{/if}
 
 	{#if card.stat("Infusion explosive").value() > 0}
-		Inflige {card.stat("Infusion explosive").value() * 2} dégâts à une créature adverse sur le terrain.
+		Inflige {card.stat("Infusion explosive").value() * 2} dégâts à une unité sur le terrain.
+		<br />
+	{/if}
+
+	{#if card.stat("Infusion de soin").value() > 0}
+		Soigne {card.stat("Infusion de soin").value() * 2} blessures à une créature sur le terrain.
+		<br />
+	{/if}
+
+	{#if card.stat("Infusion de force").value() > 0}
+		Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature sur le terrain pendant cette étape.
+		<br />
+	{/if}
+
+	{#if card.stat("Infusion d'endurance").value() > 0}
+		Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature sur le terrain pendant cette étape.
+		<br />
+	{/if}
+
+	{#if card.stat("Infusion parfumée").value() >= 5}
+		Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain.
 		<br />
 	{/if}
 </i>

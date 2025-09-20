@@ -7,11 +7,11 @@
 	export let card: Card;
 </script>
 
-Inflige 2 dégâts à une unité adverse sur le terrain pour chaque valeur d'infusion.
+Augmente de 1 la protection d'une créature sur le terrain pendant cette étape pour toutes les 5 valeur d'infusion.
 
 <br />
 <br />
 
 <i>
-	Inflige {card.stat("Infusion").value() * 2} dégâts à une unité adverse sur le terrain.
+	Augmente de {Math.floor(card.stat("Infusion").value() / 5)} la protection d'une créature sur le terrain pendant cette étape.
 </i>
