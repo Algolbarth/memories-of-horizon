@@ -34,6 +34,7 @@ export * from './PommeDeTerre';
 export * from './PotionDEndurance';
 export * from './PotionDeForce';
 export * from './PotionDeMana';
+export * from './PotionDeResistance';
 export * from './PotionDeSoin';
 export * from './PotionExplosive';
 export * from './PotionInterdite';
