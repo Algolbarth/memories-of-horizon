@@ -49,6 +49,7 @@ export * from './Mue';
 export * from './Multisoin';
 export * from './Noyade';
 export * from './Omniscience';
+export * from './Opportunite';
 export * from './Option';
 export * from './Parade';
 export * from './PasseDArmes';

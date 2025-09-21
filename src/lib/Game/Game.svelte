@@ -34,8 +34,12 @@
 				Chapitre {system.game.chapter.number}
 				- Étape {system.game.player.step} / {system.game.chapter.steps.length}
 			{/if}
+			
 			{#if system.game.isBattle() && !system.game.isEndBattle()}
-				- Tour de combat {system.game.turn}
+				{#if system.game.mode != "Entraînement" && system.game.chapter}
+					-
+				{/if}
+				Tour de combat {system.game.turn}
 			{/if}
 		</div>
 

@@ -102,7 +102,9 @@ export class Battle {
     resetAction = () => {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                card.stat("Initiative").set(card.stat("Maîtrise").value());
+                if (card.stat("Initiative").value() < card.stat("Maîtrise").value()) {
+                    card.stat("Initiative").set(card.stat("Maîtrise").value());
+                }
             }
         }
     };
@@ -193,7 +195,7 @@ export class Battle {
                 }
             }
         }
-    }
+    };
 
     isEndBattle = () => {
         if (this.player.zone("Terrain").cards.length == 0) {

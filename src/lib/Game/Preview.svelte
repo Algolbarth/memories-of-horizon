@@ -80,17 +80,21 @@
 						{/if}
 					{:else if card.zone.name == "Région"}
 						{#if card == card.owner?.place}
-							<span style="color:darkgreen">Actif</span>
-						{:else}
+							<span>Actif</span>
+						{:else if card.owner?.ressource("Or").total() >= 5}
 							<button
+								class="check"
 								on:click={() => {
 									if (card.owner) {
 										card.owner.place = card;
+										card.owner.ressource("Or").spend(5);
 									}
 								}}
 							>
 								Changer
 							</button>
+						{:else}
+							<button>Changer</button>
 						{/if}
 					{/if}
 					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card.type == "Créature")}
