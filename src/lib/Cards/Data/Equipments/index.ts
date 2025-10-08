@@ -50,6 +50,7 @@ export * from './ManteauDEsquive';
 export * from './ManuelDeMagie';
 export * from './MasseDeFer';
 export * from './MasseDePierre';
+export * from './MasseMagique';
 export * from './MassueDeChene';
 export * from './OrbeDeCorindon';
 export * from './OrbeDeCristal';
