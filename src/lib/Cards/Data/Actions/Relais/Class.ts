@@ -4,8 +4,8 @@ import type { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PasseDArmes extends Action {
-    name = "Passe d'armes";
+export class Relais extends Action {
+    name = "Relais";
 
     constructor(system: System) {
         super(system);
