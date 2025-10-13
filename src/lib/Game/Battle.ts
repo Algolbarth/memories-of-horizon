@@ -1,11 +1,11 @@
-import type { Creature } from "../Cards/Class/Creature";
+import { Unit } from "../Cards/Class";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
 import { Entity } from "./Entity";
 
 export class Battle {
-    fighter: Creature | undefined = undefined;
-    auto = null;
+    fighter: Unit | undefined = undefined;
+    auto: number | undefined;
     system: System;
     turn: number = 1;
     phase: string = "Préparation";
@@ -69,7 +69,7 @@ export class Battle {
 
     stopAuto = () => {
         clearInterval(this.auto);
-        this.auto = null;
+        this.auto = undefined;
     };
 
     nextTurn = () => {
@@ -112,8 +112,12 @@ export class Battle {
     actionBattle = () => {
         if (!this.isEndBattle()) {
             if (!this.isEndTurn()) {
-                this.nextFighter();
+                this.setNextFighter();
                 this.fighter.play();
+            }
+            else if (this.turn == 5) {
+                this.endTurn();
+                this.endBattle();
             }
             else {
                 this.endTurn();
@@ -126,20 +130,20 @@ export class Battle {
         }
     };
 
-    nextFighter = (previous_entity = undefined) => {
+    setNextFighter = (previous_entity: Entity | undefined = undefined) => {
         let entity: Entity = this.choiceEntity(previous_entity);
 
         let speed = this.getBestSpeed();
         this.fighter = undefined;
         for (let i = 0; i < entity.zone("Terrain").cards.length; i++) {
             let card = entity.zone("Terrain").cards[i];
-            if (this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Initiative").value() > 0 && speed == card.stat("Vitesse").value()) {
+            if (card instanceof Unit && this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Initiative").value() > 0 && speed == card.stat("Vitesse").value()) {
                 this.fighter = card;
             }
         }
 
         if (this.fighter == undefined) {
-            this.nextFighter(entity.adversary());
+            this.setNextFighter(entity.adversary());
         }
     };
 
@@ -198,19 +202,19 @@ export class Battle {
     };
 
     isEndBattle = () => {
-        if (this.player.zone("Terrain").cards.length == 0) {
-            return true;
-        }
-        if (this.bot.zone("Terrain").cards.length == 0) {
-            return true;
+        for (const entity of [this.player, this.bot]) {
+            if (entity.isLoser()) {
+                return true;
+            }
         }
         return false;
     };
 
     isVictory = () => {
-        if (this.bot.zone("Terrain").cards.length == 0) {
+        if (this.bot.isLoser()) {
             return true;
         }
+        return false;
     };
 
     endBattle = () => {

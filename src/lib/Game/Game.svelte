@@ -39,7 +39,7 @@
 				{#if system.game.mode != "Entraînement" && system.game.chapter}
 					-
 				{/if}
-				Tour de combat {system.game.turn}
+				Tour de combat {system.game.turn} / 5
 			{/if}
 		</div>
 
