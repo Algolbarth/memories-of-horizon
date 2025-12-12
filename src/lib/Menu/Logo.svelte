@@ -2,7 +2,7 @@
     let version = "0.0.1";
 </script>
 
-<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
+<img src="/assets/Pictures/Title.png" alt="Logo" class="logo" />
 
 <br />
 

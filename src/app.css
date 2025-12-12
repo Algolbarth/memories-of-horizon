@@ -42,7 +42,7 @@ div.window {
   background-color: var(--background);
   font-weight: bold;
 
-  cursor: url('./assets/Pictures/Hand.cur'), default;
+  cursor: url('/assets/Pictures/Hand.cur'), default;
   overflow: hidden;
 }
 
@@ -68,7 +68,7 @@ button {
   box-sizing: border-box;
   border: 1px solid;
   border-radius: 5px;
-  cursor: url('./assets/Pictures/Select.cur'), pointer;
+  cursor: url('/assets/Pictures/Select.cur'), pointer;
   background: var(--hover);
   transition: border-color 0.25s;
 }
@@ -297,7 +297,7 @@ input[type="range"] {
   outline: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-  cursor: url("assets/Pictures/Select.cur"), pointer;
+  cursor: url("/assets/Pictures/Select.cur"), pointer;
   transform: translateY(50%);
 }
 
@@ -310,7 +310,7 @@ input[type="range"]::-webkit-slider-thumb {
   background: gold;
   border: solid;
   border-color: black;
-  cursor: url("assets/Pictures/Select.cur"), pointer;
+  cursor: url("/assets/Pictures/Select.cur"), pointer;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -320,7 +320,7 @@ input[type="range"]::-moz-range-thumb {
   background: gold;
   border: solid;
   border-color: black;
-  cursor: url("assets/Pictures/Select.cur"), pointer;
+  cursor: url("/assets/Pictures/Select.cur"), pointer;
 }
 
 input[type=file] {
@@ -348,5 +348,5 @@ input::-webkit-inner-spin-button {
 }
 
 label {
-  cursor: url('./assets/Pictures/Select.cur'), pointer;
+  cursor: url('/assets/Pictures/Select.cur'), pointer;
 }

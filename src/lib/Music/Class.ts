@@ -22,7 +22,7 @@ export class Music {
 
     play() {
         if (this.slot < this.list.length - 1) {
-            this.current = new Audio("src/assets/Music/" + this.list[this.slot] + ".mp3");
+            this.current = new Audio("/assets/Music/" + this.list[this.slot] + ".mp3");
             this.current.addEventListener("ended", function () {
                 this.play();
             });

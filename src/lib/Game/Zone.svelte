@@ -80,6 +80,8 @@
 							{/if}
 						</button>
 					{/if}
+				{:else if zone.name == "Région" && entity == system.game.player}
+					5 Or pour changer de lieu actif
 				{/if}
 			</div>
 		</div>

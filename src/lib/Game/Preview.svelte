@@ -16,7 +16,7 @@
 	<div class={(is_player || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
 		<div id={is_player || fonction != undefined ? "infos" : ""}>
 			{#if card.locked}
-				<img src="./src/assets/Pictures/lock.svg" alt="locked" class="locked" />
+				<img src="/assets/Pictures/lock.svg" alt="locked" class="locked" />
 			{/if}
 			{#if !card.cache}
 				<button
