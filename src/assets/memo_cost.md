@@ -1,0 +1,40 @@
+produit X ressource => X
+stocke X ressource => 2X
+augmente la production d'une ressource de X => 5X
+
+pioche X cartes => 2X
+pioche une carte avec une condition => 3X
+découvre X cartes => 5X
+découvre X cartes avec une condition => 8X
+crée X carte dans la boutique => 3X
+
+X Force => X/2
+X Vitalité => X/2
+X Constitution => 2X/3
+X Force + X Constitution => X
+X Adresse => X
+X Intensité => 20X
+X Magie => 2X
+X Esquive => 20X
+Augmente jusqu'à X la Garde => X/2
+X Protection => 10X
+X Endurance => X
+X Résistance => X
+X Vitesse => 10X
+X Agilité => 25X
+X Maitrise => 25X
+
+Inflige X dégâts => X/2
+Soigne X blessures  => X/2
+Remplit la jauge critique => 25
+
+X sur toutes les créatures/cartes alliées dans une zone => 10X
+X sur toutes les créatures/cartes dans une zone => 20X
+
+X à chaque étape de préparation => 2X
+X à chaque étape de combat => 2X
+X à chaque tour de combat => 3X
+X à chaque action/attaque => 4X
+
+X pendant cette étape => X/2
+X pendant ce tour de combat => X/2
