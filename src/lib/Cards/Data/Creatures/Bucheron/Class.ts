@@ -9,11 +9,11 @@ export class Bucheron extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Végétal", 20]]);
+        this.init([["Or", 15], ["Végétal", 15]]);
         this.familles.base.push("Elfe");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Force").init(5);
 
         this.text = Text;
     };
