@@ -5,7 +5,6 @@ Changer le logo
 Modifier l'histoire pour intégrer les planètes et l'espace 
 Finir l'histoire impériale (pk c'est souvent des humains) 
 Ajouter les éléments manquants dans le mode entraînement (deck) 
-Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) 
 Ajouter une option finir automatiquement pour les combats 
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, réserve) 
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
@@ -102,8 +101,8 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
 Cerf : créature bête.
 Hérisson : créature bête, épine.
-Sécateur : objet, inflige X dégâts à une créature de famille Plante sur le terrain. si cette créature survit, augmente de X la vitalité et de X la régénération de cette créature.
-Herbes curatives: objet plante, 
+Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa valeur de vente.
+Herbes curatives: objet plante
 
 ### Eau
 Barrière de corail : créature plante, régénération.

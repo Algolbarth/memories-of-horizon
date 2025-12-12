@@ -11,7 +11,7 @@ export class Godrick extends Boss {
         this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
-        this.stat("Force").init(100);
-        this.stat("Constitution").init(1000);
+        this.stat("Force").init(400);
+        this.stat("Constitution").init(4000);
     };
 }

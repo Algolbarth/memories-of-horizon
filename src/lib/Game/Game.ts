@@ -1,5 +1,5 @@
 import { Entity } from './Entity';
-import { Chapter } from '../Chapters/Chapter';
+import { Chapter } from '../Chapters/Class';
 import { Battle } from './Battle';
 import { copy } from '../Utils';
 import type { Deck } from '../Decks/Deck';
@@ -36,7 +36,7 @@ export class Game extends Battle {
 
             this.player.getCard("Humain").add("Terrain");
 
-            this.chapter = new Chapter(this.system, 0);
+            this.chapter = new Chapter(this.system, this, 0);
 
             this.nextChapter();
         }
@@ -68,7 +68,7 @@ export class Game extends Battle {
     };
 
     nextChapter = () => {
-        if (this.chapter.number < 50) {
+        if (this.chapter != undefined && this.chapter.number < 100) {
             this.bot = new Entity(this.system);
 
             let number = this.chapter.number + 1;
@@ -79,7 +79,7 @@ export class Game extends Battle {
                 this.chapter = this.system.chapters.getRandom(number);
             }
 
-            this.chapter.init();
+            this.chapter?.init();
 
             this.startChapter();
         }
@@ -92,15 +92,30 @@ export class Game extends Battle {
         this.player.ressource("Or").max++;
         this.player.ressource("Flux").stock++;
 
+        this.bot.life.set(this.chapter.steps[0].life);
+        this.bot.zone("Pile").level = 1 + Math.floor((this.chapter.number - 1) / 5);
+        for (const zone of this.bot.zones) {
+            if (zone.name == "Région") {
+                if (this.chapter.steps[0].locations.length > 3) {
+                    zone.size = this.chapter.steps[0].locations.length;
+                }
+                else {
+                    zone.size = 3;
+                }
+            }
+            else if (zone.name != "Défausse") {
+                zone.size = this.chapter.steps[0].zone_size;
+            }
+        }
+        this.bot.zone("Région").cards = [];
+        for (const location of this.chapter.steps[0].locations) {
+            this.bot.getCard(location).add("Région");
+        }
+        this.bot.place = this.bot.zone("Région").cards[0];
+
         for (let i = 0; i < 3; i++) {
             this.bot.play();
         }
-
-        this.bot.life.set(this.chapter.steps[0].life);
-
-        this.bot.zone("Région").cards = [];
-        this.bot.getCard(this.chapter.steps[0].place).add("Région");
-        this.bot.place = this.bot.zone("Région").cards[0];
 
         this.startStep();
     };
@@ -173,10 +188,10 @@ export class Game extends Battle {
             if (this.player.step < this.chapter.steps.length) {
                 this.player.step++;
 
-                this.system.game.bot.life.set(this.chapter.steps[this.system.game.player.step - 1].life);
+                this.bot.life.set(this.chapter.steps[this.player.step - 1].life);
 
                 this.bot.zone("Région").cards = [];
-                this.bot.getCard(this.chapter.steps[this.system.game.player.step - 1].place).add("Région");
+                this.bot.getCard(this.chapter.steps[this.player.step - 1].place).add("Région");
                 this.bot.place = this.bot.zone("Région").cards[0];
 
                 this.startStep();

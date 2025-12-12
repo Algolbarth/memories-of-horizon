@@ -7,9 +7,9 @@ import { Settings } from "../Settings/Class";
 import { RessourceList } from "../Ressources/Class";
 import type { Deck } from "../Decks/Deck";
 import type { Story } from "../Stories/Story";
-import type { Game } from "../Game/Game";
+import { Game } from "../Game/Game";
 import { Card } from "../Cards/Class";
-import { Chapter } from "../Chapters/Chapter";
+import { Chapter } from "../Chapters/Class";
 import type { Account } from "../Login/Account";
 
 export class System {
@@ -67,36 +67,47 @@ export class System {
 
         for (const chapter of Object.keys(chapters)) {
             let chapterClass = chapters[chapter];
-            let chapterInstance = new chapterClass(this, 0);
+            let chapterInstance: Chapter = new chapterClass(this, new Game(this, "Construit"), 0);
 
-            let error = false;
+            let error: boolean = false;
             for (const step of chapterInstance.steps) {
                 let ressources = [];
                 for (const ressource of this.ressources.list) {
                     ressources.push({
-                        name: ressource,
+                        name: ressource.name,
                         value: 0,
                     });
                 }
-                for (const card of step.cards) {
-                    if (this.cards.getByName(card) == undefined) {
+                for (const card_name of step.cards) {
+                    let card = this.cards.getByName(card_name);
+                    if (card == undefined) {
                         console.log("Invalid card in a chapter : " + card);
                         error = true;
                     } else {
-                        for (let i = 0; i < this.cards.getByName(card).cost.length; i++) {
-                            ressources[i].value += this.cards.getByName(card).cost[i].value();
+                        for (let i = 0; i < card.cost.length; i++) {
+                            ressources[i].value += card.cost[i].value();
                         }
                     }
                 }
-                for (const ressource of chapterInstance.ressources) {
-                    for (const cost of ressources) {
-                        if (cost.name == ressource.name && cost.value > ressource.value) {
-                            console.log(
-                                "Invalid ressources in a chapter : " +
-                                ressource.name +
-                                " " +
-                                (cost.value - ressource.value),
-                            );
+                for (const ressource of ressources) {
+                    if (ressource.value > 0) {
+                        let check = false;
+                        for (const cost of chapterInstance.ressources) {
+                            if (cost.name == ressource.name) {
+                                check = true;
+                                if (ressource.value > cost.value) {
+                                    console.log(
+                                        "Invalid ressources in a chapter : " +
+                                        ressource.name +
+                                        " " +
+                                        (ressource.value - cost.value)
+                                    );
+                                    error = true;
+                                }
+                            }
+                        }
+                        if (!check) {
+                            console.log("Missing ressources in a chapter : " + ressource.name + " " + ressource.value);
                             error = true;
                         }
                     }
@@ -116,6 +127,16 @@ export class System {
                 console.log(chapterClass);
             }
         }
+
+        let index: number = 0;
+        for (const level of this.chapters.instance) {
+            if (index > 0 && level.length == 0) {
+                console.log("No chapter level " + index);
+            }
+            index++;
+        }
+
+        console.log(this.chapters)
 
         for (const story of Object.keys(stories)) {
             this.stories.push(new stories[story]());
@@ -169,7 +190,7 @@ class Chapters {
         let level = Math.floor((number - 1) / 5) + 1;
         return new this.class[level][
             Math.floor(Math.random() * this.class[level].length)
-        ](this.system, number);
+        ](this.system, this.system.game, number);
     };
 };
 
@@ -191,7 +212,7 @@ class Bosses {
         let level = Math.floor((number - 1) / 10) + 1;
         return new this.class[level][
             Math.floor(Math.random() * this.class[level].length)
-        ](this.system, number);
+        ](this.system, this.system.game, number);
     };
 };
 

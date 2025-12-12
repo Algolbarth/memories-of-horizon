@@ -1,3 +1,4 @@
+import type { Game } from "../Game/Game";
 import type { System } from "../System/Class";
 
 export class Chapter {
@@ -5,19 +6,22 @@ export class Chapter {
     ressources: ChapterRessource[] = [];
     boss: boolean = false;
     system: System;
+    game: Game;
     number: number;
+    level: number = 0;
 
-    constructor(system: System, number: number) {
+    constructor(system: System, game: Game, number: number) {
         this.system = system;
+        this.game = game;
         this.number = number;
     };
 
     init = () => {
-        this.system.game.player.step = 1;
-        this.system.game.bot.step = 0;
+        this.game.player.step = 1;
+        this.game.bot.step = 0;
 
         for (const ressource of this.ressources) {
-            this.system.game.bot.ressource(ressource.name).max = ressource.value;
+            this.game.bot.ressource(ressource.name).max = ressource.value;
         }
     };
 
@@ -25,12 +29,12 @@ export class Chapter {
         this.ressources.push(new ChapterRessource(name, value));
     };
 
-    addStep = (life: number, place: string, cards: string[], dialogs: string[] = []) => {
-        this.steps.push(new Step(life, place, cards, dialogs));
+    addStep = (life: number, locations: string[], zone_size: number, cards: string[], dialogs: string[] = []) => {
+        this.steps.push(new Step(life, locations, zone_size, cards, dialogs));
     };
 
     startDialog = () => {
-        let step = this.steps[this.system.game.player.step - 1];
+        let step = this.steps[this.game.player.step - 1];
         if (!step.read && step.dialog < step.dialogs.length) {
             this.system.page = "Dialog";
         }
@@ -41,7 +45,7 @@ export class Chapter {
     };
 
     nextDialog = () => {
-        let step = this.steps[this.system.game.player.step - 1];
+        let step = this.steps[this.game.player.step - 1];
         if (!step.read && step.dialog < step.dialogs.length - 1) {
             step.dialog++;
             this.system.page = "Dialog";
@@ -53,12 +57,15 @@ export class Chapter {
     };
 
     getLevel = () => {
-        if (this.level == undefined) {
+        if (this.level == 0) {
             let total = 0;
             for (const ressource of this.ressources) {
                 total += ressource.value;
             }
 
+
+
+            
             let level = 1;
             let array = [
                 10,
@@ -81,7 +88,6 @@ export class Chapter {
                 2000,
                 2500,
                 3000
-
             ];
 
             while (total > array[level - 1] && level < 20) {
@@ -98,15 +104,17 @@ export class Chapter {
 
 export class Step {
     life: number;
-    place: string;
+    locations: string[];
+    zone_size: number;
     cards: string[];
     dialogs: string[];
     dialog: number = 0;
     read: boolean = false;
 
-    constructor(life: number, place: string, cards: string[], dialogs: string[]) {
+    constructor(life: number, locations: string[], zone_size: number, cards: string[], dialogs: string[]) {
         this.life = life;
-        this.place = place;
+        this.locations = locations;
+        this.zone_size = zone_size;
         this.cards = cards;
         this.dialogs = dialogs;
     };

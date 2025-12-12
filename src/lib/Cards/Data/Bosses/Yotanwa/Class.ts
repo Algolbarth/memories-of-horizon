@@ -11,7 +11,7 @@ export class Yotanwa extends Boss {
         this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
-        this.stat("Force").init(10);
-        this.stat("Constitution").init(50);
+        this.stat("Force").init(200);
+        this.stat("Constitution").init(2000);
     };
 }
