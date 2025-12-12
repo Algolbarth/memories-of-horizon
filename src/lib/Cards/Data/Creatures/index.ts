@@ -112,6 +112,7 @@ export * from './Roi';
 export * from './Sage';
 export * from './SageDeLaForet';
 export * from './SeigneurOndin';
+export * from './ServeuseDeTaverne';
 export * from './Soldat';
 export * from './SoldatNain';
 export * from './Stratege';
