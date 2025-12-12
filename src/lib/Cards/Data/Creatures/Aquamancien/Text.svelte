@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Eau est posée : stocke 1 eau.
+Quand une carte alliée d'élément Eau est posée : stocke 2 eau.

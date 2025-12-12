@@ -11,6 +11,8 @@ export class FauxDePaysan extends Equipment {
         this.init([["Or", 20]]);
         this.familles.base.push("Arme");
 
+        this.equipStat("Force").init(10);
+
         this.text = Text;
     };
 

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une unité d'élément Végétal est détruite : stocke 1 végétal.
+Quand une unité d'élément Végétal est détruite : stocke 2 végétal.

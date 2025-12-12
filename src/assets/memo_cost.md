@@ -1,5 +1,5 @@
 produit X ressource => X
-stocke X ressource => 2X
+stocke X ressource => 3X/2
 augmente la production d'une ressource de X => 5X
 
 pioche X cartes => 2X
@@ -23,6 +23,7 @@ X Résistance => X
 X Vitesse => 10X
 X Agilité => 25X
 X Maitrise => 25X
+X Percée => X/4
 
 Inflige X dégâts => X/2
 Soigne X blessures  => X/2

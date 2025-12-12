@@ -8,7 +8,7 @@ export class MasseMagique extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 70]]);
+        this.init([["Or", 60]]);
         this.familles.base.push("Arme");
 
         this.equipStat("Force").init(20);
