@@ -42,6 +42,7 @@ export * from './Grimoire';
 export * from './HacheDeBucheron';
 export * from './HacheDeCuivre';
 export * from './HacheDeFer';
+export * from './HacheDeJet';
 export * from './HacheDePlatine';
 export * from './HacheLourde';
 export * from './HeaumeDeFer';

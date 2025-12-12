@@ -1,6 +1,8 @@
 produit X ressource => X
 stocke X ressource => 3X/2
 augmente la production d'une ressource de X => 5X
+diminue le cout d'une carte de X => X
+augmente la valeur de vente d'une carte de X => X/2
 
 pioche X cartes => 2X
 pioche une carte avec une condition => 3X
@@ -9,8 +11,9 @@ découvre X cartes avec une condition => 8X
 crée X carte dans la boutique => 3X
 
 X Force => X/2
-X Vitalité => X/2
+X Vitalité (pour une créature) => X/2
 X Constitution => 2X/3
+X Vitalité (pour un bâtiment) => X
 X Force + X Constitution => X
 X Adresse => X
 X Intensité => 20X
@@ -24,6 +27,8 @@ X Vitesse => 10X
 X Agilité => 25X
 X Maitrise => 25X
 X Percée => X/4
+X Intelligence => 5X
+X Initiative => 5X
 
 Inflige X dégâts => X/2
 Soigne X blessures  => X/2
