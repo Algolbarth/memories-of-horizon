@@ -21,7 +21,7 @@ export class ElementaireDesHerbes extends Creature {
         let target = undefined;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (target == undefined && card.type == "Créature") {
+            if (target == undefined && card.type == "Créature" && card != this) {
                 target = card;
             }
         }

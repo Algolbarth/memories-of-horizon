@@ -8,4 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand une unité d'élément Végétal est détruite : stocke 1 végétal.
+S'équipe sur une créature alliée sur le terrain.
+<br />
+<br />
+Quand une unité d'élément Végétal est détruite : augmente de 5 la force de la créature équipée.

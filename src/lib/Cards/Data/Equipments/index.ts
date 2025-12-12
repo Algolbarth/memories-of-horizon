@@ -39,6 +39,7 @@ export * from './GanteletsEnCuir';
 export * from './Geomarteau';
 export * from './GrandCarquois';
 export * from './Grimoire';
+export * from './HacheDeBucheron';
 export * from './HacheDeCuivre';
 export * from './HacheDeFer';
 export * from './HacheDePlatine';
