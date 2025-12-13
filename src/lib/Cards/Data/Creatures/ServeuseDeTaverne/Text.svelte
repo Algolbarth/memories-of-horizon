@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand posé : crée <CardInfo bind:system name={"Bière"} /> sur le terrain.
+Quand posé : crée <CardInfo bind:system name={"Bière"} /> dans la réserve.
 <br />
 <br />
-Au début de la phase de préparation : crée <CardInfo bind:system name={"Bière"} /> sur le terrain.
+Au début de la phase de préparation : crée <CardInfo bind:system name={"Bière"} /> dans la réserve.
