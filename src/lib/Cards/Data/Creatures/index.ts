@@ -124,6 +124,7 @@ export * from './Troubadour';
 export * from './Vache';
 export * from './Vestale';
 export * from './Voleur';
+export * from './Worg';
 export * from './Wyverne';
 export * from './WyverneMage';
 export * from './WyverneMarine';
