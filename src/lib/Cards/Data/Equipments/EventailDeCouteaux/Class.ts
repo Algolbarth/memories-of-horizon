@@ -1,19 +1,20 @@
 import type { System } from '../../../../System/Class';
-import type { Unit } from '../../../Class';
+import { copy } from '../../../../Utils';
+import type { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class DagueDeCuivre extends Equipment {
-    name = "Dague de cuivre";
+export class EventailDeCouteaux extends Equipment {
+    name = "Éventail de couteaux";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 3]]);
+        this.init([["Or", 20]]);
         this.familles.base.push("Arme");
 
-        this.equipStat("Force").init(5);
+        this.equipStat("Force").init(30);
 
         this.text = Text;
     };
@@ -54,12 +55,15 @@ export class DagueDeCuivre extends Equipment {
         }
     };
 
-    useEffect = (target: Unit, choice: string) => {
+    useEffect = (choice: string, target: Creature | undefined) => {
         if (choice == "equip") {
             target.equip(this);
         }
         else if (choice == "damage") {
-            target.damageByEffect(5);
+            let terrain = copy(this.owner.adversary().zone("Terrain").cards);
+            for (const card of terrain) {
+                card.damageByEffect(3);
+            }
             this.move("Défausse");
         }
         this.pose();

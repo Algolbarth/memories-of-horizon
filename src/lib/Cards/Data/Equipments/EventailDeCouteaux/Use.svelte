@@ -15,12 +15,8 @@
 		return false;
 	}
 
-	function condition2(card: Card) {
-		return true;
-	}
-
-	function fonction(card: Card) {
-		system.game.use.card.useEffect(card, choice);
+	function fonction(card: Card | undefined) {
+		system.game.use.card.useEffect(choice, card);
 		system.game.use.reset();
 	}
 </script>
@@ -42,9 +38,10 @@
 			class="big choice"
 			on:click={() => {
 				choice = "damage";
+				fonction(undefined);
 			}}
 		>
-			Inflige 50 dégâts à une unité adverse sur le terrain
+			Inflige 3 dégâts à toutes les unités adverses sur le terrain
 		</button>
 	</div>
 {:else if choice == "equip"}
@@ -56,13 +53,4 @@
 		Retour
 	</button>
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
-{:else if choice == "damage"}
-	<button
-		on:click={() => {
-			choice = undefined;
-		}}
-	>
-		Retour
-	</button>
-	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} condition={condition2} {fonction} />
 {/if}

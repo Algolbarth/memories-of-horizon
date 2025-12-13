@@ -33,6 +33,7 @@ export * from './EpeeDeCuivre';
 export * from './EpeeDeFer';
 export * from './EpeeDePlatine';
 export * from './EpeeEnflammee';
+export * from './EventailDeCouteaux';
 export * from './FauxDePaysan';
 export * from './GanteletsDeFer';
 export * from './GanteletsEnCuir';
