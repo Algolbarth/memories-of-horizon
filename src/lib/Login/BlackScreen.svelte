@@ -40,8 +40,10 @@
 		>
 			Website
 		</button>
+
 		<br />
-		version 0.0.1 - 2025
+		
+		version {PKG.version} - 2025
 	</div>
 </div>
 

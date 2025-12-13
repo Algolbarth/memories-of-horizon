@@ -1,12 +1,8 @@
-<script lang="ts">
-    let version = "0.0.1";
-</script>
-
 <img src="/assets/Pictures/Title.png" alt="Logo" class="logo" />
 
 <br />
 
-Version {version}
+Version {PKG.version}
 
 <br />
 <br />
