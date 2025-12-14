@@ -43,6 +43,7 @@ export * from './PouletRoti';
 export * from './Remede';
 export * from './SardinesEnBoite';
 export * from './Sifflet';
+export * from './TheVert';
 export * from './Tomate';
 export * from './Torche';
 export * from './Trefle';
