@@ -65,6 +65,7 @@ export * from './General';
 export * from './Geomancien';
 export * from './Gobelin';
 export * from './Gorille';
+export * from './GorilleDosArgente';
 export * from './GrandPretre';
 export * from './Grenouille';
 export * from './Guerrier';
