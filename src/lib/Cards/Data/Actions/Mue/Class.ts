@@ -44,7 +44,7 @@ export class Mue extends Action {
     };
 
     useEffect = (target: Creature) => {
-        target.stat("Vitalité").increase(15);
+        target.stat("Vitalité").increase(25);
         this.move("Défausse");
         this.pose();
     };

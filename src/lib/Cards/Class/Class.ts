@@ -331,13 +331,21 @@ export class Card {
         return "...";
     };
 
-    stat = (name: string) => {
+    checkStat = (name: string) => {
         for (const s of this.stats) {
             if (name == s.name) {
                 return s;
             }
         }
-        return new Stat(name, 0, 0, this);
+        return undefined;
+    };
+
+    stat = (name: string) => {
+        let check = this.checkStat(name);
+        if (check == undefined) {
+            return new Stat(name, 0, 0, this);
+        }
+        return check;
     };
 
     addStat = (name: string, value: number, min: number = 0) => {

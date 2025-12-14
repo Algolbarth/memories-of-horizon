@@ -45,12 +45,12 @@ export class EventailDeCouteaux extends Equipment {
             }
 
             if (target != undefined) {
-                this.useEffect(target, "equip");
+                this.useEffect("equip", target);
                 return 0;
             }
 
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0], "damage");
+                this.useEffect("damage", undefined);
             }
         }
     };

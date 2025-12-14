@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
-export class Worg extends Creature {
-    name = "Worg";
+export class Warg extends Creature {
+    name = "Warg";
 
     constructor(system: System) {
         super(system);

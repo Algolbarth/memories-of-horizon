@@ -29,6 +29,9 @@ export class Unit extends Card {
         this.stat("Constitution").condition = () => {
             return false;
         };
+        this.stat("Constitution").value = () => {
+            return this.stat("Vitalité").value();
+        };
         this.stat("Constitution").increase = function (value: number) {
             this.card.stat("Santé").increase(value);
             this.card.stat("Vitalité").increase(value);

@@ -17,7 +17,7 @@
 
 <style>
 	button {
-		color: darkgreen;
+		color: rgb(0, 84, 0);
 	}
 
 	button:hover {
