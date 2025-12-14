@@ -14,6 +14,7 @@ export * from './BonhommeBiscuit';
 export * from './Bouffon';
 export * from './Bucheron';
 export * from './Bulette';
+export * from './BuletteBriseRoc';
 export * from './CapitaineDeLaGarde';
 export * from './Cartographe';
 export * from './Cavalier';
