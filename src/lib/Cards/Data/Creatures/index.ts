@@ -127,6 +127,7 @@ export * from './Vache';
 export * from './Vestale';
 export * from './Voleur';
 export * from './Warg';
+export * from './WargAlpha';
 export * from './Wyverne';
 export * from './WyverneMage';
 export * from './WyverneMarine';
