@@ -6,4 +6,4 @@ export class Stack extends Zone {
     constructor() {
         super("Pile", 10);
     };
-}
+};

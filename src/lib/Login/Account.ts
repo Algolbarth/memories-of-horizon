@@ -22,7 +22,7 @@ export class Account {
     total_match = () => {
         return this.aventure.total() + this.construct.total();
     };
-}
+};
 
 class Gamemode {
     victory: number = 0;
@@ -31,4 +31,4 @@ class Gamemode {
     total() {
         return this.victory + this.defeat;
     };
-}
+};

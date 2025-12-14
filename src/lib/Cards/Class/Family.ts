@@ -40,4 +40,4 @@ export class Families {
 
         return array;
     };
-}
+};

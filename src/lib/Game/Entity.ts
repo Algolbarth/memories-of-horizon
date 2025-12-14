@@ -259,7 +259,7 @@ export class Entity {
     isLoser = () => {
         return this.zone("Terrain").cards.length == 0 || this.life.current <= 0;
     };
-}
+};
 
 class EntityRessource {
     name: string;
@@ -290,4 +290,4 @@ class EntityRessource {
             this.stock = 0;
         }
     };
-}
+};

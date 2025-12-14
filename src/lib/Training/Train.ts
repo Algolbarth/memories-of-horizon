@@ -17,7 +17,7 @@ export class Train {
     entity = () => {
         return new TrainEntity();
     };
-}
+};
 
 class Train_Add {
     entity: string | undefined = undefined;
@@ -26,7 +26,7 @@ class Train_Add {
     reset = () => {
         this.zone = undefined;
     };
-}
+};
 
 export class TrainEntity {
     life: number = 100;
@@ -40,7 +40,7 @@ export class TrainEntity {
         new TrainZone("Terrain", 10),
         new TrainZone("Défausse"),
     ];
-}
+};
 
 export class TrainZone {
     name: string;
@@ -54,4 +54,4 @@ export class TrainZone {
         this.level = level;
         this.cards = cards;
     };
-}
+};

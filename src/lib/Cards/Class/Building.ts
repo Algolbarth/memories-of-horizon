@@ -9,5 +9,5 @@ export class Building extends Unit {
 
         this.stat("Initiative").init(0);
         this.stat("Maîtrise").init(0);
-    }
-}
+    };
+};

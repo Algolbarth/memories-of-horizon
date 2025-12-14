@@ -6,5 +6,5 @@ export class Spell extends Action {
         super(system);
 
         this.familles.base.push("Sort");
-    }
-}
+    };
+};

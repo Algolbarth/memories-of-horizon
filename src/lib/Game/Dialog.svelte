@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Step } from "../Chapters/Chapter";
+	import type { Step } from "../Chapters/Class";
 	import type { System } from "../System/Class";
 
 	export let system: System;

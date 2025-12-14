@@ -217,4 +217,4 @@ export class Unit extends Card {
     };
 
     defendEffect: Function | undefined;
-}
+};

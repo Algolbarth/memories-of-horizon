@@ -14,20 +14,20 @@ import type { Account } from "../Login/Account";
 
 export class System {
     page: string = "BlackScreen";
-    stories: Story[] = [];
+    account: Account | undefined;
     settings: Settings = new Settings();
-    decks: Deck[] = [];
-    train: Train = new Train();
-    game: undefined | Game = undefined;
+    game: undefined | Game;
+    chapters: Chapters = new Chapters(this);
+    bosses: Bosses = new Bosses(this);
+    cards: Cards = new Cards(this);
     ressources: RessourceList = new RessourceList();
+    train: Train = new Train();
+    decks: Deck[] = [];
+    deck: Deck | undefined;
+    stories: Story[] = [];
     sort = new Sort();
     view: View = new View();
     music: Music = new Music(this);
-    cards: Cards = new Cards(this);
-    chapters: Chapters = new Chapters(this);
-    bosses: Bosses = new Bosses(this);
-    account: Account | undefined;
-    deck: Deck | undefined;
 
     constructor() {
         for (const element of this.ressources.list) {

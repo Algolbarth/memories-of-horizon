@@ -16,7 +16,7 @@ export class Battle {
         this.system = system;
         this.player = new Entity(this.system);
         this.bot = new Entity(this.system);
-    }
+    };
 
     isBattle = () => {
         if (this.phase == "Combat") {
@@ -242,4 +242,4 @@ export class Battle {
             }
         }
     };
-}
+};
