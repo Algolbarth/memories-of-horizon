@@ -11,8 +11,8 @@ export class ElementaireDesHerbes extends Creature {
         this.init([["Végétal", 15]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
 
         this.text = Text;
     };
@@ -27,8 +27,8 @@ export class ElementaireDesHerbes extends Creature {
         }
 
         if (target != undefined) {
-            target.stat("Force").increase(5);
-            target.stat("Constitution").increase(5);
+            target.stat("Force").increase(10);
+            target.stat("Constitution").increase(10);
         }
     };
 }
