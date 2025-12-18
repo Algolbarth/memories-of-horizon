@@ -15,10 +15,10 @@ Remplir la pile => 10 cartes
 Augmente la taille d'une zone de X => 50X
 
 X Force => X/2
-X Vitalité (pour une créature) => X/2
-X Constitution => 2X/3
-X Vitalité (pour un bâtiment) => X
-X Force + X Constitution => X
+X Vitalité => X/2
+X Constitution (pour une créature) => 2X/3
+X Consitution (pour un bâtiment) => X/2
+X Force + X Constitution (pour une créature) => X
 X Adresse => X
 X Intensité => 20X
 X Magie => 2X

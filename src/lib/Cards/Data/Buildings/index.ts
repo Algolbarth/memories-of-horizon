@@ -20,6 +20,7 @@ export * from './Fontaine';
 export * from './FontaineDeBambou';
 export * from './GarnisonDesMonts';
 export * from './LacDeLave';
+export * from './Maison';
 export * from './Marche';
 export * from './MurDEnceinte';
 export * from './MurDeBrique';

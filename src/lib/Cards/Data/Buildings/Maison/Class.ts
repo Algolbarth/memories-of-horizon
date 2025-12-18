@@ -2,15 +2,13 @@ import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class BassinDeReproduction extends Building {
-    name = "Bassin de reproduction";
+export class Maison extends Building {
+    name = "Maison";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Eau", 15]]);
-        this.familles.base.push("Ondin");
-
+        this.init([["Or", 20]]);
         this.stat("Constitution").init(20);
 
         this.text = Text;
@@ -18,7 +16,7 @@ export class BassinDeReproduction extends Building {
 
     turnEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Ondin").add("Terrain");
+            this.owner.getCard("Humain").add("Terrain");
         }
     };
 }

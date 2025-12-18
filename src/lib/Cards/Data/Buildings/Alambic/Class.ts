@@ -9,7 +9,7 @@ export class Alambic extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 110]]);
+        this.init([["Or", 25]]);
         this.stat("Constitution").init(20);
 
         this.text = Text;
