@@ -32,7 +32,7 @@ export class MageDesEaux extends Creature {
 
             if (cards[0] != undefined && this.owner.ressource("Mana").total() >= 5) {
                 this.owner.ressource("Mana").spend(5);
-                cards[0].costReduce(5);
+                cards[0].costReduce(10);
             }
         }
     };

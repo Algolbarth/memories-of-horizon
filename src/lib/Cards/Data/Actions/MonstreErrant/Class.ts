@@ -1,37 +1,33 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
-import { Creature } from '../../../Class/Creature';
+import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class Elementaliste extends Creature {
-    name = "Élémentaliste";
+export class MonstreErrant extends Action {
+    name = "Monstre errant";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
-        this.familles.base.push("Humain");
-
-        this.stat("Constitution").init(5);
-        this.stat("Force").init(5);
+        this.init([["Or", 55]]);
 
         this.text = Text;
     };
 
     useEffect = () => {
         let condition = (card: Card) => {
-            if (card.familles.total().includes("Élémentaire")) {
+            if (card.type == "Créature") {
                 return true;
             }
             return false;
         };
         let cards = this.owner.draw(1, condition);
-
         if (cards[0] != undefined) {
-            cards[0].costReduce(20);
+            cards[0].stat("Constitution").increase(100);
+            cards[0].stat("Force").increase(100);
         }
-
-        this.move("Terrain");
+        
+        this.move("Défausse");
         this.pose();
     };
 }

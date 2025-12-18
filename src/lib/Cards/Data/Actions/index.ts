@@ -45,6 +45,7 @@ export * from './Melange';
 export * from './Menace';
 export * from './Metamorphose';
 export * from './MilieuAquatique';
+export * from './MonstreErrant';
 export * from './Mue';
 export * from './Multisoin';
 export * from './Noyade';

@@ -13,7 +13,7 @@ export class Dresseur extends Creature {
         this.familles.base.push("Elfe");
 
         this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Force").init(5);
 
         this.text = Text;
     };
@@ -28,8 +28,8 @@ export class Dresseur extends Creature {
         let cards = this.owner.draw(1, condition);
 
         if (cards[0] != undefined) {
-            cards[0].stat("Constitution").increase(10);
-            cards[0].stat("Force").increase(10);
+            cards[0].stat("Constitution").increase(20);
+            cards[0].stat("Force").increase(20);
         }
 
         this.move("Terrain");

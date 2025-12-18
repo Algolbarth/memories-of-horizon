@@ -9,7 +9,7 @@ export class Architecte extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12], ["Terre", 12]]);
+        this.init([["Or", 10], ["Terre", 10]]);
         this.familles.base.push("Nain");
 
         this.stat("Constitution").init(5);
@@ -29,7 +29,7 @@ export class Architecte extends Creature {
         let cards = this.owner.draw(1, condition);
 
         if (cards[0] != undefined) {
-            cards[0].costReduce(10);
+            cards[0].costReduce(20);
         }
 
         this.move("Terrain");
