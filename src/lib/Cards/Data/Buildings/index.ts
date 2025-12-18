@@ -28,6 +28,7 @@ export * from './MurDeRoche';
 export * from './Muraille';
 export * from './PanneauDeDirection';
 export * from './Pont';
+export * from './Porte';
 export * from './Puit';
 export * from './PuitDeMana';
 export * from './Restaurant';
