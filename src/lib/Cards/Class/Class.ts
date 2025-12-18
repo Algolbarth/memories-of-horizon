@@ -327,6 +327,8 @@ export class Card {
 
     turnEffect: Function | undefined;
 
+    refreshStackEffect: Function | undefined;
+
     description = () => {
         return "...";
     };

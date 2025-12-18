@@ -174,6 +174,25 @@ export class Entity {
         if (this.zone("Pile").cards.length < 5) {
             this.draw(5 - this.zone("Pile").cards.length);
         }
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+
+                    if (card.refreshStackEffect != undefined) {
+                        card.refreshStackEffect();
+                    }
+
+                    if (card.type == "Créature") {
+                        for (const e of card.equipments) {
+                            if (e.refreshStackEffect != undefined) {
+                                e.refreshStackEffect();
+                            }
+                        }
+                    }
+                }
+            }
+        }
     };
 
     isFullLocked = () => {
