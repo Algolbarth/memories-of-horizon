@@ -19,6 +19,7 @@ export * from './Bouee';
 export * from './CarapaceDeTortue';
 export * from './Carquois';
 export * from './CasqueEnCuir';
+export * from './CeintureDeCuir';
 export * from './CollierEnDentDeLoup';
 export * from './CotteDeMaillesEnFer';
 export * from './CotteDeMaillesEnPlatine';
