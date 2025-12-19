@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -24,7 +25,7 @@ export class WyverneMarine extends Creature {
         }
     };
 
-    use = () => {
+    useEffect = () => {
         this.owner.ressource("Eau").current += 10;
         this.move("Terrain");
         this.pose();
