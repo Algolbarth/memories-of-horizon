@@ -47,7 +47,7 @@ export class Pain extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.owner.ressource("Or").max++;
+            target.owner.ressource("Or").production++;
         }
         else {
             target.heal(10);

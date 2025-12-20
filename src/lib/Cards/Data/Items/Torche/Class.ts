@@ -33,7 +33,7 @@ export class Torche extends Item {
 
     useEffect = (target: Creature | undefined) => {
         if (target == undefined) {
-            this.owner.ressource("Feu").max += 2;
+            this.owner.ressource("Feu").production += 2;
         }
         else {
             target.damageByEffect(20);

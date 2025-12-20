@@ -284,7 +284,7 @@ class EntityRessource {
     name: string;
     current: number = 0;
     stock: number = 0;
-    max: number = 0;
+    production: number = 0;
 
     constructor(name: string) {
         this.name = name;
@@ -308,5 +308,9 @@ class EntityRessource {
         if (this.stock < 0) {
             this.stock = 0;
         }
+    };
+
+    produce = (value: number) => {
+        this.current += value;
     };
 };

@@ -21,10 +21,10 @@ export class Nexus extends Building {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Élémentaire")) {
             for (const element of card.elements.total()) {
                 if (element != "Neutre") {
-                    this.owner.ressource(element).max += 1;
+                    this.owner.ressource(element).production += 1;
                 }
                 else {
-                    this.owner.ressource("Or").max += 1;
+                    this.owner.ressource("Or").production += 1;
                 }
             }
         }

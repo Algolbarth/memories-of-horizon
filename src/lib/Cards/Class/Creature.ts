@@ -164,6 +164,6 @@ export class Creature extends Unit {
         equipment.bearer = this;
 
         this.owner.ressource("Mana").current += equipment.equipStat("Magie").value();
-        this.owner.ressource("Mana").max += equipment.equipStat("Magie").value();
+        this.owner.ressource("Mana").production += equipment.equipStat("Magie").value();
     };
 };

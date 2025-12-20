@@ -121,7 +121,7 @@ export class Card {
     remove = () => {
         if (this.owner != undefined && this.zone != undefined && this.slot != undefined) {
             if (this.isUnit() && this.zone.name == "Terrain") {
-                this.owner.ressource("Mana").max -= this.stat("Magie").value();
+                this.owner.ressource("Mana").production -= this.stat("Magie").value();
             }
 
             if (this.removeEffect != undefined) {
@@ -158,7 +158,7 @@ export class Card {
 
             if (this.isUnit() && zone == "Terrain") {
                 entity.ressource("Mana").current += this.stat("Magie").value();
-                entity.ressource("Mana").max += this.stat("Magie").value();
+                entity.ressource("Mana").production += this.stat("Magie").value();
             }
 
             if (this.addEffect != undefined) {

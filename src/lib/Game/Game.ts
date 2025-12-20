@@ -28,7 +28,7 @@ export class Game extends Battle {
         }
         else {
             this.player.life.set(100);
-            this.player.ressource("Or").max = 4;
+            this.player.ressource("Or").production = 4;
             this.player.ressource("Flux").stock = 4;
 
             this.player.getCard("Plaine").add("Région");
@@ -52,7 +52,7 @@ export class Game extends Battle {
     trainInitEntity = (entity: Entity, train_entity: TrainEntity) => {
         entity.life.set(train_entity.life);
 
-        entity.ressource("Or").max = train_entity.gold;
+        entity.ressource("Or").production = train_entity.gold;
         entity.ressource("Or").current = train_entity.gold;
         entity.ressource("Flux").stock = train_entity.flux;
         entity.ressource("Mana").stock = train_entity.mana;
@@ -89,7 +89,7 @@ export class Game extends Battle {
     };
 
     startChapter = () => {
-        this.player.ressource("Or").max++;
+        this.player.ressource("Or").production++;
         this.player.ressource("Flux").stock++;
 
         this.bot.life.set(this.chapter.steps[0].life);
@@ -122,7 +122,7 @@ export class Game extends Battle {
 
     startStep = () => {
         for (const ressource of this.player.ressources) {
-            ressource.current = ressource.max;
+            ressource.current = ressource.production;
         }
 
         if (this.mode != "Entraînement") {

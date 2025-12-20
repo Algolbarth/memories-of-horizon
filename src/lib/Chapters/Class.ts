@@ -21,7 +21,7 @@ export class Chapter {
         this.game.bot.step = 0;
 
         for (const ressource of this.ressources) {
-            this.game.bot.ressource(ressource.name).max = ressource.value;
+            this.game.bot.ressource(ressource.name).production = ressource.value;
         }
     };
 

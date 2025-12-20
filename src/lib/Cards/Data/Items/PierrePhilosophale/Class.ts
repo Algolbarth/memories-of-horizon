@@ -21,7 +21,7 @@ export class PierrePhilosophale extends Item {
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").max += this.owner.ressource("Flux").stock;
+        this.owner.ressource("Or").production += this.owner.ressource("Flux").stock;
         this.owner.ressource("Or").current += this.owner.ressource("Flux").stock;
         this.owner.ressource("Flux").stock = 0;
         this.move("Défausse");

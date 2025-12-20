@@ -17,8 +17,8 @@ export class ElementaireDeFeu extends Creature {
     };
 
     dieEffect = () => {
-        if (this.owner.ressource("Feu").max >= 1) {
-            this.owner.ressource("Feu").max--;
+        if (this.owner.ressource("Feu").production >= 1) {
+            this.owner.ressource("Feu").production--;
         }
     };
 };

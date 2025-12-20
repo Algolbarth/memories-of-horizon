@@ -16,10 +16,10 @@ export class Ecoulement extends Spell {
     useEffect = () => {
         if (this.owner.ressource("Mana").total() >= 10) {
             this.owner.ressource("Mana").spend(10);
-            this.owner.ressource("Eau").max += 5;
+            this.owner.ressource("Eau").production += 5;
         }
         else {
-            this.owner.ressource("Eau").max += 3;
+            this.owner.ressource("Eau").production += 3;
         }
 
         this.move("Défausse");

@@ -85,7 +85,7 @@ export class Equipment extends Item {
 
     remove = () => {
         if (this.bearer != undefined) {
-            this.owner.ressource("Mana").max -= this.equipStat("Magie").value();
+            this.owner.ressource("Mana").production -= this.equipStat("Magie").value();
             for (let i = 0; i < this.bearer.equipments.length; i++) {
                 if (this.bearer.equipments[i] == this) {
                     this.bearer.equipments.splice(i, 1);

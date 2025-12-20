@@ -62,7 +62,7 @@
 							}
 
 							system.game.player.ressource(ressource).current += add;
-							system.game.player.ressource(ressource).max += add;
+							system.game.player.ressource(ressource).production += add;
 							system.game.player.ressource("Flux").stock -= add;
 
 							if (system.game.player.ressource("Flux").stock == 0) {
