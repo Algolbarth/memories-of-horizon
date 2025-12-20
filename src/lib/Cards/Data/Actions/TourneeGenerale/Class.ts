@@ -9,7 +9,7 @@ export class TourneeGenerale extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 150]]);
+        this.init([["Or", 100]]);
 
         this.text = Text;
     };

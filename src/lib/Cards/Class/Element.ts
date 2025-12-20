@@ -11,7 +11,7 @@ export class Elements {
     };
 
     total = () => {
-        let array = [];
+        let array: string[] = [];
         for (const b of this.base) {
             array.push(b);
         }

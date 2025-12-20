@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée de famille Nourriture est posée : produit 10 ressources de chaque élément de cette carte.
+Quand une créature alliée de famille Élémentaire est posée : augmente de 1 la production en ressources de chaque élément de cette carte.

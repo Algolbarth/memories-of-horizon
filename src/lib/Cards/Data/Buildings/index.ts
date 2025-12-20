@@ -27,6 +27,7 @@ export * from './MurDeBrique';
 export * from './MurDePierre';
 export * from './MurDeRoche';
 export * from './Muraille';
+export * from './Nexus';
 export * from './PanneauDeDirection';
 export * from './Pont';
 export * from './Porte';
