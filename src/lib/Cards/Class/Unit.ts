@@ -187,6 +187,8 @@ export class Unit extends Card {
         this.dieGo();
     };
 
+    dieEffect: Function | undefined;
+
     dieGo = () => {
         this.move("Défausse");
     };

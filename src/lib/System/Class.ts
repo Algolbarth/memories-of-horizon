@@ -136,8 +136,6 @@ export class System {
             index++;
         }
 
-        console.log(this.chapters)
-
         for (const story of Object.keys(stories)) {
             this.stories.push(new stories[story]());
         }

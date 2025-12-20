@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige 100 dégâts à une unité adverse sur le terrain. Dépense autant d'eau que possible et inflige deux fois plus de dégâts supplémentaires.
+Inflige 100 dégâts à une unité adverse sur le terrain. Dépense autant d'eau que possible et inflige 2 fois plus de dégâts supplémentaires.

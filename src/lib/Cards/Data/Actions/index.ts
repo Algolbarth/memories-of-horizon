@@ -41,6 +41,7 @@ export * from './Incantation';
 export * from './Innovation';
 export * from './Inondation';
 export * from './JetDAcide';
+export * from './LigneEnergetique';
 export * from './Malefice';
 export * from './Melange';
 export * from './Menace';
