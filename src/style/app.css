@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'NightmarePills';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/Font/NightmarePills-BV2w.ttf');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Morris';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/Font/morris-roman.black.ttf');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  font-family: 'Morris';
+  font-size: large;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --link_hover: rgba(255, 215, 0, 1);
+  
+  --active: darkgreen;
+  --active_hover: greenyellow;
+
+  --desactivate: rgba(69, 69, 69, 1);
+  --desactivate_hover: rgba(85, 85, 85, 1);
+  
+  --dropdown: rgba(105, 105, 105, 1);
+  --dropdown_hover: rgb(130, 130, 130);
+  --dropdown_border: rgb(75, 75, 75);
+  
+  --background: rgba(128, 128, 128, 1);
+  --zone: rgba(169, 169, 169, 1);
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  --card: rgb(204, 187, 141);
+  --card_box: rgb(190, 150, 48);
+  --card_hover: rgb(167, 119, 0);
+  --preview: #cdbc90;
+  --preview_hover: rgb(190, 150, 48);
+
+  --menu: rgba(147, 108, 11, 1);
+  --menu_hover: rgba(184, 134, 11, 1);
+  --menu_border: rgb(139, 102, 7);
+
+  --deck: rgb(92, 41, 0);
+  --deck_preview: rgb(109, 61, 22);
+  --deck_preview_hover: rgb(142, 87, 42);
+
+  --attacker: rgb(200, 50, 50);
+  --attacker_hover: rgba(150, 50, 50, 1);
+
+  --close: rgb(161, 0, 32);
+  --close_hover: rgb(228, 0, 0);
+
+  --return: rgb(32, 32, 161);
+  --return_hover: rgb(0, 0, 228);
+
+  --story: rgba(255, 251, 202, 1);
+  --pannel: rgb(94, 44, 10);
+
+  --life: rgb(255, 176, 189);
+  --missing_life: rgb(178, 123, 131);
+  --guard: rgb(249, 106, 130);
+
+  --choice: rgb(161, 70, 0);
+  --choice_hover: rgb(228, 106, 0);
+  --choice_border: rgb(49, 49, 49);
+
+  --asfalt: url(/assets/Textures/asfalt-light.png);
+  --grunge: url(/assets/Textures/bedge-grunge.png);
+  --scroll: url(/assets/Textures/black-paper.png);
+  --paper: url(/assets/Textures/natural-paper.png);
+  --metal: url(/assets/Textures/brushed-alum.png);
+  --rock: url(/assets/Textures/rocky-wall.png);
+  --leather: url(/assets/Textures/leather.png);
+  --wood: url(/assets/Textures/wood.png);
+
+  --delay: 1s;
+  --delay_hover: 0.1s;
+}

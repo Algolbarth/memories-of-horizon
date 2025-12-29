@@ -1,0 +1,83 @@
+div.window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--background);
+  background-image: var(--rock);
+  font-weight: bold;
+
+  cursor: url('/assets/Pictures/Hand.cur'), default;
+  overflow: hidden;
+}
+
+div.body {
+  padding: 0.5vw;
+}
+
+div.zone {
+  background-color: var(--zone);
+  background-image: var(--asfalt);
+  border: solid;
+  padding: 0.5vw;
+}
+
+hr {
+  color: black;
+  border: none;
+  border-top: solid;
+}
+
+div.scroll {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+div.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+div.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.box {
+  transition: all var(--delay) ease-in-out;
+  background-color: var(--card_box);
+  background-image: var(--paper);
+  border: solid;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+div.box:hover {
+  transition: all var(--delay_hover) ease-in-out;
+  background-color: var(--card_hover);
+}
+
+div.preview {
+  transition: all var(--delay) ease-in-out;
+
+  border: solid;
+  border-radius: 15px;
+
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+
+  background-color: var(--preview);
+  background-image: var(--scroll);
+  background-blend-mode: overlay, soft-light, soft-light, normal;
+}
+
+div.preview:hover {
+  transition: all var(--delay_hover) ease-in-out;
+
+  background-color: var(--preview_hover);
+}
