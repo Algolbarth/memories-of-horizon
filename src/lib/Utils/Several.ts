@@ -1,8 +1,25 @@
-export function several(value: number, name: string) {
+export function several(value: number, name_list: string[], emplacement: string = "before") {
     let text = "";
-    text += value + " " + name;
-    if (value > 1) {
-        text += "s";
+
+    if (!["before", "after", "none"].includes(emplacement)) {
+        console.log("aucun emplacement reconnu pour la fonction several");
+        return "ERROR";
     }
+
+    if (emplacement == "before") {
+        text += value;
+    }
+
+    for (const name of name_list) {
+        text += " " + name;
+        if (value > 1) {
+            text += "s";
+        }
+    }
+
+    if (emplacement == "after") {
+        text += " : " + value;
+    }
+
     return text;
 };
