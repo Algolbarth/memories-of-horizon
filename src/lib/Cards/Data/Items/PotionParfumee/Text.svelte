@@ -12,6 +12,6 @@ Augmente de 1 la protection d'une créature sur le terrain pendant cette étape 
 <br />
 <br />
 
-<i>
+<span class="details">
 	Augmente de {Math.floor(card.stat("Infusion").value() / 5)} la protection d'une créature sur le terrain pendant cette étape.
-</i>
+</span>

@@ -28,7 +28,7 @@
 			<div id="content">
 				<div style="text-align:right;">
 					<button
-						class="close"
+						class="close seal"
 						on:click={() => {
 							close();
 						}}
@@ -58,6 +58,7 @@
 					{/if}
 
 					<br />
+					<hr />
 
 					<Description bind:card />
 				</div>
@@ -101,6 +102,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: var(--card);
+		background-image: var(--paper);
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
 		transition: all 0.5s ease-in-out;
 	}
@@ -114,5 +116,27 @@
 		padding: 2%;
 		display: grid;
 		grid-template-rows: auto 1fr;
+	}
+
+	hr {
+		overflow: visible;
+		padding: 0;
+		margin: 0;
+		border: none;
+		border-top: medium double black;
+		border-width: 0.5em;
+		text-align: center;
+		box-shadow: inset 0 1em 1em -1em rgba(0, 0, 0, 0.3);
+	}
+
+	hr:after {
+		content: "§";
+		display: inline-block;
+		position: relative;
+		top: -0.9em;
+		font-size: 1.5em;
+		padding: 0 0.25em;
+		background: var(--card);
+		background-image: var(--paper);
 	}
 </style>

@@ -59,8 +59,8 @@
 <br />
 
 {#if system.deck}
-	<div id="zone">
-		{several(cardList.length, "carte")}
+	<div class="zone">
+		{several(cardList.length, ["carte"])}
 		-
 		<button
 			on:click={() => {
@@ -89,9 +89,11 @@
 							{card.name}
 						</button>
 					</div>
+
 					<div style="text-align:right;">
 						{#if !system.deck.check(card.name)}
 							<button
+								class="active"
 								on:click={() => {
 									if (system.deck) {
 										system.deck.add(card.name);
@@ -103,7 +105,7 @@
 							</button>
 						{:else}
 							<button
-								class="present"
+								class="remove"
 								on:click={() => {
 									if (system.deck) {
 										system.deck.remove(card.name);
@@ -130,7 +132,7 @@
 {/if}
 
 <style>
-	#zone {
+	.zone {
 		background-color: var(--zone);
 		border: solid;
 		padding: 1%;
@@ -146,14 +148,20 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.present {
-		background-color: rgb(86, 58, 7);
-		color: gold;
+	div.present {
+		background-color: rgb(173, 131, 52);
 	}
 
-	.present:hover {
-		background-color: rgb(86, 58, 7);
-		color: gold;
+	div.present:hover {
+		background-color: rgb(173, 131, 52);
+	}
+
+	button.remove {
+		color: var(--close);
+	}
+
+	button.remove:hover {
+		color: var(--close_hover);
 	}
 
 	#view {

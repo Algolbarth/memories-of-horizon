@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
+    import { several } from "../Utils";
 
 	export let system: System;
 
@@ -36,27 +37,27 @@
 
 		<div class="container">
 			<div>
-				Total des parties : {system.account.total_match()}
+				Total de parties : {system.account.total_match()}
 				<br />
-				Victoires : {system.account.total_victory()}
+				{several(system.account.total_victory(), ["Victoire"], "after")}
 				<br />
-				Défaites : {system.account.total_defeat()}
+				{several(system.account.total_defeat(), ["Défaite"], "after")}
 			</div>
 
 			<div>
-				Mode aventure : {system.account.aventure.total()}
+				Mode pré-construit : {system.account.preconstruct.total()}
 				<br />
-				Victoires : {system.account.aventure.victory}
+				{several(system.account.preconstruct.victory, ["Victoire"], "after")}
 				<br />
-				Défaites : {system.account.aventure.defeat}
+				{several(system.account.preconstruct.defeat, ["Défaite"], "after")}
 			</div>
 
 			<div>
 				Mode construit : {system.account.construct.total()}
 				<br />
-				Victoires : {system.account.construct.victory}
+				{several(system.account.construct.victory, ["Victoire"], "after")}
 				<br />
-				Défaites : {system.account.construct.defeat}
+				{several(system.account.construct.defeat, ["Défaite"], "after")}
 			</div>
 		</div>
 	</div>

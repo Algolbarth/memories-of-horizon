@@ -47,7 +47,7 @@
 			{#each tab as ressource}
 				<div class="ressource">
 					<button
-						style={"background:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
+						style={"background-color:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
 						class="big flux"
 						on:click={() => {
 							let add: number;
@@ -84,11 +84,14 @@
 	}
 
 	#body {
-		background-color: var(--card);
+		background-color: var(--dropdown);
+		background-image: var(--rock);
+
 		width: 50%;
 		min-height: max-content;
 		max-height: 60vh;
 		padding: 1%;
+
 		border: solid;
 		border-width: 5px;
 	}
@@ -104,11 +107,15 @@
 	}
 
 	button.number {
-		background: grey;
+		background-color: var(--zone);
+		background-image: var(--asfalt);
+
 		margin-right: 1em;
 		padding: 0.3em;
 		width: 3em;
+
 		text-align: center;
+
 		border: solid;
 	}
 
@@ -117,7 +124,8 @@
 	}
 
 	button.selected {
-		background: gold;
+		background-color: rgb(255, 217, 0);
+		background-image: var(--metal);
 	}
 
 	.container {
@@ -132,7 +140,10 @@
 	button.flux {
 		height: 10vh;
 		width: 80%;
+
 		border-color: black;
+
+		background-image: var(--metal);
 	}
 
 	button.flux:hover {

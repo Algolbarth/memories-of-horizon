@@ -8,7 +8,7 @@
 	import Construit from "../Menu/Construct.svelte";
 	import Library from "../Menu/Library.svelte";
 	import Profil from "../Menu/Profil.svelte";
-	import Universe from "../Menu/Universe.svelte";
+	import Universe from "../Stories/List.svelte";
 	import News from "../Menu/News.svelte";
 	import Training from "../Training/Main.svelte";
 	import Game from "../Game/Game.svelte";

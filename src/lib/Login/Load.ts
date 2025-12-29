@@ -16,8 +16,8 @@ export async function load(files: FileList, system: System) {
         }
 
         system.account = new Account(system, readValue());
-        system.account.aventure.victory = readInt();
-        system.account.aventure.defeat = readInt();
+        system.account.preconstruct.victory = readInt();
+        system.account.preconstruct.defeat = readInt();
         system.account.construct.victory = readInt();
         system.account.construct.defeat = readInt();
         system.music.volume = readInt();

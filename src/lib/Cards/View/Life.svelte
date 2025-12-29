@@ -38,14 +38,15 @@
 <style>
     div.row {
         display: grid;
-        grid-template-columns: 12em 2fr 2fr 14em;
+        grid-template-columns: 10em 1fr 1fr 10em;
     }
 
     div.lifebar {
-        background: rgb(178, 123, 131);
+        background-color: var(--missing_life);
+        background-image: var(--paper);
         color: transparent;
 
-        height: 1.5em;
+        height: 1em;
 
         border: solid;
         border-color: black;
@@ -54,12 +55,14 @@
     }
 
     div.life {
-        background: rgb(255, 176, 189);
+        background-color: var(--life);
+        background-image: var(--paper);
         display: inline-block;
     }
 
     div.guard {
-        background: rgb(249, 106, 130);
+        background-color: var(--guard);
+        background-image: var(--paper);
         display: inline-block;
     }
 </style>

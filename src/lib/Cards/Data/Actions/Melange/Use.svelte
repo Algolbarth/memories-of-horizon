@@ -32,11 +32,12 @@
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} {fonction} />
 {:else}
 	<button
+		class="return"
 		on:click={() => {
 			potion_1 = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} fonction={fonction2} />
 {/if}

@@ -12,4 +12,4 @@ Produit 1 mana pour chaque valeur d'infusion.
 <br />
 <br />
 
-<i>Produit {card.stat("Infusion").value()} mana.</i>
+<span class="details">Produit {card.stat("Infusion").value()} mana.</span>

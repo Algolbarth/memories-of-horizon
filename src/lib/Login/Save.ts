@@ -4,9 +4,9 @@ export function save(system: System) {
     if (system.account) {
         let text = "MoH_" + system.account.name + "_";
         text +=
-            system.account.aventure.victory +
+            system.account.preconstruct.victory +
             "_" +
-            system.account.aventure.defeat +
+            system.account.preconstruct.defeat +
             "_" +
             system.account.construct.victory +
             "_" +

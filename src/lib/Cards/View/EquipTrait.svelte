@@ -5,7 +5,7 @@
 </script>
 
 <div class="box">
-	<i>Traits d'équipement</i>
+	<span class="box_title">Traits d'équipement</span>
 
 	<br />
 

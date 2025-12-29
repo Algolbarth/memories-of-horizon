@@ -15,6 +15,7 @@
 	<Logo />
 
 	<br />
+	<br />
 
 	<button
 		class="big menu"
@@ -25,6 +26,7 @@
 		Connexion
 	</button>
 
+	<br />
 	<br />
 
 	<button

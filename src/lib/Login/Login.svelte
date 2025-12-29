@@ -19,13 +19,15 @@
 	<Logo />
 
 	<br />
+	<br />
 
 	<button
+		class="return"
 		on:click={() => {
 			system.page = "TitleScreen";
 		}}
 	>
-		Retour
+		↩
 	</button>
 
 	<br />
@@ -51,7 +53,7 @@
 		<br />
 
 		<button
-			class="big menu"
+			class="big"
 			on:click={() => {
 				login();
 			}}
@@ -64,12 +66,16 @@
 		<br />
 		<br />
 
-		<button class="big menu desactivate"> Valider </button>
+		<button class="big"> Valider </button>
 	{/if}
 </div>
 
 <style>
 	#body {
 		text-align: center;
+	}
+
+	button.big {
+		width: 15vw;
 	}
 </style>

@@ -5,7 +5,7 @@
 </script>
 
 <div class="box">
-	<i>Description</i>
+	<span class="box_title">Description</span>
 	<div style="text-align:center;">
 		"{@html card.description()}"
 	</div>

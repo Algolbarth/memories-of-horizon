@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
+    import { several } from "../Utils";
 	import { Deck } from "./Deck";
 
 	export let system: System;
@@ -11,24 +12,30 @@
 	<div id="shadow">
 		<div id="body">
 			<div id="cover">
-				<div class="box center" style="text-align:center">
-					{deck.name}
+				<div class="inside">
+					<div class="box center" style="text-align:center">
+						{deck.name}
+					</div>
 				</div>
 			</div>
+
 			<div id="content">
-				<div class="box">
-					{#if deck.cards.length > 0}
-						{deck.cards.length} cartes
-					{:else}
-						Vide
-					{/if}
-				</div>
-				<div class="box">
-					{deck.victory + deck.defeat} parties jouées
-					<br />
-					{deck.victory} gagnées
-					<br />
-					{deck.defeat} perdues
+				<div class="inside inside-bottom">
+					<div class="box">
+						{#if deck.cards.length > 0}
+							{several(deck.cards.length, ["carte"])}
+						{:else}
+							Vide
+						{/if}
+					</div>
+
+					<div class="box">
+						{several(deck.victory + deck.defeat, ["parties", "jouées"])}
+						<br />
+						{several(deck.victory, ["gagnée"])} 
+						<br />
+						{several(deck.defeat, ["perdue"])}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -63,11 +70,16 @@
 	#body {
 		position: relative;
 		display: grid;
+
 		border: solid;
 		border-width: 10px;
+
 		width: 100%;
 		height: 100%;
-		background-color: var(--preview_deck);
+		
+		background-color: var(--deck);
+		background-image: var(--leather);
+
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
 		transition: all 0.5s ease-in-out;
 		grid-template-rows: 0.25fr 0.75fr;
@@ -82,9 +94,27 @@
 		position: relative;
 		border: solid;
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
+		padding: 0.5em;
 	}
 
 	#content {
 		padding: 2%;
+	}
+
+	div.box {
+		background-image: var(--scroll);
+		border-style: solid;
+	}
+
+	div.inside {
+		border: dashed;
+		position: relative;
+		height: 95%;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+
+	div.inside-bottom {
+		padding-top: 0.5em;
 	}
 </style>

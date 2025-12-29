@@ -124,7 +124,7 @@
 				{:else}
 					{cardList.length}
 					/
-					{several(system.deck.cards.length, "Carte")}
+					{several(system.deck.cards.length, ["Carte"])}
 					-
 					<button
 						on:click={() => {
@@ -139,7 +139,7 @@
 			<div style="text-align: right;">
 				{#if system.deck.canModify()}
 					<button
-						class="check"
+						class="active"
 						on:click={() => {
 							system.view.reset();
 							system.page = "Add";
@@ -169,6 +169,7 @@
 							{card}
 						</button>
 					</div>
+
 					<div style="text-align:right;">
 						{#if i > 0}
 							<button
@@ -258,13 +259,5 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 </style>

@@ -12,6 +12,6 @@ Augmente de 2 l'endurance d'une créature alliée sur le terrain pendant cette �
 <br />
 <br />
 
-<i>
+<span class="details">
 	Augmente de {card.stat("Infusion").value() * 2} l'endurance d'une créature alliée sur le terrain pendant cette étape.
-</i>
+</span>

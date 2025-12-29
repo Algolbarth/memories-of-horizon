@@ -27,9 +27,10 @@
 			aventure();
 		}}
 	>
-		Aventure
+		Pré-construit
 	</button>
 
+	<br />
 	<br />
 
 	<button
@@ -41,6 +42,8 @@
 		Construit
 	</button>
 
+	<br />
+	<br />
 	<br />
 	<br />
 

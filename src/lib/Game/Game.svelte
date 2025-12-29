@@ -31,22 +31,26 @@
 	<div id="taskbar">
 		<div>
 			{#if system.game.mode != "Entraînement" && system.game.chapter}
-				Chapitre {system.game.chapter.number}
-				- Étape {system.game.player.step} / {system.game.chapter.steps.length}
+				<button class="taskbar info">
+					Chapitre {system.game.chapter.number}
+				</button>
+
+				<button class="taskbar info">
+					Étape {system.game.player.step} / {system.game.chapter.steps.length}
+				</button>
 			{/if}
 
 			{#if system.game.isBattle() && !system.game.isEndBattle()}
-				{#if system.game.mode != "Entraînement" && system.game.chapter}
-					-
-				{/if}
-				Tour de combat {system.game.turn} / 5
+				<button class="taskbar info">
+					Tour de combat {system.game.turn} / 5
+				</button>
 			{/if}
 		</div>
 
 		<div style="text-align:center;">
 			{#if !system.game.isBattle()}
 				<button
-					class="fight"
+					class="taskbar fight"
 					on:click={() => {
 						if (system.game) {
 							system.view.reset();
@@ -57,10 +61,10 @@
 				>
 					Combattre
 				</button>
+
 				{#if system.game.mode == "Entraînement"}
-					-
 					<button
-						class="check"
+						class="taskbar bot_turn"
 						on:click={() => {
 							if (system.game) {
 								system.view.reset();
@@ -75,6 +79,7 @@
 			{:else if !system.game.isEndBattle()}
 				{#if system.game.auto != null}
 					<button
+						class="taskbar"
 						on:click={() => {
 							if (system.game) {
 								system.game.stopAuto();
@@ -85,6 +90,7 @@
 					</button>
 				{:else}
 					<button
+						class="taskbar"
 						on:click={() => {
 							if (system.game) {
 								system.game.startAuto();
@@ -93,8 +99,9 @@
 					>
 						Activer mode auto
 					</button>
-					-
+
 					<button
+						class="taskbar"
 						on:click={() => {
 							if (system.game) {
 								system.view.reset();
@@ -107,6 +114,7 @@
 				{/if}
 			{:else}
 				<button
+					class="taskbar"
 					on:click={() => {
 						if (system.game) {
 							system.view.reset();
@@ -122,6 +130,7 @@
 
 		<div style="text-align:right">
 			<button
+				class="taskbar"
 				on:click={() => {
 					if (system.game) {
 						system.game.pause = true;
@@ -174,7 +183,8 @@
 	#taskbar {
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
-		background: var(--card);
+		background-color: var(--dropdown);
+		background-image: var(--rock);
 		padding: 0.5%;
 		border: solid;
 		margin-bottom: 1%;
@@ -190,18 +200,23 @@
 	}
 
 	button.fight {
-		color: darkred;
+		background-color: var(--close);
 	}
 
 	button.fight:hover {
-		color: red;
+		background-color: var(--close_hover);
 	}
 
-	button.check {
-		color: darkgreen;
+	button.bot_turn {
+		background-color: var(--active);
 	}
 
-	button.check:hover {
-		color: greenyellow;
+	button.bot_turn:hover {
+		color: black;
+		background-color: var(--active_hover);
+	}
+
+	button.info:hover {
+		color: black;
 	}
 </style>

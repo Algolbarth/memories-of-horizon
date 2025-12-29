@@ -30,7 +30,8 @@
 		</div>
 		<div>/ 100</div>
 	</div>
-	<div class="preview">
+	
+	<div class="preview" style={"background:" + system.ressources.find("Or")?.color + ";color:" + (system.ressources.find("Or")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 		<div>Or</div>
 		<div>{gold}</div>
 		<div>
@@ -49,10 +50,13 @@
 			/>
 		</div>
 	</div>
+
 	<div class="preview" style={"background:" + system.ressources.find("Flux")?.color + ";color:" + (system.ressources.find("Flux")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 		<div>Flux</div>
+
 		<div></div>
 		<div></div>
+
 		<div>
 			<input
 				type="number"
@@ -68,10 +72,13 @@
 			/>
 		</div>
 	</div>
+
 	<div class="preview" style={"background:" + system.ressources.find("Mana")?.color + ";color:" + (system.ressources.find("Mana")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 		<div>Mana</div>
+
 		<div></div>
 		<div></div>
+
 		<div>
 			<input
 				type="number"
@@ -104,12 +111,13 @@
 
 	div.preview {
 		border-color: black;
+		border-radius: 0;
 		display: grid;
 		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;
 	}
 
 	div.life {
-		background: pink;
+		background: var(--life);
 	}
 
 	input[type="number"] {

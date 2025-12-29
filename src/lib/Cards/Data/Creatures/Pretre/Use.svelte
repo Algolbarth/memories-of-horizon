@@ -44,11 +44,12 @@
 	</div>
 {:else}
 	<button
+		class="return"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
 {/if}

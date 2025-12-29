@@ -12,4 +12,4 @@ Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe la force
 <br />
 <br />
 
-<i>Fixe à {card.stat("Infusion").value()} la force et la constitution de <CardInfo bind:system name={"Homonculus"} /> .</i>
+<span class="details">Fixe à {card.stat("Infusion").value()} la force et la constitution de <CardInfo bind:system name={"Homonculus"} /> .</span>

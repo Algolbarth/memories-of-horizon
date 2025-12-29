@@ -12,6 +12,6 @@ Augmente de 4 la force d'une créature alliée sur le terrain pendant cette éta
 <br />
 <br />
 
-<i>
+<span class="details">
 	Augmente de {card.stat("Infusion").value() * 4} la force d'une créature alliée sur le terrain pendant cette étape.
-</i>
+</span>

@@ -7,7 +7,7 @@
 </script>
 
 <div class="box">
-	<i>Équipements</i>
+	<span class="box_title">Équipements</span>
 	({card.equipments.length} / {card.stat("Maniement").value()})
 
 	<br />

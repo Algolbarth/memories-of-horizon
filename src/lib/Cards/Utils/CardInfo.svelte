@@ -21,6 +21,6 @@
 	}
 
 	button:hover {
-		color: greenyellow;
+		color: var(--active_hover);
 	}
 </style>

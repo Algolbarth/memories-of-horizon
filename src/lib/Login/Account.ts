@@ -2,7 +2,7 @@ import type { System } from "../System/Class";
 
 export class Account {
     name: string;
-    aventure: Gamemode = new Gamemode();
+    preconstruct: Gamemode = new Gamemode();
     construct: Gamemode = new Gamemode();
     system: System;
 
@@ -12,15 +12,15 @@ export class Account {
     };
 
     total_victory = () => {
-        return this.aventure.victory + this.construct.victory;
+        return this.preconstruct.victory + this.construct.victory;
     };
 
     total_defeat = () => {
-        return this.aventure.defeat + this.construct.defeat;
+        return this.preconstruct.defeat + this.construct.defeat;
     };
 
     total_match = () => {
-        return this.aventure.total() + this.construct.total();
+        return this.preconstruct.total() + this.construct.total();
     };
 };
 

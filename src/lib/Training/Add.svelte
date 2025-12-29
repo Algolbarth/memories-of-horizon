@@ -83,7 +83,7 @@
 				{#if zone.name != "Défausse"}
 					({zone.cards.length} / {zone.size}) -
 				{/if}
-				{several(cardList.length, "carte")}
+				{several(cardList.length, ["carte"])}
 				-
 				<button
 					on:click={() => {

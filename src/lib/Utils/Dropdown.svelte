@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div style:height="1.4em" style:width={width + "vw"}>
+<div style:width={width + "vw"}>
 	<div on:focusout={handleDropdownFocusLoss} class="container">
 		<div>
 			<button class="main" on:click={handleDropdownClick}>
@@ -36,7 +36,7 @@
 		</div>
 
 		{#if isDropdownOpen}
-			<div class="list scroll" style:max-height={height + "vh"}>
+			<div class="list scroll" style:max-height={height + "vh"} style:width={(width - 0.4) + "vw"}>
 				{#each array as element}
 					<button
 						class="element"
@@ -46,7 +46,6 @@
 					>
 						{element}
 					</button>
-					<br />
 				{/each}
 			</div>
 		{/if}
@@ -62,30 +61,36 @@
 
 	button.main {
 		border: solid;
-		padding: 0.2em 1.2em;
+		padding: 0.2em 0;
+		background: var(--dropdown);
+		background-image: var(--rock);
 	}
 
 	button:hover {
-		background: grey;
+		background: var(--dropdown);
+		background-image: var(--rock);
 	}
 
 	button:focus {
-		background: grey;
+		background: var(--dropdown);
+		background-image: var(--rock);
 	}
 
 	div.list {
-		position: relative;
-		background: grey;
+		position: absolute;
+		background: var(--dropdown);
+		background-image: var(--rock);
 		border: solid;
-		border-radius: 5px;
 		z-index: 1;
+		margin-top: 1.75em;
 	}
 
 	button {
 		text-align: center;
 		margin: 0;
 		border: none;
-		background: grey;
+		background: var(--dropdown);
+		background-image: var(--rock);
 		width: 100%;
 	}
 </style>

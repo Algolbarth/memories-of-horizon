@@ -12,6 +12,6 @@ Inflige 2 dégâts à une unité adverse sur le terrain pour chaque valeur d'inf
 <br />
 <br />
 
-<i>
+<span class="details">
 	Inflige {card.stat("Infusion").value() * 2} dégâts à une unité adverse sur le terrain.
-</i>
+</span>

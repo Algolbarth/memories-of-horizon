@@ -5,7 +5,7 @@
 </script>
 
 <div class="box">
-	<i>Statistiques d'équipement</i>
+	<span class="box_title">Statistiques d'équipement</span>
 
 	<br />
 

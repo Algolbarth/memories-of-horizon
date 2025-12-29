@@ -9,20 +9,22 @@
 	export let system: System;
 </script>
 
-<div>
-	<button
-		class="close"
-		on:click={() => {
-			system.view.reset();
-			system.page = "Play";
-		}}
-	>
-		X
-	</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="close"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Play";
+			}}
+		>
+			X
+		</button>
+	</div>
 
 	<div style="text-align:center">
 		<button
-			class="big menu"
+			class="taskbar train"
 			on:click={() => {
 				system.view.reset();
 				system.game = new Game(system, "Entraînement", system.train.deck);
@@ -33,9 +35,9 @@
 			Lancer l'entraînement
 		</button>
 	</div>
-</div>
 
-<br />
+	<div></div>
+</div>
 
 <div id="body" class="scroll">
 	<div class="bi-zone">
@@ -60,11 +62,29 @@
 
 <style>
 	#body {
-		height: 80vh;
+		height: 90vh;
 	}
 
 	.bi-zone {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	div.taskbar {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		background-color: var(--dropdown);
+		background-image: var(--rock);
+		padding: 0.5%;
+		border: solid;
+		margin-bottom: 1%;
+	}
+
+	button.train {
+		background-color: var(--menu);
+	}
+
+	button.train:hover {
+		background-color: var(--menu_hover);
 	}
 </style>

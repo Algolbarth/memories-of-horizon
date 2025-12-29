@@ -28,15 +28,15 @@
 <br />
 <br />
 
-<div id="zone">
+<div class="zone">
 	<div class="taskbar">
 		<div>
-			{several(array.length, "Deck")} jouable{#if array.length > 1}s{/if}
+			{several(array.length, ["Deck"])} jouable{#if array.length > 1}s{/if}
 		</div>
 
 		<div style="text-align: right;">
 			<button
-				class="check"
+				class="active"
 				on:click={() => {
 					system.page = "Decks";
 				}}
@@ -86,7 +86,7 @@
 </div>
 
 <style>
-	#zone {
+	.zone {
 		background-color: var(--zone);
 		border: solid;
 		padding: 1%;
@@ -107,7 +107,8 @@
 		margin-top: 1%;
 		margin-bottom: 1%;
 		padding: 1%;
-		background-color: var(--preview_deck);
+		background-color: var(--deck_preview);
+		background-image: var(--leather);
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -116,13 +117,5 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 </style>

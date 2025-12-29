@@ -40,7 +40,7 @@
 					<div>
 						{#if ressource.stock > 0}
 							{#if ressource.current > 0 || ressource.production > 0}+
-							{/if}{several(ressource.stock, "stocké")}
+							{/if}{several(ressource.stock, ["stocké"])}
 						{/if}
 					</div>
 					<div>
@@ -89,7 +89,7 @@
 	}
 
 	div.life {
-		background: pink;
+		background: var(--life);
 	}
 
 	div.stat {
@@ -98,6 +98,8 @@
 
 	div.preview {
 		border-color: black;
+		border-radius : 0;
+
 		display: grid;
 		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;
 	}

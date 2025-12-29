@@ -42,6 +42,7 @@
 				{#if system.game.phase == "Préparation" && fonction == undefined}
 					{#if card.zone.name == "Réserve" || card.zone.name == "Terrain"}
 						<button
+							class="active"
 							on:click={() => {
 								card.sell();
 								system = system;
@@ -50,10 +51,11 @@
 							Vendre
 						</button>
 					{/if}
+
 					{#if card.zone.name == "Pile"}
 						{#if card.canBuy()}
 							<button
-								class="check"
+								class="active"
 								on:click={() => {
 									card.buy();
 									system = system;
@@ -67,7 +69,7 @@
 					{:else if card.zone.name == "Réserve"}
 						{#if card.canUse()}
 							<button
-								class="check"
+								class="active"
 								on:click={() => {
 									card.use();
 									system = system;
@@ -83,7 +85,7 @@
 							<span>Actif</span>
 						{:else if card.owner?.ressource("Or").total() >= 5}
 							<button
-								class="check"
+								class="active"
 								on:click={() => {
 									if (card.owner) {
 										card.owner.place = card;
@@ -97,9 +99,11 @@
 							<button>Changer</button>
 						{/if}
 					{/if}
+
 					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card.type == "Créature")}
-						{#if card.slot && card.slot > 0}
+						{#if card.slot != undefined && card.slot > 0}
 							<button
+								class="active"
 								on:click={() => {
 									card.up();
 									system = system;
@@ -108,25 +112,30 @@
 								&#9650
 							</button>
 						{:else}
-							<button class="useless">&#9650</button>
+							<button class="desactivate">&#9650</button>
 						{/if}
-						{#if card.slot && card.slot < card.zone.cards.length - 1}
+						
+						{#if card.slot != undefined && card.slot < card.zone.cards.length - 1}
 							<button
+								class="active"
 								on:click={() => {
 									card.down();
 									system = system;
+									console.log(system.game?.player.zone("Terrain"))
 								}}
 							>
 								&#9660
 							</button>
 						{:else}
-							<button class="useless">&#9660</button>
+							<button class="desactivate">&#9660</button>
 						{/if}
 					{/if}
 				{/if}
+				
 				{#if fonction != undefined && condition != undefined}
 					{#if condition(card)}
 						<button
+							class="active"
 							on:click={() => {
 								fonction(card);
 								system = system;
@@ -157,10 +166,11 @@
 		background-color: var(--attacker_hover);
 	}
 
-	.useless {
-		color: lightgrey;
+	button.desactivate {
+		background: transparent;
+		color: var(--desactivate);
 	}
-
+	
 	#infos {
 		text-align: left;
 	}
@@ -172,13 +182,5 @@
 	img.locked {
 		width: 1em;
 		transform: translate(0, 10%);
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 </style>

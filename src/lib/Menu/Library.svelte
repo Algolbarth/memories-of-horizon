@@ -85,10 +85,10 @@
 <br />
 <br />
 
-<div id="zone">
-	<div style="display:flex;margin-bottom:2%;">
-		<div style="transform:translate(0,25%);margin-right:1%;">
-			{several(cardList.length, "carte")}
+<div class="zone">
+	<div style="display:flex;align-items:center;">
+		<div style="margin-right:1%;">
+			{several(cardList.length, ["carte"])}
 			-
 			<button
 				on:click={() => {
@@ -99,6 +99,7 @@
 			</button>
 			- Trier par
 		</div>
+
 		<Dropdown
 			array={["Nom", "Niveau"]}
 			selected={sortType}
@@ -108,6 +109,7 @@
 			}}
 		/>
 	</div>
+
 	<div id="list" class="scroll">
 		{#each cardList as card}
 			<div class="preview">
@@ -138,7 +140,7 @@
 {/if}
 
 <style>
-	#zone {
+	.zone {
 		background-color: var(--zone);
 		border: solid;
 		padding: 1%;

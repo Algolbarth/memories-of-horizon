@@ -60,7 +60,7 @@
 		<div style="text-align:right;">
 			{#if zone.size == undefined || zone.cards.length < zone.size}
 				<button
-					class="check"
+					class="active"
 					on:click={() => {
 						system.view.reset();
 						system.train.add.entity = entity;
@@ -226,14 +226,6 @@
 
 	.remove:hover {
 		color: var(--close);
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 
 	button.useless {

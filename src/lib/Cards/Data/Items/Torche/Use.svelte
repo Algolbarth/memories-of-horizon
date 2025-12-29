@@ -41,11 +41,12 @@
 	</div>
 {:else if choice == "damage"}
 	<button
+		class="return"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} {condition} {fonction} />
 {/if}

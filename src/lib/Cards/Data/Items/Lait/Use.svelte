@@ -34,11 +34,12 @@
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
 {:else}
 	<button
+		class="return"
 		on:click={() => {
 			target = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 
 	<div class="center" style="text-align:center">

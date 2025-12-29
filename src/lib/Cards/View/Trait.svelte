@@ -5,7 +5,7 @@
 </script>
 
 <div class="box">
-	<i>Traits</i>
+	<span class="box_title">Traits</span>
 
 	<br />
 

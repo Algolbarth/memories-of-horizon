@@ -19,13 +19,15 @@
 	<Logo />
 
 	<br />
+	<br />
 
 	<button
+		class="return"
 		on:click={() => {
 			system.page = "TitleScreen";
 		}}
 	>
-		Retour
+		↩
 	</button>
 
 	<br />

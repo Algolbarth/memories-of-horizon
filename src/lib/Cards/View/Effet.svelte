@@ -7,7 +7,7 @@
 </script>
 
 <div class="box">
-	<i>Effet</i>
+	<span class="box_title">Effet</span>
 
 	<br />
 

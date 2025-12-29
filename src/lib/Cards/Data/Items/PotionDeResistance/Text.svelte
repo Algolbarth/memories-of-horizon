@@ -12,6 +12,6 @@ Augmente de 2 la résistance d'une créature alliée sur le terrain pendant cett
 <br />
 <br />
 
-<i>
+<span class="details">
 	Augmente de {card.stat("Infusion").value() * 2} la résistance d'une créature alliée sur le terrain pendant cette étape.
-</i>
+</span>

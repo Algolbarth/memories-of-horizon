@@ -27,15 +27,15 @@
 <br />
 <br />
 
-<div id="zone">
+<div class="zone">
 	<div class="taskbar">
 		<div>
-			{several(system.decks.length, "Deck")}
+			{several(system.decks.length, ["Deck"])}
 		</div>
 
 		<div style="text-align: right;">
 			<button
-				class="check"
+				class="active"
 				on:click={() => {
 					newDeck();
 				}}
@@ -63,6 +63,7 @@
 						{deck.name}
 					</button>
 				</div>
+
 				<div style="text-align:right">
 					<button
 						on:click={() => {
@@ -111,7 +112,7 @@
 </div>
 
 <style>
-	#zone {
+	.zone {
 		background-color: var(--zone);
 		border: solid;
 		padding: 1%;
@@ -129,12 +130,21 @@
 
 	.preview {
 		border: solid;
+		border-radius: 0;
+
 		margin-top: 1%;
 		margin-bottom: 1%;
 		padding: 1%;
-		background-color: var(--preview_deck);
+
+		background-color: var(--deck_preview);
+		background-image: var(--leather);
+		
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.preview:hover {
+		background-color: var(--deck_preview_hover);
 	}
 
 	.useless {
@@ -145,13 +155,5 @@
 		position: fixed;
 		top: 0%;
 		left: 54vw;
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 </style>

@@ -38,6 +38,7 @@
 					<input type="text" placeholder={'Exemple: "Dragon"'} bind:value={nameSelect} />
 				</div>
 			</div>
+
 			<div class="container">
 				Niveau
 				<div>
@@ -50,6 +51,7 @@
 					/>
 				</div>
 			</div>
+
 			<div class="container">
 				Type
 				<div>
@@ -62,6 +64,7 @@
 					/>
 				</div>
 			</div>
+
 			<div class="container">
 				Famille
 				<div>
@@ -74,6 +77,7 @@
 					/>
 				</div>
 			</div>
+
 			<div class="container">
 				Élément
 				<div>
@@ -137,6 +141,7 @@
 		width: 30vw;
 		padding: 1%;
 		background: var(--zone);
+		background-image: var(--asfalt);
 		border: solid;
 		border-width: 5px;
 		text-align: center;

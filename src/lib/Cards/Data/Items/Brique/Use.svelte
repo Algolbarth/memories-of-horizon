@@ -48,20 +48,22 @@
 	</div>
 {:else if choice == "heal"}
 	<button
+		class="return"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
 {:else if choice == "damage"}
 	<button
+		class="return"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
-		Retour
+		↩
 	</button>
 	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} condition={condition2} {fonction} />
 {/if}

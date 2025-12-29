@@ -16,17 +16,20 @@
 <br />
 <br />
 
-<div class="zone">
-	Fonctionnalités récentes :
-	<ul>
-		<li>
+<div class="scroll">
+	<div class="zone">
+		<div class="paper title">
+			DERNIERES NOUVEAUTES
+		</div>
+
+		<div class="paper">
 			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
 			<ul>
 				<li>
-					<span class="card">Concotion</span> est un objet potion regroupant plusieurs effets de potions différentes.
+					<span class="card">Concoction</span> est un objet potion regroupant plusieurs effets de potions différentes.
 				</li>
 				<li>
-					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concotion</span> à partir de 2 potions dans la réserve.
+					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concoction</span> à partir de 2 potions dans la réserve.
 				</li>
 				<li>
 					<span class="card">Chaudron</span> est un bâtiment créant
@@ -39,8 +42,9 @@
 					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en réserve.
 				</li>
 			</ul>
-		</li>
-		<li>
+		</div>
+
+		<div class="paper">
 			Dans l'optique de gérer le terrain adverse, l'élément Terre pourra plus facilement infliger des dégâts de zone.
 			<ul>
 				<li>
@@ -50,16 +54,18 @@
 					<span class="card">Tremblement de terre</span> est une action infligeant des dégâts à toutes les unités, alliées comme adverses.
 				</li>
 			</ul>
-		</li>
-		<li>
+		</div>
+
+		<div class="paper">
 			L'objectif est de donner plus d'outils de résilience à l'élément Végétal qui a toujours du mal à rester sur le terrain.
 			<ul>
 				<li>
 					<span class="card">Herbes médicinales</span> est un objet soignant 50 blessures à une créature.
 				</li>
 			</ul>
-		</li>
-		<li>
+		</div>
+
+		<div class="paper">
 			Ajouter des cartes Neutre pour enlever des debuffs facilement.
 			<ul>
 				<li>
@@ -69,31 +75,59 @@
 					<span class="card">Panacée</span> est un objet enlevant tous les debuffs d'une créature.
 				</li>
 			</ul>
-		</li>
-		<li>
+		</div>
+
+		<div class="paper">
 			Ajouts de 4 cartes neutres : <span class="card">Homme d'affaires</span>, <span class="card">Marché</span>,
 			<span class="card">Commissaire priseur</span>
 			et <span class="card">Négociant</span>.
-		</li>
-		<li>
-			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 force -> 50 force, 10 constitution -> 50 constitution.
-		</li>
-	</ul>
-</div>
+		</div>
 
-<div class="zone">
-	Fonctionnalités à venir :
-	<ul>
-		<li>Rien pour le moment</li>
-	</ul>
+		<div class="paper">
+			Buff de <span class="card">Chef barbare</span> : 110 coût en or -> 150 coût en or, 10 force -> 50 force, 10 constitution -> 50 constitution.
+		</div>
+	</div>
+
+	<div class="zone">
+		<div class="paper title">
+			NOUVEAUTES A VENIR
+		</div>
+
+		<div class="paper">Rien pour le moment</div>
+	</div>
 </div>
 
 <style>
+	div.scroll {
+		height: 90vh;
+	}
+
 	div.zone {
-		margin-bottom: 8px;
+		margin-bottom: 2em;
+
+		background-color: var(--pannel);
+		background-image: var(--wood);
 	}
 
 	span.card {
-		color: green;
+		color: var(--active);
+	}
+
+	div.paper {
+		background-color: var(--preview);
+		background-image: var(--paper);
+
+		border: solid;
+		border-color: black;
+
+		padding: 1em;
+		margin: 1em;
+	}
+
+	div.title {
+		margin-left: 34vw;
+		width: 25vw;
+
+		text-align: center;
 	}
 </style>

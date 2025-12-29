@@ -20,23 +20,26 @@
 				<div>
 					{zone.name}
 				</div>
+
 				<div>
 					{#if zone instanceof Stack}
 						Nv {zone.level}
 					{/if}
 				</div>
+				
 				<div>
 					{#if zone.name != "Défausse"}
 						({zone.cards.length} / {zone.size})
 					{/if}
 				</div>
 			</div>
+
 			<div style="text-align:right;">
 				{#if zone instanceof Stack}
 					{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
 						{#if entity.canUpStack()}
 							<button
-								class="check"
+								class="active"
 								on:click={() => {
 									entity.upStack();
 									system = system;
@@ -52,7 +55,7 @@
 					{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
 						{#if entity.canActualiseStack()}
 							<button
-								class="check"
+								class="active"
 								on:click={() => {
 									entity.actualiseStack();
 									system = system;
@@ -92,7 +95,7 @@
 					<Preview bind:system bind:card bind:condition bind:fonction />
 				{/each}
 			{:else}
-				<i>Vide</i>
+			    Vide
 				<br />
 			{/if}
 		</div>
@@ -121,13 +124,5 @@
 	div.infos {
 		display: grid;
 		grid-template-columns: 0.75fr 4em 1fr;
-	}
-
-	button.check {
-		color: darkgreen;
-	}
-
-	button.check:hover {
-		color: greenyellow;
 	}
 </style>

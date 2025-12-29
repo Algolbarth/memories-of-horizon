@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Soigne 20 blessures à une créature alliée sur le terrain. Si cette créature n'est pas blessée, lui enlève un effet négatif.
+Soigne 20 blessures à une créature alliée sur le terrain. Si cette créature n'est pas blessée, lui enlève un effet négatif à la place.

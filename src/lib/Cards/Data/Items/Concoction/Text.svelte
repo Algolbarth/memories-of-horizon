@@ -15,7 +15,7 @@ Applique des effets en fonction des différentes valeurs d'infusion.
 	<br />
 {/if}
 
-<i>
+<span class="details">
 	{#if card.stat("Infusion de mana").value() > 0}
 		Produit {card.stat("Infusion de mana").value()} mana.
 		<br />
@@ -55,4 +55,4 @@ Applique des effets en fonction des différentes valeurs d'infusion.
 		Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain pendant cette étape.
 		<br />
 	{/if}
-</i>
+</span>

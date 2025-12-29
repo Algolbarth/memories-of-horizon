@@ -8,7 +8,7 @@
 </script>
 
 <div class="box">
-	<i>Statistiques</i>
+	<span class="box_title">Statistiques</span>
 
 	<br />
 
@@ -39,6 +39,6 @@
 
 	div.row {
 		display: grid;
-		grid-template-columns: 12em 2fr 2fr 14em;
+		grid-template-columns: 12em 1fr 1fr 12em;
 	}
 </style>

@@ -80,12 +80,16 @@
 	}
 
 	#body {
-		background-color: var(--card);
+		background-color: var(--zone);
+		background-image: var(--asfalt);
+
 		width: 20vw;
 		height: 50vh;
 		padding: 1%;
+
 		border: solid;
 		border-width: 5px;
+
 		text-align: center;
 	}
 

@@ -17,6 +17,7 @@ export class Concoction extends Item {
         this.addStat("Infusion de mana", 0);
         this.addStat("Infusion de force", 0);
         this.addStat("Infusion d'endurance", 0);
+        this.addStat("Infusion de résistance", 0);
         this.addStat("Infusion interdite", 0);
         this.addStat("Infusion explosive", 0);
         this.addStat("Infusion parfumée", 0);
@@ -108,6 +109,7 @@ export class Concoction extends Item {
 
         if (target != undefined) {
             target.damageByEffect(this.stat("Infusion explosive").value() * 2);
+            
             if (target.type == "Créature") {
                 target.heal(this.stat("Infusion de soin").value() * 2);
                 target.stat("Force").step += this.stat("Infusion de force").value() * 4;
@@ -134,4 +136,4 @@ export class Concoction extends Item {
             this.stat(infusion_name).increase(potion.stat("Infusion").value());
         }
     };
-}
+};

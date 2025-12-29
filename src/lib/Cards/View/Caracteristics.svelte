@@ -33,11 +33,11 @@
 </div>
 
 <div class="container box">
-	<div class="cost" style="background:rgba(150, 100, 0, 1);">
+	<div class="cost" style="background-color:rgba(150, 100, 0, 1);">
 		Nv {card.level}
 	</div>
 	{#each card.elements.total() as element}
-		<div class="cost" style={"background:" + system.ressources.find("", element)?.color + ";color:" + (system.ressources.find("", element)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+		<div class="cost" style={"background-color:" + system.ressources.find("", element)?.color + ";color:" + (system.ressources.find("", element)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 			{element}
 		</div>
 	{/each}
@@ -48,14 +48,12 @@
 		<div class="little-container">
 			{#if costs(card).length > 0}
 				{#each costs(card) as cost}
-					<div class="cost" style={"background:" + system.ressources.find(cost.name)?.color + ";color:" + (system.ressources.find(cost.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+					<div class="cost" style={"background-color:" + system.ressources.find(cost.name)?.color + ";color:" + (system.ressources.find(cost.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{cost.value()}
 					</div>
 				{/each}
 			{:else}
-				<div>
-					<i>Rien</i>
-				</div>
+				<div class="cost" style="background-color:transparent;">Rien</div>
 			{/if}
 		</div>
 
@@ -64,14 +62,12 @@
 		<div class="little-container">
 			{#if sales(card).length > 0}
 				{#each sales(card) as sell, i}
-					<div class="cost" style={"background:" + system.ressources.find(sell.name)?.color + ";color:" + (system.ressources.find(sell.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+					<div class="cost" style={"background-color:" + system.ressources.find(sell.name)?.color + ";color:" + (system.ressources.find(sell.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 						{sell.value()}
 					</div>
 				{/each}
 			{:else}
-				<div>
-					<i>Rien</i>
-				</div>
+				<div class="cost" style="background-color:transparent;">Rien</div>
 			{/if}
 		</div>
 	</div>
@@ -82,7 +78,7 @@
 	{#if card.familles.total().length > 0}
 		-
 		{#each card.familles.total() as famille, i}
-			{#if i > 0}&nbsp{/if}{famille}
+			{#if i > 0}<div class="space"></div>{/if}{famille}
 		{/each}
 	{/if}
 </div>
@@ -107,5 +103,17 @@
 		border-color: black;
 		border-width: 2px;
 		border-radius: 5px;
+
+		background-image: var(--paper);
+	}
+
+	hr {
+		border: none;
+		border-top: 6px double #000000;
+	}
+
+	div.space {
+		display: inline-block;
+		width: 0.34em;
 	}
 </style>
