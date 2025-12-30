@@ -2,16 +2,21 @@ import type { System } from "../System/Class";
 
 export function save(system: System) {
     if (system.account) {
-        let text = "MoH_" + system.account.name + "_";
-        text +=
-            system.account.preconstruct.victory +
-            "_" +
-            system.account.preconstruct.defeat +
-            "_" +
-            system.account.construct.victory +
-            "_" +
-            system.account.construct.defeat +
-            "_";
+        let text = "MoH_";
+
+        text += system.account.name + "_";
+        text += system.account.play_time + "_";
+        if (system.account.session_time > system.account.best_session_time) {
+            text += system.account.session_time + "_";
+        }
+        else {
+            text += system.account.best_session_time + "_";
+        }
+
+        text += system.account.preconstruct.victory + "_";
+        text += system.account.preconstruct.defeat + "_";
+        text += system.account.construct.victory + "_";
+        text += system.account.construct.defeat + "_";
 
         text += system.music.volume + "_";
         text += system.settings.show_intelligence + "_";

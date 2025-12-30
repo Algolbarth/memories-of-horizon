@@ -173,6 +173,7 @@
 					<div style="text-align:right;">
 						{#if i > 0}
 							<button
+								class="active"
 								on:click={() => {
 									if (system.deck != undefined) {
 										let temp = system.deck.cards[i - 1];
@@ -185,10 +186,12 @@
 								&#9650
 							</button>
 						{:else}
-							<button class="useless">&#9650</button>
+							<button class="desactivate">&#9650</button>
 						{/if}
+						
 						{#if i < system.deck.cards.length - 1}
 							<button
+								class="active"
 								on:click={() => {
 									if (system.deck != undefined) {
 										let temp = system.deck.cards[i + 1];
@@ -201,7 +204,7 @@
 								&#9660
 							</button>
 						{:else}
-							<button class="useless">&#9660</button>
+							<button class="desactivate">&#9660</button>
 						{/if}
 					</div>
 				</div>
@@ -251,8 +254,9 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.useless {
-		color: lightgrey;
+	button.desactivate {
+		background: transparent;
+		color: var(--desactivate);
 	}
 
 	#view {

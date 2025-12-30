@@ -16,10 +16,13 @@ export async function load(files: FileList, system: System) {
         }
 
         system.account = new Account(system, readValue());
+        system.account.play_time = readInt();
+        system.account.best_session_time = readInt();
         system.account.preconstruct.victory = readInt();
         system.account.preconstruct.defeat = readInt();
         system.account.construct.victory = readInt();
         system.account.construct.defeat = readInt();
+
         system.music.volume = readInt();
         system.settings.show_intelligence = readBool();
         system.settings.autoplay = readBool();

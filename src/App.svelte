@@ -4,6 +4,15 @@
 
   let system = new System();
   system.music.init();
+
+  let timeHandler = () => {
+    if (system.account != undefined) {
+      system.account.play_time++;
+      system.account.session_time++;
+    }
+  };
+
+  setInterval(timeHandler, 1000);
 </script>
 
 <div class="window">

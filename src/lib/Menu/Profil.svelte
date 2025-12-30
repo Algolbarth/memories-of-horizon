@@ -1,10 +1,14 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
-    import { several } from "../Utils";
+	import { several } from "../Utils";
+	import Time from "./Time.svelte";
 
 	export let system: System;
 
 	let name: string = system.account?.name;
+	$: play_time = system.account?.play_time;
+	$: session_time = system.account?.session_time;
+	$: best_session_time = system.account?.best_session_time;
 
 	function rename() {
 		if (system.account) {
@@ -25,7 +29,7 @@
 <br />
 <br />
 
-{#if system.account}
+{#if system.account && play_time != undefined && session_time != undefined}
 	<div class="zone">
 		<input type="text" bind:value={name} />
 		{#if name != system.account.name}
@@ -37,28 +41,47 @@
 
 		<div class="container">
 			<div>
-				Total de parties : {system.account.total_match()}
-				<br />
-				{several(system.account.total_victory(), ["Victoire"], "after")}
-				<br />
-				{several(system.account.total_defeat(), ["Défaite"], "after")}
+				Temps de jeu :
+				<Time bind:time={play_time} />
 			</div>
 
 			<div>
-				Mode pré-construit : {system.account.preconstruct.total()}
-				<br />
-				{several(system.account.preconstruct.victory, ["Victoire"], "after")}
-				<br />
-				{several(system.account.preconstruct.defeat, ["Défaite"], "after")}
+				Temps de session :
+				<Time bind:time={session_time} />
 			</div>
 
 			<div>
-				Mode construit : {system.account.construct.total()}
-				<br />
-				{several(system.account.construct.victory, ["Victoire"], "after")}
-				<br />
-				{several(system.account.construct.defeat, ["Défaite"], "after")}
+				{#if best_session_time > 0}
+					Session la plus longue :
+					<Time bind:time={best_session_time} />
+				{/if}
 			</div>
+		</div>
+	</div>
+
+	<div class="zone container">
+		<div>
+			Total de parties : {system.account.total_match()}
+			<br />
+			{several(system.account.total_victory(), ["Victoire"], "after")}
+			<br />
+			{several(system.account.total_defeat(), ["Défaite"], "after")}
+		</div>
+
+		<div>
+			Mode pré-construit : {system.account.preconstruct.total()}
+			<br />
+			{several(system.account.preconstruct.victory, ["Victoire"], "after")}
+			<br />
+			{several(system.account.preconstruct.defeat, ["Défaite"], "after")}
+		</div>
+
+		<div>
+			Mode construit : {system.account.construct.total()}
+			<br />
+			{several(system.account.construct.victory, ["Victoire"], "after")}
+			<br />
+			{several(system.account.construct.defeat, ["Défaite"], "after")}
 		</div>
 	</div>
 {/if}
@@ -67,5 +90,9 @@
 	div.container {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	div.zone {
+		margin-bottom: 1vw;
 	}
 </style>

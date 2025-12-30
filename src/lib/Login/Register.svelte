@@ -42,7 +42,7 @@
 	<br />
 
 	<button
-		class="big menu"
+		class="big"
 		on:click={() => {
 			register();
 		}}
@@ -60,5 +60,9 @@
 		text-align: center;
 		border-bottom: solid;
 		border-color: black;
+	}
+
+	button.big {
+		width: 15vw;
 	}
 </style>

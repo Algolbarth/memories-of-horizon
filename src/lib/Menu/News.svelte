@@ -19,7 +19,7 @@
 <div class="scroll">
 	<div class="zone">
 		<div class="paper title">
-			DERNIERES NOUVEAUTES
+			DERNIÈRES NOUVEAUTÉS
 		</div>
 
 		<div class="paper">
@@ -90,7 +90,7 @@
 
 	<div class="zone">
 		<div class="paper title">
-			NOUVEAUTES A VENIR
+			NOUVEAUTÉS À VENIR
 		</div>
 
 		<div class="paper">Rien pour le moment</div>
