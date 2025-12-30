@@ -16,6 +16,7 @@ export * from './BouclierDePlatine';
 export * from './BouclierDeRoche';
 export * from './BouclierEnCuir';
 export * from './Bouee';
+export * from './BrassardDeSante';
 export * from './CarapaceDeTortue';
 export * from './Carquois';
 export * from './CasqueEnCuir';

@@ -19,6 +19,7 @@ export class Equipment extends Item {
 
         this.addEquipStat("Force", 0);
         this.addEquipStat("Vitalité", 0);
+        this.addEquipStat("Régénération", 0);
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
         this.addEquipStat("Maîtrise", 0);
@@ -39,6 +40,8 @@ export class Equipment extends Item {
         this.addEquipStat("Esquive", 0);
         this.addEquipStat("Critique", 0);
         this.addEquipStat("Étourdissement", 0);
+        this.addEquipStat("Poison", 0);
+        this.addEquipStat("Toxicité", 0);
 
         this.addEquipTrait("Rare", false);
         this.addEquipTrait("Légendaire", false);

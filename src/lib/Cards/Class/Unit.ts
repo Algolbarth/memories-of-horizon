@@ -45,6 +45,8 @@ export class Unit extends Card {
             this.card.stat("Vitalité").init(value);
         };
 
+        this.addStat("Régénération", 0);
+
         this.addStat("Endurance", 0);
 
         this.addStat("Résistance", 0);

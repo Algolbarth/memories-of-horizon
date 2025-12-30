@@ -93,7 +93,13 @@ export class Battle {
                                 e.turnEffect();
                             }
                         }
+                    }
 
+                    if (card.stat("Régénération").value() > 0) {
+                        card.heal(card.stat("Régénération").value());
+                    }
+
+                    if (card.type == "Créature") {
                         if (card.stat("Poison").value() > 0) {
                             card.damageByEffect(card.stat("Toxicité").value());
                             card.stat("Poison").decrease(1);
