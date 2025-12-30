@@ -50,7 +50,6 @@ Orgueil : remplit le jauge critique d'une créature et lui augmente son intensit
 Avarice : détruit une créature alliée sur le terrain et augmente la force et la constitution d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
 Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
-Lignes de ley : bâtiment, quand une créature de famille Elementaire alliée est posée : augmente la capacité de chaque élément de cette créature.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de santé d'une créature de famille Bête alliée sur le terrain.
@@ -80,7 +79,6 @@ Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur
 Jarre de flamme : objet.
 
 ### Vegetal
-Spores : empoisonne une créature adverse sur le terrain.
 Dague empoisonnée : Quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain.
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.

@@ -73,6 +73,7 @@ export * from './Ruee';
 export * from './SangChaud';
 export * from './SavoirInterdit';
 export * from './SouffleEnflamme';
+export * from './Spores';
 export * from './Sprint';
 export * from './TirDeCanon';
 export * from './TirEnPleineTete';

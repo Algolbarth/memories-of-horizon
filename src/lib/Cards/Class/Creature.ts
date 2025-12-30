@@ -44,7 +44,7 @@ export class Creature extends Unit {
 
         this.addStat("Intensité", 2);
         this.stat("Intensité").condition = function () {
-            if (this.value() != 2) {
+            if (this.value() != 2 || this.card.stat("Adresse").value() > 0 || this.card.stat("Critique").value() > 0) {
                 return true;
             }
             return false;
@@ -60,6 +60,18 @@ export class Creature extends Unit {
 
         this.addStat("Étourdissement", 0);
         this.stat("Étourdissement").debuff = true;
+
+        this.addStat("Poison", 0);
+        this.stat("Poison").debuff = true;
+
+        this.addStat("Toxicité", 1);
+        this.stat("Toxicité").debuff = true;
+        this.stat("Toxicité").condition = function () {
+            if (this.value() != 1 || this.card.stat("Poison").value() > 0) {
+                return true;
+            }
+            return false;
+        };
     };
 
     play = () => {
@@ -70,18 +82,18 @@ export class Creature extends Unit {
             this.stat("Critique").set(100);
         }
 
-        let defender = this.findTarget();
+        if (this.playEffect != undefined) {
+            this.playEffect();
+        }
+        for (const e of this.equipments) {
+            if (e.playEffect != undefined) {
+                e.playEffect();
+            }
+        }
+
+        let defender: Unit | undefined = this.findTarget();
 
         if (defender != undefined) {
-            if (this.playEffect != undefined) {
-                this.playEffect(defender);
-            }
-            for (const e of this.equipments) {
-                if (e.playEffect != undefined) {
-                    e.playEffect(defender);
-                }
-            }
-
             this.fight(defender);
         }
     };
@@ -142,7 +154,7 @@ export class Creature extends Unit {
     killEffect: Function | undefined;
 
     findTarget = () => {
-        let target = undefined;
+        let target: Unit | undefined = undefined;
         for (const card of this.owner.adversary().zone("Terrain").cards) {
             if (target == undefined || card.stat("Protection").value() > target.stat("Protection").value()) {
                 target = card;

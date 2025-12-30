@@ -93,6 +93,11 @@ export class Battle {
                                 e.turnEffect();
                             }
                         }
+
+                        if (card.stat("Poison").value() > 0) {
+                            card.damageByEffect(card.stat("Toxicité").value());
+                            card.stat("Poison").decrease(1);
+                        }
                     }
                 }
             }

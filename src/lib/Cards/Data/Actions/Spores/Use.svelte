@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function condition(card: Card) {
-		if (card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+		if (card.type == "Créature") {
 			return true;
 		}
 		return false;

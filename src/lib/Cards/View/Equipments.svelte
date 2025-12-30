@@ -20,6 +20,7 @@
 		>
 			{equipment.name}
 		</button>
+		
 		<br />
 	{/each}
 </div>
