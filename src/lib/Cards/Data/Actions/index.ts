@@ -40,6 +40,7 @@ export * from './Ignorer';
 export * from './Incantation';
 export * from './Innovation';
 export * from './Inondation';
+export * from './Intoxication';
 export * from './JetDAcide';
 export * from './LigneEnergetique';
 export * from './Malefice';
