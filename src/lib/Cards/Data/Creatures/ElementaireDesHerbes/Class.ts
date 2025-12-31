@@ -27,8 +27,8 @@ export class ElementaireDesHerbes extends Creature {
         }
 
         if (target != undefined) {
-            target.stat("Force").increase(10);
-            target.stat("Constitution").increase(10);
+            target.stat("Force").increase(15);
+            target.stat("Constitution").increase(15);
         }
     };
 }

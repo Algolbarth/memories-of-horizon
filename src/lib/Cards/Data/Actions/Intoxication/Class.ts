@@ -44,7 +44,7 @@ export class Intoxication extends Action {
     };
 
     useEffect = (target: Creature) => {
-        target.stat("Toxicité").increase(4);
+        target.stat("Toxicité").increase(6);
         this.move("Défausse");
         this.pose();
     };

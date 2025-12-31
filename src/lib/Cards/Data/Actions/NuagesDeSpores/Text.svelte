@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 6 la toxicité d'une créature adverse sur le terrain.
+Augmente de 5 le poison à toutes les créatures adverses sur le terrain.

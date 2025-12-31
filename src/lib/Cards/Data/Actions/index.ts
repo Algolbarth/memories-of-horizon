@@ -52,6 +52,7 @@ export * from './MonstreErrant';
 export * from './Mue';
 export * from './Multisoin';
 export * from './Noyade';
+export * from './NuagesDeSpores';
 export * from './Omniscience';
 export * from './Opportunite';
 export * from './Option';

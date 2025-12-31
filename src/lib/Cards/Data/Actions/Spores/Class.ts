@@ -10,7 +10,7 @@ export class Spores extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5], ["Végétal", 5]]);
+        this.init([["Or", 3], ["Végétal", 2]]);
 
         this.text = Text;
     };
