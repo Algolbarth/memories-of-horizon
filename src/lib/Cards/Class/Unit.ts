@@ -45,13 +45,15 @@ export class Unit extends Card {
             this.card.stat("Vitalité").init(value);
         };
 
+        this.addStat("Garde", 0);
+
         this.addStat("Régénération", 0);
 
         this.addStat("Endurance", 0);
 
         this.addStat("Résistance", 0);
 
-        this.addStat("Garde", 0);
+        this.addStat("Épine", 0);
 
         this.addStat("Initiative", 1);
         this.stat("Initiative").condition = function () {
@@ -211,12 +213,17 @@ export class Unit extends Card {
         if (this.defendEffect != undefined) {
             this.defendEffect(attacker);
         }
+
         if (this.type == "Créature") {
             for (const e of this.equipments) {
                 if (e.defendEffect != undefined) {
                     e.defendEffect(this);
                 }
             }
+        }
+
+        if (this.stat("Épine").value() > 0) {
+            attacker.damage(this.stat("Épine").value());
         }
     };
 

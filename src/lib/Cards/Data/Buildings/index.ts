@@ -24,6 +24,7 @@ export * from './Maison';
 export * from './Marche';
 export * from './MurDEnceinte';
 export * from './MurDeBrique';
+export * from './MurDeFlammes';
 export * from './MurDePierre';
 export * from './MurDeRoche';
 export * from './Muraille';

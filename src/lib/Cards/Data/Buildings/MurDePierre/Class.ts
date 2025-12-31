@@ -8,6 +8,7 @@ export class MurDePierre extends Building {
         super(system);
 
         this.init([["Or", 12], ["Terre", 12]]);
-        this.stat("Constitution").init(50);
+        this.stat("Constitution").init(30);
+        this.stat("Endurance").init(10);
     };
 }

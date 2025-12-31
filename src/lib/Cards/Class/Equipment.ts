@@ -22,6 +22,7 @@ export class Equipment extends Item {
         this.addEquipStat("Régénération", 0);
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
+        this.addEquipStat("Épine", 0);
         this.addEquipStat("Maîtrise", 0);
         this.addEquipStat("Agilité", 0);
         this.addEquipStat("Vitesse", 0);
