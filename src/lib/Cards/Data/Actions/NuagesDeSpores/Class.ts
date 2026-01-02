@@ -33,4 +33,4 @@ export class NuageDeSpores extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

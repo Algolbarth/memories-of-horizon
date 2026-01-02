@@ -33,6 +33,8 @@ X Maitrise => 25X
 X Percée => X/4
 X Intelligence => 5X
 X Initiative => 5X
+X Poison => X
+X Toxicité => 2X
 
 Inflige X dégâts => X/2
 Soigne X blessures  => X/2

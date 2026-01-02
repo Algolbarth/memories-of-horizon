@@ -1,11 +1,11 @@
 <script lang="ts">
+	import CardInfo from "../../../Utils/CardInfo.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 
-	// svelte-ignore export_let_unused
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Augmente de 5 le poison de toutes les créatures adverses sur le terrain.
+Au début de la phase de préparation : crée <CardInfo bind:system name={"Démolition"} /> dans la réserve.

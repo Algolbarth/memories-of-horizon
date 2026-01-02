@@ -2,6 +2,7 @@ export * from './Alambic';
 export * from './Baliste';
 export * from './Barricade';
 export * from './BassinDeReproduction';
+export * from './BelierDeCombat';
 export * from './Bibliotheque';
 export * from './BibliothequeElfique';
 export * from './Bivouac';
