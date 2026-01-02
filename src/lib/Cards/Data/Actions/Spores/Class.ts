@@ -48,4 +48,4 @@ export class Spores extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

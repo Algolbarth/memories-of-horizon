@@ -80,6 +80,9 @@ export class Unit extends Card {
         this.addStat("Magie", 0);
 
         this.addStat("Intelligence", 0);
+
+        this.addStat("Brûlure", 0);
+        this.stat("Brûlure").debuff = true;
     };
 
     canUse = () => {

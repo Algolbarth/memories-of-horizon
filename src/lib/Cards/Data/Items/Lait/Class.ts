@@ -65,7 +65,7 @@ export class Lait extends Item {
 
     useEffect = (target: Creature, stat: Stat | undefined) => {
         this.targeting(target);
-        if (!target.isDamaged()) {
+        if (!target.isDamaged() && stat != undefined) {
             stat.set(stat.min);
         }
         else {

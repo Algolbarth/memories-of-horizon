@@ -4,13 +4,13 @@ import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class CanonAEau extends Action {
-    name = "Canon à eau";
+export class Enflammer extends Action {
+    name = "Enflammer";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Eau", 25]]);
+        this.init([["Or", 5], ["Feu", 5]]);
 
         this.text = Text;
     };
@@ -32,13 +32,7 @@ export class CanonAEau extends Action {
     };
 
     useEffect = (target: Unit) => {
-        let value = 100;
-
-        value += 2 * this.owner.ressource("Eau").total();
-        this.owner.ressource("Eau").spend(this.owner.ressource("Eau").total());
-
-        target.damageByEffect(value);
-
+        target.stat("Brûlure").increase(5);
         this.move("Défausse");
         this.pose();
     };

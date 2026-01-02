@@ -64,7 +64,7 @@ export class Creature extends Unit {
         this.addStat("Poison", 0);
         this.stat("Poison").debuff = true;
 
-        this.addStat("Toxicité", 1);
+        this.addStat("Toxicité", 1, 1);
         this.stat("Toxicité").debuff = true;
         this.stat("Toxicité").condition = function () {
             if (this.value() != 1 || this.card.stat("Poison").value() > 0) {
@@ -115,20 +115,24 @@ export class Creature extends Unit {
 
             defender.defend(this);
 
-            let reduceDamage = defender.stat("Endurance").value() - this.stat("Percée").value();
-            if (reduceDamage < 0) {
-                reduceDamage = 0;
-            }
-            let difDamage = this.stat("Force").value() - reduceDamage;
+            let damage = this.stat("Force").value();
+
             if (this.stat("Critique").value() == 100) {
                 this.stat("Critique").remove(100);
-                difDamage = difDamage * this.stat("Intensité").value();
-            }
-            if (difDamage < 0) {
-                difDamage = 0;
+                damage = damage * this.stat("Intensité").value();
             }
 
-            let damage_result = defender.physicalDamage(difDamage);
+            let damage_reduction = defender.stat("Endurance").value() - this.stat("Percée").value();
+            if (damage_reduction < 0) {
+                damage_reduction = 0;
+            }
+
+            damage -= damage_reduction;
+            if (damage < 0) {
+                damage = 0;
+            }
+
+            let damage_result = defender.physicalDamage(damage);
 
             if (damage_result.die) {
                 isDie = true;

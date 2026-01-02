@@ -105,6 +105,14 @@ export class Battle {
                             card.stat("Poison").decrease(1);
                         }
                     }
+
+                    if (card.stat("Brûlure").value() > 0) {
+                        let damage = card.stat("Brûlure").value() - card.stat("Endurance").value();
+                        if (damage < 0) {
+                            damage = 0;
+                        }
+                        card.damage(damage);
+                    }
                 }
             }
         }

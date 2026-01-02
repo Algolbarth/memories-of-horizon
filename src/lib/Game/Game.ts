@@ -174,6 +174,9 @@ export class Game extends Battle {
                     if (card.type == "Créature" && card.stat("Étourdissement").value() > 0) {
                         card.stat("Étourdissement").remove(1);
                     }
+                    if (card.stat("Brûlure").value() > 0) {
+                        card.stat("Brûlure").set(0);
+                    }
                 }
             }
         }

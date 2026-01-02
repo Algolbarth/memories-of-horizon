@@ -27,6 +27,7 @@ export * from './Desarmer';
 export * from './Eboulement';
 export * from './Ecrasement';
 export * from './Elimination';
+export * from './Enflammer';
 export * from './Entrainement';
 export * from './Eruption';
 export * from './Exploration';
