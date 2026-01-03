@@ -3,22 +3,20 @@ import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 
-export class NuageDeSpores extends Action {
-    name = "Nuage de spores";
+export class Incendie extends Action {
+    name = "Incendie";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Végétal", 25]]);
+        this.init([["Or", 50], ["Feu", 50]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature") {
-                return true;
-            }
+        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            return true;
         }
         return false;
     };
@@ -26,11 +24,9 @@ export class NuageDeSpores extends Action {
     useEffect = () => {
         let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
-            if (card.type == "Créature") {
-                card.stat("Poison").increase(5);
-            }
+            card.stat("Brûlure").increase(5);
         }
-        
+
         this.move("Défausse");
         this.pose();
     };

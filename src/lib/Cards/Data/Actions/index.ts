@@ -39,6 +39,7 @@ export * from './Horizon';
 export * from './Hydratation';
 export * from './Ignorer';
 export * from './Incantation';
+export * from './Incendie';
 export * from './Innovation';
 export * from './Inondation';
 export * from './Intoxication';

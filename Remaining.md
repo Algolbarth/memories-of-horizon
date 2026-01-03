@@ -68,7 +68,6 @@ Sort vivant : créature sort.
 
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée.
-Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
@@ -242,6 +241,8 @@ Ver des sables : quand attaque : détruit la carte dans la réserve adverse en p
 Élémentaire de sable 
 Golem de lave 
 Désert : lieu pour les cartes d'élément Feu et Terre.
+Peau magmatique : convertit l'endurance en force.
+Coeur de pierre : convertit la force en endurance.
 
 ### Feu/Air
 Dragon 
