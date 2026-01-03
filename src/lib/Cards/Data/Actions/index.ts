@@ -85,4 +85,5 @@ export * from './TirHydraulique';
 export * from './TourneeGenerale';
 export * from './TremblementDeTerre';
 export * from './VagueDeferlante';
+export * from './Vigilance';
 export * from './Vulnerabilite';
