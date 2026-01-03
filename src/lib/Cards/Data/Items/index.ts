@@ -18,6 +18,7 @@ export * from './FioleDeCorindon';
 export * from './FioleDeCristal';
 export * from './FioleDeVerre';
 export * from './FlecheEnBois';
+export * from './HerbesCuratives';
 export * from './HerbesMedicinales';
 export * from './Lait';
 export * from './Livre';

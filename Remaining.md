@@ -71,7 +71,6 @@ Sort vivant : créature sort.
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée.
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain.
-Enflammer : enflamme une unité adverse sur le terrain.
 Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
@@ -80,7 +79,6 @@ Jarre de flamme : objet.
 
 ### Vegetal
 Dague empoisonnée : Quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
-Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain.
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée.
