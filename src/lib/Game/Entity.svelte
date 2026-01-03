@@ -98,7 +98,7 @@
 
 	div.preview {
 		border-color: black;
-		border-radius : 0;
+		border-radius: 0;
 
 		display: grid;
 		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;

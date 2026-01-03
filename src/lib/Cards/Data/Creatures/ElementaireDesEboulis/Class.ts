@@ -28,7 +28,7 @@ export class ElementaireDesEboulis extends Creature {
                 return true;
             }
         }
-        return false
+        return false;
     };
 
     select = () => {

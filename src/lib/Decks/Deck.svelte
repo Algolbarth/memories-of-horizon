@@ -188,7 +188,7 @@
 						{:else}
 							<button class="desactivate">&#9650</button>
 						{/if}
-						
+
 						{#if i < system.deck.cards.length - 1}
 							<button
 								class="active"

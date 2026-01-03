@@ -30,7 +30,7 @@
 		</div>
 		<div>/ 100</div>
 	</div>
-	
+
 	<div class="preview" style={"background:" + system.ressources.find("Or")?.color + ";color:" + (system.ressources.find("Or")?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 		<div>Or</div>
 		<div>{gold}</div>

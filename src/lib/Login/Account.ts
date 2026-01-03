@@ -5,9 +5,9 @@ export class Account {
     preconstruct: Gamemode = new Gamemode();
     construct: Gamemode = new Gamemode();
     system: System;
-    play_time: number = 0
-    session_time : number = 0;
-    best_session_time : number = 0;
+    play_time: number = 0;
+    session_time: number = 0;
+    best_session_time: number = 0;
 
     constructor(system: System, name: string) {
         this.system = system;

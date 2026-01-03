@@ -204,7 +204,7 @@ export class Battle {
 
     endTurn = () => {
         this.resetAction();
-        
+
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);

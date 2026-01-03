@@ -26,7 +26,7 @@ export class MonstreErrant extends Action {
             cards[0].stat("Constitution").increase(100);
             cards[0].stat("Force").increase(100);
         }
-        
+
         this.move("Défausse");
         this.pose();
     };

@@ -74,7 +74,7 @@ button.menu {
 
 button.menu:hover {
   color: black;
-  
+
   border-color: black var(--menu_border) var(--menu_border) black;
 
   background-color: var(--menu_hover);

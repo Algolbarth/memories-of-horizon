@@ -42,7 +42,7 @@
 		</button>
 
 		<br />
-		
+
 		version {PKG.version} - 2025
 	</div>
 </div>

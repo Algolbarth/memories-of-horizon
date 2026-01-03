@@ -19,4 +19,4 @@ export class Catapulte extends Building {
             this.owner.adversary().zone("Terrain").cards[0].damageByEffect(20);
         }
     };
-}
+};

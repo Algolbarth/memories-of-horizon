@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
-    import { several } from "../Utils";
+	import { several } from "../Utils";
 	import { Deck } from "./Deck";
 
 	export let system: System;
@@ -32,7 +32,7 @@
 					<div class="box">
 						{several(deck.victory + deck.defeat, ["parties", "jouées"])}
 						<br />
-						{several(deck.victory, ["gagnée"])} 
+						{several(deck.victory, ["gagnée"])}
 						<br />
 						{several(deck.defeat, ["perdue"])}
 					</div>
@@ -76,7 +76,7 @@
 
 		width: 100%;
 		height: 100%;
-		
+
 		background-color: var(--deck);
 		background-image: var(--leather);
 

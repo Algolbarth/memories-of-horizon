@@ -19,4 +19,4 @@ export class DonjonAbandonne extends Building {
             this.owner.getCard("Monstre errant").add("Réserve");
         }
     };
-}
+};

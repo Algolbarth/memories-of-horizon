@@ -18,7 +18,7 @@ export class Ignorer extends Action {
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
             if (card.stat("Protection").value() > 0) {
-                return true
+                return true;
             }
         }
         return false;

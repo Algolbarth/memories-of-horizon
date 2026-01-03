@@ -132,7 +132,7 @@ export class Unit extends Card {
         let result = {
             value: value,
             die: false
-        }
+        };
 
         if (this.stat("Esquive").value() == 0) {
             if (result.value < 0) {

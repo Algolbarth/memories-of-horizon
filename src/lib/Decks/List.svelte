@@ -138,7 +138,7 @@
 
 		background-color: var(--deck_preview);
 		background-image: var(--leather);
-		
+
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Unit, type Card } from "../Class";
-    import Life from "./Life.svelte";
+	import Life from "./Life.svelte";
 
 	export let card: Card;
 

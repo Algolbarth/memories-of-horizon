@@ -21,5 +21,5 @@ export class BibliothequeElfique extends Building {
         if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Elfe")) {
             this.stat("Intelligence").increase(1);
         }
-    }
+    };
 }

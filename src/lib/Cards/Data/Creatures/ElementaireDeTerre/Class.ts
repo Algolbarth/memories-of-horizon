@@ -24,7 +24,7 @@ export class ElementaireDeTerre extends Creature {
         if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
-        return false
+        return false;
     };
 
     select = () => {

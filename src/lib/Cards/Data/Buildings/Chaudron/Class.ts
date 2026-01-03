@@ -19,4 +19,4 @@ export class Chaudron extends Building {
             this.owner.getCard("Mélange").add("Réserve");
         }
     };
-}
+};

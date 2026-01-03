@@ -81,7 +81,7 @@
 
 	div.paper:hover {
 		transition: all var(--delay_hover) ease-in-out;
-		
+
 		background-color: var(--preview_hover);
 	}
 

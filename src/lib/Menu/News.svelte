@@ -18,9 +18,7 @@
 
 <div class="scroll">
 	<div class="zone">
-		<div class="paper title">
-			DERNIÈRES NOUVEAUTÉS
-		</div>
+		<div class="paper title">DERNIÈRES NOUVEAUTÉS</div>
 
 		<div class="paper">
 			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
@@ -89,9 +87,7 @@
 	</div>
 
 	<div class="zone">
-		<div class="paper title">
-			NOUVEAUTÉS À VENIR
-		</div>
+		<div class="paper title">NOUVEAUTÉS À VENIR</div>
 
 		<div class="paper">Rien pour le moment</div>
 	</div>

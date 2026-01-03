@@ -132,7 +132,7 @@ export class Entity {
         if (number > 1) {
             array = this.discover(number - 1, condition, drawer, array);
         }
-        return array
+        return array;
     };
 
     canUpStack = () => {

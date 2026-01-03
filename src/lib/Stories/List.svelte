@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Story } from "./Story";
 	import type { System } from "../System/Class";
-    import View from "./View.svelte";
+	import View from "./View.svelte";
 
 	export let system: System;
 

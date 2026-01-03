@@ -30,7 +30,7 @@ export class NuageDeSpores extends Action {
                 card.stat("Poison").increase(5);
             }
         }
-        
+
         this.move("Défausse");
         this.pose();
     };

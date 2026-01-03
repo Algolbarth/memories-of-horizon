@@ -36,7 +36,7 @@
 		</div>
 
 		{#if isDropdownOpen}
-			<div class="list scroll" style:max-height={height + "vh"} style:width={(width - 0.4) + "vw"}>
+			<div class="list scroll" style:max-height={height + "vh"} style:width={width - 0.4 + "vw"}>
 				{#each array as element}
 					<button
 						class="element"

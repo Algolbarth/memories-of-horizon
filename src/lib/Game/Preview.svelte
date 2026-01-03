@@ -114,14 +114,14 @@
 						{:else}
 							<button class="desactivate">&#9650</button>
 						{/if}
-						
+
 						{#if card.slot != undefined && card.slot < card.zone.cards.length - 1}
 							<button
 								class="active"
 								on:click={() => {
 									card.down();
 									system = system;
-									console.log(system.game?.player.zone("Terrain"))
+									console.log(system.game?.player.zone("Terrain"));
 								}}
 							>
 								&#9660
@@ -131,7 +131,7 @@
 						{/if}
 					{/if}
 				{/if}
-				
+
 				{#if fonction != undefined && condition != undefined}
 					{#if condition(card)}
 						<button
@@ -170,7 +170,7 @@
 		background: transparent;
 		color: var(--desactivate);
 	}
-	
+
 	#infos {
 		text-align: left;
 	}

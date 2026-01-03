@@ -23,7 +23,7 @@ export class HerbesMedicinales extends Item {
             }
         }
         return false;
-    }
+    };
 
     select = () => {
         if (this.owner == this.system.game.player) {

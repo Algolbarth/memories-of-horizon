@@ -19,4 +19,4 @@ export class Caserne extends Building {
             this.owner.getCard("Soldat").add("Terrain");
         }
     };
-}
+};

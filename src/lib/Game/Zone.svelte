@@ -26,7 +26,7 @@
 						Nv {zone.level}
 					{/if}
 				</div>
-				
+
 				<div>
 					{#if zone.name != "Défausse"}
 						({zone.cards.length} / {zone.size})
@@ -95,7 +95,7 @@
 					<Preview bind:system bind:card bind:condition bind:fonction />
 				{/each}
 			{:else}
-			    Vide
+				Vide
 				<br />
 			{/if}
 		</div>

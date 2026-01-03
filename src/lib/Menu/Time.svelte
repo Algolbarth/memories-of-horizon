@@ -1,10 +1,10 @@
 <script lang="ts">
     export let time: number;
 
-    $:days = Math.floor(time / (24 * 3600));
-    $:hours = Math.floor((time % (24 * 3600)) / 3600);
-    $:minutes = Math.floor((time % 3600) / 60);
-    $:seconds = time % 60;
+    $: days = Math.floor(time / (24 * 3600));
+    $: hours = Math.floor((time % (24 * 3600)) / 3600);
+    $: minutes = Math.floor((time % 3600) / 60);
+    $: seconds = time % 60;
 </script>
 
 {#if days > 0}

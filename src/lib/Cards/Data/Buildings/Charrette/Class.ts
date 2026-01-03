@@ -19,4 +19,4 @@ export class Charrette extends Building {
             this.owner.draw(5);
         }
     };
-}
+};

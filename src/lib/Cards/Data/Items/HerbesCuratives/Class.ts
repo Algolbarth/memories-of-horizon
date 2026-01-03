@@ -47,7 +47,7 @@ export class HerbesCuratives extends Item {
         target.stat("Poison").set(0);
         target.stat("Toxicité").set(1);
         target.stat("Brûlure").set(0);
-        
+
         this.move("Défausse");
         this.pose();
     };

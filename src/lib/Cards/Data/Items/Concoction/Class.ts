@@ -109,7 +109,7 @@ export class Concoction extends Item {
 
         if (target != undefined) {
             target.damageByEffect(this.stat("Infusion explosive").value() * 2);
-            
+
             if (target.type == "Créature") {
                 target.heal(this.stat("Infusion de soin").value() * 2);
                 target.stat("Force").step += this.stat("Infusion de force").value() * 4;
