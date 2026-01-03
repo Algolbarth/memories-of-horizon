@@ -46,7 +46,8 @@ export class Rappel extends Action {
         if (target instanceof Unit) {
             target.stat("Santé").init(1);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : diminue la capacité en feu de 1.
+Quand meurt : diminue la capacité en feu de 3.

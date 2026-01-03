@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Retire la protection d'une unité alliée sur le terrain.
+Les cartes piochables sont de niveau 1.

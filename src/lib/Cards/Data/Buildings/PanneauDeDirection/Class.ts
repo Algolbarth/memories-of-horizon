@@ -15,6 +15,8 @@ export class PanneauDeDirection extends Building {
     };
 
     refreshStackEffect = () => {
-        this.owner?.draw(1);
+        if (this.zone?.name == "Terrain") {
+            this.owner?.draw(1);
+        }
     };
 };

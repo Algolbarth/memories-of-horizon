@@ -5,5 +5,6 @@ export * from './MerDEther';
 export * from './Montagne';
 export * from './Plaine';
 export * from './Village';
+export * from './VillageNatal';
 export * from './Ville';
 export * from './Volcan';

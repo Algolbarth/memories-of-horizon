@@ -11,14 +11,14 @@ export class ElementaireDeFeu extends Creature {
         this.init([["Feu", 15]]);
         this.familles.base.push("Élémentaire");
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
         this.text = Text;
     };
 
     dieEffect = () => {
-        if (this.owner.ressource("Feu").production >= 1) {
-            this.owner.ressource("Feu").production--;
+        if (this.owner.ressource("Feu").production >= 3) {
+            this.owner.ressource("Feu").production -= 3;
         }
     };
 };

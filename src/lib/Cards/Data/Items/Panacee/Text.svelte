@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Enlève tous les effets négatifs d'une créature alliée sur le terrain.
+Retire tous les effets négatifs d'une créature alliée sur le terrain.

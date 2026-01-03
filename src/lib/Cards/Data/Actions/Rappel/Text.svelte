@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Place sur la pile une carte alliée située dans la défausse. Si c'est une unité, fixe à 1 la constitution de cette carte.
+Place sur la pile une carte alliée située dans la défausse. Si c'est une unité, fixe à 1 la santé de cette carte.

@@ -21,10 +21,11 @@ export class ElementaireExplosif extends Creature {
     dieEffect = () => {
         if (this.owner.ressource("Feu").production >= 5) {
             this.owner.ressource("Feu").production -= 5;
+
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
                 card.damageByEffect(5);
             }
         }
     };
-}
+};

@@ -166,6 +166,10 @@ export class Unit extends Card {
     die = () => {
         this.stat("Santé").init(0);
 
+        if (this.type == "Créature") {
+            this.stat("Initiative").set(this.stat("Maîtrise").value());
+        }
+
         if (this.dieEffect != undefined) {
             this.dieEffect();
         }

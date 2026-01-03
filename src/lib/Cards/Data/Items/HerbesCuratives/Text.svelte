@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Enlève le poison, la toxicité et la brûlure d'une créature alliée sur le terrain.
+Retire le poison, la toxicité et la brûlure d'une créature alliée sur le terrain.

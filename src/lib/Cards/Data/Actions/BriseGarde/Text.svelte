@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Fixe à 0 la garde d'une unité adverse sur le terrain.
+Retire la garde d'une unité adverse sur le terrain.
