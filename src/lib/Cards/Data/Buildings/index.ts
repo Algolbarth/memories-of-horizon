@@ -14,6 +14,7 @@ export * from './Caserne';
 export * from './Catapulte';
 export * from './Charrette';
 export * from './Chaudron';
+export * from './DonjonAbandonne';
 export * from './Epouvantail';
 export * from './Etable';
 export * from './FeuDeCamp';
