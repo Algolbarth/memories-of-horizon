@@ -1,7 +1,6 @@
 # Mécaniques
 
 Mettre les getter dans leurs dossiers respectif 
-Changer le logo 
 Modifier l'histoire pour intégrer les planètes et l'espace 
 Finir l'histoire impériale (pk c'est souvent des humains) 
 Ajouter les éléments manquants dans le mode entraînement (deck) 
@@ -35,7 +34,6 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Vole
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
 
 ### Equipements
-Brassard de santé : augmente la régénération de la créature équipée.
 Plastron de piques : augmente la constitution et l'épine de la créature équipée.
 
 ### Neutre
@@ -70,7 +68,6 @@ Sort vivant : créature sort.
 
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée.
-Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain.
 Incendie : enflamme toutes les unités adverses sur le terrain.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
@@ -98,7 +95,6 @@ Sanglier : créature bête.
 Cerf : créature bête.
 Hérisson : créature bête, épine.
 Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa valeur de vente.
-Herbes curatives: objet plante
 
 ### Eau
 Barrière de corail : créature plante, régénération.

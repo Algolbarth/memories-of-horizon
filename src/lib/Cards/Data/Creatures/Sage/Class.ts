@@ -23,4 +23,4 @@ export class Sage extends Creature {
             this.stat("Intelligence").increase(1);
         }
     };
-}
+};

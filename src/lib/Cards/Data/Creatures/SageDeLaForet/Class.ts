@@ -14,4 +14,4 @@ export class SageDeLaForet extends Creature {
         this.stat("Force").init(5);
         this.stat("Intelligence").init(5);
     };
-}
+};
