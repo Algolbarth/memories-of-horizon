@@ -4,13 +4,13 @@ import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Poire extends Item {
-    name = "Poire";
+export class Chataigne extends Item {
+    name = "Châtaigne";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 4], ["Végétal", 4]]);
+        this.init([["Or", 6], ["Végétal", 6]]);
         this.familles.base.push("Nourriture");
         this.familles.base.push("Plante");
 
@@ -48,10 +48,10 @@ export class Poire extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Régénération").increase(10);
+            target.stat("Épine").increase(5);
         }
         else {
-            target.heal(15);
+            target.heal(25);
         }
 
         this.move("Défausse");

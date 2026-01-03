@@ -53,6 +53,7 @@ export class Pomme extends Item {
         else {
             target.heal(15);
         }
+
         this.move("Défausse");
         this.pose();
     };
