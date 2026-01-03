@@ -16,9 +16,10 @@ Augmente la taille d'une zone de X => 50X
 
 X Force => X/2
 X Vitalité => X/2
-X Constitution (pour une créature) => 2X/3
+X Constitution (pour une créature) => 3X/2
 X Consitution (pour un bâtiment) => X/2
 X Force + X Constitution (pour une créature) => X
+X Régénération => 3X/2
 X Adresse => X
 X Intensité => 20X
 X Magie => 2X
@@ -34,7 +35,8 @@ X Percée => X/4
 X Intelligence => 5X
 X Initiative => 5X
 X Poison => X
-X Toxicité => 2X
+X Toxicité => 3X/2
+X Brûlure => 3X/2
 
 Inflige X dégâts => X/2
 Soigne X blessures  => X/2

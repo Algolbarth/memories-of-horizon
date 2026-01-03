@@ -8,11 +8,11 @@ export class SalamandreDesEaux extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Eau", 15]]);
+        this.init([["Or", 10], ["Eau", 10]]);
         this.familles.base.push("Reptile");
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
 
         this.text = Text;
     };

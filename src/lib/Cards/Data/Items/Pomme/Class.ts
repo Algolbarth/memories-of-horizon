@@ -10,7 +10,7 @@ export class Pomme extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 3], ["Végétal", 2]]);
+        this.init([["Or", 4], ["Végétal", 4]]);
         this.familles.base.push("Nourriture");
         this.familles.base.push("Plante");
 
@@ -48,12 +48,12 @@ export class Pomme extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Constitution").increase(5);
+            target.stat("Constitution").increase(10);
         }
         else {
-            target.heal(10);
+            target.heal(15);
         }
         this.move("Défausse");
         this.pose();
     };
-}
+};

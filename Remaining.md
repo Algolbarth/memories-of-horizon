@@ -86,7 +86,6 @@ Jardinier : créature elfe, au début de la phase de préparation : soigne toute
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
 Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la réserve.
 Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
-Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.

@@ -30,6 +30,7 @@ export * from './ParcheminDeSagesse';
 export * from './PierrePhilosophale';
 export * from './Piment';
 export * from './PlaqueDArmure';
+export * from './Poire';
 export * from './Pomme';
 export * from './PommeDeTerre';
 export * from './PotionDEndurance';

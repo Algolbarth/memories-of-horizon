@@ -10,7 +10,7 @@ export class Enflammer extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5], ["Feu", 5]]);
+        this.init([["Or", 4], ["Feu", 4]]);
 
         this.text = Text;
     };

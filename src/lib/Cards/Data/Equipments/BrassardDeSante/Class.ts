@@ -8,11 +8,11 @@ export class BrassardDeSante extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 30]]);
         this.familles.base.push("Armure");
 
-        this.equipStat("Régénération").init(10);
+        this.equipStat("Régénération").init(20);
 
         this.text = Text;
     };
-}
+};

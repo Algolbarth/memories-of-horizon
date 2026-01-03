@@ -9,7 +9,7 @@ export class Incendie extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50], ["Feu", 50]]);
+        this.init([["Or", 40], ["Feu", 40]]);
 
         this.text = Text;
     };

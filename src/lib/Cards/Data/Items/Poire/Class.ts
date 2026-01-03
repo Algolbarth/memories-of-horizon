@@ -1,23 +1,25 @@
 import type { System } from '../../../../System/Class';
-import { Action } from '../../../Class/Action';
 import type { Creature } from '../../../Class/Creature';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Intoxication extends Action {
-    name = "Intoxication";
+export class Poire extends Item {
+    name = "Poire";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8]]);
+        this.init([["Or", 4], ["Végétal", 4]]);
+        this.familles.base.push("Nourriture");
+        this.familles.base.push("Plante");
 
         this.text = Text;
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Poison").value() > 0) {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.type == "Créature") {
                 return true;
             }
         }
@@ -31,8 +33,8 @@ export class Intoxication extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Poison").value() > 0) {
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (target == undefined && card.type == "Créature") {
                     target = card;
                 }
             }
@@ -44,7 +46,13 @@ export class Intoxication extends Action {
     };
 
     useEffect = (target: Creature) => {
-        target.stat("Toxicité").increase(5);
+        this.targeting(target);
+        if (!target.isDamaged()) {
+            target.stat("Régénération").increase(10);
+        }
+        else {
+            target.heal(15);
+        }
         this.move("Défausse");
         this.pose();
     };
