@@ -24,6 +24,7 @@ export * from './CeintureDeCuir';
 export * from './CollierEnDentDeLoup';
 export * from './CotteDeMaillesEnFer';
 export * from './CotteDeMaillesEnPlatine';
+export * from './CotteEpineuse';
 export * from './Couronne';
 export * from './DagueDeCuivre';
 export * from './DoublesHachettesBarbare';

@@ -37,6 +37,7 @@ X Initiative => 5X
 X Poison => X
 X Toxicité => 3X/2
 X Brûlure => 3X/2
+X Épine => 5X/2
 
 Inflige X dégâts => X/2
 Soigne X blessures  => X/2
