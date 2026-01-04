@@ -96,7 +96,6 @@ Barrière de corail : créature plante, régénération.
 Pêcheur : quand posé : pioche 1 créature poisson.
 Requin : créature poisson.
 Banc de poisson : crée 5 Sardine dans la réserve.
-Sardine : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la réserve.
 
