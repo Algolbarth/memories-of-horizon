@@ -7,6 +7,7 @@ export * from './AttaqueResiliente';
 export * from './Autodafe';
 export * from './Aventure';
 export * from './BagarreDeTaverne';
+export * from './BancDeSardine';
 export * from './Biodiversite';
 export * from './Blocage';
 export * from './Bombardement';
