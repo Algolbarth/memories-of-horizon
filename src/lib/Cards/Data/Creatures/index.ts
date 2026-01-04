@@ -103,6 +103,7 @@ export * from './OndinDesRivieres';
 export * from './OursDesMontagnes';
 export * from './OursForestier';
 export * from './Palefrenier';
+export * from './Pecheur';
 export * from './PetiteFille';
 export * from './Phytomancien';
 export * from './PiquierGobelin';
