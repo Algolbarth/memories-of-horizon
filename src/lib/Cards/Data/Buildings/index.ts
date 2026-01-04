@@ -38,6 +38,7 @@ export * from './Porte';
 export * from './Puit';
 export * from './PuitDeMana';
 export * from './Restaurant';
+export * from './Scierie';
 export * from './Siphon';
 export * from './TourDArcher';
 export * from './TourDeGuet';
