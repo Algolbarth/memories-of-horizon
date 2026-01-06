@@ -27,6 +27,7 @@ export * from './CotteDeMaillesEnPlatine';
 export * from './CotteEpineuse';
 export * from './Couronne';
 export * from './DagueDeCuivre';
+export * from './DagueEmpoisonnee';
 export * from './DoublesHachettesBarbare';
 export * from './DoublesLamesDeFer';
 export * from './Egide';

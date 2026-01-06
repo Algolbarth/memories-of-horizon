@@ -20,4 +20,4 @@ export class EpeeEnflammee extends Equipment {
     fightEffect = (defender: Unit) => {
         defender.damageByEffect(20);
     };
-}
+};
