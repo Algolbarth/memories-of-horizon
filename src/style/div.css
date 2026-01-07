@@ -9,7 +9,6 @@ div.window {
   background-image: var(--rock);
   font-weight: bold;
 
-  cursor: url('/assets/Pictures/Hand.cur'), default;
   overflow: hidden;
 }
 

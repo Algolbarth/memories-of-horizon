@@ -204,3 +204,11 @@ button.choice:hover {
 
   border-color: black var(--choice_border) var(--choice_border) black;
 }
+
+button.text {
+  cursor: url('/assets/Pictures/Hand.cur'), default;
+}
+
+button.text:hover {
+  color: black;
+}

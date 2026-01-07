@@ -1,8 +1,12 @@
-<img src="/assets/Pictures/NewLogo.png" alt="Logo" class="logo" />
+<button class="text">
+    <img src="/assets/Pictures/NewLogo.png" alt="Logo" class="logo" />
+</button>
 
 <br />
 
-Version {PKG.version}
+<button class="text">
+    Version {PKG.version}
+</button>
 
 <style>
     img.logo {
