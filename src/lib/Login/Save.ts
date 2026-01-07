@@ -12,6 +12,7 @@ export function save(system: System) {
         else {
             text += system.account.best_session_time + "_";
         }
+        text += system.account.ingame_time + "_";
 
         text += system.account.preconstruct.victory + "_";
         text += system.account.preconstruct.defeat + "_";

@@ -9,6 +9,10 @@
     if (system.account != undefined) {
       system.account.play_time++;
       system.account.session_time++;
+
+      if (system.game != undefined && system.game.mode != "Entraînement") {
+        system.account.ingame_time++;
+      }
     }
   };
 

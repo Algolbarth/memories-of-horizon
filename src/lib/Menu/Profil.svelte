@@ -9,6 +9,7 @@
 	$: play_time = system.account?.play_time;
 	$: session_time = system.account?.session_time;
 	$: best_session_time = system.account?.best_session_time;
+	$: ingame_time = system.account?.ingame_time;
 
 	function rename() {
 		if (system.account) {
@@ -41,10 +42,19 @@
 
 		<div class="container">
 			<div>
-				Temps de jeu :
+				Temps de jeu total :
 				<Time bind:time={play_time} />
 			</div>
 
+			<div>
+				Temps de jeu en partie:
+				<Time bind:time={ingame_time} />
+			</div>
+
+			<div></div>
+		</div>
+
+		<div class="container">
 			<div>
 				Temps de session :
 				<Time bind:time={session_time} />
@@ -56,6 +66,8 @@
 					<Time bind:time={best_session_time} />
 				{/if}
 			</div>
+
+			<div></div>
 		</div>
 	</div>
 
