@@ -67,6 +67,10 @@ export class Stat {
         this.add = value - this.base;
     };
 
+    display = () => {
+        return this.condition();
+    };
+
     condition = () => {
         if (this.value() > this.min) {
             return true;

@@ -21,13 +21,13 @@ export class MageDeLaNature extends Creature {
 
     otherPoseEffect = (c: Card) => {
         if (this.zone.name == "Terrain" && c.familles.total().includes("Sort") && c.owner == this.owner) {
-            let condition = (card: Card) => {
+            let read_condition = (card: Card) => {
                 if (card.type == "Créature" && c.level == card.level) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, condition);
+            this.owner.draw(1, read_condition);
         }
     };
 }

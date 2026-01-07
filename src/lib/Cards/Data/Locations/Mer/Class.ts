@@ -14,7 +14,7 @@ export class Mer extends Location {
         this.text = Text;
     };
 
-    condition = (card: Card) => {
+    can_read = (card: Card) => {
         if (card.elements.total().includes("Eau")) {
             return true;
         }

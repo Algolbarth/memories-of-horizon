@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function fonction(choice) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}
@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Créature");
+			select_action("Créature");
 		}}
 	>
 		Se place sur le terrain
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Effet");
+			select_action("Effet");
 		}}
 	>
 		Se détruit pour infliger 5 dégâts à toutes les unités adverses

@@ -24,6 +24,10 @@ export class Trait {
         return total;
     };
 
+    display = () => {
+        return this.condition();
+    };
+
     condition = () => {
         return this.value();
     };

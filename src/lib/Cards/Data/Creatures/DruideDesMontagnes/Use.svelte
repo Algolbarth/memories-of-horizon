@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function fonction(choice) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 		system = system;
@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Nain");
+			select_action("Nain");
 		}}
 	>
 		Se transforme en Druide des montagnes (forme nain)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("Ours");
+			select_action("Ours");
 		}}
 	>
 		Se transforme en Druide des montagnes (forme ours)

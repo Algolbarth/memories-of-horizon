@@ -15,13 +15,13 @@ export class Forger extends Action {
     };
 
     useEffect = () => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.familles.total().includes("Équipement")) {
                 return true;
             }
             return false;
         };
-        this.owner.discover(1, condition);
+        this.owner.discover(1, read_condition);
         this.move("Défausse");
         this.pose();
     };

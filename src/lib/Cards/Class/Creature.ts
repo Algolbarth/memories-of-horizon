@@ -26,7 +26,7 @@ export class Creature extends Unit {
         };
 
         this.addStat("Force", 0);
-        this.stat("Force").condition = function () {
+        this.stat("Force").display = function () {
             return true;
         };
 
@@ -43,7 +43,7 @@ export class Creature extends Unit {
         this.addStat("Adresse", 0);
 
         this.addStat("Intensité", 2);
-        this.stat("Intensité").condition = function () {
+        this.stat("Intensité").display = function () {
             if (this.value() != 2 || this.card.stat("Adresse").value() > 0 || this.card.stat("Critique").value() > 0) {
                 return true;
             }
@@ -51,8 +51,8 @@ export class Creature extends Unit {
         };
 
         this.addStat("Critique", 0);
-        this.stat("Critique").condition = function () {
-            if (this.value() > 0 || this.card.stat("Adresse").value() > 0) {
+        this.stat("Critique").display = function () {
+            if (this.condition() || this.card.stat("Adresse").value() > 0) {
                 return true;
             }
             return false;
@@ -66,8 +66,8 @@ export class Creature extends Unit {
 
         this.addStat("Toxicité", 1, 1);
         this.stat("Toxicité").debuff = true;
-        this.stat("Toxicité").condition = function () {
-            if (this.value() != 1 || this.card.stat("Poison").value() > 0) {
+        this.stat("Toxicité").display = function () {
+            if (this.condition() || this.card.stat("Poison").value() > 0) {
                 return true;
             }
             return false;

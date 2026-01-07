@@ -29,13 +29,13 @@ export class Aventurier extends Creature {
     };
 
     useEffect = (choice: string) => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.type == choice) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(1, condition);
+        this.owner.draw(1, read_condition);
         this.move("Terrain");
         this.pose();
     };

@@ -15,7 +15,7 @@ export class Location extends Card {
         this.pose();
     };
 
-    condition = (card: Card) => {
+    can_read = (card: Card) => {
         return true;
     };
 };

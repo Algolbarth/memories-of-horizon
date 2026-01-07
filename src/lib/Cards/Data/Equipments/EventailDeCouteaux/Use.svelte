@@ -8,14 +8,14 @@
 
 	let choice: string | undefined = undefined;
 
-	function condition(card: Card) {
+	function select_condition(card: Card) {
 		if (card instanceof Creature && card.canEquip()) {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card: Card | undefined) {
+	function select_action(card: Card | undefined) {
 		system.game.use.card.useEffect(choice, card);
 		system.game.use.reset();
 	}
@@ -38,7 +38,7 @@
 			class="big choice"
 			on:click={() => {
 				choice = "damage";
-				fonction(undefined);
+				select_action(undefined);
 			}}
 		>
 			Inflige 3 dégâts à toutes les unités adverses sur le terrain
@@ -53,5 +53,5 @@
 	>
 		↩
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
 {/if}

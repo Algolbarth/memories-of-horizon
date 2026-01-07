@@ -16,13 +16,13 @@ export class Pelle extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            let condition = (card: Card) => {
+            let read_condition = (card: Card) => {
                 if (card.elements.total().includes("Terre")) {
                     return true;
                 }
                 return false;
             };
-            this.owner.discover(1, condition);
+            this.owner.discover(1, read_condition);
             this.owner.ressource("Terre").current += 10;
         }
     };

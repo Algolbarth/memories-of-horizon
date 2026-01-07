@@ -14,10 +14,10 @@ export class ChefLieu extends Location {
         this.text = Text;
     };
 
-    condition = (card: Card) => {
+    can_read = (card: Card) => {
         if (card.level >= 5) {
             return true;
         }
         return false;
     };
-}
+};

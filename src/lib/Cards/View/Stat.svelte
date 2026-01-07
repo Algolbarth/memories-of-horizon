@@ -3,8 +3,6 @@
 	import Life from "./Life.svelte";
 
 	export let card: Card;
-
-	let special_interface: string[] = ["Santé", "Vitalité"];
 </script>
 
 <div class="box">
@@ -18,7 +16,7 @@
 		{/if}
 
 		{#each card.stats as stat}
-			{#if stat.condition() && !special_interface.includes(stat.name)}
+			{#if stat.display()}
 				<div class="row">
 					<div>
 						{stat.name}

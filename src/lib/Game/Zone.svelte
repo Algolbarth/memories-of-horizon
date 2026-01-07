@@ -8,8 +8,8 @@
 	export let system: System;
 	export let zone: Zone;
 	export let entity: Entity;
-	export let condition: Function | undefined;
-	export let fonction: Function | undefined;
+	export let select_condition: Function | undefined;
+	export let select_action: Function | undefined;
 	export let direction: string = "left";
 </script>
 
@@ -36,7 +36,7 @@
 
 			<div style="text-align:right;">
 				{#if zone instanceof Stack}
-					{#if entity == system.game.player && zone.level < 20 && fonction == undefined && system.game.phase == "Préparation"}
+					{#if entity == system.game.player && zone.level < 20 && select_action == undefined && system.game.phase == "Préparation"}
 						{#if entity.canUpStack()}
 							<button
 								class="active"
@@ -52,7 +52,8 @@
 						{/if}
 						{zone.level * 10} Or -
 					{/if}
-					{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
+
+					{#if entity == system.game.player && select_action == undefined && system.game.phase == "Préparation"}
 						{#if entity.canActualiseStack()}
 							<button
 								class="active"
@@ -68,7 +69,8 @@
 						{/if}
 						{10} Or
 					{/if}
-					{#if entity == system.game.player && fonction == undefined && system.game.phase == "Préparation"}
+
+					{#if entity == system.game.player && select_action == undefined && system.game.phase == "Préparation"}
 						-
 						<button
 							on:click={() => {
@@ -92,7 +94,7 @@
 		<div id="list">
 			{#if zone.cards.length > 0}
 				{#each zone.cards as card}
-					<Preview bind:system bind:card bind:condition bind:fonction />
+					<Preview bind:system bind:card bind:select_condition bind:select_action />
 				{/each}
 			{:else}
 				Vide

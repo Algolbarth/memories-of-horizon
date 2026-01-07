@@ -47,7 +47,7 @@ export class Lait extends Item {
                         target = card;
                         if (!card.isDamaged() && card.hasDebuff()) {
                             for (const s of card.stats) {
-                                if (s.debuff && s.condition()) {
+                                if (s.debuff && s.value() > s.min) {
                                     stat = s;
                                 }
                             }

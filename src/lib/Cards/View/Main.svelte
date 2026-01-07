@@ -36,25 +36,29 @@
 						X
 					</button>
 				</div>
+
 				<div style="max-height: 80vh;" class="scroll">
 					<Caracteristics bind:card bind:system />
 					{#if card.text != undefined}
 						<Effet bind:card bind:system />
 					{/if}
-					{#if card.hasTrait()}
+
+					{#if card.displayTrait()}
 						<Trait bind:card />
 					{/if}
-					{#if card.hasStat()}
+					{#if card.displayStat()}
 						<Stat bind:card />
 					{/if}
-					{#if card instanceof Equipment && card.hasEquipTrait()}
-						<EquipTrait bind:card />
-					{/if}
-					{#if card instanceof Equipment && card.hasEquipStat()}
-						<EquipStat bind:card />
-					{/if}
+
 					{#if card instanceof Creature}
 						<Equipments bind:card bind:system />
+					{/if}
+
+					{#if card instanceof Equipment && card.displayEquipTrait()}
+						<EquipTrait bind:card />
+					{/if}
+					{#if card instanceof Equipment && card.displayEquipStat()}
+						<EquipStat bind:card />
 					{/if}
 
 					{#if system.settings.show_card_description}

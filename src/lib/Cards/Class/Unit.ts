@@ -16,17 +16,17 @@ export class Unit extends Card {
         };
 
         this.addStat("Santé", 1);
-        this.stat("Santé").condition = () => {
-            return true;
+        this.stat("Santé").display = () => {
+            return false;
         };
 
         this.addStat("Vitalité", 1, 1);
-        this.stat("Vitalité").condition = () => {
-            return true;
+        this.stat("Vitalité").display = () => {
+            return false;
         };
 
         this.addStat("Constitution", 0);
-        this.stat("Constitution").condition = () => {
+        this.stat("Constitution").display = () => {
             return false;
         };
         this.stat("Constitution").value = () => {
@@ -56,7 +56,7 @@ export class Unit extends Card {
         this.addStat("Épine", 0);
 
         this.addStat("Initiative", 1);
-        this.stat("Initiative").condition = function () {
+        this.stat("Initiative").display = function () {
             if (this.card.system.game?.phase == "Combat" || this.value() != this.card.stat("Maîtrise").value()) {
                 return true;
             }

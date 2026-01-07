@@ -5,7 +5,7 @@
 
 	let types = ["Action", "Bâtiment", "Créature", "Lieu", "Objet"];
 
-	function fonction(choice) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}
@@ -16,7 +16,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				fonction(type);
+				select_action(type);
 			}}
 		>
 			{type}

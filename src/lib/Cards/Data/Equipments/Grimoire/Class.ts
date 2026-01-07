@@ -16,13 +16,13 @@ export class Grimoire extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            let condition = (card: Card) => {
+            let read_condition = (card: Card) => {
                 if (card.familles.total().includes("Sort")) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, condition);
+            this.owner.draw(1, read_condition);
         }
     };
 }

@@ -354,9 +354,9 @@ export class Card {
         this.stats.push(new Stat(name, value, min, this));
     };
 
-    hasStat = () => {
+    displayStat = () => {
         for (const s of this.stats) {
-            if (s.condition()) {
+            if (s.display()) {
                 return true;
             }
         }
@@ -365,7 +365,7 @@ export class Card {
 
     hasDebuff = () => {
         for (const s of this.stats) {
-            if (s.condition() && s.debuff) {
+            if (s.debuff && s.condition()) {
                 return true;
             }
         }
@@ -385,9 +385,9 @@ export class Card {
         this.traits.push(new Trait(name, value, this));
     };
 
-    hasTrait = () => {
+    displayTrait = () => {
         for (const t of this.traits) {
-            if (t.value()) {
+            if (t.display()) {
                 return true;
             }
         }

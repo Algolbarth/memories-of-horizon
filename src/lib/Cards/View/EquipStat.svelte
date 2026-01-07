@@ -11,7 +11,7 @@
 
 	<div class="container">
 		{#each card.equipStats as stat}
-			{#if stat.condition()}
+			{#if stat.display()}
 				<div class="row">
 					<div>
 						{stat.name}

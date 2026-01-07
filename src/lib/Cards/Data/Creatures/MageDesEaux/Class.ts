@@ -21,14 +21,14 @@ export class MageDesEaux extends Creature {
 
     otherPoseEffect = (c: Card) => {
         if (this.zone.name == "Terrain" && c.familles.total().includes("Sort") && c.owner == this.owner) {
-            let condition = (card: Card) => {
+            let read_condition = (card: Card) => {
                 if (card.familles.total().includes("Sort")) {
                     return true;
                 }
                 return false;
             };
 
-            let cards = this.owner.draw(1, condition);
+            let cards = this.owner.draw(1, read_condition);
 
             if (cards[0] != undefined && this.owner.ressource("Mana").total() >= 5) {
                 this.owner.ressource("Mana").spend(5);

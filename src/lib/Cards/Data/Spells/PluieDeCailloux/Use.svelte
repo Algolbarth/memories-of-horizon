@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function fonction(choice) {
+	function select_action(choice) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}
@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("creature");
+			select_action("creature");
 		}}
 	>
 		Remplit le terrain allié d'Élémentaire de caillou
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("damage");
+			select_action("damage");
 		}}
 	>
 		Inflige 6 dégâts à toutes les unités adverses sur le terrain

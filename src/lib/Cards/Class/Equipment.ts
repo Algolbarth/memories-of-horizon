@@ -125,9 +125,9 @@ export class Equipment extends Item {
         this.equipStats.push(stat);
     };
 
-    hasEquipStat = () => {
+    displayEquipStat = () => {
         for (const stat of this.equipStats) {
-            if (stat.condition()) {
+            if (stat.display()) {
                 return true;
             }
         }
@@ -148,12 +148,12 @@ export class Equipment extends Item {
         trait.value = function () {
             return this.base;
         };
-        this.equipStats.push(trait);
+        this.equipTraits.push(trait);
     };
 
-    hasEquipTrait = () => {
+    displayEquipTrait = () => {
         for (const trait of this.equipTraits) {
-            if (trait.condition()) {
+            if (trait.display()) {
                 return true;
             }
         }

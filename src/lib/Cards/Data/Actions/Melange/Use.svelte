@@ -9,18 +9,18 @@
 	let potion_1: Item | undefined;
 	let potion_2: Item | undefined;
 
-	function condition(card: Card) {
+	function select_condition(card: Card) {
 		if (card.type == "Objet" && card.familles.total().includes("Potion") && (potion_1 == undefined || card != potion_1)) {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card: Card) {
+	function select_action_1(card: Card) {
 		potion_1 = card;
 	}
 
-	function fonction2(card: Card) {
+	function select_action_2(card: Card) {
 		potion_2 = card;
 
 		system.game.use.card.useEffect(potion_1, potion_2);
@@ -29,7 +29,7 @@
 </script>
 
 {#if potion_1 == undefined}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} {fonction} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {select_condition} select_action={select_action_1} />
 {:else}
 	<button
 		class="return"
@@ -39,5 +39,5 @@
 	>
 		↩
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {condition} fonction={fonction2} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {select_condition} select_action={select_action_2} />
 {/if}

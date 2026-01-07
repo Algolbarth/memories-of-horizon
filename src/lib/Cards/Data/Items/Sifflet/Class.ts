@@ -16,13 +16,13 @@ export class Sifflet extends Item {
     };
 
     useEffect = () => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(1, condition);
+        this.owner.draw(1, read_condition);
 
         let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {

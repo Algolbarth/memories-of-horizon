@@ -15,7 +15,7 @@ export class LivreDeRecette extends Item {
     };
 
     useEffect = () => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.familles.total().includes("Nourriture")) {
                 return true;
             }
@@ -23,10 +23,10 @@ export class LivreDeRecette extends Item {
         };
 
         if (this.owner.totalIntelligence() >= 20) {
-            this.owner.discover(5, condition);
+            this.owner.discover(5, read_condition);
         }
         else {
-            this.owner.discover(3, condition);
+            this.owner.discover(3, read_condition);
         }
 
         this.move("Défausse");

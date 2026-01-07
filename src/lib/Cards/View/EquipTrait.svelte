@@ -11,7 +11,7 @@
 
 	<div class="container">
 		{#each card.equipTraits as trait}
-			{#if trait.condition()}
+			{#if trait.display()}
 				<div>
 					{trait.name}
 				</div>

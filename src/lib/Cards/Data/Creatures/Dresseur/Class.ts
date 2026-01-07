@@ -19,13 +19,13 @@ export class Dresseur extends Creature {
     };
 
     useEffect = () => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 return true;
             }
             return false;
         };
-        let cards = this.owner.draw(1, condition);
+        let cards = this.owner.draw(1, read_condition);
 
         if (cards[0] != undefined) {
             cards[0].stat("Constitution").increase(20);

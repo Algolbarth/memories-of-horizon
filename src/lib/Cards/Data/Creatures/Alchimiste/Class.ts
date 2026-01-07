@@ -19,13 +19,13 @@ export class Alchimiste extends Creature {
     };
 
     useEffect = () => {
-        let condition = (card: Card) => {
+        let read_condition = (card: Card) => {
             if (card.familles.total().includes("Potion")) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(3, condition);
+        this.owner.draw(1, read_condition);
         this.move("Terrain");
         this.pose();
     };

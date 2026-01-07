@@ -6,15 +6,15 @@
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
-	export let condition: Function | undefined;
-	export let fonction: Function | undefined;
+	export let select_condition: Function | undefined;
+	export let select_action: Function | undefined;
 
 	$: is_player = card.owner == system.game?.player ? true : false;
 </script>
 
 {#if system.game && card.zone}
-	<div class={(is_player || fonction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
-		<div id={is_player || fonction != undefined ? "infos" : ""}>
+	<div class={(is_player || select_action != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
+		<div id={is_player || select_action != undefined ? "infos" : ""}>
 			{#if card.locked}
 				<img src="/assets/Pictures/lock.svg" alt="locked" class="locked" />
 			{/if}
@@ -37,9 +37,9 @@
 			{/if}
 		</div>
 
-		{#if is_player || fonction != undefined}
+		{#if is_player || select_action != undefined}
 			<div id="actions">
-				{#if system.game.phase == "Préparation" && fonction == undefined}
+				{#if system.game.phase == "Préparation" && select_action == undefined}
 					{#if card.zone.name == "Réserve" || card.zone.name == "Terrain"}
 						<button
 							class="active"
@@ -132,12 +132,12 @@
 					{/if}
 				{/if}
 
-				{#if fonction != undefined && condition != undefined}
-					{#if condition(card)}
+				{#if select_action != undefined && select_condition != undefined}
+					{#if select_condition(card)}
 						<button
 							class="active"
 							on:click={() => {
-								fonction(card);
+								select_action(card);
 								system = system;
 							}}
 						>

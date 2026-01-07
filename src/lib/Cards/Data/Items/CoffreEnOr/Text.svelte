@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Pioche 1 carte du même niveau que la pile et réduit de 20 le coût de la carte piochée.
+Pioche 2 carte du même niveau que la pile et réduit de 20 le coût des cartes piochées.

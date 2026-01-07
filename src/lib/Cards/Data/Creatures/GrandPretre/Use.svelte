@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function fonction(choice: string) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}
@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("life");
+			select_action("life");
 		}}
 	>
 		Augmente de 10 la constitution de toutes les créatures alliées sur le terrain
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("heal");
+			select_action("heal");
 		}}
 	>
 		Soigne 20 blessures à toutes les créatures alliées sur le terrain

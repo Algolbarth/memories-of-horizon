@@ -9,14 +9,14 @@
 
 	let target: Creature | undefined = undefined;
 
-	function condition(card: Card) {
+	function select_condition(card: Card) {
 		if (card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
 			return true;
 		}
 		return false;
 	}
 
-	function fonction(card: Creature) {
+	function select_action_1(card: Creature) {
 		target = card;
 		if (target.isDamaged()) {
 			system.game.use.card.useEffect(target);
@@ -24,14 +24,14 @@
 		}
 	}
 
-	function fonction2(stat: Stat) {
+	function select_action_2(stat: Stat) {
 		system.game.use.card.useEffect(target, stat);
 		system.game.use.reset();
 	}
 </script>
 
 {#if target == undefined}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {condition} {fonction} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} select_action={select_action_1} />
 {:else}
 	<button
 		class="return"
@@ -48,7 +48,7 @@
 				<button
 					class="big choice"
 					on:click={() => {
-						fonction2(stat);
+						select_action_2(stat);
 					}}
 				>
 					{stat.name}

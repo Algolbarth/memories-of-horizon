@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function fonction(choice: string) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}
@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("draw");
+			select_action("draw");
 		}}
 	>
 		Pioche 3 cartes
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			fonction("discover");
+			select_action("discover");
 		}}
 	>
 		Découvre 1 carte

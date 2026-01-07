@@ -48,7 +48,7 @@ export class Poire extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
         if (!target.isDamaged()) {
-            target.stat("Régénération").increase(10);
+            target.stat("Régénération").increase(5);
         }
         else {
             target.heal(15);
