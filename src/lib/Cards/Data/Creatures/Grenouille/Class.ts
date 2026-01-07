@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
+import Text from './Text.svelte';
 
 export class Grenouille extends Creature {
     name = "Grenouille";
@@ -11,6 +12,8 @@ export class Grenouille extends Creature {
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
+
+        this.text = Text;
     };
 
     startStepEffect = () => {
@@ -18,4 +21,4 @@ export class Grenouille extends Creature {
             this.move("Réserve");
         }
     };
-}
+};

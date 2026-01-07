@@ -6,6 +6,7 @@ export * from './BaguetteDeMage';
 export * from './BaguetteDesMarees';
 export * from './BaguetteEnBois';
 export * from './BaguetteExplosive';
+export * from './BaguetteMalefique';
 export * from './BatonDeRelais';
 export * from './BottesDeGrandPas';
 export * from './BottesEnCuir';
