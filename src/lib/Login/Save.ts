@@ -22,6 +22,7 @@ export function save(system: System) {
         text += system.settings.show_intelligence + "_";
         text += system.settings.autoplay + "_";
         text += system.settings.auto_speed + "_";
+        text += system.settings.show_card_description + "_";
 
         text += system.decks.length + "_";
         for (const deck of system.decks) {

@@ -27,6 +27,7 @@ export async function load(files: FileList, system: System) {
         system.settings.show_intelligence = readBool();
         system.settings.autoplay = readBool();
         system.settings.auto_speed = readInt();
+        system.settings.show_card_description = readBool();
 
         let number_decks: number = readInt();
         for (let i = 0; i < number_decks; i++) {

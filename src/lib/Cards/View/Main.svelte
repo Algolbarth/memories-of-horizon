@@ -57,10 +57,12 @@
 						<Equipments bind:card bind:system />
 					{/if}
 
-					<br />
-					<hr />
+					{#if system.settings.show_card_description}
+						<br />
+						<hr />
 
-					<Description bind:card />
+						<Description bind:card />
+					{/if}
 				</div>
 			</div>
 		</div>

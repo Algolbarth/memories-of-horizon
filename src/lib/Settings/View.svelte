@@ -76,6 +76,15 @@
 			{(5 - delay) / 2}s par action
 		</label>
 	</div>
+
+	<br />
+
+	<div class="checkbox-container">
+		<label class="form-control" for="show_card_description">
+			<input type="checkbox" bind:checked={system.settings.show_card_description} id="show_card_description" />
+			Afficher la description des cartes
+		</label>
+	</div>
 </div>
 
 <style>
