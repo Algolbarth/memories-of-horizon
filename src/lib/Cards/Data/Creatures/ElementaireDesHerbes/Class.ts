@@ -18,17 +18,19 @@ export class ElementaireDesHerbes extends Creature {
     };
 
     dieEffect = () => {
-        let target = undefined;
+        if (this.zone.name != "Pile") {
+            let target = undefined;
 
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (target == undefined && card.type == "Créature" && card != this) {
-                target = card;
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (target == undefined && card.type == "Créature" && card != this) {
+                    target = card;
+                }
+            }
+
+            if (target != undefined) {
+                target.stat("Force").increase(15);
+                target.stat("Constitution").increase(15);
             }
         }
-
-        if (target != undefined) {
-            target.stat("Force").increase(15);
-            target.stat("Constitution").increase(15);
-        }
     };
-}
+};

@@ -19,9 +19,9 @@ export class Chasseur extends Creature {
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner && card.familles.total().includes("Bête")) {
+        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.type == "Créature" && card.owner == this.owner && card.familles.total().includes("Bête")) {
             this.stat("Constitution").increase(2);
             this.stat("Force").increase(5);
         }
     };
-}
+};

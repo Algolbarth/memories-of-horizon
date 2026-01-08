@@ -27,7 +27,7 @@ export class Raido extends Boss {
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.owner != this.owner) {
+        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.owner != this.owner) {
             this.owner.ressource("Or").current += card.stat("Vitalité").value();
         }
     };
@@ -39,4 +39,4 @@ export class Raido extends Boss {
             this.stat("Constitution").increase(1);
         }
     };
-}
+};

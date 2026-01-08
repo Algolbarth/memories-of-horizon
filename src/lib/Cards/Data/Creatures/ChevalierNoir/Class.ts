@@ -26,7 +26,7 @@ export class ChevalierNoir extends Creature {
     };
 
     dieEffect = () => {
-        if (this.owner.ressource("Or").total() >= 20) {
+        if (this.zone.name != "Pile" && this.owner.ressource("Or").total() >= 20) {
             this.owner.ressource("Or").spend(20);
             this.stat("Santé").init(1);
             this.rez = true;
@@ -94,8 +94,10 @@ export class ChevalierNoirMonte extends Creature {
     };
 
     dieEffect = () => {
-        this.transform("Chevalier noir");
-        this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
+        if (this.zone.name != "Pile") {
+            this.transform("Chevalier noir");
+            this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
+        }
     };
 
     dieGo = () => {

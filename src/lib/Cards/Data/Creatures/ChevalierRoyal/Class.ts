@@ -39,11 +39,13 @@ export class ChevalierRoyalMonte extends Creature {
     };
 
     dieEffect = () => {
-        this.transform("Chevalier royal");
-        this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
+        if (this.zone.name != "Pile") {
+            this.transform("Chevalier royal");
+            this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
+        }
     };
 
     dieGo = () => {
 
     };
-}
+};

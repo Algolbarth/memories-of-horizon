@@ -18,8 +18,8 @@ export class HacheDeBucheron extends Equipment {
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.elements.total().includes("Végétal")) {
+        if (this.bearer != undefined && card.zone.name != "Pile" && this.bearer.zone.name == "Terrain" && card.elements.total().includes("Végétal")) {
             this.bearer.stat("Force").increase(5);
         }
     };
-}
+};

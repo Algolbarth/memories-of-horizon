@@ -201,7 +201,12 @@ export class Unit extends Card {
     dieEffect: Function | undefined;
 
     dieGo = () => {
-        this.move("Défausse");
+        if (this.zone.name == "Pile") {
+            this.remove();
+        }
+        else {
+            this.move("Défausse");
+        }
     };
 
     destroy = () => {

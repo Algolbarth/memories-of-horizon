@@ -55,6 +55,7 @@ export * from './HeaumeDeFer';
 export * from './HeaumeDePlatine';
 export * from './LanceDeFer';
 export * from './LanceDePlatine';
+export * from './LanceIncendiaire';
 export * from './ManteauDEsquive';
 export * from './ManuelDeMagie';
 export * from './MasseDeFer';

@@ -67,11 +67,9 @@ Sort vivant : créature sort.
 Pyromane : quand attaque : enflamme l'unité attaquée.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
-Lance incendiaire : Quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
 Jarre de flamme : objet.
 
 ### Vegetal
-Dague empoisonnée : Quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain.
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée.
@@ -93,7 +91,6 @@ Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et 
 
 ### Eau
 Barrière de corail : créature plante, régénération.
-Pêcheur : quand posé : pioche 1 créature poisson.
 Requin : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la réserve.

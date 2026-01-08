@@ -316,7 +316,12 @@ export class Card {
     };
 
     destroy = () => {
-        this.move("Défausse");
+        if (this.zone.name == "Pile") {
+            this.remove();
+        }
+        else {
+            this.move("Défausse");
+        }
     };
 
     otherDieEffect: Function | undefined;

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../System/Class";
-	import { Card } from "../Class";
+	import { Card } from "../Class/Class";
+	import { Unit } from "../Class/Unit";
 	import { Creature } from "../Class/Creature";
 	import { Equipment } from "../Class/Equipment";
 	import Caracteristics from "./Caracteristics.svelte";
@@ -46,7 +47,7 @@
 					{#if card.displayTrait()}
 						<Trait bind:card />
 					{/if}
-					{#if card.displayStat()}
+					{#if card instanceof Unit || card.displayStat()}
 						<Stat bind:card />
 					{/if}
 
