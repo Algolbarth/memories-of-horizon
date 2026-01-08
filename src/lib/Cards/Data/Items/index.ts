@@ -14,6 +14,7 @@ export * from './CoffreEnBois';
 export * from './CoffreEnOr';
 export * from './Concoction';
 export * from './Conque';
+export * from './Coquillage';
 export * from './CorDeGuerre';
 export * from './FioleDeCorindon';
 export * from './FioleDeCristal';

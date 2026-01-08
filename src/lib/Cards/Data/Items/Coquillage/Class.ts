@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
-export class Conque extends Item {
-    name = "Conque";
+export class Coquillage extends Item {
+    name = "Coquillage";
 
     constructor(system: System) {
         super(system);
@@ -14,15 +14,15 @@ export class Conque extends Item {
     };
 
     canUse = () => {
-        if (this.owner.ressource("Or").production >= 5) {
+        if (this.owner.ressource("Eau").production >= 5) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").production -= 5;
-        this.owner.ressource("Eau").production += 5;
+        this.owner.ressource("Eau").production -= 5;
+        this.owner.ressource("Or").production += 5;
 
         this.move("Défausse");
         this.pose();
