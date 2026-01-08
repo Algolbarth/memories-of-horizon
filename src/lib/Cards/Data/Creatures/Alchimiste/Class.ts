@@ -29,4 +29,4 @@ export class Alchimiste extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};
