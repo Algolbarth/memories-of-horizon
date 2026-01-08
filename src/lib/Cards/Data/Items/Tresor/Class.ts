@@ -8,7 +8,7 @@ export class Tresor extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 20]]);
 
         this.text = Text;
     };
@@ -16,6 +16,7 @@ export class Tresor extends Item {
     useEffect = () => {
         this.owner.draw(5);
         this.owner.ressource("Or").current += 10;
+
         this.move("Défausse");
         this.pose();
     };

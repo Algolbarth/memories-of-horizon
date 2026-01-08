@@ -12,6 +12,7 @@ export * from './CarriereDePierre';
 export * from './Cascade';
 export * from './Caserne';
 export * from './Catapulte';
+export * from './ChambreDuTresor';
 export * from './Charrette';
 export * from './Chaudron';
 export * from './DonjonAbandonne';
