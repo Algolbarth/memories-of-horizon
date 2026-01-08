@@ -3,8 +3,6 @@
 
 	export let system: System;
 
-	let types = ["action", "bâtiment", "créature", "lieu", "objet"];
-
 	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
@@ -12,16 +10,23 @@
 </script>
 
 <div class="center" style="text-align:center">
-	{#each types as type}
-		<button
-			class="big choice"
-			on:click={() => {
-				select_action(type.charAt(0).toUpperCase() + type.slice(1));
-			}}
-		>
-			Pioche 1 {type}
-		</button>
+	<button
+		class="big choice"
+		on:click={() => {
+			select_action("Coquillage");
+		}}
+	>
+		Crée Coquillage dans la réserve
+	</button>
 
-		<br />
-	{/each}
+	<br />
+
+	<button
+		class="big choice"
+		on:click={() => {
+			select_action("Conque");
+		}}
+	>
+		Crée Conque dans la réserve
+	</button>
 </div>

@@ -21,4 +21,4 @@ export class OfficierDArtillerie extends Creature {
             this.owner.getCard("Tir de canon").add("Réserve");
         }
     };
-}
+};

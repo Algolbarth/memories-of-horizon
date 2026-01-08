@@ -1,20 +1,19 @@
 import type { System } from '../../../../System/Class';
-import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Aventurier extends Creature {
-    name = "Aventurier";
+export class Pagure extends Creature {
+    name = "Pagure";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
-        this.familles.base.push("Humain");
+        this.init([["Or", 15], ["Eau", 15]]);
 
-        this.stat("Constitution").init(8);
-        this.stat("Force").init(8);
+        this.stat("Constitution").init(2);
+        this.stat("Force").init(2);
+        this.stat("Endurance").init(3);
 
         this.text = Text;
     };
@@ -24,18 +23,13 @@ export class Aventurier extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Créature");
+            this.useEffect("Conque");
         }
     };
 
     useEffect = (choice: string) => {
-        let read_condition = (card: Card) => {
-            if (card.type == choice) {
-                return true;
-            }
-            return false;
-        };
-        this.owner.draw(1, read_condition);
+        this.owner?.getCard(choice).add("Réserve");
+
         this.move("Terrain");
         this.pose();
     };
