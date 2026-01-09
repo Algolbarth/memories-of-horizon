@@ -76,6 +76,7 @@ export * from './Heros';
 export * from './HommeDAffaires';
 export * from './Homonculus';
 export * from './Humain';
+export * from './Iconoclaste';
 export * from './JeuneWyverne';
 export * from './JongleurDeBouleDeFeu';
 export * from './Juge';

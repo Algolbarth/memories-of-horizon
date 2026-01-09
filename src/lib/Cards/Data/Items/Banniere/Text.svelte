@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 3 la force et la constitution de toutes les créatures alliées sur le terrain.
+Augmente de 3 la constitution et la force de toutes les créatures alliées sur le terrain.

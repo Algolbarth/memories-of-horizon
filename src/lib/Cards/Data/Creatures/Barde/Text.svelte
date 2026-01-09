@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 5 la force et la constitution de toutes les créatures sur le terrain pendant cette étape.
+Quand posé : augmente de 5 la constitution et la force de toutes les créatures sur le terrain pendant cette étape.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 5 la force et la constitution de toutes les créatures alliées d'élément Eau sur le terrain. Dépense 50 eau pour augmenter de 10 à la place.
+Augmente de 5 la constitution et la force de toutes les créatures alliées d'élément Eau sur le terrain. Dépense 50 eau pour augmenter de 10 à la place.

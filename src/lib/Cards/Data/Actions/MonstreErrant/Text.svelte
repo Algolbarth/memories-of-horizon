@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Pioche 1 créature et augmente de 100 la force et la constitution de cette créature.
+Pioche 1 créature et augmente de 100 la constitution et la force de cette créature.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début d'un tour de combat : augmente de 10 la force et la constitution de la créature alliée sur le terrain la plus en avant.
+Au début d'un tour de combat : augmente de 10 la constitution et la force de la créature alliée sur le terrain la plus en avant.

@@ -22,7 +22,7 @@ Applique des effets en fonction des différentes valeurs d'infusion.
 	{/if}
 
 	{#if card.stat("Infusion interdite").value() > 0}
-		Génère <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la force et la constitution de cette carte.
+		Génère <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.
 		<br />
 	{/if}
 

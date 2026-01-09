@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente la force et la constitution d'une créature alliée sur le terrain de 10 fois la valeur de protection de cette créature.
+Augmente la constitution et la force d'une créature alliée sur le terrain de 10 fois la valeur de protection de cette créature.

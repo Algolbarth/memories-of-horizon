@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand arrive sur le terrain : augmente de 2 sa force et sa constitution pour chaque bâtiment allié sur le terrain.
+Quand arrive sur le terrain : augmente de 2 sa constitution et sa force pour chaque bâtiment allié sur le terrain.

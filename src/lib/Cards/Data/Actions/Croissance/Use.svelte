@@ -39,7 +39,7 @@
 				choice = "balance";
 			}}
 		>
-			Augmente de 50 la force et la constitution d'une créature alliée sur le terrain
+			Augmente de 50 la constitution et la force d'une créature alliée sur le terrain
 		</button>
 	</div>
 {:else}

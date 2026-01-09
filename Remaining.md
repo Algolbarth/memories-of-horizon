@@ -42,7 +42,7 @@ Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans la réserve adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
-Avarice : détruit une créature alliée sur le terrain et augmente la force et la constitution d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
+Avarice : détruit une créature alliée sur le terrain et augmente la constitution et la force d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
 Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
@@ -106,7 +106,7 @@ Sylphe : quand arrive sur le terrain : pioche une carte.
 Sylphe : quand attaque : pioche une carte et la verrouille.
 Sylphe : quand attaque : augmente son esquive.
 Archer sylphe : créature, portée.
-Griffon : quand posé : augmente sa force et sa constitution suivant le niveau de la pile.
+Griffon : quand posé : augmente sa constitution et sa force suivant le niveau de la pile.
 Aigle 
 Envol : action, applique esquive à une créature Air alliée sur le terrain.
 Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la pile.
@@ -127,7 +127,7 @@ Cheval squelette
 Zombie : 1 force.
 Zombie recousu : créature, régénération.
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement.
-Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa force et sa constitution.
+Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa constitution et sa force.
 Faucheuse 
 Fantôme : créature, éphémère.
 Rat : créature, quand attaque : applique maladie à la créature attaquée.
@@ -147,20 +147,20 @@ Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
 ### Metal
 Gnome : créature, quand arrive sur le terrain : génère un Mini automate sur le terrain.
 Mini automate : créature machine.
-Ingénieur : créature, augmente la force et la constitution d'une créature de famille machine alliée sur le terrain.
+Ingénieur : créature, augmente la constitution et la force d'une créature de famille machine alliée sur le terrain.
 Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or.
 Automate : créature machine, maniement 1.
 Automate armé : créature machine, maniement 4.
 Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain.
 Wyverne d'acier 
 Mage des métaux 
-Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa force et sa constitution.
+Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa constitution et sa force.
 Mines : lieu pour les cartes d'élément Métal.
 
 ### Foudre
-Satyre : quand arrive sur le terrain : augmente sa force et sa constitution pendant cette étape.
-Acolyte satyre : quand posé : augmente la force et la constitution d'une créature alliée sur le terrain pendant cette étape.
-Barde satyre : quand posé : augmente la force et la constitution de toutes les créatures alliées sur le terrain pendant cette étape.
+Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant cette étape.
+Acolyte satyre : quand posé : augmente la constitution et la force d'une créature alliée sur le terrain pendant cette étape.
+Barde satyre : quand posé : augmente la constitution et la force de toutes les créatures alliées sur le terrain pendant cette étape.
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
@@ -303,7 +303,7 @@ Tyranosaure
 Brachiosaure 
 Vélociraptor 
 Stégosaure 
-Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa force et sa constitution.
+Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa constitution et sa force.
 Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage.
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 

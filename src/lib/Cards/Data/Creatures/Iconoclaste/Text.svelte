@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 200 la constitution et la force d'une créature alliée sur le terrain pendant cette étape.
+Quand une carte alliée sur la pile est détruite : augmente de 1 sa constitution et sa force.
