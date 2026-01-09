@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Nain");
+			select_action("dwarf");
 		}}
 	>
 		Se transforme en Druide des montagnes (forme nain)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Ours");
+			select_action("bear");
 		}}
 	>
 		Se transforme en Druide des montagnes (forme ours)

@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Créature");
+			select_action("creature");
 		}}
 	>
 		Génère un Élémentaire de roche sur le terrain
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Bâtiment");
+			select_action("building");
 		}}
 	>
 		Créé un Mur de roche sur le terrain

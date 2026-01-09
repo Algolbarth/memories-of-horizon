@@ -45,7 +45,7 @@ export class Vestale extends Creature {
             }
 
             if (target != undefined) {
-                this.useEffect(target, "attack");
+                this.useEffect(target, "strenght");
             }
             else {
                 this.useEffect(target, undefined);
@@ -53,14 +53,15 @@ export class Vestale extends Creature {
         }
     };
 
-    useEffect = (target, choice) => {
-        if (choice == "attack") {
+    useEffect = (target: Creature | undefined, choice: string | undefined) => {
+        if (choice == "strenght") {
             target.stat("Force").increase(20);
         }
         else if (choice == "heal") {
             target.heal(20);
         }
+
         this.move("Terrain");
         this.pose();
     };
-}
+};

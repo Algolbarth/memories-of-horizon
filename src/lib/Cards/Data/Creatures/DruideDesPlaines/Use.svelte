@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Humain");
+			select_action("human");
 		}}
 	>
 		Se transforme en Druide des plaines (forme humain)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Loup");
+			select_action("wolf");
 		}}
 	>
 		Se transforme en Druide des plaines (forme loup)

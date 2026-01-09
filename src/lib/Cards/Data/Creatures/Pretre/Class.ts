@@ -3,7 +3,7 @@ import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Prêtre extends Creature {
+export class Pretre extends Creature {
     name = "Prêtre";
 
     constructor(system: System) {
@@ -53,14 +53,15 @@ export class Prêtre extends Creature {
         }
     };
 
-    useEffect = (target, choice) => {
+    useEffect = (target: Creature | undefined, choice: string | undefined) => {
         if (choice == "life") {
             target.stat("Constitution").increase(15);
         }
         else if (choice == "heal") {
             target.heal(20);
         }
+
         this.move("Terrain");
         this.pose();
     };
-}
+};

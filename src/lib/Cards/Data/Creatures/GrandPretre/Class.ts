@@ -60,7 +60,8 @@ export class GrandPretre extends Creature {
                 }
             }
         }
+
         this.move("Terrain");
         this.pose();
     };
-}
+};

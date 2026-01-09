@@ -18,21 +18,22 @@ class DruideDeFeu extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Gobelin");
+            this.useEffect("goblin");
         }
     };
 
-    useEffect = (choice) => {
-        if (choice == "Gobelin") {
+    useEffect = (choice: string) => {
+        if (choice == "goblin") {
             this.transform("Druide de feu (forme gobelin)");
         }
-        else if (choice == "Lézard") {
+        else if (choice == "lizard") {
             this.transform("Druide de feu (forme lézard)");
         }
+
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideDeFeuGobelin extends DruideDeFeu {
     name = "Druide de feu (forme gobelin)";
@@ -52,7 +53,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
             this.stat("Force").increase(10);
         }
     };
-}
+};
 
 export class DruideDeFeuLezard extends DruideDeFeu {
     name = "Druide de feu (forme lézard)";
@@ -69,4 +70,4 @@ export class DruideDeFeuLezard extends DruideDeFeu {
         this.stat("Force").init(20);
         this.stat("Adresse").init(25);
     };
-}
+};

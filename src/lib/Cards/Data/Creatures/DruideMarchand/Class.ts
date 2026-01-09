@@ -18,21 +18,21 @@ class DruideMarchand extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Boeuf");
+            this.useEffect("ox");
         }
     };
 
-    useEffect = (choice) => {
-        if (choice == "Humain") {
+    useEffect = (choice: string) => {
+        if (choice == "human") {
             this.transform("Druide marchand (forme humain)");
         }
-        else if (choice == "Boeuf") {
+        else if (choice == "ox") {
             this.transform("Druide marchand (forme boeuf)");
         }
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideMarchandHumain extends DruideMarchand {
     name = "Druide marchand (forme humain)";
@@ -50,7 +50,7 @@ export class DruideMarchandHumain extends DruideMarchand {
     startStepEffect = () => {
         this.owner.ressource("Or").production += 1;
     };
-}
+};
 
 export class DruideMarchandBoeuf extends DruideMarchand {
     name = "Druide marchand (forme boeuf)";
@@ -66,4 +66,4 @@ export class DruideMarchandBoeuf extends DruideMarchand {
         this.stat("Constitution").init(25);
         this.stat("Force").init(10);
     };
-}
+};

@@ -30,7 +30,7 @@ export class CreationRocheuse extends Spell {
                 this.system.game.use.set(this, Use);
             }
             else {
-                this.useEffect("Créature");
+                this.useEffect("creature");
             }
         }
     };
@@ -42,10 +42,10 @@ export class CreationRocheuse extends Spell {
             this.owner.getCard("Mur de roche").add("Terrain");
         }
         else {
-            if (choice == "Créature") {
+            if (choice == "creature") {
                 this.owner.getCard("Élémentaire de roche").add("Terrain");
             }
-            else if (choice == "Bâtiment") {
+            else if (choice == "building") {
                 this.owner.getCard("Mur de roche").add("Terrain");
             }
         }
@@ -53,4 +53,4 @@ export class CreationRocheuse extends Spell {
         this.move("Défausse");
         this.pose();
     };
-}
+};

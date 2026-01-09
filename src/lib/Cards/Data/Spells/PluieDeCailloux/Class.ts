@@ -66,4 +66,4 @@ export class PluieDeCailloux extends Spell {
         this.move("Défausse");
         this.pose();
     };
-}
+};

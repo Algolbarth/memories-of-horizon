@@ -13,7 +13,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Créature");
+			select_action("creature");
 		}}
 	>
 		Se place sur le terrain
@@ -24,7 +24,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Effet");
+			select_action("effect");
 		}}
 	>
 		Se détruit pour infliger 5 dégâts à toutes les unités adverses

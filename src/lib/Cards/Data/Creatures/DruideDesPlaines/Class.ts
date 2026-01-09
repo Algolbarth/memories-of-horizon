@@ -18,21 +18,22 @@ class DruideDesPlaines extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Loup");
+            this.useEffect("wolf");
         }
     };
 
-    useEffect = (choice) => {
-        if (choice == "Humain") {
+    useEffect = (choice: string) => {
+        if (choice == "human") {
             this.transform("Druide des plaines (forme humain)");
         }
-        else if (choice == "Loup") {
+        else if (choice == "wolf") {
             this.transform("Druide des plaines (forme loup)");
         }
+
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideDesPlainesHumain extends DruideDesPlaines {
     name = "Druide des plaines (forme humain)";
@@ -52,7 +53,7 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
             this.owner.draw(2);
         }
     };
-}
+};
 
 export class DruideDesPlainesLoup extends DruideDesPlaines {
     name = "Druide des plaines (forme loup)";
@@ -68,4 +69,4 @@ export class DruideDesPlainesLoup extends DruideDesPlaines {
         this.stat("Constitution").init(10);
         this.stat("Force").init(30);
     };
-}
+};

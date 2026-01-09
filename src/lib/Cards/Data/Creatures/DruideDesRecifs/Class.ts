@@ -18,21 +18,21 @@ class DruideDesRecifs extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Tortue");
+            this.useEffect("turtle");
         }
     };
 
-    useEffect = (choice) => {
-        if (choice == "Ondin") {
+    useEffect = (choice: string) => {
+        if (choice == "merfolk") {
             this.transform("Druide des récifs (forme ondin)");
         }
-        else if (choice == "Tortue") {
+        else if (choice == "turtle") {
             this.transform("Druide des récifs (forme tortue)");
         }
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideDesRecifsOndin extends DruideDesRecifs {
     name = "Druide des récifs (forme ondin)";
@@ -52,7 +52,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
             this.owner.ressource("Eau").production += 2;
         }
     };
-}
+};
 
 export class DruideDesRecifsTortue extends DruideDesRecifs {
     name = "Druide des récifs (forme tortue)";
@@ -69,4 +69,4 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
         this.stat("Force").init(35);
         this.stat("Endurance").init(10);
     };
-}
+};

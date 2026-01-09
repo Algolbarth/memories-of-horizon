@@ -18,21 +18,21 @@ class DruideDesMontagnes extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Ours");
+            this.useEffect("bear");
         }
     };
 
     useEffect = (choice) => {
-        if (choice == "Nain") {
+        if (choice == "dwarf") {
             this.transform("Druide des montagnes (forme nain)");
         }
-        else if (choice == "Ours") {
+        else if (choice == "bear") {
             this.transform("Druide des montagnes (forme ours)");
         }
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideDesMontagnesNain extends DruideDesMontagnes {
     name = "Druide des montagnes (forme nain)";
@@ -54,7 +54,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
             this.stat("Force").increase(10);
         }
     };
-}
+};
 
 export class DruideDesMontagnesOurs extends DruideDesMontagnes {
     name = "Druide des montagnes (forme ours)";
@@ -70,4 +70,4 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
     };
-}
+};

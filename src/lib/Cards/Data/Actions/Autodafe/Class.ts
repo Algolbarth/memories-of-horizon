@@ -38,4 +38,4 @@ export class Autodafe extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

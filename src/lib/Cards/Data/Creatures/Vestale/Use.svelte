@@ -25,7 +25,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "attack";
+				choice = "strenght";
 			}}
 		>
 			Augmente de 20 la force d'une créature alliée sur le terrain

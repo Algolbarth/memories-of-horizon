@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Elfe");
+			select_action("elf");
 		}}
 	>
 		Se transforme en Druide des bois (forme elfe)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Renard");
+			select_action("fox");
 		}}
 	>
 		Se transforme en Druide des bois (forme renard)

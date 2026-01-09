@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -53,7 +54,7 @@ export class HacheDeJet extends Equipment {
         }
     };
 
-    useEffect = (target, choice) => {
+    useEffect = (target: Unit, choice: string) => {
         if (choice == "equip") {
             target.equip(this);
         }
@@ -61,6 +62,7 @@ export class HacheDeJet extends Equipment {
             target.damageByEffect(50);
             this.move("Défausse");
         }
+
         this.pose();
     };
-}
+};

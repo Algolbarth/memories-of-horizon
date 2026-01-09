@@ -19,21 +19,21 @@ class DruideDesBois extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("Renard");
+            this.useEffect("fox");
         }
     };
 
     useEffect = (choice: string) => {
-        if (choice == "Elfe") {
+        if (choice == "elf") {
             this.transform("Druide des bois (forme elfe)");
         }
-        else if (choice == "Renard") {
+        else if (choice == "fox") {
             this.transform("Druide des bois (forme renard)");
         }
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
-}
+};
 
 export class DruideDesBoisElfe extends DruideDesBois {
     name = "Druide des bois (forme elfe)";
@@ -53,7 +53,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
             this.stat("Constitution").increase(6);
         }
     };
-}
+};
 
 export class DruideDesBoisRenard extends DruideDesBois {
     name = "Druide des bois (forme renard)";
@@ -70,4 +70,4 @@ export class DruideDesBoisRenard extends DruideDesBois {
         this.stat("Force").init(20);
         this.stat("Intelligence").init(5);
     };
-}
+};

@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function select_action(choice) {
+	function select_action(choice: string) {
 		system.game.use.card.useEffect(choice);
 		system.game.use.reset();
 	}

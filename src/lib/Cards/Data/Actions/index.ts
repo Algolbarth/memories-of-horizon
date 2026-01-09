@@ -12,6 +12,7 @@ export * from './Biodiversite';
 export * from './Blocage';
 export * from './Bombardement';
 export * from './BriseGarde';
+export * from './BucherDesVanites';
 export * from './CanonAEau';
 export * from './Cauteriser';
 export * from './CerclesMagiques';

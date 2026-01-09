@@ -33,30 +33,31 @@ export class ElementaireDeRoche extends Creature {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("Créature");
+                this.useEffect("creature");
             }
         }
         else {
             if (this.owner.adversary().zone("Terrain").cards.length > 5) {
-                this.useEffect("Effet");
+                this.useEffect("effect");
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("Créature");
+                this.useEffect("creature");
             }
         }
     };
 
-    useEffect = (choice) => {
-        if (choice == "Créature") {
+    useEffect = (choice: string) => {
+        if (choice == "creature") {
             this.move("Terrain");
         }
-        else if (choice == "Effet") {
+        else if (choice == "effect") {
             let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
                 card.damageByEffect(5);
             }
             this.destroy();
         }
+
         this.pose();
     };
-}
+};

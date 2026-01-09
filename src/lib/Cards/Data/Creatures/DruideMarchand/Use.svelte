@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Humain");
+			select_action("human");
 		}}
 	>
 		Se transforme en Druide marchand (forme humain)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Boeuf");
+			select_action("ox");
 		}}
 	>
 		Se transforme en Druide marchand (forme boeuf)

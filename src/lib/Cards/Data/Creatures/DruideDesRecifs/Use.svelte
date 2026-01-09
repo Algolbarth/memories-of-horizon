@@ -14,7 +14,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Ondin");
+			select_action("merfolk");
 		}}
 	>
 		Se transforme en Druide des récifs (forme ondin)
@@ -25,7 +25,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Tortue");
+			select_action("turtle");
 		}}
 	>
 		Se transforme en Druide des récifs (forme tortue)
