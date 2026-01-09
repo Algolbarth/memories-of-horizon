@@ -22,6 +22,8 @@ export class MimiqueDeJarre extends Creature {
     };
 
     dieEffect = () => {
-        this.owner.adversary().ressource("Or").stock += 10;
+        if (this.zone.name == "Terrain") {
+            this.owner.adversary().ressource("Or").stock += 10;
+        }
     };
 }

@@ -22,6 +22,8 @@ export class MimiqueDeCoffre extends Creature {
     };
 
     dieEffect = () => {
-        this.owner.adversary().draw(5);
+        if (this.zone.name == "Terrain") {
+            this.owner.adversary().draw(5);
+        }
     };
 }

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import CardInfo from "../../../Utils/CardInfo.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,6 +9,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : se place sur le terrain adverse.
-<br />
-Quand meurt sur le terrain : l'adversaire pioche 5 cartes.
+Quand <CardInfo bind:system name={"Autodafé"} /> ou <CardInfo bind:system name={"Bûcher des vanités"} /> est posé : génère <CardInfo bind:system name={"Écrits calcinés"} /> dans la réserve.

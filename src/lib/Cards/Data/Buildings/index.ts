@@ -5,6 +5,7 @@ export * from './BassinDeReproduction';
 export * from './BelierDeCombat';
 export * from './Bibliotheque';
 export * from './BibliothequeElfique';
+export * from './BibliothequeIncendiee';
 export * from './Bivouac';
 export * from './Boutique';
 export * from './Canon';
