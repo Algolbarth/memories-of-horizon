@@ -23,8 +23,8 @@ export class Lv20_Archimere extends Chapter {
             array.push("Biodiversité");
         }
         this.addStep(200, ["Forêt"], 50, array, ["La véritable force de l'élément végétal ne repose pas tant sur la longévité de ses créatures que sur la diversité de ces dernières.", "Les puissantes chimères sont des créatures s'abreuvant de cette génétique variée et deviennent les gardiennes naturelles des innombrables espèces de cet écosystème.", "Au coeur d'une forêt comme celle-là, l'affrontement sera inévitable."]);
-    }
-}
+    };
+};
 
 export class Lv20_Avatar extends Chapter {
     boss = true;
@@ -36,5 +36,5 @@ export class Lv20_Avatar extends Chapter {
         this.addRessource("Or", 3000);
 
         this.addStep(200, ["Mer d'ether"], 10, ["L'Avatar, chapitre final"], ["L'Histoire prend fin ici même, dans les méandres de l'ether composant l'espace immense de l'Horizon."]);
-    }
-}
+    };
+};

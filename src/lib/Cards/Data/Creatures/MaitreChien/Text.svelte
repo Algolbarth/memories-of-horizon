@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand posé : crée 2 <CardInfo bind:system name={"Chien"} /> sur le terrain.
+Quand posé : génère 2 <CardInfo bind:system name={"Chien"} /> sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation : crée <CardInfo bind:system name={"Chien"} /> sur le terrain.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Chien"} /> sur le terrain.

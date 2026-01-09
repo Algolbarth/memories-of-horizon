@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début d'un tour de combat : crée <CardInfo bind:system name={"Humain"} /> sur le terrain.
+Au début d'un tour de combat : génère <CardInfo bind:system name={"Humain"} /> sur le terrain.

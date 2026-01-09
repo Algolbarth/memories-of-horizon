@@ -16,7 +16,7 @@
 			select_action("Coquillage");
 		}}
 	>
-		Crée Coquillage dans la réserve
+		Génère Coquillage dans la réserve
 	</button>
 
 	<br />
@@ -27,6 +27,6 @@
 			select_action("Conque");
 		}}
 	>
-		Crée Conque dans la réserve
+		Génère Conque dans la réserve
 	</button>
 </div>

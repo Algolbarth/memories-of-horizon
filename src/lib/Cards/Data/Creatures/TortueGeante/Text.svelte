@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : crée <CardInfo bind:system name={"Carapace de tortue"} /> dans la réserve.
+Quand meurt : génère <CardInfo bind:system name={"Carapace de tortue"} /> dans la réserve.

@@ -16,7 +16,7 @@
 			select_action("Créature");
 		}}
 	>
-		Crée un Élémentaire de roche sur le terrain
+		Génère un Élémentaire de roche sur le terrain
 	</button>
 
 	<br />

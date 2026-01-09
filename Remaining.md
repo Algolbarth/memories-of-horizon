@@ -24,20 +24,20 @@ Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X 
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
 Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la constitution de la créature attaquante.
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
-Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
+Mimique : se pose sur le terrain adverse. Quand meurt : Génère humain sur le terrain adverse.
 
 ### Voleur
 Banque : augmente la valeur de vente des unités alliées sur le terrain.
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée.
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité.
-Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
-Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la réserve.
+Guilde des voleurs : bâtiment, quand une unité alliée est vendue : génère Voleur sur le terrain.
+Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans la réserve.
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
 Mouton : créature bête, endurance.
-Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la réserve.
-Berger : créature humain, au début de chaque phase de préparation : crée Mouton sur le terrain.
+Mouton laineux : créature bête, quand arrive sur le terrain : génère Laine dans la réserve.
+Berger : créature humain, au début de chaque phase de préparation : génère Mouton sur le terrain.
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain.
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans la réserve adverse.
@@ -48,12 +48,12 @@ Paresse : soigne une créature alliée d'autant que la différence entre sa vita
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de santé d'une créature de famille Bête alliée sur le terrain.
-Arbalète : objet équipement, crée des carreaux dans la réserve qui scalent selon la force du mob.
+Arbalète : objet équipement, génère des carreaux dans la réserve qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
 Dague magique : objet équipement, s'équipe à une créature alliée sur le terrain OU produis X mana.
-Louve : créature bête, quand meurt : crée 2 Louveteau sur le terrain. 8/5.
+Louve : créature bête, quand meurt : génère 2 Louveteau sur le terrain. 8/5.
 Louveteau : créature bête, 5/3.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
@@ -79,7 +79,7 @@ Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat 
 Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
-Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la réserve.
+Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans la réserve.
 Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
@@ -138,14 +138,14 @@ Mère pondeuse
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain.
 Wyverne zombie 
 Wyverne squelette : quand une créature alliée meurt : diminue son coût de 5.
-Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le terrain.
+Nécromancien : quand une carte alliée Mort est posée : génère Squelette sur le terrain.
 Nécromage 
 Mage des morts 
 Cimetière : lieu pour les cartes d'élément Mort.
 Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
 
 ### Metal
-Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain.
+Gnome : créature, quand arrive sur le terrain : génère un Mini automate sur le terrain.
 Mini automate : créature machine.
 Ingénieur : créature, augmente la force et la constitution d'une créature de famille machine alliée sur le terrain.
 Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or.
@@ -192,7 +192,7 @@ Toundra : lieu pour les cartes d'élément Glace.
 ### Lumiere
 Aasimar : créature, régénération.
 Rayon de lumière : action, inflige des dégâts à une créature adverse sur le terrain OU soigne une créature alliée sur le terrain.
-Nova sacrée : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain.
+Nova sagénère : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain.
 Fidèle 
 Prière : action, pioche des cartes OU soigne une créature alliée sur le terrain.
 Cierge : objet, pioche des cartes OU produit de la lumière.
@@ -203,7 +203,7 @@ Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors
 Révélations de lumière : action, révèle toutes les cartes dans la réserve et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
-Terre sacrée : lieu pour les cartes d'élément Lumière.
+Terre sagénère : lieu pour les cartes d'élément Lumière.
 
 ### Ombre
 Drow 
@@ -330,7 +330,7 @@ Eclipse solaire : révèle toutes les cartes dans la réserve adverse et en dét
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
-Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
+Ousen : boss de niv 4, génèrer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la constitution de gyoun
 
 # Lore
@@ -427,7 +427,7 @@ ils sont plus petit que les nains ou gobelins.
 leur petite taille leur permet de se faufiller dans les veines de métaux à exploiter.
 vivent en démocratie, en choississant le meilleur savant de leur communauté.
 cet ingénieur en chef a pour rôle de faire progresser la communauté avec des inventions.
-pour compenser leur faible capacité physique, les gnomes créent des automates, des machines réalisant une tâche précise.
+pour compenser leur faible capacité physique, les gnomes génèrent des automates, des machines réalisant une tâche précise.
 les automates sont conçus à partir d'engrenage auto-alimentés, permettant de les rendre autonomes longtemps.
 ils peuvent également concevoir des machines pilotables comme des véhicules et même des bâtiment.
 toutes ces machines fonctionnent avec de la mécanique.
@@ -470,7 +470,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Fiona` : archange de la fierté, prenant part au siège des récifs noirs. elle peux renforcer ses capacités si elle est fière d'elle ou des gens qui sont fiers d'eux. elle est la plus forte du trio qu'elle forme avec gabriella et helena, les trois glorieuses. accablé par la perte de ses amis contre ananta, elle perds toute fierté et ne peux plus affronter la liche. elle perdra son bras lors de la bataille mais survivra, renforçant nana et Gideon qui ont su prouver à leurs mentors qu'ils étaient capable de vaincre les pires adversaires.
 `Gabriella` : archange de la gloire, prenant part au siège des récifs noirs. elle devient plus forte quand elle accomplit des actions glorieuses. elle sera tuée par ananta.
 `Helena` : archange de l'honneur, prenant part au siège des récifs noirs. elle renforce ses poouvoirs si elle reçoit de l'honneur de la part d'autrui. elle sera tuée par ananta.
-`Isabela` : archange de l'insatisfaction, prenant part au siège des recifs noirs. elle peux créer des objets ou changer une situation si elle ressent principalement de l'insatisfaction. elle sera incapable de sauver ses camarades car elle ressentait avant tout de la peur et de la tristesse à ce moment là.
+`Isabela` : archange de l'insatisfaction, prenant part au siège des recifs noirs. elle peux génèrer des objets ou changer une situation si elle ressent principalement de l'insatisfaction. elle sera incapable de sauver ses camarades car elle ressentait avant tout de la peur et de la tristesse à ce moment là.
 
 `Boréalis` : ryu dieu de la météo. Parmi les plus puissants dieux. Nomade mais discrets malgré sa taille (il se camoufle grâce à des mirages) il vit dans un monastère laboratoire qui sert à ses fidèles pour étudier la météo.
 `Progenitus` : dieu hydre de la régénération, peux régénérer sans effort chaque partie de son corps. Peux également dupliquer ses membres à volonté.
@@ -492,7 +492,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Huanglong` : deuxième dragon de shentang et membre du conseil.
 `Artemas` : centauresse lancière membre du conseil. grande soeur d'atlanta.
 `Bénie sainte Astra` : sainte du continent et membre du conseil, dirige l'église travaillant avec les paladins de heaume blanc.
-`Mab` : goliath jarl de stromhein, membre du conseil. peux créer des surfaces glacées faisant office de sol. voulait déclencher une guerre contre les vikings pour leur activité guerrière mais sera convaincue de ne pas le faire par tassarion.
+`Mab` : goliath jarl de stromhein, membre du conseil. peux génèrer des surfaces glacées faisant office de sol. voulait déclencher une guerre contre les vikings pour leur activité guerrière mais sera convaincue de ne pas le faire par tassarion.
 `Cornedure` : minotaure membre du conseil. considère que le conseil a atteint ses limites et défendra le conseil face à la cabale en terrassant silenus et affrontant oneiros.
 `Chromite` : sphinx membre du conseil, peux se figer en pierre.
 `Dame Morana` :  meneuse de la Horde, membre du conseil et chef des revenants sur le continent. meilleure cavalière du conseil. extrais les pouvoirs des os.
@@ -520,7 +520,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Squelette de dragon` : n'a pas d'identité particulière mais est un très puissant squelette situé dans khetar.
 `Seth` : homme lézard type crocodile affrontant le conseil car il considère que les gemmes sont un source trop dangereuse de pouvoir. peux modifier la résistance des matériaux à l'aide d'un artefact, le rouage fondateur, contenu dans son bras gauche artificiel. après avoir été repoussé une première fois par le dragon squelette, il cherchera à aller à khetar. alastair ne le laisant pas faire, il profitera plus tard de l'intervention de la cabale pour les stopper. plus tard quand le héros arrivera à convaincre alastair après un duel, seth l'affrontera à nouveau mais soldera par un match nul là aussi. après une force du dragon squelette, il s'enfuit.
 `Penlong` : ryu voulant destituer l'empereur Yoa Guai du trone de shentang. le héros parvenant à tuer Yao Guai, Liang pu reprendre son poste.
-`Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant créer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth.
+`Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant génèrer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth.
 `Ahriman` : dragonien surnommé le rouge, d'origine étrangère au continent. gère l'immigration des personnalités atypiques. fera rentrer morrigan sur le territoire pour vérifier la menace de la cabale.
 
 `Drenza` : nain forgeron originaire de Khaziel, chef caché de la cabale, se fait passer pour un membre comme les autres. ancien créateur des gemmes, il garda l'une d'entre elle qui lui permis de devenir immortel. a créé Gaard pour diriger le conseil en secret. répartis les gemmes comme bon lui semble afin de contrôler le continent. a déjà affronté un empereur et explique pourquoi l'empire tolère l'indépendance du continent. gère en secret des centaines de groupe mafieux, de rebelles et de trafiquants. l'homme le plus recherché de l'empire avec Kotor, Gael et Algolbarth.
@@ -532,7 +532,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Kurandara` : puissant démon membre de la cabale.
 `Dao` : djiin membre de la cabale. complote contre l'empire de léonis.
 `Flaming` : oni membre de la cabale. se bat avec une bannière capable de générer des pions. chaque pion agit automatiquement avec un rôle prédefini.
-`Oneiros` : centaure maniant les illusions. crée une fumée capable de modifier la perception de la réalité. tuera orion pour regrouper les rebelles centaures sous sa propre coupe.
+`Oneiros` : centaure maniant les illusions. génère une fumée capable de modifier la perception de la réalité. tuera orion pour regrouper les rebelles centaures sous sa propre coupe.
 `Tourmaline` : démon ancien membre de la cabale, rival de kurandara.
 `Yao Guai` : avien à la tête d'une armée, fera un coup d'état contre l'empereur Liang. possible recrue de la cabale, sera tué avant par le héros et considéré comme un echec par le reste du groupe.
 
@@ -577,10 +577,10 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Mania` : golem géant (le géant de mha).
 `Kotorbahn` : archidémon chevalier du chaos, a affronté et tué l'empereur barbare.
 `Gael` : né d'un ange et d'un démon, géant difforme mais sage et surpuissant, il ère dans l'horizon en quête d'un adversaire aussi bien combattant que philosophe.
-`Algolbarth` : drow allié au néant, il porte une cape qui le recouvre entièrement. garde sa propre conscience mais peux contrôler aux créatures du néant. ne montre jamais son véritable corps, jeune et beau. est le seul à maitriser la synthèse, technique utilisant tous les éléments pour fusionner n'importe quel élément afin de créer un nouveau, indépendant des anciens. peux par exemple fusionner deux créatures pour en faire apparaitre une nouvelle, fusionner des soldats ou créatures du néant avec l'environnement ou des armes, fusionner deux espaces ou dimensions afin de créer un portail, fusionner deux moments proches pour "couper" le temps (comme diavolo dans jojo). a l'apparence de myst vearn.
+`Algolbarth` : drow allié au néant, il porte une cape qui le recouvre entièrement. garde sa propre conscience mais peux contrôler aux créatures du néant. ne montre jamais son véritable corps, jeune et beau. est le seul à maitriser la synthèse, technique utilisant tous les éléments pour fusionner n'importe quel élément afin de génèrer un nouveau, indépendant des anciens. peux par exemple fusionner deux créatures pour en faire apparaitre une nouvelle, fusionner des soldats ou créatures du néant avec l'environnement ou des armes, fusionner deux espaces ou dimensions afin de génèrer un portail, fusionner deux moments proches pour "couper" le temps (comme diavolo dans jojo). a l'apparence de myst vearn.
 `Yotanwa` : reine des barbares. une des meilleures cavalière de l'horizon.
 `Rokyokou` : cavalier avec un casque de lion. cavalier le plus courageux, comparé à Akou.
-`Onimusha` : gobelin cavalier utilisant une lance de souffre. peux créer des explosions en mélangeant de la poudre à ses flammes.
+`Onimusha` : gobelin cavalier utilisant une lance de souffre. peux génèrer des explosions en mélangeant de la poudre à ses flammes.
 `Ordo` : goliath cavalier et chef de guerre. roi d'une montagne de yéti.
 `Borgne` : chef de guerre ayant perdu son oeil droit.
 `Belagor` : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  

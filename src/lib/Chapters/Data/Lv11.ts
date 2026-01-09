@@ -16,5 +16,5 @@ export class Lv11_Princesse extends Chapter {
             array.push("Soldat");
         }
         this.addStep(110, ["Ville"], 20, array, ["Les trois princesses d'un royaume voisin décident de se rebeller face à la reine mère.", "Cette dernière vous recrute pour les corriger et briser la rébellion."]);
-    }
-}
+    };
+};

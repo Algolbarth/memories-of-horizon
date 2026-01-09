@@ -7,7 +7,7 @@
 	export let card: Card;
 </script>
 
-Crée <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe la force et la constitution de cette carte à sa valeur d'infusion.
+Génère <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe la force et la constitution de cette carte à sa valeur d'infusion.
 
 <br />
 <br />

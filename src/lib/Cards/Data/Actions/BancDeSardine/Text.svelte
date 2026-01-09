@@ -9,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Crée 5 <CardInfo bind:system name={"Sardine"} /> dans la réserve.
+Génère 5 <CardInfo bind:system name={"Sardine"} /> dans la réserve.

@@ -11,11 +11,11 @@
 Au choix :
 <ul>
 	<li>
-		Crée un <CardInfo bind:system name={"Élémentaire de roche"} /> sur le terrain.
+		Génère un <CardInfo bind:system name={"Élémentaire de roche"} /> sur le terrain.
 	</li>
 	<li>
 		Créé un <CardInfo bind:system name={"Mur de roche"} /> sur le terrain.
 	</li>
 </ul>
 
-<Sorcery bind:system bind:card cost={50} text={"crée les deux sur le terrain à la place."} />
+<Sorcery bind:system bind:card cost={50} text={"génère les deux sur le terrain à la place."} />

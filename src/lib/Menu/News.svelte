@@ -27,7 +27,7 @@
 					<span class="card">Concoction</span> est un objet potion regroupant plusieurs effets de potions différentes.
 				</li>
 				<li>
-					<span class="card">Mélange</span> est une action permettant de créer une <span class="card">Concoction</span> à partir de 2 potions dans la réserve.
+					<span class="card">Mélange</span> est une action permettant de génèrer une <span class="card">Concoction</span> à partir de 2 potions dans la réserve.
 				</li>
 				<li>
 					<span class="card">Chaudron</span> est un bâtiment créant

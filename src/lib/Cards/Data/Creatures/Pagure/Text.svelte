@@ -11,6 +11,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Crée <CardInfo bind:system name={"Coquillage"} /> dans la réserve.</li>
-	<li>Crée <CardInfo bind:system name={"Conque"} /> dans la réserve.</li>
+	<li>Génère <CardInfo bind:system name={"Coquillage"} /> dans la réserve.</li>
+	<li>Génère <CardInfo bind:system name={"Conque"} /> dans la réserve.</li>
 </ul>

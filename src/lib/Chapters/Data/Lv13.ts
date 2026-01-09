@@ -25,5 +25,5 @@ export class Lv13_Generaux extends Chapter {
         }
         array.push("Général");
         this.addStep(130, ["Ville"], 10, array, ["Le deuxième général est retranché dans la ville derrière les remparts."]);
-    }
-}
+    };
+};

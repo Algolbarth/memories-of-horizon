@@ -23,8 +23,8 @@ export class Lv16_Barbare extends Chapter {
             array.push("Cor de guerre");
         }
         this.addStep(160, ["Plaine"], 20, array, ["Des tribus barbares s'entretuent dans les grandes plaines environnantes.", "Au coeur de la mêlée, les chefs galvanisés par leurs troupes se préparent à en finir.", "Le plus simple pour traverser cette hécatombe serait de les faire tomber ensemble."]);
-    }
-}
+    };
+};
 
 export class Lv16_Atlas extends Chapter {
     boss = true;
@@ -36,5 +36,5 @@ export class Lv16_Atlas extends Chapter {
         this.addRessource("Or", 1250);
 
         this.addStep(160, ["Montagne"], 10, ["Atlas, marche-cratère"], ["Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et abruti, écrasant des paysages par inattention."]);
-    }
-}
+    };
+};

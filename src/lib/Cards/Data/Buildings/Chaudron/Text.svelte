@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : crée <CardInfo bind:system name={"Mélange"} /> dans la réserve.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Mélange"} /> dans la réserve.

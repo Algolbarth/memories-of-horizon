@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : crée 2 <CardInfo bind:system name={"Garde"} /> sur le terrain.
+Quand posé : génère 2 <CardInfo bind:system name={"Garde"} /> sur le terrain.

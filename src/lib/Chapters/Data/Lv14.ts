@@ -21,8 +21,8 @@ export class Lv14_MageFeu extends Chapter {
         }
         array.push("Pluie de feu");
         this.addStep(140, ["Volcan"], 40, array, ["Une rumeur concernant des membres rebels d'une école de la magie de feu se répend dans la région.", "En vous rendant dans l'établissement, le directeur vous explique la situation et vous conseille de fouiller les ruines de l'ancienne école.", "Vous y trouvez une ancienne salle abandonnée, la chaleur suffocante émanant des murs rongés par des flammes mystiques.", "Au centre, les mages vêtus de robes écarlates commencent à incanter."]);
-    }
-}
+    };
+};
 
 export class Lv14_Godrick extends Chapter {
     boss = true;
@@ -34,5 +34,5 @@ export class Lv14_Godrick extends Chapter {
         this.addRessource("Or", 850);
 
         this.addStep(140, ["Ville"], 10, ["Godrick, roi des rois"], ["Avant la création de l'Empire, durant la grande guerre, les royaumes étaient encore rivaux.", "Un humain parvient cependant à créer la plus grande alliance de tout le conflit, un espoir de paix dans une période de pure violence.", "Celui qui l'on nomma le roi des rois fut sans aucun doute un précurseur, et ses efforts eurent un effet décisif pour le renouveau de l'Horizon."]);
-    }
-}
+    };
+};

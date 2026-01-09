@@ -10,5 +10,5 @@ export class Lv5_Chevalier extends Chapter {
 
         this.addStep(50, ["Plaine"], 10, ["Chevalier (monté)", "Chevalier (monté)"], ["Une troupe de chevalier errant terrorise la région en usant de leur privilège pour vivre aux dépends des habitants."]);
         this.addStep(50, ["Plaine"], 10, ["Chevalier (monté)", "Chevalier (monté)"]);
-    }
-}
+    };
+};

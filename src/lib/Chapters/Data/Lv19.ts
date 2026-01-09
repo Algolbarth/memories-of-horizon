@@ -18,5 +18,5 @@ export class Lv19_ChevalierGeant extends Chapter {
             array.push("Roi");
         }
         this.addStep(190, ["Ville"], 10, array, ["À peine arrivé à la capitale locale, vous êtes invité par les gardes à rencontrer les rois. Dans la grande salle du trône, vous vous tenez face à un groupe imposant de chevaliers. Les trônes sont occupés par ceux qui vont tendent ce piège, sûrs de leur capacité à vous soumettre."]);
-    }
-}
+    };
+};

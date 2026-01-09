@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : crée <CardInfo bind:system name={"Écrasement"} /> dans la réserve.
+Quand posé : génère <CardInfo bind:system name={"Écrasement"} /> dans la réserve.
