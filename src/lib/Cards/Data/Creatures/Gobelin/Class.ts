@@ -13,4 +13,4 @@ export class Gobelin extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
     };
-}
+};

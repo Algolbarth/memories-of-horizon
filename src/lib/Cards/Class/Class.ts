@@ -316,6 +316,27 @@ export class Card {
     };
 
     destroy = () => {
+        for (const entity of [this.system.game.player, this.system.game.bot]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+                    if (card != this) {
+                        if (card.otherDestroyEffect != undefined) {
+                            card.otherDestroyEffect(this);
+                        }
+
+                        if (card.type == "Créature") {
+                            for (const e of card.equipments) {
+                                if (e.otherDestroyEffect != undefined) {
+                                    e.otherDestroyEffect(this);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         if (this.zone.name == "Pile") {
             this.remove();
         }
@@ -325,6 +346,8 @@ export class Card {
     };
 
     otherDieEffect: Function | undefined;
+
+    otherDestroyEffect: Function | undefined;
 
     startStepEffect: Function | undefined;
 

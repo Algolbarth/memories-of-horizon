@@ -166,4 +166,8 @@
 	.big {
 		width: 10vw;
 	}
+
+	input[type="text"] {
+		width: 100%;
+	}
 </style>
