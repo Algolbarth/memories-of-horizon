@@ -119,6 +119,7 @@ export * from './Renard';
 export * from './Roi';
 export * from './Sage';
 export * from './SageDeLaForet';
+export * from './SageDement';
 export * from './SalamandreDesEaux';
 export * from './SalamandreDesFlammes';
 export * from './Sardine';
