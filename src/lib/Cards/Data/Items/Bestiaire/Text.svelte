@@ -11,4 +11,4 @@
 Découvre 3 créatures.
 <br />
 <br />
-Ruse 20 : Découvre 5 créatures à la place.
+Résolution 20 : Découvre 5 créatures à la place.

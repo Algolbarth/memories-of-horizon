@@ -32,4 +32,4 @@ export class LivreDeRecette extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

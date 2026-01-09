@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Ruse 20 : Quand posé : augmente de 10 sa constitution et sa force et augmente de 5 son endurance.
+Résolution 20 : Quand posé : augmente de 10 sa constitution et sa force et augmente de 5 son endurance.

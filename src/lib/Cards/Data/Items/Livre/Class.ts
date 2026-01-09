@@ -20,6 +20,7 @@ export class Livre extends Item {
         else {
             this.owner.discover(1);
         }
+
         this.move("Défausse");
         this.pose();
     };

@@ -22,7 +22,8 @@ export class Omniscience extends Action {
 
     useEffect = () => {
         this.owner?.discover(this.owner.zone("Pile").size - this.owner.zone("Pile").cards.length);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

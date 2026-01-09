@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Découvre 1 carte.
+Si la pile alliée est vide : découvre 5 cartes.
 <br />
 <br />
-Résolution 10 : Découvre 2 cartes à la place.
+Résolution 30 : Si la pile alliée est vide : découvre autant de carte que nécessaire pour remplir la pile.

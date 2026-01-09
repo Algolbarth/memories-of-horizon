@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Ruse 20 : Quand posé : augmente de 1 sa vitesse.
+Résolution 20 : Quand posé : augmente de 1 sa vitesse.

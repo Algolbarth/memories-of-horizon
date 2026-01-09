@@ -16,6 +16,7 @@ export * from './Concoction';
 export * from './Conque';
 export * from './Coquillage';
 export * from './CorDeGuerre';
+export * from './EcritsCalcines';
 export * from './FioleDeCorindon';
 export * from './FioleDeCristal';
 export * from './FioleDeVerre';
