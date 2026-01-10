@@ -22,6 +22,7 @@ export * from './Conquete';
 export * from './CoupDeBouclier';
 export * from './CoupDeBoule';
 export * from './Croissance';
+export * from './CycleDeLEau';
 export * from './Decapitation';
 export * from './Defrichage';
 export * from './Demolition';

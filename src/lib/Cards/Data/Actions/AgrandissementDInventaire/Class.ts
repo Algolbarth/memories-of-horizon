@@ -19,4 +19,4 @@ export class AgrandissementDInventaire extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};
