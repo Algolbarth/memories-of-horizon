@@ -23,7 +23,7 @@
 
 				<div>
 					{#if zone instanceof Stack}
-						Nv {zone.level}
+						Nv {zone.level()}
 					{/if}
 				</div>
 
@@ -36,7 +36,7 @@
 
 			<div style="text-align:right;">
 				{#if zone instanceof Stack}
-					{#if entity == system.game.player && zone.level < 20 && select_action == undefined && system.game.phase == "Préparation"}
+					{#if entity == system.game.player && zone.level() < 20 && select_action == undefined && system.game.phase == "Préparation"}
 						{#if entity.canUpStack()}
 							<button
 								class="active"
@@ -50,7 +50,7 @@
 						{:else}
 							Améliorer
 						{/if}
-						{zone.level * 10} Or -
+						{zone.level() * 10} Or -
 					{/if}
 
 					{#if entity == system.game.player && select_action == undefined && system.game.phase == "Préparation"}

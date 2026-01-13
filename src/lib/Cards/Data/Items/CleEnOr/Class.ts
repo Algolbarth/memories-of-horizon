@@ -2,19 +2,19 @@ import type { System } from '../../../../System/Class';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
-export class CoffreEnBois extends Item {
-    name = "Coffre en bois";
+export class CleEnOr extends Item {
+    name = "Clé en or";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5]]);
+        this.init([["Or", 15]]);
 
         this.text = Text;
     };
 
     useEffect = () => {
-        this.owner.draw(2);
+        this.owner.zone("Pile").step_level += 1;
 
         this.move("Défausse");
         this.pose();

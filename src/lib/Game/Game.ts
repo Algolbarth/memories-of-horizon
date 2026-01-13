@@ -57,7 +57,7 @@ export class Game extends Battle {
         entity.ressource("Flux").stock = train_entity.flux;
         entity.ressource("Mana").stock = train_entity.mana;
 
-        entity.zone("Pile").level = train_entity.zones[1].level;
+        entity.zone("Pile").base_level = train_entity.zones[1].level;
         for (const zone of train_entity.zones) {
             entity.zone(zone.name).size = zone.size;
             for (const card_name of zone.cards) {
@@ -93,7 +93,7 @@ export class Game extends Battle {
         this.player.ressource("Flux").stock++;
 
         this.bot.life.set(this.chapter.steps[0].life);
-        this.bot.zone("Pile").level = 1 + Math.floor((this.chapter.number - 1) / 5);
+        this.bot.zone("Pile").base_level = 1 + Math.floor((this.chapter.number - 1) / 5);
         for (const zone of this.bot.zones) {
             if (zone.name == "Région") {
                 if (this.chapter.steps[0].locations.length > 3) {
@@ -162,6 +162,9 @@ export class Game extends Battle {
         this.bot.checkPerpetuite();
 
         for (const entity of [this.player, this.bot]) {
+
+            entity.zone("Pile").step_level = 0;
+
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {

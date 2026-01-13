@@ -16,7 +16,7 @@ export class CoffreEnOr extends Item {
 
     useEffect = () => {
         let read_condition = (card: Card, drawer: Card) => {
-            if (drawer.owner?.zone("Pile").level == card.level) {
+            if (drawer.owner?.zone("Pile").level() == card.level) {
                 return true;
             }
             return false;

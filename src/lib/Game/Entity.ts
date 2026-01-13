@@ -74,12 +74,12 @@ export class Entity {
         return card;
     };
 
-    cardList = (read_condition: (Function | undefined) = undefined, drawer: Card) => {
+    cardList = (read_condition: (Function | undefined) = undefined, drawer: Card | undefined) => {
         let nameList: string[] = [];
 
         if (this.system.game.deck == undefined) {
             for (const card of this.system.cards.instance) {
-                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (read_condition == undefined || read_condition(card, drawer))) {
+                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level() && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (read_condition == undefined || read_condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }
@@ -87,7 +87,7 @@ export class Entity {
         else {
             for (const c of this.system.game.deck.cards) {
                 let card = this.system.cards.getByName(c);
-                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level) {
+                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level()) {
                     nameList.push(c);
                 }
             }
@@ -98,14 +98,12 @@ export class Entity {
 
     draw = (number: number, read_condition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
         let nameList: string[] = this.cardList(read_condition, drawer);
-        let card: Card | undefined = undefined;
 
         if (nameList.length > 0) {
-            card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
+            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
             card?.add("Pile");
+            array.push(card);
         }
-
-        array.push(card);
 
         if (number > 1) {
             array = this.draw(number - 1, read_condition, drawer, array);
@@ -115,7 +113,6 @@ export class Entity {
 
     discover = (number: number, read_condition: Function, drawer: Card, array: Card[] = []) => {
         let nameList: string[] = this.cardList(read_condition, drawer);
-        let card = undefined;
 
         for (const card of this.zone("Pile").cards) {
             if (nameList.includes(card.name)) {
@@ -124,11 +121,10 @@ export class Entity {
         }
 
         if (nameList.length > 0) {
-            card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
+            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
             card.add("Pile");
+            array.push(card);
         }
-
-        array.push(card);
 
         if (number > 1) {
             array = this.discover(number - 1, read_condition, drawer, array);
@@ -137,7 +133,7 @@ export class Entity {
     };
 
     canUpStack = () => {
-        if (this.ressource("Or").total() >= this.zone("Pile").level * 10) {
+        if (this.ressource("Or").total() >= this.zone("Pile").base_level * 10) {
             return true;
         }
         return false;
@@ -145,8 +141,8 @@ export class Entity {
 
     upStack = () => {
         if (this.canUpStack()) {
-            this.ressource("Or").spend(this.zone("Pile").level * 10);
-            this.zone("Pile").level++;
+            this.ressource("Or").spend(this.zone("Pile").base_level * 10);
+            this.zone("Pile").base_level++;
             this.refreshStack();
         }
     };

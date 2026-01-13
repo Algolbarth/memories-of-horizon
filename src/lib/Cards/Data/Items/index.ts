@@ -10,6 +10,7 @@ export * from './Brique';
 export * from './CarteDeLaRegion';
 export * from './Chataigne';
 export * from './Chocolat';
+export * from './CleEnOr';
 export * from './CoffreEnBois';
 export * from './CoffreEnOr';
 export * from './Concoction';
