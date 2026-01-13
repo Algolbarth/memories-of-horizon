@@ -11,7 +11,7 @@ export class Pain extends Item {
         super(system);
 
         this.init([["Or", 5]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.text = Text;
     };

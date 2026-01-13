@@ -39,12 +39,14 @@ export class PluieDeCailloux extends Spell {
     useEffect = (choice: string) => {
         if (this.owner.ressource("Mana").total() >= 30) {
             this.owner.ressource("Mana").spend(30);
+
             let nb_creature = this.owner.zone("Terrain").size - this.owner.zone("Terrain").cards.length;
             for (let i = 0; i < nb_creature; i++) {
                 this.owner.getCard("Élémentaire de caillou").add("Terrain");
             }
-            let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of terrain) {
+
+            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+            for (const card of adversary_land) {
                 card.damageByEffect(6);
             }
         }
@@ -56,8 +58,8 @@ export class PluieDeCailloux extends Spell {
                 }
             }
             else if (choice == "damage") {
-                let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-                for (const card of terrain) {
+                let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+                for (const card of adversary_land) {
                     card.damageByEffect(6);
                 }
             }

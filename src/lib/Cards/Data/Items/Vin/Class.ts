@@ -11,7 +11,7 @@ export class Vin extends Item {
         super(system);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.text = Text;
     };

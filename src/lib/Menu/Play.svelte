@@ -4,8 +4,8 @@
 
 	export let system: System;
 
-	function aventure() {
-		system.game = new Game(system, "Aventure");
+	function preconstruct() {
+		system.game = new Game(system, "Pré-construit");
 		system.game.init();
 		system = system;
 	}
@@ -24,7 +24,7 @@
 	<button
 		class="big menu"
 		on:click={() => {
-			aventure();
+			preconstruct();
 		}}
 	>
 		Pré-construit

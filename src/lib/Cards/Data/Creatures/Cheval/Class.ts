@@ -10,7 +10,7 @@ export class Cheval extends Creature {
         super(system);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

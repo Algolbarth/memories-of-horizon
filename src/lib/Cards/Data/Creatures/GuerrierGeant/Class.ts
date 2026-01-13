@@ -8,7 +8,7 @@ export class GuerrierGeant extends Creature {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Géant");
+        this.families.base.push("Géant");
 
         this.stat("Constitution").init(75);
         this.stat("Force").init(75);

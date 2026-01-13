@@ -9,7 +9,7 @@ export class Trident extends Equipment {
         super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Force").init(25);
         this.equipStat("Percée").init(50);

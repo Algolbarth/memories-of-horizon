@@ -11,7 +11,7 @@ export class PouletRoti extends Item {
         super(system);
 
         this.init([["Or", 3], ["Feu", 2]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.text = Text;
     };

@@ -16,7 +16,7 @@ export class FioleDeCristal extends Item {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
+            if (card.type == "Objet" && card.families.total().includes("Potion") && card.name != "Concoction") {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class FioleDeCristal extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.type == "Objet" && card.familles.total().includes("Potion") && card.name != "Concoction") {
+                if (target == undefined && card.type == "Objet" && card.families.total().includes("Potion") && card.name != "Concoction") {
                     target = card;
                 }
             }

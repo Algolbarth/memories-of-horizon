@@ -9,7 +9,7 @@ export class SageDement extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Feu", 20]]);
-        this.familles.base.push("Gobelin");
+        this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);

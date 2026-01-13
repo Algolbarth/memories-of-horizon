@@ -16,7 +16,7 @@ export class LivreDeRecette extends Item {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.familles.total().includes("Nourriture")) {
+            if (card.families.total().includes("Nourriture")) {
                 return true;
             }
             return false;

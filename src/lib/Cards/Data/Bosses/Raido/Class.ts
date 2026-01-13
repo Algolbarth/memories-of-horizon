@@ -11,7 +11,7 @@ export class Raido extends Boss {
 
         this.level = 2;
         this.elements.base = ["Neutre"];
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Force").init(10);
         this.stat("Constitution").init(50);

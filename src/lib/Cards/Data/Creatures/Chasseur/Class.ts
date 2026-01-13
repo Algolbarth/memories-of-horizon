@@ -10,7 +10,7 @@ export class Chasseur extends Creature {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -19,7 +19,7 @@ export class Chasseur extends Creature {
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.type == "Créature" && card.owner == this.owner && card.familles.total().includes("Bête")) {
+        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.type == "Créature" && card.owner == this.owner && card.families.total().includes("Bête")) {
             this.stat("Constitution").increase(2);
             this.stat("Force").increase(5);
         }

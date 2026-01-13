@@ -11,7 +11,7 @@ export class Piment extends Item {
         super(system);
 
         this.init([["Or", 6], ["Feu", 6]]);
-        this.familles.base.push("Nourriture", "Plante");
+        this.families.base.push("Nourriture", "Plante");
 
         this.text = Text;
     };

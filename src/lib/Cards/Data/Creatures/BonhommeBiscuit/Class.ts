@@ -10,7 +10,7 @@ export class BonhommeBiscuit extends Creature {
         super(system);
 
         this.init([["Or", 10]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
@@ -19,7 +19,7 @@ export class BonhommeBiscuit extends Creature {
     };
 
     targetEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.familles.total().includes("Nourriture")) {
+        if (this.zone.name == "Terrain" && card.families.total().includes("Nourriture")) {
             this.stat("Constitution").increase(5);
             this.stat("Force").increase(5);
         }

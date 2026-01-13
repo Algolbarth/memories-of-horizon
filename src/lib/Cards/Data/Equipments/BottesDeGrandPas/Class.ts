@@ -9,7 +9,7 @@ export class BottesDeGrandPas extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Vitesse").init(10);
 

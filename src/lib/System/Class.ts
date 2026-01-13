@@ -42,9 +42,9 @@ export class System {
             let cardClass = cards[card];
             let cardInstance = new cardClass(this);
 
-            for (const famille of cardInstance.familles.base) {
-                if (!this.sort.familles.includes(famille)) {
-                    this.sort.familles.push(famille);
+            for (const family of cardInstance.families.base) {
+                if (!this.sort.families.includes(family)) {
+                    this.sort.families.push(family);
                 }
             }
 
@@ -52,15 +52,15 @@ export class System {
             this.cards.instance.push(cardInstance);
         }
 
-        for (let i = 0; i < this.sort.familles.length; i++) {
+        for (let i = 0; i < this.sort.families.length; i++) {
             let j = i;
             while (
                 j > 1 &&
-                this.sort.familles[j - 1].localeCompare(this.sort.familles[j]) > 0
+                this.sort.families[j - 1].localeCompare(this.sort.families[j]) > 0
             ) {
-                let swap = this.sort.familles[j];
-                this.sort.familles[j] = this.sort.familles[j - 1];
-                this.sort.familles[j - 1] = swap;
+                let swap = this.sort.families[j];
+                this.sort.families[j] = this.sort.families[j - 1];
+                this.sort.families[j - 1] = swap;
                 j--;
             }
         }
@@ -227,7 +227,7 @@ class View {
 class Sort {
     levels: string[] = ["Tous"];
     types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
-    familles: string[] = ["Toutes"];
+    families: string[] = ["Toutes"];
     elements: string[] = ["Tous"];
 
     constructor() {

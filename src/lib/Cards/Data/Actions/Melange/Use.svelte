@@ -10,7 +10,7 @@
 	let potion_2: Item | undefined;
 
 	function select_condition(card: Card) {
-		if (card.type == "Objet" && card.familles.total().includes("Potion") && (potion_1 == undefined || card != potion_1)) {
+		if (card.type == "Objet" && card.families.total().includes("Potion") && (potion_1 == undefined || card != potion_1)) {
 			return true;
 		}
 		return false;

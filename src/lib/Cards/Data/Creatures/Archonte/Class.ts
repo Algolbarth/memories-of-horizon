@@ -10,7 +10,7 @@ export class Archonte extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Terre", 55]]);
-        this.familles.base.push("Nain");
+        this.families.base.push("Nain");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
@@ -20,8 +20,8 @@ export class Archonte extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             card.stat("Endurance").increase(10);
         }
         this.move("Terrain");

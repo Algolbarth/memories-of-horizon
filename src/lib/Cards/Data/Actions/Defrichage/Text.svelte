@@ -8,8 +8,6 @@
 	export let card: Card;
 </script>
 
-Augmente de 1 la taille du terrain et de la pile alliée.
+Augmente de 1 la taille du terrain allié.
 <br />
-Produit autant d'or que la taille de la pile alliée.
-<br />
-Produit autant de végétal que la taille du terrain allié.
+Augmente d'autant la constitution de toutes les créatures alliées sur le terrain que la taille du terrain allié.

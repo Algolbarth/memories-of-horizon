@@ -8,7 +8,7 @@ export class Archimage extends Creature {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

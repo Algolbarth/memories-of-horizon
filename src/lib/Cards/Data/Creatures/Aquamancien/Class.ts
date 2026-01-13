@@ -10,7 +10,7 @@ export class Aquamancien extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Eau", 12]]);
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

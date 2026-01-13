@@ -10,7 +10,7 @@ export class MontureDeChevalier extends Creature {
         super(system);
 
         this.init([["Or", 110]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -23,7 +23,7 @@ export class MontureDeChevalier extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature" && card.familles.total().includes("Chevalier") && !card.mounted) {
+                if (check == false && card.type == "Créature" && card.families.total().includes("Chevalier") && !card.mounted) {
                     check = true;
                 }
             }
@@ -39,7 +39,7 @@ export class MontureDeChevalier extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Chevalier") && !card.mounted) {
+                if (target == undefined && card.type == "Créature" && card.families.total().includes("Chevalier") && !card.mounted) {
                     target = card;
                 }
             }

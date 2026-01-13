@@ -207,8 +207,8 @@ export class Game extends Battle {
     };
 
     victory = () => {
-        if (this.mode == "Aventure") {
-            this.system.account.aventure.victory++;
+        if (this.mode == "Pré-construit") {
+            this.system.account.preconstruct.victory++;
         }
         else if (this.mode == "Construit") {
             this.system.account.construct.victory++;
@@ -218,8 +218,8 @@ export class Game extends Battle {
     };
 
     defeat = () => {
-        if (this.mode == "Aventure") {
-            this.system.account.aventure.defeat++;
+        if (this.mode == "Pré-construit") {
+            this.system.account.preconstruct.defeat++;
         }
         else if (this.mode == "Construit") {
             this.system.account.construct.defeat++;

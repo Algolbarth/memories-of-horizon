@@ -23,8 +23,8 @@ export class TourneeGenerale extends Action {
 
     useEffect = () => {
         let number = 0;
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 number++;
             }

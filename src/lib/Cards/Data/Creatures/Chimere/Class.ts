@@ -10,7 +10,7 @@ export class Chimere extends Creature {
         super(system);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Bête", "Reptile");
+        this.families.base.push("Bête", "Reptile");
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -19,23 +19,23 @@ export class Chimere extends Creature {
     };
 
     useEffect = () => {
-        let list = [];
-        let terrain = copy(this.owner.zone("Terrain").cards);
+        let family_list: string[] = [];
+        let land = copy(this.owner.zone("Terrain").cards);
 
-        for (const card of terrain) {
+        for (const card of land) {
             if (card.type == "Créature") {
-                for (const famille of card.familles.total()) {
-                    if (!list.includes(famille)) {
-                        list.push(famille);
+                for (const family of card.families.total()) {
+                    if (!family_list.includes(family)) {
+                        family_list.push(family);
                     }
                 }
             }
         }
 
-        this.stat("Constitution").increase(10 * list.length);
-        this.stat("Force").increase(10 * list.length);
+        this.stat("Constitution").increase(10 * family_list.length);
+        this.stat("Force").increase(10 * family_list.length);
 
         this.move("Terrain");
         this.pose();
     };
-}
+};

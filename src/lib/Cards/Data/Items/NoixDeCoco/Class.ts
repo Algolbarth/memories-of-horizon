@@ -11,7 +11,7 @@ export class NoixDeCoco extends Item {
         super(system);
 
         this.init([["Or", 10], ["Eau", 10]]);
-        this.familles.base.push("Nourriture", "Plante");
+        this.families.base.push("Nourriture", "Plante");
 
         this.text = Text;
     };

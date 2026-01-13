@@ -11,7 +11,7 @@ export class Biscuit extends Item {
         super(system);
 
         this.init([["Or", 10]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.text = Text;
     };

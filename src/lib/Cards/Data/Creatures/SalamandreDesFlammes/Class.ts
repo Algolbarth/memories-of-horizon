@@ -9,7 +9,7 @@ export class SalamandreDesFlammes extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Feu", 10]]);
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

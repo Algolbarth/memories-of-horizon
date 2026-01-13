@@ -19,7 +19,7 @@
 	let nameSelect = "";
 	let levelSelect = "Tous";
 	let typeSelect = "Tous";
-	let familleSelect = "Toutes";
+	let familySelect = "Toutes";
 	let elementSelect = "Tous";
 	let communSelect = true;
 	let rareSelect = false;
@@ -34,7 +34,7 @@
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
 
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (!card.trait("Légendaire").value() || system.train.add.entity == "bot") && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain")) && (familleSelect == "Toutes" || card.familles.total().includes(familleSelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
+			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (!card.trait("Légendaire").value() || system.train.add.entity == "bot") && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain")) && (familySelect == "Toutes" || card.families.total().includes(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
 				tab.push(card);
 			}
 		}
@@ -43,11 +43,11 @@
 		return "";
 	}
 
-	function sorting(name: string, level: string, type: string, famille: string, element: string, commun: boolean, rare: boolean, legendary: boolean) {
+	function sorting(name: string, level: string, type: string, family: string, element: string, commun: boolean, rare: boolean, legendary: boolean) {
 		nameSelect = name;
 		levelSelect = level;
 		typeSelect = type;
-		familleSelect = famille;
+		familySelect = family;
 		elementSelect = element;
 		communSelect = commun;
 		rareSelect = rare;
@@ -136,7 +136,7 @@
 {/if}
 
 {#if filterWindow}
-	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familleSelect} {elementSelect} {communSelect} {rareSelect} {legendarySelect} {sorting} {close} />
+	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familySelect} {elementSelect} {communSelect} {rareSelect} {legendarySelect} {sorting} {close} />
 {/if}
 
 <style>

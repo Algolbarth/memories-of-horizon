@@ -10,7 +10,7 @@ export class SoldatNain extends Creature {
         super(system);
 
         this.init([["Or", 18], ["Terre", 18]]);
-        this.familles.base.push("Nain");
+        this.families.base.push("Nain");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -21,8 +21,8 @@ export class SoldatNain extends Creature {
 
     addEffect = (zone: string) => {
         if (zone == "Terrain") {
-            let terrain = copy(this.owner.zone("Terrain").cards);
-            for (const card of terrain) {
+            let land = copy(this.owner.zone("Terrain").cards);
+            for (const card of land) {
                 if (card.type == "Bâtiment") {
                     this.stat("Constitution").increase(2);
                     this.stat("Force").increase(2);
@@ -30,4 +30,4 @@ export class SoldatNain extends Creature {
             }
         }
     };
-}
+};

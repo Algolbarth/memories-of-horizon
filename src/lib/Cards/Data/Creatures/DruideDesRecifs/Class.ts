@@ -8,7 +8,7 @@ class DruideDesRecifs extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Eau", 25]]);
-        this.familles.base.push("Druide");
+        this.families.base.push("Druide");
 
         this.text = Text;
     };
@@ -41,7 +41,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
     constructor(system: System) {
         super(system);
 
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
@@ -61,7 +61,7 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
     constructor(system: System) {
         super(system);
 
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.trait("Rare").base = true;
 

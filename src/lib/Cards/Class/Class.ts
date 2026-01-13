@@ -14,7 +14,7 @@ export class Card {
     sale: Cost[] = [];
     level: number = 0;
     type: string = "Carte";
-    familles: Families = new Families(this);
+    families: Families = new Families(this);
     traits: Trait[] = [];
     stats: Stat[] = [];
     elements: Elements = new Elements(this);

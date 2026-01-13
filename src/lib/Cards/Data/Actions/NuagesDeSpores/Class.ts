@@ -24,8 +24,8 @@ export class NuageDeSpores extends Action {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of terrain) {
+        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+        for (const card of adversary_land) {
             if (card.type == "Créature") {
                 card.stat("Poison").increase(5);
             }

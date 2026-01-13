@@ -10,7 +10,7 @@ export class Lion extends Creature {
         super(system);
 
         this.init([["Or", 30], ["Feu", 30]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -19,9 +19,9 @@ export class Lion extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
-            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
+            if (card.type == "Créature" && card.families.total().includes("Bête")) {
                 card.stat("Constitution").increase(5);
                 card.stat("Force").increase(5);
             }

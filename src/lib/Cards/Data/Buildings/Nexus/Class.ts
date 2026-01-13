@@ -10,7 +10,7 @@ export class Nexus extends Building {
         super(system);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Élémentaire");
+        this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(20);
 
@@ -18,7 +18,7 @@ export class Nexus extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Élémentaire")) {
+        if (this.zone.name == "Terrain" && card.type == "Créature" && card.families.total().includes("Élémentaire")) {
             for (const element of card.elements.total()) {
                 if (element != "Neutre") {
                     this.owner.ressource(element).production += 1;

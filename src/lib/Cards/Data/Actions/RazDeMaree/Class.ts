@@ -28,8 +28,8 @@ export class RazDeMaree extends Action {
             value++;
         }
 
-        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of terrain) {
+        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+        for (const card of adversary_land) {
             card.damageByEffect(value);
         }
 

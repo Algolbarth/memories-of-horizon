@@ -8,7 +8,7 @@ export class PiquierGobelin extends Creature {
         super(system);
 
         this.init([["Or", 8], ["Feu", 8]]);
-        this.familles.base.push("Gobelin");
+        this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(15);

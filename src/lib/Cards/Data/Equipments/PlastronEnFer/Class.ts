@@ -9,7 +9,7 @@ export class PlastronEnFer extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(45);
 

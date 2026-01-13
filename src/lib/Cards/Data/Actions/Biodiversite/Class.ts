@@ -23,19 +23,19 @@ export class Biodiversite extends Action {
 
     useEffect = () => {
         let list = [];
-        let terrain = copy(this.owner.zone("Terrain").cards);
+        let land = copy(this.owner.zone("Terrain").cards);
 
-        for (const card of terrain) {
+        for (const card of land) {
             if (card.type == "Créature") {
-                for (const famille of card.familles.total()) {
-                    if (!list.includes(famille)) {
-                        list.push(famille);
+                for (const family of card.families.total()) {
+                    if (!list.includes(family)) {
+                        list.push(family);
                     }
                 }
             }
         }
 
-        for (const card of terrain) {
+        for (const card of land) {
             if (card.type == "Créature") {
                 card.stat("Constitution").increase(list.length * 5);
                 card.stat("Force").increase(list.length * 5);

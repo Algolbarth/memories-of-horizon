@@ -10,7 +10,7 @@ export class BibliothequeElfique extends Building {
         super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
-        this.familles.base.push("Elfe");
+        this.families.base.push("Elfe");
 
         this.stat("Constitution").init(20);
 
@@ -18,7 +18,7 @@ export class BibliothequeElfique extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Elfe")) {
+        if (this.zone.name == "Terrain" && card.type == "Créature" && card.families.total().includes("Elfe")) {
             this.stat("Intelligence").increase(1);
         }
     };

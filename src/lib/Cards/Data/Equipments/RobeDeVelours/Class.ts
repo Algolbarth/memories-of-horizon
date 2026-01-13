@@ -9,7 +9,7 @@ export class RobeDeVelours extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(75);
         this.equipStat("Résistance").init(50);

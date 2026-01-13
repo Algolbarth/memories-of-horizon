@@ -30,8 +30,8 @@ export class MilieuAquatique extends Action {
             value = 10;
         }
 
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature" && card.elements.total().includes("Eau")) {
                 card.stat("Constitution").increase(value);
                 card.stat("Force").increase(value);

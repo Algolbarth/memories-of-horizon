@@ -9,7 +9,7 @@ export class LanceDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Force").init(25);
         this.equipStat("Percée").init(50);

@@ -17,12 +17,12 @@ export class Bivouac extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            let terrain = copy(this.zone.cards);
-            for (const card of terrain) {
+            let land = copy(this.zone.cards);
+            for (const card of land) {
                 if (card.type == "Créature") {
                     card.heal(10);
                 }
             }
         }
     };
-}
+};

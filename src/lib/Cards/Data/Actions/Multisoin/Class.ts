@@ -24,8 +24,8 @@ export class Multisoin extends Action {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 card.heal(5);
             }

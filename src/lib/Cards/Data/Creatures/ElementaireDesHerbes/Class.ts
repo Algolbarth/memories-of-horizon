@@ -9,7 +9,7 @@ export class ElementaireDesHerbes extends Creature {
         super(system);
 
         this.init([["Végétal", 15]]);
-        this.familles.base.push("Élémentaire");
+        this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

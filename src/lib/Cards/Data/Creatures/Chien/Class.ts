@@ -8,7 +8,7 @@ export class Chien extends Creature {
         super(system);
 
         this.init([["Or", 3]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(3);

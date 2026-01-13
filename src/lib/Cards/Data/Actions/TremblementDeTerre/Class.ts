@@ -22,14 +22,15 @@ export class TremblementDeTerre extends Action {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        terrain = terrain.concat(copy(this.owner.adversary().zone("Terrain").cards));
+        let land = copy(this.owner.zone("Terrain").cards);
+        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+        let double_land = land.concat(adversary_land);
 
-        for (const card of terrain) {
+        for (const card of double_land) {
             card.damageByEffect(10);
         }
 
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -24,8 +24,8 @@ export class CorDeGuerre extends Item {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 card.stat("Force").increase(5);
             }

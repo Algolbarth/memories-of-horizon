@@ -10,7 +10,7 @@ export class Architecte extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Terre", 10]]);
-        this.familles.base.push("Nain");
+        this.families.base.push("Nain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

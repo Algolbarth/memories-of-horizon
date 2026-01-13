@@ -10,7 +10,7 @@ export class PetiteFille extends Creature {
         super(system);
 
         this.init([["Or", 10]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);

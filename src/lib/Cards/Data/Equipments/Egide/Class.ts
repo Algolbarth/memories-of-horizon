@@ -9,7 +9,7 @@ export class Egide extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Endurance").value = function () {
             if (this.card.bearer != undefined) {

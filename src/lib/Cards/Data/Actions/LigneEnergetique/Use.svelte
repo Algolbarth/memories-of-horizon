@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card.type == "Créature" && card.familles.total().includes("Élémentaire")) {
+		if (card.type == "Créature" && card.families.total().includes("Élémentaire")) {
 			return true;
 		}
 		return false;

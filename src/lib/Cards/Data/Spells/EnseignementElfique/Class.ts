@@ -11,7 +11,7 @@ export class EnseignementElfique extends Spell {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
-        this.familles.base.push("Elfe");
+        this.families.base.push("Elfe");
 
         this.text = Text;
     };

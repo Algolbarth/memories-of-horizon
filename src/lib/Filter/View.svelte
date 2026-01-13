@@ -6,7 +6,7 @@
 	export let nameSelect: string;
 	export let levelSelect: string;
 	export let typeSelect: string;
-	export let familleSelect: string;
+	export let familySelect: string;
 	export let elementSelect: string;
 	export let rarity: boolean = true;
 	export let communSelect: boolean = false;
@@ -69,10 +69,10 @@
 				Famille
 				<div>
 					<Dropdown
-						array={system.sort.familles}
-						selected={familleSelect}
+						array={system.sort.families}
+						selected={familySelect}
 						selecting={function (element: string) {
-							familleSelect = element;
+							familySelect = element;
 						}}
 					/>
 				</div>
@@ -121,9 +121,9 @@
 			class="big"
 			on:click={() => {
 				if (rarity) {
-					sorting(nameSelect, levelSelect, typeSelect, familleSelect, elementSelect, communSelect, rareSelect, legendarySelect);
+					sorting(nameSelect, levelSelect, typeSelect, familySelect, elementSelect, communSelect, rareSelect, legendarySelect);
 				} else {
-					sorting(nameSelect, levelSelect, typeSelect, familleSelect, elementSelect);
+					sorting(nameSelect, levelSelect, typeSelect, familySelect, elementSelect);
 				}
 			}}
 		>

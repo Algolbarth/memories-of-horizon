@@ -9,7 +9,7 @@ export class Champion extends Creature {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);

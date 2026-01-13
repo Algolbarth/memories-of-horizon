@@ -17,7 +17,7 @@ export class Alchimanach extends Equipment {
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             let read_condition = (card: Card) => {
-                if (card.familles.total().includes("Potion")) {
+                if (card.families.total().includes("Potion")) {
                     return true;
                 }
                 return false;

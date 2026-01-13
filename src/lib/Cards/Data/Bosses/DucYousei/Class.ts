@@ -9,7 +9,7 @@ export class DucYousei extends Boss {
 
         this.level = 8;
         this.elements.base = ["Feu"];
-        this.familles.base.push("Gobelin");
+        this.families.base.push("Gobelin");
 
         this.stat("Force").init(75);
         this.stat("Constitution").init(500);

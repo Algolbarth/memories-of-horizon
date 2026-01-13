@@ -9,7 +9,7 @@ export class HacheLourde extends Equipment {
         super(system);
 
         this.init([["Or", 75]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Intensité").init(3);
 

@@ -11,7 +11,7 @@ export class DagueDeCuivre extends Equipment {
         super(system);
 
         this.init([["Or", 3]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Force").init(5);
 

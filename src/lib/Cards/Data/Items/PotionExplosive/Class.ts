@@ -11,7 +11,7 @@ export class PotionExplosive extends Item {
         super(system);
 
         this.init([["Or", 5]]);
-        this.familles.base.push("Potion");
+        this.families.base.push("Potion");
 
         this.addStat("Infusion", 5);
 

@@ -10,7 +10,7 @@ export class CapitaineDeLaGarde extends Creature {
         super(system);
 
         this.init([["Or", 70]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -20,8 +20,8 @@ export class CapitaineDeLaGarde extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature" && card.stat("Protection").value() > 0) {
                 card.stat("Protection").increase(1);
             }

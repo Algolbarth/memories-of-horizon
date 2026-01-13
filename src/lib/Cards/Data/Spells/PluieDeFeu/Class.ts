@@ -10,7 +10,7 @@ export class PluieDeFeu extends Spell {
         super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
-        this.familles.base.push("Sort");
+        this.families.base.push("Sort");
 
         this.text = Text;
     };
@@ -32,8 +32,8 @@ export class PluieDeFeu extends Spell {
             damage = 10;
         }
 
-        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of terrain) {
+        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+        for (const card of adversary_land) {
             card.damageByEffect(damage);
         }
 

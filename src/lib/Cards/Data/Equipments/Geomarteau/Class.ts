@@ -10,7 +10,7 @@ export class Geomarteau extends Equipment {
         super(system);
 
         this.init([["Or", 75], ["Terre", 75]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.addStat("Secousses", 0);
         this.stat("Secousses").display = () => {
@@ -23,8 +23,8 @@ export class Geomarteau extends Equipment {
     fightEffect = () => {
         this.stat("Secousses").increase(3);
 
-        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of terrain) {
+        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+        for (const card of adversary_land) {
             card.damageByEffect(this.stat("Secousses").value());
         }
     };

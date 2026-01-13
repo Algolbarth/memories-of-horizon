@@ -10,7 +10,7 @@ export class Forgeron extends Creature {
         super(system);
 
         this.init([["Or", 15]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -20,7 +20,7 @@ export class Forgeron extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.familles.total().includes("Équipement")) {
+            if (card.families.total().includes("Équipement")) {
                 return true;
             }
             return false;

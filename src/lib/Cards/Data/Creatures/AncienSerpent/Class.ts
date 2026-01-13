@@ -9,7 +9,7 @@ export class AncienSerpent extends Creature {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);

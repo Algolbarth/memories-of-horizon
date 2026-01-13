@@ -9,7 +9,7 @@ export class MinistreOndin extends Creature {
         super(system);
 
         this.init([["Or", 22], ["Eau", 22]]);
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -18,7 +18,7 @@ export class MinistreOndin extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Ondin") && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card.type == "Créature" && card.families.total().includes("Ondin") && card.owner == this.owner) {
             this.owner.ressource("Eau").current += 5;
         }
     };

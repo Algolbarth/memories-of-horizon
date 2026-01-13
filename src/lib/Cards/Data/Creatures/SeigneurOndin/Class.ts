@@ -10,7 +10,7 @@ export class SeigneurOndin extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Eau", 55]]);
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -19,8 +19,8 @@ export class SeigneurOndin extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 this.owner.ressource("Eau").current += 5;
                 card.stat("Constitution").increase(5);

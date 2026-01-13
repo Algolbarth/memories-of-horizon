@@ -38,7 +38,7 @@ export class Croissance extends Action {
             }
 
             if (target != undefined) {
-                if (target.familles.total().includes("Plante")) {
+                if (target.families.total().includes("Plante")) {
                     this.useEffect(target, "life");
                 }
                 else {

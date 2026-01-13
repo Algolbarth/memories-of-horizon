@@ -10,7 +10,7 @@ export class Roi extends Creature {
         super(system);
 
         this.init([["Or", 110]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -19,8 +19,8 @@ export class Roi extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 card.stat("Constitution").increase(10);
                 card.stat("Force").increase(10);

@@ -10,7 +10,7 @@ export class Vestale extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Feu", 10]]);
-        this.familles.base.push("Gobelin");
+        this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);

@@ -9,7 +9,7 @@ export class Ballas extends Boss {
 
         this.level = 18;
         this.elements.base = ["Eau"];
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Force").init(800);
         this.stat("Constitution").init(15000);

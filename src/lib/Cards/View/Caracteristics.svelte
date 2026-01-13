@@ -75,10 +75,10 @@
 
 <div class="box">
 	{card.type}
-	{#if card.familles.total().length > 0}
+	{#if card.families.total().length > 0}
 		-
-		{#each card.familles.total() as famille, i}
-			{#if i > 0}<div class="space"></div>{/if}{famille}
+		{#each card.families.total() as family, i}
+			{#if i > 0}<div class="space"></div>{/if}{family}
 		{/each}
 	{/if}
 </div>

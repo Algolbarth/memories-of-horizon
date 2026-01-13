@@ -9,7 +9,7 @@ export class HacheDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Adresse").init(35);
         this.equipStat("Intensité").init(1);

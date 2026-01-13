@@ -18,9 +18,9 @@ export class TourDeSiege extends Building {
     turnEffect = () => {
         if (this.zone.name == "Terrain") {
             let target = undefined;
-            let terrain = copy(this.zone.cards);
+            let land = copy(this.owner?.zone("Terrain").cards);
 
-            for (const card of terrain) {
+            for (const card of land) {
                 if (target == undefined && card.type == "Créature") {
                     target = card;
                 }
@@ -32,4 +32,4 @@ export class TourDeSiege extends Building {
             }
         }
     };
-}
+};

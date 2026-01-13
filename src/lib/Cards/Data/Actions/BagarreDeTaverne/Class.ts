@@ -22,8 +22,8 @@ export class BagarreDeTaverne extends Action {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             card.damageByEffect(5);
             if (card.type == "Créature") {
                 card.stat("Force").increase(10);

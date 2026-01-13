@@ -5,6 +5,6 @@ export class Spell extends Action {
     constructor(system: System) {
         super(system);
 
-        this.familles.base.push("Sort");
+        this.families.base.push("Sort");
     };
 };

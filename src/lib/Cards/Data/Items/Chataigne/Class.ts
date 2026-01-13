@@ -11,8 +11,8 @@ export class Chataigne extends Item {
         super(system);
 
         this.init([["Or", 6], ["Végétal", 6]]);
-        this.familles.base.push("Nourriture");
-        this.familles.base.push("Plante");
+        this.families.base.push("Nourriture");
+        this.families.base.push("Plante");
 
         this.text = Text;
     };

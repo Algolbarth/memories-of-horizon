@@ -9,7 +9,7 @@ export class BaguetteEnBois extends Equipment {
         super(system);
 
         this.init([["Or", 10]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Magie").init(5);
 

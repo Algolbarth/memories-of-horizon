@@ -11,14 +11,14 @@ export class Metamorphose extends Action {
         super(system);
 
         this.init([["Or", 10]]);
-        this.familles.base.push("Druide");
+        this.families.base.push("Druide");
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.familles.total().includes("Druide")) {
+            if (card.type == "Créature" && card.families.total().includes("Druide")) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class Metamorphose extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Druide")) {
+                if (target == undefined && card.type == "Créature" && card.families.total().includes("Druide")) {
                     target = card;
                 }
             }

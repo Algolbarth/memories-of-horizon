@@ -10,7 +10,7 @@ export class Phytomancien extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Végétal", 12]]);
-        this.familles.base.push("Elfe");
+        this.families.base.push("Elfe");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);

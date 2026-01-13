@@ -18,7 +18,7 @@ export class LigneEnergetique extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.familles.total().includes("Élémentaire")) {
+            if (card.type == "Créature" && card.families.total().includes("Élémentaire")) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class LigneEnergetique extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Élémentaire")) {
+                if (target == undefined && card.type == "Créature" && card.families.total().includes("Élémentaire")) {
                     target = card;
                 }
             }
@@ -45,10 +45,10 @@ export class LigneEnergetique extends Action {
     };
 
     useEffect = (target: Creature) => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
+        let land = copy(this.owner.zone("Terrain").cards);
         let nb_element = 0;
 
-        for (const card of terrain) {
+        for (const card of land) {
             let check = true;
             for (const e of target.elements.total()) {
                 if (!card.elements.total().includes(e)) {
@@ -56,7 +56,7 @@ export class LigneEnergetique extends Action {
                 }
             }
 
-            if (card.familles.total().includes("Élémentaire") && check) {
+            if (card.families.total().includes("Élémentaire") && check) {
                 nb_element++;
             }
         }

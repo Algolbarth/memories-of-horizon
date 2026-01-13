@@ -15,7 +15,7 @@ export class Equipment extends Item {
     constructor(system: System) {
         super(system);
 
-        this.familles.base.push("Équipement");
+        this.families.base.push("Équipement");
 
         this.addEquipStat("Force", 0);
         this.addEquipStat("Vitalité", 0);

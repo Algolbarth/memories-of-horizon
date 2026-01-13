@@ -25,7 +25,8 @@ export class Aventure extends Action {
             };
             this.owner.draw(1, read_condition);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

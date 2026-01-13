@@ -10,13 +10,13 @@ export class CollierEnDentDeLoup extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.text = Text;
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.bearer != undefined && card.zone.name != "Pile" && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.total().includes("Bête")) {
+        if (this.bearer != undefined && card.zone.name != "Pile" && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.families.total().includes("Bête")) {
             this.bearer.stat("Force").increase(20);
         }
     };

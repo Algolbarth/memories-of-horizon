@@ -19,4 +19,4 @@ export class ExtensionDeTerritoire extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

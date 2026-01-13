@@ -11,7 +11,7 @@ export class WyverneVerte extends Creature {
 
         this.level = 3;
         this.init([["Or", 30], ["Végétal", 30]]);
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.stat("Constitution").init(35);
         this.stat("Force").init(20);

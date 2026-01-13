@@ -6,7 +6,7 @@
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card.familles.total().includes("Arme")) {
+		if (card.families.total().includes("Arme")) {
 			return true;
 		}
 		return false;

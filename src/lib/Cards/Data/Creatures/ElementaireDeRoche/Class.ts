@@ -11,7 +11,7 @@ export class ElementaireDeRoche extends Creature {
         super(system);
 
         this.init([["Terre", 50]]);
-        this.familles.base.push("Élémentaire");
+        this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(40);
         this.stat("Force").init(40);
@@ -51,8 +51,8 @@ export class ElementaireDeRoche extends Creature {
             this.move("Terrain");
         }
         else if (choice == "effect") {
-            let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of terrain) {
+            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+            for (const card of adversary_land) {
                 card.damageByEffect(5);
             }
             this.destroy();

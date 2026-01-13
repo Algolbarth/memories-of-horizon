@@ -11,7 +11,7 @@ export class Tomate extends Item {
         super(system);
 
         this.init([["Or", 5], ["Végétal", 5]]);
-        this.familles.base.push("Nourriture", "Plante");
+        this.families.base.push("Nourriture", "Plante");
 
         this.text = Text;
     };

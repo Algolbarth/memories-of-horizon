@@ -9,7 +9,7 @@ export class OrbeDeCorindon extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Résistance").init(100);
 

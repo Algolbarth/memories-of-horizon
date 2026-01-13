@@ -10,7 +10,7 @@ export class ChefCuisinier extends Creature {
         super(system);
 
         this.init([["Or", 85]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -19,7 +19,7 @@ export class ChefCuisinier extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.familles.total().includes("Nourriture") && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card.families.total().includes("Nourriture") && card.owner == this.owner) {
             for (const e of card.elements.total()) {
                 if (e != "Neutre") {
                     this.owner.ressource(e).current += 10;

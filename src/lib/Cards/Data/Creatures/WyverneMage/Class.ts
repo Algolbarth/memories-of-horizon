@@ -11,7 +11,7 @@ export class WyverneMage extends Creature {
 
         this.level = 3;
         this.init([["Or", 60]]);
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -21,7 +21,7 @@ export class WyverneMage extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.familles.total().includes("Sort")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.families.total().includes("Sort")) {
             this.costReduce(6);
         }
     };

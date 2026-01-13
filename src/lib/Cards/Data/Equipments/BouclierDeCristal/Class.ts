@@ -9,7 +9,7 @@ export class BouclierDeCristal extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Endurance").init(15);
         this.equipStat("Résistance").init(15);

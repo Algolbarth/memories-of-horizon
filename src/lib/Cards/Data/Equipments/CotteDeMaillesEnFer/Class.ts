@@ -9,7 +9,7 @@ export class CotteDeMaillesEnFer extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(25);
         this.equipStat("Endurance").init(12);

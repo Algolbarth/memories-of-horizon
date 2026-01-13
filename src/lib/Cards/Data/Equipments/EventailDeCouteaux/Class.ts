@@ -12,7 +12,7 @@ export class EventailDeCouteaux extends Equipment {
         super(system);
 
         this.init([["Or", 20]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.equipStat("Force").init(30);
 
@@ -60,12 +60,12 @@ export class EventailDeCouteaux extends Equipment {
             target.equip(this);
         }
         else if (choice == "damage") {
-            let terrain = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of terrain) {
+            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
+            for (const card of adversary_land) {
                 card.damageByEffect(3);
             }
             this.move("Défausse");
         }
         this.pose();
     };
-}
+};

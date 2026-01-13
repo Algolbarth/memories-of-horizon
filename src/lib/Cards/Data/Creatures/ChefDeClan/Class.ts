@@ -10,7 +10,7 @@ export class ChefDeClan extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Feu", 55]]);
-        this.familles.base.push("Gobelin");
+        this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -19,8 +19,8 @@ export class ChefDeClan extends Creature {
     };
 
     useEffect = () => {
-        let terrain = copy(this.owner.zone("Terrain").cards);
-        for (const card of terrain) {
+        let land = copy(this.owner.zone("Terrain").cards);
+        for (const card of land) {
             if (card.type == "Créature") {
                 card.stat("Force").increase(20);
             }

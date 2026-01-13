@@ -11,7 +11,7 @@ export class SardinesEnBoite extends Item {
         super(system);
 
         this.init([["Or", 3], ["Eau", 2]]);
-        this.familles.base.push("Nourriture");
+        this.families.base.push("Nourriture");
 
         this.text = Text;
     };

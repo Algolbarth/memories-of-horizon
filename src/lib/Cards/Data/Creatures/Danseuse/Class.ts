@@ -9,7 +9,7 @@ export class Danseuse extends Creature {
         super(system);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

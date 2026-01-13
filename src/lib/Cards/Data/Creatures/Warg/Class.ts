@@ -9,7 +9,7 @@ export class Warg extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(40);

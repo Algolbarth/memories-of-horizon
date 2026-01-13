@@ -11,7 +11,7 @@ export class Concoction extends Item {
         super(system);
 
         this.level = 1;
-        this.familles.base.push("Potion");
+        this.families.base.push("Potion");
 
         this.addStat("Infusion de soin", 0);
         this.addStat("Infusion de mana", 0);

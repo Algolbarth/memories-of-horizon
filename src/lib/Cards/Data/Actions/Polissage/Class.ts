@@ -17,7 +17,7 @@ export class Polissage extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.familles.total().includes("Armure")) {
+            if (card.families.total().includes("Armure")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Polissage extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.familles.total().includes("Armure")) {
+                if (target == undefined && card.families.total().includes("Armure")) {
                     target = card;
                 }
             }

@@ -9,7 +9,7 @@ export class HeaumeDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Armure");
+        this.families.base.push("Armure");
 
         this.text = Text;
     };

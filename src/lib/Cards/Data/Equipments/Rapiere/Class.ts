@@ -9,7 +9,7 @@ export class Rapiere extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Arme");
+        this.families.base.push("Arme");
 
         this.text = Text;
     };

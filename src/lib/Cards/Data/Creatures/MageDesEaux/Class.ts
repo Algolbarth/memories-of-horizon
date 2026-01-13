@@ -10,7 +10,7 @@ export class MageDesEaux extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
-        this.familles.base.push("Ondin");
+        this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -20,9 +20,9 @@ export class MageDesEaux extends Creature {
     };
 
     otherPoseEffect = (c: Card) => {
-        if (this.zone.name == "Terrain" && c.familles.total().includes("Sort") && c.owner == this.owner) {
+        if (this.zone.name == "Terrain" && c.families.total().includes("Sort") && c.owner == this.owner) {
             let read_condition = (card: Card) => {
-                if (card.familles.total().includes("Sort")) {
+                if (card.families.total().includes("Sort")) {
                     return true;
                 }
                 return false;

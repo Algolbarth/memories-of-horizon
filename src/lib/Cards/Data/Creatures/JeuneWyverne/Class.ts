@@ -11,7 +11,7 @@ export class JeuneWyverne extends Creature {
 
         this.level = 1;
         this.init([["Or", 30]]);
-        this.familles.base.push("Reptile");
+        this.families.base.push("Reptile");
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);

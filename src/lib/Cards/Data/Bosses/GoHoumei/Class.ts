@@ -9,7 +9,7 @@ export class GoHoumei extends Boss {
 
         this.level = 6;
         this.elements.base = ["Terre"];
-        this.familles.base.push("Nain");
+        this.families.base.push("Nain");
 
         this.stat("Force").init(50);
         this.stat("Constitution").init(250);

@@ -9,7 +9,7 @@ export class Palefrenier extends Creature {
         super(system);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Humain");
+        this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

@@ -8,7 +8,7 @@ export class OursForestier extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Végétal", 20]]);
-        this.familles.base.push("Bête");
+        this.families.base.push("Bête");
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(30);

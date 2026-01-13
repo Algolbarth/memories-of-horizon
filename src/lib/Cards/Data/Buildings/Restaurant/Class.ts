@@ -21,7 +21,7 @@ export class Restaurant extends Building {
         let check = undefined;
 
         for (const card of this.owner.zone("Réserve").cards) {
-            if (check == undefined && card.type == "Objet" && card.familles.total().includes("Nourriture")) {
+            if (check == undefined && card.type == "Objet" && card.families.total().includes("Nourriture")) {
                 check = card;
             }
         }

@@ -17,7 +17,7 @@ export class Mue extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.familles.total().includes("Reptile")) {
+            if (card.type == "Créature" && card.families.total().includes("Reptile")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Mue extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Reptile")) {
+                if (target == undefined && card.type == "Créature" && card.families.total().includes("Reptile")) {
                     target = card;
                 }
             }

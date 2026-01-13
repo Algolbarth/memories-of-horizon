@@ -17,7 +17,7 @@ export class Aiguisage extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.familles.total().includes("Arme")) {
+            if (card.families.total().includes("Arme")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Aiguisage extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.familles.total().includes("Arme")) {
+                if (target == undefined && card.families.total().includes("Arme")) {
                     target = card;
                 }
             }

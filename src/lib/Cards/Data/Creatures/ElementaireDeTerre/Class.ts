@@ -11,7 +11,7 @@ export class ElementaireDeTerre extends Creature {
         super(system);
 
         this.init([["Terre", 15]]);
-        this.familles.base.push("Élémentaire");
+        this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
