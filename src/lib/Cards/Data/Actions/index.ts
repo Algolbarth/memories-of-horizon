@@ -33,6 +33,7 @@ export * from './Ecrasement';
 export * from './Elimination';
 export * from './Enflammer';
 export * from './Entrainement';
+export * from './ErigerLesFrontieres';
 export * from './Eruption';
 export * from './Exploration';
 export * from './ExtensionDeTerritoire';
