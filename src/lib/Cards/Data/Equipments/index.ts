@@ -79,5 +79,6 @@ export * from './SacEnToile';
 export * from './SacocheEnCuir';
 export * from './Sandales';
 export * from './Trident';
+export * from './TrousseauDeCles';
 export * from './TuniqueDEcailles';
 export * from './TuniqueDeCuir';
