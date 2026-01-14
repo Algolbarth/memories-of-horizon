@@ -62,6 +62,8 @@ Armagicien : créature humain, magie.
 Établi : bâtiment.
 Trône : bâtiment.
 Sort vivant : créature sort.
+Morsure : action.
+Griffure : action.
 
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée.
@@ -91,6 +93,8 @@ Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et 
 
 ### Eau
 Barrière de corail : créature plante, régénération.
+Thon : créature poisson.
+Saumon : créature poisson.
 Requin : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la réserve.
@@ -100,6 +104,7 @@ Jet de pierre : inflige des dégâts et applique paralysie à une créature adve
 Taupe : créature bête, quand posé : fouille 1 carte.
 Mère ours : créature bête, protection.
 Ourson : créature bête.
+Muraille naine : créature poisson.
 
 ### Air
 Sylphe : quand arrive sur le terrain : pioche une carte.

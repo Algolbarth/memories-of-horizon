@@ -22,14 +22,14 @@
 				</div>
 
 				<div>
-					{#if zone instanceof Stack}
-						Nv {zone.level()}
+					{#if zone.name != "Défausse"}
+						({zone.cards.length} / {zone.size})
 					{/if}
 				</div>
 
 				<div>
-					{#if zone.name != "Défausse"}
-						({zone.cards.length} / {zone.size})
+					{#if zone instanceof Stack}
+						Nv {zone.level()}
 					{/if}
 				</div>
 			</div>
@@ -125,6 +125,6 @@
 
 	div.infos {
 		display: grid;
-		grid-template-columns: 0.75fr 4em 1fr;
+		grid-template-columns: 0.75fr 1fr 4em;
 	}
 </style>

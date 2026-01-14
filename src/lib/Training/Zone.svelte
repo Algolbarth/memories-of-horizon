@@ -16,26 +16,7 @@
 			<div>
 				{zone.name}
 			</div>
-			<div>
-				{#if zone.name == "Pile"}
-					Nv
-					<input
-						type="number"
-						min="1"
-						max="20"
-						bind:value={level}
-						on:change={() => {
-							if (level < 1) {
-								level = 1;
-							} else if (level > 20) {
-								level = 20;
-							} else {
-								zone.level = level;
-							}
-						}}
-					/>
-				{/if}
-			</div>
+
 			<div>
 				{#if zone.name != "Défausse"}
 					(
@@ -56,7 +37,29 @@
 					)
 				{/if}
 			</div>
+
+			<div>
+				{#if zone.name == "Pile"}
+					Nv
+					<input
+						type="number"
+						min="1"
+						max="20"
+						bind:value={level}
+						on:change={() => {
+							if (level < 1) {
+								level = 1;
+							} else if (level > 20) {
+								level = 20;
+							} else {
+								zone.level = level;
+							}
+						}}
+					/>
+				{/if}
+			</div>
 		</div>
+
 		<div style="text-align:right;">
 			{#if zone.size == undefined || zone.cards.length < zone.size}
 				<button
@@ -212,7 +215,7 @@
 
 	div.infos {
 		display: grid;
-		grid-template-columns: 0.75fr 4em 1fr;
+		grid-template-columns: 0.75fr 1fr 4em;
 	}
 
 	div.preview {

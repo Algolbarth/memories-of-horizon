@@ -133,7 +133,7 @@ export class Entity {
     };
 
     canUpStack = () => {
-        if (this.ressource("Or").total() >= this.zone("Pile").base_level * 10) {
+        if (this.ressource("Or").total() >= this.zone("Pile").upgrade_cost) {
             return true;
         }
         return false;
@@ -141,8 +141,9 @@ export class Entity {
 
     upStack = () => {
         if (this.canUpStack()) {
-            this.ressource("Or").spend(this.zone("Pile").base_level * 10);
+            this.ressource("Or").spend(this.zone("Pile").upgrade_cost);
             this.zone("Pile").base_level++;
+            this.zone("Pile").upgrade_cost = this.zone("Pile").base_level * 10;
             this.refreshStack();
         }
     };
