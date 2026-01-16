@@ -20,6 +20,7 @@ export * from './Cartographe';
 export * from './Cavalier';
 export * from './CavalierElfe';
 export * from './Celebrite';
+export * from './Cerf';
 export * from './Champion';
 export * from './Chasseur';
 export * from './ChefBarbare';
