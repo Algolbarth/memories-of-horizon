@@ -122,6 +122,7 @@ export * from './SageDeLaForet';
 export * from './SageDement';
 export * from './SalamandreDesEaux';
 export * from './SalamandreDesFlammes';
+export * from './Sanglier';
 export * from './Sardine';
 export * from './SeigneurOndin';
 export * from './ServeuseDeTaverne';
