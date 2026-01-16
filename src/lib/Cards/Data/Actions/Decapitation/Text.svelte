@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Détruit la créature adverse sur le terrain ayant la valeur de protection la plus haute.
+Détruit la créature adverse sur le terrain ayant la protection la plus haute.

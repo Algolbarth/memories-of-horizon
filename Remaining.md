@@ -27,9 +27,9 @@ Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'inte
 Mimique : se pose sur le terrain adverse. Quand meurt : Génère humain sur le terrain adverse.
 
 ### Voleur
-Banque : augmente la valeur de vente des unités alliées sur le terrain.
-Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée.
-Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité.
+Banque : augmente la vente des unités alliées sur le terrain.
+Cape de voleur : au début de la phase de préparation : augmente la vente en or de la créature équipée.
+Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la vente en or de l'unité.
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : génère Voleur sur le terrain.
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans la réserve.
 
@@ -89,7 +89,7 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Sanglier : créature bête.
 Cerf : créature bête.
 Hérisson : créature bête, épine.
-Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa valeur de vente.
+Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
 
 ### Eau
 Barrière de corail : créature plante, régénération.

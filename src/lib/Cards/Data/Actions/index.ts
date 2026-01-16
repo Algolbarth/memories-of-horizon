@@ -66,6 +66,7 @@ export * from './Omniscience';
 export * from './Opportunite';
 export * from './Option';
 export * from './Parade';
+export * from './Pietinement';
 export * from './PluieDeFleche';
 export * from './Polissage';
 export * from './Preparation';

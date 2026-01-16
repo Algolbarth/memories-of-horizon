@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige autant de dégâts à une créature adverse sur le terrain que 10 fois la valeur de protection de cette créature.
+Inflige autant de dégâts à une créature adverse sur le terrain que 10 fois la protection de cette créature.

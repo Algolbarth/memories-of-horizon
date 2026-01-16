@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : fixe la protection d'une créature sur le terrain à 1 + la plus grande valeur de protection parmi les unités sur le terrain.
+Quand posé : fixe la protection d'une créature sur le terrain à 1 + la plus grande protection parmi les unités sur le terrain.

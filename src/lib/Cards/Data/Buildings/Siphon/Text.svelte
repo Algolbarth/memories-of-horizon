@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte d'élément Eau alliée est posée : augmente de 5 sa valeur de vente en eau.
+Quand une carte d'élément Eau alliée est posée : augmente de 5 sa vente en eau.

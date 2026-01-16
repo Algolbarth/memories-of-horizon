@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Augmente l'endurance de la créature équipée de 10 fois la valeur de protection de cette créature.
+Augmente l'endurance de la créature équipée de 10 fois la protection de cette créature.

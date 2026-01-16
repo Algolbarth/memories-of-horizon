@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Détruit la créature adverse sur le terrain ayant la valeur de vitalité la plus haute.
+Détruit la créature adverse sur le terrain ayant la vitalité la plus haute.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige à une unité adverse sur le terrain autant de dégâts que la valeur de vitalité la plus haute parmi les créatures alliées sur le terrain.
+Inflige à une unité adverse sur le terrain autant de dégâts que la vitalité la plus haute parmi les créatures alliées sur le terrain.

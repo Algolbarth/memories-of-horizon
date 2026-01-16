@@ -8,6 +8,6 @@
 	export let card: Card;
 </script>
 
-Produit autant de mana que la valeur de magie d'une créature alliée sur le terrain ayant une valeur d'étourdissement nulle.
+Produit autant de mana que la magie d'une créature alliée sur le terrain ayant une valeur d'étourdissement nulle.
 <br />
 Augmente jusqu'à 1 l'étourdissement de cette créature.
