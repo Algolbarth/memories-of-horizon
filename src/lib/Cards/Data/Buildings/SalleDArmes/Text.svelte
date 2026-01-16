@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Potion de mana"} /> dans la réserve.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Entraînement"} /> dans la réserve.

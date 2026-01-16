@@ -29,4 +29,4 @@ export class MaitreChien extends Creature {
             this.owner.getCard("Chien").add("Terrain");
         }
     };
-}
+};
