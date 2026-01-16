@@ -1,3 +1,4 @@
+export * from './Abattage';
 export * from './Affaiblissement';
 export * from './AgrandissementDInventaire';
 export * from './Aiguisage';
