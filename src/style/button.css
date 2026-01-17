@@ -37,7 +37,7 @@ button.big {
   transition: background-color var(--delay) ease-in-out;
 
   text-align: center;
-  color: black;
+  color: white;
 
   padding: 1em;
   margin: 0.25em 0 0.25em 0;
@@ -53,6 +53,7 @@ button.big:hover {
   transition: background-color var(--delay_hover) ease-in-out;
 
   background-color: var(--dropdown_hover);
+  color: gold;
 
   border-color: black var(--dropdown_border) var(--dropdown_border) black;
 }
@@ -60,6 +61,7 @@ button.big:hover {
 button.menu {
   font-family: NightmarePills;
   font-size: x-large;
+  color: black;
 
   margin: 0;
   width: 15vw;

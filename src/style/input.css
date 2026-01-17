@@ -85,10 +85,16 @@ input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
+input[type="checkbox"]:hover {
+  outline: max(2px, 0.15em) solid var(--link_hover);
+  outline-offset: max(2px, 0.15em);
+}
+
 input[type="checkbox"]:focus {
   outline: max(2px, 0.15em) solid var(--link_hover);
   outline-offset: max(2px, 0.15em);
 }
+
 
 input[type="checkbox"]:disabled {
   color: var(--zone);

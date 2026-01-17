@@ -60,18 +60,21 @@
 	}
 
 	button.main {
-		border: solid;
 		padding: 0.2em 0;
 		background: var(--dropdown);
 		background-image: var(--rock);
+		color: white;
+		border: solid;
+		border-color: black;
 	}
 
-	button:hover {
+	button.main:hover {
 		background: var(--dropdown);
 		background-image: var(--rock);
+		color: gold;
 	}
 
-	button:focus {
+	button.main:focus {
 		background: var(--dropdown);
 		background-image: var(--rock);
 	}
@@ -80,7 +83,9 @@
 		position: absolute;
 		background: var(--dropdown);
 		background-image: var(--rock);
+		color: white;
 		border: solid;
+		border-color: black;
 		z-index: 1;
 		margin-top: 1.75em;
 	}
@@ -89,8 +94,7 @@
 		text-align: center;
 		margin: 0;
 		border: none;
-		background: var(--dropdown);
-		background-image: var(--rock);
+		background: transparent;
 		width: 100%;
 	}
 </style>
