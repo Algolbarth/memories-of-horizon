@@ -10,6 +10,7 @@ export class SoldatNain extends Creature {
         super(system);
 
         this.init([["Or", 18], ["Terre", 18]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(10);

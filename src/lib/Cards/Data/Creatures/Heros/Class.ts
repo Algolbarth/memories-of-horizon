@@ -10,6 +10,7 @@ export class Heros extends Creature {
         super(system);
 
         this.init([["Or", 110]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(10);
@@ -24,4 +25,4 @@ export class Heros extends Creature {
             this.stat("Force").increase(10);
         }
     };
-}
+};

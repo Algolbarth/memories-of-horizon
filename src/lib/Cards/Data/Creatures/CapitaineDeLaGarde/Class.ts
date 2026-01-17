@@ -10,6 +10,7 @@ export class CapitaineDeLaGarde extends Creature {
         super(system);
 
         this.init([["Or", 70]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(10);
@@ -29,4 +30,4 @@ export class CapitaineDeLaGarde extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

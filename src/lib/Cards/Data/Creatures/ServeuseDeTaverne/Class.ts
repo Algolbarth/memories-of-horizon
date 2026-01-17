@@ -9,6 +9,7 @@ export class ServeuseDeTaverne extends Creature {
         super(system);
 
         this.init([["Or", 35]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -28,4 +29,4 @@ export class ServeuseDeTaverne extends Creature {
             this.owner.getCard("Bière").add("Réserve");
         }
     };
-}
+};

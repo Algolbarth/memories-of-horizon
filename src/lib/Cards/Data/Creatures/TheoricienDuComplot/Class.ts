@@ -10,6 +10,7 @@ export class TheoricienDuComplot extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Feu", 12]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);

@@ -10,6 +10,7 @@ export class SeigneurOndin extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Eau", 55]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(10);
@@ -30,4 +31,4 @@ export class SeigneurOndin extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

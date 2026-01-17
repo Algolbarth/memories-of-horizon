@@ -9,6 +9,7 @@ export class BaguetteDesMarees extends Equipment {
         super(system);
 
         this.init([["Or", 40], ["Eau", 40]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Magie").init(10);
@@ -21,4 +22,4 @@ export class BaguetteDesMarees extends Equipment {
             this.owner.ressource("Eau").current += this.bearer.stat("Magie").value();
         }
     };
-}
+};

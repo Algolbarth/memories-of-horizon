@@ -10,6 +10,7 @@ export class ElementaireDesEboulis extends Creature {
         super(system);
 
         this.init([["Terre", 20]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(15);
@@ -73,4 +74,4 @@ export class ElementaireDesEboulis extends Creature {
         }
         this.pose();
     };
-}
+};

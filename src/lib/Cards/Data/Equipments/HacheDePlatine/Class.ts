@@ -9,6 +9,7 @@ export class HacheDePlatine extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Adresse").init(50);
@@ -16,4 +17,4 @@ export class HacheDePlatine extends Equipment {
 
         this.text = Text;
     };
-}
+};

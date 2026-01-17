@@ -19,4 +19,4 @@ export class AnneauEnOr extends Equipment {
             this.bearer.stat("Force").increase(1);
         }
     };
-}
+};

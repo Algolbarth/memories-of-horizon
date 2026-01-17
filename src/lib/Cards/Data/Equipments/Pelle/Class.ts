@@ -26,4 +26,4 @@ export class Pelle extends Equipment {
             this.owner.ressource("Terre").current += 10;
         }
     };
-}
+};

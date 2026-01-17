@@ -9,6 +9,7 @@ export class PuitDeMana extends Building {
         super(system);
 
         this.init([["Or", 15]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class PuitDeMana extends Building {
             this.owner.getCard("Potion de mana").add("Réserve");
         }
     };
-}
+};

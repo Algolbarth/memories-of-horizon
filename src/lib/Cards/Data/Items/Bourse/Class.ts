@@ -9,6 +9,7 @@ export class Bourse extends Item {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.getSale("Or").base = 0;
 
         this.text = Text;
@@ -23,4 +24,4 @@ export class Bourse extends Item {
             this.getSale("Or").increase(5);
         }
     };
-}
+};

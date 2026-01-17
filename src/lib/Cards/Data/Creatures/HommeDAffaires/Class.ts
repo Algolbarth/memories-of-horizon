@@ -9,6 +9,7 @@ export class HommeDAffaires extends Creature {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -22,4 +23,4 @@ export class HommeDAffaires extends Creature {
             this.owner.ressource("Or").current += 5;
         }
     };
-}
+};

@@ -11,6 +11,7 @@ export class HerbesMedicinales extends Item {
         super(system);
 
         this.init([["Or", 12], ["Végétal", 12]]);
+
         this.families.base.push("Plante");
 
         this.text = Text;
@@ -49,4 +50,4 @@ export class HerbesMedicinales extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -9,6 +9,7 @@ export class FauxDePaysan extends Equipment {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(10);
@@ -19,4 +20,4 @@ export class FauxDePaysan extends Equipment {
     killEffect = () => {
         this.owner.ressource("Or").stock += 5;
     };
-}
+};

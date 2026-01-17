@@ -10,6 +10,7 @@ export class Puit extends Building {
         super(system);
 
         this.init([["Or", 25], ["Eau", 25]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;
@@ -20,4 +21,4 @@ export class Puit extends Building {
             this.owner.ressource("Or").current += 5;
         }
     };
-}
+};

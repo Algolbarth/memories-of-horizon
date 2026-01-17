@@ -9,10 +9,11 @@ export class EpeeDePlatine extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(200);
 
         this.text = Text;
     };
-}
+};

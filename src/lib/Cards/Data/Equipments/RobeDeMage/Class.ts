@@ -9,6 +9,7 @@ export class RobeDeMage extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(20);
@@ -17,4 +18,4 @@ export class RobeDeMage extends Equipment {
 
         this.text = Text;
     };
-}
+};

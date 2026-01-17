@@ -10,6 +10,7 @@ export class MageDesEaux extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
@@ -36,4 +37,4 @@ export class MageDesEaux extends Creature {
             }
         }
     };
-}
+};

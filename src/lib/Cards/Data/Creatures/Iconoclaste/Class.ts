@@ -10,6 +10,7 @@ export class Iconoclaste extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Feu", 10]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(10);

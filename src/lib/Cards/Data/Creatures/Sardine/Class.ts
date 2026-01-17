@@ -10,6 +10,7 @@ export class Sardine extends Creature {
         super(system);
 
         this.init([["Or", 2], ["Eau", 2]]);
+
         this.families.base.push("Poisson");
 
         this.stat("Constitution").init(1);

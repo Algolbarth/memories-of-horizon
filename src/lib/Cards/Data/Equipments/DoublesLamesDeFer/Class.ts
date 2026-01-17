@@ -17,4 +17,4 @@ export class DoublesLamesDeFer extends Equipment {
 
         this.text = Text;
     };
-}
+};

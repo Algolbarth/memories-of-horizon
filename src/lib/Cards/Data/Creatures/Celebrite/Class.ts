@@ -9,6 +9,7 @@ export class Celebrite extends Creature {
         super(system);
 
         this.init([["Or", 45]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -23,4 +24,4 @@ export class Celebrite extends Creature {
         this.owner.getCard("Garde").add("Terrain");
         this.pose();
     };
-}
+};

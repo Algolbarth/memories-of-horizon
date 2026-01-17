@@ -9,6 +9,7 @@ export class Trident extends Equipment {
         super(system);
 
         this.init([["Or", 20], ["Eau", 20]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(25);
@@ -20,4 +21,4 @@ export class Trident extends Equipment {
     killEffect = () => {
         this.owner.ressource("Eau").stock += 5;
     };
-}
+};

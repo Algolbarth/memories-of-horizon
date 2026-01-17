@@ -9,10 +9,11 @@ export class EpeeDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(50);
 
         this.text = Text;
     };
-}
+};

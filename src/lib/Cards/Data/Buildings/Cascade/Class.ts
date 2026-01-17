@@ -10,6 +10,7 @@ export class Cascade extends Building {
         super(system);
 
         this.init([["Or", 15], ["Eau", 15]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -26,4 +27,4 @@ export class Cascade extends Building {
             this.owner.draw(1, read_condition);
         }
     };
-}
+};

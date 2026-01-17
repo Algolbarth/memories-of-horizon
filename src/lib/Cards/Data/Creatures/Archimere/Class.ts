@@ -10,6 +10,7 @@ export class Archimere extends Creature {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.families.base.push("Bête", "Reptile");
 
         this.stat("Constitution").init(25);
@@ -26,4 +27,4 @@ export class Archimere extends Creature {
             }
         }
     };
-}
+};

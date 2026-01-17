@@ -18,4 +18,4 @@ export class ManuelDeMagie extends Equipment {
             this.owner.getCard("Incantation").add("Réserve");
         }
     };
-}
+};

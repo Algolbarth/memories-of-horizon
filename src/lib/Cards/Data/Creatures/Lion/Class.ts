@@ -10,6 +10,7 @@ export class Lion extends Creature {
         super(system);
 
         this.init([["Or", 30], ["Feu", 30]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(20);
@@ -29,4 +30,4 @@ export class Lion extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

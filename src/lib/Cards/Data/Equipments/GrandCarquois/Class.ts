@@ -18,4 +18,4 @@ export class GrandCarquois extends Equipment {
             this.owner.getCard("Pluie de flèche").add("Réserve");
         }
     };
-}
+};

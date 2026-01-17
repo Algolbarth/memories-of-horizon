@@ -9,6 +9,7 @@ export class TourDeGuet extends Building {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class TourDeGuet extends Building {
             this.owner.getCard("Cibler").add("Réserve");
         }
     };
-}
+};

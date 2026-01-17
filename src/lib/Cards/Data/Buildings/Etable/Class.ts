@@ -9,6 +9,7 @@ export class Etable extends Building {
         super(system);
 
         this.init([["Or", 60]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class Etable extends Building {
             this.owner.getCard("Cheval").add("Réserve");
         }
     };
-}
+};

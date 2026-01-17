@@ -25,4 +25,4 @@ export class Grimoire extends Equipment {
             this.owner.draw(1, read_condition);
         }
     };
-}
+};

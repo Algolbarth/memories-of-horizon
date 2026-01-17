@@ -11,6 +11,7 @@ export class Metamorphose extends Action {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Druide");
 
         this.text = Text;
@@ -49,4 +50,4 @@ export class Metamorphose extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

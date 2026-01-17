@@ -9,6 +9,7 @@ export class CotteEpineuse extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(20);

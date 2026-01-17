@@ -10,6 +10,7 @@ export class Dresseur extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Végétal", 10]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(10);
@@ -35,4 +36,4 @@ export class Dresseur extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

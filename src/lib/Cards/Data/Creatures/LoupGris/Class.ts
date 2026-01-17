@@ -8,9 +8,10 @@ export class LoupGris extends Creature {
         super(system);
 
         this.init([["Or", 8]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(10);
     };
-}
+};

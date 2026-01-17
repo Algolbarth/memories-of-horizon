@@ -9,6 +9,7 @@ export class Bandit extends Creature {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -26,4 +27,4 @@ export class Bandit extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

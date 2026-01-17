@@ -18,4 +18,4 @@ export class BatonDeRelais extends Equipment {
             this.owner.getCard("Relais").add("Réserve");
         }
     };
-}
+};

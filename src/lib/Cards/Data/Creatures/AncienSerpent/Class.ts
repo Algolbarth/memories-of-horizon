@@ -9,6 +9,7 @@ export class AncienSerpent extends Creature {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
+
         this.families.base.push("Reptile");
 
         this.stat("Constitution").init(15);
@@ -22,4 +23,4 @@ export class AncienSerpent extends Creature {
             this.owner.getCard("Mue").add("Réserve");
         }
     };
-}
+};

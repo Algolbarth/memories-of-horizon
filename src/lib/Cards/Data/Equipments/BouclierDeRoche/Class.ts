@@ -9,6 +9,7 @@ export class BouclierDeRoche extends Equipment {
         super(system);
 
         this.init([["Or", 10], ["Terre", 10]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Endurance").init(10);
@@ -19,4 +20,4 @@ export class BouclierDeRoche extends Equipment {
     defendEffect = () => {
         this.bearer.stat("Endurance").increase(2);
     };
-}
+};

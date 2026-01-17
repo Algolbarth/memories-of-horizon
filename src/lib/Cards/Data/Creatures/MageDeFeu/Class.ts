@@ -10,6 +10,7 @@ export class MageDeFeu extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Feu", 20]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);
@@ -24,4 +25,4 @@ export class MageDeFeu extends Creature {
             this.owner.adversary().zone("Terrain").cards[0].damageByEffect(5);
         }
     };
-}
+};

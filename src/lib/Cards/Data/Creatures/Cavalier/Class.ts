@@ -8,10 +8,11 @@ export class Cavalier extends Creature {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
         this.stat("Vitesse").init(1);
     };
-}
+};

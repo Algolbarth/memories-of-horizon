@@ -9,6 +9,7 @@ export class BassinDeReproduction extends Building {
         super(system);
 
         this.init([["Or", 15], ["Eau", 15]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(20);
@@ -21,4 +22,4 @@ export class BassinDeReproduction extends Building {
             this.owner.getCard("Ondin").add("Terrain");
         }
     };
-}
+};

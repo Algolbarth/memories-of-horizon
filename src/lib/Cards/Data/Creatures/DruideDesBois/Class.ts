@@ -9,6 +9,7 @@ class DruideDesBois extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
+
         this.families.base.push("Druide");
 
         this.text = Text;

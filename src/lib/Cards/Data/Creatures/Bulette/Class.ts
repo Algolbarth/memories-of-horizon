@@ -9,6 +9,7 @@ export class Bulette extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Terre", 25]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(10);
@@ -23,4 +24,4 @@ export class Bulette extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

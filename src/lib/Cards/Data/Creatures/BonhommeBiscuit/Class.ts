@@ -10,6 +10,7 @@ export class BonhommeBiscuit extends Creature {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Nourriture");
 
         this.stat("Constitution").init(1);
@@ -24,4 +25,4 @@ export class BonhommeBiscuit extends Creature {
             this.stat("Force").increase(5);
         }
     };
-}
+};

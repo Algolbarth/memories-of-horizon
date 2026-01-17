@@ -9,6 +9,7 @@ export class CasqueEnCuir extends Equipment {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.families.base.push("Armure");
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class CasqueEnCuir extends Equipment {
             this.bearer.stat("Garde").fix(5);
         }
     };
-}
+};

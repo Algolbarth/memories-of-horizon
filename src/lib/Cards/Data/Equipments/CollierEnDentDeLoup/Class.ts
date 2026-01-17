@@ -10,6 +10,7 @@ export class CollierEnDentDeLoup extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Bête");
 
         this.text = Text;

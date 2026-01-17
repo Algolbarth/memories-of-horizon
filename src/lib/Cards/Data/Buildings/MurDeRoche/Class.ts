@@ -8,7 +8,8 @@ export class MurDeRoche extends Building {
         super(system);
 
         this.init([["Or", 25], ["Terre", 25]]);
+
         this.stat("Constitution").init(50);
         this.stat("Endurance").init(25);
     };
-}
+};

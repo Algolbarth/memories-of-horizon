@@ -9,6 +9,7 @@ export class WargAlpha extends Creature {
         super(system);
 
         this.init([["Or", 50], ["Feu", 50]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(50);
@@ -22,4 +23,4 @@ export class WargAlpha extends Creature {
             this.owner.getCard("Frappe").add("Réserve");
         }
     };
-}
+};

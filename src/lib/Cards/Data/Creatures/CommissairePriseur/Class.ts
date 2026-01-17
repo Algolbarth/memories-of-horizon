@@ -10,6 +10,7 @@ export class CommissairePriseur extends Creature {
         super(system);
 
         this.init([["Or", 105]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -26,4 +27,4 @@ export class CommissairePriseur extends Creature {
             }
         }
     };
-}
+};

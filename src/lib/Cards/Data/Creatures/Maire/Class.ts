@@ -9,6 +9,7 @@ export class Maire extends Creature {
         super(system);
 
         this.init([["Or", 105]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -20,4 +21,4 @@ export class Maire extends Creature {
     startStepEffect = () => {
         this.owner.ressource("Or").current += 5 * this.owner.zone("Terrain").cards.length;
     };
-}
+};

@@ -10,6 +10,7 @@ export class Bagarreur extends Creature {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -23,4 +24,4 @@ export class Bagarreur extends Creature {
             card.stat("Force").step += 10;
         }
     };
-}
+};

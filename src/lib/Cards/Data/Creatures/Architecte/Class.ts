@@ -10,6 +10,7 @@ export class Architecte extends Creature {
         super(system);
 
         this.init([["Or", 10], ["Terre", 10]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(5);
@@ -35,4 +36,4 @@ export class Architecte extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

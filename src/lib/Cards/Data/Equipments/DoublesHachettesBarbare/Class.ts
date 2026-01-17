@@ -9,6 +9,7 @@ export class DoublesHachettesBarbare extends Equipment {
         super(system);
 
         this.init([["Or", 60]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Adresse").init(35);
@@ -16,4 +17,4 @@ export class DoublesHachettesBarbare extends Equipment {
 
         this.text = Text;
     };
-}
+};

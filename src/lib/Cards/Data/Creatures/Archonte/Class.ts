@@ -10,6 +10,7 @@ export class Archonte extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Terre", 55]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(10);
@@ -27,4 +28,4 @@ export class Archonte extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

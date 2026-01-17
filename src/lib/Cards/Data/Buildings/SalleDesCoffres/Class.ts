@@ -9,6 +9,7 @@ export class SalleDesCoffres extends Building {
         super(system);
 
         this.init([["Or", 35]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;

@@ -9,10 +9,11 @@ export class PlastronEnPlatine extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(150);
 
         this.text = Text;
     };
-}
+};

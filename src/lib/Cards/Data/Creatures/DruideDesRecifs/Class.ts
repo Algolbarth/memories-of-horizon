@@ -8,6 +8,7 @@ class DruideDesRecifs extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Eau", 25]]);
+
         this.families.base.push("Druide");
 
         this.text = Text;

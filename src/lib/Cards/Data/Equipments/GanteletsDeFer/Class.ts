@@ -18,4 +18,4 @@ export class GanteletsDeFer extends Equipment {
 
         this.text = Text;
     };
-}
+};

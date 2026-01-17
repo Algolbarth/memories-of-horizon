@@ -9,6 +9,7 @@ export class MassueDeChene extends Equipment {
         super(system);
 
         this.init([["Or", 18], ["Végétal", 18]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Vitalité").init(15);
@@ -19,4 +20,4 @@ export class MassueDeChene extends Equipment {
     fightEffect = () => {
         this.bearer.stat("Constitution").increase(10);
     };
-}
+};

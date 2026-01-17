@@ -10,6 +10,7 @@ export class DefenseurDeLaCite extends Creature {
         super(system);
 
         this.init([["Or", 15], ["Terre", 15]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(10);
@@ -24,4 +25,4 @@ export class DefenseurDeLaCite extends Creature {
             this.stat("Endurance").increase(2);
         }
     };
-}
+};

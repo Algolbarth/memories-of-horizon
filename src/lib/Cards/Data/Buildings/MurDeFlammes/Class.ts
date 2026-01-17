@@ -8,6 +8,7 @@ export class MurDeFlammes extends Building {
         super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
+
         this.stat("Constitution").init(25);
         this.stat("Épine").init(15);
     };

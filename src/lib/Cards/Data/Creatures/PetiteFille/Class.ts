@@ -10,6 +10,7 @@ export class PetiteFille extends Creature {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(1);
@@ -60,4 +61,4 @@ export class PetiteFille extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

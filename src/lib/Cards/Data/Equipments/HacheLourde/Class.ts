@@ -9,10 +9,11 @@ export class HacheLourde extends Equipment {
         super(system);
 
         this.init([["Or", 75]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Intensité").init(3);
 
         this.text = Text;
     };
-}
+};

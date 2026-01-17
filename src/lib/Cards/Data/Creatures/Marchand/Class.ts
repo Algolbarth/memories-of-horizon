@@ -9,6 +9,7 @@ export class Marchand extends Creature {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -28,4 +29,4 @@ export class Marchand extends Creature {
             this.owner.ressource("Or").production++;
         }
     };
-}
+};

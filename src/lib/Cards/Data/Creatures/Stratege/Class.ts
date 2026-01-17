@@ -10,6 +10,7 @@ export class Stratège extends Creature {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -30,4 +31,4 @@ export class Stratège extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

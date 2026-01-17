@@ -11,6 +11,7 @@ export class TheVert extends Item {
         super(system);
 
         this.init([["Or", 8], ["Végétal", 8]]);
+
         this.families.base.push("Nourriture");
         this.families.base.push("Plante");
 
@@ -56,4 +57,4 @@ export class TheVert extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

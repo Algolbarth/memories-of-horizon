@@ -10,6 +10,7 @@ export class EpeeEnflammee extends Equipment {
         super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(20);

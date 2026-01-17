@@ -26,4 +26,4 @@ export class MimiqueDeJarre extends Creature {
             this.owner.adversary().ressource("Or").stock += 10;
         }
     };
-}
+};

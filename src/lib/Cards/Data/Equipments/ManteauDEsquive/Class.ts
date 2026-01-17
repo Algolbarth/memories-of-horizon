@@ -9,6 +9,7 @@ export class ManteauDEsquive extends Equipment {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Armure");
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class ManteauDEsquive extends Equipment {
             this.bearer.stat("Esquive").turn += 1;
         }
     };
-}
+};

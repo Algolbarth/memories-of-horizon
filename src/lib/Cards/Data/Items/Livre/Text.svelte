@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import Resolve from "../../../Utils/Resolve.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -9,6 +10,8 @@
 </script>
 
 Découvre 1 carte.
+
 <br />
 <br />
-Résolution 10 : Découvre 2 cartes à la place.
+
+<Resolve bind:system bind:card cost={10} text={"découvre 2 cartes à la place."} />

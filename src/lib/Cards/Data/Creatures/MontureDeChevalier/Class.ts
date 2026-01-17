@@ -10,6 +10,7 @@ export class MontureDeChevalier extends Creature {
         super(system);
 
         this.init([["Or", 110]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(10);
@@ -61,4 +62,4 @@ export class MontureDeChevalier extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

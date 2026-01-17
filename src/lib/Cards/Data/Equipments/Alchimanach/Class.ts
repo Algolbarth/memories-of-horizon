@@ -25,4 +25,4 @@ export class Alchimanach extends Equipment {
             this.owner.draw(1, read_condition);
         }
     };
-}
+};

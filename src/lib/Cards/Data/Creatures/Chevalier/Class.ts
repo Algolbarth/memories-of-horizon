@@ -11,6 +11,7 @@ export class Chevalier extends Creature {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Humain", "Chevalier");
 
         this.stat("Constitution").init(15);
@@ -29,6 +30,7 @@ export class ChevalierMonte extends Creature {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Humain", "Chevalier");
 
         this.stat("Constitution").init(10);

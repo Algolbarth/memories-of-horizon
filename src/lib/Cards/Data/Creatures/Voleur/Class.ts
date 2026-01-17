@@ -9,6 +9,7 @@ export class Voleur extends Creature {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -20,4 +21,4 @@ export class Voleur extends Creature {
     fightEffect = () => {
         this.getSale("Or").increase(2);
     };
-}
+};

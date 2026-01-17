@@ -10,6 +10,7 @@ export class PeauDOurs extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Armure");
 
         this.families.base.push("Bête");

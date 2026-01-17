@@ -10,6 +10,7 @@ export class Alambic extends Building {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;
@@ -34,4 +35,4 @@ export class Alambic extends Building {
             }
         }
     };
-}
+};

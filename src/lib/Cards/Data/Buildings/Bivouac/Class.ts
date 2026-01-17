@@ -10,6 +10,7 @@ export class Bivouac extends Building {
         super(system);
 
         this.init([["Or", 110]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;

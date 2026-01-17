@@ -10,6 +10,7 @@ export class BibliothequeElfique extends Building {
         super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(20);
@@ -22,4 +23,4 @@ export class BibliothequeElfique extends Building {
             this.stat("Intelligence").increase(1);
         }
     };
-}
+};

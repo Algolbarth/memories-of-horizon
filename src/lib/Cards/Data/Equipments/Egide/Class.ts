@@ -9,6 +9,7 @@ export class Egide extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Endurance").value = function () {
@@ -22,4 +23,4 @@ export class Egide extends Equipment {
 
         this.text = Text;
     };
-}
+};

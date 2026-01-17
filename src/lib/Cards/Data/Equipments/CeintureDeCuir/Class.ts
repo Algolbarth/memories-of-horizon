@@ -18,4 +18,4 @@ export class CeintureDeCuir extends Equipment {
             this.owner.getCard("Option").add("Réserve");
         }
     };
-}
+};

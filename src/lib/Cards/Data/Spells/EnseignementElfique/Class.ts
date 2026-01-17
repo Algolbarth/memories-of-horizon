@@ -11,6 +11,7 @@ export class EnseignementElfique extends Spell {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
+
         this.families.base.push("Elfe");
 
         this.text = Text;
@@ -52,7 +53,8 @@ export class EnseignementElfique extends Spell {
         else {
             target.stat("Intelligence").increase(5);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

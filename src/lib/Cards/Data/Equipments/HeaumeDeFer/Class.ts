@@ -9,6 +9,7 @@ export class HeaumeDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Armure");
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class HeaumeDeFer extends Equipment {
             this.bearer.stat("Garde").fix(25);
         }
     };
-}
+};

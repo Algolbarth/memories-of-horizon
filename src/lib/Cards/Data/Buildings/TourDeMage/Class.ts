@@ -8,7 +8,8 @@ export class TourDeMage extends Building {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.stat("Constitution").init(20);
         this.stat("Magie").init(5);
     };
-}
+};

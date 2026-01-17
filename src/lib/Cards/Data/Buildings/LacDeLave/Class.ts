@@ -10,6 +10,7 @@ export class LacDeLave extends Building {
         super(system);
 
         this.init([["Or", 18], ["Feu", 18]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -25,4 +26,4 @@ export class LacDeLave extends Building {
             }
         }
     };
-}
+};

@@ -9,6 +9,7 @@ export class Mendiant extends Creature {
         super(system);
 
         this.init([["Or", 1]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -22,4 +23,4 @@ export class Mendiant extends Creature {
             this.owner.ressource("Or").spend(2);
         }
     };
-}
+};

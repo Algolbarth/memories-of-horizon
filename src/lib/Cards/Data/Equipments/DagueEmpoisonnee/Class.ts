@@ -11,6 +11,7 @@ export class DagueEmpoisonnee extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(5);

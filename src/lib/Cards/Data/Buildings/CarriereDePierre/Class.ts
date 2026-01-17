@@ -20,4 +20,4 @@ export class CarriereDePierre extends Building {
             this.owner.ressource("Terre").current += 10;
         }
     };
-}
+};

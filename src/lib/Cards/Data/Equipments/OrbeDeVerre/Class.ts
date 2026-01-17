@@ -9,10 +9,11 @@ export class OrbeDeVerre extends Equipment {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Résistance").init(5);
 
         this.text = Text;
     };
-}
+};

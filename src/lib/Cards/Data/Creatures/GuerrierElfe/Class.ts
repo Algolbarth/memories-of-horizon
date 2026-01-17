@@ -9,6 +9,7 @@ export class GuerrierElfe extends Creature {
         super(system);
 
         this.init([["Or", 8], ["Végétal", 8]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(10);
@@ -22,9 +23,9 @@ export class GuerrierElfe extends Creature {
         if (this.owner.totalIntelligence() >= 20) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);
-            this.stat("Endurance").increase(5);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

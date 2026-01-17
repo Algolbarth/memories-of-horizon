@@ -12,6 +12,7 @@ export class EventailDeCouteaux extends Equipment {
         super(system);
 
         this.init([["Or", 20]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(30);

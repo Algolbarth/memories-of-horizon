@@ -11,6 +11,7 @@ export class ElementaireDeCaillou extends Creature {
         super(system);
 
         this.init([["Terre", 3]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(3);
@@ -55,4 +56,4 @@ export class ElementaireDeCaillou extends Creature {
         }
         this.pose();
     };
-}
+};

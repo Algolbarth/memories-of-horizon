@@ -8,9 +8,10 @@ export class Geant extends Creature {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Géant");
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
     };
-}
+};

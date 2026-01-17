@@ -18,4 +18,4 @@ export class Carquois extends Equipment {
             this.owner.getCard("Flèche en bois").add("Réserve");
         }
     };
-}
+};

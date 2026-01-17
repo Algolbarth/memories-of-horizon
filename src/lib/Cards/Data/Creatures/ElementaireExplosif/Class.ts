@@ -10,6 +10,7 @@ export class ElementaireExplosif extends Creature {
         super(system);
 
         this.init([["Feu", 50]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(50);

@@ -9,6 +9,7 @@ export class Geomancien extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Terre", 12]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(5);
@@ -23,4 +24,4 @@ export class Geomancien extends Creature {
             this.stat("Endurance").increase(2);
         }
     };
-}
+};

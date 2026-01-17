@@ -9,6 +9,7 @@ export class CavalierElfe extends Creature {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(20);
@@ -22,7 +23,8 @@ export class CavalierElfe extends Creature {
         if (this.owner.totalIntelligence() >= 20) {
             this.stat("Vitesse").increase(1);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

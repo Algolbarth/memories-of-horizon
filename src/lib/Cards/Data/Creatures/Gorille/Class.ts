@@ -9,6 +9,7 @@ export class Gorille extends Creature {
         super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(35);
@@ -22,4 +23,4 @@ export class Gorille extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

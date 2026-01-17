@@ -9,6 +9,7 @@ export class Rapiere extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Arme");
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class Rapiere extends Equipment {
             this.bearer.stat("Critique").set(100);
         }
     };
-}
+};

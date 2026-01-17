@@ -9,6 +9,7 @@ export class Ondin extends Creature {
         super(system);
 
         this.init([["Or", 5], ["Eau", 5]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
@@ -22,4 +23,4 @@ export class Ondin extends Creature {
             this.owner.ressource("Eau").current += 5;
         }
     };
-}
+};

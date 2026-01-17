@@ -8,7 +8,8 @@ export class Bibliothèque extends Building {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.stat("Constitution").init(10);
         this.stat("Intelligence").init(5);
     };
-}
+};

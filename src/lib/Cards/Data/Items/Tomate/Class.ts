@@ -11,6 +11,7 @@ export class Tomate extends Item {
         super(system);
 
         this.init([["Or", 5], ["Végétal", 5]]);
+
         this.families.base.push("Nourriture", "Plante");
 
         this.text = Text;
@@ -76,4 +77,4 @@ export class Tomate extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

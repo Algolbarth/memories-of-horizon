@@ -9,6 +9,7 @@ export class Pyromancien extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Feu", 12]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);
@@ -22,4 +23,4 @@ export class Pyromancien extends Creature {
             this.stat("Force").increase(5);
         }
     };
-}
+};

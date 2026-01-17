@@ -16,4 +16,4 @@ export class GanteletsEnCuir extends Equipment {
 
         this.text = Text;
     };
-}
+};

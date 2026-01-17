@@ -9,6 +9,7 @@ export class BouclierDeCorindon extends Equipment {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Endurance").init(50);
@@ -16,4 +17,4 @@ export class BouclierDeCorindon extends Equipment {
 
         this.text = Text;
     };
-}
+};

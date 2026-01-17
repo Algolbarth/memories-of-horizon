@@ -9,6 +9,7 @@ export class DonjonAbandonne extends Building {
         super(system);
 
         this.init([["Or", 120]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;

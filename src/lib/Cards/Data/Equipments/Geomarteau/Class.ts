@@ -10,6 +10,7 @@ export class Geomarteau extends Equipment {
         super(system);
 
         this.init([["Or", 75], ["Terre", 75]]);
+
         this.families.base.push("Arme");
 
         this.addStat("Secousses", 0);
@@ -28,4 +29,4 @@ export class Geomarteau extends Equipment {
             card.damageByEffect(this.stat("Secousses").value());
         }
     };
-}
+};

@@ -18,4 +18,4 @@ export class BagueDeFiancailles extends Equipment {
             this.owner.getCard(this.bearer.name).add("Pile");
         }
     };
-}
+};

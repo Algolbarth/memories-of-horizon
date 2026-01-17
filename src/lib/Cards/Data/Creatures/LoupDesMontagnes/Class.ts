@@ -9,6 +9,7 @@ export class LoupDesMontagnes extends Creature {
         super(system);
 
         this.init([["Or", 8], ["Terre", 8]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(5);
@@ -22,4 +23,4 @@ export class LoupDesMontagnes extends Creature {
             this.stat('Force').increase(5);
         }
     };
-}
+};

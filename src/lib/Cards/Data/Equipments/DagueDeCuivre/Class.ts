@@ -11,6 +11,7 @@ export class DagueDeCuivre extends Equipment {
         super(system);
 
         this.init([["Or", 3]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(5);
@@ -64,4 +65,4 @@ export class DagueDeCuivre extends Equipment {
         }
         this.pose();
     };
-}
+};

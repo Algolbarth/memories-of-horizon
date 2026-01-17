@@ -10,6 +10,7 @@ export class Nexus extends Building {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(20);

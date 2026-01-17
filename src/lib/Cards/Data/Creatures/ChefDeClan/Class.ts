@@ -10,6 +10,7 @@ export class ChefDeClan extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Feu", 55]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(10);
@@ -28,4 +29,4 @@ export class ChefDeClan extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

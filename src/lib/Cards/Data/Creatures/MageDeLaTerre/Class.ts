@@ -9,6 +9,7 @@ export class MageDeLaTerre extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Terre", 20]]);
+
         this.families.base.push("Nain");
 
         this.stat("Constitution").init(5);
@@ -24,4 +25,4 @@ export class MageDeLaTerre extends Creature {
             this.owner.getCard("Élémentaire de caillou").add("Réserve");
         }
     };
-}
+};

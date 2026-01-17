@@ -10,6 +10,7 @@ export class PluieDeFeu extends Spell {
         super(system);
 
         this.init([["Or", 25], ["Feu", 25]]);
+
         this.families.base.push("Sort");
 
         this.text = Text;
@@ -23,7 +24,7 @@ export class PluieDeFeu extends Spell {
     };
 
     useEffect = () => {
-        let damage;
+        let damage: number = 0;
         if (this.owner.ressource("Mana").total() >= 50) {
             this.owner.ressource("Mana").spend(50);
             damage = 20;
@@ -40,4 +41,4 @@ export class PluieDeFeu extends Spell {
         this.move("Défausse");
         this.pose();
     };
-}
+};

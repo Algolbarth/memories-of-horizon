@@ -9,6 +9,7 @@ export class ElementaireMarin extends Creature {
         super(system);
 
         this.init([["Eau", 50]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(50);
@@ -24,4 +25,4 @@ export class ElementaireMarin extends Creature {
             this.stat("Force").increase(5);
         }
     };
-}
+};

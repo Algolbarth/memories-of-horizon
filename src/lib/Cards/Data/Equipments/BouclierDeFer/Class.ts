@@ -9,10 +9,11 @@ export class BouclierDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Endurance").init(25);
 
         this.text = Text;
     };
-}
+};

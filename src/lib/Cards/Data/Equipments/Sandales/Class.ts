@@ -9,10 +9,11 @@ export class Sandales extends Equipment {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitesse").init(1);
 
         this.text = Text;
     };
-}
+};

@@ -10,6 +10,7 @@ export class Bucheron extends Creature {
         super(system);
 
         this.init([["Or", 15], ["Végétal", 15]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(10);
@@ -23,4 +24,4 @@ export class Bucheron extends Creature {
             this.owner.ressource("Végétal").stock += 2;
         }
     };
-}
+};

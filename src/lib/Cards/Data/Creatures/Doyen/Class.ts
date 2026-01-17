@@ -10,6 +10,7 @@ export class Doyen extends Creature {
         super(system);
 
         this.init([["Or", 55], ["Végétal", 55]]);
+
         this.families.base.push("Elfe");
 
         this.stat("Constitution").init(15);
@@ -28,4 +29,4 @@ export class Doyen extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

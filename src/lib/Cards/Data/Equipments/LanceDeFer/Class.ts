@@ -9,6 +9,7 @@ export class LanceDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(25);
@@ -16,4 +17,4 @@ export class LanceDeFer extends Equipment {
 
         this.text = Text;
     };
-}
+};

@@ -9,6 +9,7 @@ export class PanneauDeDirection extends Building {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.stat("Constitution").init(5);
 
         this.text = Text;

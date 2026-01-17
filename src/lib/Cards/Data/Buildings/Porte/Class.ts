@@ -9,6 +9,7 @@ export class Porte extends Building {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.stat("Constitution").init(8);
 
         this.text = Text;

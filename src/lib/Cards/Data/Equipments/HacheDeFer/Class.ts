@@ -9,6 +9,7 @@ export class HacheDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Adresse").init(35);
@@ -16,4 +17,4 @@ export class HacheDeFer extends Equipment {
 
         this.text = Text;
     };
-}
+};

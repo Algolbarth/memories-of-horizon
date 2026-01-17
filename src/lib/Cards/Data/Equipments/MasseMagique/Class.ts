@@ -9,6 +9,7 @@ export class MasseMagique extends Equipment {
         super(system);
 
         this.init([["Or", 60]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(20);
@@ -20,4 +21,4 @@ export class MasseMagique extends Equipment {
     fightEffect = () => {
         this.owner.ressource("Mana").stock += 5;
     };
-}
+};

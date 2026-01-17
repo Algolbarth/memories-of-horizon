@@ -9,6 +9,7 @@ export class MinistreOndin extends Creature {
         super(system);
 
         this.init([["Or", 22], ["Eau", 22]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
@@ -22,4 +23,4 @@ export class MinistreOndin extends Creature {
             this.owner.ressource("Eau").current += 5;
         }
     };
-}
+};

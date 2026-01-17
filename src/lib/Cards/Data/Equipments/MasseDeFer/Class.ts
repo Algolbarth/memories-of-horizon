@@ -9,6 +9,7 @@ export class MasseDeFer extends Equipment {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Force").init(5);
@@ -21,4 +22,4 @@ export class MasseDeFer extends Equipment {
         this.bearer.stat("Constitution").increase(5);
         this.bearer.stat("Force").increase(5);
     };
-}
+};

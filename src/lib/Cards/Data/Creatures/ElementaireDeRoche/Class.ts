@@ -11,6 +11,7 @@ export class ElementaireDeRoche extends Creature {
         super(system);
 
         this.init([["Terre", 50]]);
+
         this.families.base.push("Élémentaire");
 
         this.stat("Constitution").init(40);

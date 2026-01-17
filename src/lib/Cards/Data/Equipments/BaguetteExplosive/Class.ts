@@ -10,6 +10,7 @@ export class BaguetteExplosive extends Equipment {
         super(system);
 
         this.init([["Or", 40], ["Feu", 40]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Magie").init(10);
@@ -20,4 +21,4 @@ export class BaguetteExplosive extends Equipment {
     fightEffect = (defender: Unit) => {
         defender.damageByEffect(this.bearer.stat("Magie").value());
     };
-}
+};

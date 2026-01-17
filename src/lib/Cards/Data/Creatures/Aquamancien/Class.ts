@@ -10,6 +10,7 @@ export class Aquamancien extends Creature {
         super(system);
 
         this.init([["Or", 12], ["Eau", 12]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
@@ -23,4 +24,4 @@ export class Aquamancien extends Creature {
             this.owner.ressource("Eau").stock += 2;
         }
     };
-}
+};

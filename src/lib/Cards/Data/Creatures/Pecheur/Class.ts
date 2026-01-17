@@ -10,6 +10,7 @@ export class Pecheur extends Creature {
         super(system);
 
         this.init([["Or", 8], ["Eau", 8]]);
+
         this.families.base.push("Ondin");
 
         this.stat("Constitution").init(5);
@@ -34,4 +35,4 @@ export class Pecheur extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

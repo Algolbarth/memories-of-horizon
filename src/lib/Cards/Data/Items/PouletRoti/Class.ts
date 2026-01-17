@@ -11,6 +11,7 @@ export class PouletRoti extends Item {
         super(system);
 
         this.init([["Or", 3], ["Feu", 2]]);
+
         this.families.base.push("Nourriture");
 
         this.text = Text;
@@ -55,4 +56,4 @@ export class PouletRoti extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

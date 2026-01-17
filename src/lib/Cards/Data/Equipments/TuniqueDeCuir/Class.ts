@@ -9,6 +9,7 @@ export class TuniqueDeCuir extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(20);
@@ -17,4 +18,4 @@ export class TuniqueDeCuir extends Equipment {
 
         this.text = Text;
     };
-}
+};

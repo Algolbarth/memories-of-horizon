@@ -32,4 +32,4 @@ export class Bestiaire extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

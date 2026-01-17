@@ -12,6 +12,7 @@ export class Lait extends Item {
         super(system);
 
         this.init([["Or", 10]]);
+
         this.families.base.push("Nourriture");
 
         this.text = Text;
@@ -74,4 +75,4 @@ export class Lait extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

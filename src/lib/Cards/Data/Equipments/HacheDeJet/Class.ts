@@ -11,6 +11,7 @@ export class HacheDeJet extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Arme");
 
         this.equipStat("Adresse").init(25);

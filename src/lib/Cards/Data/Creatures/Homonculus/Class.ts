@@ -14,4 +14,4 @@ export class Homonculus extends Creature {
         this.stat("Constitution").init(1);
         this.stat("Force").init(0);
     };
-}
+};

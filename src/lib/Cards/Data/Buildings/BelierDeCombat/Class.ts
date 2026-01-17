@@ -9,6 +9,7 @@ export class BelierDeCombat extends Building {
         super(system);
 
         this.init([["Or", 100]]);
+
         this.stat("Constitution").init(40);
 
         this.text = Text;

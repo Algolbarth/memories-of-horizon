@@ -10,6 +10,7 @@ export class Chimere extends Creature {
         super(system);
 
         this.init([["Or", 50]]);
+
         this.families.base.push("Bête", "Reptile");
 
         this.stat("Constitution").init(20);

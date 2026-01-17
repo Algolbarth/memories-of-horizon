@@ -9,8 +9,9 @@ export class Bouee extends Equipment {
         super(system);
 
         this.init([["Or", 5], ["Eau", 5]]);
+
         this.equipElements = ["Eau"];
 
         this.text = Text;
     };
-}
+};

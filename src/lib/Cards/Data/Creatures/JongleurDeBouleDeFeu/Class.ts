@@ -10,6 +10,7 @@ export class JongleurDeBouleDeFeu extends Creature {
         super(system);
 
         this.init([["Or", 20], ["Feu", 20]]);
+
         this.families.base.push("Gobelin");
 
         this.stat("Constitution").init(3);
@@ -24,4 +25,4 @@ export class JongleurDeBouleDeFeu extends Creature {
             this.owner.getCard("Boule de feu").add("Pile");
         }
     };
-}
+};

@@ -9,6 +9,7 @@ export class RobeEnSoie extends Equipment {
         super(system);
 
         this.init([["Or", 30]]);
+
         this.families.base.push("Armure");
 
         this.equipStat("Vitalité").init(25);
@@ -16,4 +17,4 @@ export class RobeEnSoie extends Equipment {
 
         this.text = Text;
     };
-}
+};

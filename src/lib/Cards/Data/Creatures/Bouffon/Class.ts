@@ -10,6 +10,7 @@ export class Bouffon extends Creature {
         super(system);
 
         this.init([["Or", 105]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -62,4 +63,4 @@ export class Bouffon extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

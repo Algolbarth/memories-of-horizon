@@ -26,4 +26,4 @@ export class MimiqueDeCoffre extends Creature {
             this.owner.adversary().draw(5);
         }
     };
-}
+};

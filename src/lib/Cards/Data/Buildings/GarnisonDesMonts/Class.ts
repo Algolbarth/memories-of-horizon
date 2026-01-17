@@ -9,6 +9,7 @@ export class GarnisonDesMonts extends Building {
         super(system);
 
         this.init([["Or", 60], ["Terre", 60]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class GarnisonDesMonts extends Building {
             this.owner.getCard("Soldat nain").add("Terrain");
         }
     };
-}
+};

@@ -10,6 +10,7 @@ export class ChefCuisinier extends Creature {
         super(system);
 
         this.init([["Or", 85]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -30,4 +31,4 @@ export class ChefCuisinier extends Creature {
             }
         }
     };
-}
+};

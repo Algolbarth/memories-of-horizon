@@ -10,6 +10,7 @@ export class ChevalDeGuerre extends Creature {
         super(system);
 
         this.init([["Or", 40]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(10);
@@ -63,4 +64,4 @@ export class ChevalDeGuerre extends Creature {
         this.move("Terrain");
         this.pose();
     };
-}
+};

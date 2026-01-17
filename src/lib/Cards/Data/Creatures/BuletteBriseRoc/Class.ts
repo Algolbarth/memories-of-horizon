@@ -9,6 +9,7 @@ export class BuletteBriseRoc extends Creature {
         super(system);
 
         this.init([["Or", 50], ["Terre", 50]]);
+
         this.families.base.push("Bête");
 
         this.stat("Constitution").init(30);
@@ -23,4 +24,4 @@ export class BuletteBriseRoc extends Creature {
             this.owner.getCard("Coup de bouclier").add("Réserve");
         }
     };
-}
+};

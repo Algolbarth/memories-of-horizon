@@ -20,4 +20,4 @@ export class Couronne extends Equipment {
             card.stat("Force").increase(this.bearer.level);
         }
     };
-}
+};

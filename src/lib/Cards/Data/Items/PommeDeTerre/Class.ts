@@ -11,6 +11,7 @@ export class PommeDeTerre extends Item {
         super(system);
 
         this.init([["Or", 3], ["Terre", 2]]);
+
         this.families.base.push("Nourriture");
         this.families.base.push("Plante");
 
@@ -56,4 +57,4 @@ export class PommeDeTerre extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

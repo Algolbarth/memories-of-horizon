@@ -9,6 +9,7 @@ export class Danseuse extends Creature {
         super(system);
 
         this.init([["Or", 25]]);
+
         this.families.base.push("Humain");
 
         this.stat("Constitution").init(5);
@@ -20,4 +21,4 @@ export class Danseuse extends Creature {
     startBattleEffect = () => {
         this.stat("Esquive").step += 1;
     };
-}
+};

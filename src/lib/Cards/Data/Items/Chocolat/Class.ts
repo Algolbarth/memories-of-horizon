@@ -11,6 +11,7 @@ export class Chocolat extends Item {
         super(system);
 
         this.init([["Or", 5]]);
+
         this.families.base.push("Nourriture");
 
         this.text = Text;
@@ -56,4 +57,4 @@ export class Chocolat extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

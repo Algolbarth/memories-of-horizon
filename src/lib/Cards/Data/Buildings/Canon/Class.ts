@@ -9,6 +9,7 @@ export class Canon extends Building {
         super(system);
 
         this.init([["Or", 85]]);
+
         this.stat("Constitution").init(20);
 
         this.text = Text;
@@ -19,4 +20,4 @@ export class Canon extends Building {
             this.owner.adversary().zone("Terrain").cards[0].damageByEffect(50);
         }
     };
-}
+};

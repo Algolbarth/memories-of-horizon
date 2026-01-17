@@ -10,6 +10,7 @@ export class Siphon extends Building {
         super(system);
 
         this.init([["Or", 12], ["Eau", 12]]);
+
         this.stat("Constitution").init(10);
 
         this.text = Text;
@@ -20,4 +21,4 @@ export class Siphon extends Building {
             this.getSale("Eau").base += 5;
         }
     };
-}
+};
