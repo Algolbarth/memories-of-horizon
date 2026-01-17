@@ -13,11 +13,9 @@ Ajouter les stats des decks (types de carte, éléments, familles, niveau)
 Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la pile 
 Ajouter un texte explicatif pour les stats et effets 
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu 
-Ajouter la paralysie, le gel et l'aveuglement (paralysie => X actions, gel => X tours, aveuglement => X attaques)
+Ajouter la paralysie, le gel et la cécité (paralysie => X actions, gel => X tours, cécité => X attaques)
 
 # Cartes
-
-## A modifier
 
 ## A ajouter
 ### Mimique
@@ -35,10 +33,6 @@ Marchand de miracle : créature humain, quand trois cartes alliées de même nom
 
 ### Neutre
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
-Mouton : créature bête, endurance.
-Mouton laineux : créature bête, quand arrive sur le terrain : génère Laine dans la réserve.
-Berger : créature humain, au début de chaque phase de préparation : génère Mouton sur le terrain.
-Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain.
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans la réserve adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
@@ -76,13 +70,12 @@ Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse su
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée.
 Mur de haie : créature plante. 0 atk inactif 
-Rose : créature plante, 0 atk inactif, épine, quand se fait attaquer : applique poison à la créature attaquante.
+Mur de ronces : créature plante. 0 atk inactif, épine
 Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
 Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
 Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans la réserve.
-Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
@@ -90,19 +83,16 @@ Hérisson : créature bête, épine.
 Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
 
 ### Eau
-Barrière de corail : créature plante, régénération.
 Thon : créature poisson.
 Saumon : créature poisson.
 Requin : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
-Cycle de l'eau : action, pioche 1 carte Eau et produis de l'eau pour chaque carte Eau sur le terrain et dans la réserve.
 
 ### Terre
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain.
 Taupe : créature bête, quand posé : fouille 1 carte.
 Mère ours : créature bête, protection.
 Ourson : créature bête.
-Muraille naine : créature poisson.
 
 ### Air
 Sylphe : quand arrive sur le terrain : pioche une carte.
@@ -289,7 +279,7 @@ Castor
 Mangroves : lieu pour les cartes d'élément Eau et Végétal.
 
 ### Eau/Glace
-Requin articque : poisson 
+Requin arctique : poisson 
 Kraken 
 Tentacule 
 Banquise : lieu pour les cartes d'élément Glace et Eau.
@@ -314,6 +304,10 @@ Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie.
 Glacier : lieu pour les cartes d'élément Glace et Terre.
 
+## Vegetal/Lumière
+Dryade
+Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
+
 ### Vegetal/Ombre
 Champignon 
 Homme champignon 
@@ -328,6 +322,7 @@ Paradis : lieu pour les cartes d'élément Air et Lumière.
 Armure possédée
 
 ### Lumiere/Ombre
+Ange déchu
 Eclipse solaire : révèle toutes les cartes dans la réserve adverse et en détruit une.
 
 # Boss

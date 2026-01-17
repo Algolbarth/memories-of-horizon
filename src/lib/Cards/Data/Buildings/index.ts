@@ -1,6 +1,7 @@
 export * from './Alambic';
 export * from './Baliste';
 export * from './Barricade';
+export * from './BarriereDeCorail';
 export * from './BassinDeReproduction';
 export * from './BelierDeCombat';
 export * from './Bibliotheque';
