@@ -10,4 +10,4 @@ export class Muraille extends Building {
         this.init([["Or", 100]]);
         this.stat("Constitution").init(200);
     };
-}
+};

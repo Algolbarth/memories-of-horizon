@@ -2,8 +2,8 @@ import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 
-export class FeuDeCamp extends Building {
-    name = "Feu de camp";
+export class Tente extends Building {
+    name = "Tente";
 
     constructor(system: System) {
         super(system);
@@ -24,4 +24,4 @@ export class FeuDeCamp extends Building {
             }
         }
     };
-}
+};

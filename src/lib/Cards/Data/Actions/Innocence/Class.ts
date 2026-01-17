@@ -4,8 +4,8 @@ import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Ignorer extends Action {
-    name = "Ignorer";
+export class Innocence extends Action {
+    name = "Innocence";
 
     constructor(system: System) {
         super(system);

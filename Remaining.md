@@ -86,8 +86,6 @@ Cheveux de dryades : augmente la régénération d'une créature alliée sur le 
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
-Sanglier : créature bête.
-Cerf : créature bête.
 Hérisson : créature bête, épine.
 Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
 
