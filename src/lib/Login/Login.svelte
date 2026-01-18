@@ -22,7 +22,7 @@
 	<br />
 
 	<button
-		class="return"
+		class="square return"
 		on:click={() => {
 			system.page = "TitleScreen";
 		}}

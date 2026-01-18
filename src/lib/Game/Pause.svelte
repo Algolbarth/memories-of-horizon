@@ -16,7 +16,7 @@
 		<div id="body" class="center">
 			<div style="text-align:right;">
 				<button
-					class="close"
+					class="square close"
 					on:click={() => {
 						close();
 					}}
@@ -25,7 +25,7 @@
 				</button>
 			</div>
 
-			<div class="button-list center">
+			<div class="button-list">
 				<button
 					class="big"
 					on:click={() => {
@@ -75,7 +75,7 @@
 {/if}
 
 <style>
-	.window {
+	div.window {
 		background: var(--shadow);
 	}
 
@@ -85,7 +85,7 @@
 
 		width: 20vw;
 		height: 50vh;
-		padding: 1%;
+		padding: 0.75em;
 
 		border: solid;
 		border-width: 5px;
@@ -93,8 +93,10 @@
 		text-align: center;
 	}
 
-	.button-list {
+	div.button-list {
 		display: grid;
-		width: 80%;
+
+		width: 100%;
+		padding-top: 1em;
 	}
 </style>

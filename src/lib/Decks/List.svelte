@@ -14,21 +14,26 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.view.reset();
-		system.page = "Menu";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
 
-<br />
-<br />
+	<div>
+		<button class="taskbar">Decks</button>
+	</div>
+</div>
 
 <div class="zone">
-	<div class="taskbar">
+	<div class="zone_taskbar">
 		<div>
 			{several(system.decks.length, ["Deck"])}
 		</div>
@@ -117,11 +122,6 @@
 		border: solid;
 		padding: 1%;
 		width: 50vw;
-	}
-
-	div.taskbar {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 	}
 
 	#list {

@@ -72,18 +72,23 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.view.reset();
-		system.page = "Menu";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
 
-<br />
-<br />
+	<div>
+		<button class="taskbar">Bibliothèque</button>
+	</div>
+</div>
 
 <div class="zone">
 	<div style="display:flex;align-items:center;">

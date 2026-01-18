@@ -11,7 +11,7 @@
 </script>
 
 <div class={"zone " + (entity == "player" ? "left" : "right")}>
-	<div class="taskbar">
+	<div class="zone_taskbar">
 		<div class="infos">
 			<div>
 				{zone.name}
@@ -175,6 +175,7 @@
 						</button>
 					{/if}
 				</div>
+
 				<div style="text-align:right;">
 					<button
 						on:click={() => {
@@ -206,11 +207,6 @@
 
 	.right {
 		margin-left: 1%;
-	}
-
-	div.taskbar {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 	}
 
 	div.infos {

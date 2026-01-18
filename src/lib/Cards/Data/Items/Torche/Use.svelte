@@ -41,7 +41,7 @@
 	</div>
 {:else if choice == "damage"}
 	<button
-		class="return"
+		class="square return"
 		on:click={() => {
 			choice = undefined;
 		}}

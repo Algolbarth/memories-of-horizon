@@ -12,13 +12,22 @@
 <div class="taskbar">
 	<div>
 		<button
-			class="close"
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+
+		<button
+			class="square return"
 			on:click={() => {
 				system.view.reset();
 				system.page = "Play";
 			}}
 		>
-			X
+			↩
 		</button>
 	</div>
 
@@ -68,16 +77,6 @@
 	.bi-zone {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-	}
-
-	div.taskbar {
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		background-color: var(--dropdown);
-		background-image: var(--rock);
-		padding: 0.5%;
-		border: solid;
-		margin-bottom: 1%;
 	}
 
 	button.train {

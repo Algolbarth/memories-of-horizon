@@ -65,17 +65,32 @@
 	{filter()}
 	<div class="window">
 		<div class="body">
-			<button
-				class="close"
-				on:click={() => {
-					closing();
-				}}
-			>
-				X
-			</button>
+			<div class="taskbar">
+				<div>
+					<button
+						class="square close"
+						on:click={() => {
+							system.page = "Menu";
+							closing();
+						}}
+					>
+						X
+					</button>
 
-			<br />
-			<br />
+					<button
+						class="square return"
+						on:click={() => {
+							closing();
+						}}
+					>
+						↩
+					</button>
+				</div>
+
+				<div>
+					<button class="taskbar">Ajouter une carte</button>
+				</div>
+			</div>
 
 			<div id="side">
 				{zone.name}
@@ -111,6 +126,7 @@
 									{card.name}
 								</button>
 							</div>
+
 							<div style="text-align:right;">
 								{#if zone.size != undefined && zone.size > zone.cards.length}
 									<button

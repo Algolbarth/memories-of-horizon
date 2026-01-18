@@ -15,21 +15,35 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.view.reset();
-		system.page = "Play";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
 
-<br />
-<br />
+		<button
+			class="square return"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Play";
+			}}
+		>
+			↩
+		</button>
+	</div>
+
+	<div>
+		<button class="taskbar">Mode construit</button>
+	</div>
+</div>
 
 <div class="zone">
-	<div class="taskbar">
+	<div class="zone_taskbar">
 		<div>
 			{several(array.length, ["Deck"])} jouable{#if array.length > 1}s{/if}
 		</div>
@@ -91,11 +105,6 @@
 		border: solid;
 		padding: 1%;
 		width: 50vw;
-	}
-
-	div.taskbar {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 	}
 
 	#list {

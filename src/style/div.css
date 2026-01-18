@@ -80,3 +80,21 @@ div.preview:hover {
 
   background-color: var(--preview_hover);
 }
+
+div.taskbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+
+  background-color: var(--dropdown);
+  background-image: var(--rock);
+
+  padding: 0.5%;
+  margin-bottom: 1%;
+
+  border: solid;
+}
+
+div.zone_taskbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

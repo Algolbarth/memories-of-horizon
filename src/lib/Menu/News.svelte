@@ -4,21 +4,25 @@
 	export let system: System;
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.page = "Menu";
-	}}
->
-	X
-</button>
-
-<br />
-<br />
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
+	<div>
+		<button class="taskbar">Nouveautés</button>
+	</div>
+</div>
 
 <div class="scroll">
 	<div class="zone">
-		<div class="paper title">DERNIÈRES NOUVEAUTÉS</div>
+		<div class="paper title">DERNIÈRES FONCTIONNALITÉS</div>
 
 		<div class="paper">
 			Les potions ont une stat d'infusion encore inexploitée, alors des cartes Neutre vont permettre de fusionner et augmenter cette stat.
@@ -87,7 +91,7 @@
 	</div>
 
 	<div class="zone">
-		<div class="paper title">NOUVEAUTÉS À VENIR</div>
+		<div class="paper title">FONCTIONNALITÉS À VENIR</div>
 
 		<div class="paper">Rien pour le moment</div>
 	</div>

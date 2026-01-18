@@ -28,7 +28,7 @@
 </script>
 
 {#if system.game}
-	<div id="taskbar">
+	<div class="taskbar">
 		<div>
 			{#if system.game.mode != "Entraînement" && system.game.chapter}
 				<button class="taskbar info">
@@ -180,16 +180,6 @@
 {/if}
 
 <style>
-	#taskbar {
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		background-color: var(--dropdown);
-		background-image: var(--rock);
-		padding: 0.5%;
-		border: solid;
-		margin-bottom: 1%;
-	}
-
 	#container {
 		height: 90vh;
 	}

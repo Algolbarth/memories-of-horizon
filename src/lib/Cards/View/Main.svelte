@@ -29,7 +29,7 @@
 			<div id="content">
 				<div style="text-align:right;">
 					<button
-						class="close seal"
+						class="square close seal"
 						on:click={() => {
 							close();
 						}}

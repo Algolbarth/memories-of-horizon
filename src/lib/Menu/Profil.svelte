@@ -18,17 +18,22 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.page = "Menu";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
 
-<br />
-<br />
+	<div>
+		<button class="taskbar">Profil</button>
+	</div>
+</div>
 
 {#if system.account && play_time != undefined && session_time != undefined}
 	<div class="zone">

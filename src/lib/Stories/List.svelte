@@ -8,17 +8,22 @@
 	let story: undefined | Story = undefined;
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.page = "Menu";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
 
-<br />
-<br />
+	<div>
+		<button class="taskbar">Univers</button>
+	</div>
+</div>
 
 <div class="zone">
 	<div id="list" class="scroll">

@@ -31,7 +31,7 @@
 
 			<div style="text-align:right;">
 				<button
-					class="close"
+					class="square close"
 					on:click={() => {
 						close();
 					}}

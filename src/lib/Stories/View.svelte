@@ -23,7 +23,7 @@
 		</div>
 
 		<button
-			class="close seal"
+			class="square close seal"
 			on:click={() => {
 				story = undefined;
 			}}

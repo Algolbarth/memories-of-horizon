@@ -56,18 +56,33 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.view.reset();
-		system.page = "Decks";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
 
-<br />
-<br />
+		<button
+			class="square return"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Decks";
+			}}
+		>
+			↩
+		</button>
+	</div>
+
+	<div>
+		<button class="taskbar">Decks</button>
+	</div>
+</div>
 
 {#if system.deck != undefined}
 	<div id="head" class="zone">
@@ -99,6 +114,7 @@
 				Cloner
 			</button>
 		</div>
+
 		<div style="text-align:right;">
 			<button
 				class="delete"
@@ -117,7 +133,7 @@
 	</div>
 
 	<div class="zone">
-		<div class="taskbar">
+		<div class="zone_taskbar">
 			<div>
 				{#if system.deck?.cards.length == 0}
 					0 Carte
@@ -238,11 +254,6 @@
 	.zone {
 		width: 50vw;
 		margin-bottom: 1%;
-	}
-
-	div.taskbar {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 	}
 
 	#list {

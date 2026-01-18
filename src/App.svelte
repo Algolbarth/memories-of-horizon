@@ -2,7 +2,7 @@
   import Root from "./lib/Root/Page.svelte";
   import { System } from "./lib/System/Class";
 
-  let system = new System();
+  let system: System = new System();
   system.music.init();
 
   let timeHandler = () => {

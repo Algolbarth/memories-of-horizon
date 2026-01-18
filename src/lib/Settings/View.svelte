@@ -12,17 +12,22 @@
 	let delay = 5 - system.settings.auto_speed / 500;
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		close();
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				close();
+			}}
+		>
+			X
+		</button>
+	</div>
 
-<br />
-<br />
+	<div>
+		<button class="taskbar">Options</button>
+	</div>
+</div>
 
 <div class="zone">
 	<div class="slidecontainer">

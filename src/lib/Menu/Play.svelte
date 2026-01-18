@@ -11,14 +11,22 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.page = "Menu";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
+	</div>
+
+	<div>
+		<button class="taskbar">Modes de jeu</button>
+	</div>
+</div>
 
 <div id="body">
 	<button

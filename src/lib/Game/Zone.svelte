@@ -15,7 +15,7 @@
 
 {#if system.game}
 	<div class={"zone " + direction}>
-		<div class="taskbar">
+		<div class="zone_taskbar">
 			<div class="infos">
 				<div>
 					{zone.name}
@@ -105,20 +105,19 @@
 {/if}
 
 <style>
-	.zone {
+	div.zone {
 		margin-bottom: 1%;
 	}
 
-	.left {
+	div.left {
 		margin-right: 1%;
 	}
 
-	.right {
+	div.right {
 		margin-left: 1%;
 	}
 
-	div.taskbar {
-		display: grid;
+	div.zone_taskbar {
 		grid-template-columns: 1fr 2fr;
 		text-align: left;
 	}

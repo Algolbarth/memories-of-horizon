@@ -94,38 +94,41 @@ button.desactivate:hover {
   background: var(--desactivate_hover);
 }
 
-button.close {
+button.square {
   transition: all var(--delay_hover) ease-in-out;
 
   text-align: center;
   font-weight: bold;
   color: white;
-  border-color: white;
 
-  width: 2em;
-  height: 2em;
-  margin: 0.25em 0 0.25em 0;
+  width: 2.5em;
+  height: 2.5em;
 
-  background: var(--close);
   background-image: var(--metal);
 
   border: solid;
+  border-color: white;
+}
+
+button.square:hover {
+  transition: all var(--delay_hover) ease-in-out;
+
+  background-image: var(--metal);
+}
+
+button.close {
+  background-color: var(--close);
+
   border-color: var(--close) black black var(--close);
 }
 
 button.close:hover {
-  transition: all var(--delay_hover) ease-in-out;
-
-  background: var(--close_hover);
-  background-image: var(--metal);
+  background-color: var(--close_hover);
 
   border-color: black var(--close) var(--close) black;
 }
 
 button.seal {
-  width: 2.5em;
-  height: 2.5em;
-
   background-image: none;
 
   border-style: double;
@@ -139,6 +142,22 @@ button.seal {
 button.seal:hover {
   border-style: double;
   border-color: black;
+}
+
+button.return {
+  background-color: var(--return);
+
+  border-color: var(--return) black black var(--return);
+
+  transform: translate(0, 2px);
+
+  margin-top: -2px;
+}
+
+button.return:hover {
+  background-color: var(--return_hover);
+
+  border-color: black var(--return) var(--return) black;
 }
 
 button.active {
@@ -155,39 +174,13 @@ button.taskbar {
 
   padding: 0.5em;
 
+  height: 2.5em;
+
   background-image: var(--metal);
 }
 
 button.taskbar:hover {
   color: white;
-}
-
-button.return {
-  transition: all var(--delay_hover) ease-in-out;
-
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  border-color: white;
-
-  width: 2em;
-  height: 2em;
-  margin: 0.25em 0 0.25em 0;
-
-  background-color: var(--return);
-  background-image: var(--metal);
-
-  border: solid;
-  border-color: var(--return) black black var(--return);
-}
-
-button.return:hover {
-  transition: all var(--delay_hover) ease-in-out;
-
-  background-color: var(--return_hover);
-  background-image: var(--metal);
-
-  border-color: black var(--return) var(--return) black;
 }
 
 button.choice {

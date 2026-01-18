@@ -49,7 +49,7 @@
 	</div>
 {:else if choice == "equip"}
 	<button
-		class="return"
+		class="square return"
 		on:click={() => {
 			choice = undefined;
 		}}
@@ -59,7 +59,7 @@
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} select_condition={select_condition_1} {select_action} />
 {:else if choice == "damage"}
 	<button
-		class="return"
+		class="square return"
 		on:click={() => {
 			choice = undefined;
 		}}

@@ -15,7 +15,7 @@
 	<div class="window">
 		<div class="body">
 			<button
-				class="close"
+				class="square close"
 				on:click={() => {
 					close();
 				}}

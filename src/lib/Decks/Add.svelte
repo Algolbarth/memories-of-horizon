@@ -45,18 +45,33 @@
 	}
 </script>
 
-<button
-	class="close"
-	on:click={() => {
-		system.view.reset();
-		system.page = "Deck";
-	}}
->
-	X
-</button>
+<div class="taskbar">
+	<div>
+		<button
+			class="square close"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Menu";
+			}}
+		>
+			X
+		</button>
 
-<br />
-<br />
+		<button
+			class="square return"
+			on:click={() => {
+				system.view.reset();
+				system.page = "Deck";
+			}}
+		>
+			↩
+		</button>
+	</div>
+
+	<div>
+		<button class="taskbar">Decks</button>
+	</div>
+</div>
 
 {#if system.deck}
 	<div class="zone">
