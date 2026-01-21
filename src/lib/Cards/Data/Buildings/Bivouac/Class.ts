@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class Bivouac extends Building {
     name = "Bivouac";
@@ -18,9 +19,9 @@ export class Bivouac extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            let land = copy(this.zone.cards);
-            for (const card of land) {
-                if (card.type == "Créature") {
+            let battlefield = copy(this.zone.cards);
+            for (const card of battlefield) {
+                if (card instanceof Creature) {
                     card.heal(10);
                 }
             }

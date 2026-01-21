@@ -10,7 +10,7 @@ export class MasseMagique extends Equipment {
 
         this.init([["Or", 60]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(20);
         this.equipStat("Magie").init(10);

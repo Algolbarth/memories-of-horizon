@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
 import { Building } from '../../../Class/Building';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class BibliothequeElfique extends Building {
@@ -11,7 +12,7 @@ export class BibliothequeElfique extends Building {
 
         this.init([["Or", 25], ["Végétal", 25]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(20);
 
@@ -19,7 +20,7 @@ export class BibliothequeElfique extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.families.total().includes("Elfe")) {
+        if (this.zone.name == "Terrain" && card instanceof Creature && card.isFamily("Elfe")) {
             this.stat("Intelligence").increase(1);
         }
     };

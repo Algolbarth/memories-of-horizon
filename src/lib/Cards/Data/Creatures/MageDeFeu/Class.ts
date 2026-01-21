@@ -11,7 +11,7 @@ export class MageDeFeu extends Creature {
 
         this.init([["Or", 20], ["Feu", 20]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(20);
@@ -21,8 +21,8 @@ export class MageDeFeu extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.families.total().includes("Sort") && card.owner == this.owner && this.owner.adversary().zone("Terrain").cards.length > 0) {
-            this.owner.adversary().zone("Terrain").cards[0].damageByEffect(5);
+        if (this.zone.name == "Terrain" && card.isFamily("Sort") && card.owner == this.owner && this.adversary().zone("Terrain").cards.length > 0) {
+            this.adversary().zone("Terrain").cards[0].damageByEffect(5);
         }
     };
 };

@@ -11,7 +11,7 @@ export class Bagarreur extends Creature {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -20,7 +20,7 @@ export class Bagarreur extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
             card.stat("Force").step += 10;
         }
     };

@@ -18,7 +18,7 @@ export class Melange extends Action {
     canUse = () => {
         let nb_potion = 0;
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.families.total().includes("Potion")) {
+            if (card.isFamily("Potion")) {
                 nb_potion++;
                 if (nb_potion > 1) {
                     return true;
@@ -37,10 +37,10 @@ export class Melange extends Action {
             let potion_2 = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (potion_1 == undefined && card.families.total().includes("Potion")) {
+                if (potion_1 == undefined && card.isFamily("Potion")) {
                     potion_1 = card;
                 }
-                if (card != potion_1 && potion_2 == undefined && card.families.total().includes("Potion")) {
+                if (card != potion_1 && potion_2 == undefined && card.isFamily("Potion")) {
                     potion_2 = card;
                 }
             }
@@ -60,7 +60,8 @@ export class Melange extends Action {
         concoction.infuse(potion_2);
 
         concoction.add("Réserve");
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

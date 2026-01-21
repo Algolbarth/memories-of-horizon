@@ -15,7 +15,7 @@ export class RazDeMaree extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -28,8 +28,8 @@ export class RazDeMaree extends Action {
             value++;
         }
 
-        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of adversary_land) {
+        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        for (const card of adversary_battlefield) {
             card.damageByEffect(value);
         }
 

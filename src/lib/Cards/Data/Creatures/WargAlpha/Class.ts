@@ -10,7 +10,7 @@ export class WargAlpha extends Creature {
 
         this.init([["Or", 50], ["Feu", 50]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

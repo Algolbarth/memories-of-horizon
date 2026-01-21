@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
 import { Building } from '../../../Class/Building';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Pont extends Building {
@@ -17,7 +18,7 @@ export class Pont extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && this.owner == card.owner) {
+        if (this.zone.name == "Terrain" && card instanceof Creature && this.owner == card.owner) {
             this.owner.draw(1);
         }
     };

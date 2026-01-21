@@ -77,8 +77,8 @@
   --missing_life: rgb(178, 123, 131);
   --guard: rgb(249, 100, 125);
 
-  --choice: rgb(161, 70, 0);
-  --choice_hover: rgb(228, 100, 0);
+  --choice: rgb(214, 93, 0);
+  --choice_hover: rgb(114, 49, 0);
   --choice_border: rgb(49, 49, 49);
 
   --asfalt: url(/assets/Textures/asfalt-light.png);

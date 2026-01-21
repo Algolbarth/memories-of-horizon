@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class CoupDeBoule extends Action {
@@ -14,11 +15,11 @@ export class CoupDeBoule extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length == 0) {
+        if (this.adversary().zone("Terrain").cards.length == 0) {
             return false;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -27,15 +28,15 @@ export class CoupDeBoule extends Action {
 
     useEffect = () => {
         let value = 0;
-        let target = this.owner.adversary().zone("Terrain").cards[0];
+        let target = this.adversary().zone("Terrain").cards[0];
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && value < card.stat("Force").value()) {
+            if (card instanceof Creature && value < card.stat("Force").value()) {
                 value = card.stat("Force").value();
             }
         }
 
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
+        for (const card of this.adversary().zone("Terrain").cards) {
             if (target.stat("Vitalité").value() < card.stat("Vitalité").value()) {
                 target = card;
             }
@@ -46,4 +47,4 @@ export class CoupDeBoule extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

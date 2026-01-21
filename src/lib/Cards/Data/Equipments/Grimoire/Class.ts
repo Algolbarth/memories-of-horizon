@@ -17,7 +17,7 @@ export class Grimoire extends Equipment {
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             let read_condition = (card: Card) => {
-                if (card.families.total().includes("Sort")) {
+                if (card.isFamily("Sort")) {
                     return true;
                 }
                 return false;

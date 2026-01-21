@@ -11,7 +11,7 @@ export class Pretre extends Creature {
 
         this.init([["Or", 20]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -24,7 +24,7 @@ export class Pretre extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature") {
+                if (check == false && card instanceof Creature) {
                     check = true;
                 }
             }
@@ -40,7 +40,7 @@ export class Pretre extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -55,11 +55,15 @@ export class Pretre extends Creature {
     };
 
     useEffect = (target: Creature | undefined, choice: string | undefined) => {
-        if (choice == "life") {
-            target.stat("Constitution").increase(15);
-        }
-        else if (choice == "heal") {
-            target.heal(20);
+        if (target != undefined) {
+            this.targeting(target);
+
+            if (choice == "life") {
+                target.stat("Constitution").increase(15);
+            }
+            else if (choice == "heal") {
+                target.heal(20);
+            }
         }
 
         this.move("Terrain");

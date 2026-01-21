@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -20,7 +20,7 @@ export class Opportunite extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -36,7 +36,7 @@ export class Opportunite extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -49,12 +49,15 @@ export class Opportunite extends Action {
 
     useEffect = (target: Creature | undefined) => {
         if (target != undefined) {
-            target.stat("Initiative").increase(1);
+            this.targeting(target);
+
+            target.stat("Initiative").step += 1;
         }
         else {
             this.owner.discover(1);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

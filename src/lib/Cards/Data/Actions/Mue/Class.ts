@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Mue extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.families.total().includes("Reptile")) {
+            if (card instanceof Creature && card.isFamily("Reptile")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Mue extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.families.total().includes("Reptile")) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Reptile")) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Mue extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Vitalité").increase(25);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

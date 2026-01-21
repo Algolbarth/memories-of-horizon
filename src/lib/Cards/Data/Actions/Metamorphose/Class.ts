@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -12,14 +12,14 @@ export class Metamorphose extends Action {
 
         this.init([["Or", 10]]);
 
-        this.families.base.push("Druide");
+        this.initFamily(["Druide"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.families.total().includes("Druide")) {
+            if (card instanceof Creature && card.isFamily("Druide")) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ export class Metamorphose extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.families.total().includes("Druide")) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Druide")) {
                     target = card;
                 }
             }
@@ -46,7 +46,10 @@ export class Metamorphose extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.transform(target.otherForm);
+
         this.move("Défausse");
         this.pose();
     };

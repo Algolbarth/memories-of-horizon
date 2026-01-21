@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class TourDeSiege extends Building {
     name = "Tour de siège";
@@ -19,10 +20,10 @@ export class TourDeSiege extends Building {
     turnEffect = () => {
         if (this.zone.name == "Terrain") {
             let target = undefined;
-            let land = copy(this.owner?.zone("Terrain").cards);
+            let battlefield = copy(this.owner?.zone("Terrain").cards);
 
-            for (const card of land) {
-                if (target == undefined && card.type == "Créature") {
+            for (const card of battlefield) {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }

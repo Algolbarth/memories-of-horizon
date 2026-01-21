@@ -16,7 +16,7 @@ export class FioleDeCristal extends Item {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.type == "Objet" && card.families.total().includes("Potion") && card.name != "Concoction") {
+            if (card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class FioleDeCristal extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.type == "Objet" && card.families.total().includes("Potion") && card.name != "Concoction") {
+                if (target == undefined && card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
                     target = card;
                 }
             }
@@ -43,8 +43,11 @@ export class FioleDeCristal extends Item {
     };
 
     useEffect = (target: Item) => {
+        this.targeting(target);
+
         target.stat("Infusion").increase(25);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

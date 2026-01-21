@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,7 +13,7 @@ export class HacheDeJet extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Adresse").init(25);
 
@@ -20,11 +21,11 @@ export class HacheDeJet extends Equipment {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.canEquip()) {
+            if (card instanceof Creature && card.canEquip()) {
                 return true;
             }
         }
@@ -39,7 +40,7 @@ export class HacheDeJet extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+                if (target == undefined && card instanceof Creature && card.canEquip()) {
                     target = card;
                 }
             }
@@ -49,13 +50,15 @@ export class HacheDeJet extends Equipment {
                 return 0;
             }
 
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0], "damage");
+            if (this.adversary().zone("Terrain").cards.length > 0) {
+                this.useEffect(this.adversary().zone("Terrain").cards[0], "damage");
             }
         }
     };
 
     useEffect = (target: Unit, choice: string) => {
+        this.targeting(target);
+
         if (choice == "equip") {
             target.equip(this);
         }

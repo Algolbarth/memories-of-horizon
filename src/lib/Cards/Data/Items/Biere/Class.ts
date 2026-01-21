@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,14 +12,14 @@ export class Biere extends Item {
 
         this.init([["Or", 10]]);
 
-        this.families.base.push("Nourriture");
+        this.initFamily(["Nourriture"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
+            if (card instanceof Creature && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ export class Biere extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
+                if (target == undefined && card instanceof Creature && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                     target = card;
                 }
             }
@@ -47,6 +47,7 @@ export class Biere extends Item {
 
     useEffect = (target: Creature) => {
         this.targeting(target);
+
         if (!target.isDamaged()) {
             target.stat("Critique").increase(50);
             if (target.stat("Critique").value() > 100) {
@@ -56,6 +57,7 @@ export class Biere extends Item {
         else {
             target.heal(20);
         }
+
         this.move("Défausse");
         this.pose();
     };

@@ -9,7 +9,7 @@ class DruideDeFeu extends Creature {
 
         this.init([["Or", 25], ["Feu", 25]]);
 
-        this.families.base.push("Druide");
+        this.initFamily(["Druide"]);
 
         this.text = Text;
     };
@@ -43,7 +43,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(35);
         this.stat("Force").init(35);
@@ -63,7 +63,7 @@ export class DruideDeFeuLezard extends DruideDeFeu {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Reptile");
+        this.initFamily(["Reptile"]);
 
         this.trait("Rare").base = true;
 

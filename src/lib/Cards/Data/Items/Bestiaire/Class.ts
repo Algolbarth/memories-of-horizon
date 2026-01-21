@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
@@ -16,7 +17,7 @@ export class Bestiaire extends Item {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
             return false;

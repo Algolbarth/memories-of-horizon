@@ -11,7 +11,7 @@ export class Chimere extends Creature {
 
         this.init([["Or", 50]]);
 
-        this.families.base.push("Bête", "Reptile");
+        this.initFamily(["Bête", "Reptile"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -21,10 +21,10 @@ export class Chimere extends Creature {
 
     useEffect = () => {
         let family_list: string[] = [];
-        let land = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner.zone("Terrain").cards);
 
-        for (const card of land) {
-            if (card.type == "Créature") {
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 for (const family of card.families.total()) {
                     if (!family_list.includes(family)) {
                         family_list.push(family);

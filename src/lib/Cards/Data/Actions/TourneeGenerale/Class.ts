@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class TourneeGenerale extends Action {
     name = "Tournée générale";
@@ -23,9 +24,9 @@ export class TourneeGenerale extends Action {
 
     useEffect = () => {
         let number = 0;
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 number++;
             }
         }

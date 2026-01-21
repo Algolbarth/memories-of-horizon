@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 
@@ -15,7 +16,7 @@ export class Couronne extends Equipment {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner) {
+        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card instanceof Creature && card.owner == this.bearer.owner) {
             card.stat("Constitution").increase(this.bearer.level);
             card.stat("Force").increase(this.bearer.level);
         }

@@ -11,7 +11,7 @@ export class LanceIncendiaire extends Equipment {
 
         this.init([["Or", 45], ["Feu", 45]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.text = Text;
     };

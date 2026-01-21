@@ -10,7 +10,7 @@ export class BouclierDeRoche extends Equipment {
 
         this.init([["Or", 10], ["Terre", 10]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.equipStat("Endurance").init(10);
 

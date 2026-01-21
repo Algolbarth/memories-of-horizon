@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -16,8 +16,8 @@ export class Noyade extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.canDestroy() && !card.elements.total().includes("Eau")) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.canDestroy() && !card.elements.total().includes("Eau")) {
                 return true;
             }
         }
@@ -31,8 +31,8 @@ export class Noyade extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canDestroy() && !card.elements.total().includes("Eau")) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.canDestroy() && !card.elements.total().includes("Eau")) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Noyade extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.destroy();
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

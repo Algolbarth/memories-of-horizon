@@ -1,7 +1,7 @@
 import type { System } from '../../../../System/Class';
 import { copy } from '../../../../Utils';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -18,7 +18,7 @@ export class LigneEnergetique extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.families.total().includes("Élémentaire")) {
+            if (card instanceof Creature && card.isFamily("Élémentaire")) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class LigneEnergetique extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.families.total().includes("Élémentaire")) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Élémentaire")) {
                     target = card;
                 }
             }
@@ -45,10 +45,12 @@ export class LigneEnergetique extends Action {
     };
 
     useEffect = (target: Creature) => {
-        let land = copy(this.owner.zone("Terrain").cards);
+        this.targeting(target);
+
+        let battlefield = copy(this.owner.zone("Terrain").cards);
         let nb_element = 0;
 
-        for (const card of land) {
+        for (const card of battlefield) {
             let check = true;
             for (const e of target.elements.total()) {
                 if (!card.elements.total().includes(e)) {
@@ -56,7 +58,7 @@ export class LigneEnergetique extends Action {
                 }
             }
 
-            if (card.families.total().includes("Élémentaire") && check) {
+            if (card.isFamily("Élémentaire") && check) {
                 nb_element++;
             }
         }

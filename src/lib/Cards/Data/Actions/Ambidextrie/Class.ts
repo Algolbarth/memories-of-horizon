@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Ambidextrie extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Maniement").value() == 1) {
+            if (card instanceof Creature && card.stat("Maniement").value() == 1) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Ambidextrie extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Maniement").value() == 1) {
+                if (target == undefined && card instanceof Creature && card.stat("Maniement").value() == 1) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Ambidextrie extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Maniement").add++;
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

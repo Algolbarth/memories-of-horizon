@@ -10,7 +10,7 @@ export class MaitreChien extends Creature {
 
         this.init([["Or", 15]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

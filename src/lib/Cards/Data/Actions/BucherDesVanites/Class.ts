@@ -17,7 +17,7 @@ export class BucherDesVanites extends Action {
     };
 
     canUse = () => {
-        if (this.owner.zone("Pile").cards.length > 0 && this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner.zone("Pile").cards.length > 0 && this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -30,7 +30,7 @@ export class BucherDesVanites extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined) {
                     target = card;
                 }
@@ -43,6 +43,8 @@ export class BucherDesVanites extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         let value = 0;
 
         let stack = copy(this.owner.zone("Pile").cards);

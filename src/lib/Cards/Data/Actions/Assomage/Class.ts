@@ -16,8 +16,8 @@ export class Assomage extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.stat("Étourdissement").value() < 1) {
                 return true;
             }
         }
@@ -31,8 +31,8 @@ export class Assomage extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.stat("Étourdissement").value() < 1) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Assomage extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Étourdissement").fix(1);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

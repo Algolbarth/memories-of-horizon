@@ -1,4 +1,5 @@
 import { Unit } from "../Cards/Class";
+import { Creature } from "../Cards/Class/Creature";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
 import { Entity } from "./Entity";
@@ -39,7 +40,7 @@ export class Battle {
                             card.startBattleEffect();
                         }
 
-                        if (card.type == "Créature") {
+                        if (card instanceof Creature) {
                             for (const e of card.equipments) {
                                 if (e.startBattleEffect != undefined) {
                                     e.startBattleEffect();
@@ -85,7 +86,7 @@ export class Battle {
                         card.turnEffect();
                     }
 
-                    if (card.type == "Créature") {
+                    if (card instanceof Creature) {
                         for (const e of card.equipments) {
                             if (e.turnEffect != undefined) {
                                 e.turnEffect();
@@ -97,7 +98,7 @@ export class Battle {
                         card.heal(card.stat("Régénération").value());
                     }
 
-                    if (card.type == "Créature") {
+                    if (card instanceof Creature) {
                         if (card.stat("Poison").value() > 0) {
                             card.damageByEffect(card.stat("Toxicité").value());
                             card.stat("Poison").decrease(1);
@@ -170,7 +171,7 @@ export class Battle {
                 return this.player;
             }
             else {
-                return this.fighter.owner.adversary();
+                return this.fighter.adversary();
             }
         }
         return previous_entity;
@@ -248,7 +249,7 @@ export class Battle {
         }
         else {
             for (const card of this.bot.zone("Terrain").cards) {
-                if (card.type == "Créature") {
+                if (card instanceof Creature) {
                     this.player.life.current -= card.level;
                 }
             }

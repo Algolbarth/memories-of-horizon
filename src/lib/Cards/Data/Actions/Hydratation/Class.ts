@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Hydratation extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.elements.total().includes("Eau")) {
+            if (card instanceof Creature && card.elements.total().includes("Eau")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Hydratation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.elements.total().includes("Eau")) {
+                if (target == undefined && card instanceof Creature && card.elements.total().includes("Eau")) {
                     target = card;
                 }
             }
@@ -44,7 +44,9 @@ export class Hydratation extends Action {
     };
 
     useEffect = (target: Creature) => {
-        let value = 15;
+        this.targeting(target);
+
+        let value: number = 15;
 
         if (this.owner.ressource("Eau").total() >= 15) {
             this.owner.ressource("Eau").spend(15);
@@ -57,4 +59,4 @@ export class Hydratation extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

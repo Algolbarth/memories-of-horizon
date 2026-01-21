@@ -9,7 +9,7 @@ export class Atlas extends Boss {
 
         this.level = 16;
         this.elements.base = ["Neutre"];
-        this.families.base.push("Géant");
+        this.initFamily(["Géant"]);
 
         this.stat("Force").init(600);
         this.stat("Constitution").init(8000);

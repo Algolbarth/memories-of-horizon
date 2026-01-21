@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class MilieuAquatique extends Action {
     name = "Milieu aquatique";
@@ -16,7 +17,7 @@ export class MilieuAquatique extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.elements.total().includes("Eau")) {
+            if (card instanceof Creature && card.elements.total().includes("Eau")) {
                 return true;
             }
         }
@@ -30,9 +31,9 @@ export class MilieuAquatique extends Action {
             value = 10;
         }
 
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature" && card.elements.total().includes("Eau")) {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature && card.elements.total().includes("Eau")) {
                 card.stat("Constitution").increase(value);
                 card.stat("Force").increase(value);
             }

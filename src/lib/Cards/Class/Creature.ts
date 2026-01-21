@@ -151,19 +151,21 @@ export class Creature extends Unit {
         }
     };
 
-    playEffect: Function | undefined;
-
     fightEffect: Function | undefined;
 
     killEffect: Function | undefined;
 
     findTarget = () => {
         let target: Unit | undefined = undefined;
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (target == undefined || card.stat("Protection").value() > target.stat("Protection").value()) {
-                target = card;
+
+        if (this.owner != undefined) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (card instanceof Unit && (target == undefined || card.stat("Protection").value() > target.stat("Protection").value())) {
+                    target = card;
+                }
             }
         }
+
         return target;
     };
 
@@ -179,7 +181,9 @@ export class Creature extends Unit {
         this.equipments.push(equipment);
         equipment.bearer = this;
 
-        this.owner.ressource("Mana").current += equipment.equipStat("Magie").value();
-        this.owner.ressource("Mana").production += equipment.equipStat("Magie").value();
+        if (this.owner != undefined) {
+            this.owner.ressource("Mana").current += equipment.equipStat("Magie").value();
+            this.owner.ressource("Mana").production += equipment.equipStat("Magie").value();
+        }
     };
 };

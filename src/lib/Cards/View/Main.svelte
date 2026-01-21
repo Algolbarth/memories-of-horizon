@@ -146,4 +146,8 @@
 		background: var(--card);
 		background-image: var(--paper);
 	}
+
+	button.close {
+		margin: 0 0 0.25em 0;
+	}
 </style>

@@ -10,7 +10,7 @@ export class SageDement extends Creature {
 
         this.init([["Or", 20], ["Feu", 20]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
@@ -19,7 +19,7 @@ export class SageDement extends Creature {
 
         this.stat("Intelligence").value = function () {
             let total = this.base + this.add + this.step + this.turn;
-            if (this.card.type == "Créature") {
+            if (this.card instanceof Creature) {
                 for (const equipment of this.card.equipments) {
                     total += equipment.equipStat(this.name).value();
                 }

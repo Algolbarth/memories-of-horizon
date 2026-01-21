@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,7 +13,7 @@ export class DagueEmpoisonnee extends Equipment {
 
         this.init([["Or", 25]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(5);
 
@@ -21,12 +22,12 @@ export class DagueEmpoisonnee extends Equipment {
 
     canUse = () => {
         for (const card of this.owner?.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.canEquip()) {
+            if (card instanceof Creature && card.canEquip()) {
                 return true;
             }
         }
@@ -41,7 +42,7 @@ export class DagueEmpoisonnee extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+                if (target == undefined && card instanceof Creature && card.canEquip()) {
                     target = card;
                 }
             }
@@ -52,7 +53,7 @@ export class DagueEmpoisonnee extends Equipment {
             }
 
             for (const card of this.owner?.adversary().zone("Terrain").cards) {
-                if (card.type == "Créature") {
+                if (card instanceof Creature) {
 
                 }
             }
@@ -60,7 +61,9 @@ export class DagueEmpoisonnee extends Equipment {
     };
 
     useEffect = (target: Unit, choice: string) => {
-        if (choice == "equip") {
+        this.targeting(target);
+
+        if (choice == "equip" && target instanceof Creature) {
             target.equip(this);
         }
         else if (choice == "damage") {
@@ -68,11 +71,12 @@ export class DagueEmpoisonnee extends Equipment {
             target.stat("Toxicité").increase(10);
             this.move("Défausse");
         }
+
         this.pose();
     };
 
     fightEffect = (defender: Unit) => {
-        if (defender.type == "Créature") {
+        if (defender instanceof Creature) {
             defender.stat("Toxicité").increase(3);
         }
     };

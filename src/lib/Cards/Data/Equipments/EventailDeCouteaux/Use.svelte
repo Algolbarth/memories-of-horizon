@@ -16,8 +16,10 @@
 	}
 
 	function select_action(card: Card | undefined) {
-		system.game.use.card.useEffect(choice, card);
-		system.game.use.reset();
+		if (system.game && system.game.use.card) {
+			system.game.use.card.useEffect(choice, card);
+			system.game.use.reset();
+		}
 	}
 </script>
 
@@ -46,12 +48,14 @@
 	</div>
 {:else if choice == "equip"}
 	<button
-		class="square return"
+		class="square return margin-bottom"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
 		↩
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{#if system.game && system.game.use.card && system.game.use.card.owner}
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{/if}
 {/if}

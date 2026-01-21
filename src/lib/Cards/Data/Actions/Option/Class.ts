@@ -30,7 +30,8 @@ export class Option extends Action {
         else if (choice == "discover") {
             this.owner.discover(1);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -2,7 +2,7 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-	import type { Creature } from "../../../Class/Creature";
+	import { Creature } from "../../../Class/Creature";
 	import type { Stat } from "../../../Class/Stat";
 
 	export let system: System;
@@ -10,7 +10,7 @@
 	let target: Creature | undefined = undefined;
 
 	function select_condition(card: Card) {
-		if (card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
+		if (card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
 			return true;
 		}
 		return false;
@@ -34,7 +34,7 @@
 	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} select_action={select_action_1} />
 {:else}
 	<button
-		class="square return"
+		class="square return margin-bottom"
 		on:click={() => {
 			target = undefined;
 		}}

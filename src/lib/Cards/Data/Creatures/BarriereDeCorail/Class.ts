@@ -1,7 +1,7 @@
 import type { System } from '../../../../System/Class';
-import { Building } from '../../../Class/Building';
+import { Creature } from '../../../Class/Creature';
 
-export class BarriereDeCorail extends Building {
+export class BarriereDeCorail extends Creature {
     name = "Barrière de corail";
 
     constructor(system: System) {
@@ -11,5 +11,7 @@ export class BarriereDeCorail extends Building {
 
         this.stat("Constitution").init(40);
         this.stat("Régénération").init(20);
+        this.stat("Initiative").init(0);
+        this.stat("Maîtrise").init(0);
     };
 };

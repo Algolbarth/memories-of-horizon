@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Incantation extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
+            if (card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Incantation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
                     target = card;
                 }
             }
@@ -44,9 +44,12 @@ export class Incantation extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         this.owner.ressource("Mana").current += target.stat("Magie").value();
         target.stat("Étourdissement").fix(1);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

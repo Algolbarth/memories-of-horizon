@@ -10,7 +10,7 @@ export class TortueGéante extends Creature {
 
         this.init([["Or", 15], ["Eau", 15]]);
 
-        this.families.base.push("Reptile");
+        this.initFamily(["Reptile"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(5);

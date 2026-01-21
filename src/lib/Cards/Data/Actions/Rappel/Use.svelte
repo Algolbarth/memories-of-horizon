@@ -10,8 +10,10 @@
 	}
 
 	function select_action(card: Card) {
-		system.game.use.card.useEffect(card);
-		system.game.use.reset();
+		if (system.game && system.game.use.card) {
+			system.game.use.card.useEffect(card);
+			system.game.use.reset();
+		}
 	}
 </script>
 

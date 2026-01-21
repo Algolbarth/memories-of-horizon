@@ -9,7 +9,7 @@ export class Gobelin extends Creature {
 
         this.init([["Or", 3], ["Feu", 2]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);

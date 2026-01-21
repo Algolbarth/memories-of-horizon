@@ -9,7 +9,7 @@ class DruideDesMontagnes extends Creature {
 
         this.init([["Or", 25], ["Terre", 25]]);
 
-        this.families.base.push("Druide");
+        this.initFamily(["Druide"]);
 
         this.text = Text;
     };
@@ -42,7 +42,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Nain");
+        this.initFamily(["Nain"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -64,7 +64,7 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.trait("Rare").base = true;
 

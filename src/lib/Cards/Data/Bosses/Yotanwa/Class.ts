@@ -9,7 +9,7 @@ export class Yotanwa extends Boss {
 
         this.level = 12;
         this.elements.base = ["Neutre"];
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Force").init(200);
         this.stat("Constitution").init(2000);

@@ -16,7 +16,7 @@ export class Desarmer extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
+        for (const card of this.adversary().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 for (const e of card.equipments) {
                     if (e.canDestroy()) {
@@ -35,7 +35,7 @@ export class Desarmer extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     for (const e of card.equipments) {
                         if (e.canDestroy()) {
@@ -52,12 +52,15 @@ export class Desarmer extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         for (const equipment of target.equipments) {
             if (equipment.canDestroy()) {
                 equipment.destroy();
             }
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

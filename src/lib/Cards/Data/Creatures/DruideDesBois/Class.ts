@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Action } from '../../../Class/Action';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -10,7 +11,7 @@ class DruideDesBois extends Creature {
 
         this.init([["Or", 25], ["Végétal", 25]]);
 
-        this.families.base.push("Druide");
+        this.initFamily(["Druide"]);
 
         this.text = Text;
     };
@@ -43,14 +44,14 @@ export class DruideDesBoisElfe extends DruideDesBois {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
     };
 
     otherPoseEffect = (card: Card) => {
-        if (card.owner == this.owner && card.type == "Action") {
+        if (card.owner == this.owner && card instanceof Action) {
             this.stat("Constitution").increase(6);
         }
     };
@@ -63,7 +64,7 @@ export class DruideDesBoisRenard extends DruideDesBois {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.trait("Rare").base = true;
 

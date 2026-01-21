@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,7 +12,7 @@ export class PotionParfumee extends Item {
 
         this.init([["Or", 5]]);
 
-        this.families.base.push("Potion");
+        this.initFamily(["Potion"]);
 
         this.addStat("Infusion", 5);
 
@@ -25,7 +25,7 @@ export class PotionParfumee extends Item {
         }
         for (const entity of [this.owner, this.owner?.adversary()]) {
             for (const card of this.owner.zone("Terrain").cards) {
-                if (card.type == "Créature") {
+                if (card instanceof Creature) {
                     return true;
                 }
             }
@@ -41,7 +41,7 @@ export class PotionParfumee extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -53,7 +53,10 @@ export class PotionParfumee extends Item {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Protection").step += Math.floor(this.stat("Infusion").value() / 5);
+
         this.move("Défausse");
         this.pose();
     };

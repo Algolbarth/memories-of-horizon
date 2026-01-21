@@ -11,7 +11,7 @@ export class Sanglier extends Creature {
 
         this.init([["Or", 20], ["Végétal", 20]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(10);
@@ -20,9 +20,9 @@ export class Sanglier extends Creature {
     };
 
     useEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature" && card.families.total().includes("Bête")) {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature && card.isFamily("Bête")) {
                 this.stat("Force").increase(5);
             }
         }

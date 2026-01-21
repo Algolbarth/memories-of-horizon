@@ -10,7 +10,7 @@ export class ManteauDEsquive extends Equipment {
 
         this.init([["Or", 20]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.text = Text;
     };

@@ -12,7 +12,7 @@ export class WyverneMarine extends Creature {
         this.level = 3;
         this.init([["Or", 30], ["Eau", 30]]);
 
-        this.families.base.push("Reptile");
+        this.initFamily(["Reptile"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);

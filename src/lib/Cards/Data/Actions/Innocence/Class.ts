@@ -44,8 +44,11 @@ export class Innocence extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.stat("Protection").set(0);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

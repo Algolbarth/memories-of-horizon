@@ -11,7 +11,7 @@ export class Cheval extends Creature {
 
         this.init([["Or", 25]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -25,7 +25,7 @@ export class Cheval extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature") {
+                if (check == false && card instanceof Creature) {
                     check = true;
                 }
             }
@@ -41,7 +41,7 @@ export class Cheval extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -55,10 +55,13 @@ export class Cheval extends Creature {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Creature | undefined) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.stat("Vitesse").increase(1);
         }
+
         this.move("Terrain");
         this.pose();
     };

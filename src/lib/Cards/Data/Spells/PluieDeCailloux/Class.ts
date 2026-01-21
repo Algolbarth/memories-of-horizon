@@ -16,7 +16,7 @@ export class PluieDeCailloux extends Spell {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (!this.owner.zone("Terrain").isFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -45,8 +45,8 @@ export class PluieDeCailloux extends Spell {
                 this.owner.getCard("Élémentaire de caillou").add("Terrain");
             }
 
-            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of adversary_land) {
+            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            for (const card of adversary_battlefield) {
                 card.damageByEffect(6);
             }
         }
@@ -58,8 +58,8 @@ export class PluieDeCailloux extends Spell {
                 }
             }
             else if (choice == "damage") {
-                let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-                for (const card of adversary_land) {
+                let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+                for (const card of adversary_battlefield) {
                     card.damageByEffect(6);
                 }
             }

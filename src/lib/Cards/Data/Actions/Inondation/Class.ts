@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Building } from '../../../Class/Building';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -16,8 +16,8 @@ export class Inondation extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Bâtiment" && card.canDestroy() && !card.elements.total().includes("Eau")) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Building && card.canDestroy() && !card.elements.total().includes("Eau")) {
                 return true;
             }
         }
@@ -31,8 +31,8 @@ export class Inondation extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Bâtiment" && card.canDestroy() && !card.elements.total().includes("Eau")) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Building && card.canDestroy() && !card.elements.total().includes("Eau")) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Inondation extends Action {
     };
 
     useEffect = (target: Building) => {
+        this.targeting(target);
+
         target.destroy();
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

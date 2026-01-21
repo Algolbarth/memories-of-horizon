@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
 import { Action } from '../../../Class/Action';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -16,11 +17,11 @@ export class Ecrasement extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length == 0) {
+        if (this.adversary().zone("Terrain").cards.length == 0) {
             return false;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -34,7 +35,7 @@ export class Ecrasement extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined) {
                     target = card;
                 }
@@ -47,10 +48,12 @@ export class Ecrasement extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         let value = 0;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && value < card.stat("Vitalité").value()) {
+            if (card instanceof Creature && value < card.stat("Vitalité").value()) {
                 value = card.stat("Vitalité").value();
             }
         }
@@ -60,4 +63,4 @@ export class Ecrasement extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

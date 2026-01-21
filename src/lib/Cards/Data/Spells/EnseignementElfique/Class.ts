@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,14 +12,14 @@ export class EnseignementElfique extends Spell {
 
         this.init([["Or", 15], ["Végétal", 15]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ export class EnseignementElfique extends Spell {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -46,6 +46,8 @@ export class EnseignementElfique extends Spell {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         if (this.owner.ressource("Mana").total() >= 25) {
             this.owner.ressource("Mana").spend(25);
             target.stat("Intelligence").increase(10);

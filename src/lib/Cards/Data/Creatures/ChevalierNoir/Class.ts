@@ -16,7 +16,7 @@ export class ChevalierNoir extends Creature {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Humain", "Chevalier");
+        this.initFamily(["Humain", "Chevalier"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
@@ -54,7 +54,7 @@ export class ChevalierNoirMonte extends Creature {
 
         this.init([["Or", 60]]);
 
-        this.families.base.push("Humain", "Chevalier");
+        this.initFamily(["Humain", "Chevalier"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(20);
@@ -65,7 +65,7 @@ export class ChevalierNoirMonte extends Creature {
 
     select = () => {
         if (this.owner == this.system.game.player) {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -73,8 +73,8 @@ export class ChevalierNoirMonte extends Creature {
             }
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            if (this.adversary().zone("Terrain").cards.length > 0) {
+                this.useEffect(this.adversary().zone("Terrain").cards[0]);
             }
             else {
                 this.useEffect(undefined);

@@ -17,7 +17,7 @@ export class Aiguisage extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.families.total().includes("Arme")) {
+            if (card.isFamily("Arme")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Aiguisage extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.families.total().includes("Arme")) {
+                if (target == undefined && card.isFamily("Arme")) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Aiguisage extends Action {
     };
 
     useEffect = (target: Equipment) => {
+        this.targeting(target);
+
         target.equipStat("Force").increase(20);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Repos extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (this.owner == this.system.game.player || card.isDamaged())) {
+            if (card instanceof Creature && (this.owner == this.system.game.player || card.isDamaged())) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Repos extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.isDamaged()) {
+                if (target == undefined && card instanceof Creature && card.isDamaged()) {
                     target = card;
                 }
             }
@@ -44,9 +44,12 @@ export class Repos extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.fullHeal();
         target.move("Pile");
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

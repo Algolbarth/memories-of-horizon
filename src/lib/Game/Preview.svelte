@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Card } from "../Cards/Class";
+	import { Creature } from "../Cards/Class/Creature";
 	import type { System } from "../System/Class";
 
 	// svelte-ignore export_let_unused
@@ -100,7 +101,7 @@
 						{/if}
 					{/if}
 
-					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card.type == "Créature")}
+					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card instanceof Creature)}
 						{#if card.slot != undefined && card.slot > 0}
 							<button
 								class="active"

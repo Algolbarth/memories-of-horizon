@@ -11,7 +11,7 @@ export class Forgeron extends Creature {
 
         this.init([["Or", 15]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -21,7 +21,7 @@ export class Forgeron extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.families.total().includes("Équipement")) {
+            if (card.isFamily("Équipement")) {
                 return true;
             }
             return false;

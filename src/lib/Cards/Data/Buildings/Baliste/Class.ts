@@ -17,7 +17,7 @@ export class Baliste extends Building {
 
     turnEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.adversary().zone("Terrain").cards[0].damageByEffect(20);
+            this.adversary().zone("Terrain").cards[0].damageByEffect(20);
         }
     };
 };

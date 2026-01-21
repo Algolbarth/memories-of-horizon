@@ -12,7 +12,7 @@ export class Aventurier extends Creature {
 
         this.init([["Or", 15]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(8);
         this.stat("Force").init(8);

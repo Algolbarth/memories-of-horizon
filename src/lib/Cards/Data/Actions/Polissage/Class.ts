@@ -17,7 +17,7 @@ export class Polissage extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Réserve").cards) {
-            if (card.families.total().includes("Armure")) {
+            if (card.isFamily("Armure")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Polissage extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Réserve").cards) {
-                if (target == undefined && card.families.total().includes("Armure")) {
+                if (target == undefined && card.isFamily("Armure")) {
                     target = card;
                 }
             }
@@ -44,8 +44,11 @@ export class Polissage extends Action {
     };
 
     useEffect = (target: Equipment) => {
+        this.targeting(target);
+
         target.equipStat("Résistance").increase(10);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

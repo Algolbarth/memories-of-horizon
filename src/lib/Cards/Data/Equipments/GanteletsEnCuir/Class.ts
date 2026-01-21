@@ -10,7 +10,7 @@ export class GanteletsEnCuir extends Equipment {
 
         this.init([["Or", 25]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.equipStat("Maîtrise").init(1);
 

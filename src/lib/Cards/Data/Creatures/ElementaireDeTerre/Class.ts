@@ -12,7 +12,7 @@ export class ElementaireDeTerre extends Creature {
 
         this.init([["Terre", 15]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -22,7 +22,7 @@ export class ElementaireDeTerre extends Creature {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (!this.owner.zone("Terrain").isFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -30,7 +30,7 @@ export class ElementaireDeTerre extends Creature {
 
     select = () => {
         if (this.owner == this.system.game.player) {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
@@ -38,8 +38,8 @@ export class ElementaireDeTerre extends Creature {
             }
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            if (this.adversary().zone("Terrain").cards.length > 0) {
+                this.useEffect(this.adversary().zone("Terrain").cards[0]);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
                 this.useEffect(undefined);
@@ -47,14 +47,17 @@ export class ElementaireDeTerre extends Creature {
         }
     };
 
-    useEffect = (target: Unit) => {
+    useEffect = (target: Unit | undefined) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.damageByEffect(30);
             this.destroy();
         }
         else {
             this.move("Terrain");
         }
+
         this.pose();
     };
 };

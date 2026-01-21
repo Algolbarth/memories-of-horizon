@@ -13,14 +13,14 @@ export class Lait extends Item {
 
         this.init([["Or", 10]]);
 
-        this.families.base.push("Nourriture");
+        this.initFamily(["Nourriture"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
+            if (card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
                 return true;
             }
         }
@@ -44,7 +44,7 @@ export class Lait extends Item {
                 let stat = undefined;
 
                 for (const card of this.owner.zone("Terrain").cards) {
-                    if (target == undefined && card.type == "Créature" && (card.isDamaged() || card.hasDebuff())) {
+                    if (target == undefined && card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
                         target = card;
                         if (!card.isDamaged() && card.hasDebuff()) {
                             for (const s of card.stats) {
@@ -66,12 +66,14 @@ export class Lait extends Item {
 
     useEffect = (target: Creature, stat: Stat | undefined) => {
         this.targeting(target);
+
         if (!target.isDamaged() && stat != undefined) {
             stat.set(stat.min);
         }
         else {
             target.heal(20);
         }
+
         this.move("Défausse");
         this.pose();
     };

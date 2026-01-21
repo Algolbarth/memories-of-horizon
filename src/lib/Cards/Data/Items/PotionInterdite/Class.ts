@@ -10,7 +10,7 @@ export class PotionInterdite extends Item {
 
         this.init([["Or", 5]]);
 
-        this.families.base.push("Potion");
+        this.initFamily(["Potion"]);
 
         this.addStat("Infusion", 5);
 

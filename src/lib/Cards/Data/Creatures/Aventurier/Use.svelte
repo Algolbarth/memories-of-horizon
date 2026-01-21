@@ -6,8 +6,10 @@
 	let types = ["action", "bâtiment", "créature", "lieu", "objet"];
 
 	function select_action(choice: string) {
-		system.game.use.card.useEffect(choice);
-		system.game.use.reset();
+		if (system.game && system.game.use.card) {
+			system.game.use.card.useEffect(choice);
+			system.game.use.reset();
+		}
 	}
 </script>
 

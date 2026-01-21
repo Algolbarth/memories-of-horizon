@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
 import { Action } from '../../../Class/Action';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class MonstreErrant extends Action {
@@ -16,7 +17,7 @@ export class MonstreErrant extends Action {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
             return false;

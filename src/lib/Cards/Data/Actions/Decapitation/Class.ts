@@ -15,8 +15,8 @@ export class Decapitation extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Protection").value() > 0) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.stat("Protection").value() > 0) {
                 return true;
             }
         }
@@ -25,7 +25,7 @@ export class Decapitation extends Action {
 
     useEffect = () => {
         let target: undefined | Creature = undefined;
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
+        for (const card of this.adversary().zone("Terrain").cards) {
             if (card instanceof Creature && card.canDestroy() && ((target == undefined && card.stat("Protection").value() > 0) || (target != undefined && card.stat("Protection").value() > target.stat("Protection").value()))) {
                 target = card;
             }
@@ -36,4 +36,4 @@ export class Decapitation extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

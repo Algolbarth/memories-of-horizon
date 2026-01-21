@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
+import { Item } from '../../../Class/Item';
 
 export class Alambic extends Building {
     name = "Alambic";
@@ -20,7 +21,7 @@ export class Alambic extends Building {
         if (this.zone.name == "Terrain") {
             let reserve = copy(this.owner.zone("Réserve").cards);
             for (const card of reserve) {
-                if (card.type == "Objet" && card.families.total().includes("Potion")) {
+                if (card instanceof Item && card.isFamily("Potion")) {
                     if (card.name == "Concoction") {
                         for (const stat of card.stats) {
                             if (stat.name.includes("Infusion") && stat.value() > 0) {

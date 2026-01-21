@@ -12,7 +12,7 @@ export class PotionDeForce extends Item {
 
         this.init([["Or", 5]]);
 
-        this.families.base.push("Potion");
+        this.initFamily(["Potion"]);
 
         this.addStat("Infusion", 5);
 
@@ -21,7 +21,7 @@ export class PotionDeForce extends Item {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -36,7 +36,7 @@ export class PotionDeForce extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -48,7 +48,10 @@ export class PotionDeForce extends Item {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Force").step += this.stat("Infusion").value() * 4;
+
         this.move("Défausse");
         this.pose();
     };

@@ -16,7 +16,7 @@ export class CanonAEau extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -27,11 +27,13 @@ export class CanonAEau extends Action {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            this.useEffect(this.adversary().zone("Terrain").cards[0]);
         }
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         let value = 100;
 
         value += 2 * this.owner.ressource("Eau").total();

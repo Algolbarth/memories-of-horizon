@@ -16,7 +16,7 @@ export class FlecheEnBois extends Item {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -27,13 +27,16 @@ export class FlecheEnBois extends Item {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            this.useEffect(this.adversary().zone("Terrain").cards[0]);
         }
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.damageByEffect(10);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

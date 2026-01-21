@@ -11,7 +11,7 @@ export class PetiteFille extends Creature {
 
         this.init([["Or", 10]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
@@ -24,7 +24,7 @@ export class PetiteFille extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature") {
+                if (check == false && card instanceof Creature) {
                     check = true;
                 }
             }
@@ -40,7 +40,7 @@ export class PetiteFille extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -56,8 +56,11 @@ export class PetiteFille extends Creature {
 
     useEffect = (target: Creature) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.stat("Protection").increase(1);
         }
+
         this.move("Terrain");
         this.pose();
     };

@@ -10,7 +10,7 @@ export class CavalierElfe extends Creature {
 
         this.init([["Or", 15], ["Végétal", 15]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);

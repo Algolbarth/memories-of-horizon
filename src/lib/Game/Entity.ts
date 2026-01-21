@@ -1,4 +1,5 @@
 import type { Card } from "../Cards/Class";
+import { Creature } from "../Cards/Class/Creature";
 import type { Location } from "../Cards/Class/Location";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
@@ -181,7 +182,7 @@ export class Entity {
                         card.refreshStackEffect();
                     }
 
-                    if (card.type == "Créature") {
+                    if (card instanceof Creature) {
                         for (const e of card.equipments) {
                             if (e.refreshStackEffect != undefined) {
                                 e.refreshStackEffect();

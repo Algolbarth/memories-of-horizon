@@ -1,7 +1,9 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
+	import type { Game } from "./Game";
 
 	export let system: System;
+	export let game: Game;
 	export let show_flux: boolean;
 
 	function close() {
@@ -53,19 +55,19 @@
 							let add: number;
 
 							if (number_selected == "Max") {
-								add = system.game.player.ressource("Flux").stock;
+								add = game.player.ressource("Flux").stock;
 							} else {
 								add = parseInt(number_selected);
-								if (add > system.game.player.ressource("Flux").stock) {
-									add = system.game.player.ressource("Flux").stock;
+								if (add > game.player.ressource("Flux").stock) {
+									add = game.player.ressource("Flux").stock;
 								}
 							}
 
-							system.game.player.ressource(ressource).current += add;
-							system.game.player.ressource(ressource).production += add;
-							system.game.player.ressource("Flux").stock -= add;
+							game.player.ressource(ressource).current += add;
+							game.player.ressource(ressource).production += add;
+							game.player.ressource("Flux").stock -= add;
 
-							if (system.game.player.ressource("Flux").stock == 0) {
+							if (game.player.ressource("Flux").stock == 0) {
 								show_flux = false;
 							}
 						}}

@@ -23,7 +23,7 @@
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
 
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.families.total().includes(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
+			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
 				tab.push(card);
 			}
 		}

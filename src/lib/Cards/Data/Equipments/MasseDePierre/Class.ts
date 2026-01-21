@@ -10,7 +10,7 @@ export class MasseDePierre extends Equipment {
 
         this.init([["Or", 12], ["Terre", 12]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(10);
 

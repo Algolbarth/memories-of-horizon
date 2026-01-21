@@ -10,7 +10,7 @@ export class ElementaireDesHerbes extends Creature {
 
         this.init([["Végétal", 15]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -23,7 +23,7 @@ export class ElementaireDesHerbes extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card != this) {
+                if (target == undefined && card instanceof Creature && card != this) {
                     target = card;
                 }
             }

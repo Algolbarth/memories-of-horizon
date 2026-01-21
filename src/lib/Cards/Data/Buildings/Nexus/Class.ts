@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
 import { Building } from '../../../Class/Building';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Nexus extends Building {
@@ -11,7 +12,7 @@ export class Nexus extends Building {
 
         this.init([["Or", 50]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(20);
 
@@ -19,7 +20,7 @@ export class Nexus extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.families.total().includes("Élémentaire")) {
+        if (this.zone.name == "Terrain" && card instanceof Creature && card.isFamily("Élémentaire")) {
             for (const element of card.elements.total()) {
                 if (element != "Neutre") {
                     this.owner.ressource(element).production += 1;

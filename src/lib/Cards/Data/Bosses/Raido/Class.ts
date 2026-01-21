@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
 import { Boss } from '../../../Class/Boss';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Raido extends Boss {
@@ -11,7 +12,7 @@ export class Raido extends Boss {
 
         this.level = 2;
         this.elements.base = ["Neutre"];
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Force").init(10);
         this.stat("Constitution").init(50);
@@ -20,7 +21,7 @@ export class Raido extends Boss {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.owner == this.owner && card.type == "Créature") {
+        if (this.zone.name == "Terrain" && card.owner == this.owner && card instanceof Creature) {
             card.stat("Force").increase(5);
             card.stat("Constitution").increase(5);
         }

@@ -9,7 +9,7 @@ export class SageDeLaForet extends Creature {
 
         this.init([["Or", 25], ["Végétal", 25]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(35);
         this.stat("Force").init(5);

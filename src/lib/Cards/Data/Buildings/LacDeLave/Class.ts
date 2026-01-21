@@ -2,6 +2,7 @@ import { Card, Unit } from '../../../Class';
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class LacDeLave extends Building {
     name = "Lac de lave";
@@ -18,7 +19,7 @@ export class LacDeLave extends Building {
 
     otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card instanceof Unit) {
-            if (card.elements.total().includes("Feu") && card.type == "Créature") {
+            if (card.elements.total().includes("Feu") && card instanceof Creature) {
                 card.stat("Force").increase(5);
             }
             else {

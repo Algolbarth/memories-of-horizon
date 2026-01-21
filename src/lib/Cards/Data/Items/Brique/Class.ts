@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
+import { Building } from '../../../Class/Building';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -16,11 +17,11 @@ export class Brique extends Item {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Bâtiment" && card.isDamaged()) {
+            if (card instanceof Building && card.isDamaged()) {
                 return true;
             }
         }
@@ -32,20 +33,23 @@ export class Brique extends Item {
             this.system.game.use.set(this, Use);
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            if (this.adversary().zone("Terrain").cards.length > 0) {
+                this.useEffect(this.adversary().zone("Terrain").cards[0]);
             }
         }
     };
 
     useEffect = (target: Unit, choice: string) => {
+        this.targeting(target);
+
         if (choice == "heal") {
             target.heal(20);
         }
         else {
             target.damageByEffect(20);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -5,7 +5,7 @@ import { Cost } from "./Cost";
 import { copy } from "../../Utils";
 import { Families } from "./Family";
 import type { System } from "../../System/Class";
-import type { Entity } from "../../Game/Entity";
+import { Entity } from "../../Game/Entity";
 import type { Zone } from "../../Game/Zone";
 
 export class Card {
@@ -130,7 +130,10 @@ export class Card {
 
             this.zone.cards.splice(this.slot, 1);
             for (let i = this.slot; i < this.zone.cards.length; i++) {
-                this.zone.cards[i].slot--;
+                let card = this.zone.cards[i];
+                if (card.slot) {
+                    card.slot--;
+                }
             }
             this.zone = undefined;
             this.slot = undefined;
@@ -177,39 +180,53 @@ export class Card {
     };
 
     up = () => {
-        let temp = this.zone.cards[this.slot - 1];
+        if (this.zone != undefined && this.slot != undefined && this.zone.cards[this.slot - 1] != undefined) {
+            let temp: Card = this.zone.cards[this.slot - 1];
 
-        this.zone.cards[this.slot - 1] = this;
-        this.zone.cards[this.slot] = temp;
+            this.zone.cards[this.slot - 1] = this;
+            this.zone.cards[this.slot] = temp;
 
-        temp.slot++;
-        this.slot--;
+            if (temp.slot != undefined) {
+                temp.slot++;
+            }
+            this.slot--;
+        }
     };
 
     down = () => {
-        let temp = this.zone.cards[this.slot + 1];
+        if (this.zone != undefined && this.slot != undefined && this.zone.cards[this.slot + 1] != undefined) {
+            let temp = this.zone.cards[this.slot + 1];
 
-        this.zone.cards[this.slot + 1] = this;
-        this.zone.cards[this.slot] = temp;
+            this.zone.cards[this.slot + 1] = this;
+            this.zone.cards[this.slot] = temp;
 
-        temp.slot--;
-        this.slot++;
+            if (temp.slot != undefined) {
+                temp.slot--;
+            }
+            this.slot++;
+        }
     };
 
     canBuy = () => {
+        if (this.owner == undefined) {
+            return false;
+        }
+
         for (const c of this.cost) {
             if (c.value() > this.owner.ressource(c.name).total()) {
                 return false;
             }
         }
+
         if (this.owner.zone("Réserve").isFull()) {
             return false;
         }
+
         return true;
     };
 
     buy = () => {
-        if (this.canBuy()) {
+        if (this.owner != undefined && this.canBuy()) {
             for (const c of this.cost) {
                 this.owner.ressource(c.name).spend(c.value());
             }
@@ -227,28 +244,30 @@ export class Card {
     };
 
     sell = () => {
-        if (this.sellEffect != undefined) {
-            this.sellEffect();
-        }
+        if (this.system.game && this.owner) {
+            if (this.sellEffect != undefined) {
+                this.sellEffect();
+            }
 
-        for (const v of this.sale) {
-            this.owner.ressource(v.name).current += v.value();
-        }
+            for (const v of this.sale) {
+                this.owner.ressource(v.name).current += v.value();
+            }
 
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
-                    if (card != this) {
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
 
-                        if (card.otherSellEffect != undefined) {
-                            card.otherSellEffect(this);
-                        }
+                            if (card.otherSellEffect != undefined) {
+                                card.otherSellEffect(this);
+                            }
 
-                        if (card.type == "Créature") {
-                            for (const e of card.equipments) {
-                                if (e.otherSellEffect != undefined) {
-                                    e.otherSellEffect(this);
+                            if (card.type == "Créature") {
+                                for (const e of card.equipments) {
+                                    if (e.otherSellEffect != undefined) {
+                                        e.otherSellEffect(this);
+                                    }
                                 }
                             }
                         }
@@ -282,21 +301,23 @@ export class Card {
     };
 
     pose = () => {
-        this.cache = false;
+        if (this.system.game) {
+            this.cache = false;
 
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
-                    if (card != this) {
-                        if (card.otherPoseEffect != undefined) {
-                            card.otherPoseEffect(this);
-                        }
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
+                            if (card.otherPoseEffect != undefined) {
+                                card.otherPoseEffect(this);
+                            }
 
-                        if (card.type == "Créature") {
-                            for (const e of card.equipments) {
-                                if (e.otherPoseEffect != undefined) {
-                                    e.otherPoseEffect(this);
+                            if (card.type == "Créature") {
+                                for (const e of card.equipments) {
+                                    if (e.otherPoseEffect != undefined) {
+                                        e.otherPoseEffect(this);
+                                    }
                                 }
                             }
                         }
@@ -316,19 +337,21 @@ export class Card {
     };
 
     destroy = () => {
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
-                    if (card != this) {
-                        if (card.otherDestroyEffect != undefined) {
-                            card.otherDestroyEffect(this);
-                        }
+        if (this.system.game) {
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
+                            if (card.otherDestroyEffect != undefined) {
+                                card.otherDestroyEffect(this);
+                            }
 
-                        if (card.type == "Créature") {
-                            for (const e of card.equipments) {
-                                if (e.otherDestroyEffect != undefined) {
-                                    e.otherDestroyEffect(this);
+                            if (card.type == "Créature") {
+                                for (const e of card.equipments) {
+                                    if (e.otherDestroyEffect != undefined) {
+                                        e.otherDestroyEffect(this);
+                                    }
                                 }
                             }
                         }
@@ -337,7 +360,7 @@ export class Card {
             }
         }
 
-        if (this.zone.name == "Pile") {
+        if (this.zone != undefined && this.zone.name == "Pile") {
             this.remove();
         }
         else {
@@ -430,25 +453,30 @@ export class Card {
     };
 
     transform = (name: string) => {
-        let newCard = this.system.cards.getByName(name);
-        this.zone.cards[this.slot] = newCard;
+        if (this.zone != undefined && this.slot != undefined) {
+            let newCard: Card = this.system.cards.getByName(name);
+            this.zone.cards[this.slot] = newCard;
 
-        this.zone.cards[this.slot].owner = this.owner;
-        this.zone.cards[this.slot].zone = this.zone;
-        this.zone.cards[this.slot].slot = this.slot;
+            this.zone.cards[this.slot].owner = this.owner;
+            this.zone.cards[this.slot].zone = this.zone;
+            this.zone.cards[this.slot].slot = this.slot;
 
-        for (const trait of this.traits) {
-            newCard.trait(trait.name).add = trait.add;
-        }
-        for (const stat of this.stats) {
-            newCard.stat(stat.name).add = stat.add;
-            newCard.stat(stat.name).step = stat.step;
-            newCard.stat(stat.name).turn = stat.turn;
-        }
-        if (this.zone.cards[this.slot].type == "Créature") {
-            for (const e of this.equipments) {
-                newCard.equipments.push(e);
-                e.bearer = newCard;
+            for (const trait of this.traits) {
+                newCard.trait(trait.name).add = trait.add;
+                newCard.trait(trait.name).step = trait.step;
+                newCard.trait(trait.name).turn = trait.turn;
+            }
+            for (const stat of this.stats) {
+                newCard.stat(stat.name).add = stat.add;
+                newCard.stat(stat.name).step = stat.step;
+                newCard.stat(stat.name).turn = stat.turn;
+            }
+
+            if (this.zone.cards[this.slot].type == "Créature") {
+                for (const e of this.equipments) {
+                    newCard.equipments.push(e);
+                    e.bearer = newCard;
+                }
             }
         }
     };
@@ -461,4 +489,21 @@ export class Card {
     };
 
     targetEffect: Function | undefined;
+
+    adversary = () => {
+        if (this.owner != undefined) {
+            return this.owner.adversary();
+        }
+        return new Entity(this.system);
+    };
+
+    initFamily = (families: string[]) => {
+        for (const family of families) {
+            this.families.base.push(family);
+        }
+    };
+
+    isFamily = (family: string) => {
+        return this.families.total().includes(family);
+    };
 };

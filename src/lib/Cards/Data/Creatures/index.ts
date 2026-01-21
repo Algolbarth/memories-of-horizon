@@ -10,6 +10,7 @@ export * from './Bagarreur';
 export * from './Bandit';
 export * from './Barbare';
 export * from './Barde';
+export * from './BarriereDeCorail';
 export * from './BonhommeBiscuit';
 export * from './Bouffon';
 export * from './Bucheron';

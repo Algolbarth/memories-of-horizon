@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -11,7 +12,7 @@ export class Concoction extends Item {
         super(system);
 
         this.level = 1;
-        this.families.base.push("Potion");
+        this.initFamily(["Potion"]);
 
         this.addStat("Infusion de soin", 0);
         this.addStat("Infusion de mana", 0);
@@ -32,13 +33,13 @@ export class Concoction extends Item {
             return true;
         }
         if (this.stat("Infusion explosive").value() > 0) {
-            if (this.owner?.zone("Terrain").cards.length > 0 || this.owner?.adversary().zone("Terrain").cards.length > 0) {
+            if (this.owner.zone("Terrain").cards.length > 0 || this.owner.adversary().zone("Terrain").cards.length > 0) {
                 return true;
             }
         }
         for (const entity of [this.system.game.player, this.system.game.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card.type == "Créature") {
+                if (card instanceof Creature) {
                     return true;
                 }
             }
@@ -57,7 +58,7 @@ export class Concoction extends Item {
             }
             for (const entity of [this.system.game.player, this.system.game.bot]) {
                 for (const card of entity.zone("Terrain").cards) {
-                    if (card.type == "Créature") {
+                    if (card instanceof Creature) {
                         check = true;
                     }
                 }
@@ -74,7 +75,7 @@ export class Concoction extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -108,9 +109,11 @@ export class Concoction extends Item {
         }
 
         if (target != undefined) {
+            this.targeting(target);
+
             target.damageByEffect(this.stat("Infusion explosive").value() * 2);
 
-            if (target.type == "Créature") {
+            if (target instanceof Creature) {
                 target.heal(this.stat("Infusion de soin").value() * 2);
                 target.stat("Force").step += this.stat("Infusion de force").value() * 4;
                 target.stat("Endurance").step += this.stat("Infusion d'endurance").value() * 2;

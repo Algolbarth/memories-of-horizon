@@ -11,7 +11,7 @@ export class Iconoclaste extends Creature {
 
         this.init([["Or", 10], ["Feu", 10]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

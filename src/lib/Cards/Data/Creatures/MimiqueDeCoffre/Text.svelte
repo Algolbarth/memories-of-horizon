@@ -10,4 +10,4 @@
 
 Quand posé : se place sur le terrain adverse.
 <br />
-Quand meurt sur le terrain : l'adversaire pioche 5 cartes.
+Quand meurt sur le terrain : l'adversaire pioche 5 cartes et les verrouille.

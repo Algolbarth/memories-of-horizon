@@ -86,10 +86,7 @@ export class Unit extends Card {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull()) {
-            return true;
-        }
-        return false;
+        return !this.owner?.zone("Terrain").isFull();
     };
 
     select = () => {
@@ -164,44 +161,46 @@ export class Unit extends Card {
     };
 
     die = () => {
-        this.stat("Santé").init(0);
+        if (this.system.game) {
+            this.stat("Santé").init(0);
 
-        if (this.type == "Créature") {
-            this.stat("Initiative").set(this.stat("Maîtrise").value());
-        }
+            if (this.type == "Créature") {
+                this.stat("Initiative").set(this.stat("Maîtrise").value());
+            }
 
-        if (this.dieEffect != undefined) {
-            this.dieEffect();
-        }
+            if (this.dieEffect != undefined) {
+                this.dieEffect();
+            }
 
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
-                    if (card != this) {
-                        if (card.otherDieEffect != undefined) {
-                            card.otherDieEffect(this);
-                        }
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
+                            if (card.otherDieEffect != undefined) {
+                                card.otherDieEffect(this);
+                            }
 
-                        if (card.type == "Créature") {
-                            for (const e of card.equipments) {
-                                if (e.otherDieEffect != undefined) {
-                                    e.otherDieEffect(this);
+                            if (card.type == "Créature") {
+                                for (const e of card.equipments) {
+                                    if (e.otherDieEffect != undefined) {
+                                        e.otherDieEffect(this);
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
 
-        this.dieGo();
+            this.dieGo();
+        }
     };
 
     dieEffect: Function | undefined;
 
     dieGo = () => {
-        if (this.zone.name == "Pile") {
+        if (this.zone == undefined || this.zone.name == "Pile") {
             this.remove();
         }
         else {
@@ -210,28 +209,30 @@ export class Unit extends Card {
     };
 
     destroy = () => {
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
-                    if (card != this) {
-                        if (card.otherDestroyEffect != undefined) {
-                            card.otherDestroyEffect(this);
-                        }
+        if (this.system.game) {
+            for (const entity of [this.system.game.player, this.system.game.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
+                            if (card.otherDestroyEffect != undefined) {
+                                card.otherDestroyEffect(this);
+                            }
 
-                        if (card.type == "Créature") {
-                            for (const e of card.equipments) {
-                                if (e.otherDestroyEffect != undefined) {
-                                    e.otherDestroyEffect(this);
+                            if (card.type == "Créature") {
+                                for (const e of card.equipments) {
+                                    if (e.otherDestroyEffect != undefined) {
+                                        e.otherDestroyEffect(this);
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
 
-        this.die();
+            this.die();
+        }
     };
 
     play = () => {
@@ -241,6 +242,8 @@ export class Unit extends Card {
             this.playEffect();
         }
     };
+
+    playEffect: Function | undefined;
 
     defend = (attacker: Creature) => {
         if (this.defendEffect != undefined) {

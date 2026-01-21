@@ -9,7 +9,7 @@ export class Tortue extends Creature {
 
         this.init([["Or", 8], ["Eau", 8]]);
 
-        this.families.base.push("Reptile");
+        this.initFamily(["Reptile"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);

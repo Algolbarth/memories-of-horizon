@@ -2,13 +2,14 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
 
 	let choice: string | undefined = undefined;
 
 	function select_condition(card: Card) {
-		if (card.type == "Créature") {
+		if (card instanceof Creature) {
 			return true;
 		}
 		return false;
@@ -44,12 +45,14 @@
 	</div>
 {:else}
 	<button
-		class="square return"
+		class="square return margin-bottom"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
 		↩
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{#if system.game && system.game.use.card && system.game.use.card.owner}
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{/if}
 {/if}

@@ -32,7 +32,7 @@
 				let card = system.cards.getByName(cardName);
 				let name = card.name.toLowerCase();
 
-				if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == levelSelect) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.families.total().includes(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
+				if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == levelSelect) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect))) {
 					tab.push(cardName);
 				}
 			}

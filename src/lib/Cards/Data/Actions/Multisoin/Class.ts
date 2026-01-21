@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class Multisoin extends Action {
     name = "Multisoin";
@@ -16,7 +17,7 @@ export class Multisoin extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.isDamaged()) {
+            if (card instanceof Creature && card.isDamaged()) {
                 return true;
             }
         }
@@ -24,9 +25,9 @@ export class Multisoin extends Action {
     };
 
     useEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 card.heal(5);
             }
         }

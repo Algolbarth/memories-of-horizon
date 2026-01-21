@@ -16,7 +16,7 @@ export class JetDAcide extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
+        for (const card of this.adversary().zone("Terrain").cards) {
             if (card.stat("Endurance").value() > 0) {
                 return true;
             }
@@ -31,7 +31,7 @@ export class JetDAcide extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined && card.stat("Endurance").value() > 0) {
                     target = card;
                 }
@@ -44,8 +44,11 @@ export class JetDAcide extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.stat("Endurance").decrease(20);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

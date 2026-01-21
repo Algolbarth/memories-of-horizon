@@ -40,16 +40,16 @@
 	<Construit bind:system />
 {:else if system.page == "Library"}
 	<Library bind:system />
-{:else if system.page == "Profil"}
-	<Profil bind:system />
+{:else if system.page == "Profil" && system.account != undefined}
+	<Profil bind:system bind:account={system.account} />
 {:else if system.page == "Universe"}
 	<Universe bind:system />
 {:else if system.page == "News"}
 	<News bind:system />
 {:else if system.page == "Training"}
 	<Training bind:system />
-{:else if system.page == "Game"}
-	<Game bind:system />
+{:else if system.page == "Game" && system.game != undefined}
+	<Game bind:system bind:game={system.game} />
 {:else if system.page == "Settings"}
 	<Settings bind:system />
 {:else if system.page == "Dialog"}

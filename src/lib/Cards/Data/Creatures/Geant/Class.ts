@@ -9,7 +9,7 @@ export class Geant extends Creature {
 
         this.init([["Or", 50]]);
 
-        this.families.base.push("Géant");
+        this.initFamily(["Géant"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

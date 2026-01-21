@@ -10,7 +10,7 @@ export class BassinDeReproduction extends Building {
 
         this.init([["Or", 15], ["Eau", 15]]);
 
-        this.families.base.push("Ondin");
+        this.initFamily(["Ondin"]);
 
         this.stat("Constitution").init(20);
 

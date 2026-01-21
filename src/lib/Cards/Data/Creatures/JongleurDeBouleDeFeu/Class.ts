@@ -11,7 +11,7 @@ export class JongleurDeBouleDeFeu extends Creature {
 
         this.init([["Or", 20], ["Feu", 20]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);

@@ -9,7 +9,7 @@ export class Nain extends Creature {
 
         this.init([["Or", 4], ["Terre", 4]]);
 
-        this.families.base.push("Nain");
+        this.initFamily(["Nain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

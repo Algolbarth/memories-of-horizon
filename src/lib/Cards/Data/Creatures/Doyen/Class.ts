@@ -11,7 +11,7 @@ export class Doyen extends Creature {
 
         this.init([["Or", 55], ["Végétal", 55]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);
@@ -20,9 +20,9 @@ export class Doyen extends Creature {
     };
 
     useEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 card.stat("Constitution").increase(15);
             }
         }

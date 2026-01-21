@@ -10,9 +10,13 @@
 	}
 
 	function select_action(card: Card) {
-		system.game.use.card.useEffect(card);
-		system.game.use.reset();
+		if (system.game && system.game.use.card) {
+			system.game.use.card.useEffect(card);
+			system.game.use.reset();
+		}
 	}
 </script>
 
-<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+{#if system.game && system.game.use.card && system.game.use.card.owner}
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+{/if}

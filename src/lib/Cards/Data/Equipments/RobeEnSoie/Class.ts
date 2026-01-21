@@ -10,7 +10,7 @@ export class RobeEnSoie extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.equipStat("Vitalité").init(25);
         this.equipStat("Résistance").init(12);

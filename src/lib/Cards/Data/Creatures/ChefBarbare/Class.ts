@@ -11,7 +11,7 @@ export class ChefBarbare extends Creature {
 
         this.init([["Or", 150]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
@@ -20,9 +20,9 @@ export class ChefBarbare extends Creature {
     };
 
     fightEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 card.stat("Force").increase(5);
             }
         }

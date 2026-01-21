@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -16,8 +16,8 @@ export class Spores extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature") {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -31,8 +31,8 @@ export class Spores extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -44,7 +44,10 @@ export class Spores extends Action {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.stat("Poison").increase(5);
+
         this.move("Défausse");
         this.pose();
     };

@@ -32,8 +32,11 @@ export class Renforcement extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.stat("Constitution").increase(15);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

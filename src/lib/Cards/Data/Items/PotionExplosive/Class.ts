@@ -12,7 +12,7 @@ export class PotionExplosive extends Item {
 
         this.init([["Or", 5]]);
 
-        this.families.base.push("Potion");
+        this.initFamily(["Potion"]);
 
         this.addStat("Infusion", 5);
 
@@ -20,7 +20,7 @@ export class PotionExplosive extends Item {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -31,12 +31,15 @@ export class PotionExplosive extends Item {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            this.useEffect(this.adversary().zone("Terrain").cards[0]);
         }
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.damageByEffect(this.stat("Infusion").value() * 2);
+
         this.move("Défausse");
         this.pose();
     };

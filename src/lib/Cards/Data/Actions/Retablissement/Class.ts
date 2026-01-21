@@ -44,8 +44,11 @@ export class Retablissement extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.fullHeal();
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

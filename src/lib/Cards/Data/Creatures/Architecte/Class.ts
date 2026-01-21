@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Building } from '../../../Class/Building';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -11,7 +12,7 @@ export class Architecte extends Creature {
 
         this.init([["Or", 10], ["Terre", 10]]);
 
-        this.families.base.push("Nain");
+        this.initFamily(["Nain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -22,7 +23,7 @@ export class Architecte extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Bâtiment") {
+            if (card instanceof Building) {
                 return true;
             }
             return false;

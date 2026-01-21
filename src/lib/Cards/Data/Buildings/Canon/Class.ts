@@ -17,7 +17,7 @@ export class Canon extends Building {
 
     turnEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.adversary().zone("Terrain").cards[0].damageByEffect(50);
+            this.adversary().zone("Terrain").cards[0].damageByEffect(50);
         }
     };
 };

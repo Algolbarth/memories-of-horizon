@@ -18,7 +18,7 @@ export class Remede extends Item {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.hasDebuff()) {
+            if (card instanceof Creature && card.hasDebuff()) {
                 return true;
             }
         }
@@ -49,8 +49,11 @@ export class Remede extends Item {
     };
 
     useEffect = (stat: Stat) => {
+        this.targeting(target);
+
         stat.set(stat.min);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

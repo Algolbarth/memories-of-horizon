@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -17,7 +17,7 @@ export class Croissance extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -32,13 +32,13 @@ export class Croissance extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
 
             if (target != undefined) {
-                if (target.families.total().includes("Plante")) {
+                if (target.isFamily("Plante")) {
                     this.useEffect(target, "life");
                 }
                 else {
@@ -49,6 +49,8 @@ export class Croissance extends Action {
     };
 
     useEffect = (target: Creature, choice: string) => {
+        this.targeting(target);
+
         if (choice == "life") {
             target.stat("Constitution").increase(75);
         }
@@ -60,4 +62,4 @@ export class Croissance extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

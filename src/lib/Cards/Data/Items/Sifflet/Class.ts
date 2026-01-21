@@ -3,6 +3,7 @@ import type { System } from '../../../../System/Class';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import type { Card } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 
 export class Sifflet extends Item {
     name = "Sifflet";
@@ -17,16 +18,16 @@ export class Sifflet extends Item {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature" && card.families.total().includes("Bête")) {
+            if (card instanceof Creature && card.isFamily("Bête")) {
                 return true;
             }
             return false;
         };
         this.owner.draw(1, read_condition);
 
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature" && card.families.total().includes("Bête")) {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature && card.isFamily("Bête")) {
                 card.stat("Constitution").increase(1);
                 card.stat("Force").increase(1);
             }
@@ -35,4 +36,4 @@ export class Sifflet extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

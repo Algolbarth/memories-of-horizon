@@ -16,7 +16,7 @@ export class Forger extends Action {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.families.total().includes("Équipement")) {
+            if (card.isFamily("Équipement")) {
                 return true;
             }
             return false;

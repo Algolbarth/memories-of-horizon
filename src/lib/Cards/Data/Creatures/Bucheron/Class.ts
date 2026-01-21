@@ -11,7 +11,7 @@ export class Bucheron extends Creature {
 
         this.init([["Or", 15], ["Végétal", 15]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);

@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Building } from '../../../Class/Building';
-import type { Item } from '../../../Class/Item';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -22,7 +22,7 @@ export class Restaurant extends Building {
         let check = undefined;
 
         for (const card of this.owner.zone("Réserve").cards) {
-            if (check == undefined && card.type == "Objet" && card.families.total().includes("Nourriture")) {
+            if (check == undefined && card instanceof Item && card.isFamily("Nourriture")) {
                 check = card;
             }
         }

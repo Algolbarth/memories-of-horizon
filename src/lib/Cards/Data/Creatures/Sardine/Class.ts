@@ -11,7 +11,7 @@ export class Sardine extends Creature {
 
         this.init([["Or", 2], ["Eau", 2]]);
 
-        this.families.base.push("Poisson");
+        this.initFamily(["Poisson"]);
 
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
@@ -21,7 +21,7 @@ export class Sardine extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature" && card.families.total().includes("Poisson")) {
+            if (card instanceof Creature && card.isFamily("Poisson")) {
                 return true;
             }
             return false;

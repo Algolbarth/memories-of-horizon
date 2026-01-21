@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Spell } from '../../../Class/Spell';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -17,7 +17,7 @@ export class PeauDePierre extends Spell {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class PeauDePierre extends Spell {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -44,6 +44,8 @@ export class PeauDePierre extends Spell {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         if (this.owner.ressource("Mana").total() >= 15) {
             this.owner.ressource("Mana").spend(15);
             target.stat("Endurance").increase(30);
@@ -51,7 +53,8 @@ export class PeauDePierre extends Spell {
         else {
             target.stat("Endurance").increase(15);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

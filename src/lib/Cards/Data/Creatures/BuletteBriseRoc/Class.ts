@@ -10,7 +10,7 @@ export class BuletteBriseRoc extends Creature {
 
         this.init([["Or", 50], ["Terre", 50]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(30);
         this.stat("Force").init(15);

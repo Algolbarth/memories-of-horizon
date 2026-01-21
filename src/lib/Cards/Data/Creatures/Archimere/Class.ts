@@ -11,7 +11,7 @@ export class Archimere extends Creature {
 
         this.init([["Or", 100]]);
 
-        this.families.base.push("Bête", "Reptile");
+        this.initFamily(["Bête", "Reptile"]);
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
@@ -20,7 +20,7 @@ export class Archimere extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
             for (let i = 0; i < card.families.total().length; i++) {
                 this.stat("Constitution").increase(5);
                 this.stat("Force").increase(5);

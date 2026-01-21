@@ -12,7 +12,7 @@ export class ElementaireDeRoche extends Creature {
 
         this.init([["Terre", 50]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(40);
         this.stat("Force").init(40);
@@ -22,7 +22,7 @@ export class ElementaireDeRoche extends Creature {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull() || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (!this.owner.zone("Terrain").isFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -30,7 +30,7 @@ export class ElementaireDeRoche extends Creature {
 
     select = () => {
         if (this.owner == this.system.game.player) {
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
@@ -38,7 +38,7 @@ export class ElementaireDeRoche extends Creature {
             }
         }
         else {
-            if (this.owner.adversary().zone("Terrain").cards.length > 5) {
+            if (this.adversary().zone("Terrain").cards.length > 5) {
                 this.useEffect("effect");
             }
             else if (!this.owner.zone("Terrain").isFull()) {
@@ -52,8 +52,8 @@ export class ElementaireDeRoche extends Creature {
             this.move("Terrain");
         }
         else if (choice == "effect") {
-            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of adversary_land) {
+            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            for (const card of adversary_battlefield) {
                 card.damageByEffect(5);
             }
             this.destroy();

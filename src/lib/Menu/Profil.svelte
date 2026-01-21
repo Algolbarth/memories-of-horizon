@@ -1,20 +1,20 @@
 <script lang="ts">
+	import type { Account } from "../Login/Account";
 	import type { System } from "../System/Class";
 	import { several } from "../Utils";
 	import Time from "./Time.svelte";
 
 	export let system: System;
+	export let account: Account;
 
-	let name: string = system.account?.name;
-	$: play_time = system.account?.play_time;
-	$: session_time = system.account?.session_time;
-	$: best_session_time = system.account?.best_session_time;
-	$: ingame_time = system.account?.ingame_time;
+	let name: string = account.name;
+	$: play_time = account.play_time;
+	$: session_time = account.session_time;
+	$: best_session_time = account.best_session_time;
+	$: ingame_time = account.ingame_time;
 
 	function rename() {
-		if (system.account) {
-			system.account.name = name;
-		}
+		account.name = name;
 	}
 </script>
 
@@ -35,73 +35,71 @@
 	</div>
 </div>
 
-{#if system.account && play_time != undefined && session_time != undefined}
-	<div class="zone">
-		<input type="text" bind:value={name} />
-		{#if name != system.account.name}
-			<button on:click={rename}> Renommer </button>
-		{/if}
+<div class="zone">
+	<input type="text" bind:value={name} />
+	{#if name != account.name}
+		<button on:click={rename}> Renommer </button>
+	{/if}
 
-		<br />
-		<br />
+	<br />
+	<br />
 
-		<div class="container">
-			<div>
-				Temps de jeu total :
-				<Time bind:time={play_time} />
-			</div>
-
-			<div>
-				Temps de jeu en partie:
-				<Time bind:time={ingame_time} />
-			</div>
-
-			<div></div>
+	<div class="container">
+		<div>
+			Temps de jeu total :
+			<Time bind:time={play_time} />
 		</div>
 
-		<div class="container">
-			<div>
-				Temps de session :
-				<Time bind:time={session_time} />
-			</div>
-
-			<div>
-				{#if best_session_time > 0}
-					Session la plus longue :
-					<Time bind:time={best_session_time} />
-				{/if}
-			</div>
-
-			<div></div>
+		<div>
+			Temps de jeu en partie:
+			<Time bind:time={ingame_time} />
 		</div>
+
+		<div></div>
 	</div>
 
-	<div class="zone container">
+	<div class="container">
 		<div>
-			Total de parties : {system.account.total_match()}
-			<br />
-			{several(system.account.total_victory(), ["Victoire"], "after")}
-			<br />
-			{several(system.account.total_defeat(), ["Défaite"], "after")}
+			Temps de session :
+			<Time bind:time={session_time} />
 		</div>
 
 		<div>
-			Mode pré-construit : {system.account.preconstruct.total()}
-			<br />
-			{several(system.account.preconstruct.victory, ["Victoire"], "after")}
-			<br />
-			{several(system.account.preconstruct.defeat, ["Défaite"], "after")}
+			{#if best_session_time != undefined && best_session_time > 0}
+				Session la plus longue :
+				<Time bind:time={best_session_time} />
+			{/if}
 		</div>
 
-		<div>
-			Mode construit : {system.account.construct.total()}
-			<br />
-			{several(system.account.construct.victory, ["Victoire"], "after")}
-			<br />
-			{several(system.account.construct.defeat, ["Défaite"], "after")}
-		</div>
+		<div></div>
 	</div>
-{/if}
+</div>
+
+<div class="zone container">
+	<div>
+		Total de parties : {account.total_match()}
+		<br />
+		{several(account.total_victory(), ["Victoire"], "after")}
+		<br />
+		{several(account.total_defeat(), ["Défaite"], "after")}
+	</div>
+
+	<div>
+		Mode pré-construit : {account.preconstruct.total()}
+		<br />
+		{several(account.preconstruct.victory, ["Victoire"], "after")}
+		<br />
+		{several(account.preconstruct.defeat, ["Défaite"], "after")}
+	</div>
+
+	<div>
+		Mode construit : {account.construct.total()}
+		<br />
+		{several(account.construct.victory, ["Victoire"], "after")}
+		<br />
+		{several(account.construct.defeat, ["Défaite"], "after")}
+	</div>
+</div>
 
 <style>
 	div.container {

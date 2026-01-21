@@ -11,7 +11,7 @@ export class ElementaireDesEboulis extends Creature {
 
         this.init([["Terre", 20]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
@@ -24,8 +24,8 @@ export class ElementaireDesEboulis extends Creature {
         if (!this.owner.zone("Terrain").isFull()) {
             return true;
         }
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.stat("Étourdissement").value() < 1) {
                 return true;
             }
         }
@@ -34,8 +34,8 @@ export class ElementaireDesEboulis extends Creature {
 
     select = () => {
         let check = false;
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (check == false && card.type == "Créature" && card.stat("Étourdissement").value() < 1) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (check == false && card instanceof Creature && card.stat("Étourdissement").value() < 1) {
                 check = true;
             }
         }
@@ -51,8 +51,8 @@ export class ElementaireDesEboulis extends Creature {
         else {
             if (check) {
                 let target = undefined;
-                for (const card of this.owner.adversary().zone("Terrain").cards) {
-                    if (target == undefined && card.type == "Créature") {
+                for (const card of this.adversary().zone("Terrain").cards) {
+                    if (target == undefined && card instanceof Creature) {
                         target = card;
                     }
                 }
@@ -66,12 +66,15 @@ export class ElementaireDesEboulis extends Creature {
 
     useEffect = (target: Creature | undefined) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.stat("Étourdissement").fix(1);
             this.destroy();
         }
         else {
             this.move("Terrain");
         }
+
         this.pose();
     };
 };

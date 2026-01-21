@@ -1,6 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { copy } from '../../../../Utils';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -13,7 +13,7 @@ export class EventailDeCouteaux extends Equipment {
 
         this.init([["Or", 20]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(30);
 
@@ -21,11 +21,11 @@ export class EventailDeCouteaux extends Equipment {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.canEquip()) {
+            if (card instanceof Creature && card.canEquip()) {
                 return true;
             }
         }
@@ -40,7 +40,7 @@ export class EventailDeCouteaux extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+                if (target == undefined && card instanceof Creature && card.canEquip()) {
                     target = card;
                 }
             }
@@ -50,23 +50,26 @@ export class EventailDeCouteaux extends Equipment {
                 return 0;
             }
 
-            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.useEffect("damage", undefined);
             }
         }
     };
 
     useEffect = (choice: string, target: Creature | undefined) => {
+        this.targeting(target);
+
         if (choice == "equip") {
             target.equip(this);
         }
         else if (choice == "damage") {
-            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of adversary_land) {
+            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            for (const card of adversary_battlefield) {
                 card.damageByEffect(3);
             }
             this.move("Défausse");
         }
+
         this.pose();
     };
 };

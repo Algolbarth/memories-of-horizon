@@ -7,6 +7,7 @@ import type { System } from '../System/Class';
 import type { Card } from '../Cards/Class';
 import type { Component } from 'svelte';
 import type { TrainEntity } from '../Training/Train';
+import { Creature } from '../Cards/Class/Creature';
 
 export class Game extends Battle {
     use: Use = new Use();
@@ -138,7 +139,7 @@ export class Game extends Battle {
                         card.startStepEffect();
                     }
 
-                    if (card.type == "Créature") {
+                    if (card instanceof Creature) {
                         for (const e of card.equipments) {
                             if (e.startStepEffect != undefined) {
                                 e.startStepEffect();
@@ -174,7 +175,7 @@ export class Game extends Battle {
                     for (const trait of card.traits) {
                         trait.step = false;
                     }
-                    if (card.type == "Créature" && card.stat("Étourdissement").value() > 0) {
+                    if (card instanceof Creature && card.stat("Étourdissement").value() > 0) {
                         card.stat("Étourdissement").remove(1);
                     }
                     if (card.stat("Brûlure").value() > 0) {

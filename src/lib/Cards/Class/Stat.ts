@@ -19,6 +19,7 @@ export class Stat {
 
     value = () => {
         let total = this.base + this.add + this.step + this.turn;
+
         if (this.card.type == "Créature") {
             for (const equipment of this.card.equipments) {
                 total += equipment.equipStat(this.name).value();

@@ -11,7 +11,7 @@ export class ChevalDeGuerre extends Creature {
 
         this.init([["Or", 40]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -25,7 +25,7 @@ export class ChevalDeGuerre extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature") {
+                if (check == false && card instanceof Creature) {
                     check = true;
                 }
             }
@@ -41,7 +41,7 @@ export class ChevalDeGuerre extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -55,12 +55,15 @@ export class ChevalDeGuerre extends Creature {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Creature | undefined) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.stat("Constitution").increase(10);
             target.stat("Force").increase(10);
             target.stat("Vitesse").increase(1);
         }
+
         this.move("Terrain");
         this.pose();
     };

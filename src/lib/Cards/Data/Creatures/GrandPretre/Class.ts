@@ -12,7 +12,7 @@ export class GrandPretre extends Creature {
 
         this.init([["Or", 110]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -24,7 +24,7 @@ export class GrandPretre extends Creature {
         let check = false;
 
         for (const card of this.owner.zone("Terrain").cards) {
-            if (check == false && card.type == "Créature") {
+            if (check == false && card instanceof Creature) {
                 check = true;
             }
         }
@@ -36,7 +36,7 @@ export class GrandPretre extends Creature {
             else {
                 let choice = "life";
                 for (const card of this.owner.zone("Terrain").cards) {
-                    if (card.type == "Créature" && card.isDamaged()) {
+                    if (card instanceof Creature && card.isDamaged()) {
                         choice = "heal";
                     }
                 }
@@ -50,9 +50,9 @@ export class GrandPretre extends Creature {
     };
 
     useEffect = (choice: string | undefined) => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 if (choice == "life") {
                     card.stat("Constitution").increase(10);
                 }

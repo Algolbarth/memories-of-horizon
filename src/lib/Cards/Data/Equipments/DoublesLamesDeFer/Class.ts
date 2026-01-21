@@ -10,7 +10,7 @@ export class DoublesLamesDeFer extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(10);
         this.equipStat("Agilité").init(1);

@@ -12,7 +12,7 @@ export class Negociant extends Creature {
 
         this.init([["Or", 15]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -57,9 +57,12 @@ export class Negociant extends Creature {
 
     useEffect = (target: Card | undefined) => {
         if (target != undefined) {
+            this.targeting(target);
+
             target.getCost("Or").decrease(10);
             target.lock();
         }
+
         this.move("Terrain");
         this.pose();
     };

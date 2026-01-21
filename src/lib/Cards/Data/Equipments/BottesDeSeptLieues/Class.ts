@@ -12,8 +12,7 @@ export class BottesDeSeptLieues extends Equipment {
 
         this.init([["Or", 70]]);
 
-        this.families.base.push("Armure");
-        this.families.base.push("Géant");
+        this.initFamily(["Armure", "Géant"]);
 
         this.equipStat("Vitesse").init(7);
 
@@ -22,7 +21,7 @@ export class BottesDeSeptLieues extends Equipment {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && card.families.total().includes("Géant") && card.canEquip()) {
+            if (card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
                 return true;
             }
         }
@@ -37,7 +36,7 @@ export class BottesDeSeptLieues extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.families.total().includes("Géant") && card.canEquip()) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
                     target = card;
                 }
             }

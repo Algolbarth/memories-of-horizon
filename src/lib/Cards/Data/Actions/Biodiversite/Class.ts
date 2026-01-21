@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class Biodiversite extends Action {
     name = "Biodiversité";
@@ -23,10 +24,10 @@ export class Biodiversite extends Action {
 
     useEffect = () => {
         let list = [];
-        let land = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner.zone("Terrain").cards);
 
-        for (const card of land) {
-            if (card.type == "Créature") {
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 for (const family of card.families.total()) {
                     if (!list.includes(family)) {
                         list.push(family);
@@ -35,8 +36,8 @@ export class Biodiversite extends Action {
             }
         }
 
-        for (const card of land) {
-            if (card.type == "Créature") {
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 card.stat("Constitution").increase(list.length * 5);
                 card.stat("Force").increase(list.length * 5);
             }

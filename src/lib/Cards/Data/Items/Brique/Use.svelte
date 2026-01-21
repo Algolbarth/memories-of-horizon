@@ -2,13 +2,14 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import { Building } from "../../../Class/Building";
 
 	export let system: System;
 
 	let choice: string | undefined = undefined;
 
 	function select_condition_1(card: Card) {
-		if (card.type == "Bâtiment") {
+		if (card instanceof Building) {
 			return true;
 		}
 		return false;
@@ -48,22 +49,26 @@
 	</div>
 {:else if choice == "heal"}
 	<button
-		class="square return"
+		class="square return margin-bottom"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
 		↩
 	</button>
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} select_condition={select_condition_1} {select_action} />
+	{#if system.game && system.game.use.card && system.game.use.card.owner}
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} select_condition={select_condition_1} {select_action} />
+	{/if}
 {:else if choice == "damage"}
 	<button
-		class="square return"
+		class="square return margin-bottom"
 		on:click={() => {
 			choice = undefined;
 		}}
 	>
 		↩
 	</button>
-	<Zone bind:system entity={system.game.use.card.owner.adversary()} zone={system.game.use.card.owner.adversary().zone("Terrain")} select_condition={select_condition_2} {select_action} />
+	{#if system.game && system.game.use.card && system.game.use.card.owner}
+		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} select_condition={select_condition_2} {select_action} />
+	{/if}
 {/if}

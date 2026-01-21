@@ -95,7 +95,7 @@ button.desactivate:hover {
 }
 
 button.square {
-  transition: all var(--delay_hover) ease-in-out;
+  transition: all var(--delay) ease-in-out;
 
   text-align: center;
   font-weight: bold;
@@ -150,7 +150,6 @@ button.return {
   border-color: var(--return) black black var(--return);
 
   transform: translate(0, 2px);
-
   margin-top: -2px;
 }
 
@@ -184,8 +183,12 @@ button.taskbar:hover {
 }
 
 button.choice {
+  transition: all var(--delay) ease-in-out;
+
   min-width: 15vw;
   width: 100%;
+
+  color: black;
 
   background-color: var(--choice);
   background-image: var(--metal);
@@ -198,6 +201,8 @@ button.choice:hover {
   background-color: var(--choice_hover);
 
   border-color: black var(--choice_border) var(--choice_border) black;
+
+  transition: all var(--delay_hover) ease-in-out;
 }
 
 button.text {
@@ -206,4 +211,8 @@ button.text {
 
 button.text:hover {
   color: black;
+}
+
+button.margin-bottom {
+  margin-bottom: 1em;
 }

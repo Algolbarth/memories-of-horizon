@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,16 +12,16 @@ export class NoixDeCoco extends Item {
 
         this.init([["Or", 10], ["Eau", 10]]);
 
-        this.families.base.push("Nourriture", "Plante");
+        this.initFamily(["Nourriture", "Plante"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         if (this.owner == this.system.game.player) {
-            for (const entity of [this.owner, this.owner.adversary()]) {
+            for (const entity of [this.owner, this.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
-                    if (card.type == "Créature" && (card.isDamaged() || card.stat("Étourdissement").value() == 0)) {
+                    if (card instanceof Creature && (card.isDamaged() || card.stat("Étourdissement").value() == 0)) {
                         return true;
                     }
                 }
@@ -29,12 +29,12 @@ export class NoixDeCoco extends Item {
         }
         else {
             for (const card of this.owner.zone("Terrain").cards) {
-                if (card.type == "Créature" && card.isDamaged()) {
+                if (card instanceof Creature && card.isDamaged()) {
                     return true;
                 }
             }
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (card.type == "Créature" && card.stat("Étourdissement").value() == 0) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (card instanceof Creature && card.stat("Étourdissement").value() == 0) {
                     return true;
                 }
             }
@@ -49,13 +49,13 @@ export class NoixDeCoco extends Item {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.stat("Étourdissement").value() == 0) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.stat("Étourdissement").value() == 0) {
                     target = card;
                 }
             }
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.isDamaged()) {
+                if (target == undefined && card instanceof Creature && card.isDamaged()) {
                     target = card;
                 }
             }
@@ -68,12 +68,14 @@ export class NoixDeCoco extends Item {
 
     useEffect = (target: Creature) => {
         this.targeting(target);
+
         if (!target.isDamaged()) {
             target.stat("Étourdissement").fix(1);
         }
         else {
             target.heal(40);
         }
+
         this.move("Défausse");
         this.pose();
     };

@@ -10,7 +10,7 @@ export class EpaulieresDecorees extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.equipStat("Résistance").value = function () {
             if (this.card.bearer != undefined) {

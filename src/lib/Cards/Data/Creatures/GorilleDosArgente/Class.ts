@@ -10,7 +10,7 @@ export class GorilleDosArgente extends Creature {
 
         this.init([["Or", 50], ["Végétal", 50]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

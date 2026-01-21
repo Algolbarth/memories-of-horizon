@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Creature } from '../../../Class/Creature';
+import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -12,14 +12,14 @@ export class Vin extends Item {
 
         this.init([["Or", 25]]);
 
-        this.families.base.push("Nourriture");
+        this.initFamily(["Nourriture"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && (card.isDamaged() || card.stat("Critique").value() < 100)) {
+            if (card instanceof Creature && (card.isDamaged() || card.stat("Critique").value() < 100)) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ export class Vin extends Item {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -47,12 +47,14 @@ export class Vin extends Item {
 
     useEffect = (target: Creature) => {
         this.targeting(target);
+
         if (!target.isDamaged()) {
             target.stat("Critique").set(100);
         }
         else {
             target.heal(50);
         }
+
         this.move("Défausse");
         this.pose();
     };

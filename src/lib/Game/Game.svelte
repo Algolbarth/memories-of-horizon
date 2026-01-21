@@ -7,8 +7,10 @@
 	import Pause from "./Pause.svelte";
 	import { onDestroy, onMount } from "svelte";
 	import type { System } from "../System/Class";
+	import type { Game } from "./Game";
 
 	export let system: System;
+	export let game: Game;
 
 	let show_flux: boolean = false;
 	let auto: number | undefined;
@@ -27,157 +29,155 @@
 	});
 </script>
 
-{#if system.game}
-	<div class="taskbar">
-		<div>
-			{#if system.game.mode != "Entraînement" && system.game.chapter}
-				<button class="taskbar info">
-					Chapitre {system.game.chapter.number}
-				</button>
+<div class="taskbar">
+	<div>
+		{#if game.mode != "Entraînement" && game.chapter}
+			<button class="taskbar info">
+				Chapitre {game.chapter.number}
+			</button>
 
-				<button class="taskbar info">
-					Étape {system.game.player.step} / {system.game.chapter.steps.length}
-				</button>
-			{/if}
+			<button class="taskbar info">
+				Étape {game.player.step} / {game.chapter.steps.length}
+			</button>
+		{/if}
 
-			{#if system.game.isBattle() && !system.game.isEndBattle()}
-				<button class="taskbar info">
-					Tour de combat {system.game.turn} / 5
-				</button>
-			{/if}
-		</div>
+		{#if game.isBattle() && !game.isEndBattle()}
+			<button class="taskbar info">
+				Tour de combat {game.turn} / 5
+			</button>
+		{/if}
+	</div>
 
-		<div style="text-align:center;">
-			{#if !system.game.isBattle()}
+	<div style="text-align:center;">
+		{#if !game.isBattle()}
+			<button
+				class="taskbar fight"
+				on:click={() => {
+					if (game) {
+						system.view.reset();
+						game.newBattle();
+						system = system;
+					}
+				}}
+			>
+				Combattre
+			</button>
+
+			{#if game.mode == "Entraînement"}
 				<button
-					class="taskbar fight"
+					class="taskbar bot_turn"
 					on:click={() => {
-						if (system.game) {
+						if (game) {
 							system.view.reset();
-							system.game.newBattle();
+							game.bot.play();
 							system = system;
 						}
 					}}
 				>
-					Combattre
+					Tour de l'ordi
 				</button>
-
-				{#if system.game.mode == "Entraînement"}
-					<button
-						class="taskbar bot_turn"
-						on:click={() => {
-							if (system.game) {
-								system.view.reset();
-								system.game.bot.play();
-								system = system;
-							}
-						}}
-					>
-						Tour de l'ordi
-					</button>
-				{/if}
-			{:else if !system.game.isEndBattle()}
-				{#if system.game.auto != null}
-					<button
-						class="taskbar"
-						on:click={() => {
-							if (system.game) {
-								system.game.stopAuto();
-							}
-						}}
-					>
-						Désactiver mode auto
-					</button>
-				{:else}
-					<button
-						class="taskbar"
-						on:click={() => {
-							if (system.game) {
-								system.game.startAuto();
-							}
-						}}
-					>
-						Activer mode auto
-					</button>
-
-					<button
-						class="taskbar"
-						on:click={() => {
-							if (system.game) {
-								system.view.reset();
-								system.game.actionBattle();
-							}
-						}}
-					>
-						Prochaine action
-					</button>
-				{/if}
+			{/if}
+		{:else if !game.isEndBattle()}
+			{#if game.auto != null}
+				<button
+					class="taskbar"
+					on:click={() => {
+						if (game) {
+							game.stopAuto();
+						}
+					}}
+				>
+					Désactiver mode auto
+				</button>
 			{:else}
 				<button
 					class="taskbar"
 					on:click={() => {
-						if (system.game) {
-							system.view.reset();
-							system.game.actionBattle();
-							system = system;
+						if (game) {
+							game.startAuto();
 						}
 					}}
 				>
-					Résultats
+					Activer mode auto
+				</button>
+
+				<button
+					class="taskbar"
+					on:click={() => {
+						if (game) {
+							system.view.reset();
+							game.actionBattle();
+						}
+					}}
+				>
+					Prochaine action
 				</button>
 			{/if}
-		</div>
-
-		<div style="text-align:right">
+		{:else}
 			<button
 				class="taskbar"
 				on:click={() => {
-					if (system.game) {
-						system.game.pause = true;
-						system.page = "Game";
+					if (game) {
+						system.view.reset();
+						game.actionBattle();
+						system = system;
 					}
 				}}
 			>
-				Pause
+				Résultats
 			</button>
-		</div>
-	</div>
-
-	<div id="container" class="scroll">
-		<div class="entities">
-			<div>
-				<Entity bind:system bind:entity={system.game.player} direction={"left"} bind:show_flux />
-			</div>
-			<div style="text-align:right;">
-				<Entity bind:system bind:entity={system.game.bot} direction={"right"} bind:show_flux />
-			</div>
-		</div>
-
-		{#if !system.game.isBattle()}
-			<DoubleZone bind:system zone={"Région"} />
-			<DoubleZone bind:system zone={"Pile"} />
-			<DoubleZone bind:system zone={"Réserve"} />
-		{/if}
-
-		<DoubleZone bind:system zone={"Terrain"} />
-
-		{#if !system.game.isBattle()}
-			<DoubleZone bind:system zone={"Défausse"} />
 		{/if}
 	</div>
 
-	<Use bind:system />
+	<div style="text-align:right">
+		<button
+			class="taskbar"
+			on:click={() => {
+				if (game) {
+					game.pause = true;
+					system.page = "Game";
+				}
+			}}
+		>
+			Pause
+		</button>
+	</div>
+</div>
 
-	{#if show_flux}
-		<Flux bind:system bind:show_flux />
+<div id="container" class="scroll">
+	<div class="entities">
+		<div>
+			<Entity bind:system bind:entity={game.player} direction={"left"} bind:show_flux />
+		</div>
+		<div style="text-align:right;">
+			<Entity bind:system bind:entity={game.bot} direction={"right"} bind:show_flux />
+		</div>
+	</div>
+
+	{#if !game.isBattle()}
+		<DoubleZone bind:system zone={"Région"} />
+		<DoubleZone bind:system zone={"Pile"} />
+		<DoubleZone bind:system zone={"Réserve"} />
 	{/if}
 
-	<div class="center">
-		<View bind:system />
-	</div>
+	<DoubleZone bind:system zone={"Terrain"} />
 
-	<Pause bind:system />
+	{#if !game.isBattle()}
+		<DoubleZone bind:system zone={"Défausse"} />
+	{/if}
+</div>
+
+<Use bind:system />
+
+{#if show_flux}
+	<Flux bind:system bind:game bind:show_flux />
 {/if}
+
+<div class="center">
+	<View bind:system />
+</div>
+
+<Pause bind:system />
 
 <style>
 	#container {

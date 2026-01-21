@@ -11,7 +11,7 @@ export class Dresseur extends Creature {
 
         this.init([["Or", 10], ["Végétal", 10]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
@@ -21,7 +21,7 @@ export class Dresseur extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature" && card.families.total().includes("Bête")) {
+            if (card instanceof Creature && card.isFamily("Bête")) {
                 return true;
             }
             return false;

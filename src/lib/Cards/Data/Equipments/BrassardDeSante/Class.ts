@@ -10,7 +10,7 @@ export class BrassardDeSante extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.families.base.push("Armure");
+        this.initFamily(["Armure"]);
 
         this.equipStat("Régénération").init(20);
 

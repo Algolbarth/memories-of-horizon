@@ -10,7 +10,7 @@ export class OndinDesRivieres extends Creature {
 
         this.init([["Or", 12], ["Eau", 12]]);
 
-        this.families.base.push("Ondin");
+        this.initFamily(["Ondin"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

@@ -10,7 +10,7 @@ export class GuerrierElfe extends Creature {
 
         this.init([["Or", 8], ["Végétal", 8]]);
 
-        this.families.base.push("Elfe");
+        this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

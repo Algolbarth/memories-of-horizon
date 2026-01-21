@@ -11,7 +11,7 @@ export class ElementaireExplosif extends Creature {
 
         this.init([["Feu", 50]]);
 
-        this.families.base.push("Élémentaire");
+        this.initFamily(["Élémentaire"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
@@ -23,8 +23,8 @@ export class ElementaireExplosif extends Creature {
         if (this.zone.name != "Pile" && this.owner.ressource("Feu").production >= 5) {
             this.owner.ressource("Feu").production -= 5;
 
-            let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-            for (const card of adversary_land) {
+            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            for (const card of adversary_battlefield) {
                 card.damageByEffect(5);
             }
         }

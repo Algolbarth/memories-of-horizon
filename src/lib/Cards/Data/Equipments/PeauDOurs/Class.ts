@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Creature } from '../../../Class/Creature';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 
@@ -11,15 +12,13 @@ export class PeauDOurs extends Equipment {
 
         this.init([["Or", 50]]);
 
-        this.families.base.push("Armure");
-
-        this.families.base.push("Bête");
+        this.initFamily(["Armure", "Bête"]);
 
         this.text = Text;
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.bearer != undefined && card.zone.name != "Pile" && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.families.total().includes("Bête")) {
+        if (this.bearer != undefined && card.zone.name != "Pile" && this.bearer.zone.name == "Terrain" && card instanceof Creature && card.owner == this.bearer.owner && card.isFamily("Bête")) {
             this.bearer.stat("Constitution").increase(10);
         }
     };

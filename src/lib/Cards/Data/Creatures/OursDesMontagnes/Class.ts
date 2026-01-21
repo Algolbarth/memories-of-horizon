@@ -9,7 +9,7 @@ export class OursDesMontagnes extends Creature {
 
         this.init([["Or", 20], ["Terre", 20]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(35);
         this.stat("Force").init(35);

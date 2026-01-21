@@ -16,7 +16,7 @@ export class Torche extends Item {
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner == this.system.game.player || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -27,7 +27,7 @@ export class Torche extends Item {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect(this.owner.adversary().zone("Terrain").cards[0]);
+            this.useEffect(this.adversary().zone("Terrain").cards[0]);
         }
     };
 
@@ -36,9 +36,12 @@ export class Torche extends Item {
             this.owner.ressource("Feu").production += 2;
         }
         else {
+            this.targeting(target);
+
             target.damageByEffect(20);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

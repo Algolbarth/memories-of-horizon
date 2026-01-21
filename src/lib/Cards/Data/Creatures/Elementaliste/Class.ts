@@ -11,7 +11,7 @@ export class Elementaliste extends Creature {
 
         this.init([["Or", 20]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -21,7 +21,7 @@ export class Elementaliste extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.families.total().includes("Élémentaire")) {
+            if (card.isFamily("Élémentaire")) {
                 return true;
             }
             return false;

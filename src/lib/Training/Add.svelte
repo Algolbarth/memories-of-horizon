@@ -34,7 +34,7 @@
 		for (const card of system.cards.instance) {
 			let name = card.name.toLowerCase();
 
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (!card.trait("Légendaire").value() || system.train.add.entity == "bot") && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain")) && (familySelect == "Toutes" || card.families.total().includes(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
+			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (!card.trait("Légendaire").value() || system.train.add.entity == "bot") && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain")) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.elements.total().includes(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
 				tab.push(card);
 			}
 		}

@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import type { Card } from '../../../Class';
+import { Building } from '../../../Class/Building';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -11,7 +12,7 @@ export class DefenseurDeLaCite extends Creature {
 
         this.init([["Or", 15], ["Terre", 15]]);
 
-        this.families.base.push("Nain");
+        this.initFamily(["Nain"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
@@ -21,7 +22,7 @@ export class DefenseurDeLaCite extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.type == "Bâtiment" && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card instanceof Building && card.owner == this.owner) {
             this.stat("Endurance").increase(2);
         }
     };

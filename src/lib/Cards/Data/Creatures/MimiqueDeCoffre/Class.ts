@@ -17,13 +17,16 @@ export class MimiqueDeCoffre extends Creature {
     };
 
     useEffect = () => {
-        this.move("Terrain", this.owner.adversary());
+        this.move("Terrain", this.adversary());
         this.pose();
     };
 
     dieEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.adversary().draw(5);
+            let cards = this.adversary().draw(5);
+            for (const c of cards) {
+                c.lock();
+            }
         }
     };
 };

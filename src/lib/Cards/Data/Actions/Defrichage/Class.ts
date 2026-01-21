@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import { copy } from '../../../../Utils';
 import { Action } from '../../../Class/Action';
+import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
 export class Defrichage extends Action {
@@ -17,9 +18,9 @@ export class Defrichage extends Action {
     useEffect = () => {
         this.owner.zone("Terrain").size++;
 
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature") {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
                 card.stat("Constitution").increase(this.owner.zone("Terrain").size);
             }
         }

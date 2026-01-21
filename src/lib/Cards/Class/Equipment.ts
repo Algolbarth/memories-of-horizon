@@ -15,7 +15,7 @@ export class Equipment extends Item {
     constructor(system: System) {
         super(system);
 
-        this.families.base.push("Équipement");
+        this.initFamily(["Équipement"]);
 
         this.addEquipStat("Force", 0);
         this.addEquipStat("Vitalité", 0);
@@ -49,19 +49,21 @@ export class Equipment extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.canEquip()) {
-                return true;
+        if (this.owner) {
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (card.type == "Créature" && card.canEquip()) {
+                    return true;
+                }
             }
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.system.game && this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);
         }
-        else {
+        else if (this.owner) {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
@@ -77,18 +79,22 @@ export class Equipment extends Item {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         target.equip(this);
+
         if (this.equipStat("Vitalité").value() > 0) {
             target.stat("Santé").increase(this.equipStat("Vitalité").value());
         }
         if (this.equipStat("Maîtrise").value() > 0) {
             target.stat("Initiative").increase(this.equipStat("Maîtrise").value());
         }
+
         this.pose();
     };
 
     remove = () => {
-        if (this.bearer != undefined) {
+        if (this.owner && this.bearer != undefined) {
             this.owner.ressource("Mana").production -= this.equipStat("Magie").value();
             for (let i = 0; i < this.bearer.equipments.length; i++) {
                 if (this.bearer.equipments[i] == this) {
@@ -98,10 +104,13 @@ export class Equipment extends Item {
             }
             this.bearer = undefined;
         }
-        else {
+        else if (this.zone && this.slot) {
             this.zone.cards.splice(this.slot, 1);
             for (let i = this.slot; i < this.zone.cards.length; i++) {
-                this.zone.cards[i].slot--;
+                let card = this.zone.cards[i];
+                if (card.slot) {
+                    card.slot--;
+                }
             }
         }
         this.zone = undefined;

@@ -9,7 +9,7 @@ export class Garde extends Creature {
 
         this.init([["Or", 20]]);
 
-        this.families.base.push("Humain");
+        this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

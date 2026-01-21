@@ -11,7 +11,7 @@ export class Lion extends Creature {
 
         this.init([["Or", 30], ["Feu", 30]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
@@ -20,9 +20,9 @@ export class Lion extends Creature {
     };
 
     useEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
-            if (card.type == "Créature" && card.families.total().includes("Bête")) {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
+            if (card instanceof Creature && card.isFamily("Bête")) {
                 card.stat("Constitution").increase(5);
                 card.stat("Force").increase(5);
             }

@@ -16,7 +16,7 @@ export class Menace extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0 || (this.owner == this.system.game.player && this.owner.zone("Terrain").cards.length > 0)) {
+        if (this.adversary().zone("Terrain").cards.length > 0 || (this.owner == this.system.game.player && this.owner.zone("Terrain").cards.length > 0)) {
             return true;
         }
         return false;
@@ -29,7 +29,7 @@ export class Menace extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined) {
                     target = card;
                 }
@@ -42,8 +42,11 @@ export class Menace extends Action {
     };
 
     useEffect = (target: Unit) => {
+        this.targeting(target);
+
         target.stat("Protection").increase(5);
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

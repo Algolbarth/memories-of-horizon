@@ -11,7 +11,7 @@ export class Vestale extends Creature {
 
         this.init([["Or", 10], ["Feu", 10]]);
 
-        this.families.base.push("Gobelin");
+        this.initFamily(["Gobelin"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
@@ -24,7 +24,7 @@ export class Vestale extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card.type == "Créature") {
+                if (check == false && card instanceof Creature) {
                     check = true;
                 }
             }
@@ -40,7 +40,7 @@ export class Vestale extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
@@ -55,11 +55,15 @@ export class Vestale extends Creature {
     };
 
     useEffect = (target: Creature | undefined, choice: string | undefined) => {
-        if (choice == "strenght") {
-            target.stat("Force").increase(20);
-        }
-        else if (choice == "heal") {
-            target.heal(20);
+        if (target != undefined) {
+            this.targeting(target);
+
+            if (choice == "strenght") {
+                target.stat("Force").increase(20);
+            }
+            else if (choice == "heal") {
+                target.heal(20);
+            }
         }
 
         this.move("Terrain");

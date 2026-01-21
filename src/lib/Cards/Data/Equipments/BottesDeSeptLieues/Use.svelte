@@ -7,7 +7,7 @@
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card instanceof Creature && card.families.total().includes("Géant") && card.canEquip()) {
+		if (card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
 			return true;
 		}
 		return false;
@@ -22,5 +22,7 @@
 </script>
 
 {#if system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{#if system.game && system.game.use.card && system.game.use.card.owner}
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	{/if}
 {/if}

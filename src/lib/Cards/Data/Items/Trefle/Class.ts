@@ -10,7 +10,7 @@ export class Trefle extends Item {
 
         this.init([["Or", 10], ["Végétal", 10]]);
 
-        this.families.base.push("Plante");
+        this.initFamily(["Plante"]);
 
         this.text = Text;
     };

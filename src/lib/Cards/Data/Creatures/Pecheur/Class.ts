@@ -11,7 +11,7 @@ export class Pecheur extends Creature {
 
         this.init([["Or", 8], ["Eau", 8]]);
 
-        this.families.base.push("Ondin");
+        this.initFamily(["Ondin"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
@@ -21,7 +21,7 @@ export class Pecheur extends Creature {
 
     useEffect = () => {
         let read_condition = (card: Card) => {
-            if (card.type == "Créature" && card.families.total().includes("Poisson")) {
+            if (card instanceof Creature && card.isFamily("Poisson")) {
                 return true;
             }
             return false;

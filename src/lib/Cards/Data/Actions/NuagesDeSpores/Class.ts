@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class NuageDeSpores extends Action {
     name = "Nuage de spores";
@@ -15,8 +16,8 @@ export class NuageDeSpores extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.adversary().zone("Terrain").cards) {
-            if (card.type == "Créature") {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -24,9 +25,9 @@ export class NuageDeSpores extends Action {
     };
 
     useEffect = () => {
-        let adversary_land = copy(this.owner.adversary().zone("Terrain").cards);
-        for (const card of adversary_land) {
-            if (card.type == "Créature") {
+        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        for (const card of adversary_battlefield) {
+            if (card instanceof Creature) {
                 card.stat("Poison").increase(5);
             }
         }

@@ -1,6 +1,7 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
 import { Action } from '../../../Class/Action';
+import { Building } from '../../../Class/Building';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -16,7 +17,7 @@ export class Eboulement extends Action {
     };
 
     canUse = () => {
-        if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -29,7 +30,7 @@ export class Eboulement extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.adversary().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined) {
                     target = card;
                 }
@@ -42,13 +43,16 @@ export class Eboulement extends Action {
     };
 
     useEffect = (target: Unit) => {
-        if (target.type == "Bâtiment" && target.stat("Étourdissement").value() >= 1) {
+        this.targeting(target);
+
+        if (target instanceof Building && target.stat("Étourdissement").value() >= 1) {
             target.damageByEffect(20);
         }
         else {
             target.stat("Étourdissement").fix(1);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

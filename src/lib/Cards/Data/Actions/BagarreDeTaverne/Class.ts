@@ -2,6 +2,7 @@ import { copy } from '../../../../Utils';
 import type { System } from '../../../../System/Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
+import { Creature } from '../../../Class/Creature';
 
 export class BagarreDeTaverne extends Action {
     name = "Bagarre de taverne";
@@ -22,10 +23,10 @@ export class BagarreDeTaverne extends Action {
     };
 
     useEffect = () => {
-        let land = copy(this.owner.zone("Terrain").cards);
-        for (const card of land) {
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+        for (const card of battlefield) {
             card.damageByEffect(5);
-            if (card.type == "Créature") {
+            if (card instanceof Creature) {
                 card.stat("Force").increase(10);
             }
         }

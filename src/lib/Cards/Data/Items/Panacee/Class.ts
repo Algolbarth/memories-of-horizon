@@ -17,7 +17,7 @@ export class Panacee extends Item {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card.type == "Créature" && card.hasDebuff()) {
+            if (card instanceof Creature && card.hasDebuff()) {
                 return true;
             }
         }
@@ -44,12 +44,15 @@ export class Panacee extends Item {
     };
 
     useEffect = (target: Creature) => {
+        this.targeting(target);
+
         for (const stat of target.stats) {
             if (stat.debuff) {
                 stat.set(stat.min);
             }
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

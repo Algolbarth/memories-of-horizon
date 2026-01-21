@@ -10,7 +10,7 @@ export class EpeeDeFer extends Equipment {
 
         this.init([["Or", 25]]);
 
-        this.families.base.push("Arme");
+        this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(50);
 

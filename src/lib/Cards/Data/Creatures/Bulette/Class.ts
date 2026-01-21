@@ -10,7 +10,7 @@ export class Bulette extends Creature {
 
         this.init([["Or", 25], ["Terre", 25]]);
 
-        this.families.base.push("Bête");
+        this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
