@@ -8,7 +8,7 @@ export class FontaineDeBambou extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Eau", 25]]);
+        this.init([["Or", 20], ["Eau", 20]]);
 
         this.stat("Constitution").init(20);
 

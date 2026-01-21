@@ -10,7 +10,7 @@ export class PeauDEcorce extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Végétal", 10]]);
+        this.init([["Or", 8], ["Végétal", 8]]);
 
         this.text = Text;
     };

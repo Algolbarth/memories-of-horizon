@@ -13,7 +13,7 @@ Au choix :
 	<li>
 		Remplit le terrain allié de <CardInfo bind:system name={"Élémentaire de caillou"} />.
 	</li>
-	<li>Inflige 6 dégâts à toutes les unités adverses sur le terrain.</li>
+	<li>Inflige 5 dégâts à toutes les unités adverses sur le terrain.</li>
 </ul>
 
 <Sorcery bind:system bind:card cost={30} text={"les deux effets s'activent à la place."} />

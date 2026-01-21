@@ -18,7 +18,7 @@
 			select_action("life");
 		}}
 	>
-		Augmente de 10 la constitution de toutes les créatures alliées sur le terrain
+		Augmente de 15 la constitution de toutes les créatures alliées sur le terrain
 	</button>
 
 	<br />

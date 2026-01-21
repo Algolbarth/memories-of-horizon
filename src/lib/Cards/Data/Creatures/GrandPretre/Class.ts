@@ -54,7 +54,7 @@ export class GrandPretre extends Creature {
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 if (choice == "life") {
-                    card.stat("Constitution").increase(10);
+                    card.stat("Constitution").increase(15);
                 }
                 else if (choice == "heal") {
                     card.heal(20);

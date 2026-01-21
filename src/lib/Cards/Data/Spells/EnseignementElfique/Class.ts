@@ -10,7 +10,7 @@ export class EnseignementElfique extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Végétal", 15]]);
+        this.init([["Or", 8], ["Végétal", 8]]);
 
         this.initFamily(["Elfe"]);
 

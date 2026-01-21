@@ -38,7 +38,7 @@
 				choice = "damage";
 			}}
 		>
-			Se détruit pour infliger 3 dégâts à une unité adverse sur le terrain
+			Se détruit pour infliger 5 dégâts à une unité adverse sur le terrain
 		</button>
 	</div>
 {:else}

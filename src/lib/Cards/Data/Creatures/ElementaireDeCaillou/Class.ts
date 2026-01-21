@@ -14,8 +14,9 @@ export class ElementaireDeCaillou extends Creature {
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(3);
-        this.stat("Force").init(3);
+        this.stat("Constitution").init(2);
+        this.stat("Force").init(2);
+        this.stat("Endurance").init(1);
 
         this.text = Text;
     };
@@ -50,7 +51,7 @@ export class ElementaireDeCaillou extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            target.damageByEffect(6);
+            target.damageByEffect(5);
             this.destroy();
         }
         else {

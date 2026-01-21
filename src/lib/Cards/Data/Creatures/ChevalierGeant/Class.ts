@@ -19,7 +19,7 @@ export class ChevalierGeant extends Creature {
         this.stat("Endurance").init(25);
         this.stat("Résistance").init(25);
     };
-}
+};
 
 export class ChevalierGeantMonte extends Creature {
     name = "Chevalier géant (monté)";
@@ -32,8 +32,6 @@ export class ChevalierGeantMonte extends Creature {
         this.init([["Or", 300]]);
 
         this.initFamily(["Géant", "Chevalier"]);
-
-        this.trait("Rare").base = true;
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(150);
@@ -52,4 +50,4 @@ export class ChevalierGeantMonte extends Creature {
     dieGo = () => {
 
     };
-}
+};

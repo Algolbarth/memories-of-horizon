@@ -10,7 +10,7 @@ export class PeauDePierre extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 8], ["Terre", 8]]);
 
         this.text = Text;
     };

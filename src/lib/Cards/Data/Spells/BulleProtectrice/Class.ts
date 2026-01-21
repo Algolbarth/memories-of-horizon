@@ -10,7 +10,7 @@ export class BulleProtectrice extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Eau", 15]]);
+        this.init([["Or", 12], ["Eau", 12]]);
 
         this.text = Text;
     };

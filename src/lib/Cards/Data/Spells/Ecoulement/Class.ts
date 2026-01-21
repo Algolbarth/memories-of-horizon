@@ -8,7 +8,7 @@ export class Ecoulement extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Eau", 10]]);
+        this.init([["Or", 8], ["Eau", 8]]);
 
         this.text = Text;
     };
@@ -25,4 +25,4 @@ export class Ecoulement extends Spell {
         this.move("Défausse");
         this.pose();
     };
-}
+};

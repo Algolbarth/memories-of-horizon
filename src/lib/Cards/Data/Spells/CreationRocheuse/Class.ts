@@ -9,7 +9,7 @@ export class CreationRocheuse extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35], ["Terre", 35]]);
+        this.init([["Or", 28], ["Terre", 28]]);
 
         this.text = Text;
     };

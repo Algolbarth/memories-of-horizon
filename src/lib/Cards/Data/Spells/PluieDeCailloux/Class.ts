@@ -10,7 +10,7 @@ export class PluieDeCailloux extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Terre", 20]]);
+        this.init([["Or", 15], ["Terre", 15]]);
 
         this.text = Text;
     };
@@ -24,7 +24,7 @@ export class PluieDeCailloux extends Spell {
 
     select = () => {
         if (this.owner.ressource("Mana").total() >= 30) {
-            this.useEffect();
+            this.useEffect(undefined);
         }
         else {
             if (this.owner == this.system.game.player) {
@@ -36,7 +36,7 @@ export class PluieDeCailloux extends Spell {
         }
     };
 
-    useEffect = (choice: string) => {
+    useEffect = (choice: string | undefined) => {
         if (this.owner.ressource("Mana").total() >= 30) {
             this.owner.ressource("Mana").spend(30);
 
@@ -47,7 +47,7 @@ export class PluieDeCailloux extends Spell {
 
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.damageByEffect(6);
+                card.damageByEffect(5);
             }
         }
         else {
@@ -60,7 +60,7 @@ export class PluieDeCailloux extends Spell {
             else if (choice == "damage") {
                 let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
                 for (const card of adversary_battlefield) {
-                    card.damageByEffect(6);
+                    card.damageByEffect(5);
                 }
             }
         }

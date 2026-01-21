@@ -24,6 +24,7 @@ export class Bandit extends Creature {
             this.stat("Constitution").increase(5);
             this.stat("Force").increase(5);
         }
+
         this.move("Terrain");
         this.pose();
     };
