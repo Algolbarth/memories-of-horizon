@@ -71,6 +71,7 @@ export * from './Pelle';
 export * from './PlastronEnCuir';
 export * from './PlastronEnFer';
 export * from './PlastronEnPlatine';
+export * from './PoeleAFrire';
 export * from './Rapiere';
 export * from './RobeDeMage';
 export * from './RobeDeVelours';

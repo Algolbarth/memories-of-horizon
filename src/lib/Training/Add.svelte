@@ -128,7 +128,7 @@
 							</div>
 
 							<div style="text-align:right;">
-								{#if zone.size != undefined && zone.size > zone.cards.length}
+								{#if zone.size == undefined || zone.size > zone.cards.length}
 									<button
 										on:click={() => {
 											zone.cards.push(card.name);
