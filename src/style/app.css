@@ -81,6 +81,11 @@
   --choice_hover: rgb(114, 49, 0);
   --choice_border: rgb(49, 49, 49);
 
+  --sorcery_effect: rgb(0, 255, 255);
+  --resolve_effect: rgb(0, 100, 0);
+  --prime_effect: rgb(255, 255, 0);
+  --source_effect: rgb(21, 21, 201);
+
   --asfalt: url(/assets/Textures/asfalt-light.png);
   --grunge: url(/assets/Textures/bedge-grunge.png);
   --scroll: url(/assets/Textures/black-paper.png);

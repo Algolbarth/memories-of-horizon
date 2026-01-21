@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import Source from "../../../Utils/Source.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Quand arrive sur le terrain : dépense 5 eau pour augmenter de 5 sa constitution et sa force.
+Quand posé : <Source bind:system bind:card cost={5} text={"augmente de 5 sa constitution et sa force."} />

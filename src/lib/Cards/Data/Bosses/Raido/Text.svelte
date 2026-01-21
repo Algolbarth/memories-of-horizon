@@ -14,4 +14,4 @@ Quand une créature alliée est posée : augmente de 5 la constitution et la for
 Quand une unité adverse est détruite : produit autant d'or que la constitution max de cette créature.
 <br />
 <br />
-Quand joue : dépense en boucle 1 or et augmente de 1 sa constitution et sa force à chaque fois.
+Quand joue : dépense autant d'or que possible et augmente d'autant sa constitution et sa force.
