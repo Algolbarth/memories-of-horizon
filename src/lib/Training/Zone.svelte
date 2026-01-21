@@ -35,6 +35,8 @@
 						}}
 					/>
 					)
+				{:else}
+					{zone.cards.length}
 				{/if}
 			</div>
 

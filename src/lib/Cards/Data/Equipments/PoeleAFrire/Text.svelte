@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : inflige 5 dégâts à l'unité attaquée pour chaque carte alliée de famille Nourriture dans la défausse.
+Quand la créature équipée attaque : inflige 5 dégâts à l'unité attaquée pour chaque objet allié de famille Nourriture dans la défausse.

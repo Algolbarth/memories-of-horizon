@@ -2,6 +2,7 @@ import type { System } from '../../../../System/Class';
 import { copy } from '../../../../Utils';
 import type { Unit } from '../../../Class';
 import { Equipment } from '../../../Class/Equipment';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 
 export class PoeleAFrire extends Equipment {
@@ -12,8 +13,6 @@ export class PoeleAFrire extends Equipment {
 
         this.init([["Or", 40], ["Feu", 40]]);
 
-        this.initFamily(["Nourriture"]);
-
         this.text = Text;
     };
 
@@ -22,7 +21,7 @@ export class PoeleAFrire extends Equipment {
 
         let defausse = copy(this.owner.zone("Défausse").cards);
         for (const card of defausse) {
-            if (card.isFamily("Nourriture")) {
+            if (card instanceof Item && card.isFamily("Nourriture")) {
                 damage += 5;
             }
         }

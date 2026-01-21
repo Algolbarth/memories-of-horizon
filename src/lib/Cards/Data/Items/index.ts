@@ -47,6 +47,7 @@ export * from './PotionInterdite';
 export * from './PotionParfumee';
 export * from './PouletRoti';
 export * from './Remede';
+export * from './Salade';
 export * from './SardinesEnBoite';
 export * from './Sifflet';
 export * from './TheVert';
