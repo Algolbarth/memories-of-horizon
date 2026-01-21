@@ -59,6 +59,7 @@ export * from './ElementaireExplosif';
 export * from './ElementaireMarin';
 export * from './Elementaliste';
 export * from './Elfe';
+export * from './Empereur';
 export * from './Fermier';
 export * from './Forgeron';
 export * from './Garde';

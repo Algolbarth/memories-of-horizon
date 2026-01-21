@@ -27,6 +27,7 @@ export class Prince extends Creature {
                 this.stat("Force").increase(10);
             }
         }
+
         this.move("Terrain");
         this.pose();
     };
