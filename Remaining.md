@@ -137,6 +137,9 @@ Mage des morts
 Cimetière : lieu pour les cartes d'élément Mort.
 Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
 
+### Arcane
+Git : créature, quand arrive sur le terrain : génère un esprit temporaire.
+
 ### Metal
 Gnome : créature, quand arrive sur le terrain : génère un Mini automate sur le terrain.
 Mini automate : créature machine.

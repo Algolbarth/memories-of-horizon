@@ -104,11 +104,11 @@ export class Equipment extends Item {
             }
             this.bearer = undefined;
         }
-        else if (this.zone && this.slot) {
+        else if (this.zone != undefined && this.slot != undefined) {
             this.zone.cards.splice(this.slot, 1);
             for (let i = this.slot; i < this.zone.cards.length; i++) {
                 let card = this.zone.cards[i];
-                if (card.slot) {
+                if (card.slot != undefined) {
                     card.slot--;
                 }
             }

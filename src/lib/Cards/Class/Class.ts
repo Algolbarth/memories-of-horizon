@@ -131,7 +131,7 @@ export class Card {
             this.zone.cards.splice(this.slot, 1);
             for (let i = this.slot; i < this.zone.cards.length; i++) {
                 let card = this.zone.cards[i];
-                if (card.slot) {
+                if (card.slot != undefined) {
                     card.slot--;
                 }
             }

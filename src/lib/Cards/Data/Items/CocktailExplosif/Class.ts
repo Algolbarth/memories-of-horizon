@@ -1,16 +1,16 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
-import { Action } from '../../../Class/Action';
+import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class SouffleEnflamme extends Action {
-    name = "Souffle enflammé";
+export class CocktailExplosif extends Item {
+    name = "Cocktail explosif";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Feu", 15]]);
+        this.init([["Or", 25], ["Feu", 25]]);
 
         this.text = Text;
     };
@@ -34,13 +34,13 @@ export class SouffleEnflamme extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(20);
+        target.stat("Brûlure").increase(10);
         if (target.slot != undefined && target.zone) {
             if (target.slot > 0) {
-                target.zone.cards[target.slot - 1].damageByEffect(20);
+                target.zone.cards[target.slot - 1].stat("Brûlure").increase(10);
             }
             if (target.slot < target.zone.cards.length - 1) {
-                target.zone.cards[target.slot + 1].damageByEffect(20);
+                target.zone.cards[target.slot + 1].stat("Brûlure").increase(10);
             }
         }
 

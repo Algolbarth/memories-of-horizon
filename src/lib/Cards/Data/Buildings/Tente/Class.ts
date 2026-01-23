@@ -17,7 +17,7 @@ export class Tente extends Building {
     };
 
     startStepEffect = () => {
-        if (this.zone && this.slot && this.zone.name == "Terrain") {
+        if (this.zone != undefined && this.slot != undefined && this.zone.name == "Terrain") {
             if (this.slot > 0) {
                 let up_card = this.zone.cards[this.slot - 1];
                 if (up_card instanceof Creature) {
