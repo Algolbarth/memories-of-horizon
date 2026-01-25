@@ -11,7 +11,7 @@ export class PoeleAFrire extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40], ["Feu", 40]]);
+        this.init([["Or", 20], ["Feu", 20]]);
 
         this.text = Text;
     };
@@ -22,7 +22,7 @@ export class PoeleAFrire extends Equipment {
         let defausse = copy(this.owner.zone("Défausse").cards);
         for (const card of defausse) {
             if (card instanceof Item && card.isFamily("Nourriture")) {
-                damage += 5;
+                damage += 10;
             }
         }
 

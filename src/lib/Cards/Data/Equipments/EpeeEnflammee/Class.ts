@@ -13,12 +13,12 @@ export class EpeeEnflammee extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.equipStat("Force").init(20);
+        this.equipStat("Force").init(50);
 
         this.text = Text;
     };
 
     fightEffect = (defender: Unit) => {
-        defender.damageByEffect(20);
+        defender.damageByEffect(50);
     };
 };
