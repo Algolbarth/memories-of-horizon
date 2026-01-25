@@ -9,7 +9,7 @@ export class Vestale extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Feu", 10]]);
+        this.init([["Or", 8], ["Feu", 8]]);
 
         this.initFamily(["Gobelin"]);
 

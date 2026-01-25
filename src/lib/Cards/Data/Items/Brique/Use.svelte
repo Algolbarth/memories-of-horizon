@@ -20,8 +20,10 @@
 	}
 
 	function select_action(card: Card) {
-		system.game.use.card.useEffect(card, choice);
-		system.game.use.reset();
+		if (system.game && system.game.use.card) {
+			system.game.use.card.useEffect(card, choice);
+			system.game.use.reset();
+		}
 	}
 </script>
 
@@ -56,6 +58,7 @@
 	>
 		↩
 	</button>
+
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
 		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} select_condition={select_condition_1} {select_action} />
 	{/if}
@@ -68,6 +71,7 @@
 	>
 		↩
 	</button>
+
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
 		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} select_condition={select_condition_2} {select_action} />
 	{/if}

@@ -53,3 +53,5 @@ X à chaque action/attaque => 4X
 
 X pendant cette étape => X/2
 X pendant ce tour de combat => X/2
+
+X choix parmis de effets de coût Y => Y + (XY/10)

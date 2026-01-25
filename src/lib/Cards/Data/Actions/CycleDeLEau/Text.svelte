@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
+	import Source from "../../../Utils/Source.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -15,4 +16,4 @@ Quand posé, au choix :
 	<li>Augmente de 1 la taille du terrain allié.</li>
 </ul>
 
-Dépense 100 eau pour augmenter de 1 la taille de la pile, la réserve et du terrain alliés.
+<Source bind:system bind:card cost={100} text={"augmente de 1 la taille de la pile, la réserve et du terrain alliés."} />

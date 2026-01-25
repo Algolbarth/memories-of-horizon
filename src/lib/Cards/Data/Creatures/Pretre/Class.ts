@@ -9,7 +9,7 @@ export class Pretre extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 15]]);
 
         this.initFamily(["Humain"]);
 

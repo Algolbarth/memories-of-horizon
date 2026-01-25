@@ -9,7 +9,7 @@ export class ElementaireDesEboulis extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Terre", 20]]);
+        this.init([["Terre", 25]]);
 
         this.initFamily(["Élémentaire"]);
 
@@ -45,7 +45,7 @@ export class ElementaireDesEboulis extends Creature {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect(undefined);
+                this.useEffect("creature", undefined);
             }
         }
         else {
@@ -56,23 +56,24 @@ export class ElementaireDesEboulis extends Creature {
                         target = card;
                     }
                 }
-                this.useEffect(target);
+                this.useEffect("stun", target);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect(undefined);
+                this.useEffect("creature", undefined);
             }
         }
     };
 
-    useEffect = (target: Creature | undefined) => {
-        if (target != undefined) {
+    useEffect = (choice: string, target: Creature | undefined) => {
+        if (choice == "creature") {
+            this.move("Terrain");
+        }
+        else if (choice == "effect" && target != undefined) {
             this.targeting(target);
 
             target.stat("Étourdissement").fix(1);
+
             this.destroy();
-        }
-        else {
-            this.move("Terrain");
         }
 
         this.pose();

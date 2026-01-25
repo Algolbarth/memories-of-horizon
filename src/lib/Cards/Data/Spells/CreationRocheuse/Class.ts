@@ -9,7 +9,7 @@ export class CreationRocheuse extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 28], ["Terre", 28]]);
+        this.init([["Or", 30], ["Terre", 30]]);
 
         this.text = Text;
     };
@@ -38,6 +38,7 @@ export class CreationRocheuse extends Spell {
     useEffect = (choice: string) => {
         if (this.owner.ressource("Mana").total() >= 50) {
             this.owner.ressource("Mana").spend(50);
+
             this.owner.getCard("Élémentaire de roche").add("Terrain");
             this.owner.getCard("Mur de roche").add("Terrain");
         }

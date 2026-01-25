@@ -10,7 +10,7 @@ export class Torche extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Feu", 8]]);
+        this.init([["Or", 6], ["Feu", 6]]);
 
         this.text = Text;
     };
@@ -31,11 +31,11 @@ export class Torche extends Item {
         }
     };
 
-    useEffect = (target: Creature | undefined) => {
-        if (target == undefined) {
+    useEffect = (choice: string, target: Creature | undefined) => {
+        if (choice == "production") {
             this.owner.ressource("Feu").production += 2;
         }
-        else {
+        else if (choice == "damage" && target != undefined) {
             this.targeting(target);
 
             target.damageByEffect(20);

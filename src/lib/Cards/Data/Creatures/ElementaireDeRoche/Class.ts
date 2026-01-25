@@ -10,7 +10,7 @@ export class ElementaireDeRoche extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Terre", 50]]);
+        this.init([["Terre", 60]]);
 
         this.initFamily(["Élémentaire"]);
 

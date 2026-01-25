@@ -30,6 +30,7 @@ class DruideMarchand extends Creature {
         else if (choice == "ox") {
             this.transform("Druide marchand (forme boeuf)");
         }
+
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };

@@ -10,7 +10,7 @@ export class GrandPretre extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 110]]);
+        this.init([["Or", 125]]);
 
         this.initFamily(["Humain"]);
 

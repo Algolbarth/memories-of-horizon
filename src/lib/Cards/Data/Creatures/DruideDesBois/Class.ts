@@ -32,6 +32,7 @@ class DruideDesBois extends Creature {
         else if (choice == "fox") {
             this.transform("Druide des bois (forme renard)");
         }
+
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
@@ -68,8 +69,8 @@ export class DruideDesBoisRenard extends DruideDesBois {
 
         this.trait("Rare").base = true;
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
         this.stat("Intelligence").init(5);
     };
 };

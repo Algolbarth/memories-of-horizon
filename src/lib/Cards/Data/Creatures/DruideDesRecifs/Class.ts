@@ -7,7 +7,7 @@ class DruideDesRecifs extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Eau", 25]]);
+        this.init([["Or", 30], ["Eau", 30]]);
 
         this.initFamily(["Druide"]);
 
@@ -30,6 +30,7 @@ class DruideDesRecifs extends Creature {
         else if (choice == "turtle") {
             this.transform("Druide des récifs (forme tortue)");
         }
+
         this.zone.cards[this.slot].move("Terrain");
         this.pose();
     };
@@ -44,8 +45,8 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
         this.initFamily(["Ondin"]);
 
-        this.stat("Constitution").init(25);
-        this.stat("Force").init(25);
+        this.stat("Constitution").init(30);
+        this.stat("Force").init(30);
     };
 
     startStepEffect = () => {
@@ -66,8 +67,8 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
 
         this.trait("Rare").base = true;
 
-        this.stat("Constitution").init(35);
-        this.stat("Force").init(35);
+        this.stat("Constitution").init(40);
+        this.stat("Force").init(40);
         this.stat("Endurance").init(10);
     };
 };

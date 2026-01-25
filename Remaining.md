@@ -7,7 +7,7 @@ Ajouter les éléments manquants dans le mode entraînement (deck)
 Ajouter une option finir automatiquement pour les combats 
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, réserve) 
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
-Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) 
+Ajouter des stats lors d'une partie (nombres de cartes posées, d'étapes, de phases de combats perdues) 
 Ajouter ces stats pour le compte 
 Ajouter les stats des decks (types de carte, éléments, familles, niveau) 
 Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la pile 
@@ -331,7 +331,7 @@ Eclipse solaire : révèle toutes les cartes dans la réserve adverse et en dét
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
-Ousen : boss de niv 4, génèrer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
+Ousen : boss de niv 4, génèrer des soldats avec des effets selon le type de carte posé (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la constitution de gyoun
 
 # Lore

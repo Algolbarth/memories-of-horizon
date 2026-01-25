@@ -10,7 +10,7 @@ export class Croissance extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Végétal", 25]]);
+        this.init([["Or", 30], ["Végétal", 30]]);
 
         this.text = Text;
     };

@@ -10,7 +10,7 @@ export class Vigilance extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 12]]);
 
         this.text = Text;
     };

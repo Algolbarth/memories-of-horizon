@@ -11,7 +11,7 @@ export class Brique extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Terre", 8]]);
+        this.init([["Or", 6], ["Terre", 6]]);
 
         this.text = Text;
     };
@@ -45,7 +45,7 @@ export class Brique extends Item {
         if (choice == "heal") {
             target.heal(20);
         }
-        else {
+        else if (choice == "damage") {
             target.damageByEffect(20);
         }
 

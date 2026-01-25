@@ -7,7 +7,7 @@ class DruideDeFeu extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Feu", 25]]);
+        this.init([["Or", 30], ["Feu", 30]]);
 
         this.initFamily(["Druide"]);
 
@@ -45,8 +45,8 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
 
         this.initFamily(["Gobelin"]);
 
-        this.stat("Constitution").init(35);
-        this.stat("Force").init(35);
+        this.stat("Constitution").init(40);
+        this.stat("Force").init(40);
     };
 
     startStepEffect = () => {
@@ -67,8 +67,8 @@ export class DruideDeFeuLezard extends DruideDeFeu {
 
         this.trait("Rare").base = true;
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
         this.stat("Adresse").init(25);
     };
 };

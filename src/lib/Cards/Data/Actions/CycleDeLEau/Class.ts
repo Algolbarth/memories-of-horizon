@@ -9,7 +9,7 @@ export class CycleDeLEau extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30], ["Eau", 30]]);
+        this.init([["Or", 40], ["Eau", 35]]);
 
         this.text = Text;
     };

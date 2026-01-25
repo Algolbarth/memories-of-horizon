@@ -45,8 +45,8 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
         this.initFamily(["Humain"]);
 
-        this.stat("Constitution").init(12);
-        this.stat("Force").init(12);
+        this.stat("Constitution").init(10);
+        this.stat("Force").init(10);
     };
 
     startStepEffect = () => {

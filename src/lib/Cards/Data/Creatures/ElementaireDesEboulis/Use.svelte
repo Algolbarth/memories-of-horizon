@@ -17,7 +17,7 @@
 
 	function select_action(card: Card | undefined) {
 		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(card);
+			system.game.use.card.useEffect(choice, card);
 			system.game.use.reset();
 		}
 	}
@@ -28,6 +28,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
+				choice = "creature";
 				select_action(undefined);
 			}}
 		>
@@ -39,7 +40,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "stun";
+				choice = "effect";
 			}}
 		>
 			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature adverse sur le terrain
@@ -57,4 +58,5 @@
 
 	{#if system.game && system.game.use.card}
 		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {select_condition} {select_action} />
-	{/if}{/if}
+	{/if}
+{/if}

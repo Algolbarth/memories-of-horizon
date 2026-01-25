@@ -15,8 +15,6 @@ export class DagueEmpoisonnee extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.equipStat("Force").init(5);
-
         this.text = Text;
     };
 

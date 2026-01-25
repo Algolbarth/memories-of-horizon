@@ -50,6 +50,7 @@
 	>
 		↩
 	</button>
+
 	{#if system.game && system.game.use.card}
 		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {select_condition} {select_action} />
 	{/if}

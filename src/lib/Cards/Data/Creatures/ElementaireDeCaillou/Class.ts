@@ -10,7 +10,7 @@ export class ElementaireDeCaillou extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Terre", 3]]);
+        this.init([["Terre", 4]]);
 
         this.initFamily(["Élémentaire"]);
 
@@ -34,28 +34,28 @@ export class ElementaireDeCaillou extends Creature {
                 this.system.game.use.set(this, Use);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect(undefined);
+                this.useEffect("creature", undefined);
             }
         }
         else {
             if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.adversary().zone("Terrain").cards[0]);
+                this.useEffect("effect", this.adversary().zone("Terrain").cards[0]);
             }
             else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect(undefined);
+                this.useEffect("creature", undefined);
             }
         }
     };
 
-    useEffect = (target: Unit | undefined) => {
-        if (target != undefined) {
+    useEffect = (choice: string, target: Unit | undefined) => {
+        if (choice == "creature") {
+            this.move("Terrain");
+        }
+        else if (choice == "effect" && target != undefined) {
             this.targeting(target);
 
             target.damageByEffect(5);
             this.destroy();
-        }
-        else {
-            this.move("Terrain");
         }
 
         this.pose();
