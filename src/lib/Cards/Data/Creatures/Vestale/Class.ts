@@ -46,7 +46,7 @@ export class Vestale extends Creature {
             }
 
             if (target != undefined) {
-                this.useEffect(target, "strenght");
+                this.useEffect(target, "strength");
             }
             else {
                 this.useEffect(target, undefined);
@@ -58,7 +58,7 @@ export class Vestale extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            if (choice == "strenght") {
+            if (choice == "strength") {
                 target.stat("Force").increase(20);
             }
             else if (choice == "heal") {

@@ -24,14 +24,14 @@
 </script>
 
 {#if choice == undefined}
-	<div class="center" style="text-align:center">
+	<div class="center">
 		<button
 			class="big choice"
 			on:click={() => {
 				choice = "strength";
 			}}
 		>
-			Augmente de 20 la force d'une créature alliée sur le terrain
+			Augmente de 100 la force d'une créature alliée sur le terrain
 		</button>
 
 		<br />
@@ -39,10 +39,10 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "heal";
+				choice = "balance";
 			}}
 		>
-			Soigne 20 blessures d'une créature alliée sur le terrain
+			Augmente de 50 la constitution et la force d'une créature alliée sur le terrain
 		</button>
 	</div>
 {:else}
