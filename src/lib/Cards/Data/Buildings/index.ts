@@ -22,6 +22,7 @@ export * from './Etable';
 export * from './Fontaine';
 export * from './FontaineDeBambou';
 export * from './GarnisonDesMonts';
+export * from './GuildeDesAventuriers';
 export * from './LacDeLave';
 export * from './Maison';
 export * from './Marche';

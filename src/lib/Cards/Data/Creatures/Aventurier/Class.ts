@@ -30,13 +30,21 @@ export class Aventurier extends Creature {
     };
 
     useEffect = (choice: string) => {
+        let nb_guild: number = 0;
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card.name == "Guilde des aventuriers") {
+                nb_guild++;
+            }
+        }
+
         let read_condition = (card: Card) => {
             if (card.type == choice) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(1, read_condition);
+        this.owner.draw(1 + nb_guild, read_condition);
+
         this.move("Terrain");
         this.pose();
     };

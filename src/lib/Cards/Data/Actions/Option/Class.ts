@@ -9,7 +9,7 @@ export class Option extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 7]]);
+        this.init([["Or", 8]]);
 
         this.text = Text;
     };
