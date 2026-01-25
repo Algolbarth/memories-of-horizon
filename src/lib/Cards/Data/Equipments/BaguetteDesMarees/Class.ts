@@ -8,7 +8,7 @@ export class BaguetteDesMarees extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40], ["Eau", 40]]);
+        this.init([["Or", 45], ["Eau", 45]]);
 
         this.initFamily(["Arme"]);
 

@@ -10,6 +10,8 @@ export class ManuelDeMagie extends Equipment {
 
         this.init([["Or", 20]]);
 
+        this.equipStat("Magie").init(5);
+
         this.text = Text;
     };
 

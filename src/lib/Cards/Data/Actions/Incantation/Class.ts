@@ -10,7 +10,7 @@ export class Incantation extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 5]]);
 
         this.text = Text;
     };
