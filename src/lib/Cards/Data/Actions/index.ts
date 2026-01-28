@@ -61,6 +61,7 @@ export * from './MilieuAquatique';
 export * from './MonstreErrant';
 export * from './Mue';
 export * from './Multisoin';
+export * from './Musculation';
 export * from './Noyade';
 export * from './NuagesDeSpores';
 export * from './Omniscience';
