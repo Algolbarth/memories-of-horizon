@@ -9,7 +9,7 @@ export class ChefLieu extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 50]]);
 
         this.text = Text;
     };

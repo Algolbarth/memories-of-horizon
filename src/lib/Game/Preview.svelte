@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card } from "../Cards/Class";
 	import { Creature } from "../Cards/Class/Creature";
+	import { Location } from "../Cards/Class/Location";
 	import type { System } from "../System/Class";
 
 	// svelte-ignore export_let_unused
@@ -13,7 +14,7 @@
 	$: is_player = card.owner == system.game?.player ? true : false;
 </script>
 
-{#if system.game && card.zone}
+{#if system.game && card.owner && card.zone}
 	<div class={(is_player || select_action != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
 		<div id={is_player || select_action != undefined ? "infos" : ""}>
 			{#if card.locked}
@@ -82,13 +83,13 @@
 							Poser
 						{/if}
 					{:else if card.zone.name == "Région"}
-						{#if card == card.owner?.place}
+						{#if card == card.owner.place}
 							<span>Actif</span>
-						{:else if card.owner?.ressource("Or").total() >= 5}
+						{:else if card.owner.ressource("Or").total() >= 5}
 							<button
 								class="active"
 								on:click={() => {
-									if (card.owner) {
+									if (card.owner && card instanceof Location) {
 										card.owner.place = card;
 										card.owner.ressource("Or").spend(5);
 									}

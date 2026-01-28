@@ -177,7 +177,9 @@
 	<View bind:system />
 </div>
 
-<Pause bind:system />
+{#if game.pause}
+	<Pause bind:system bind:game />
+{/if}
 
 <style>
 	#container {

@@ -1,10 +1,8 @@
 # Mécaniques
 
-Mettre les getter dans leurs dossiers respectif 
-Modifier l'histoire pour intégrer les planètes et l'espace 
+Modifier l'histoire pour intégrer les planètes et l'espace
 Finir l'histoire impériale (pk c'est souvent des humains) 
-Ajouter les éléments manquants dans le mode entraînement (deck) 
-Ajouter une option finir automatiquement pour les combats 
+Ajouter une option finir automatiquement pour les combats
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, réserve) 
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
 Ajouter des stats lors d'une partie (nombres de cartes posées, d'étapes, de phases de combats perdues) 

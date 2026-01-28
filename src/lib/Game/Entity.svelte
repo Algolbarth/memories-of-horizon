@@ -76,16 +76,16 @@
 
 <style>
 	.zone {
-		margin-bottom: 1%;
+		margin-bottom: 1vw;
 		text-align: left;
 	}
 
 	.left {
-		margin-right: 1%;
+		margin-right: 0.5vw;
 	}
 
 	.right {
-		margin-left: 1%;
+		margin-left: 0.5vw;
 	}
 
 	div.life {

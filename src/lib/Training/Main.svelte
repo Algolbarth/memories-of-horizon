@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Entity from "./Entity.svelte";
 	import Zone from "./Zone.svelte";
-	import Add from "./Add.svelte";
+	import AddCard from "./AddCard.svelte";
+	import ChangeDeck from "./ChangeDeck.svelte";
 	import View from "../Cards/View/Main.svelte";
 	import { Game } from "../Game/Game";
 	import type { System } from "../System/Class";
@@ -14,6 +15,7 @@
 		<button
 			class="square close"
 			on:click={() => {
+				system.view.reset();
 				system.page = "Menu";
 			}}
 		>
@@ -36,8 +38,7 @@
 			class="taskbar train"
 			on:click={() => {
 				system.view.reset();
-				system.game = new Game(system, "Entraînement", system.train.deck);
-				system.game.init();
+				system.game = new Game(system, "Entraînement");
 				system.page = "Game";
 			}}
 		>
@@ -53,15 +54,22 @@
 		<Entity bind:system bind:entity={system.train.player} />
 		<Entity bind:system bind:entity={system.train.bot} />
 	</div>
+
 	{#each system.train.bot.zones as zone, i}
 		<div class="bi-zone">
-			<Zone bind:system entity="player" bind:zone={system.train.player.zones[i]} />
-			<Zone bind:system entity="bot" bind:zone />
+			<Zone bind:system is_bot={false} bind:zone={system.train.player.zones[i]} />
+			<Zone bind:system is_bot={true} bind:zone />
 		</div>
 	{/each}
 </div>
 
-<Add bind:system />
+{#if system.train.add.zone != undefined}
+	<AddCard bind:system bind:zone={system.train.add.zone} />
+{/if}
+
+{#if system.train.add.entity != undefined}
+	<ChangeDeck bind:system bind:entity={system.train.add.entity} />
+{/if}
 
 {#if system.train.add.zone == undefined}
 	<div class="center">

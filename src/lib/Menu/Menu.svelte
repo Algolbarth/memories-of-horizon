@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { save } from "../Login/Save";
+	import { save } from "../Account/Save";
 	import type { System } from "../System/Class";
 	import Logo from "./Logo.svelte";
 
 	export let system: System;
 
 	function logout() {
-		system.decks = [];
+		system.wild_decks = [];
 		system.account = undefined;
 		system.page = "TitleScreen";
 	}
@@ -54,13 +54,14 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						system.page = "Universe";
+						system.page = "Lore";
 					}}
 				>
-					Univers
+					Histoires
 				</button>
 			</div>
 		</div>
+
 		<div class="column">
 			<div>
 				<button

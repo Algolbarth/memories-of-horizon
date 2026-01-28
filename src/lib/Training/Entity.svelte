@@ -12,6 +12,22 @@
 </script>
 
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
+	<div class="preview deck">
+		<div>{entity.deck.name}</div>
+
+		<div style="text-align:right;margin-right:0.5em">
+			<button
+				on:click={() => {
+					system.view.reset();
+					system.train.add.entity = entity;
+					system = system;
+				}}
+			>
+				Changer
+			</button>
+		</div>
+	</div>
+
 	<div class="preview life">
 		<div>Santé</div>
 		<div style="text-align:right;margin-right:0.5em">
@@ -98,26 +114,36 @@
 
 <style>
 	.zone {
-		margin-bottom: 1%;
+		margin-bottom: 1vw;
 	}
 
 	.left {
-		margin-right: 1%;
+		margin-right: 0.5vw;
 	}
 
 	.right {
-		margin-left: 1%;
+		margin-left: 0.5vw;
 	}
 
 	div.preview {
 		border-color: black;
 		border-radius: 0;
+
 		display: grid;
 		grid-template-columns: 1fr 3em 4em 8em 3em 2fr;
 	}
 
 	div.life {
 		background: var(--life);
+	}
+
+	div.deck {
+		border-radius: 0;
+
+		background-color: var(--deck_preview);
+		background-image: var(--leather);
+
+		grid-template-columns: 1fr 1fr;
 	}
 
 	input[type="number"] {

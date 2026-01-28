@@ -19,8 +19,16 @@ div.body {
 div.zone {
   background-color: var(--zone);
   background-image: var(--asfalt);
+
   border: solid;
+
   padding: 0.5vw;
+
+  width: auto;
+}
+
+div.side {
+  width: 48.5vw;
 }
 
 hr {
@@ -51,8 +59,8 @@ div.box {
   background-color: var(--card_box);
   background-image: var(--paper);
   border: solid;
-  padding: 1%;
-  margin-bottom: 1%;
+  padding: 0.5vw;
+  margin-bottom: 0.5vw;
 }
 
 div.box:hover {
@@ -66,9 +74,9 @@ div.preview {
   border: solid;
   border-radius: 15px;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
-  padding: 1%;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  padding: 0.5vw;
 
   background-color: var(--preview);
   background-image: var(--scroll);
@@ -88,8 +96,8 @@ div.taskbar {
   background-color: var(--dropdown);
   background-image: var(--rock);
 
-  padding: 0.5%;
-  margin-bottom: 1%;
+  padding: 0.5vw;
+  margin-bottom: 1vw;
 
   border: solid;
 }

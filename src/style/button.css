@@ -95,7 +95,7 @@ button.desactivate:hover {
 }
 
 button.square {
-  transition: all var(--delay) ease-in-out;
+  transition: all var(--delay_hover) ease-in-out;
 
   text-align: center;
   font-weight: bold;

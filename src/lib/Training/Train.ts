@@ -1,34 +1,40 @@
-import type { Deck } from "../Decks/Deck";
+import { Deck } from "../Deck/Class";
+import type { System } from "../System/Class";
 
 export class Train {
-    deck: Deck | undefined = undefined;
     player: TrainEntity;
     bot: TrainEntity;
     add = new Train_Add();
 
-    constructor() {
-        this.player = this.entity();
+    constructor(system: System) {
+        let deck = system.standard_decks[0];
+
+        this.player = this.entity(deck);
         this.player.gold = 200;
         this.player.flux = 200;
 
-        this.bot = this.entity();
+        this.bot = this.entity(deck);
     };
 
-    entity = () => {
-        return new TrainEntity();
+    entity = (deck: Deck) => {
+        return new TrainEntity(deck);
     };
 };
 
 class Train_Add {
-    entity: string | undefined = undefined;
+    is_bot: boolean = false;
     zone: TrainZone | undefined = undefined;
+    entity: TrainEntity | undefined = undefined;
 
     reset = () => {
+        this.is_bot = false;
         this.zone = undefined;
+        this.entity = undefined;
     };
 };
 
 export class TrainEntity {
+    deck: Deck;
     life: number = 100;
     gold: number = 0;
     flux: number = 0;
@@ -40,6 +46,10 @@ export class TrainEntity {
         new TrainZone("Terrain", 10),
         new TrainZone("Défausse"),
     ];
+
+    constructor(deck: Deck) {
+        this.deck = deck;
+    };
 };
 
 export class TrainZone {

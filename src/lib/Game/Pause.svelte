@@ -3,76 +3,75 @@
 	import { Game } from "./Game";
 
 	export let system: System;
+	export let game: Game;
 
 	function close() {
-		if (system.game) {
-			system.game.pause = false;
-		}
+		game.pause = false;
 	}
 </script>
 
-{#if system.game && system.game.pause}
-	<div class="window">
-		<div id="body" class="center">
-			<div style="text-align:right;">
-				<button
-					class="square close"
-					on:click={() => {
-						close();
-					}}
-				>
-					X
-				</button>
-			</div>
+<div class="window">
+	<div id="body" class="center">
+		<div style="text-align:right;">
+			<button
+				class="square close"
+				on:click={() => {
+					close();
+				}}
+			>
+				X
+			</button>
+		</div>
 
-			<div class="button-list">
+		<div class="button-list">
+			<button
+				class="big"
+				on:click={() => {
+					system.page = "Settings";
+				}}
+			>
+				Options
+			</button>
+
+			{#if game.mode == "Entraînement"}
 				<button
 					class="big"
 					on:click={() => {
-						system.page = "Settings";
+						system.view.reset();
+						system.page = "Training";
+						system.game.stopAuto();
+						system.game = undefined;
 					}}
 				>
-					Options
+					Configurer l'entraînement
 				</button>
-
-				{#if system.game.mode == "Entraînement"}
-					<button
-						class="big"
-						on:click={() => {
-							system.view.reset();
-							system.page = "Training";
-							system.game = undefined;
-						}}
-					>
-						Configurer l'entraînement
-					</button>
-
-					<button
-						class="big"
-						on:click={() => {
-							system.view.reset();
-							system.game = new Game(system, "Entraînement", system.train.deck);
-							system.game.init();
-						}}
-					>
-						Relancer l'entraînement
-					</button>
-				{/if}
 
 				<button
 					class="big"
 					on:click={() => {
 						system.view.reset();
-						system.page = "Menu";
-						system.game = undefined;
+						system.game.stopAuto();
+						game = new Game(system, "Entraînement");
 					}}
 				>
-					Quitter la partie
+					Relancer l'entraînement
 				</button>
-			</div>
+			{/if}
+
+			<button
+				class="big"
+				on:click={() => {
+					system.view.reset();
+					system.page = "Menu";
+					system.game.stopAuto();
+					system.game = undefined;
+				}}
+			>
+				Quitter la partie
+			</button>
 		</div>
 	</div>
-{/if}
+</div>
 
 <style>
 	div.window {

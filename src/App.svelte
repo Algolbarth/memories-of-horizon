@@ -3,7 +3,12 @@
   import { System } from "./lib/System/Class";
 
   let system: System = new System();
+  system.importCards();
+  system.importChapters();
+  system.importDecks();
+  system.importLore();
   system.music.init();
+  system.game = undefined;
 
   let timeHandler = () => {
     if (system.account != undefined) {

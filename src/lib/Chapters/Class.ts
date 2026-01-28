@@ -1,19 +1,22 @@
+import { Deck } from "../Deck/Class";
 import type { Game } from "../Game/Game";
 import type { System } from "../System/Class";
 
 export class Chapter {
     steps: Step[] = [];
     ressources: ChapterRessource[] = [];
-    boss: boolean = false;
+    is_boss: boolean = false;
     system: System;
     game: Game;
     number: number;
     level: number = 0;
+    deck: Deck;
 
     constructor(system: System, game: Game, number: number) {
         this.system = system;
         this.game = game;
         this.number = number;
+        this.deck = new Deck(system);
     };
 
     init = () => {
@@ -23,6 +26,8 @@ export class Chapter {
         for (const ressource of this.ressources) {
             this.game.bot.ressource(ressource.name).production = ressource.value;
         }
+
+        this.game.bot.deck = this.deck;
     };
 
     addRessource = (name: string, value: number) => {

@@ -92,7 +92,7 @@
 		width: 50%;
 		min-height: max-content;
 		max-height: 60vh;
-		padding: 1%;
+		padding: 1vw;
 
 		border: solid;
 		border-width: 5px;

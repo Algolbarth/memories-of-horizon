@@ -13,7 +13,7 @@
 	export let rareSelect: boolean = false;
 	export let legendarySelect: boolean = false;
 	export let sorting: Function;
-	export let close: Function;
+	export let sort_close: Function;
 </script>
 
 <div class="window">
@@ -22,7 +22,7 @@
 			<button
 				class="square close"
 				on:click={() => {
-					close();
+					sort_close();
 				}}
 			>
 				X
@@ -139,7 +139,7 @@
 
 	#body {
 		width: 30vw;
-		padding: 1%;
+		padding: 1vw;
 		background: var(--zone);
 		background-image: var(--asfalt);
 		border: solid;

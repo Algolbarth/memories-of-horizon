@@ -4,13 +4,13 @@
 
 	export let system: System;
 	export let zone: TrainZone;
-	export let entity: string;
+	export let is_bot: boolean;
 
 	let level: number = zone.level!;
 	let size: number = zone.size!;
 </script>
 
-<div class={"zone " + (entity == "player" ? "left" : "right")}>
+<div class={"zone " + (is_bot ? "right" : "left")}>
 	<div class="zone_taskbar">
 		<div class="infos">
 			<div>
@@ -68,7 +68,7 @@
 					class="active"
 					on:click={() => {
 						system.view.reset();
-						system.train.add.entity = entity;
+						system.train.add.is_bot = is_bot;
 						system.train.add.zone = zone;
 					}}
 				>
@@ -80,7 +80,7 @@
 
 	{#each zone.cards as card, i}
 		<div class="preview">
-			{#if entity == "player"}
+			{#if !is_bot}
 				<div>
 					<button
 						on:click={() => {
@@ -96,6 +96,7 @@
 						{card}
 					</button>
 				</div>
+
 				<div style="text-align:right;">
 					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
@@ -200,15 +201,15 @@
 
 <style>
 	.zone {
-		margin-bottom: 1%;
+		margin-bottom: 1vw;
 	}
 
 	.left {
-		margin-right: 1%;
+		margin-right: 0.5vw;
 	}
 
 	.right {
-		margin-left: 1%;
+		margin-left: 0.5vw;
 	}
 
 	div.infos {

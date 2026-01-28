@@ -1,6 +1,7 @@
 import type { Card } from "../Cards/Class";
 import { Creature } from "../Cards/Class/Creature";
 import type { Location } from "../Cards/Class/Location";
+import type { Deck } from "../Deck/Class";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
 import { Stack } from "./Stack";
@@ -26,9 +27,12 @@ export class Entity {
     place: Location | undefined = undefined;
     system: System;
     step: number = 0;
+    deck: Deck;
 
-    constructor(system: System) {
+    constructor(system: System, deck: Deck) {
         this.system = system;
+        this.deck = deck;
+
         this.setRessources();
     };
 
@@ -78,19 +82,10 @@ export class Entity {
     cardList = (read_condition: (Function | undefined) = undefined, drawer: Card | undefined) => {
         let nameList: string[] = [];
 
-        if (this.system.game.deck == undefined) {
-            for (const card of this.system.cards.instance) {
-                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level() && !card.trait("Rare").value() && !card.trait("Légendaire").value() && (read_condition == undefined || read_condition(card, drawer))) {
-                    nameList.push(card.name);
-                }
-            }
-        }
-        else {
-            for (const c of this.system.game.deck.cards) {
-                let card = this.system.cards.getByName(c);
-                if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level()) {
-                    nameList.push(c);
-                }
+        for (const c of this.deck.cards) {
+            let card = this.system.cards.getByName(c);
+            if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level() && (read_condition == undefined || read_condition(card, drawer))) {
+                nameList.push(c);
             }
         }
 

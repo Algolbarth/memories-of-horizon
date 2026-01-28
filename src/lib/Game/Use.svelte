@@ -26,15 +26,9 @@
 			<br />
 			<br />
 
-			<div id="side">
+			<div class="side">
 				<svelte:component this={system.game.use.svelte} bind:system />
 			</div>
 		</div>
 	</div>
 {/if}
-
-<style>
-	#side {
-		width: 50%;
-	}
-</style>

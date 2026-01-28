@@ -108,15 +108,15 @@
 
 <style>
 	div.zone {
-		margin-bottom: 1%;
+		margin-bottom: 1vw;
 	}
 
 	div.left {
-		margin-right: 1%;
+		margin-right: 0.5vw;
 	}
 
 	div.right {
-		margin-left: 1%;
+		margin-left: 0.5vw;
 	}
 
 	div.zone_taskbar {

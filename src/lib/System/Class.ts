@@ -1,35 +1,41 @@
 import { Train } from "../Training/Train";
 import * as cards from "../Cards/Data";
 import * as chapters from "../Chapters/Data";
-import * as stories from "../Stories";
+import * as stories from "../Lore/Data";
+import * as decks from "../Deck/Data";
 import { Music } from "../Music/Class";
 import { Settings } from "../Settings/Class";
 import { RessourceList } from "../Ressources/Class";
-import type { Deck } from "../Decks/Deck";
-import type { Story } from "../Stories/Story";
+import { Deck } from "../Deck/Class";
+import type { Story } from "../Lore/Story";
 import { Game } from "../Game/Game";
 import { Card } from "../Cards/Class";
 import { Chapter } from "../Chapters/Class";
-import type { Account } from "../Login/Account";
+import type { Account } from "../Account/Account";
 
 export class System {
     page: string = "BlackScreen";
     account: Account | undefined;
     settings: Settings = new Settings();
-    game: undefined | Game;
+    music: Music = new Music(this);
+    ressources: RessourceList = new RessourceList();
+    cards: Cards = new Cards(this);
     chapters: Chapters = new Chapters(this);
     bosses: Bosses = new Bosses(this);
-    cards: Cards = new Cards(this);
-    ressources: RessourceList = new RessourceList();
-    train: Train = new Train();
-    decks: Deck[] = [];
+    standard_decks: Deck[] = [];
+    wild_decks: Deck[] = [];
+    game: undefined | Game;
+    train: Train = new Train(this);
     deck: Deck | undefined;
     stories: Story[] = [];
     sort = new Sort();
     view: View = new View();
-    music: Music = new Music(this);
 
     constructor() {
+        this.addElementsToSort();
+    };
+
+    addElementsToSort = () => {
         for (const element of this.ressources.list) {
             if (element.name == "Or") {
                 this.sort.elements.push("Neutre");
@@ -37,7 +43,9 @@ export class System {
                 this.sort.elements.push(element.name);
             }
         }
+    };
 
+    importCards = () => {
         for (const card of Object.keys(cards)) {
             let cardClass = cards[card];
             let cardInstance = new cardClass(this);
@@ -52,6 +60,10 @@ export class System {
             this.cards.instance.push(cardInstance);
         }
 
+        this.addFamiliesToSort();
+    };
+
+    addFamiliesToSort = () => {
         for (let i = 0; i < this.sort.families.length; i++) {
             let j = i;
             while (
@@ -64,10 +76,12 @@ export class System {
                 j--;
             }
         }
+    };
 
+    importChapters = () => {
         for (const chapter of Object.keys(chapters)) {
             let chapterClass = chapters[chapter];
-            let chapterInstance: Chapter = new chapterClass(this, new Game(this, "Construit"), 0);
+            let chapterInstance: Chapter = new chapterClass(this, new Game(this, "Test"), 0);
 
             let error: boolean = false;
             for (const step of chapterInstance.steps) {
@@ -115,7 +129,7 @@ export class System {
             }
 
             let level = chapterInstance.getLevel();
-            if (chapterInstance.boss) {
+            if (chapterInstance.is_boss) {
                 this.bosses.class[level / 2].push(chapterClass);
                 this.bosses.instance[level / 2].push(chapterInstance);
             } else {
@@ -128,6 +142,10 @@ export class System {
             }
         }
 
+        this.checIffAtLeastOnChapterByLevel();
+    };
+
+    checIffAtLeastOnChapterByLevel = () => {
         let index: number = 0;
         for (const level of this.chapters.instance) {
             if (index > 0 && level.length == 0) {
@@ -135,7 +153,17 @@ export class System {
             }
             index++;
         }
+    };
 
+    importDecks = () => {
+        for (const deck of Object.keys(decks)) {
+            this.standard_decks.push(new decks[deck](this));
+        }
+
+        this.train = new Train(this);
+    };
+
+    importLore = () => {
         for (const story of Object.keys(stories)) {
             this.stories.push(new stories[story]());
         }
@@ -149,6 +177,7 @@ export class System {
             }
         }
     };
+
 };
 
 class Cards {
@@ -186,9 +215,7 @@ class Chapters {
 
     getRandom(number: number) {
         let level = Math.floor((number - 1) / 5) + 1;
-        return new this.class[level][
-            Math.floor(Math.random() * this.class[level].length)
-        ](this.system, this.system.game, number);
+        return new this.class[level][Math.floor(Math.random() * this.class[level].length)](this.system, this.system.game, number);
     };
 };
 
@@ -208,9 +235,7 @@ class Bosses {
 
     getRandom(number: number) {
         let level = Math.floor((number - 1) / 10) + 1;
-        return new this.class[level][
-            Math.floor(Math.random() * this.class[level].length)
-        ](this.system, this.system.game, number);
+        return new this.class[level][Math.floor(Math.random() * this.class[level].length)](this.system, this.system.game, number);
     };
 };
 
