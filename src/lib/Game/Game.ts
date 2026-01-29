@@ -103,6 +103,7 @@ export class Game {
         this.player.ressource("Or").production++;
         this.player.ressource("Flux").stock++;
 
+        this.bot.deck = this.chapter.steps[0].deck;
         this.bot.life.set(this.chapter.steps[0].life);
         this.bot.zone("Pile").base_level = 1 + Math.floor((this.chapter.number - 1) / 5);
         for (const zone of this.bot.zones) {
@@ -123,15 +124,19 @@ export class Game {
             this.bot.getCard(location).add("Région");
         }
         this.bot.place = this.bot.zone("Région").cards[0];
-
-        for (let i = 0; i < 3; i++) {
-            this.bot.play();
+        for (const name of this.chapter.steps[this.bot.step].cards) {
+            this.bot.getCard(name).add("Pile");
+        }
+        for (const ressource of this.bot.ressources) {
+            ressource.current = ressource.production;
         }
 
-        this.startStep();
+        this.bot.play();
+
+        this.startPhase();
     };
 
-    startStep = () => {
+    startPhase = () => {
         for (const ressource of this.player.ressources) {
             ressource.current = ressource.production;
         }
@@ -140,20 +145,115 @@ export class Game {
             this.player.refreshStack();
         }
 
-        for (const entity of [this.player, this.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+        this.botTurn();
+    };
 
-                    if (card.startStepEffect != undefined) {
-                        card.startStepEffect();
+    botTurn = () => {
+        for (const zone of this.player.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.startAdversaryStepEffect != undefined) {
+                    card.startAdversaryStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startAdversaryStepEffect != undefined) {
+                            e.startAdversaryStepEffect();
+                        }
                     }
+                }
+            }
+        }
+        for (const zone of this.bot.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
 
-                    if (card instanceof Creature) {
-                        for (const e of card.equipments) {
-                            if (e.startStepEffect != undefined) {
-                                e.startStepEffect();
-                            }
+                if (card.startStepEffect != undefined) {
+                    card.startStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startStepEffect != undefined) {
+                            e.startStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+
+        this.bot.play();
+
+        for (const zone of this.player.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endAdversaryStepEffect != undefined) {
+                    card.endAdversaryStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endAdversaryStepEffect != undefined) {
+                            e.endAdversaryStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.bot.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endStepEffect != undefined) {
+                    card.endStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endStepEffect != undefined) {
+                            e.endStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+
+        this.startStep();
+    };
+
+    startStep = () => {
+        for (const zone of this.player.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.startStepEffect != undefined) {
+                    card.startStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startStepEffect != undefined) {
+                            e.startStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.bot.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.startAdversaryStepEffect != undefined) {
+                    card.startAdversaryStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startAdversaryStepEffect != undefined) {
+                            e.startAdversaryStepEffect();
                         }
                     }
                 }
@@ -176,6 +276,41 @@ export class Game {
     };
 
     newBattle = () => {
+        for (const zone of this.player.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endStepEffect != undefined) {
+                    card.endStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endStepEffect != undefined) {
+                            e.endStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.bot.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endAdversaryStepEffect != undefined) {
+                    card.endAdversaryStepEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endAdversaryStepEffect != undefined) {
+                            e.endAdversaryStepEffect();
+                        }
+                    }
+                }
+            }
+        }
+
         if (this.player.zone("Terrain").cards.length > 0 && this.bot.zone("Terrain").cards.length > 0) {
             this.phase = "Combat";
             this.turn = 0;
@@ -389,27 +524,9 @@ export class Game {
     endBattle = () => {
         this.phase = "Préparation";
         this.fighter = undefined;
-
         this.stopAuto();
+
         this.endStep();
-
-        if (this.isVictory()) {
-            this.nextStep();
-        }
-        else {
-            for (const card of this.bot.zone("Terrain").cards) {
-                if (card instanceof Creature) {
-                    this.player.life.current -= card.level;
-                }
-            }
-
-            if (this.player.life.current <= 0) {
-                this.defeat();
-            }
-            else {
-                this.startStep();
-            }
-        }
     };
 
     endStep = () => {
@@ -438,30 +555,72 @@ export class Game {
                 }
             }
         }
+
+        this.endPhase();
     };
 
-    nextStep = () => {
+    endPhase = () => {
+        if (this.isVictory()) {
+            for (const card of this.player.zone("Terrain").cards) {
+                if (card instanceof Creature) {
+                    this.bot.life.current -= card.level;
+                }
+            }
+
+            if (this.bot.life.current <= 0) {
+                this.nextPhase();
+            }
+            else {
+                this.startPhase();
+            }
+        }
+        else {
+            for (const card of this.bot.zone("Terrain").cards) {
+                if (card instanceof Creature) {
+                    this.player.life.current -= card.level;
+                }
+            }
+
+            if (this.player.life.current <= 0) {
+                this.defeat();
+            }
+            else {
+                this.startPhase();
+            }
+        }
+    };
+
+    nextPhase = () => {
         if (this.mode == "Entraînement") {
-            this.startStep();
-            this.bot.play();
+            this.startPhase();
         }
         else {
             if (this.player.step < this.chapter.steps.length) {
-                this.player.step++;
-
-                this.bot.life.set(this.chapter.steps[this.player.step - 1].life);
-
-                this.bot.zone("Région").cards = [];
-                this.bot.getCard(this.chapter.steps[this.player.step - 1].place).add("Région");
-                this.bot.place = this.bot.zone("Région").cards[0];
-
-                this.startStep();
-                this.bot.play();
+                this.nextStep();
             }
             else {
                 this.nextChapter();
             }
         }
+    };
+
+    nextStep = () => {
+        this.player.step++;
+        this.bot.step++;
+
+        this.bot.life.set(this.chapter.steps[this.bot.step].life);
+
+        this.bot.zone("Région").cards = [];
+        this.bot.getCard(this.chapter.steps[this.bot.step].place).add("Région");
+        this.bot.place = this.bot.zone("Région").cards[0];
+
+        this.bot.deck = this.chapter.steps[this.bot.step].deck;
+        for (const name of this.chapter.steps[this.bot.step].cards) {
+            this.bot.getCard(name).add("Pile");
+        }
+        this.bot.play();
+
+        this.startPhase();
     };
 
     victory = () => {

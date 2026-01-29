@@ -1,3 +1,4 @@
+import { ChapterDeck } from '../../Deck/Chapter';
 import type { Game } from '../../Game/Game';
 import type { System } from '../../System/Class';
 import { Chapter } from '../Class';
@@ -8,6 +9,7 @@ export class Lv3_Geant extends Chapter {
 
         this.addRessource("Or", 50);
 
-        this.addStep(30, ["Plaine"], 10, ["Géant"], ["Un géant manque de vous marcher dessus.", "Il serait bon ton de lui apprendre à faire attention."]);
+        let deck = new ChapterDeck(system, "Géants", ["Géant"]);
+        this.addStep(15, ["Plaine"], 10, deck, ["Géant"], ["Un géant manque de vous marcher dessus.", "Il serait bon ton de lui apprendre à faire attention."]);
     };
 };

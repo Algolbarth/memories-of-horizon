@@ -1,7 +1,7 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
-import Use from './Use.svelte';
+import Use from '../../../Utils/DruidUse.svelte';
 
 class DruideDeFeu extends Creature {
     constructor(system: System) {
@@ -19,16 +19,13 @@ class DruideDeFeu extends Creature {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect("goblin");
+            this.useEffect("place");
         }
     };
 
     useEffect = (choice: string) => {
-        if (choice == "goblin") {
-            this.transform("Druide de feu (forme gobelin)");
-        }
-        else if (choice == "lizard") {
-            this.transform("Druide de feu (forme lézard)");
+        if (choice == "transform") {
+            this.transform(this.otherForm);
         }
 
         this.zone.cards[this.slot].move("Terrain");

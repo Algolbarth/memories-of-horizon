@@ -96,6 +96,8 @@
 			-
 			{#if zone.name != "Défausse"}
 				({zone.cards.length} / {zone.size}) -
+			{:else}
+				({zone.cards.length} / ∞) -
 			{/if}
 			{several(cardList.length, ["carte"])}
 			-

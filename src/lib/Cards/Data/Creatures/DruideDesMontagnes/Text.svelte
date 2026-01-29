@@ -9,11 +9,9 @@
 
 Quand posé, au choix :
 <ul>
+	<li>Se place sur le terrain.</li>
 	<li>
-		Se transforme en <CardInfo bind:system name={"Druide des montagnes (forme nain)"} />.
-	</li>
-	<li>
-		Se transforme en <CardInfo bind:system name={"Druide des montagnes (forme ours)"} />.
+		Se transforme en <CardInfo bind:system name={card.otherForm} />.
 	</li>
 </ul>
 

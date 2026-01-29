@@ -9,11 +9,9 @@
 
 Quand posé, au choix :
 <ul>
+	<li>Se place sur le terrain.</li>
 	<li>
-		Se transforme en <CardInfo bind:system name={"Druide des récifs (forme ondin)"} />.
-	</li>
-	<li>
-		Se transforme en <CardInfo bind:system name={"Druide des récifs (forme tortue)"} />.
+		Se transforme en <CardInfo bind:system name={card.otherForm} />.
 	</li>
 </ul>
 

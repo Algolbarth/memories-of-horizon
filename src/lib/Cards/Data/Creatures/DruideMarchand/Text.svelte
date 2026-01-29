@@ -9,11 +9,9 @@
 
 Quand posé, au choix :
 <ul>
+	<li>Se place sur le terrain.</li>
 	<li>
-		Se transforme en <CardInfo bind:system name={"Druide marchand (forme humain)"} />.
-	</li>
-	<li>
-		Se transforme en <CardInfo bind:system name={"Druide marchand (forme boeuf)"} />.
+		Se transforme en <CardInfo bind:system name={card.otherForm} />.
 	</li>
 </ul>
 

@@ -1,3 +1,4 @@
+import { ChapterDeck } from '../../Deck/Chapter';
 import type { Game } from '../../Game/Game';
 import type { System } from '../../System/Class';
 import { Chapter } from '../Class';
@@ -8,7 +9,7 @@ export class Lv5_Chevalier extends Chapter {
 
         this.addRessource("Or", 100);
 
-        this.addStep(50, ["Plaine"], 10, ["Chevalier (monté)", "Chevalier (monté)"], ["Une troupe de chevalier errant terrorise la région en usant de leur privilège pour vivre aux dépends des habitants."]);
-        this.addStep(50, ["Plaine"], 10, ["Chevalier (monté)", "Chevalier (monté)"]);
+        let deck = new ChapterDeck(system, "Chevaliers", ["Chevalier (monté)", "Chevalier"]);
+        this.addStep(25, ["Plaine"], 10, deck, ["Chevalier (monté)", "Chevalier (monté)"], ["Une troupe de chevalier errant terrorise la région en usant de leur privilège pour vivre aux dépends des habitants."]);
     };
 };

@@ -39,9 +39,9 @@
   --desactivate: rgba(75, 75, 75, 1);
   --desactivate_hover: rgba(85, 85, 85, 1);
 
-  --dropdown: rgba(100, 100, 100, 1);
-  --dropdown_hover: rgb(150, 150, 150);
-  --dropdown_border: rgb(75, 75, 75);
+  --dropdown: rgb(75, 75, 75);
+  --dropdown_hover: rgba(100, 100, 100, 1);
+  --dropdown_border: rgba(50, 50, 50, 1);
 
   --background: rgba(125, 125, 125, 1);
   --zone: rgba(175, 175, 175, 1);

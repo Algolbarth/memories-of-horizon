@@ -3,7 +3,7 @@ import type { Card } from '../../../Class';
 import { Action } from '../../../Class/Action';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
-import Use from './Use.svelte';
+import Use from '../../../Utils/DruidUse.svelte';
 
 class DruideDesBois extends Creature {
     constructor(system: System) {
@@ -26,11 +26,8 @@ class DruideDesBois extends Creature {
     };
 
     useEffect = (choice: string) => {
-        if (choice == "elf") {
-            this.transform("Druide des bois (forme elfe)");
-        }
-        else if (choice == "fox") {
-            this.transform("Druide des bois (forme renard)");
+        if (choice == "transform") {
+            this.transform(this.otherForm);
         }
 
         this.zone.cards[this.slot].move("Terrain");

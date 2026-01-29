@@ -195,6 +195,7 @@ class Cards {
                 return new this.class[i](this.system);
             }
         }
+        console.log(name + " is not a card");
         return new Card(this.system);
     };
 };

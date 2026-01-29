@@ -374,6 +374,12 @@ export class Card {
 
     startStepEffect: Function | undefined;
 
+    startAdversaryStepEffect: Function | undefined;
+
+    endStepEffect: Function | undefined;
+
+    endAdversaryStepEffect: Function | undefined;
+
     startBattleEffect: Function | undefined;
 
     turnEffect: Function | undefined;

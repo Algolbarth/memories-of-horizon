@@ -10,7 +10,7 @@ export class GuildeDesAventuriers extends Building {
 
         this.init([["Or", 50]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

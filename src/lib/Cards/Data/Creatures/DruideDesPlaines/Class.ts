@@ -1,7 +1,7 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
-import Use from './Use.svelte';
+import Use from '../../../Utils/DruidUse.svelte';
 
 class DruideDesPlaines extends Creature {
     constructor(system: System) {
@@ -24,11 +24,8 @@ class DruideDesPlaines extends Creature {
     };
 
     useEffect = (choice: string) => {
-        if (choice == "human") {
-            this.transform("Druide des plaines (forme humain)");
-        }
-        else if (choice == "wolf") {
-            this.transform("Druide des plaines (forme loup)");
+        if (choice == "transform") {
+            this.transform(this.otherForm);
         }
 
         this.zone.cards[this.slot].move("Terrain");

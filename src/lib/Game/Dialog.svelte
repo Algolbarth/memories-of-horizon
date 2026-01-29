@@ -94,11 +94,15 @@
 		padding: 1em;
 
 		width: 40vw;
+		height: 10vh;
 	}
 
 	button.big {
-		background-color: var(--card_box);
+		background-color: var(--preview);
 		background-image: var(--paper);
+
+		color: black;
+		border-color: black;
 	}
 
 	button.big:hover {

@@ -1,3 +1,4 @@
+import { ChapterDeck } from '../../Deck/Chapter';
 import type { Game } from '../../Game/Game';
 import type { System } from '../../System/Class';
 import { Chapter } from '../Class';
@@ -10,20 +11,22 @@ export class Lv13_Generaux extends Chapter {
 
         this.addRessource("Or", 710);
 
-        let array = [];
-        array.push("Bombardement");
+        let cards = [];
+        cards.push("Bombardement");
         for (let i = 1; i <= 5; i++) {
-            array.push("Chevalier d'élite (monté)");
+            cards.push("Chevalier d'élite (monté)");
         }
-        array.push("Général");
-        this.addStep(130, ["Ville"], 10, array, ["Le royaume voisin est en pleine guerre civile entre deux généraux.", "Le premier général est en train d'assiéger la capitale avec ses chevaliers."]);
+        cards.push("Général");
+        let deck_1 = new ChapterDeck(system, "Général", ["Bombardement", "Chevalier d'élite (monté)"]);
+        this.addStep(65, ["Ville"], 10, deck_1, cards, ["Le royaume voisin est en pleine guerre civile entre deux généraux.", "Le premier général est en train d'assiéger la capitale avec ses chevaliers."]);
 
-        array = [];
-        array.push("Muraille");
+        cards = [];
+        cards.push("Muraille");
         for (let i = 1; i <= 5; i++) {
-            array.push("Chevalier royal");
+            cards.push("Chevalier royal");
         }
-        array.push("Général");
-        this.addStep(130, ["Ville"], 10, array, ["Le deuxième général est retranché dans la ville derrière les remparts."]);
+        cards.push("Général");
+        let deck_2 = new ChapterDeck(system, "Général", ["Chevalier royal"]);
+        this.addStep(65, ["Ville"], 10, deck_2, cards, ["Le deuxième général est retranché dans la ville derrière les remparts."]);
     };
 };

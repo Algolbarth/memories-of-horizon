@@ -8,11 +8,11 @@ export class PlastronEnCuir extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5]]);
+        this.init([["Or", 7]]);
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(8);
+        this.equipStat("Vitalité").init(10);
 
         this.text = Text;
     };

@@ -1,3 +1,4 @@
+import { ChapterDeck } from '../../Deck/Chapter';
 import type { Game } from '../../Game/Game';
 import type { System } from '../../System/Class';
 import { Chapter } from '../Class';
@@ -9,20 +10,21 @@ export class Lv16_Barbare extends Chapter {
         this.addRessource("Or", 1190);
         this.addRessource("Feu", 60);
 
-        let array = [];
+        let cards = [];
         for (let i = 1; i <= 5; i++) {
-            array.push("Chef barbare");
+            cards.push("Chef barbare");
         }
         for (let i = 1; i <= 5; i++) {
-            array.push("Doubles hachettes barbare");
+            cards.push("Doubles hachettes barbare");
         }
         for (let i = 1; i <= 5; i++) {
-            array.push("Sang chaud");
+            cards.push("Sang chaud");
         }
         for (let i = 1; i <= 3; i++) {
-            array.push("Cor de guerre");
+            cards.push("Cor de guerre");
         }
-        this.addStep(160, ["Plaine"], 20, array, ["Des tribus barbares s'entretuent dans les grandes plaines environnantes.", "Au coeur de la mêlée, les chefs galvanisés par leurs troupes se préparent à en finir.", "Le plus simple pour traverser cette hécatombe serait de les faire tomber ensemble."]);
+        let deck = new ChapterDeck(system, "Barbares", ["Cor de guerre", "Sang chaud", "Chef barbare"]);
+        this.addStep(80, ["Plaine"], 20, deck, cards, ["Des tribus barbares s'entretuent dans les grandes plaines environnantes.", "Au coeur de la mêlée, les chefs galvanisés par leurs troupes se préparent à en finir.", "Le plus simple pour traverser cette hécatombe serait de les faire tomber ensemble."]);
     };
 };
 
@@ -35,6 +37,7 @@ export class Lv16_Atlas extends Chapter {
 
         this.addRessource("Or", 1250);
 
-        this.addStep(160, ["Montagne"], 10, ["Atlas, marche-cratère"], ["Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et abruti, écrasant des paysages par inattention."]);
+        let deck = new ChapterDeck(system, "Marche-cratère", ["Ténacité", "Frappe", "Écrasement", "Tremblement de terre"]);
+        this.addStep(80, ["Montagne"], 10, deck, ["Atlas, marche-cratère"], ["Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et abruti, écrasant des paysages par inattention."]);
     };
 };

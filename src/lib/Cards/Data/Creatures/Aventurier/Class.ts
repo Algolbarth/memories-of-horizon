@@ -10,12 +10,12 @@ export class Aventurier extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 12]]);
 
         this.initFamily(["Humain"]);
 
-        this.stat("Constitution").init(8);
-        this.stat("Force").init(8);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
 
         this.text = Text;
     };

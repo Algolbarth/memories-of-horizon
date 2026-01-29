@@ -7,7 +7,7 @@
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
+		if (card instanceof Creature && card.isFamily("Druide") && card.canEquip()) {
 			return true;
 		}
 		return false;

@@ -36,7 +36,7 @@
 					/>
 					)
 				{:else}
-					{zone.cards.length}
+					( {zone.cards.length} / ∞ )
 				{/if}
 			</div>
 

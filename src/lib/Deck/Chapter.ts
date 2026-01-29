@@ -1,7 +1,7 @@
 import type { System } from "../System/Class";
 import { Deck } from "./Class";
 
-export class StandardDeck extends Deck {
+export class ChapterDeck extends Deck {
     constructor(system: System, name: string, cards: string[]) {
         super(system);
 
@@ -11,13 +11,5 @@ export class StandardDeck extends Deck {
         for (const card of this.cards) {
             system.cards.getByName(card);
         }
-    };
-
-    canModify = () => {
-        return false;
-    };
-
-    isPlayable = () => {
-        return true;
     };
 };

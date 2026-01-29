@@ -25,7 +25,7 @@
 					{#if zone.name != "Défausse"}
 						({zone.cards.length} / {zone.size})
 					{:else}
-						{zone.cards.length}
+						({zone.cards.length} / ∞)
 					{/if}
 				</div>
 

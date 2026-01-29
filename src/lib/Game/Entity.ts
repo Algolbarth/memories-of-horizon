@@ -235,18 +235,10 @@ export class Entity {
         }
 
         for (const ressource of this.ressources) {
-            ressource.current = ressource.max;
+            ressource.current = ressource.production;
         }
 
-        if (this.system.game.mode != "Entraînement") {
-            if (this.step < this.system.game.chapter.steps.length) {
-                for (const name of this.system.game.chapter.steps[this.step].cards) {
-                    let card = this.getCard(name, this);
-                    card.add("Pile");
-                }
-            }
-            this.step++;
-        }
+        this.refreshStack();
     };
 
     checkPerpetuite = () => {

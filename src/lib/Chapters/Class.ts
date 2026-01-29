@@ -10,13 +10,11 @@ export class Chapter {
     game: Game;
     number: number;
     level: number = 0;
-    deck: Deck;
 
     constructor(system: System, game: Game, number: number) {
         this.system = system;
         this.game = game;
         this.number = number;
-        this.deck = new Deck(system);
     };
 
     init = () => {
@@ -26,16 +24,14 @@ export class Chapter {
         for (const ressource of this.ressources) {
             this.game.bot.ressource(ressource.name).production = ressource.value;
         }
-
-        this.game.bot.deck = this.deck;
     };
 
     addRessource = (name: string, value: number) => {
         this.ressources.push(new ChapterRessource(name, value));
     };
 
-    addStep = (life: number, locations: string[], zone_size: number, cards: string[], dialogs: string[] = []) => {
-        this.steps.push(new Step(life, locations, zone_size, cards, dialogs));
+    addStep = (life: number, locations: string[], zone_size: number, deck: Deck, cards: string[], dialogs: string[] = []) => {
+        this.steps.push(new Step(life, locations, zone_size, cards, dialogs, deck));
     };
 
     startDialog = () => {
@@ -115,13 +111,15 @@ export class Step {
     dialogs: string[];
     dialog: number = 0;
     read: boolean = false;
+    deck: Deck;
 
-    constructor(life: number, locations: string[], zone_size: number, cards: string[], dialogs: string[]) {
+    constructor(life: number, locations: string[], zone_size: number, cards: string[], dialogs: string[], deck: Deck) {
         this.life = life;
         this.locations = locations;
         this.zone_size = zone_size;
         this.cards = cards;
         this.dialogs = dialogs;
+        this.deck = deck;
     };
 };
 
