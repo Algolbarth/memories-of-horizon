@@ -17,6 +17,7 @@ export * from './BrulageDirige';
 export * from './BucherDesVanites';
 export * from './CanonAEau';
 export * from './Cauteriser';
+export * from './CercleDruidique';
 export * from './CerclesMagiques';
 export * from './Charisme';
 export * from './Cibler';

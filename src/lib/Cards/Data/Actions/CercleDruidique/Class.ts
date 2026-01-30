@@ -5,22 +5,22 @@ import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class LigneEnergetique extends Action {
-    name = "Ligne énergétique";
+export class CercleDruidique extends Action {
+    name = "Cercle druidique";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40]]);
+        this.init([["Or", 80]]);
 
-        this.initFamily(["Élémentaire"]);
+        this.initFamily(["Druide"]);
 
         this.text = Text;
     };
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && card.isFamily("Élémentaire")) {
+            if (card instanceof Creature && card.isFamily("Druide")) {
                 return true;
             }
         }
@@ -35,7 +35,7 @@ export class LigneEnergetique extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.isFamily("Élémentaire")) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Druide")) {
                     target = card;
                 }
             }
@@ -50,7 +50,8 @@ export class LigneEnergetique extends Action {
         this.targeting(target);
 
         let battlefield = copy(this.owner.zone("Terrain").cards);
-        let nb_element = 0;
+        let nb_druid = 0;
+        let nb_same_element = 0;
 
         for (const card of battlefield) {
             let check = true;
@@ -60,19 +61,23 @@ export class LigneEnergetique extends Action {
                 }
             }
 
-            if (card.isFamily("Élémentaire") && check) {
-                nb_element++;
+            if (card.isFamily("Druide")) {
+                nb_druid++;
+            }
+            if (check) {
+                nb_same_element++;
             }
         }
 
         for (const e of target.elements.total()) {
             if (e != "Neutre") {
-                this.owner.ressource(e).current += 5 * nb_element;
+                this.owner.ressource(e).current += 5 * nb_same_element;
             }
             else {
-                this.owner.ressource("Or").current += 5 * nb_element;
+                this.owner.ressource("Or").current += 5 * nb_same_element;
             }
         }
+        this.owner.ressource("Or").current += 5 * nb_druid;
 
         this.move("Défausse");
         this.pose();

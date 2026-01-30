@@ -4,8 +4,8 @@ import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class BatonDruidique extends Equipment {
-    name = "Bâton druidique";
+export class BatonDeDruide extends Equipment {
+    name = "Bâton de druide";
 
     constructor(system: System) {
         super(system);

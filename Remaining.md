@@ -30,7 +30,6 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : génère V
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans la réserve.
 
 ### Neutre
-Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans la réserve adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
