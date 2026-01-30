@@ -1,3 +1,4 @@
+export * from './Capitale';
 export * from './ChefLieu';
 export * from './Foret';
 export * from './Mer';
