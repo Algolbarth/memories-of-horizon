@@ -25,6 +25,7 @@ export * from './Carquois';
 export * from './CasqueEnCuir';
 export * from './CeintureDeCuir';
 export * from './ChapeauDeMage';
+export * from './ChevaliereImperiale';
 export * from './CollierDeMetamorphe';
 export * from './CollierEnDentDeLoup';
 export * from './CotteDeMaillesEnFer';
