@@ -9,12 +9,12 @@ export class Titan extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 200]]);
+        this.init([["Or", 250]]);
 
         this.initFamily(["Géant"]);
 
-        this.stat("Constitution").init(100);
-        this.stat("Force").init(100);
+        this.stat("Constitution").init(50);
+        this.stat("Force").init(50);
 
         this.text = Text;
     };
@@ -22,14 +22,9 @@ export class Titan extends Creature {
     useEffect = () => {
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {
-            if (card instanceof Creature) {
-                if (card.level >= 5) {
-                    card.stat("Constitution").increase(20);
-                    card.stat("Force").increase(20);
-                }
-                else {
-                    card.damageByEffect(20);
-                }
+            if (card instanceof Creature && card.level >= 5) {
+                card.stat("Constitution").increase(25);
+                card.stat("Force").increase(25);
             }
         }
 
