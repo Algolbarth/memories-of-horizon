@@ -134,6 +134,7 @@ export * from './Soldat';
 export * from './SoldatNain';
 export * from './Stratege';
 export * from './TheoricienDuComplot';
+export * from './Titan';
 export * from './Tortue';
 export * from './TortueGeante';
 export * from './Troubadour';
