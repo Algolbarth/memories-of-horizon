@@ -157,7 +157,7 @@
 	{#if !game.isBattle()}
 		<DoubleZone bind:system zone={"Région"} />
 		<DoubleZone bind:system zone={"Pile"} />
-		<DoubleZone bind:system zone={"Réserve"} />
+		<DoubleZone bind:system zone={"Inventaire"} />
 	{/if}
 
 	<DoubleZone bind:system zone={"Terrain"} />

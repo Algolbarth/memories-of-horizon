@@ -9,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Quand <CardInfo bind:system name={"Autodafé"} /> ou <CardInfo bind:system name={"Bûcher des vanités"} /> est posé : génère <CardInfo bind:system name={"Écrits calcinés"} /> dans la réserve.
+Quand <CardInfo bind:system name={"Autodafé"} /> ou <CardInfo bind:system name={"Bûcher des vanités"} /> est posé : génère <CardInfo bind:system name={"Écrits calcinés"} /> dans l'inventaire.

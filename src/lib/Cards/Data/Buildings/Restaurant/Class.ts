@@ -21,7 +21,7 @@ export class Restaurant extends Building {
     select = () => {
         let check = undefined;
 
-        for (const card of this.owner.zone("Réserve").cards) {
+        for (const card of this.owner.zone("Inventaire").cards) {
             if (check == undefined && card instanceof Item && card.isFamily("Nourriture")) {
                 check = card;
             }
@@ -50,7 +50,7 @@ export class Restaurant extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain" && this.product != undefined) {
-            this.owner.getCard(this.product).add("Réserve");
+            this.owner.getCard(this.product).add("Inventaire");
         }
     };
 };

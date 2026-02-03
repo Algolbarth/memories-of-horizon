@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Écoulement"} /> dans la réserve.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Écoulement"} /> dans l'inventaire.

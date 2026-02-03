@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : augmente de 10 la vente en or de toutes les cartes alliées dans la réserve.
+Au début de la phase de préparation : augmente de 10 la vente en or de toutes les cartes alliées dans l'inventaire.

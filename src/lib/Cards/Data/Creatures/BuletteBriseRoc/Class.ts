@@ -21,7 +21,7 @@ export class BuletteBriseRoc extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Coup de bouclier").add("Réserve");
+            this.owner.getCard("Coup de bouclier").add("Inventaire");
         }
     };
 };

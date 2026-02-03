@@ -17,7 +17,7 @@ export class CollierDeMetamorphe extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Métamorphose").add("Réserve");
+            this.owner.getCard("Métamorphose").add("Inventaire");
         }
     };
 };

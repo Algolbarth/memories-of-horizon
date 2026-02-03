@@ -18,7 +18,7 @@ export class BibliothequeIncendiee extends Building {
 
     otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && this.owner == card.owner && ["Autodafé", "Bûcher des vanités"].includes(card.name)) {
-            this.owner?.getCard("Écrits calcinés").add("Réserve");
+            this.owner?.getCard("Écrits calcinés").add("Inventaire");
         }
     };
 };

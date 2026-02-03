@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 2 la taille de la réserve alliée si celle-ci est remplie.
+Augmente de 2 la taille de l'inventaire allié si celle-ci est remplie.

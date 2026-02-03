@@ -15,7 +15,7 @@ export class SacDeBombe extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Bombe").add("Réserve");
+            this.owner.getCard("Bombe").add("Inventaire");
         }
     };
 }

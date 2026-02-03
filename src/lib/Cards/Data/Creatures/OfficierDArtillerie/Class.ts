@@ -18,7 +18,7 @@ export class OfficierDArtillerie extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Tir de canon").add("Réserve");
+            this.owner.getCard("Tir de canon").add("Inventaire");
         }
     };
 };

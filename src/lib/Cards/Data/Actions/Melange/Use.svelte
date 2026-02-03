@@ -31,7 +31,7 @@
 </script>
 
 {#if potion_1 == undefined && system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {select_condition} select_action={select_action_1} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {select_condition} select_action={select_action_1} />
 {:else}
 	<button
 		class="square return margin-bottom"
@@ -42,6 +42,6 @@
 		↩
 	</button>
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {select_condition} select_action={select_action_2} />
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {select_condition} select_action={select_action_2} />
 	{/if}
 {/if}

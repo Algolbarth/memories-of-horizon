@@ -17,7 +17,7 @@ export class GuildeDesAventuriers extends Building {
 
     startStepEffect = () => {
         if (this.owner && this.zone && this.zone.name == "Terrain") {
-            this.owner.getCard("Aventurier").add("Réserve");
+            this.owner.getCard("Aventurier").add("Inventaire");
         }
     };
 };

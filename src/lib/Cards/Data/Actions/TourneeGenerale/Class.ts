@@ -31,7 +31,7 @@ export class TourneeGenerale extends Action {
             }
         }
         for (let i = 0; i < number; i++) {
-            this.owner.getCard("Bière").add("Réserve");
+            this.owner.getCard("Bière").add("Inventaire");
         }
 
         this.move("Défausse");

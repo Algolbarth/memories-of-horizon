@@ -11,6 +11,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Génère <CardInfo bind:system name={"Coquillage"} /> dans la réserve.</li>
-	<li>Génère <CardInfo bind:system name={"Conque"} /> dans la réserve.</li>
+	<li>Génère <CardInfo bind:system name={"Coquillage"} /> dans l'inventaire.</li>
+	<li>Génère <CardInfo bind:system name={"Conque"} /> dans l'inventaire.</li>
 </ul>

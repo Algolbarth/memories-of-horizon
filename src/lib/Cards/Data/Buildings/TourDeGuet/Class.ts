@@ -17,7 +17,7 @@ export class TourDeGuet extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Cibler").add("Réserve");
+            this.owner.getCard("Cibler").add("Inventaire");
         }
     };
 };

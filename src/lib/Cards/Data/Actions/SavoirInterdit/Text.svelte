@@ -10,4 +10,4 @@
 
 Diminue de 1 la taille du terrain allié.
 <br />
-Augmente de 1 la taille de la réserve alliée.
+Augmente de 1 la taille de l'inventaire allié.

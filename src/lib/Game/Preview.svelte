@@ -42,7 +42,7 @@
 		{#if is_player || select_action != undefined}
 			<div id="actions">
 				{#if system.game.phase == "Préparation" && select_action == undefined}
-					{#if card.zone.name == "Réserve" || card.zone.name == "Terrain"}
+					{#if card.zone.name == "Inventaire" || card.zone.name == "Terrain"}
 						<button
 							class="active"
 							on:click={() => {
@@ -68,7 +68,7 @@
 						{:else}
 							Acheter
 						{/if}
-					{:else if card.zone.name == "Réserve"}
+					{:else if card.zone.name == "Inventaire"}
 						{#if card.canUse()}
 							<button
 								class="active"
@@ -102,7 +102,7 @@
 						{/if}
 					{/if}
 
-					{#if card.zone.name == "Réserve" || (card.zone.name == "Terrain" && card instanceof Creature)}
+					{#if card.zone.name == "Inventaire" || (card.zone.name == "Terrain" && card instanceof Creature)}
 						{#if card.slot != undefined && card.slot > 0}
 							<button
 								class="active"

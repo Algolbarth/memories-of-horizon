@@ -14,14 +14,14 @@ export class Requisition extends Action {
     };
 
     canUse = () => {
-        if (this.owner.zone("Réserve").size > 1) {
+        if (this.owner.zone("Inventaire").size > 1) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.zone("Réserve").size -= 1;
+        this.owner.zone("Inventaire").size -= 1;
         this.owner.zone("Terrain").size += 1;
 
         this.move("Défausse");

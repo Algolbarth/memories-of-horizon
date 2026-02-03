@@ -17,7 +17,7 @@ export class TourDArcher extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Flèche en bois").add("Réserve");
+            this.owner.getCard("Flèche en bois").add("Inventaire");
         }
     };
 };

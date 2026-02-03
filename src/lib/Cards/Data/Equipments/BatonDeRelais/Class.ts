@@ -15,7 +15,7 @@ export class BatonDeRelais extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Relais").add("Réserve");
+            this.owner.getCard("Relais").add("Inventaire");
         }
     };
 };

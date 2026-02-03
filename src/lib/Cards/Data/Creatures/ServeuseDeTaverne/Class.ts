@@ -19,14 +19,14 @@ export class ServeuseDeTaverne extends Creature {
     };
 
     useEffect = () => {
-        this.owner.getCard("Bière").add("Réserve");
+        this.owner.getCard("Bière").add("Inventaire");
         this.move("Terrain");
         this.pose();
     };
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Bière").add("Réserve");
+            this.owner.getCard("Bière").add("Inventaire");
         }
     };
 };

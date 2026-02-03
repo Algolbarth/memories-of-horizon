@@ -31,17 +31,17 @@
 					<span class="card">Concoction</span> est un objet potion regroupant plusieurs effets de potions différentes.
 				</li>
 				<li>
-					<span class="card">Mélange</span> est une action permettant de génèrer une <span class="card">Concoction</span> à partir de 2 potions dans la réserve.
+					<span class="card">Mélange</span> est une action permettant de génèrer une <span class="card">Concoction</span> à partir de 2 potions dans l'inventaire.
 				</li>
 				<li>
 					<span class="card">Chaudron</span> est un bâtiment créant
-					<span class="card">Mélange</span> dans la réserve à chaque tour.
+					<span class="card">Mélange</span> dans l'inventaire à chaque tour.
 				</li>
 				<li>
-					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions en réserve à chaque étape.
+					<span class="card">Alambic</span> est un bâtiment augmentant l'infusion des potions dans l'inventaire à chaque étape.
 				</li>
 				<li>
-					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion en réserve.
+					<span class="card">Fiole de verre</span> est un objet augmentant l'infusion d'une potion dans l'inventaire.
 				</li>
 			</ul>
 		</div>

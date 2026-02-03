@@ -19,7 +19,7 @@ export class Warg extends Creature {
     };
 
     useEffect = () => {
-        this.owner.getCard("Frappe").add("Réserve");
+        this.owner.getCard("Frappe").add("Inventaire");
         this.move("Terrain");
         this.pose();
     };

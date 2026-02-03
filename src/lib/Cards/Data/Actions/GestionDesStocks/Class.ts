@@ -14,14 +14,14 @@ export class GestionDesStocks extends Action {
     };
 
     canUse = () => {
-        if (this.owner?.zone("Réserve").isFull()) {
+        if (this.owner?.zone("Inventaire").isFull()) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.zone("Réserve").size += 2;
+        this.owner.zone("Inventaire").size += 2;
 
         this.move("Défausse");
         this.pose();

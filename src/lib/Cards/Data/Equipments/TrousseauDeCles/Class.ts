@@ -15,7 +15,7 @@ export class TrousseauDeCles extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Clé en or").add("Réserve");
+            this.owner.getCard("Clé en or").add("Inventaire");
         }
     };
 };

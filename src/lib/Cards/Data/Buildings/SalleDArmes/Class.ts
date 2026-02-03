@@ -17,7 +17,7 @@ export class SalleDArmes extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Entraînement").add("Réserve");
+            this.owner.getCard("Entraînement").add("Inventaire");
         }
     };
 };

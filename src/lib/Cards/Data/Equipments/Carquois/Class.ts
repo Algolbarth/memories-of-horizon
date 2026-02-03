@@ -15,7 +15,7 @@ export class Carquois extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Flèche en bois").add("Réserve");
+            this.owner.getCard("Flèche en bois").add("Inventaire");
         }
     };
 };

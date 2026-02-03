@@ -17,7 +17,7 @@ export class FontaineDeBambou extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Écoulement").add("Réserve");
+            this.owner.getCard("Écoulement").add("Inventaire");
         }
     };
 };

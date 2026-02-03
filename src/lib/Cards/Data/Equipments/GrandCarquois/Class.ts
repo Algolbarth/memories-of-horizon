@@ -15,7 +15,7 @@ export class GrandCarquois extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Pluie de flèche").add("Réserve");
+            this.owner.getCard("Pluie de flèche").add("Inventaire");
         }
     };
 };

@@ -3,7 +3,7 @@
 Modifier l'histoire pour intégrer les planètes et l'espace
 Finir l'histoire impériale (pk c'est souvent des humains) 
 Ajouter une option finir automatiquement pour les combats
-Ajouter les options pour afficher des infos lors des combats (ressources, défausse, réserve) 
+Ajouter les options pour afficher des infos lors des combats (ressources, défausse, inventaire) 
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
 Ajouter des stats lors d'une partie (nombres de cartes posées, d'étapes, de phases de combats perdues) 
 Ajouter ces stats pour le compte 
@@ -27,11 +27,11 @@ Banque : augmente la vente des unités alliées sur le terrain.
 Cape de voleur : au début de la phase de préparation : augmente la vente en or de la créature équipée.
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la vente en or de l'unité.
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : génère Voleur sur le terrain.
-Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans la réserve.
+Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans l'inventaire.
 
 ### Neutre
 Colère : inflige autant dégâts que les blessures du meneur.
-Envie : vole une carte dans la réserve adverse.
+Envie : vole une carte dans l'inventaire adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
 Avarice : détruit une créature alliée sur le terrain et augmente la constitution et la force d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
@@ -39,7 +39,7 @@ Paresse : soigne une créature alliée d'autant que la différence entre sa vita
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête alliée sur le terrain.
-Arbalète : objet équipement, génère des carreaux dans la réserve qui scalent selon la force du mob.
+Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
@@ -72,7 +72,7 @@ Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat 
 Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
-Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans la réserve.
+Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans l'inventaire.
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
@@ -193,7 +193,7 @@ Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
 Épée de pure lumière : objet équipement, Quand la créature équipée attaque : si pas blessée alors inflige des dégaâts.
-Révélations de lumière : action, révèle toutes les cartes dans la réserve et étourdis toutes les créatures sur le terrain.
+Révélations de lumière : action, révèle toutes les cartes dans l'inventaire et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
 Terre sagénère : lieu pour les cartes d'élément Lumière.
@@ -221,7 +221,7 @@ Plage : lieu pour les cartes d'élément Eau et Feu.
 Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu.
 Guerrier du désert : quand se fait attaquer : augmente son endurance. Quand attaque : augmente sa force.
 Assassin du désert 
-Ver des sables : quand attaque : détruit la carte dans la réserve adverse en première position. quand est attaquée : détruit la carte dans la réserve en première position.
+Ver des sables : quand attaque : détruit la carte dans l'inventaire adverse en première position. quand est attaquée : détruit la carte dans l'inventaire en première position.
 Élémentaire de sable 
 Golem de lave 
 Désert : lieu pour les cartes d'élément Feu et Terre.
@@ -244,9 +244,9 @@ Proto dragon : créature wyverne dragon
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
 ### Feu/Vegetal
-Lézard : quand meurt : ajoute une Queue de lézard dans la réserve.
-Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la réserve.
-Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la réserve.
+Lézard : quand meurt : ajoute une Queue de lézard dans l'inventaire.
+Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans l'inventaire.
+Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans l'inventaire.
 Queue de lézard : augmente la force ou la constitution d'une créature alliée sur le terrain.
 Cactus 
 Buisson ardent 
@@ -323,7 +323,7 @@ Armure possédée
 
 ### Lumiere/Ombre
 Ange déchu
-Eclipse solaire : révèle toutes les cartes dans la réserve adverse et en détruit une.
+Eclipse solaire : révèle toutes les cartes dans l'inventaire adverse et en détruit une.
 
 # Boss
 

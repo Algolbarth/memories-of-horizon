@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Place dans la réserve tous les équipements d'une créature alliée sur le terrain.
+Place dans l'inventaire tous les équipements d'une créature alliée sur le terrain.

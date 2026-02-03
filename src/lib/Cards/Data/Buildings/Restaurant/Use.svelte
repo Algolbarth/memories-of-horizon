@@ -22,5 +22,5 @@
 </script>
 
 {#if system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Réserve")} {select_condition} {select_action} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {select_condition} {select_action} />
 {/if}

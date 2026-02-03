@@ -17,7 +17,7 @@ export class ManuelDeMagie extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Incantation").add("Réserve");
+            this.owner.getCard("Incantation").add("Inventaire");
         }
     };
 };

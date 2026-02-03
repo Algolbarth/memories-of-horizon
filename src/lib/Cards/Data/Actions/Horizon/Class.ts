@@ -23,7 +23,7 @@ export class Horizon extends Action {
     useEffect = () => {
         this.owner.zone("Région").size++;
         this.owner.zone("Pile").size++;
-        this.owner.zone("Réserve").size++;
+        this.owner.zone("Inventaire").size++;
         this.owner.zone("Terrain").size++;
 
         this.move("Défausse");

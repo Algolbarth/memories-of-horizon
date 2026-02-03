@@ -8,6 +8,6 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Aventurier"} /> dans la réserve.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Aventurier"} /> dans l'inventaire.
 <br />
 Quand <CardInfo bind:system name={"Aventurier"} /> est posée : pioche 1 carte du même type que celui choisi.

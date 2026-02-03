@@ -7,10 +7,10 @@
 	export let card: Card;
 </script>
 
-Quand posé : choisit un objet allié de famille Nourriture dans la réserve.
+Quand posé : choisit un objet allié de famille Nourriture dans l'inventaire.
 <br />
 <br />
-Au début d'une étape de préparation : génère un objet de même nom que l'objet choisi dans la réserve.
+Au début d'une étape de préparation : génère un objet de même nom que l'objet choisi dans l'inventaire.
 
 {#if card.product != undefined}
 	<br />

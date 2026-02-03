@@ -155,7 +155,7 @@ export class Card {
                 this.stat("Persistance").set(0);
             }
 
-            if (!["Réserve", "Pile"].includes(zone)) {
+            if (!["Inventaire", "Pile"].includes(zone)) {
                 this.cache = false;
             }
 
@@ -218,7 +218,7 @@ export class Card {
             }
         }
 
-        if (this.owner.zone("Réserve").isFull()) {
+        if (this.owner.zone("Inventaire").isFull()) {
             return false;
         }
 
@@ -231,7 +231,7 @@ export class Card {
                 this.owner.ressource(c.name).spend(c.value());
             }
             this.locked = false;
-            this.move("Réserve");
+            this.move("Inventaire");
         }
     };
 

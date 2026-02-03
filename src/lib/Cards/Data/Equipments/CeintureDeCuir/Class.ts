@@ -15,7 +15,7 @@ export class CeintureDeCuir extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Option").add("Réserve");
+            this.owner.getCard("Option").add("Inventaire");
         }
     };
 };

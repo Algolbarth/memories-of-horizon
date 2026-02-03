@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : augmente de 1 les infusions de toutes les objets alliés de famille Potion dans la réserve.
+Au début de la phase de préparation : augmente de 1 les infusions de toutes les objets alliés de famille Potion dans l'inventaire.

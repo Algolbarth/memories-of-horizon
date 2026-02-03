@@ -42,7 +42,7 @@ export class TrainEntity {
     zones: TrainZone[] = [
         new TrainZone("Région", 3, undefined, ["Plaine"]),
         new TrainZone("Pile", 10, 1),
-        new TrainZone("Réserve", 10),
+        new TrainZone("Inventaire", 10),
         new TrainZone("Terrain", 10),
         new TrainZone("Défausse"),
     ];

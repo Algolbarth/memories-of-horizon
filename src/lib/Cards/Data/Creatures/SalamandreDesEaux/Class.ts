@@ -19,6 +19,6 @@ export class SalamandreDesEaux extends Creature {
     };
 
     startStepEffect = () => {
-        this.owner.getCard("Intoxication").add("Réserve");
+        this.owner.getCard("Intoxication").add("Inventaire");
     };
 };

@@ -47,7 +47,7 @@ export class Relais extends Action {
         this.targeting(target);
 
         for (const equipment of target.equipments) {
-            equipment.move("Réserve");
+            equipment.move("Inventaire");
         }
 
         this.move("Défausse");

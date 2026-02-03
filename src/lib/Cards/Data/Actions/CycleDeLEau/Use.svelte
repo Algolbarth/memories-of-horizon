@@ -26,10 +26,10 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Réserve");
+			select_action("Inventaire");
 		}}
 	>
-		Augmente de 1 la taille de la réserve alliée.
+		Augmente de 1 la taille de l'inventaire allié.
 	</button>
 
 	<br />

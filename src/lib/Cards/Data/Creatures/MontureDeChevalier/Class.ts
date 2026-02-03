@@ -58,7 +58,7 @@ export class MontureDeChevalier extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            target.move("Réserve");
+            target.move("Inventaire");
             target.transform(target.otherForm);
         }
 

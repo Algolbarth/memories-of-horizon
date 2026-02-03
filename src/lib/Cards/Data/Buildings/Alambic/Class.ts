@@ -19,7 +19,7 @@ export class Alambic extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            let reserve = copy(this.owner.zone("Réserve").cards);
+            let reserve = copy(this.owner.zone("Inventaire").cards);
             for (const card of reserve) {
                 if (card instanceof Item && card.isFamily("Potion")) {
                     if (card.name == "Concoction") {

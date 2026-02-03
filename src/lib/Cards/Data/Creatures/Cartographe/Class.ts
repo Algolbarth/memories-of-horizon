@@ -20,7 +20,7 @@ export class Cartographe extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Carte de la région").add("Réserve");
+            this.owner.getCard("Carte de la région").add("Inventaire");
         }
     };
 };

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 20 la force d'une carte alliée de famille Arme dans la réserve.
+Augmente de 20 la force d'une carte alliée de famille Arme dans l'inventaire.

@@ -19,7 +19,7 @@ export class Entity {
     zones: Zone[] = [
         new Zone("Région", 3),
         new Stack(),
-        new Zone("Réserve", 10),
+        new Zone("Inventaire", 10),
         new Zone("Terrain", 10),
         new Zone("Défausse")
     ];
@@ -217,11 +217,11 @@ export class Entity {
         while (playable) {
             playable = false;
 
-            for (let i = 0; i < this.zone("Réserve").cards.length; i++) {
-                let card = this.zone("Réserve").cards[i];
+            for (let i = 0; i < this.zone("Inventaire").cards.length; i++) {
+                let card = this.zone("Inventaire").cards[i];
                 if (card.canUse()) {
                     card.use();
-                    if (card.zone == undefined || card.zone.name != "Réserve") {
+                    if (card.zone == undefined || card.zone.name != "Inventaire") {
                         i--;
                         playable = true;
                     }

@@ -20,7 +20,7 @@ export class GorilleDosArgente extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Écrasement").add("Réserve");
+            this.owner.getCard("Écrasement").add("Inventaire");
         }
     };
 };

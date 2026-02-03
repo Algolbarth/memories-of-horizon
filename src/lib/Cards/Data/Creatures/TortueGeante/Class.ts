@@ -21,7 +21,7 @@ export class TortueGéante extends Creature {
 
     dieEffect = () => {
         if (this.zone.name != "Pile") {
-            this.owner.getCard("Carapace de tortue").add("Réserve");
+            this.owner.getCard("Carapace de tortue").add("Inventaire");
         }
     };
 };

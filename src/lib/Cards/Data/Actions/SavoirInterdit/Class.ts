@@ -22,7 +22,7 @@ export class SavoirInterdit extends Action {
 
     useEffect = () => {
         this.owner.zone("Terrain").size -= 1;
-        this.owner.zone("Réserve").size += 1;
+        this.owner.zone("Inventaire").size += 1;
 
         this.move("Défausse");
         this.pose();

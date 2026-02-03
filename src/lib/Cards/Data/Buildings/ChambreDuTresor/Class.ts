@@ -17,7 +17,7 @@ export class ChambreDuTresor extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Trésor").add("Réserve");
+            this.owner.getCard("Trésor").add("Inventaire");
         }
     };
 };

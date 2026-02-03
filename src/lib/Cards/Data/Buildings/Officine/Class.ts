@@ -17,7 +17,7 @@ export class Officine extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Potion de soin").add("Réserve");
+            this.owner.getCard("Potion de soin").add("Inventaire");
         }
     };
 };

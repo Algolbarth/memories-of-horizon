@@ -19,6 +19,6 @@ export class SalamandreDesFlammes extends Creature {
     };
 
     startStepEffect = () => {
-        this.owner.getCard("Enflammer").add("Réserve");
+        this.owner.getCard("Enflammer").add("Inventaire");
     };
 };

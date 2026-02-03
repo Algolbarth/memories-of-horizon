@@ -16,8 +16,8 @@ export class SalleDesCoffres extends Building {
     };
 
     useEffect = () => {
-        this.owner.getCard("Coffre en bois").add("Réserve");
-        this.owner.getCard("Coffre en bois").add("Réserve");
+        this.owner.getCard("Coffre en bois").add("Inventaire");
+        this.owner.getCard("Coffre en bois").add("Inventaire");
 
         this.move("Terrain");
         this.pose();
@@ -25,8 +25,8 @@ export class SalleDesCoffres extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Coffre en bois").add("Réserve");
-            this.owner.getCard("Coffre en bois").add("Réserve");
+            this.owner.getCard("Coffre en bois").add("Inventaire");
+            this.owner.getCard("Coffre en bois").add("Inventaire");
         }
     };
 };

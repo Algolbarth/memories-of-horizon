@@ -33,7 +33,7 @@ export class CycleDeLEau extends Action {
             this.owner.ressource("Eau").spend(100);
 
             this.owner.zone("Pile").size++;
-            this.owner.zone("Réserve").size++;
+            this.owner.zone("Inventaire").size++;
             this.owner.zone("Terrain").size++;
         }
         else {

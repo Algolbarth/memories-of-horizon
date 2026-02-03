@@ -20,7 +20,7 @@ export class WargAlpha extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Frappe").add("Réserve");
+            this.owner.getCard("Frappe").add("Inventaire");
         }
     };
 };

@@ -8,6 +8,6 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Pierre philosophale"} /> dans la réserve.
+Au début de la phase de préparation : génère <CardInfo bind:system name={"Pierre philosophale"} /> dans l'inventaire.
 <br />
 Quand <CardInfo bind:system name={"Pierre philosophale"} /> est posée : augmente sa constitution et sa force d'autant que le flux dépensé.

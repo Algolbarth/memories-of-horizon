@@ -16,7 +16,7 @@ export class Rembourrage extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Réserve").cards) {
+        for (const card of this.owner.zone("Inventaire").cards) {
             if (card.isFamily("Armure")) {
                 return true;
             }
@@ -31,7 +31,7 @@ export class Rembourrage extends Action {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Réserve").cards) {
+            for (const card of this.owner.zone("Inventaire").cards) {
                 if (target == undefined && card.isFamily("Armure")) {
                     target = card;
                 }

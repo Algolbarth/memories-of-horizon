@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Génère autant de <CardInfo bind:system name={"Bière"} /> dans la réserve que de créature alliées sur le terrain.
+Génère autant de <CardInfo bind:system name={"Bière"} /> dans l'inventaire que de créature alliées sur le terrain.

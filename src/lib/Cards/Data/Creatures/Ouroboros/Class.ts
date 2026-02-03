@@ -20,7 +20,7 @@ export class Ouroboros extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Pierre philosophale").add("Réserve");
+            this.owner.getCard("Pierre philosophale").add("Inventaire");
         }
     };
 };

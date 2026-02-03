@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée de famille Sort est posée : génère un <CardInfo bind:system name={"Élémentaire de caillou"} /> dans la réserve.
+Quand une carte alliée de famille Sort est posée : génère un <CardInfo bind:system name={"Élémentaire de caillou"} /> dans l'inventaire.

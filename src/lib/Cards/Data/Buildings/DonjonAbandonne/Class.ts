@@ -17,7 +17,7 @@ export class DonjonAbandonne extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Monstre errant").add("Réserve");
+            this.owner.getCard("Monstre errant").add("Inventaire");
         }
     };
 };

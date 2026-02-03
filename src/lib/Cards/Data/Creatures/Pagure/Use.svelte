@@ -18,7 +18,7 @@
 			select_action("Coquillage");
 		}}
 	>
-		Génère Coquillage dans la réserve
+		Génère Coquillage dans l'inventaire
 	</button>
 
 	<br />
@@ -29,6 +29,6 @@
 			select_action("Conque");
 		}}
 	>
-		Génère Conque dans la réserve
+		Génère Conque dans l'inventaire
 	</button>
 </div>

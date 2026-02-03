@@ -28,7 +28,7 @@ export class Pagure extends Creature {
     };
 
     useEffect = (choice: string) => {
-        this.owner?.getCard(choice).add("Réserve");
+        this.owner?.getCard(choice).add("Inventaire");
 
         this.move("Terrain");
         this.pose();

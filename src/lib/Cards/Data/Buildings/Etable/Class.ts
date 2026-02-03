@@ -17,7 +17,7 @@ export class Etable extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Cheval").add("Réserve");
+            this.owner.getCard("Cheval").add("Inventaire");
         }
     };
 };

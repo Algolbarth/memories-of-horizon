@@ -15,7 +15,7 @@ export class BaguetteMalefique extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Maléfice").add("Réserve");
+            this.owner.getCard("Maléfice").add("Inventaire");
         }
     };
 };

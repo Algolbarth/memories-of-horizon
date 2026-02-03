@@ -17,7 +17,7 @@ export class Chaudron extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.getCard("Mélange").add("Réserve");
+            this.owner.getCard("Mélange").add("Inventaire");
         }
     };
 };

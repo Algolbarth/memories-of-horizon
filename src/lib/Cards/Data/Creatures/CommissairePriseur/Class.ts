@@ -21,7 +21,7 @@ export class CommissairePriseur extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            let reserve = copy(this.owner.zone("Réserve").cards);
+            let reserve = copy(this.owner.zone("Inventaire").cards);
             for (const card of reserve) {
                 card.getSale("Or").increase(10);
             }
