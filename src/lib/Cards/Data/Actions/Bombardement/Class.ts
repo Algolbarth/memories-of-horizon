@@ -26,7 +26,8 @@ export class Bombardement extends Action {
         for (const card of adversary_battlefield) {
             card.damageByEffect(20);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

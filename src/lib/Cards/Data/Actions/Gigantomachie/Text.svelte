@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 25 la constitution et la force de toutes les créatures alliées de niveau 5 ou plus sur le terrain.
+Inflige 5 dégâts à toutes les unités de niveau 5 ou moins sur le terrain pour chaque unités de niveau 5 ou plus sur le terrain.

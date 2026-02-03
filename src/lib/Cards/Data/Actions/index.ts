@@ -44,6 +44,7 @@ export * from './ExtensionDeTerritoire';
 export * from './Forger';
 export * from './Frappe';
 export * from './GestionDesStocks';
+export * from './Gigantomachie';
 export * from './Horizon';
 export * from './Hydratation';
 export * from './Incantation';
