@@ -63,4 +63,4 @@ export class AttaqueResiliente extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -30,7 +30,8 @@ export class BagarreDeTaverne extends Action {
                 card.stat("Force").increase(10);
             }
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

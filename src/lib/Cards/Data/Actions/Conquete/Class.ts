@@ -26,4 +26,4 @@ export class Conquete extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

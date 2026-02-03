@@ -41,6 +41,7 @@ export * from './ErigerLesFrontieres';
 export * from './Eruption';
 export * from './Exploration';
 export * from './ExtensionDeTerritoire';
+export * from './ForceDeLaFamille';
 export * from './Forger';
 export * from './Frappe';
 export * from './GestionDesStocks';

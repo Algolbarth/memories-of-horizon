@@ -4,25 +4,18 @@ import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import { Creature } from '../../../Class/Creature';
 
-export class Biodiversite extends Action {
-    name = "Biodiversité";
+export class ForceDeLaFamille extends Action {
+    name = "Force de la famille";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35], ["Végétal", 35]]);
+        this.init([["Or", 65]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
-            return true;
-        }
-        return false;
-    };
-
-    useEffect = () => {
         let family_list: string[] = [];
         let battlefield = copy(this.owner.zone("Terrain").cards);
 
@@ -36,10 +29,39 @@ export class Biodiversite extends Action {
             }
         }
 
+        for (const family of family_list) {
+            let check: boolean = true;
+
+            for (const card of battlefield) {
+                if (card instanceof Creature) {
+                    if (!card.families.total().includes(family)) {
+                        check = false;
+                    }
+                }
+            }
+
+            if (check) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    useEffect = () => {
+        let nb_creature = 0;
+        let battlefield = copy(this.owner.zone("Terrain").cards);
+
         for (const card of battlefield) {
             if (card instanceof Creature) {
-                card.stat("Constitution").increase(family_list.length * 5);
-                card.stat("Force").increase(family_list.length * 5);
+                nb_creature++;
+            }
+        }
+
+        for (const card of battlefield) {
+            if (card instanceof Creature) {
+                card.stat("Constitution").increase(nb_creature);
+                card.stat("Force").increase(nb_creature);
             }
         }
 
