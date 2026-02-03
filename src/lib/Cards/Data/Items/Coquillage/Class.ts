@@ -21,8 +21,8 @@ export class Coquillage extends Item {
     };
 
     useEffect = () => {
-        this.owner.ressource("Eau").production -= 5;
-        this.owner.ressource("Or").production += 5;
+        this.owner.ressource("Eau").decrease(5);
+        this.owner.ressource("Or").increase(5);
 
         this.move("Défausse");
         this.pose();

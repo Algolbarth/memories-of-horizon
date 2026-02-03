@@ -99,7 +99,7 @@ export class Concoction extends Item {
     };
 
     useEffect = (target: Unit | undefined) => {
-        this.owner.ressource("Mana").current += this.stat("Infusion de mana").value();
+        this.owner.ressource("Mana").produce(this.stat("Infusion de mana").value());
 
         if (this.stat("Infusion interdite").value() > 0) {
             let homonculus = this.owner.getCard("Homonculus");

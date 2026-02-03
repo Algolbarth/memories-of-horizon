@@ -36,7 +36,7 @@ export class Game {
         else if (deck != undefined && (this.mode == "Libre" || this.mode == "Standard")) {
             this.player.life.set(100);
             this.player.ressource("Or").production = 4;
-            this.player.ressource("Flux").stock = 4;
+            this.player.ressource("Flux").stockage = 4;
             this.player.deck = deck;
 
             this.player.getCard("Plaine").add("Région");
@@ -64,8 +64,8 @@ export class Game {
 
         entity.ressource("Or").production = train_entity.gold;
         entity.ressource("Or").current = train_entity.gold;
-        entity.ressource("Flux").stock = train_entity.flux;
-        entity.ressource("Mana").stock = train_entity.mana;
+        entity.ressource("Flux").stockage = train_entity.flux;
+        entity.ressource("Mana").stockage = train_entity.mana;
 
         entity.zone("Pile").base_level = train_entity.zones[1].level;
         for (const zone of train_entity.zones) {
@@ -100,8 +100,8 @@ export class Game {
     };
 
     startChapter = () => {
-        this.player.ressource("Or").production++;
-        this.player.ressource("Flux").stock++;
+        this.player.ressource("Or").increase(1);
+        this.player.ressource("Flux").stock(1);
 
         this.bot.deck = this.chapter.steps[0].deck;
         this.bot.life.set(this.chapter.steps[0].life);

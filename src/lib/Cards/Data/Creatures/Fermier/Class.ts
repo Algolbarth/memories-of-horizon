@@ -20,7 +20,7 @@ export class Fermier extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Or").current += 5;
+            this.owner.ressource("Or").produce(5);
         }
     };
 };

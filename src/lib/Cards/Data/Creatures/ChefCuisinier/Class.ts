@@ -23,10 +23,10 @@ export class ChefCuisinier extends Creature {
         if (this.zone.name == "Terrain" && card.isFamily("Nourriture") && card.owner == this.owner) {
             for (const e of card.elements.total()) {
                 if (e != "Neutre") {
-                    this.owner.ressource(e).current += 10;
+                    this.owner.ressource(e).produce(10);
                 }
                 else {
-                    this.owner.ressource("Or").current += 10;
+                    this.owner.ressource("Or").produce(10);
                 }
             }
         }

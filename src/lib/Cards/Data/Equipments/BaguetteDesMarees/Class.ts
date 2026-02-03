@@ -19,7 +19,7 @@ export class BaguetteDesMarees extends Equipment {
 
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.ressource("Eau").current += this.bearer.stat("Magie").value();
+            this.owner.ressource("Eau").produce(this.bearer.stat("Magie").value());
         }
     };
 };

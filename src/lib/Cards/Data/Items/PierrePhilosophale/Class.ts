@@ -14,17 +14,23 @@ export class PierrePhilosophale extends Item {
     };
 
     canUse = () => {
-        if (this.owner.ressource("Flux").stock > 0) {
+        if (this.owner.ressource("Flux").total() > 0) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").production += this.owner.ressource("Flux").stock;
-        this.owner.ressource("Or").current += this.owner.ressource("Flux").stock;
-        this.owner.ressource("Flux").stock = 0;
+        if (this.owner.ressource("Flux").total() >= 5) {
+            this.owner.ressource("Or").increase(5);
+            this.owner.ressource("Flux").spend(5);
+        }
+        else {
+            this.owner.ressource("Or").increase(this.owner.ressource("Flux").total());
+            this.owner.ressource("Flux").spend(this.owner.ressource("Flux").total());
+        }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

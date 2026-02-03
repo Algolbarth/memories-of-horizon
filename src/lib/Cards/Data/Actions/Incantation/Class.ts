@@ -46,7 +46,7 @@ export class Incantation extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        this.owner.ressource("Mana").current += target.stat("Magie").value();
+        this.owner.ressource("Mana").produce(target.stat("Magie").value());
         target.stat("Étourdissement").fix(1);
 
         this.move("Défausse");

@@ -71,13 +71,13 @@ export class CercleDruidique extends Action {
 
         for (const e of target.elements.total()) {
             if (e != "Neutre") {
-                this.owner.ressource(e).current += 5 * nb_same_element;
+                this.owner.ressource(e).produce(5 * nb_same_element);
             }
             else {
-                this.owner.ressource("Or").current += 5 * nb_same_element;
+                this.owner.ressource("Or").produce(5 * nb_same_element);
             }
         }
-        this.owner.ressource("Or").current += 5 * nb_druid;
+        this.owner.ressource("Or").produce(5 * nb_druid);
 
         this.move("Défausse");
         this.pose();

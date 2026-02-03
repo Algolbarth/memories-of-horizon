@@ -23,7 +23,7 @@ export class Pelle extends Equipment {
                 return false;
             };
             this.owner.discover(1, read_condition);
-            this.owner.ressource("Terre").current += 10;
+            this.owner.ressource("Terre").produce(10);
         }
     };
 };

@@ -49,7 +49,7 @@ export class SardinesEnBoite extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.owner.ressource("Eau").current += 5;
+            target.owner.ressource("Eau").produce(5);
         }
         else {
             target.heal(10);

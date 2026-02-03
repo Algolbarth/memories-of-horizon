@@ -27,7 +27,7 @@
 				select_action(undefined);
 			}}
 		>
-			Augmente de 2 la capacité en feu
+			Augmente de 2 la production en feu
 		</button>
 
 		<br />

@@ -27,7 +27,8 @@ export class WyverneMarine extends Creature {
     };
 
     useEffect = () => {
-        this.owner.ressource("Eau").current += 10;
+        this.owner.ressource("Eau").produce(10);
+
         this.move("Terrain");
         this.pose();
     };

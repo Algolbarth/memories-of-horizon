@@ -18,6 +18,6 @@ export class FauxDePaysan extends Equipment {
     };
 
     killEffect = () => {
-        this.owner.ressource("Or").stock += 5;
+        this.owner.ressource("Or").stock(5);
     };
 };

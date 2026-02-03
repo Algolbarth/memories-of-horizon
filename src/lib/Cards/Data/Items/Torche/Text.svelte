@@ -10,6 +10,6 @@
 
 Au choix :
 <ul>
-	<li>Augmente de 2 la capacité en feu.</li>
+	<li>Augmente de 2 la production en feu.</li>
 	<li>Inflige 20 dégâts à une unité adverse sur le terrain.</li>
 </ul>

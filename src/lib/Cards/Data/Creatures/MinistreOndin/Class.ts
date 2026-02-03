@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -20,7 +21,7 @@ export class MinistreOndin extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card instanceof Creature && card.isFamily("Ondin") && card.owner == this.owner) {
-            this.owner.ressource("Eau").current += 5;
+            this.owner.ressource("Eau").produce(5);
         }
     };
 };

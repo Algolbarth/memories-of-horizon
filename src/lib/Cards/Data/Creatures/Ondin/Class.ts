@@ -20,7 +20,7 @@ export class Ondin extends Creature {
 
     addEffect = (zone: string) => {
         if (zone == "Terrain") {
-            this.owner.ressource("Eau").current += 5;
+            this.owner.ressource("Eau").produce(5);
         }
     };
 };

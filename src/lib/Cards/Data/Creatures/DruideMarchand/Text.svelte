@@ -16,5 +16,5 @@ Quand posé, au choix :
 </ul>
 
 {#if card.name == "Druide marchand (forme humain)"}
-	Au début de la phase de préparation : augmente de 1 la capacité en or.
+	Au début de la phase de préparation : augmente de 1 la production en or.
 {/if}

@@ -23,7 +23,8 @@ export class SeigneurOndin extends Creature {
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
-                this.owner.ressource("Eau").current += 5;
+                this.owner.ressource("Eau").produce(5);
+
                 card.stat("Constitution").increase(5);
                 card.stat("Force").increase(5);
             }

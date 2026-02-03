@@ -21,8 +21,8 @@ export class TheoricienDuComplot extends Creature {
 
     otherDestroyEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.owner == this.owner && card.zone.name == "Pile") {
-            this.owner.ressource("Or").current += 1;
-            this.owner.ressource("Feu").current += 1;
+            this.owner.ressource("Or").produce(1);
+            this.owner.ressource("Feu").produce(1);
         }
     };
 };

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : diminue la capacité en feu de 5 pour infliger 5 dégâts à toutes les unités adverse.
+Quand meurt : diminue la production en feu de 5 pour infliger 5 dégâts à toutes les unités adverse.

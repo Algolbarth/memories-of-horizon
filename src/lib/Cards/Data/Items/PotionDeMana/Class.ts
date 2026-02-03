@@ -18,7 +18,8 @@ export class PotionDeMana extends Item {
     };
 
     useEffect = () => {
-        this.owner.ressource("Mana").current += this.stat("Infusion").value();
+        this.owner.ressource("Mana").produce(this.stat("Infusion").value());
+
         this.move("Défausse");
         this.pose();
     };

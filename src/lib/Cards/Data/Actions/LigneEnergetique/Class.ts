@@ -67,10 +67,10 @@ export class LigneEnergetique extends Action {
 
         for (const e of target.elements.total()) {
             if (e != "Neutre") {
-                this.owner.ressource(e).current += 5 * nb_element;
+                this.owner.ressource(e).produce(5 * nb_element);
             }
             else {
-                this.owner.ressource("Or").current += 5 * nb_element;
+                this.owner.ressource("Or").produce(5 * nb_element);
             }
         }
 

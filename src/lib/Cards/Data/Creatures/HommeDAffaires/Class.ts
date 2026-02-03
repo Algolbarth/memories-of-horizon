@@ -20,7 +20,7 @@ export class HommeDAffaires extends Creature {
 
     otherSellEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.owner == this.owner) {
-            this.owner.ressource("Or").current += 5;
+            this.owner.ressource("Or").produce(5);
         }
     };
 };

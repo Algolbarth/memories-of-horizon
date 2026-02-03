@@ -48,7 +48,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Eau").production += 2;
+            this.owner.ressource("Eau").increase(2);
         }
     };
 };

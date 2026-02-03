@@ -49,7 +49,7 @@ export class Pain extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.owner.ressource("Or").production++;
+            target.owner.ressource("Or").increase(1);
         }
         else {
             target.heal(10);

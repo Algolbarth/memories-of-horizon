@@ -21,8 +21,8 @@ export class Conque extends Item {
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").production -= 5;
-        this.owner.ressource("Eau").production += 5;
+        this.owner.ressource("Or").decrease(5);
+        this.owner.ressource("Eau").increase(5);
 
         this.move("Défausse");
         this.pose();

@@ -47,7 +47,7 @@ export class DruideMarchandHumain extends DruideMarchand {
     };
 
     startStepEffect = () => {
-        this.owner.ressource("Or").production += 1;
+        this.owner.ressource("Or").increase(1);
     };
 };
 

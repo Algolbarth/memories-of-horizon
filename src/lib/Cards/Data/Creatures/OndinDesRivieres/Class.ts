@@ -20,7 +20,7 @@ export class OndinDesRivieres extends Creature {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Eau").current += 10;
+            this.owner.ressource("Eau").produce(10);
         }
     };
 };

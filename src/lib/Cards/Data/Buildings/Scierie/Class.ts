@@ -17,7 +17,7 @@ export class Scierie extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Végétal").current += 10;
+            this.owner.ressource("Végétal").produce(10);
         }
     };
 };

@@ -17,7 +17,7 @@ export class CarriereDePierre extends Building {
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Terre").current += 10;
+            this.owner.ressource("Terre").produce(10);
         }
     };
 };

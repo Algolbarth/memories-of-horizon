@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé et au début de la phase de préparation : augmente de 1 la capacité en or.
+Quand posé et au début de la phase de préparation : augmente de 1 la production en or.

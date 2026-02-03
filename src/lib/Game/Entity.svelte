@@ -22,7 +22,7 @@
 		</div>
 
 		{#each entity.ressources as ressource}
-			{#if ressource.current > 0 || ressource.production > 0 || ressource.stock > 0}
+			{#if ressource.current > 0 || ressource.production > 0 || ressource.stockage > 0}
 				<div class="preview" style={"background:" + system.ressources.find(ressource.name)?.color + ";color:" + (system.ressources.find(ressource.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
 					<div>
 						{ressource.name}
@@ -38,18 +38,18 @@
 						{/if}
 					</div>
 					<div>
-						{#if ressource.stock > 0}
+						{#if ressource.stockage > 0}
 							{#if ressource.current > 0 || ressource.production > 0}+
-							{/if}{several(ressource.stock, ["stocké"])}
+							{/if}{several(ressource.stockage, ["stocké"])}
 						{/if}
 					</div>
 					<div>
-						{#if ressource.stock > 0 && ressource.current > 0}
-							= {ressource.current + ressource.stock}
+						{#if ressource.stockage > 0 && ressource.current > 0}
+							= {ressource.current + ressource.stockage}
 						{/if}
 					</div>
 					<div style="text-align:right">
-						{#if ressource.name == "Flux" && ressource.stock > 0 && system.game.phase == "Préparation"}
+						{#if ressource.name == "Flux" && ressource.stockage > 0 && system.game.phase == "Préparation"}
 							<button
 								on:click={() => {
 									show_flux = true;

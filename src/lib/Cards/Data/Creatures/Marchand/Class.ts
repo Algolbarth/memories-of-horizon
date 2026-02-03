@@ -19,14 +19,15 @@ export class Marchand extends Creature {
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").production++;
+        this.owner.ressource("Or").increase(1);
+
         this.move("Terrain");
         this.pose();
     };
 
     startStepEffect = () => {
         if (this.zone.name == "Terrain") {
-            this.owner.ressource("Or").production++;
+            this.owner.ressource("Or").increase(1);
         }
     };
 };

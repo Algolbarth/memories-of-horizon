@@ -7,9 +7,9 @@
 	export let card: Card;
 </script>
 
-Augmente la capacité en eau de 3.
+Augmente la production en eau de 3.
 
 <br />
 <br />
 
-<Sorcery bind:system bind:card cost={10} text={"augmente la capacité en eau de 5 à la place."} />
+<Sorcery bind:system bind:card cost={10} text={"augmente la production en eau de 5 à la place."} />

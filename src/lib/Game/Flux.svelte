@@ -55,19 +55,19 @@
 							let add: number;
 
 							if (number_selected == "Max") {
-								add = game.player.ressource("Flux").stock;
+								add = game.player.ressource("Flux").total();
 							} else {
 								add = parseInt(number_selected);
-								if (add > game.player.ressource("Flux").stock) {
-									add = game.player.ressource("Flux").stock;
+								if (add > game.player.ressource("Flux").total()) {
+									add = game.player.ressource("Flux").total();
 								}
 							}
 
-							game.player.ressource(ressource).current += add;
-							game.player.ressource(ressource).production += add;
-							game.player.ressource("Flux").stock -= add;
+							game.player.ressource(ressource).produce(add);
+							game.player.ressource(ressource).increase(add);
+							game.player.ressource("Flux").spend(add);
 
-							if (game.player.ressource("Flux").stock == 0) {
+							if (game.player.ressource("Flux").total() == 0) {
 								show_flux = false;
 							}
 						}}

@@ -269,15 +269,15 @@ export class Entity {
 class EntityRessource {
     name: string;
     current: number = 0;
-    stock: number = 0;
+    stockage: number = 0;
     production: number = 0;
 
     constructor(name: string) {
         this.name = name;
-    }
+    };
 
     total = () => {
-        return this.current + this.stock;
+        return this.current + this.stockage;
     };
 
     spend = (value: number) => {
@@ -290,13 +290,35 @@ class EntityRessource {
             this.current = 0;
         }
 
-        this.stock -= value;
-        if (this.stock < 0) {
-            this.stock = 0;
+        this.stockage -= value;
+        if (this.stockage < 0) {
+            this.stockage = 0;
         }
     };
 
     produce = (value: number) => {
         this.current += value;
+    };
+
+    stock = (value: number) => {
+        this.stockage += value;
+    };
+
+    destock = (value: number) => {
+        this.stockage -= value;
+        if (this.stockage < 0) {
+            this.stockage = 0;
+        }
+    };
+
+    increase = (value: number) => {
+        this.production += value;
+    };
+
+    decrease = (value: number) => {
+        this.production -= value;
+        if (this.production < 0) {
+            this.production = 0;
+        }
     };
 };
