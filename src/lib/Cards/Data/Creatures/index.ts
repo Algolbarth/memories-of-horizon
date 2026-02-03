@@ -105,6 +105,7 @@ export * from './Negociant';
 export * from './OfficierDArtillerie';
 export * from './Ondin';
 export * from './OndinDesRivieres';
+export * from './Ouroboros';
 export * from './OursDesMontagnes';
 export * from './OursForestier';
 export * from './Pagure';
