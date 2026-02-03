@@ -53,8 +53,9 @@ export class Lv1_Mendiant extends Chapter {
 
         this.addRessource("Or", 10);
 
-        let deck_1 = new ChapterDeck(system, "Mendiant", ["Mendiant"]);
+        let deck_1 = new ChapterDeck(system, "Mendiant", ["Bière"]);
         this.addStep(5, ["Ville"], 10, deck_1, ["Mendiant"], ["Deux hommes se battent devant un bar.", "En vous approchant, il s'agit d'un ivrogne et d'un soldat soul."]);
+
         let deck_2 = new ChapterDeck(system, "Soldats", ["Soldat"]);
         this.addStep(5, ["Ville"], 10, deck_2, ["Soldat"]);
     };
