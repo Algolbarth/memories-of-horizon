@@ -37,7 +37,7 @@ export class Equipment extends Item {
         this.addEquipStat("Santé", 0);
         this.addEquipStat("Initiative", 0);
         this.addEquipStat("Garde", 0);
-        this.addEquipStat("Perpétuité", 0);
+        this.addEquipStat("Persistance", 0);
         this.addEquipStat("Esquive", 0);
         this.addEquipStat("Critique", 0);
         this.addEquipStat("Étourdissement", 0);

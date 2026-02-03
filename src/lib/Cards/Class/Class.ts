@@ -33,7 +33,7 @@ export class Card {
 
         this.addTrait("Rare", false);
 
-        this.addStat("Perpétuité", 0);
+        this.addStat("Persistance", 0);
 
         for (const ressource of system.ressources.list) {
             this.cost.push(new Cost(ressource.name, this));
@@ -149,10 +149,10 @@ export class Card {
             this.slot = entity.zone(zone).cards.length;
 
             if (zone == "Défausse") {
-                this.stat("Perpétuité").add = 2;
+                this.stat("Persistance").add = 2;
             }
             else {
-                this.stat("Perpétuité").set(0);
+                this.stat("Persistance").set(0);
             }
 
             if (!["Réserve", "Pile"].includes(zone)) {
