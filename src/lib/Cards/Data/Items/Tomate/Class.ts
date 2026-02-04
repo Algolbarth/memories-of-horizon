@@ -42,6 +42,17 @@ export class Tomate extends Item {
         return false;
     };
 
+    canSatiety = () => {
+        for (const entity of [this.owner, this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card instanceof Creature && !card.isDamaged()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+
     select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

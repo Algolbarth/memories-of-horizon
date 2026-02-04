@@ -11,7 +11,4 @@
 
 Découvre 3 cartes de famille Nourriture.
 
-<br />
-<br />
-
 <Resolve bind:system bind:card cost={20} text={"découvre 5 cartes de famille Nourriture à la place."} />

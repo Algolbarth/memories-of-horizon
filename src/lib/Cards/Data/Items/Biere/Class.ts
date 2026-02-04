@@ -26,6 +26,15 @@ export class Biere extends Item {
         return false;
     };
 
+    canSatiety = () => {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card instanceof Creature && (!card.isDamaged() && card.stat("Critique").value() < 100)) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = () => {
         if (this.owner == this.system.game.player) {
             this.system.game.use.set(this, Use);

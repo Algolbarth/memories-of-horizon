@@ -27,6 +27,15 @@ export class Lait extends Item {
         return false;
     };
 
+    canSatiety = () => {
+        for (const card of this.owner.zone("Terrain").cards) {
+            if (card instanceof Creature && (!card.isDamaged() && card.hasDebuff())) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     select = () => {
         let check = false;
         for (const card of this.owner.zone("Terrain").cards) {

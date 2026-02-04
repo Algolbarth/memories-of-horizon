@@ -11,7 +11,4 @@
 
 Découvre 3 créatures.
 
-<br />
-<br />
-
 <Resolve bind:system bind:card cost={20} text={"découvre 5 créatures à la place."} />

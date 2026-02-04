@@ -11,7 +11,4 @@
 
 Découvre 1 carte.
 
-<br />
-<br />
-
 <Resolve bind:system bind:card cost={10} text={"découvre 2 cartes à la place."} />

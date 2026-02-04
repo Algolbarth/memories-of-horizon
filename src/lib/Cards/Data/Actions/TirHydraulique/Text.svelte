@@ -11,7 +11,4 @@
 
 Inflige 30 dégâts à une unité adverse sur le terrain.
 
-<br />
-<br />
-
 <Source bind:system bind:card cost={15} text={"inflige 60 dégâts à la place."} />
