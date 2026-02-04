@@ -12,7 +12,7 @@ export class WyverneMage extends Creature {
         this.level = 3;
         this.init([["Or", 60]]);
 
-        this.initFamily(["Reptile"]);
+        this.initFamily(["Reptile", "Wyverne"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
