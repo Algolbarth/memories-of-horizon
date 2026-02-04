@@ -11,7 +11,7 @@ export class MageDeLaNature extends Creature {
 
         this.init([["Or", 20], ["Végétal", 20]]);
 
-        this.initFamily(["Elfe"]);
+        this.initFamily(["Elfe", "Mage"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);

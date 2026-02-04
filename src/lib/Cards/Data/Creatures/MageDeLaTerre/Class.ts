@@ -10,7 +10,7 @@ export class MageDeLaTerre extends Creature {
 
         this.init([["Or", 20], ["Terre", 20]]);
 
-        this.initFamily(["Nain"]);
+        this.initFamily(["Nain", "Mage"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

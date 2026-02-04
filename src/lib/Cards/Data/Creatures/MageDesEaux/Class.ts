@@ -11,7 +11,7 @@ export class MageDesEaux extends Creature {
 
         this.init([["Or", 20], ["Eau", 20]]);
 
-        this.initFamily(["Ondin"]);
+        this.initFamily(["Ondin", "Mage"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);

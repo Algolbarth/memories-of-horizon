@@ -10,7 +10,7 @@ export class BaguetteDArchimage extends Equipment {
 
         this.init([["Or", 100]]);
 
-        this.initFamily(["Arme"]);
+        this.initFamily(["Arme", "Mage"]);
 
         this.equipStat("Magie").init(50);
 

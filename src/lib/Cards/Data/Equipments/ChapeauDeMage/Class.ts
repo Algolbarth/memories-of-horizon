@@ -10,7 +10,7 @@ export class ChapeauDeMage extends Equipment {
 
         this.init([["Or", 40]]);
 
-        this.initFamily(["Armure"]);
+        this.initFamily(["Armure", "Mage"]);
 
         this.equipStat("Magie").init(5);
 

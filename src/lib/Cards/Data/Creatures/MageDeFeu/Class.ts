@@ -11,7 +11,7 @@ export class MageDeFeu extends Creature {
 
         this.init([["Or", 20], ["Feu", 20]]);
 
-        this.initFamily(["Gobelin"]);
+        this.initFamily(["Gobelin", "Mage"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(20);

@@ -10,7 +10,7 @@ export class BaguetteDeMage extends Equipment {
 
         this.init([["Or", 30]]);
 
-        this.initFamily(["Arme"]);
+        this.initFamily(["Arme", "Mage"]);
 
         this.equipStat("Magie").init(15);
 
