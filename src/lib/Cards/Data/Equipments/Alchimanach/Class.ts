@@ -9,7 +9,7 @@ export class Alchimanach extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 6]]);
+        this.init([["Or", 20]]);
 
         this.text = Text;
     };
@@ -22,7 +22,11 @@ export class Alchimanach extends Equipment {
                 }
                 return false;
             };
-            this.owner.draw(1, read_condition);
+            let cards = this.owner.draw(1, read_condition);
+
+            if (cards[0] != undefined) {
+                cards[0].stat("Infusion").increase(15);
+            }
         }
     };
 };
