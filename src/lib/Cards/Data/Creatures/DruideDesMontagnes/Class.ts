@@ -64,7 +64,7 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
 
         this.initFamily(["Bête"]);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

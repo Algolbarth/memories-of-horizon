@@ -64,7 +64,7 @@ export class DruideDesBoisRenard extends DruideDesBois {
 
         this.initFamily(["Bête"]);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);

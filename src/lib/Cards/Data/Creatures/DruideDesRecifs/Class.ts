@@ -62,7 +62,7 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
 
         this.initFamily(["Reptile"]);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(40);
         this.stat("Force").init(40);

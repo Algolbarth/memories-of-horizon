@@ -62,7 +62,7 @@ export class DruideDesPlainesLoup extends DruideDesPlaines {
 
         this.initFamily(["Bête"]);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(30);

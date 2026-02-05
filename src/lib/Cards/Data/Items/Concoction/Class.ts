@@ -23,7 +23,7 @@ export class Concoction extends Item {
         this.addStat("Infusion explosive", 0);
         this.addStat("Infusion parfumée", 0);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.text = Text;
     };

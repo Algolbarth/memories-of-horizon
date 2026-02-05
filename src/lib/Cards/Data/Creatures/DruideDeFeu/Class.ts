@@ -62,7 +62,7 @@ export class DruideDeFeuLezard extends DruideDeFeu {
 
         this.initFamily(["Reptile"]);
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);

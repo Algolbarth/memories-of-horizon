@@ -9,7 +9,7 @@ export class Homonculus extends Creature {
 
         this.level = 1;
 
-        this.trait("Rare").base = true;
+        this.trait("Rare").init(true);
 
         this.stat("Constitution").init(1);
         this.stat("Force").init(0);

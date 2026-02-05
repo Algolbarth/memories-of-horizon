@@ -33,4 +33,8 @@ export class Trait {
     condition = () => {
         return this.value();
     };
+
+    init = (value: boolean) => {
+        this.base = value;
+    };
 };
