@@ -14,6 +14,7 @@
 
 	{#each card.equipments as equipment}
 		<button
+			class="active"
 			on:click={() => {
 				system.view.card = equipment;
 			}}
