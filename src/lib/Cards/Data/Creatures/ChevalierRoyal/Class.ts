@@ -1,11 +1,10 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
+import { Knight, MountedKnight } from '../../../Class/Knight';
 import Text from './Text.svelte';
 
-export class ChevalierRoyal extends Creature {
+export class ChevalierRoyal extends Knight {
     name = "Chevalier royal";
-    otherForm = "Chevalier royal (monté)";
-    mounted = false;
+    alternative_form = "Chevalier royal (monté)";
 
     constructor(system: System) {
         super(system);
@@ -19,12 +18,11 @@ export class ChevalierRoyal extends Creature {
         this.stat("Endurance").init(20);
         this.stat("Résistance").init(20);
     };
-}
+};
 
-export class ChevalierRoyalMonte extends Creature {
+export class ChevalierRoyalMonte extends MountedKnight {
     name = "Chevalier royal (monté)";
-    otherForm = "Chevalier royal";
-    mounted = true;
+    alternative_form = "Chevalier royal";
 
     constructor(system: System) {
         super(system);
@@ -38,16 +36,5 @@ export class ChevalierRoyalMonte extends Creature {
         this.stat("Vitesse").init(3);
 
         this.text = Text;
-    };
-
-    dieEffect = () => {
-        if (this.zone.name != "Pile") {
-            this.transform("Chevalier royal");
-            this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
-        }
-    };
-
-    dieGo = () => {
-
     };
 };

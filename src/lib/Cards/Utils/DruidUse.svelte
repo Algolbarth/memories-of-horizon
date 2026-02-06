@@ -29,6 +29,6 @@
             select_action("transform");
         }}
     >
-        Se transforme en {system.game.use.card.otherForm}
+        Se transforme en {system.game.use.card.alternative_form}
     </button>
 </div>

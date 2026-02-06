@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Transforme une créature alliée de famille Druide sur le terrain en son autre forme.
+Transforme en sa forme alternative une créature alliée de famille Druide sur le terrain.

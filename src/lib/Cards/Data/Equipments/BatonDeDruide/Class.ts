@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
+import { Druid } from '../../../Class/Druid';
 import { Equipment } from '../../../Class/Equipment';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -19,7 +19,7 @@ export class BatonDeDruide extends Equipment {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && card.isFamily("Druide") && card.canEquip()) {
+            if (card instanceof Druid && card.canEquip()) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ export class BatonDeDruide extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.isFamily("Druide") && card.canEquip()) {
+                if (target == undefined && this.bearer instanceof Druid && card.canEquip()) {
                     target = card;
                 }
             }
@@ -46,16 +46,14 @@ export class BatonDeDruide extends Equipment {
     };
 
     startBattleEffect = () => {
-        if (this.bearer != undefined && this.bearer.isFamily("Druide")) {
-            this.bearer.transform(this.bearer.otherForm);
-            console.log("start battle");
+        if (this.bearer != undefined && this.bearer instanceof Druid) {
+            this.bearer.transform(this.bearer.alternative_form);
         }
     };
 
     endAdversaryStepEffect = () => {
-        if (this.bearer != undefined && this.bearer.isFamily("Druide")) {
-            this.bearer.transform(this.bearer.otherForm);
-            console.log("end step");
+        if (this.bearer != undefined && this.bearer instanceof Druid) {
+            this.bearer.transform(this.bearer.alternative_form);
         }
     };
 };

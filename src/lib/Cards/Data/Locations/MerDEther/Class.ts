@@ -9,8 +9,8 @@ export class MerDEther extends Location {
         super(system);
 
         this.level = 20;
-        this.trait("Légendaire").base = true;
+        this.trait("Légendaire").init(true);
 
         this.text = Text;
     };
-}
+};

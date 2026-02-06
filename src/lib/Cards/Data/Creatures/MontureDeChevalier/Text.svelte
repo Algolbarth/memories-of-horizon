@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : place dans l'inventaire une créature de famille Chevalier (forme non-montée) alliée sur le terrain et la transforme en forme montée.
+Quand posé : place dans l'inventaire et transforme en sa forme alternative une créature de famille Chevalier à terre alliée sur le terrain.

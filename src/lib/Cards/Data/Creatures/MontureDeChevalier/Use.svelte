@@ -2,12 +2,12 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-	import { Creature } from "../../../Class/Creature";
+	import { Knight } from "../../../Class/Knight";
 
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card instanceof Creature && card.isFamily("Chevalier") && !card.mounted) {
+		if (card instanceof Knight && card.trait("À terre").value()) {
 			return true;
 		}
 		return false;

@@ -15,7 +15,7 @@ Ajouter la paralysie, le gel et la cécité (paralysie => X actions, gel => X to
 
 # Cartes
 
-## A ajouter
+## À ajouter
 ### Mimique
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la production en eau adverse.
 Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la constitution de la créature attaquante.
@@ -462,8 +462,8 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Rakdos` : démon connu pour sa force physique et son insolence. ne reconnait la valeur des gens que de part leur capacité à s'amuser face à la souffrance. se moque d'abord de gidéon en qualifiant son courage de lachêté puisqu'au final il a pour but de fuit toute conséquence de ses actes. quand le siège des récifs noirs se prépare il se propose car il considère le dragon comme un divertissement potentiel. le panthéon craignant son instabilité et son égoisme il est rejeté de l'opération. Après que tragoédia décime une partie des dieux, il décide de se mêler à la bataille malgré les avertissements. il parvient à occuper le dragon en duel mais n'arrive pas à le vaincre. après que gidéon lui ai prouvé qu'il a muri, il decide de s'allier à lui pour détruire tragoedia pour de bon. malgré son rôle dans la bataille il s'éclipse rapidement.
 
 `Nana` : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé. Apprentie auprès de Sartorias (qu'elle considère comme un père) elle conserve un caractère d'enfant malgré son intelligence. Est accompagné de Doll, un être artificiel conçu par le néant mais séparé de ce dernier. Au vu de la menace d'Ananta, Sartorias décide d'emmener Nana malgré le danger au vu de son rapport au néant. Après la mort de l'archimage, Nana déchainera ses pouvoirs pour détruire Ananta.
-`Sartorias` : liche archimage, maitre de l'académie des mages. Parmi les rares liches à avoir la confiance des autres races. A pris Nana sous son aile pour lui enseigner la magie.
-`Doll` : être unique, né dans le néant mais séparé très tôt de l'ensemble, le rendant autonome. Peux donc changer d'apparence à volonté et "étouffer" les éléments autre que mort et ombre. A été receuilli par Sartorias puis adopté par Nana. Affrontera ananta et découvrira qu'il n'a aucune âme et donc est immunisé aux pouvoirs du néant. Perdra quand même face à la liche corrompue à cause de son jeune âge.
+`Sartorias` : liche archimage, maitre de l'académie des mages. Parmi les rares liches à avoir la confiance des autres races. À pris Nana sous son aile pour lui enseigner la magie.
+`Doll` : être unique, né dans le néant mais séparé très tôt de l'ensemble, le rendant autonome. Peux donc changer d'apparence à volonté et "étouffer" les éléments autre que mort et ombre. À été receuilli par Sartorias puis adopté par Nana. Affrontera ananta et découvrira qu'il n'a aucune âme et donc est immunisé aux pouvoirs du néant. Perdra quand même face à la liche corrompue à cause de son jeune âge.
 
 `Fiona` : archange de la fierté, prenant part au siège des récifs noirs. elle peux renforcer ses capacités si elle est fière d'elle ou des gens qui sont fiers d'eux. elle est la plus forte du trio qu'elle forme avec gabriella et helena, les trois glorieuses. accablé par la perte de ses amis contre ananta, elle perds toute fierté et ne peux plus affronter la liche. elle perdra son bras lors de la bataille mais survivra, renforçant nana et Gideon qui ont su prouver à leurs mentors qu'ils étaient capable de vaincre les pires adversaires.
 `Gabriella` : archange de la gloire, prenant part au siège des récifs noirs. elle devient plus forte quand elle accomplit des actions glorieuses. elle sera tuée par ananta.
@@ -569,7 +569,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Kouen` : avien parmis les meilleurs archers de l'horizon. utilise ses flèches pour communiquer avec ses alliés.
 `Ouquidekin` : grand guerrier alishtar. communique avec l'esprit de sa femme.
 `Bombay` : djinn chat dieu des rêves. Il a l'apparence de l'hypnomiaou dark dans sw.
-`Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence d'Amitus.
+`Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. À l'apparence d'Amitus.
 `Manx` : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  
 `Medox` : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire.
 `Mania` : golem géant (le géant de mha).
@@ -581,7 +581,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Onimusha` : gobelin cavalier utilisant une lance de souffre. peux génèrer des explosions en mélangeant de la poudre à ses flammes.
 `Ordo` : goliath cavalier et chef de guerre. roi d'une montagne de yéti.
 `Borgne` : chef de guerre ayant perdu son oeil droit.
-`Belagor` : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  
+`Belagor` : drow avec un masque doré dieu des complots. À l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  
 `Balor` : archidémon dragon, plus puissante créature connue des enfers. ses flammes ignorent toutes capacités, éléments ou magie.
 `Amelia` : archange, plus puissante créature connue au paradis. se renforce et réssucite pour chaque personne ressentant de l'amour.
 `Ogre pirate` : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken.

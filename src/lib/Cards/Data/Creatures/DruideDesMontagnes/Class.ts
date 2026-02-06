@@ -1,9 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
+import { Druid } from '../../../Class/Druid';
 import Text from './Text.svelte';
-import Use from '../../../Utils/DruidUse.svelte';
 
-class DruideDesMontagnes extends Creature {
+class DruideDesMontagnes extends Druid {
     constructor(system: System) {
         super(system);
 
@@ -13,29 +12,11 @@ class DruideDesMontagnes extends Creature {
 
         this.text = Text;
     };
-
-    select = () => {
-        if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("bear");
-        }
-    };
-
-    useEffect = (choice: string) => {
-        if (choice == "transform") {
-            this.transform(this.otherForm);
-        }
-
-        this.zone.cards[this.slot].move("Terrain");
-        this.pose();
-    };
 };
 
 export class DruideDesMontagnesNain extends DruideDesMontagnes {
     name = "Druide des montagnes (forme nain)";
-    otherForm = "Druide des montagnes (forme ours)";
+    alternative_form = "Druide des montagnes (forme ours)";
 
     constructor(system: System) {
         super(system);
@@ -57,7 +38,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
 
 export class DruideDesMontagnesOurs extends DruideDesMontagnes {
     name = "Druide des montagnes (forme ours)";
-    otherForm = "Druide des montagnes (forme nain)";
+    alternative_form = "Druide des montagnes (forme nain)";
 
     constructor(system: System) {
         super(system);
@@ -65,6 +46,7 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
         this.initFamily(["Bête"]);
 
         this.trait("Rare").init(true);
+        this.trait("Forme animale").init(true);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

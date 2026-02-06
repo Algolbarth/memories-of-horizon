@@ -1,9 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
-import Use from '../../../Utils/DruidUse.svelte';
+import { Druid } from '../../../Class/Druid';
 
-class DruideDesPlaines extends Creature {
+class DruideDesPlaines extends Druid {
     constructor(system: System) {
         super(system);
 
@@ -13,29 +12,11 @@ class DruideDesPlaines extends Creature {
 
         this.text = Text;
     };
-
-    select = () => {
-        if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("wolf");
-        }
-    };
-
-    useEffect = (choice: string) => {
-        if (choice == "transform") {
-            this.transform(this.otherForm);
-        }
-
-        this.zone.cards[this.slot].move("Terrain");
-        this.pose();
-    };
 };
 
 export class DruideDesPlainesHumain extends DruideDesPlaines {
     name = "Druide des plaines (forme humain)";
-    otherForm = "Druide des plaines (forme loup)";
+    alternative_form = "Druide des plaines (forme loup)";
 
     constructor(system: System) {
         super(system);
@@ -55,7 +36,7 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
 export class DruideDesPlainesLoup extends DruideDesPlaines {
     name = "Druide des plaines (forme loup)";
-    otherForm = "Druide des plaines (forme humain)";
+    alternative_form = "Druide des plaines (forme humain)";
 
     constructor(system: System) {
         super(system);
@@ -63,6 +44,7 @@ export class DruideDesPlainesLoup extends DruideDesPlaines {
         this.initFamily(["Bête"]);
 
         this.trait("Rare").init(true);
+        this.trait("Forme animale").init(true);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(30);

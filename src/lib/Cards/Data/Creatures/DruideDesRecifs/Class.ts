@@ -1,9 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
+import { Druid } from '../../../Class/Druid';
 import Text from './Text.svelte';
-import Use from '../../../Utils/DruidUse.svelte';
 
-class DruideDesRecifs extends Creature {
+class DruideDesRecifs extends Druid {
     constructor(system: System) {
         super(system);
 
@@ -13,29 +12,11 @@ class DruideDesRecifs extends Creature {
 
         this.text = Text;
     };
-
-    select = () => {
-        if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("turtle");
-        }
-    };
-
-    useEffect = (choice: string) => {
-        if (choice == "transform") {
-            this.transform(this.otherForm);
-        }
-
-        this.zone.cards[this.slot].move("Terrain");
-        this.pose();
-    };
 };
 
 export class DruideDesRecifsOndin extends DruideDesRecifs {
     name = "Druide des récifs (forme ondin)";
-    otherForm = "Druide des récifs (forme tortue)";
+    alternative_form = "Druide des récifs (forme tortue)";
 
     constructor(system: System) {
         super(system);
@@ -55,7 +36,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
 export class DruideDesRecifsTortue extends DruideDesRecifs {
     name = "Druide des récifs (forme tortue)";
-    otherForm = "Druide des récifs (forme ondin)";
+    alternative_form = "Druide des récifs (forme ondin)";
 
     constructor(system: System) {
         super(system);
@@ -63,6 +44,7 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
         this.initFamily(["Reptile"]);
 
         this.trait("Rare").init(true);
+        this.trait("Forme animale").init(true);
 
         this.stat("Constitution").init(40);
         this.stat("Force").init(40);

@@ -25,6 +25,7 @@ export class Card {
     owner: Entity | undefined;
     text: __sveltets_2_IsomorphicComponent<{ system: System; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string> | undefined;
     cache: boolean = false;
+    alternative_form: string | undefined;
 
     constructor(system: System) {
         this.system = system;
@@ -485,6 +486,11 @@ export class Card {
                 }
             }
         }
+    };
+
+    reincarnate = (name: string) => {
+        this.transform(name);
+        this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
     };
 
     targeting = (target: Card) => {

@@ -1,9 +1,8 @@
 import type { System } from '../../../../System/Class';
-import { Creature } from '../../../Class/Creature';
+import { Druid } from '../../../Class/Druid';
 import Text from './Text.svelte';
-import Use from '../../../Utils/DruidUse.svelte';
 
-class DruideMarchand extends Creature {
+class DruideMarchand extends Druid {
     constructor(system: System) {
         super(system);
 
@@ -13,29 +12,11 @@ class DruideMarchand extends Creature {
 
         this.text = Text;
     };
-
-    select = () => {
-        if (this.owner == this.system.game.player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("ox");
-        }
-    };
-
-    useEffect = (choice: string) => {
-        if (choice == "transform") {
-            this.transform(this.otherForm);
-        }
-
-        this.zone.cards[this.slot].move("Terrain");
-        this.pose();
-    };
 };
 
 export class DruideMarchandHumain extends DruideMarchand {
     name = "Druide marchand (forme humain)";
-    otherForm = "Druide marchand (forme boeuf)";
+    alternative_form = "Druide marchand (forme boeuf)";
 
     constructor(system: System) {
         super(system);
@@ -53,7 +34,7 @@ export class DruideMarchandHumain extends DruideMarchand {
 
 export class DruideMarchandBoeuf extends DruideMarchand {
     name = "Druide marchand (forme boeuf)";
-    otherForm = "Druide marchand (forme humain)";
+    alternative_form = "Druide marchand (forme humain)";
 
     constructor(system: System) {
         super(system);
@@ -61,6 +42,7 @@ export class DruideMarchandBoeuf extends DruideMarchand {
         this.initFamily(["Bête"]);
 
         this.trait("Rare").init(true);
+        this.trait("Forme animale").init(true);
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(10);

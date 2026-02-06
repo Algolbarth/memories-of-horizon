@@ -21,6 +21,7 @@
 					<div>
 						{stat.name}
 					</div>
+
 					<div style="text-align: right;">
 						{stat.value()}
 					</div>

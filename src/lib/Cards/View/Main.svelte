@@ -44,8 +44,8 @@
 						<Effet bind:card bind:system />
 					{/if}
 
-					{#if card.displayTrait()}
-						<Trait bind:card />
+					{#if card.displayTrait() || card.alternative_form != undefined}
+						<Trait bind:system bind:card />
 					{/if}
 					{#if card instanceof Unit || card.displayStat()}
 						<Stat bind:card />

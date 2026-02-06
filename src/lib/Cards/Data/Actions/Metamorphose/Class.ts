@@ -48,7 +48,7 @@ export class Metamorphose extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.transform(target.otherForm);
+        target.transform(target.alternative_form);
 
         this.move("Défausse");
         this.pose();

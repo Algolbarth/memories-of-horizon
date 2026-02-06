@@ -2,18 +2,18 @@
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
-	import { Creature } from "../../../Class/Creature";
+	import { Druid } from "../../../Class/Druid";
 
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card instanceof Creature && card.isFamily("Druide") && card.canEquip()) {
+		if (card instanceof Druid && card.canEquip()) {
 			return true;
 		}
 		return false;
 	}
 
-	function select_action(card: Creature) {
+	function select_action(card: Druid) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(card);
 			system.game.use.reset();

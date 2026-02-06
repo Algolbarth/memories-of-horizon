@@ -13,4 +13,4 @@ S'équipe sur une créature alliée de famille Druide sur le terrain.
 <br />
 <br />
 
-Au début de la phase de combat et à la fin de la phase de préparation adverse, quand équipé : transforme la créature équipée en son autre forme.
+Au début de la phase de combat et à la fin de la phase de préparation adverse, quand équipé : transforme en sa forme alternative la créature équipée.

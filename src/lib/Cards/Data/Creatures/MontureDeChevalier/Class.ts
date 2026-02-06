@@ -1,5 +1,6 @@
 import type { System } from '../../../../System/Class';
 import { Creature } from '../../../Class/Creature';
+import { Knight } from '../../../Class/Knight';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
@@ -24,7 +25,7 @@ export class MontureDeChevalier extends Creature {
             let check = false;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (check == false && card instanceof Creature && card.isFamily("Chevalier") && !card.mounted) {
+                if (check == false && card instanceof Knight && card.trait("À terre").value()) {
                     check = true;
                 }
             }
@@ -40,7 +41,7 @@ export class MontureDeChevalier extends Creature {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.isFamily("Chevalier") && !card.mounted) {
+                if (target == undefined && card instanceof Knight && card.trait("À terre").value()) {
                     target = card;
                 }
             }
@@ -54,12 +55,12 @@ export class MontureDeChevalier extends Creature {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Knight | undefined) => {
         if (target != undefined) {
             this.targeting(target);
 
             target.move("Inventaire");
-            target.transform(target.otherForm);
+            target.transform(target.alternative_form);
         }
 
         this.move("Terrain");

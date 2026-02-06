@@ -1,14 +1,13 @@
 import type { System } from '../../../../System/Class';
 import type { Unit } from '../../../Class';
-import { Creature } from '../../../Class/Creature';
+import { Knight, MountedKnight } from '../../../Class/Knight';
 import Text from './Text.svelte';
 import Text2 from './Text2.svelte';
 import Use from './Use.svelte';
 
-export class ChevalierNoir extends Creature {
+export class ChevalierNoir extends Knight {
     name = "Chevalier noir";
-    otherForm = "Chevalier noir (monté)";
-    mounted = false;
+    alternative_form = "Chevalier noir (monté)";
     rez = false;
 
     constructor(system: System) {
@@ -42,12 +41,11 @@ export class ChevalierNoir extends Creature {
             this.move("Défausse");
         }
     };
-}
+};
 
-export class ChevalierNoirMonte extends Creature {
+export class ChevalierNoirMonte extends MountedKnight {
     name = "Chevalier noir (monté)";
-    otherForm = "Chevalier noir";
-    mounted = true;
+    alternative_form = "Chevalier noir";
 
     constructor(system: System) {
         super(system);
@@ -89,20 +87,11 @@ export class ChevalierNoirMonte extends Creature {
                 value = this.owner.ressource("Or").total();
             }
             this.owner.ressource("Or").spend(value);
+
             target.damageByEffect(value);
         }
+
         this.move("Terrain");
         this.pose();
     };
-
-    dieEffect = () => {
-        if (this.zone.name != "Pile") {
-            this.transform("Chevalier noir");
-            this.zone.cards[this.slot].stat("Santé").init(this.zone.cards[this.slot].stat("Vitalité").value());
-        }
-    };
-
-    dieGo = () => {
-
-    };
-}
+};
