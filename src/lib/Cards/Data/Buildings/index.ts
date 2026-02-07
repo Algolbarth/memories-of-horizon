@@ -34,6 +34,7 @@ export * from './MurDeRoche';
 export * from './Muraille';
 export * from './MurailleDeMarbre';
 export * from './Nexus';
+export * from './NidDeWyverne';
 export * from './Officine';
 export * from './PanneauDeDirection';
 export * from './Pont';

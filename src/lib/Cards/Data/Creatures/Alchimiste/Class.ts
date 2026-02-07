@@ -27,6 +27,7 @@ export class Alchimiste extends Creature {
             return false;
         };
         this.owner.draw(1, read_condition);
+
         this.move("Terrain");
         this.pose();
     };
