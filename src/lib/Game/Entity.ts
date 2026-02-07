@@ -140,7 +140,6 @@ export class Entity {
             this.ressource("Or").spend(this.zone("Pile").upgrade_cost);
             this.zone("Pile").base_level++;
             this.zone("Pile").upgrade_cost = this.zone("Pile").base_level * 10;
-            this.refreshStack();
         }
     };
 
