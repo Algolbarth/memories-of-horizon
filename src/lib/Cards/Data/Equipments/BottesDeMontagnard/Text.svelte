@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation, quand équipé : produit autant de végétal que de cartes d'élément végétal alliées sur le terrain.
+Au début de la phase de préparation, quand équipé : produit autant de terre que de cartes d'élément terre alliées sur le terrain.

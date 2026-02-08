@@ -10,6 +10,7 @@ export * from './BaguetteMalefique';
 export * from './BatonDeDruide';
 export * from './BatonDeRelais';
 export * from './BottesDeGrandPas';
+export * from './BottesDeMontagnard';
 export * from './BottesDeSeptLieues';
 export * from './BottesEnCuir';
 export * from './BottesFlorales';
