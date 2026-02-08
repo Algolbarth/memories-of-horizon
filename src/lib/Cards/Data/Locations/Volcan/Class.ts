@@ -15,7 +15,7 @@ export class Volcan extends Location {
     };
 
     can_read = (card: Card) => {
-        if (card.elements.total().includes("Feu")) {
+        if (card.isElement("Feu")) {
             return true;
         }
         return false;

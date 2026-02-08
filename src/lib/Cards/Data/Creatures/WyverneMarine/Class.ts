@@ -21,7 +21,7 @@ export class WyverneMarine extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.elements.total().includes("Eau")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.isElement("Eau")) {
             this.costReduce(6);
         }
     };

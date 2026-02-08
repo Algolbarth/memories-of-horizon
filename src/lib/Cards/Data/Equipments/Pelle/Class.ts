@@ -17,7 +17,7 @@ export class Pelle extends Equipment {
     startStepEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             let read_condition = (card: Card) => {
-                if (card.elements.total().includes("Terre")) {
+                if (card.isElement("Terre")) {
                     return true;
                 }
                 return false;

@@ -20,7 +20,7 @@ export class BottesIgnifugees extends Equipment {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             let battlefield = copy(this.owner.zone("Terrain").cards);
             for (const card of battlefield) {
-                if (card.elements.total().includes("Feu")) {
+                if (card.isElement("Feu")) {
                     this.owner.ressource("Feu").produce(1);
                 }
             }

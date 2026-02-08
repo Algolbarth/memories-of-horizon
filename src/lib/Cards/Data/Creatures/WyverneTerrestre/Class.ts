@@ -22,7 +22,7 @@ export class WyverneTerrestre extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.elements.total().includes("Terre")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.isElement("Terre")) {
             this.costReduce(6);
         }
     };

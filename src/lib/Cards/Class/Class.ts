@@ -518,4 +518,8 @@ export class Card {
     isFamily = (family: string) => {
         return this.families.total().includes(family);
     };
+
+    isElement = (element: string) => {
+        return this.elements.total().includes(element);
+    };
 };

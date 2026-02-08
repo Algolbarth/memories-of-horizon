@@ -56,7 +56,7 @@ export class CercleDruidique extends Action {
         for (const card of battlefield) {
             let check = true;
             for (const e of target.elements.total()) {
-                if (!card.elements.total().includes(e)) {
+                if (!card.isElement(e)) {
                     check = false;
                 }
             }

@@ -21,7 +21,7 @@ export class WyverneRouge extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.elements.total().includes("Feu")) {
+        if (this.zone.name == "Pile" && card.owner == this.owner && card.isElement("Feu")) {
             this.costReduce(6);
         }
     };

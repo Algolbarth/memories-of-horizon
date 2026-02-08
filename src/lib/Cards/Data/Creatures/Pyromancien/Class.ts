@@ -19,7 +19,7 @@ export class Pyromancien extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.elements.total().includes("Feu") && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card.isElement("Feu") && card.owner == this.owner) {
             this.stat("Force").increase(5);
         }
     };

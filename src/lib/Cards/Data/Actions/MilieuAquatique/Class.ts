@@ -17,7 +17,7 @@ export class MilieuAquatique extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && card.elements.total().includes("Eau")) {
+            if (card instanceof Creature && card.isElement("Eau")) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class MilieuAquatique extends Action {
 
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {
-            if (card instanceof Creature && card.elements.total().includes("Eau")) {
+            if (card instanceof Creature && card.isElement("Eau")) {
                 card.stat("Constitution").increase(value);
                 card.stat("Force").increase(value);
             }

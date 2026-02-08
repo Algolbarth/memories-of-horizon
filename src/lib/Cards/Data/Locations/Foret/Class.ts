@@ -15,7 +15,7 @@ export class Foret extends Location {
     };
 
     can_read = (card: Card) => {
-        if (card.elements.total().includes("Végétal")) {
+        if (card.isElement("Végétal")) {
             return true;
         }
         return false;

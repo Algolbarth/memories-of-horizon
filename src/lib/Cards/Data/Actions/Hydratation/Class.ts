@@ -17,7 +17,7 @@ export class Hydratation extends Action {
 
     canUse = () => {
         for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && card.elements.total().includes("Eau")) {
+            if (card instanceof Creature && card.isElement("Eau")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Hydratation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.elements.total().includes("Eau")) {
+                if (target == undefined && card instanceof Creature && card.isElement("Eau")) {
                     target = card;
                 }
             }

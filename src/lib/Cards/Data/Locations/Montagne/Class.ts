@@ -15,7 +15,7 @@ export class Montagne extends Location {
     };
 
     can_read = (card: Card) => {
-        if (card.elements.total().includes("Terre")) {
+        if (card.isElement("Terre")) {
             return true;
         }
         return false;

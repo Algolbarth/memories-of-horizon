@@ -7,7 +7,7 @@
 	export let system: System;
 
 	function select_condition(card: Card) {
-		if (card instanceof Creature && card.canDestroy() && !card.elements.total().includes("Eau")) {
+		if (card instanceof Creature && card.canDestroy() && !card.isElement("Eau")) {
 			return true;
 		}
 		return false;

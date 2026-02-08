@@ -15,7 +15,7 @@ export class Ville extends Location {
     };
 
     can_read = (card: Card) => {
-        if (card.elements.total().includes("Neutre")) {
+        if (card.isElement("Neutre")) {
             return true;
         }
         return false;

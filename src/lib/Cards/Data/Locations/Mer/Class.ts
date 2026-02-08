@@ -15,7 +15,7 @@ export class Mer extends Location {
     };
 
     can_read = (card: Card) => {
-        if (card.elements.total().includes("Eau")) {
+        if (card.isElement("Eau")) {
             return true;
         }
         return false;
