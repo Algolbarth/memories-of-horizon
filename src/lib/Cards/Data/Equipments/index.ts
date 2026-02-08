@@ -74,6 +74,7 @@ export * from './MassueDeChene';
 export * from './OrbeDeCorindon';
 export * from './OrbeDeCristal';
 export * from './OrbeDeVerre';
+export * from './Palmes';
 export * from './PeauDOurs';
 export * from './Pelle';
 export * from './PlastronEnCuir';
