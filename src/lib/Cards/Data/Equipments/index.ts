@@ -12,6 +12,7 @@ export * from './BatonDeRelais';
 export * from './BottesDeGrandPas';
 export * from './BottesDeSeptLieues';
 export * from './BottesEnCuir';
+export * from './BottesIgnifugees';
 export * from './BouclierDeCorindon';
 export * from './BouclierDeCristal';
 export * from './BouclierDeFer';
