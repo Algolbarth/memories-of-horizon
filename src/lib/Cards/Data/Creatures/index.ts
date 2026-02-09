@@ -13,6 +13,7 @@ export * from './Barde';
 export * from './BarriereDeCorail';
 export * from './BonhommeBiscuit';
 export * from './Bouffon';
+export * from './Brochet';
 export * from './Bucheron';
 export * from './Bulette';
 export * from './BuletteBriseRoc';
