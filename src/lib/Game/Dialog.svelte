@@ -1,10 +1,30 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import type { Step } from "../Chapters/Class";
 	import type { System } from "../System/Class";
 
 	export let system: System;
 
 	let step: Step | undefined = system.game?.chapter?.steps[system.game.chapter.step];
+
+	function typewriter(node: any) {
+		const speed = 2;
+		const text = node.textContent;
+		const duration = text.length / (speed * 0.01);
+
+		return {
+			duration,
+			tick: (t: number) => {
+				const i = Math.trunc(text.length * t);
+				node.textContent = text.slice(0, i);
+			},
+		};
+	}
+
+	let show_animation_dialog = false;
+	onMount(() => {
+		show_animation_dialog = true;
+	});
 </script>
 
 {#if system.game && system.game.chapter && step}
@@ -24,7 +44,11 @@
 			<br />
 
 			<div class="paper story">
-				{step.dialogs[step.dialog]}
+				{#if show_animation_dialog}
+					<p transition:typewriter>
+						{step.dialogs[step.dialog]}
+					</p>
+				{/if}
 			</div>
 
 			<br />
