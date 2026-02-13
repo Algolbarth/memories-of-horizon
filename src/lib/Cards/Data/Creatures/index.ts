@@ -71,6 +71,7 @@ export * from './Gobelin';
 export * from './Gorille';
 export * from './GorilleDosArgente';
 export * from './GrandPretre';
+export * from './GrandRequinBlanc';
 export * from './Grenouille';
 export * from './Guerrier';
 export * from './GuerrierElfe';
