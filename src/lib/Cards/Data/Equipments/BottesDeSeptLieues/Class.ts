@@ -47,7 +47,7 @@ export class BottesDeSeptLieues extends Equipment {
         }
     };
 
-    turnEffect = () => {
+    roundEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.bearer.stat("Constitution").increase(7);
             this.bearer.stat("Force").increase(7);

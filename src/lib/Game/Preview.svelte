@@ -8,15 +8,15 @@
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
-	export let select_condition: Function | undefined;
-	export let select_action: Function | undefined;
+	export let selectCondition: Function | undefined;
+	export let selectAction: Function | undefined;
 
 	$: is_player = card.owner == system.game?.player ? true : false;
 </script>
 
 {#if system.game && card.owner && card.zone}
-	<div class={(is_player || select_action != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
-		<div id={is_player || select_action != undefined ? "infos" : ""}>
+	<div class={(is_player || selectAction != undefined ? "container " : "") + (card == system.game.fighter ? "attacker " : "") + "preview"}>
+		<div id={is_player || selectAction != undefined ? "infos" : ""}>
 			{#if card.locked}
 				<img src="/assets/Pictures/lock.svg" alt="locked" class="locked" />
 			{/if}
@@ -39,9 +39,9 @@
 			{/if}
 		</div>
 
-		{#if is_player || select_action != undefined}
+		{#if is_player || selectAction != undefined}
 			<div id="actions">
-				{#if system.game.phase == "Préparation" && select_action == undefined}
+				{#if system.game.phase == "Préparation" && selectAction == undefined}
 					{#if card.zone.name == "Inventaire" || card.zone.name == "Terrain"}
 						<button
 							class="active"
@@ -123,7 +123,6 @@
 								on:click={() => {
 									card.down();
 									system = system;
-									console.log(system.game?.player.zone("Terrain"));
 								}}
 							>
 								&#9660
@@ -134,12 +133,12 @@
 					{/if}
 				{/if}
 
-				{#if select_action != undefined && select_condition != undefined}
-					{#if select_condition(card)}
+				{#if selectAction != undefined && selectCondition != undefined}
+					{#if selectCondition(card)}
 						<button
 							class="active"
 							on:click={() => {
-								select_action(card);
+								selectAction(card);
 								system = system;
 							}}
 						>

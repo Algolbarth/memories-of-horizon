@@ -27,7 +27,7 @@ export class DruideMarchandHumain extends DruideMarchand {
         this.stat("Force").init(10);
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         this.owner.ressource("Or").increase(1);
     };
 };

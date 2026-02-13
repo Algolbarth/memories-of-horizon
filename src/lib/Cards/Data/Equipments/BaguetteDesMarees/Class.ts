@@ -17,7 +17,7 @@ export class BaguetteDesMarees extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.owner.ressource("Eau").produce(this.bearer.stat("Magie").value());
         }

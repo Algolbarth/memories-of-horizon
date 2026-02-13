@@ -13,7 +13,7 @@ export class SacocheEnCuir extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.owner.discover(2);
         }

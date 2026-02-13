@@ -12,7 +12,7 @@ export class Location extends Card {
         this.pose();
     };
 
-    can_read = (card: Card) => {
+    canRead = (card: Card) => {
         return true;
     };
 };

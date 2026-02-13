@@ -12,6 +12,7 @@ import { Game } from "../Game/Game";
 import { Card } from "../Cards/Class";
 import { Chapter } from "../Chapters/Class";
 import type { Account } from "../Account/Account";
+import { Filter } from "../Filter/Class";
 
 export class System {
     page: string = "BlackScreen";
@@ -28,19 +29,19 @@ export class System {
     train: Train = new Train(this);
     deck: Deck | undefined;
     stories: Story[] = [];
-    sort = new Sort();
+    filter = new Filter(this);
     view: View = new View();
 
     constructor() {
-        this.addElementsToSort();
+        this.addElementsToFilter();
     };
 
-    addElementsToSort = () => {
+    addElementsToFilter = () => {
         for (const element of this.ressources.list) {
             if (element.name == "Or") {
-                this.sort.elements.push("Neutre");
+                this.filter.elements.push("Neutre");
             } else if (element.name != "Mana") {
-                this.sort.elements.push(element.name);
+                this.filter.elements.push(element.name);
             }
         }
     };
@@ -51,8 +52,8 @@ export class System {
             let cardInstance = new cardClass(this);
 
             for (const family of cardInstance.families.base) {
-                if (!this.sort.families.includes(family)) {
-                    this.sort.families.push(family);
+                if (!this.filter.families.includes(family)) {
+                    this.filter.families.push(family);
                 }
             }
 
@@ -60,19 +61,19 @@ export class System {
             this.cards.instance.push(cardInstance);
         }
 
-        this.addFamiliesToSort();
+        this.addFamiliesToFilter();
     };
 
-    addFamiliesToSort = () => {
-        for (let i = 0; i < this.sort.families.length; i++) {
+    addFamiliesToFilter = () => {
+        for (let i = 0; i < this.filter.families.length; i++) {
             let j = i;
             while (
                 j > 1 &&
-                this.sort.families[j - 1].localeCompare(this.sort.families[j]) > 0
+                this.filter.families[j - 1].localeCompare(this.filter.families[j]) > 0
             ) {
-                let swap = this.sort.families[j];
-                this.sort.families[j] = this.sort.families[j - 1];
-                this.sort.families[j - 1] = swap;
+                let swap = this.filter.families[j];
+                this.filter.families[j] = this.filter.families[j - 1];
+                this.filter.families[j - 1] = swap;
                 j--;
             }
         }
@@ -110,12 +111,7 @@ export class System {
                             if (cost.name == ressource.name) {
                                 check = true;
                                 if (ressource.value > cost.value) {
-                                    console.log(
-                                        "Invalid ressources in a chapter : " +
-                                        ressource.name +
-                                        " " +
-                                        (ressource.value - cost.value)
-                                    );
+                                    console.log("Invalid ressources in a chapter : " + ressource.name + " " + (ressource.value - cost.value));
                                     error = true;
                                 }
                             }
@@ -214,7 +210,7 @@ class Chapters {
         }
     };
 
-    getRandom(number: number) {
+    getRandom(number: number): Chapter {
         let level = Math.floor((number - 1) / 5) + 1;
         return new this.class[level][Math.floor(Math.random() * this.class[level].length)](this.system, this.system.game, number);
     };
@@ -234,7 +230,7 @@ class Bosses {
         }
     };
 
-    getRandom(number: number) {
+    getRandom(number: number): Chapter {
         let level = Math.floor((number - 1) / 10) + 1;
         return new this.class[level][Math.floor(Math.random() * this.class[level].length)](this.system, this.system.game, number);
     };
@@ -247,18 +243,5 @@ class View {
     reset() {
         this.quick = undefined;
         this.card = undefined;
-    };
-};
-
-class Sort {
-    levels: string[] = ["Tous"];
-    types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
-    families: string[] = ["Toutes"];
-    elements: string[] = ["Tous"];
-
-    constructor() {
-        for (let i = 0; i < 20; i++) {
-            this.levels.push("" + (i + 1));
-        }
     };
 };

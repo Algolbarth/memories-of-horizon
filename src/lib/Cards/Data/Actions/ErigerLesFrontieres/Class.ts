@@ -15,7 +15,7 @@ export class ErigerLesFrontieres extends Action {
     };
 
     useEffect = () => {
-        this.owner.zone("Terrain").size++;
+        this.owner.zone("Terrain").size += 1;
 
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {

@@ -14,7 +14,7 @@ export class Volcan extends Location {
         this.text = Text;
     };
 
-    can_read = (card: Card) => {
+    canRead = (card: Card) => {
         if (card.isElement("Feu")) {
             return true;
         }

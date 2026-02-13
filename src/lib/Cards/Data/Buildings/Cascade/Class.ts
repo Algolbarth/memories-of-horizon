@@ -18,13 +18,13 @@ export class Cascade extends Building {
 
     otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card.isElement("Eau") && this.owner == card.owner) {
-            let read_condition = (card: Card) => {
+            let readCondition = (card: Card) => {
                 if (card.isElement("Eau")) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, read_condition);
+            this.owner.draw(1, readCondition);
         }
     };
 };

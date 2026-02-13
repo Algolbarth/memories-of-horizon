@@ -8,14 +8,14 @@
 
 	let choice: boolean = false;
 
-	function select_condition(card: Card) {
+	function selectCondition(card: Card) {
 		if (card instanceof Creature) {
 			return true;
 		}
 		return false;
 	}
 
-	function select_action(target: Creature | undefined) {
+	function selectAction(target: Creature | undefined) {
 		system.game.use.card.useEffect(target);
 		system.game.use.reset();
 	}
@@ -26,7 +26,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				select_action(undefined);
+				selectAction(undefined);
 			}}
 		>
 			Découvre 1 carte
@@ -40,7 +40,7 @@
 				choice = true;
 			}}
 		>
-			Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant cette étape
+			Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant ce tour
 		</button>
 	</div>
 {:else}
@@ -53,6 +53,6 @@
 		↩
 	</button>
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} {selectAction} />
 	{/if}
 {/if}

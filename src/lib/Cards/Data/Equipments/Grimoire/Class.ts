@@ -14,15 +14,15 @@ export class Grimoire extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            let read_condition = (card: Card) => {
+            let readCondition = (card: Card) => {
                 if (card.isFamily("Sort")) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, read_condition);
+            this.owner.draw(1, readCondition);
         }
     };
 };

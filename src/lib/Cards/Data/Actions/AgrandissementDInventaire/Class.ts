@@ -14,7 +14,7 @@ export class AgrandissementDInventaire extends Action {
     };
 
     useEffect = () => {
-        this.owner.zone("Inventaire").size++;
+        this.owner.zone("Inventaire").size + 1;
 
         this.move("Défausse");
         this.pose();

@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div style:width={width + "vw"}>
+<div class="main" style:width={width + "vw"}>
 	<div on:focusout={handleDropdownFocusLoss} class="container">
 		<div>
 			<button class="main" on:click={handleDropdownClick}>
@@ -53,6 +53,10 @@
 </div>
 
 <style>
+	div.main {
+		display: inline-block;
+	}
+
 	div.container {
 		width: 100%;
 		display: grid;

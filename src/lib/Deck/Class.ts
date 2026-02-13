@@ -30,7 +30,7 @@ export class Deck {
         return newName;
     };
 
-    canModify = () => {
+    isEditable = () => {
         if (this.victory > 0 || this.defeat > 0) {
             return false;
         }

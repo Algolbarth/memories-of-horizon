@@ -25,7 +25,7 @@ export class Marchand extends Creature {
         this.pose();
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Or").increase(1);
         }

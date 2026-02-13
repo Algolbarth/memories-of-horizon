@@ -50,7 +50,7 @@ export class PotionDeResistance extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Résistance").step += this.stat("Infusion").value() * 2;
+        target.stat("Résistance").turn += this.stat("Infusion").value() * 2;
 
         this.move("Défausse");
         this.pose();

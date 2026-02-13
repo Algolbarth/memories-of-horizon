@@ -15,7 +15,7 @@ export class Maison extends Building {
         this.text = Text;
     };
 
-    turnEffect = () => {
+    roundEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Humain").add("Terrain");
         }

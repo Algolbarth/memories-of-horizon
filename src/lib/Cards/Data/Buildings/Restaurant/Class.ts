@@ -48,7 +48,7 @@ export class Restaurant extends Building {
         this.pose();
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain" && this.product != undefined) {
             this.owner.getCard(this.product).add("Inventaire");
         }

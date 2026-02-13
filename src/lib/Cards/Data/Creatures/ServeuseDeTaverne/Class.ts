@@ -24,7 +24,7 @@ export class ServeuseDeTaverne extends Creature {
         this.pose();
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Bière").add("Inventaire");
         }

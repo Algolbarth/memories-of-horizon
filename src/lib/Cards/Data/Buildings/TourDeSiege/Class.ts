@@ -17,7 +17,7 @@ export class TourDeSiege extends Building {
         this.text = Text;
     };
 
-    turnEffect = () => {
+    roundEffect = () => {
         if (this.zone.name == "Terrain") {
             let target = undefined;
             let battlefield = copy(this.owner?.zone("Terrain").cards);

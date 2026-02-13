@@ -19,7 +19,7 @@ export class CommissairePriseur extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             let reserve = copy(this.owner.zone("Inventaire").cards);
             for (const card of reserve) {

@@ -19,7 +19,7 @@ export class Champion extends Creature {
         this.text = Text;
 
         this.stat("Force").value = function () {
-            let total = this.base + this.add + this.step + this.turn;
+            let total = this.base + this.add + this.turn + this.round;
             if (this.card instanceof Creature) {
                 for (const equipment of this.card.equipments) {
                     total += equipment.equipStat(this.name).value();
@@ -38,7 +38,7 @@ export class Champion extends Creature {
         };
 
         this.stat("Endurance").value = function () {
-            let total = this.base + this.add + this.step + this.turn;
+            let total = this.base + this.add + this.turn + this.round;
             if (this.card instanceof Creature) {
                 for (const equipment of this.card.equipments) {
                     total += equipment.equipStat(this.name).value();

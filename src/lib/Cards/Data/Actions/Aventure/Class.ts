@@ -17,13 +17,13 @@ export class Aventure extends Action {
     useEffect = () => {
         let types = ["Action", "Bâtiment", "Créature", "Lieu", "Objet"];
         for (let i = 0; i < types.length; i++) {
-            let read_condition = (card: Card) => {
+            let readCondition = (card: Card) => {
                 if (card.type == types[i]) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, read_condition);
+            this.owner.draw(1, readCondition);
         }
 
         this.move("Défausse");

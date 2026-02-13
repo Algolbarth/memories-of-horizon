@@ -55,7 +55,7 @@ export class PotionParfumee extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Protection").step += Math.floor(this.stat("Infusion").value() / 5);
+        target.stat("Protection").turn += Math.floor(this.stat("Infusion").value() / 5);
 
         this.move("Défausse");
         this.pose();

@@ -8,9 +8,9 @@
 
 {#if system.game}
 	<div class="zones">
-		<Zone bind:system bind:entity={system.game.player} zone={system.game.player.zone(zone)} select_condition={undefined} select_action={undefined} direction={"left"} />
+		<Zone bind:system bind:entity={system.game.player} zone={system.game.player.zone(zone)} selectCondition={undefined} selectAction={undefined} direction={"left"} />
 		<div style="text-align:right;">
-			<Zone bind:system bind:entity={system.game.bot} zone={system.game.bot.zone(zone)} select_condition={undefined} select_action={undefined} direction={"right"} />
+			<Zone bind:system bind:entity={system.game.bot} zone={system.game.bot.zone(zone)} selectCondition={undefined} selectAction={undefined} direction={"right"} />
 		</div>
 	</div>
 {/if}

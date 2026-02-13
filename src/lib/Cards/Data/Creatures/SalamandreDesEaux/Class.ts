@@ -18,7 +18,7 @@ export class SalamandreDesEaux extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         this.owner.getCard("Intoxication").add("Inventaire");
     };
 };

@@ -17,7 +17,7 @@ export class BassinDeReproduction extends Building {
         this.text = Text;
     };
 
-    turnEffect = () => {
+    roundEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Ondin").add("Terrain");
         }

@@ -3,7 +3,7 @@
 
 	export let system: System;
 
-	function select_action(choice: string) {
+	function selectAction(choice: string) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(choice);
 			system.game.use.reset();
@@ -15,7 +15,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Pile");
+			selectAction("Pile");
 		}}
 	>
 		Augmente de 1 la taille de la pile alliée.
@@ -26,7 +26,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Inventaire");
+			selectAction("Inventaire");
 		}}
 	>
 		Augmente de 1 la taille de l'inventaire allié.
@@ -37,7 +37,7 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			select_action("Terrain");
+			selectAction("Terrain");
 		}}
 	>
 		Augmente de 1 la taille du terrain allié.

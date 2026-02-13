@@ -15,7 +15,7 @@ export class Caserne extends Building {
         this.text = Text;
     };
 
-    turnEffect = () => {
+    roundEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Soldat").add("Terrain");
         }

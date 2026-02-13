@@ -4,7 +4,7 @@
 
 	export let system: System;
 
-	let step: Step | undefined = system.game?.chapter?.steps[system.game.player.step - 1];
+	let step: Step | undefined = system.game?.chapter?.steps[system.game.chapter.step];
 </script>
 
 {#if system.game && system.game.chapter && step}
@@ -16,7 +16,7 @@
 				</div>
 
 				<div class="paper info">
-					Étape {system.game.player.step} / {system.game.chapter.steps.length}
+					Étape {system.game.chapter.step + 1} / {system.game.chapter.steps.length}
 				</div>
 			</div>
 

@@ -14,7 +14,7 @@ export class Capitale extends Location {
         this.text = Text;
     };
 
-    can_read = (card: Card) => {
+    canRead = (card: Card) => {
         if (card.level >= 10) {
             return true;
         }

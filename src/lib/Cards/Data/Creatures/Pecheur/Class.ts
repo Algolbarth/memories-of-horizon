@@ -20,13 +20,13 @@ export class Pecheur extends Creature {
     };
 
     useEffect = () => {
-        let read_condition = (card: Card) => {
+        let readCondition = (card: Card) => {
             if (card instanceof Creature && card.isFamily("Poisson")) {
                 return true;
             }
             return false;
         };
-        let cards = this.owner.draw(1, read_condition);
+        let cards = this.owner.draw(1, readCondition);
 
         if (cards[0] != undefined) {
             cards[0].costReduce(20);

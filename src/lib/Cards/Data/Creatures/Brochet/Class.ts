@@ -21,13 +21,13 @@ export class Brochet extends Creature {
     };
 
     useEffect = () => {
-        let read_condition = (card: Card) => {
+        let readCondition = (card: Card) => {
             if (card instanceof Creature && card.isFamily("Poisson")) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(1, read_condition);
+        this.owner.draw(1, readCondition);
 
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {

@@ -51,7 +51,7 @@ export class Opportunite extends Action {
         if (target != undefined) {
             this.targeting(target);
 
-            target.stat("Initiative").step += 1;
+            target.stat("Initiative").turn += 1;
         }
         else {
             this.owner.discover(1);

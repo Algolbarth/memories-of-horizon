@@ -46,7 +46,7 @@ export class Roulade extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Esquive").step++;
+        target.stat("Esquive").turn += 1;
 
         this.move("Défausse");
         this.pose();

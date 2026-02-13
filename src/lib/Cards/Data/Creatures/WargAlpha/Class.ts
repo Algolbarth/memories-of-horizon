@@ -18,7 +18,7 @@ export class WargAlpha extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Frappe").add("Inventaire");
         }

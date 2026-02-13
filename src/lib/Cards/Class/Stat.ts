@@ -4,8 +4,8 @@ export class Stat {
     name: string;
     base: number;
     add: number = 0;
-    step: number = 0;
     turn: number = 0;
+    round: number = 0;
     min: number;
     card: Card;
     debuff: boolean = false;
@@ -18,7 +18,7 @@ export class Stat {
     };
 
     value = () => {
-        let total = this.base + this.add + this.step + this.turn;
+        let total = this.base + this.add + this.turn + this.round;
 
         if (this.card.type == "Créature") {
             for (const equipment of this.card.equipments) {
@@ -43,11 +43,11 @@ export class Stat {
 
     remove = (value: number) => {
         while (value > 0) {
-            if (this.turn > 0) {
-                this.turn--;
+            if (this.round > 0) {
+                this.round--;
             }
-            else if (this.step > 0) {
-                this.step--;
+            else if (this.turn > 0) {
+                this.turn--;
             }
             else {
                 this.add--;
@@ -63,8 +63,8 @@ export class Stat {
     };
 
     set = (value: number) => {
-        this.step = 0;
         this.turn = 0;
+        this.round = 0;
         this.add = value - this.base;
     };
 

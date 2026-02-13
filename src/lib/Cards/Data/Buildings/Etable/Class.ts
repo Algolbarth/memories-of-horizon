@@ -15,7 +15,7 @@ export class Etable extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Cheval").add("Inventaire");
         }

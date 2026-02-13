@@ -27,7 +27,7 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
         this.stat("Force").init(10);
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.draw(2);
         }

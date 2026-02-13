@@ -48,10 +48,10 @@ X sur toutes les créatures/cartes dans une zone => 20X
 
 X à chaque étape de préparation => 2X
 X à chaque étape de combat => 2X
-X à chaque tour de combat => 3X
+X à chaque round => 3X
 X à chaque action/attaque => 4X
 
-X pendant cette étape => X/2
-X pendant ce tour de combat => X/2
+X pendant ce tour => X/2
+X pendant ce round => X/3
 
 X choix parmis de effets de coût Y => Y + (XY/10)

@@ -14,7 +14,7 @@ export class VillageNatal extends Location {
         this.text = Text;
     };
 
-    can_read = (card: Card) => {
+    canRead = (card: Card) => {
         if (card.level == 1) {
             return true;
         }

@@ -19,7 +19,7 @@ export class Game {
     chapter: Chapter | undefined;
     fighter: Unit | undefined = undefined;
     auto: number | undefined;
-    turn: number = 1;
+    round: number = 1;
 
     constructor(system: System, mode: string, deck: Deck | undefined = undefined) {
         this.system = system;
@@ -35,8 +35,8 @@ export class Game {
         }
         else if (deck != undefined && (this.mode == "Libre" || this.mode == "Standard")) {
             this.player.life.set(100);
-            this.player.ressource("Or").production = 4;
-            this.player.ressource("Flux").stockage = 4;
+            this.player.ressource("Or").production = 5;
+            this.player.ressource("Flux").stockage = 5;
             this.player.deck = deck;
 
             this.player.getCard("Plaine").add("Région");
@@ -44,9 +44,9 @@ export class Game {
 
             this.player.getCard("Humain").add("Terrain");
 
-            this.chapter = new Chapter(this.system, this, 0);
+            this.chapter = this.system.chapters.getRandom(1);
 
-            this.nextChapter();
+            this.startChapter();
         }
     };
 
@@ -54,7 +54,7 @@ export class Game {
         this.trainInitEntity(this.player, this.system.train.player);
         this.trainInitEntity(this.bot, this.system.train.bot);
 
-        this.startStep();
+        this.startTurn();
     };
 
     trainInitEntity = (entity: Entity, train_entity: TrainEntity) => {
@@ -80,8 +80,6 @@ export class Game {
 
     nextChapter = () => {
         if (this.chapter != undefined && this.chapter.number < 100) {
-            this.bot = new Entity(this.system, this.chapter.deck);
-
             let number = this.chapter.number + 1;
             if (number % 10 == 0) {
                 this.chapter = this.system.bosses.getRandom(number);
@@ -90,7 +88,8 @@ export class Game {
                 this.chapter = this.system.chapters.getRandom(number);
             }
 
-            this.chapter?.init();
+            this.player.ressource("Or").increase(1);
+            this.player.ressource("Flux").stock(1);
 
             this.startChapter();
         }
@@ -100,43 +99,57 @@ export class Game {
     };
 
     startChapter = () => {
-        this.player.ressource("Or").increase(1);
-        this.player.ressource("Flux").stock(1);
+        this.bot = new Entity(this.system, this.chapter.deck);
 
-        this.bot.deck = this.chapter.steps[0].deck;
-        this.bot.life.set(this.chapter.steps[0].life);
+        this.chapter.init();
+
         this.bot.zone("Pile").base_level = 1 + Math.floor((this.chapter.number - 1) / 5);
+
+        this.startStep();
+    };
+
+    startStep = () => {
+        let step = this.chapter.steps[this.chapter.step];
+
+        this.bot.life.set(step.life);
+
+        this.bot.deck = step.deck;
+
+        for (const ressource of this.bot.ressources) {
+            ressource.current = ressource.production;
+        }
+
         for (const zone of this.bot.zones) {
             if (zone.name == "Région") {
-                if (this.chapter.steps[0].locations.length > 3) {
-                    zone.size = this.chapter.steps[0].locations.length;
+                if (step.locations.length > 3) {
+                    zone.size = step.locations.length;
                 }
                 else {
                     zone.size = 3;
                 }
             }
             else if (zone.name != "Défausse") {
-                zone.size = this.chapter.steps[0].zone_size;
+                zone.size = step.zone_size;
             }
         }
+
         this.bot.zone("Région").cards = [];
-        for (const location of this.chapter.steps[0].locations) {
+        for (const location of step.locations) {
             this.bot.getCard(location).add("Région");
         }
         this.bot.place = this.bot.zone("Région").cards[0];
-        for (const name of this.chapter.steps[this.bot.step].cards) {
+
+        this.bot.zone("Pile").cards = [];
+        for (const name of step.cards) {
             this.bot.getCard(name).add("Pile");
-        }
-        for (const ressource of this.bot.ressources) {
-            ressource.current = ressource.production;
         }
 
         this.bot.play();
 
-        this.startPhase();
+        this.startTurn();
     };
 
-    startPhase = () => {
+    startTurn = () => {
         for (const ressource of this.player.ressources) {
             ressource.current = ressource.production;
         }
@@ -149,116 +162,17 @@ export class Game {
     };
 
     botTurn = () => {
-        for (const zone of this.player.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.startAdversaryStepEffect != undefined) {
-                    card.startAdversaryStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startAdversaryStepEffect != undefined) {
-                            e.startAdversaryStepEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.bot.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.startStepEffect != undefined) {
-                    card.startStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startStepEffect != undefined) {
-                            e.startStepEffect();
-                        }
-                    }
-                }
-            }
-        }
+        this.bot.startPhase();
 
         this.bot.play();
 
-        for (const zone of this.player.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
+        this.bot.endPhase();
 
-                if (card.endAdversaryStepEffect != undefined) {
-                    card.endAdversaryStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endAdversaryStepEffect != undefined) {
-                            e.endAdversaryStepEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.bot.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.endStepEffect != undefined) {
-                    card.endStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endStepEffect != undefined) {
-                            e.endStepEffect();
-                        }
-                    }
-                }
-            }
-        }
-
-        this.startStep();
+        this.playerTurn();
     };
 
-    startStep = () => {
-        for (const zone of this.player.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.startStepEffect != undefined) {
-                    card.startStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startStepEffect != undefined) {
-                            e.startStepEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.bot.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.startAdversaryStepEffect != undefined) {
-                    card.startAdversaryStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startAdversaryStepEffect != undefined) {
-                            e.startAdversaryStepEffect();
-                        }
-                    }
-                }
-            }
-        }
+    playerTurn = () => {
+        this.player.startPhase();
 
         if (this.mode != "Entraînement") {
             this.chapter.startDialog();
@@ -275,45 +189,12 @@ export class Game {
         return false;
     };
 
-    newBattle = () => {
-        for (const zone of this.player.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.endStepEffect != undefined) {
-                    card.endStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endStepEffect != undefined) {
-                            e.endStepEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.bot.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.endAdversaryStepEffect != undefined) {
-                    card.endAdversaryStepEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endAdversaryStepEffect != undefined) {
-                            e.endAdversaryStepEffect();
-                        }
-                    }
-                }
-            }
-        }
+    startBattle = () => {
+        this.player.endPhase();
 
         if (this.player.zone("Terrain").cards.length > 0 && this.bot.zone("Terrain").cards.length > 0) {
             this.phase = "Combat";
-            this.turn = 0;
+            this.round = 0;
 
             for (const entity of [this.player, this.bot]) {
                 for (const zone of entity.zones) {
@@ -335,7 +216,7 @@ export class Game {
                 }
             }
 
-            this.nextTurn();
+            this.nextRound();
 
             if (this.system.settings.autoplay) {
                 this.startAuto();
@@ -357,8 +238,8 @@ export class Game {
         this.auto = undefined;
     };
 
-    nextTurn = () => {
-        this.turn++;
+    nextRound = () => {
+        this.round++;
         this.fighter = undefined;
 
         for (const entity of [this.player, this.bot]) {
@@ -366,14 +247,14 @@ export class Game {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
 
-                    if (card.turnEffect != undefined) {
-                        card.turnEffect();
+                    if (card.roundEffect != undefined) {
+                        card.roundEffect();
                     }
 
                     if (card instanceof Creature) {
                         for (const e of card.equipments) {
-                            if (e.turnEffect != undefined) {
-                                e.turnEffect();
+                            if (e.roundEffect != undefined) {
+                                e.roundEffect();
                             }
                         }
                     }
@@ -413,21 +294,21 @@ export class Game {
 
     actionBattle = () => {
         if (!this.isEndBattle()) {
-            if (!this.isEndTurn()) {
+            if (!this.isEndRound()) {
                 this.setNextFighter();
                 this.fighter.play();
             }
-            else if (this.turn == 5) {
-                this.endTurn();
+            else if (this.round == 5) {
+                this.endRound();
                 this.endBattle();
             }
             else {
-                this.endTurn();
-                this.nextTurn();
+                this.endRound();
+                this.nextRound();
             }
         }
         else {
-            this.endTurn();
+            this.endRound();
             this.endBattle();
         }
     };
@@ -475,7 +356,7 @@ export class Game {
         return best_speed;
     };
 
-    isEndTurn = () => {
+    isEndRound = () => {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
                 if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
@@ -487,7 +368,7 @@ export class Game {
         return true;
     };
 
-    endTurn = () => {
+    endRound = () => {
         this.resetAction();
 
         for (const entity of [this.player, this.bot]) {
@@ -495,10 +376,10 @@ export class Game {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     for (const stat of card.stats) {
-                        stat.turn = 0;
+                        stat.round = 0;
                     }
                     for (const trait of card.traits) {
-                        trait.turn = false;
+                        trait.round = false;
                     }
                 }
             }
@@ -526,25 +407,25 @@ export class Game {
         this.fighter = undefined;
         this.stopAuto();
 
-        this.endStep();
+        this.endTurn();
     };
 
-    endStep = () => {
+    endTurn = () => {
         this.player.checkPerpetuite();
         this.bot.checkPerpetuite();
 
         for (const entity of [this.player, this.bot]) {
 
-            entity.zone("Pile").step_level = 0;
+            entity.zone("Pile").turn_level = 0;
 
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     for (const stat of card.stats) {
-                        stat.step = 0;
+                        stat.turn = 0;
                     }
                     for (const trait of card.traits) {
-                        trait.step = false;
+                        trait.turn = false;
                     }
                     if (card instanceof Creature && card.stat("Étourdissement").value() > 0) {
                         card.stat("Étourdissement").remove(1);
@@ -556,10 +437,6 @@ export class Game {
             }
         }
 
-        this.endPhase();
-    };
-
-    endPhase = () => {
         if (this.isVictory()) {
             for (const card of this.player.zone("Terrain").cards) {
                 if (card instanceof Creature) {
@@ -568,10 +445,10 @@ export class Game {
             }
 
             if (this.bot.life.current <= 0) {
-                this.nextPhase();
+                this.nextTurn();
             }
             else {
-                this.startPhase();
+                this.startTurn();
             }
         }
         else {
@@ -585,17 +462,17 @@ export class Game {
                 this.defeat();
             }
             else {
-                this.startPhase();
+                this.startTurn();
             }
         }
     };
 
-    nextPhase = () => {
+    nextTurn = () => {
         if (this.mode == "Entraînement") {
-            this.startPhase();
+            this.startTurn();
         }
         else {
-            if (this.player.step < this.chapter.steps.length) {
+            if (this.chapter.step + 1 < this.chapter.steps.length) {
                 this.nextStep();
             }
             else {
@@ -605,46 +482,32 @@ export class Game {
     };
 
     nextStep = () => {
-        this.player.step++;
-        this.bot.step++;
-
-        this.bot.life.set(this.chapter.steps[this.bot.step].life);
-
-        this.bot.zone("Région").cards = [];
-        this.bot.getCard(this.chapter.steps[this.bot.step].place).add("Région");
-        this.bot.place = this.bot.zone("Région").cards[0];
-
-        this.bot.deck = this.chapter.steps[this.bot.step].deck;
-        for (const name of this.chapter.steps[this.bot.step].cards) {
-            this.bot.getCard(name).add("Pile");
-        }
-        this.bot.play();
-
-        this.startPhase();
+        this.chapter.step += 1;
+        this.startStep();
     };
 
     victory = () => {
         if (this.mode == "Standard") {
-            this.system.account.standard.victory++;
+            this.system.account.standard.victory += 1;
         }
         else if (this.mode == "Libre") {
-            this.system.account.wild.victory++;
+            this.system.account.wild.victory += 1;
         }
 
-        this.player.deck.victory++;
+        this.player.deck.victory += 1;
 
         this.system.page = "Victory";
     };
 
     defeat = () => {
         if (this.mode == "Standard") {
-            this.system.account.standard.defeat++;
+            this.system.account.standard.defeat += 1;
         }
         else if (this.mode == "Libre") {
-            this.system.account.wild.defeat++;
+            this.system.account.wild.defeat += 1;
         }
 
-        this.player.deck.defeat++;
+        this.player.deck.defeat += 1;
 
         this.system.page = "GameOver";
     };

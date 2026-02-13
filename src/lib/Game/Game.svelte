@@ -37,13 +37,13 @@
 			</button>
 
 			<button class="taskbar info">
-				Étape {game.player.step} / {game.chapter.steps.length}
+				Étape {game.chapter.step + 1} / {game.chapter.steps.length}
 			</button>
 		{/if}
 
 		{#if game.isBattle() && !game.isEndBattle()}
 			<button class="taskbar info">
-				Tour de combat {game.turn} / 5
+				Round {game.round} / 5
 			</button>
 		{/if}
 	</div>
@@ -55,7 +55,7 @@
 				on:click={() => {
 					if (game) {
 						system.view.reset();
-						game.newBattle();
+						game.startBattle();
 						system = system;
 					}
 				}}

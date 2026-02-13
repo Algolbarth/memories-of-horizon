@@ -16,7 +16,7 @@ export class Bestiaire extends Item {
     };
 
     useEffect = () => {
-        let read_condition = (card: Card) => {
+        let readCondition = (card: Card) => {
             if (card instanceof Creature) {
                 return true;
             }
@@ -24,10 +24,10 @@ export class Bestiaire extends Item {
         };
 
         if (this.owner.totalIntelligence() >= 20) {
-            this.owner.discover(5, read_condition);
+            this.owner.discover(5, readCondition);
         }
         else {
-            this.owner.discover(3, read_condition);
+            this.owner.discover(3, readCondition);
         }
 
         this.move("Défausse");

@@ -2,7 +2,7 @@ import { Zone } from "./Zone";
 
 export class Stack extends Zone {
     base_level: number = 1;
-    step_level: number = 0;
+    turn_level: number = 0;
     upgrade_cost: number = 10;
 
     constructor() {
@@ -10,7 +10,7 @@ export class Stack extends Zone {
     };
 
     level = () => {
-        let total: number = this.base_level + this.step_level;
+        let total: number = this.base_level + this.turn_level;
 
         if (total <= 0) {
             total = 1;

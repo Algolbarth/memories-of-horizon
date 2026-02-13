@@ -23,7 +23,7 @@ export class SalleDesCoffres extends Building {
         this.pose();
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Coffre en bois").add("Inventaire");
             this.owner.getCard("Coffre en bois").add("Inventaire");

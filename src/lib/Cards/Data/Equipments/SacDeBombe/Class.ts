@@ -13,7 +13,7 @@ export class SacDeBombe extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.owner.getCard("Bombe").add("Inventaire");
         }

@@ -15,13 +15,13 @@ export class CoffreEnOr extends Item {
     };
 
     useEffect = () => {
-        let read_condition = (card: Card, drawer: Card) => {
+        let readCondition = (card: Card, drawer: Card) => {
             if (drawer.owner?.zone("Pile").level() == card.level) {
                 return true;
             }
             return false;
         };
-        let cards = this.owner.draw(2, read_condition, this);
+        let cards = this.owner.draw(2, readCondition, this);
         for (const card of cards) {
             card.costReduce(20);
         }

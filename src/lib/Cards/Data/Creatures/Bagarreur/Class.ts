@@ -21,7 +21,7 @@ export class Bagarreur extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
-            card.stat("Force").step += 10;
+            card.stat("Force").turn += 10;
         }
     };
 };

@@ -58,9 +58,9 @@ export class Troubadour extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            target.stat("Santé").step += 20;
-            target.stat("Vitalité").step += 20;
-            target.stat("Force").step += 20;
+            target.stat("Santé").turn += 20;
+            target.stat("Vitalité").turn += 20;
+            target.stat("Force").turn += 20;
         }
 
         this.move("Terrain");

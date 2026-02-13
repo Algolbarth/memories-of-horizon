@@ -25,7 +25,7 @@ export class MaitreChien extends Creature {
         this.pose();
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Chien").add("Terrain");
         }

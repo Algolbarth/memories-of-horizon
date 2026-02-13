@@ -16,7 +16,7 @@ export class Tente extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone != undefined && this.slot != undefined && this.zone.name == "Terrain") {
             if (this.slot > 0) {
                 let up_card = this.zone.cards[this.slot - 1];

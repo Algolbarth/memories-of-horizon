@@ -4,8 +4,8 @@ import type { Card } from "./Class";
 export class Families {
     base: string[] = [];
     add: string[] = [];
-    step: string[] = [];
     turn: string[] = [];
+    round: string[] = [];
     card: Card;
 
     constructor(card: Card) {
@@ -21,10 +21,10 @@ export class Families {
         for (const a of this.add) {
             array.push(a);
         }
-        for (const s of this.step) {
+        for (const s of this.turn) {
             array.push(s);
         }
-        for (const t of this.turn) {
+        for (const t of this.round) {
             array.push(t);
         }
 

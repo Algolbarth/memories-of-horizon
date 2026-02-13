@@ -18,7 +18,7 @@ export class Maire extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         this.owner.ressource("Or").produce(5 * this.owner.zone("Terrain").cards.length);
     };
 };

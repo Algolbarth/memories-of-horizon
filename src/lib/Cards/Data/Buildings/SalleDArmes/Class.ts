@@ -15,7 +15,7 @@ export class SalleDArmes extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Entraînement").add("Inventaire");
         }

@@ -17,7 +17,7 @@ export class Bivouac extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             let battlefield = copy(this.zone.cards);
             for (const card of battlefield) {

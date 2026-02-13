@@ -5,7 +5,7 @@
 
 	let types = ["action", "bâtiment", "créature", "lieu", "objet"];
 
-	function select_action(choice: string) {
+	function selectAction(choice: string) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(choice);
 			system.game.use.reset();
@@ -18,7 +18,7 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				select_action(type.charAt(0).toUpperCase() + type.slice(1));
+				selectAction(type.charAt(0).toUpperCase() + type.slice(1));
 			}}
 		>
 			Pioche 1 {type}

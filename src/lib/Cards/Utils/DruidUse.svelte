@@ -3,7 +3,7 @@
 
     export let system: System;
 
-    function select_action(choice: string) {
+    function selectAction(choice: string) {
         if (system.game && system.game.use.card) {
             system.game.use.card.useEffect(choice);
             system.game.use.reset();
@@ -15,7 +15,7 @@
     <button
         class="big choice"
         on:click={() => {
-            select_action("place");
+            selectAction("place");
         }}
     >
         Se place sur le terrain
@@ -26,7 +26,7 @@
     <button
         class="big choice"
         on:click={() => {
-            select_action("transform");
+            selectAction("transform");
         }}
     >
         Se transforme en {system.game.use.card.alternative_form}

@@ -19,7 +19,7 @@ export class Bourse extends Item {
         return false;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Inventaire") {
             this.getSale("Or").increase(5);
         }

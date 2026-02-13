@@ -15,7 +15,7 @@ export class Scierie extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Végétal").produce(10);
         }

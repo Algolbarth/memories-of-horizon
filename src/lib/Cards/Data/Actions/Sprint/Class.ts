@@ -46,7 +46,7 @@ export class Sprint extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Vitesse").step += 2;
+        target.stat("Vitesse").turn += 2;
 
         this.move("Défausse");
         this.pose();

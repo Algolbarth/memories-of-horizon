@@ -44,7 +44,7 @@ export class Cibler extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Protection").add++;
+        target.stat("Protection").add += 1;
 
         this.move("Défausse");
         this.pose();

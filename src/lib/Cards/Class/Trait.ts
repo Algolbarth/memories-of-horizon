@@ -4,8 +4,8 @@ export class Trait {
     name: string;
     base: boolean;
     add: boolean = false;
-    step: boolean = false;
     turn: boolean = false;
+    round: boolean = false;
     card: Card;
 
     constructor(name: string, value: boolean, card: Card) {
@@ -15,7 +15,7 @@ export class Trait {
     };
 
     value = () => {
-        let total = this.base || this.add || this.step || this.turn;
+        let total = this.base || this.add || this.turn || this.round;
 
         if (this.card.type == "Créature") {
             for (const equipment of this.card.equipments) {

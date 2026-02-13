@@ -15,7 +15,7 @@ export class BelierDeCombat extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Démolition").add("Inventaire");
         }

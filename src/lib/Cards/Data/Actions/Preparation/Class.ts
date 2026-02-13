@@ -46,7 +46,7 @@ export class Preparation extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Initiative").step += 1;
+        target.stat("Initiative").turn += 1;
 
         this.move("Défausse");
         this.pose();

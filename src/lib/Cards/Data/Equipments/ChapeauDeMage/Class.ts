@@ -17,7 +17,7 @@ export class ChapeauDeMage extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             this.bearer.stat("Garde").fix(this.bearer.stat("Magie").value());
         }

@@ -8,67 +8,14 @@
 
 	export let system: System;
 
-	let filterWindow: boolean = false;
-	let sortType: string = "Nom";
+	let filter_window: boolean = false;
+	let sort_type: string = "Nom";
+	let card_list: Card[] = [];
 
-	let nameSelect: string = "";
-	let levelSelect: string = "Tous";
-	let typeSelect: string = "Tous";
-	let familySelect: string = "Toutes";
-	let elementSelect: string = "Tous";
-	let communSelect: boolean = true;
-	let rareSelect: boolean = false;
-	let legendarySelect: boolean = false;
+	filterFunction();
 
-	let cardList: Card[] = [];
-	filter();
-
-	function filter() {
-		let tab = [];
-
-		for (const card of system.cards.instance) {
-			let name = card.name.toLowerCase();
-
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.isElement(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
-				tab.push(card);
-			}
-		}
-
-		tab = sort(tab);
-
-		cardList = tab;
-	}
-
-	function sort(tab: Card[]) {
-		if (sortType == "Niveau") {
-			for (let i = 0; i < tab.length; i++) {
-				let j = i;
-				while (j > 0 && tab[j].level < tab[j - 1].level) {
-					let swap = tab[j];
-					tab[j] = tab[j - 1];
-					tab[j - 1] = swap;
-					j--;
-				}
-			}
-		}
-		return tab;
-	}
-
-	function sorting(name: string, level: string, type: string, family: string, element: string, commun: boolean, rare: boolean, legendary: boolean) {
-		nameSelect = name;
-		levelSelect = level;
-		typeSelect = type;
-		familySelect = family;
-		elementSelect = element;
-		communSelect = commun;
-		rareSelect = rare;
-		legendarySelect = legendary;
-		filter();
-		sort_close();
-	}
-
-	function sort_close() {
-		filterWindow = false;
+	function filterFunction() {
+		card_list = system.filter.filterCards(system.cards.instance, sort_type);
 	}
 </script>
 
@@ -78,6 +25,7 @@
 			class="square close"
 			on:click={() => {
 				system.view.reset();
+				system.filter.resetSelection();
 				system.page = "Menu";
 			}}
 		>
@@ -91,32 +39,27 @@
 </div>
 
 <div class="zone side">
-	<div style="display:flex;align-items:center;">
-		<div style="margin-right:1vw;">
-			{several(cardList.length, ["carte"])}
-			-
-			<button
-				on:click={() => {
-					filterWindow = true;
-				}}
-			>
-				Filtrer
-			</button>
-			- Trier par
-		</div>
-
-		<Dropdown
-			array={["Nom", "Niveau"]}
-			selected={sortType}
-			selecting={function (element: string) {
-				sortType = element;
-				filter();
-			}}
-		/>
-	</div>
+	{several(card_list.length, ["Carte"])}
+	-
+	<button
+		on:click={() => {
+			filter_window = true;
+		}}
+	>
+		Filtrer
+	</button>
+	- Trier par
+	<Dropdown
+		array={["Nom", "Niveau"]}
+		selected={sort_type}
+		selecting={function (element: string) {
+			sort_type = element;
+			filterFunction();
+		}}
+	/>
 
 	<div id="list" class="scroll">
-		{#each cardList as card}
+		{#each card_list as card}
 			<div class="preview">
 				<button
 					on:click={() => {
@@ -140,8 +83,8 @@
 	<View bind:system />
 </div>
 
-{#if filterWindow}
-	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familySelect} {elementSelect} {communSelect} {rareSelect} {legendarySelect} {sorting} {sort_close} />
+{#if filter_window}
+	<Filter bind:system {filterFunction} bind:filter_window />
 {/if}
 
 <style>

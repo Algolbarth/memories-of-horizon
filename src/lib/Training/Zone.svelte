@@ -214,7 +214,7 @@
 
 	div.infos {
 		display: grid;
-		grid-template-columns: 0.75fr 1fr 4em;
+		grid-template-columns: 4.5em 1fr 4em;
 	}
 
 	div.preview {

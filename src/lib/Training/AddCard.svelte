@@ -1,67 +1,40 @@
 <script lang="ts">
-	import { Card, Unit } from "../Cards/Class";
-	import View from "../Cards/View/Main.svelte";
 	import Filter from "../Filter/View.svelte";
-	import type { System } from "../System/Class";
+	import Dropdown from "../Utils/Dropdown.svelte";
+	import View from "../Cards/View/Main.svelte";
 	import { several } from "../Utils";
+	import type { System } from "../System/Class";
+	import { Card, Unit } from "../Cards/Class";
 	import type { TrainZone } from "./Train";
 
 	export let system: System;
 	export let zone: TrainZone;
 
+	let filter_window: boolean = false;
+	let sort_type: string = "Nom";
+	let card_list: Card[] = [];
+
+	filterFunction();
+
+	function filterFunction() {
+		let condition = (card: Card) => {
+			if ((card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain"))) {
+				return true;
+			}
+			return false;
+		};
+		card_list = system.filter.filterCards(system.cards.instance, sort_type, condition);
+	}
+
 	function close() {
-		filterWindow = false;
+		filter_window = false;
 		system.view.reset();
+		system.filter.resetSelection();
 		system.train.add.reset();
 		system = system;
 	}
-
-	let filterWindow = false;
-
-	let nameSelect = "";
-	let levelSelect = "Tous";
-	let typeSelect = "Tous";
-	let familySelect = "Toutes";
-	let elementSelect = "Tous";
-	let communSelect = true;
-	let rareSelect = false;
-	let legendarySelect = false;
-
-	let cardList: Card[] = [];
-
-	function filter() {
-		let tab = [];
-		for (const card of system.cards.instance) {
-			let name = card.name.toLowerCase();
-
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (!card.trait("Légendaire").value() || system.train.add.is_bot) && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (card.type == "Lieu" || (zone != undefined && zone.name != "Région")) && (card instanceof Unit || (zone != undefined && zone.name != "Terrain")) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.isElement(elementSelect)) && ((legendarySelect && card.trait("Légendaire").value()) || (rareSelect && card.trait("Rare").value()) || (communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))) {
-				tab.push(card);
-			}
-		}
-		cardList = tab;
-
-		return "";
-	}
-
-	function sorting(name: string, level: string, type: string, family: string, element: string, commun: boolean, rare: boolean, legendary: boolean) {
-		nameSelect = name;
-		levelSelect = level;
-		typeSelect = type;
-		familySelect = family;
-		elementSelect = element;
-		communSelect = commun;
-		rareSelect = rare;
-		legendarySelect = legendary;
-		filter();
-		sort_close();
-	}
-
-	function sort_close() {
-		filterWindow = false;
-	}
 </script>
 
-{filter()}
 <div class="window">
 	<div class="body">
 		<div class="taskbar">
@@ -99,18 +72,27 @@
 			{:else}
 				({zone.cards.length} / ∞) -
 			{/if}
-			{several(cardList.length, ["carte"])}
+			{several(card_list.length, ["Carte"])}
 			-
 			<button
 				on:click={() => {
-					filterWindow = true;
+					filter_window = true;
 				}}
 			>
 				Filtrer
 			</button>
+			- Trier par
+			<Dropdown
+				array={["Nom", "Niveau"]}
+				selected={sort_type}
+				selecting={function (element: string) {
+					sort_type = element;
+					filterFunction();
+				}}
+			/>
 
 			<div id="list" class="scroll">
-				{#each cardList as card}
+				{#each card_list as card}
 					<div class="preview">
 						<div>
 							<button
@@ -151,8 +133,8 @@
 	<View bind:system />
 </div>
 
-{#if filterWindow}
-	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familySelect} {elementSelect} {communSelect} {rareSelect} {legendarySelect} {sorting} {sort_close} />
+{#if filter_window}
+	<Filter bind:system bind:filter_window {filterFunction} />
 {/if}
 
 <style>

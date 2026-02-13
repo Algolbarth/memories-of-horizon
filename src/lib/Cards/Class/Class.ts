@@ -7,6 +7,7 @@ import { Families } from "./Family";
 import type { System } from "../../System/Class";
 import { Entity } from "../../Game/Entity";
 import type { Zone } from "../../Game/Zone";
+import { Deck } from "../../Deck/Class";
 
 export class Card {
     name: string = "Carte";
@@ -68,7 +69,7 @@ export class Card {
             total_sale += Math.floor(element[1] / 2);
         }
         if (total_sale * 2 + 1 < total) {
-            this.getSale("Or").base++;
+            this.getSale("Or").base += 1;
         }
     };
 
@@ -373,17 +374,17 @@ export class Card {
 
     otherDestroyEffect: Function | undefined;
 
-    startStepEffect: Function | undefined;
+    startPhaseEffect: Function | undefined;
 
-    startAdversaryStepEffect: Function | undefined;
+    startAdversaryPhaseEffect: Function | undefined;
 
-    endStepEffect: Function | undefined;
+    endPhaseEffect: Function | undefined;
 
-    endAdversaryStepEffect: Function | undefined;
+    endAdversaryPhaseEffect: Function | undefined;
 
     startBattleEffect: Function | undefined;
 
-    turnEffect: Function | undefined;
+    roundEffect: Function | undefined;
 
     refreshStackEffect: Function | undefined;
 
@@ -470,13 +471,13 @@ export class Card {
 
             for (const trait of this.traits) {
                 newCard.trait(trait.name).add = trait.add;
-                newCard.trait(trait.name).step = trait.step;
                 newCard.trait(trait.name).turn = trait.turn;
+                newCard.trait(trait.name).round = trait.round;
             }
             for (const stat of this.stats) {
                 newCard.stat(stat.name).add = stat.add;
-                newCard.stat(stat.name).step = stat.step;
                 newCard.stat(stat.name).turn = stat.turn;
+                newCard.stat(stat.name).round = stat.round;
             }
 
             if (this.zone.cards[this.slot].type == "Créature") {
@@ -506,7 +507,7 @@ export class Card {
         if (this.owner != undefined) {
             return this.owner.adversary();
         }
-        return new Entity(this.system);
+        return new Entity(this.system, new Deck(this.system));
     };
 
     initFamily = (families: string[]) => {

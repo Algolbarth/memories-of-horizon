@@ -18,7 +18,7 @@ export class Cartographe extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Carte de la région").add("Inventaire");
         }

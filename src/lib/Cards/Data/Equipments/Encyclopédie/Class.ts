@@ -17,15 +17,15 @@ export class Encyclopedie extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            let read_condition = (card: Card) => {
+            let readCondition = (card: Card) => {
                 if (card instanceof Action) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, read_condition);
+            this.owner.draw(1, readCondition);
         }
     };
 };

@@ -5,11 +5,11 @@
 
 	export let system: System;
 
-	function select_condition(card: Card) {
+	function selectCondition(card: Card) {
 		return true;
 	}
 
-	function select_action(card: Card) {
+	function selectAction(card: Card) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(card);
 			system.game.use.reset();
@@ -18,5 +18,5 @@
 </script>
 
 {#if system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {select_condition} {select_action} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} {selectAction} />
 {/if}

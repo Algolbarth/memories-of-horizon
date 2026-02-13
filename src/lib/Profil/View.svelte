@@ -77,11 +77,11 @@
 
 <div class="zone container">
 	<div>
-		Total de parties : {account.total_match()}
+		Total de parties : {account.totalGame()}
 		<br />
-		{several(account.total_victory(), ["Victoire"], "after")}
+		{several(account.totalVictory(), ["Victoire"], "after")}
 		<br />
-		{several(account.total_defeat(), ["Défaite"], "after")}
+		{several(account.totalDefeat(), ["Défaite"], "after")}
 	</div>
 
 	<div>

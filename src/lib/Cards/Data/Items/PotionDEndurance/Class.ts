@@ -50,7 +50,7 @@ export class PotionDEndurance extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Endurance").step += this.stat("Infusion").value() * 2;
+        target.stat("Endurance").turn += this.stat("Infusion").value() * 2;
 
         this.move("Défausse");
         this.pose();

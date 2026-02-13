@@ -23,9 +23,9 @@ export class Barde extends Creature {
         let battlefield = copy(this.owner.zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
-                card.stat("Force").step += 5;
-                card.stat("Vitalité").step += 5;
-                card.stat("Santé").step += 5;
+                card.stat("Force").turn += 5;
+                card.stat("Vitalité").turn += 5;
+                card.stat("Santé").turn += 5;
             }
         }
 

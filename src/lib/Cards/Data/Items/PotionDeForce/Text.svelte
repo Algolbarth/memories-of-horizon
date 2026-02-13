@@ -7,11 +7,11 @@
 	export let card: Card;
 </script>
 
-Augmente de 4 la force d'une créature alliée sur le terrain pendant cette étape pour chaque valeur d'infusion.
+Augmente de 4 la force d'une créature alliée sur le terrain pendant ce tour pour chaque valeur d'infusion.
 
 <br />
 <br />
 
 <span class="details">
-	Augmente de {card.stat("Infusion").value() * 4} la force d'une créature alliée sur le terrain pendant cette étape.
+	Augmente de {card.stat("Infusion").value() * 4} la force d'une créature alliée sur le terrain pendant ce tour.
 </span>

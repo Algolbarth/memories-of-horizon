@@ -6,10 +6,11 @@ export class ChapterDeck extends Deck {
         super(system);
 
         this.name = name;
-        this.cards = cards;
 
         for (const card of this.cards) {
             system.cards.getByName(card);
         }
+
+        this.cards = cards;
     };
 };

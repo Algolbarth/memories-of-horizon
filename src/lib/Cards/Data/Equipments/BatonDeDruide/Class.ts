@@ -51,7 +51,7 @@ export class BatonDeDruide extends Equipment {
         }
     };
 
-    endAdversaryStepEffect = () => {
+    endAdversaryPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer instanceof Druid) {
             this.bearer.transform(this.bearer.alternative_form);
         }

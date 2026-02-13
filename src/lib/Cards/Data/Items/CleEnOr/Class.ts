@@ -14,7 +14,7 @@ export class CleEnOr extends Item {
     };
 
     useEffect = () => {
-        this.owner.zone("Pile").step_level += 1;
+        this.owner.zone("Pile").turn_level += 1;
 
         this.move("Défausse");
         this.pose();

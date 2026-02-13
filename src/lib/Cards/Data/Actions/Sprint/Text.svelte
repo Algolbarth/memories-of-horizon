@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 2 la vitesse d'une créature alliée sur le terrain pendant cette étape.
+Augmente de 2 la vitesse d'une créature alliée sur le terrain pendant ce tour.

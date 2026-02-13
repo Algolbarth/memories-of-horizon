@@ -16,13 +16,13 @@ export class MonstreErrant extends Action {
     };
 
     useEffect = () => {
-        let read_condition = (card: Card) => {
+        let readCondition = (card: Card) => {
             if (card instanceof Creature) {
                 return true;
             }
             return false;
         };
-        let cards = this.owner.draw(1, read_condition);
+        let cards = this.owner.draw(1, readCondition);
         if (cards[0] != undefined) {
             cards[0].stat("Constitution").increase(100);
             cards[0].stat("Force").increase(100);

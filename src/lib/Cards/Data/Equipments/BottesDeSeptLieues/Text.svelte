@@ -11,4 +11,4 @@
 S'équipe sur une créature alliée de famille Géant sur le terrain.
 <br />
 <br />
-Au début d'un tour de combat, quand équipé : augmente de 7 la constitution et la force de la créature équipée.
+Au début d'un round, quand équipé : augmente de 7 la constitution et la force de la créature équipée.

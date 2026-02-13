@@ -15,7 +15,7 @@ export class GuildeDesAventuriers extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.owner && this.zone && this.zone.name == "Terrain") {
             this.owner.getCard("Aventurier").add("Inventaire");
         }

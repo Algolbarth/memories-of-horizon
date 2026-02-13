@@ -3,17 +3,18 @@
 	import Dropdown from "../Utils/Dropdown.svelte";
 
 	export let system: System;
-	export let nameSelect: string;
-	export let levelSelect: string;
-	export let typeSelect: string;
-	export let familySelect: string;
-	export let elementSelect: string;
-	export let rarity: boolean = true;
-	export let communSelect: boolean = false;
-	export let rareSelect: boolean = false;
-	export let legendarySelect: boolean = false;
-	export let sorting: Function;
-	export let sort_close: Function;
+	export let filterFunction: Function;
+	export let filter_window: boolean;
+	export let only_common: boolean = false;
+
+	let nameSelect: string = system.filter.select_name;
+	let levelSelect: string = system.filter.select_level;
+	let typeSelect: string = system.filter.select_type;
+	let familySelect: string = system.filter.select_family;
+	let elementSelect: string = system.filter.select_element;
+	let commonSelect: boolean = system.filter.select_common;
+	let rareSelect: boolean = system.filter.select_rare;
+	let legendarySelect: boolean = system.filter.select_legendary;
 </script>
 
 <div class="window">
@@ -22,7 +23,7 @@
 			<button
 				class="square close"
 				on:click={() => {
-					sort_close();
+					filter_window = false;
 				}}
 			>
 				X
@@ -43,7 +44,7 @@
 				Niveau
 				<div>
 					<Dropdown
-						array={system.sort.levels}
+						array={system.filter.levels}
 						selected={levelSelect}
 						selecting={function (element: string) {
 							levelSelect = element;
@@ -56,7 +57,7 @@
 				Type
 				<div>
 					<Dropdown
-						array={system.sort.types}
+						array={system.filter.types}
 						selected={typeSelect}
 						selecting={function (element: string) {
 							typeSelect = element;
@@ -69,7 +70,7 @@
 				Famille
 				<div>
 					<Dropdown
-						array={system.sort.families}
+						array={system.filter.families}
 						selected={familySelect}
 						selecting={function (element: string) {
 							familySelect = element;
@@ -82,7 +83,7 @@
 				Élément
 				<div>
 					<Dropdown
-						array={system.sort.elements}
+						array={system.filter.elements}
 						selected={elementSelect}
 						selecting={function (element: string) {
 							elementSelect = element;
@@ -94,13 +95,13 @@
 
 		<br />
 
-		{#if rarity}
+		{#if !only_common}
 			<div class="checkboxes">
 				<div>Rareté</div>
 
 				<div>
-					<input type="checkbox" bind:checked={communSelect} id="commun" />
-					<label for="commun">Commune</label>
+					<input type="checkbox" bind:checked={commonSelect} id="common" />
+					<label for="common">Commune</label>
 				</div>
 
 				<div>
@@ -120,11 +121,13 @@
 		<button
 			class="big"
 			on:click={() => {
-				if (rarity) {
-					sorting(nameSelect, levelSelect, typeSelect, familySelect, elementSelect, communSelect, rareSelect, legendarySelect);
+				if (!only_common) {
+					system.filter.changeSelection(nameSelect, levelSelect, typeSelect, familySelect, elementSelect, commonSelect, rareSelect, legendarySelect);
 				} else {
-					sorting(nameSelect, levelSelect, typeSelect, familySelect, elementSelect);
+					system.filter.changeSelection(nameSelect, levelSelect, typeSelect, familySelect, elementSelect, true, false, false);
 				}
+				filterFunction();
+				filter_window = false;
 			}}
 		>
 			Valider

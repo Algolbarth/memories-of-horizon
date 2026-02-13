@@ -115,10 +115,10 @@ export class Concoction extends Item {
 
             if (target instanceof Creature) {
                 target.heal(this.stat("Infusion de soin").value() * 2);
-                target.stat("Force").step += this.stat("Infusion de force").value() * 4;
-                target.stat("Endurance").step += this.stat("Infusion d'endurance").value() * 2;
-                target.stat("Résistance").step += this.stat("Infusion de résistance").value() * 2;
-                target.stat("Protection").step += Math.floor(this.stat("Infusion parfumée").value() / 5);
+                target.stat("Force").turn += this.stat("Infusion de force").value() * 4;
+                target.stat("Endurance").turn += this.stat("Infusion d'endurance").value() * 2;
+                target.stat("Résistance").turn += this.stat("Infusion de résistance").value() * 2;
+                target.stat("Protection").turn += Math.floor(this.stat("Infusion parfumée").value() / 5);
             }
         }
 

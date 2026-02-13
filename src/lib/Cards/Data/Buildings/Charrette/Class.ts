@@ -15,7 +15,7 @@ export class Charrette extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.draw(5);
         }

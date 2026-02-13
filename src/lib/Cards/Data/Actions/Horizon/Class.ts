@@ -21,10 +21,10 @@ export class Horizon extends Action {
     };
 
     useEffect = () => {
-        this.owner.zone("Région").size++;
-        this.owner.zone("Pile").size++;
-        this.owner.zone("Inventaire").size++;
-        this.owner.zone("Terrain").size++;
+        this.owner.zone("Région").size += 1;
+        this.owner.zone("Pile").size += 1;
+        this.owner.zone("Inventaire").size += 1;
+        this.owner.zone("Terrain").size += 1;
 
         this.move("Défausse");
         this.pose();

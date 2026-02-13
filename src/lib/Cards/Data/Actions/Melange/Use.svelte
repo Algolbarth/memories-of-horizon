@@ -9,18 +9,18 @@
 	let potion_1: Item | undefined;
 	let potion_2: Item | undefined;
 
-	function select_condition(card: Card) {
+	function selectCondition(card: Card) {
 		if (card instanceof Item && card.isFamily("Potion") && (potion_1 == undefined || card != potion_1)) {
 			return true;
 		}
 		return false;
 	}
 
-	function select_action_1(card: Card) {
+	function selectAction_1(card: Card) {
 		potion_1 = card;
 	}
 
-	function select_action_2(card: Card) {
+	function selectAction_2(card: Card) {
 		potion_2 = card;
 
 		if (system.game && system.game.use.card) {
@@ -31,7 +31,7 @@
 </script>
 
 {#if potion_1 == undefined && system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {select_condition} select_action={select_action_1} />
+	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {selectCondition} selectAction={selectAction_1} />
 {:else}
 	<button
 		class="square return margin-bottom"
@@ -42,6 +42,6 @@
 		↩
 	</button>
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {select_condition} select_action={select_action_2} />
+		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {selectCondition} selectAction={selectAction_2} />
 	{/if}
 {/if}

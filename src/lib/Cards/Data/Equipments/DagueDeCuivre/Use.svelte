@@ -8,18 +8,18 @@
 
 	let choice: string | undefined = undefined;
 
-	function select_condition_1(card: Card) {
+	function selectCondition_1(card: Card) {
 		if (card instanceof Creature && card.canEquip()) {
 			return true;
 		}
 		return false;
 	}
 
-	function select_condition_2(card: Card) {
+	function selectCondition_2(card: Card) {
 		return true;
 	}
 
-	function select_action(card: Card) {
+	function selectAction(card: Card) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(card, choice);
 			system.game.use.reset();
@@ -60,7 +60,7 @@
 	</button>
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
 		{#if system.game && system.game.use.card && system.game.use.card.owner}
-			<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} select_condition={select_condition_1} {select_action} />
+			<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} selectCondition={selectCondition_1} {selectAction} />
 		{/if}
 	{/if}
 {:else if choice == "damage"}
@@ -74,7 +74,7 @@
 	</button>
 	{#if system.game && system.game.use.card && system.game.use.card.owner}
 		{#if system.game && system.game.use.card && system.game.use.card.owner}
-			<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} select_condition={select_condition_2} {select_action} />
+			<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} selectCondition={selectCondition_2} {selectAction} />
 		{/if}
 	{/if}
 {/if}

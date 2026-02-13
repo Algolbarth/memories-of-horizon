@@ -16,7 +16,7 @@ export class Marche extends Building {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             let reserve = copy(this.owner.zone("Pile").cards);
             for (const card of reserve) {

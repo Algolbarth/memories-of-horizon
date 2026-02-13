@@ -7,11 +7,11 @@
 
 	let choice: string | undefined = undefined;
 
-	function select_condition(card: Card) {
+	function selectCondition(card: Card) {
 		return true;
 	}
 
-	function select_action(card: Card | undefined) {
+	function selectAction(card: Card | undefined) {
 		if (system.game && system.game.use.card) {
 			system.game.use.card.useEffect(choice, card);
 			system.game.use.reset();
@@ -25,7 +25,7 @@
 			class="big choice"
 			on:click={() => {
 				choice = "creature";
-				select_action(undefined);
+				selectAction(undefined);
 			}}
 		>
 			Se place sur le terrain
@@ -52,6 +52,6 @@
 		↩
 	</button>
 	{#if system.game && system.game.use.card}
-		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {select_condition} {select_action} />
+		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {selectCondition} {selectAction} />
 	{/if}
 {/if}

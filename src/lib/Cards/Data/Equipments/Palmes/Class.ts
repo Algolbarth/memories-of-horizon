@@ -16,7 +16,7 @@ export class Palmes extends Equipment {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
             let battlefield = copy(this.owner.zone("Terrain").cards);
             for (const card of battlefield) {

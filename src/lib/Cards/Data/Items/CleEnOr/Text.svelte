@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 1 le niveau de la pile alliée pendant cette étape.
+Augmente de 1 le niveau de la pile alliée pendant ce tour.

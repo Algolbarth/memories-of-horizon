@@ -16,7 +16,7 @@ export class Grenouille extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.move("Inventaire");
         }

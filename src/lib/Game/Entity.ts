@@ -26,7 +26,6 @@ export class Entity {
     ressources: EntityRessource[] = [];
     place: Location | undefined = undefined;
     system: System;
-    step: number = 0;
     deck: Deck;
 
     constructor(system: System, deck: Deck) {
@@ -79,12 +78,12 @@ export class Entity {
         return card;
     };
 
-    cardList = (read_condition: (Function | undefined) = undefined, drawer: Card | undefined) => {
+    card_list = (readCondition: (Function | undefined) = undefined, drawer: Card | undefined) => {
         let nameList: string[] = [];
 
         for (const c of this.deck.cards) {
             let card = this.system.cards.getByName(c);
-            if (this.place && this.place.can_read(card) && card.level <= this.zone("Pile").level() && (read_condition == undefined || read_condition(card, drawer))) {
+            if ((this == this.system.game.bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && (readCondition == undefined || readCondition(card, drawer))) {
                 nameList.push(c);
             }
         }
@@ -92,8 +91,8 @@ export class Entity {
         return nameList;
     };
 
-    draw = (number: number, read_condition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
-        let nameList: string[] = this.cardList(read_condition, drawer);
+    draw = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
+        let nameList: string[] = this.card_list(readCondition, drawer);
 
         if (nameList.length > 0) {
             let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
@@ -102,13 +101,13 @@ export class Entity {
         }
 
         if (number > 1) {
-            array = this.draw(number - 1, read_condition, drawer, array);
+            array = this.draw(number - 1, readCondition, drawer, array);
         }
         return array;
     };
 
-    discover = (number: number, read_condition: Function, drawer: Card, array: Card[] = []) => {
-        let nameList: string[] = this.cardList(read_condition, drawer);
+    discover = (number: number, readCondition: Function, drawer: Card, array: Card[] = []) => {
+        let nameList: string[] = this.card_list(readCondition, drawer);
 
         for (const card of this.zone("Pile").cards) {
             if (nameList.includes(card.name)) {
@@ -123,7 +122,7 @@ export class Entity {
         }
 
         if (number > 1) {
-            array = this.discover(number - 1, read_condition, drawer, array);
+            array = this.discover(number - 1, readCondition, drawer, array);
         }
         return array;
     };
@@ -138,7 +137,7 @@ export class Entity {
     upStack = () => {
         if (this.canUpStack()) {
             this.ressource("Or").spend(this.zone("Pile").upgrade_cost);
-            this.zone("Pile").base_level++;
+            this.zone("Pile").base_level += 1;
             this.zone("Pile").upgrade_cost = this.zone("Pile").base_level * 10;
         }
     };
@@ -190,11 +189,17 @@ export class Entity {
 
     isFullLocked = () => {
         let check = true;
+
         for (const card of this.zone("Pile").cards) {
             if (!card.locked) {
                 check = false;
             }
         }
+
+        if (this.zone("Pile").cards.length == 0) {
+            check = false;
+        }
+
         return check;
     };
 
@@ -262,6 +267,80 @@ export class Entity {
 
     isLoser = () => {
         return this.zone("Terrain").cards.length == 0 || this.life.current <= 0;
+    };
+
+    startPhase = () => {
+        for (const zone of this.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.startAdversaryPhaseEffect != undefined) {
+                    card.startAdversaryPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startAdversaryPhaseEffect != undefined) {
+                            e.startAdversaryPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.adversary().zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.startPhaseEffect != undefined) {
+                    card.startPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.startPhaseEffect != undefined) {
+                            e.startPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    endPhase = () => {
+        for (const zone of this.zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endAdversaryPhaseEffect != undefined) {
+                    card.endAdversaryPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endAdversaryPhaseEffect != undefined) {
+                            e.endAdversaryPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.adversary().zones) {
+            let cpy = copy(zone.cards);
+            for (const card of cpy) {
+
+                if (card.endPhaseEffect != undefined) {
+                    card.endPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const e of card.equipments) {
+                        if (e.endPhaseEffect != undefined) {
+                            e.endPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
     };
 };
 

@@ -58,9 +58,9 @@ export class Bouffon extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            target.stat("Santé").step += 200;
-            target.stat("Vitalité").step += 200;
-            target.stat("Force").step += 200;
+            target.stat("Santé").turn += 200;
+            target.stat("Vitalité").turn += 200;
+            target.stat("Force").turn += 200;
         }
 
         this.move("Terrain");

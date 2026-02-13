@@ -20,7 +20,7 @@
 	import ModeDecks from "../Deck/SelectMode.svelte";
 	import ListDecks from "../Deck/List.svelte";
 	import Deck from "../Deck/View.svelte";
-	import Add from "../Deck/Add.svelte";
+	import Add from "../Deck/AddCard.svelte";
 	import type { System } from "../System/Class";
 
 	export let system: System;
@@ -70,6 +70,6 @@
 	<ListDecks bind:system bind:decks={system.wild_decks} mode={"Libre"} />
 {:else if system.page == "Deck" && system.deck != undefined}
 	<Deck bind:system bind:deck={system.deck} />
-{:else if system.page == "Add"}
-	<Add bind:system />
+{:else if system.page == "Add" && system.deck != undefined}
+	<Add bind:system bind:deck={system.deck} />
 {/if}

@@ -4,6 +4,7 @@ import type { System } from "../System/Class";
 
 export class Chapter {
     steps: Step[] = [];
+    step: number = 0;
     ressources: ChapterRessource[] = [];
     is_boss: boolean = false;
     system: System;
@@ -18,9 +19,6 @@ export class Chapter {
     };
 
     init = () => {
-        this.game.player.step = 1;
-        this.game.bot.step = 0;
-
         for (const ressource of this.ressources) {
             this.game.bot.ressource(ressource.name).production = ressource.value;
         }
@@ -35,7 +33,7 @@ export class Chapter {
     };
 
     startDialog = () => {
-        let step = this.steps[this.game.player.step - 1];
+        let step = this.steps[this.step];
         if (!step.read && step.dialog < step.dialogs.length) {
             this.system.page = "Dialog";
         }
@@ -46,7 +44,7 @@ export class Chapter {
     };
 
     nextDialog = () => {
-        let step = this.steps[this.game.player.step - 1];
+        let step = this.steps[this.step];
         if (!step.read && step.dialog < step.dialogs.length - 1) {
             step.dialog++;
             this.system.page = "Dialog";

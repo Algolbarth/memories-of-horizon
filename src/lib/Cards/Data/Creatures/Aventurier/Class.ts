@@ -37,13 +37,13 @@ export class Aventurier extends Creature {
             }
         }
 
-        let read_condition = (card: Card) => {
+        let readCondition = (card: Card) => {
             if (card.type == choice) {
                 return true;
             }
             return false;
         };
-        this.owner.draw(1 + nb_guild, read_condition);
+        this.owner.draw(1 + nb_guild, readCondition);
 
         this.move("Terrain");
         this.pose();

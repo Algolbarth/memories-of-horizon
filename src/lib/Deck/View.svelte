@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Filter from "../Filter/View.svelte";
-	import { several } from "../Utils";
+	import Dropdown from "../Utils/Dropdown.svelte";
 	import View from "../Cards/View/Main.svelte";
+	import { several } from "../Utils";
 	import type { System } from "../System/Class";
 	import type { Deck } from "./Class";
 	import { StandardDeck } from "./Standard";
@@ -10,44 +11,14 @@
 	export let deck: Deck;
 
 	let name: string = deck.name;
-	let sorted: boolean = false;
+	let filter_window: boolean = false;
+	let sort_type: string = "Personnalisé";
+	let card_list: string[] = [];
 
-	let nameSelect: string = "";
-	let levelSelect: string = "Tous";
-	let typeSelect: string = "Tous";
-	let familySelect: string = "Toutes";
-	let elementSelect: string = "Tous";
+	filterFunction();
 
-	let cardList: string[] = [];
-	cards();
-
-	function cards() {
-		let tab: string[] = [];
-
-		for (const cardName of deck.cards) {
-			let card = system.cards.getByName(cardName);
-			let name = card.name.toLowerCase();
-
-			if ((nameSelect == "" || name.includes(nameSelect.toLowerCase())) && (levelSelect == "Tous" || card.level == parseInt(levelSelect)) && (typeSelect == "Tous" || card.type == typeSelect) && (familySelect == "Toutes" || card.isFamily(familySelect)) && (elementSelect == "Tous" || card.isElement(elementSelect))) {
-				tab.push(cardName);
-			}
-		}
-
-		cardList = tab;
-	}
-
-	function sorting(name: string, level: string, type: string, family: string, element: string) {
-		nameSelect = name;
-		levelSelect = level;
-		typeSelect = type;
-		familySelect = family;
-		elementSelect = element;
-		cards();
-		sort_close();
-	}
-
-	function sort_close() {
-		sorted = false;
+	function filterFunction() {
+		card_list = system.filter.filterString(deck.cards, sort_type);
 	}
 
 	function close() {
@@ -65,6 +36,7 @@
 			class="square close"
 			on:click={() => {
 				system.view.reset();
+				system.filter.resetSelection();
 				system.page = "Menu";
 			}}
 		>
@@ -75,6 +47,7 @@
 			class="square return"
 			on:click={() => {
 				system.view.reset();
+				system.filter.resetSelection();
 				close();
 			}}
 		>
@@ -145,26 +118,35 @@
 
 <div class="zone side">
 	<div class="zone_taskbar">
-		<div>
-			{#if deck?.cards.length == 0}
+		<div class="display:flex;align-items:center;">
+			{#if deck.cards.length == 0}
 				0 Carte
 			{:else}
-				{cardList.length}
+				{card_list.length}
 				/
 				{several(deck.cards.length, ["Carte"])}
 				-
 				<button
 					on:click={() => {
-						sorted = true;
+						filter_window = true;
 					}}
 				>
 					Filtrer
 				</button>
+				- Trier par
+				<Dropdown
+					array={["Personnalisé", "Nom", "Niveau"]}
+					selected={sort_type}
+					selecting={function (element: string) {
+						sort_type = element;
+						filterFunction();
+					}}
+				/>
 			{/if}
 		</div>
 
-		<div style="text-align: right;">
-			{#if deck.canModify()}
+		<div style="text-align:right;">
+			{#if deck.isEditable()}
 				<button
 					class="active"
 					on:click={() => {
@@ -179,7 +161,7 @@
 	</div>
 
 	<div id="list" class="scroll">
-		{#each cardList as card, i}
+		{#each card_list as card, i}
 			<div class="preview">
 				<div>
 					<button
@@ -198,7 +180,7 @@
 				</div>
 
 				<div style="text-align:right;">
-					{#if !(deck instanceof StandardDeck)}
+					{#if deck.isEditable() && system.filter.isReset() && sort_type == "Personnalisé"}
 						{#if i > 0}
 							<button
 								class="active"
@@ -207,7 +189,12 @@
 										let temp = deck.cards[i - 1];
 										deck.cards[i - 1] = card;
 										deck.cards[i] = temp;
-										cards();
+
+										temp = card_list[i - 1];
+										card_list[i - 1] = card;
+										card_list[i] = temp;
+
+										sort_type = "Personnalisé";
 									}
 								}}
 							>
@@ -225,7 +212,12 @@
 										let temp = deck.cards[i + 1];
 										deck.cards[i + 1] = card;
 										deck.cards[i] = temp;
-										cards();
+
+										temp = card_list[i + 1];
+										card_list[i + 1] = card;
+										card_list[i] = temp;
+
+										sort_type = "Personnalisé";
 									}
 								}}
 							>
@@ -245,8 +237,8 @@
 	<View bind:system />
 </div>
 
-{#if sorted}
-	<Filter bind:system {nameSelect} {levelSelect} {typeSelect} {familySelect} {elementSelect} rarity={false} {sorting} {sort_close} />
+{#if filter_window}
+	<Filter bind:system bind:filter_window {filterFunction} only_common={true} />
 {/if}
 
 <style>

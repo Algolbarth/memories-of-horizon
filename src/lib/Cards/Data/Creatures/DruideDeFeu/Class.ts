@@ -25,7 +25,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
         this.stat("Force").init(40);
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.stat("Force").increase(10);
         }

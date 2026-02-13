@@ -19,6 +19,6 @@ export class Danseuse extends Creature {
     };
 
     startBattleEffect = () => {
-        this.stat("Esquive").step += 1;
+        this.stat("Esquive").turn += 1;
     };
 };

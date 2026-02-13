@@ -37,22 +37,22 @@ Applique des effets en fonction des différentes valeurs d'infusion.
 	{/if}
 
 	{#if card.stat("Infusion de force").value() > 0}
-		Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature sur le terrain pendant cette étape.
+		Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature sur le terrain pendant ce tour.
 		<br />
 	{/if}
 
 	{#if card.stat("Infusion d'endurance").value() > 0}
-		Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature sur le terrain pendant cette étape.
+		Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature sur le terrain pendant ce tour.
 		<br />
 	{/if}
 
 	{#if card.stat("Infusion de résistance").value() > 0}
-		Augmente de {card.stat("Infusion de résistance").value() * 2} la résistance d'une créature sur le terrain pendant cette étape.
+		Augmente de {card.stat("Infusion de résistance").value() * 2} la résistance d'une créature sur le terrain pendant ce tour.
 		<br />
 	{/if}
 
 	{#if card.stat("Infusion parfumée").value() >= 5}
-		Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain pendant cette étape.
+		Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain pendant ce tour.
 		<br />
 	{/if}
 </span>

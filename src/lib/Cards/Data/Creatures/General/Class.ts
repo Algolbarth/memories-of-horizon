@@ -19,7 +19,7 @@ export class General extends Creature {
         this.text = Text;
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             let battlefield = copy(this.owner.zone("Terrain").cards);
             for (const card of battlefield) {

@@ -11,7 +11,7 @@ Ajouter les stats des decks (types de carte, éléments, familles, niveau)
 Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la pile 
 Ajouter un texte explicatif pour les stats et effets 
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu 
-Ajouter la paralysie, le gel et la cécité (paralysie => X actions, gel => X tours, cécité => X attaques)
+Ajouter la paralysie, le gel et la cécité (gel => X tours, paralysie => X actions, cécité => X attaques)
 
 # Cartes
 
@@ -68,8 +68,8 @@ Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée.
 Mur de haie : créature plante. 0 atk inactif 
 Mur de ronces : créature plante. 0 atk inactif, épine
-Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
-Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain.
+Plante carnivore : créature plante. 0 atk inactif, au début du round : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
+Plante vénéneuse : créature plante, 0 atk inactif, au début du round : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
 Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans l'inventaire.
@@ -151,9 +151,9 @@ Metallomancien : créature, quand une carte alliée Metal est posée : augmente 
 Mines : lieu pour les cartes d'élément Métal.
 
 ### Foudre
-Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant cette étape.
-Acolyte satyre : quand posé : augmente la constitution et la force d'une créature alliée sur le terrain pendant cette étape.
-Barde satyre : quand posé : augmente la constitution et la force de toutes les créatures alliées sur le terrain pendant cette étape.
+Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant ce tour.
+Acolyte satyre : quand posé : augmente la constitution et la force d'une créature alliée sur le terrain pendant ce tour.
+Barde satyre : quand posé : augmente la constitution et la force de toutes les créatures alliées sur le terrain pendant ce tour.
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.

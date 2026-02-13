@@ -28,7 +28,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
         this.stat("Endurance").init(10);
     };
 
-    startStepEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);

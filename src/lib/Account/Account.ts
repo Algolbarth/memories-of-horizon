@@ -15,15 +15,15 @@ export class Account {
         this.name = name;
     };
 
-    total_victory = () => {
+    totalVictory = () => {
         return this.standard.victory + this.wild.victory;
     };
 
-    total_defeat = () => {
+    totalDefeat = () => {
         return this.standard.defeat + this.wild.defeat;
     };
 
-    total_match = () => {
+    totalGame = () => {
         return this.standard.total() + this.wild.total();
     };
 };

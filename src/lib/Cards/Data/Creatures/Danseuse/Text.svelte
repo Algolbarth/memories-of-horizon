@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de combat : augmente de 1 son esquive pendant cette étape.
+Au début de la phase de combat : augmente de 1 son esquive pendant ce tour.

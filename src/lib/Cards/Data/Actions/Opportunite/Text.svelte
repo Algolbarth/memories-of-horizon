@@ -11,5 +11,5 @@
 Au choix :
 <ul>
 	<li>Découvre 1 carte.</li>
-	<li>Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant cette étape.</li>
+	<li>Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant ce tour.</li>
 </ul>
