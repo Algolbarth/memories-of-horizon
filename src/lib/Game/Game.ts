@@ -54,7 +54,7 @@ export class Game {
         this.trainInitEntity(this.player, this.system.train.player);
         this.trainInitEntity(this.bot, this.system.train.bot);
 
-        this.startTurn();
+        this.system.page = "Game";
     };
 
     trainInitEntity = (entity: Entity, train_entity: TrainEntity) => {

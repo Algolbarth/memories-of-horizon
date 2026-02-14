@@ -33,6 +33,7 @@ export * from './MurDePierre';
 export * from './MurDeRoche';
 export * from './Muraille';
 export * from './MurailleDeMarbre';
+export * from './NavetteSpatiale';
 export * from './Nexus';
 export * from './NidDeWyverne';
 export * from './Officine';

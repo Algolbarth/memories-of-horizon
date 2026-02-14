@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CardInfo from "../../../Utils/CardInfo.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 
+	// svelte-ignore export_let_unused
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Quand posé et au début de la phase de préparation : génère 2 <CardInfo bind:system name={"Coffre en bois"} /> dans l'inventaire.
+Quand posé et au début de la phase de préparation : stocke 1 flux.
