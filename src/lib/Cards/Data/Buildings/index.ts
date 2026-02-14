@@ -24,6 +24,7 @@ export * from './FontaineDeBambou';
 export * from './GarnisonDesMonts';
 export * from './GuildeDesAventuriers';
 export * from './LacDeLave';
+export * from './LanceurOrbital';
 export * from './Maison';
 export * from './Marche';
 export * from './MurDEnceinte';

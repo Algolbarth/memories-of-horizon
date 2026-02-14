@@ -13,7 +13,6 @@ export class Satellite extends Building {
         this.initFamily(["Astronef"]);
 
         this.stat("Constitution").init(1);
-
         this.addStat("Puissance", 1);
 
         this.text = Text;
