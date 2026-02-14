@@ -45,6 +45,7 @@ export * from './PuitDeMana';
 export * from './Restaurant';
 export * from './SalleDArmes';
 export * from './SalleDesCoffres';
+export * from './Satellite';
 export * from './Scierie';
 export * from './Siphon';
 export * from './Tente';
