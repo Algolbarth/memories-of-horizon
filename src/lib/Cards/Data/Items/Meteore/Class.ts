@@ -4,13 +4,13 @@ import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Torche extends Item {
-    name = "Torche";
+export class Meteore extends Item {
+    name = "Météore";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 6], ["Feu", 6]]);
+        this.init([["Or", 12]]);
 
         this.text = Text;
     };
@@ -28,7 +28,7 @@ export class Torche extends Item {
                 this.system.game.use.set(this, Use);
             }
             else {
-                this.useEffect("production");
+                this.useEffect("stockage");
             }
         }
         else {
@@ -37,8 +37,8 @@ export class Torche extends Item {
     };
 
     useEffect = (choice: string, target: Unit | undefined = undefined) => {
-        if (choice == "production") {
-            this.owner.ressource("Feu").increase(2);
+        if (choice == "stockage") {
+            this.owner.ressource("Flux").stock(1);
         }
         else if (choice == "damage" && target != undefined) {
             this.targeting(target);

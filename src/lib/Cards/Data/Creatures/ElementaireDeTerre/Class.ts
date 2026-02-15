@@ -22,28 +22,23 @@ export class ElementaireDeTerre extends Creature {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull() || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner.zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            if (this.owner == this.system.game.player) {
                 this.system.game.use.set(this, Use);
             }
-            else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("creature", undefined);
-            }
-        }
-        else {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
+            else {
                 this.useEffect("effect", this.adversary().zone("Terrain").cards[0]);
             }
-            else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("creature", undefined);
-            }
+        }
+        else if (this.owner.zone("Terrain").isNotFull()) {
+            this.useEffect("creature", undefined);
         }
     };
 

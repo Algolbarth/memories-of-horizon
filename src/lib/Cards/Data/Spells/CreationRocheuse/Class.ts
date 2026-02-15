@@ -15,7 +15,7 @@ export class CreationRocheuse extends Spell {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull()) {
+        if (this.owner.zone("Terrain").isNotFull()) {
             return true;
         }
         return false;

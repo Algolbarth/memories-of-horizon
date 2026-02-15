@@ -4,7 +4,10 @@ export class Location extends Card {
     type = "Lieu";
 
     canUse = () => {
-        return !this.owner?.zone("Région").isFull();
+        if (this.owner.zone("Région").isNotFull()) {
+            return true;
+        }
+        return false;
     };
 
     useEffect = () => {

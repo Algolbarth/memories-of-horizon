@@ -106,7 +106,7 @@ export class Entity {
         return array;
     };
 
-    discover = (number: number, readCondition: Function, drawer: Card, array: Card[] = []) => {
+    discover = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
         let nameList: string[] = this.card_list(readCondition, drawer);
 
         for (const card of this.zone("Pile").cards) {

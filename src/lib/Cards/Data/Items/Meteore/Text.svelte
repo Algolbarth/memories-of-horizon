@@ -8,9 +8,8 @@
 	export let card: Card;
 </script>
 
-Quand arrive sur le terrain : augmente d'autant sa constitution et sa puissance que de flux possédé.
-
-<br />
-<br />
-
-Au début d'un round : inflige autant de dégâts à l'unité adverse sur le terrain en première position que sa puissance.
+Au choix :
+<ul>
+	<li>Stocke 1 flux.</li>
+	<li>Inflige 20 dégâts à une unité adverse sur le terrain.</li>
+</ul>

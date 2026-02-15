@@ -13,4 +13,8 @@ export class Zone {
     isFull = () => {
         return this.cards.length == this.size;
     };
+
+    isNotFull = () => {
+        return !this.isFull();
+    };
 };

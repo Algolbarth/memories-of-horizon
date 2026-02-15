@@ -24,11 +24,11 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = "production";
+				choice = "stockage";
 				selectAction(undefined);
 			}}
 		>
-			Augmente de 2 la production en feu
+			Stocke 1 flux
 		</button>
 
 		<br />

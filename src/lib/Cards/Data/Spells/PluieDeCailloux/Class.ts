@@ -16,7 +16,7 @@ export class PluieDeCailloux extends Spell {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull() || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner.zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;

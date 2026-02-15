@@ -21,7 +21,7 @@ export class ElementaireDesEboulis extends Creature {
     };
 
     canUse = () => {
-        if (!this.owner.zone("Terrain").isFull()) {
+        if (this.owner.zone("Terrain").isNotFull()) {
             return true;
         }
         for (const card of this.adversary().zone("Terrain").cards) {
@@ -40,27 +40,22 @@ export class ElementaireDesEboulis extends Creature {
             }
         }
 
-        if (this.owner == this.system.game.player) {
-            if (check) {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            if (this.owner == this.system.game.player) {
                 this.system.game.use.set(this, Use);
             }
-            else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("creature", undefined);
-            }
-        }
-        else {
-            if (check) {
+            else {
                 let target = undefined;
                 for (const card of this.adversary().zone("Terrain").cards) {
-                    if (target == undefined && card instanceof Creature) {
+                    if (target == undefined && card instanceof Creature && card.stat("Étourdissement").value() < 1) {
                         target = card;
                     }
                 }
-                this.useEffect("stun", target);
+                this.useEffect("effect", target);
             }
-            else if (!this.owner.zone("Terrain").isFull()) {
-                this.useEffect("creature", undefined);
-            }
+        }
+        else if (this.owner.zone("Terrain").isNotFull()) {
+            this.useEffect("creature", undefined);
         }
     };
 

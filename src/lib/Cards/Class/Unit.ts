@@ -86,7 +86,10 @@ export class Unit extends Card {
     };
 
     canUse = () => {
-        return !this.owner?.zone("Terrain").isFull();
+        if (this.owner?.zone("Terrain").isNotFull()) {
+            return true;
+        }
+        return false;
     };
 
     select = () => {

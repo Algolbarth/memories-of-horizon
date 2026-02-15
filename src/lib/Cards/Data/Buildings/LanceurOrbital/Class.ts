@@ -17,7 +17,7 @@ export class LanceurOrbital extends Building {
         this.text = Text;
     };
 
-    roundEffect = () => {
+    startPhaseEffect = () => {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Satellite").add("Terrain");
         }

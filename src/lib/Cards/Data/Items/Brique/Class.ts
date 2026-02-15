@@ -34,12 +34,23 @@ export class Brique extends Item {
         }
         else {
             if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.adversary().zone("Terrain").cards[0]);
+                this.useEffect("damage", this.adversary().zone("Terrain").cards[0]);
+            }
+            else {
+                let target = undefined;
+                for (const card of this.owner.zone("Terrain").cards) {
+                    if (target == undefined && card instanceof Building && card.isDamaged()) {
+                        target = card;
+                    }
+                }
+                if (target != undefined) {
+                    this.useEffect("heal", target);
+                }
             }
         }
     };
 
-    useEffect = (target: Unit, choice: string) => {
+    useEffect = (choice: string, target: Unit) => {
         this.targeting(target);
 
         if (choice == "heal") {

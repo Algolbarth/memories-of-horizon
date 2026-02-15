@@ -14,7 +14,7 @@ export class CarteDeLaRegion extends Item {
     };
 
     canUse = () => {
-        if (!this.owner?.zone("Pile").isFull()) {
+        if (this.owner.zone("Pile").isNotFull()) {
             return true;
         }
         return false;

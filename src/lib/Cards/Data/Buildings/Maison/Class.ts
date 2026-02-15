@@ -10,7 +10,7 @@ export class Maison extends Building {
 
         this.init([["Or", 20]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };

@@ -14,7 +14,7 @@ export class Omniscience extends Action {
     };
 
     canUse = () => {
-        if (!this.owner?.zone("Pile").isFull()) {
+        if (this.owner?.zone("Pile").isNotFull()) {
             return true;
         }
         return false;
