@@ -16,7 +16,7 @@ export class ManteauDEsquive extends Equipment {
     };
 
     roundEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             this.bearer.stat("Esquive").round += 1;
         }
     };

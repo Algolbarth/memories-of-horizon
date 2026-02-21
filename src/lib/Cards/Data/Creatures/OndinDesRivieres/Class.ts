@@ -19,8 +19,8 @@ export class OndinDesRivieres extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Eau").produce(10);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Eau").produce(10);
         }
     };
 };

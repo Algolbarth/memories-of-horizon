@@ -77,6 +77,9 @@
   --missing_life: rgb(178, 123, 131);
   --guard: rgb(249, 100, 125);
 
+  --crit: rgb(200, 20, 20);
+  --missing_crit: rgb(36, 4, 4);
+
   --choice: rgb(214, 93, 0);
   --choice_hover: rgb(114, 49, 0);
   --choice_border: rgb(49, 49, 49);

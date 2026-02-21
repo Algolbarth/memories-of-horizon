@@ -22,7 +22,7 @@ export class Juge extends Creature {
     select = () => {
         let check = false;
 
-        for (const entity of [this.owner, this.adversary()]) {
+        for (const entity of [this.owner(), this.adversary()]) {
             for (const card of entity.zone("Terrain").cards) {
                 if (check == false && card instanceof Creature) {
                     check = true;
@@ -31,7 +31,7 @@ export class Juge extends Creature {
         }
 
         if (check) {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -61,7 +61,7 @@ export class Juge extends Creature {
             this.targeting(target);
 
             let max_protection = 0;
-            for (const entity of [this.owner, this.adversary()]) {
+            for (const entity of [this.owner(), this.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
                     if (card.stat("Protection").value() > max_protection) {
                         max_protection = card.stat("Protection").value();

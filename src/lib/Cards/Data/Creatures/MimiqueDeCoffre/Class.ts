@@ -21,8 +21,8 @@ export class MimiqueDeCoffre extends Creature {
         this.pose();
     };
 
-    dieEffect = () => {
-        if (this.zone.name == "Terrain") {
+    perishEffect = () => {
+        if (this.isArea("Terrain")) {
             let cards = this.adversary().draw(5);
             for (const c of cards) {
                 c.lock();

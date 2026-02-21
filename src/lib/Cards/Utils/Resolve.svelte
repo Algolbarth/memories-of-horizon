@@ -8,7 +8,7 @@
 	export let cost: number;
 </script>
 
-{#if system.game != undefined && card.owner && card.owner.totalIntelligence() >= cost}
+{#if system.game != undefined && card.owner().totalIntelligence() >= cost}
 	<span style="color:var(--resolve_effect);">Résolution {cost} : {text}</span>
 {:else}
 	Résolution {cost} : {text}

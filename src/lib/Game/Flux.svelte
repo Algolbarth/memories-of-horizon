@@ -10,9 +10,9 @@
 		show_flux = false;
 	}
 
-	let number_selected = "1";
-	let numbers = ["1", "5", "10", "100", "Max"];
-	let tab = ["Feu", "Air", "Végétal", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
+	let number_selected: string = "1";
+	let numbers: string[] = ["1", "5", "10", "100", "Max"];
+	let elements: string[] = ["Feu", "Air", "Végétal", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
 </script>
 
 <div class="window">
@@ -46,10 +46,10 @@
 		<br />
 
 		<div class="container">
-			{#each tab as ressource}
+			{#each elements as element}
 				<div class="ressource">
 					<button
-						style={"background-color:" + system.ressources.find(ressource).color + ";color:" + (system.ressources.find(ressource).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
+						style={"background-color:" + system.ressources.find(element).color + ";color:" + (system.ressources.find(element).light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}
 						class="big flux"
 						on:click={() => {
 							let add: number;
@@ -63,8 +63,8 @@
 								}
 							}
 
-							game.player.ressource(ressource).produce(add);
-							game.player.ressource(ressource).increase(add);
+							game.player.ressource(element).produce(add);
+							game.player.ressource(element).increase(add);
 							game.player.ressource("Flux").spend(add);
 
 							if (game.player.ressource("Flux").total() == 0) {
@@ -72,7 +72,7 @@
 							}
 						}}
 					>
-						{ressource}
+						{element}
 					</button>
 				</div>
 			{/each}

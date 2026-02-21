@@ -4,7 +4,8 @@ import type { System } from "../System/Class";
 
 export class Chapter {
     steps: Step[] = [];
-    step: number = 0;
+    step: Step;
+    step_slot: number = 0;
     ressources: ChapterRessource[] = [];
     is_boss: boolean = false;
     system: System;
@@ -16,12 +17,20 @@ export class Chapter {
         this.system = system;
         this.game = game;
         this.number = number;
+        this.step = new Step(0, [], 0, [], [], new Deck(system));
     };
 
     init = () => {
+        this.step = this.steps[0];
+
         for (const ressource of this.ressources) {
             this.game.bot.ressource(ressource.name).production = ressource.value;
         }
+    };
+
+    nextStep = () => {
+        this.step_slot += 1;
+        this.step = this.steps[this.step_slot];
     };
 
     addRessource = (name: string, value: number) => {
@@ -33,24 +42,22 @@ export class Chapter {
     };
 
     startDialog = () => {
-        let step = this.steps[this.step];
-        if (!step.read && step.dialog < step.dialogs.length) {
-            this.system.page = "Dialog";
+        if (!this.step.read && this.step.dialog < this.step.dialogs.length) {
+            this.system.page = "Scenario";
         }
         else {
-            step.read = true;
+            this.step.read = true;
             this.system.page = "Game";
         }
     };
 
     nextDialog = () => {
-        let step = this.steps[this.step];
-        if (!step.read && step.dialog < step.dialogs.length - 1) {
-            step.dialog++;
-            this.system.page = "Dialog";
+        if (!this.step.read && this.step.dialog < this.step.dialogs.length - 1) {
+            this.step.dialog++;
+            this.system.page = "Scenario";
         }
         else {
-            step.read = true;
+            this.step.read = true;
             this.system.page = "Game";
         }
     };

@@ -1,29 +1,30 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
 	let choice: string | undefined = undefined;
 
-	function selectCondition_1(card: Card) {
-		if (card instanceof Creature && card.canEquip()) {
+	function selectCondition_1(target: Card) {
+		if (target instanceof Creature && target.canEquip()) {
 			return true;
 		}
 		return false;
 	}
 
-	function selectCondition_2(card: Card) {
+	function selectCondition_2(target: Card) {
 		return true;
 	}
 
-	function selectAction(card: Card) {
-		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(card, choice);
-			system.game.use.reset();
-		}
+	function selectAction(target: Card) {
+		card.useEffect(target, choice);
+		game.use.reset();
 	}
 </script>
 
@@ -58,9 +59,8 @@
 	>
 		↩
 	</button>
-	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} selectCondition={selectCondition_1} {selectAction} />
-	{/if}
+
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Terrain")} selectCondition={selectCondition_1} {selectAction} />
 {:else if choice == "damage"}
 	<button
 		class="square return margin-bottom"
@@ -70,9 +70,6 @@
 	>
 		↩
 	</button>
-	{#if system.game && system.game.use.card}
-		{#if system.game && system.game.use.card && system.game.use.card.owner}
-			<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} selectCondition={selectCondition_2} {selectAction} />
-		{/if}
-	{/if}
+
+	<Zone bind:system bind:game entity={card.adversary()} zone={card.adversary().zone("Terrain")} selectCondition={selectCondition_2} {selectAction} />
 {/if}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import { Card } from "../../../Class";
@@ -6,40 +7,42 @@
 	import type { Stat } from "../../../Class/Stat";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
-	let target: Creature | undefined = undefined;
+	let choice: Creature | undefined = undefined;
 
-	function selectCondition(card: Card) {
-		if (card instanceof Creature && card.hasDebuff()) {
+	function selectCondition(target: Card) {
+		if (target instanceof Creature && target.hasDebuff()) {
 			return true;
 		}
 		return false;
 	}
 
-	function selectAction_1(card: Creature) {
-		target = card;
+	function selectAction_1(target: Creature) {
+		choice = target;
 	}
 
 	function selectAction_2(stat: Stat) {
-		system.game.use.card.useEffect(stat);
-		system.game.use.reset();
+		card.useEffect(choice, stat);
+		game.use.reset();
 	}
 </script>
 
-{#if target == undefined}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} selectAction={selectAction_1} />
+{#if choice == undefined}
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Terrain")} {selectCondition} selectAction={selectAction_1} />
 {:else}
 	<button
 		class="square return margin-bottom"
 		on:click={() => {
-			target = undefined;
+			choice = undefined;
 		}}
 	>
 		↩
 	</button>
 
 	<div class="center" style="text-align:center">
-		{#each target.stats as stat}
+		{#each choice.stats as stat}
 			{#if stat.debuff && stat.condition()}
 				<button
 					class="big choice"

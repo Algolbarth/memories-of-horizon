@@ -18,8 +18,8 @@ export class Bivouac extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            let battlefield = copy(this.zone.cards);
+        if (this.isArea("Terrain")) {
+            let battlefield = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
                     card.heal(10);

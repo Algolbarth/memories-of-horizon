@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Au début d'un round, quand équipé : augmente de 1 l'esquive de la créature équipée pendant ce round.
+Au début d'un round : si équipé : augmente de 1 l'esquive du porteur pendant ce round.

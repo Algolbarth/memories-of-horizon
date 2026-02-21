@@ -19,8 +19,8 @@ export class AncienSerpent extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Mue").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Mue").add("Inventaire");
         }
     };
 };

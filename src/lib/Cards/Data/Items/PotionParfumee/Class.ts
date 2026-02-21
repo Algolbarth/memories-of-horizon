@@ -23,8 +23,8 @@ export class PotionParfumee extends Item {
         if (this.stat("Infusion").value() < 5) {
             return false;
         }
-        for (const entity of [this.owner, this.owner?.adversary()]) {
-            for (const card of this.owner.zone("Terrain").cards) {
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
                 if (card instanceof Creature) {
                     return true;
                 }
@@ -34,13 +34,13 @@ export class PotionParfumee extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }

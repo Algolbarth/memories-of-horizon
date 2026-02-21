@@ -20,13 +20,14 @@ export class Lion extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Bête")) {
                 card.stat("Constitution").increase(5);
                 card.stat("Force").increase(5);
             }
         }
+
         this.move("Terrain");
         this.pose();
     };

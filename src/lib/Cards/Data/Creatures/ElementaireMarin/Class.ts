@@ -19,10 +19,11 @@ export class ElementaireMarin extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone == "Terrain" && this.owner.ressource("Eau").total() >= 5) {
-            this.owner.ressource("Eau").spend(5);
-            this.stat("Constitution").increase(5);
-            this.stat("Force").increase(5);
+        if (this.isArea("Terrain") && this.owner().ressource("Eau").total() >= 10) {
+            this.owner().ressource("Eau").spend(10);
+
+            this.stat("Constitution").increase(10);
+            this.stat("Force").increase(10);
         }
     };
 };

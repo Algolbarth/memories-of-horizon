@@ -19,7 +19,7 @@ export class Lait extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
                 return true;
             }
@@ -28,8 +28,8 @@ export class Lait extends Item {
     };
 
     canSatiety = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && (!card.isDamaged() && card.hasDebuff())) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && (card.isFullLife() && card.hasDebuff())) {
                 return true;
             }
         }
@@ -38,24 +38,24 @@ export class Lait extends Item {
 
     select = () => {
         let check = false;
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (check == false && card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
                 check = true;
             }
         }
 
         if (check) {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
                 let target = undefined;
                 let stat = undefined;
 
-                for (const card of this.owner.zone("Terrain").cards) {
+                for (const card of this.owner().zone("Terrain").cards) {
                     if (target == undefined && card instanceof Creature && (card.isDamaged() || card.hasDebuff())) {
                         target = card;
-                        if (!card.isDamaged() && card.hasDebuff()) {
+                        if (card.isFullLife() && card.hasDebuff()) {
                             for (const s of card.stats) {
                                 if (s.debuff && s.value() > s.min) {
                                     stat = s;

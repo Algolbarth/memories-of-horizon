@@ -24,8 +24,8 @@ export class Game {
     constructor(system: System, mode: string, deck: Deck | undefined = undefined) {
         this.system = system;
 
-        this.player = new Entity(this.system, new Deck(system));
-        this.bot = new Entity(this.system, new Deck(system));
+        this.player = new Entity(this.system, undefined);
+        this.bot = new Entity(this.system, this.player);
 
         this.mode = mode;
         this.system.game = this;
@@ -99,7 +99,7 @@ export class Game {
     };
 
     startChapter = () => {
-        this.bot = new Entity(this.system, this.chapter.deck);
+        this.bot = new Entity(this.system, this.player);
 
         this.chapter.init();
 
@@ -109,7 +109,7 @@ export class Game {
     };
 
     startStep = () => {
-        let step = this.chapter.steps[this.chapter.step];
+        let step = this.chapter.step;
 
         this.bot.life.set(step.life);
 
@@ -326,7 +326,7 @@ export class Game {
         }
 
         if (this.fighter == undefined) {
-            this.setNextFighter(entity.adversary());
+            this.setNextFighter(entity.opponent);
         }
     };
 
@@ -343,7 +343,7 @@ export class Game {
     };
 
     getBestSpeed = () => {
-        let best_speed = 0;
+        let best_speed: number = 0;
 
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
@@ -375,9 +375,15 @@ export class Game {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
+
+                    card.elements.round = [];
+
+                    card.families.round = [];
+
                     for (const stat of card.stats) {
                         stat.round = 0;
                     }
+
                     for (const trait of card.traits) {
                         trait.round = false;
                     }
@@ -419,17 +425,25 @@ export class Game {
             entity.zone("Pile").turn_level = 0;
 
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
+                let cpy: Card[] = copy(zone.cards);
                 for (const card of cpy) {
+
+                    card.elements.turn = [];
+
+                    card.families.turn = [];
+
                     for (const stat of card.stats) {
                         stat.turn = 0;
                     }
+
                     for (const trait of card.traits) {
                         trait.turn = false;
                     }
+
                     if (card instanceof Creature && card.stat("Étourdissement").value() > 0) {
                         card.stat("Étourdissement").remove(1);
                     }
+
                     if (card.stat("Brûlure").value() > 0) {
                         card.stat("Brûlure").set(0);
                     }
@@ -472,7 +486,7 @@ export class Game {
             this.startTurn();
         }
         else {
-            if (this.chapter.step + 1 < this.chapter.steps.length) {
+            if (this.chapter.step_slot + 1 < this.chapter.steps.length) {
                 this.nextStep();
             }
             else {
@@ -482,7 +496,7 @@ export class Game {
     };
 
     nextStep = () => {
-        this.chapter.step += 1;
+        this.chapter.nextStep();
         this.startStep();
     };
 

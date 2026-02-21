@@ -19,8 +19,8 @@ export class Mendiant extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Or").spend(2);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Or").spend(2);
         }
     };
 };

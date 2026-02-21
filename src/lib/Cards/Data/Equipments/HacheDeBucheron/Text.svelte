@@ -8,7 +8,9 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
-Quand une unité d'élément Végétal est détruite : augmente de 5 la force de la créature équipée.
+
+Quand une unité d'élément Végétal périt : augmente de 5 la force du porteur.

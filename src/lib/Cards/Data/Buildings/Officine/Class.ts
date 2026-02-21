@@ -16,8 +16,8 @@ export class Officine extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Potion de soin").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Potion de soin").add("Inventaire");
         }
     };
 };

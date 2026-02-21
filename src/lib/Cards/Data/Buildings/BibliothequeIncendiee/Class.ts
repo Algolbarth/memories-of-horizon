@@ -9,16 +9,16 @@ export class BibliothequeIncendiee extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40], ["Feu", 40]]);
+        this.init([["Or", 35], ["Feu", 35]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && this.owner == card.owner && ["Autodafé", "Bûcher des vanités"].includes(card.name)) {
-            this.owner?.getCard("Écrits calcinés").add("Inventaire");
+        if (this.isArea("Terrain") && this.isAlly(card) && ["Autodafé", "Bûcher des vanités"].includes(card.name)) {
+            this.owner().getCard("Écrits calcinés").add("Inventaire");
         }
     };
 };

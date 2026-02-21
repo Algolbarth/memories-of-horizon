@@ -21,8 +21,8 @@ export class JongleurDeBouleDeFeu extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.owner && card.owner == this.owner && card.name == "Boule de feu") {
-            this.owner.getCard("Boule de feu").add("Pile");
+        if (this.isAlly(card) && card.name == "Boule de feu") {
+            this.owner().getCard("Boule de feu").add("Pile");
         }
     };
 };

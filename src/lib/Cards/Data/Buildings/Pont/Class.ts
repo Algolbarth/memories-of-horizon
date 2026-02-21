@@ -18,8 +18,8 @@ export class Pont extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && this.owner == card.owner) {
-            this.owner.draw(1);
+        if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card)) {
+            this.owner().draw(1);
         }
     };
 };

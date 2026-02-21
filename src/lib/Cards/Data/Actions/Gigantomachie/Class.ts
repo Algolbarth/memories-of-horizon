@@ -20,7 +20,7 @@ export class Gigantomachie extends Action {
         let check_inferior_level_5 = false;
         let check_superior_level_5 = false;
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
 
         for (const zone of [battlefield, adversary_battlefield]) {
@@ -44,7 +44,7 @@ export class Gigantomachie extends Action {
     useEffect = () => {
         let nb_level_5 = 0;
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
 
         for (const zone of [battlefield, adversary_battlefield]) {

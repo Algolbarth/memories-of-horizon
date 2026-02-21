@@ -21,7 +21,7 @@ export class CapitaineDeLaGarde extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.stat("Protection").value() > 0) {
                 card.stat("Protection").increase(1);

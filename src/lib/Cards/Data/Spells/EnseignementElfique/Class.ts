@@ -18,7 +18,7 @@ export class EnseignementElfique extends Spell {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -27,13 +27,13 @@ export class EnseignementElfique extends Spell {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -48,8 +48,8 @@ export class EnseignementElfique extends Spell {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        if (this.owner.ressource("Mana").total() >= 25) {
-            this.owner.ressource("Mana").spend(25);
+        if (this.owner().ressource("Mana").total() >= 25) {
+            this.owner().ressource("Mana").spend(25);
             target.stat("Intelligence").increase(10);
         }
         else {

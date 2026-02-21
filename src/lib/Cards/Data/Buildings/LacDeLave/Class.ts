@@ -18,7 +18,7 @@ export class LacDeLave extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Unit) {
+        if (this.isArea("Terrain") && card instanceof Unit) {
             if (card.isElement("Feu") && card instanceof Creature) {
                 card.stat("Force").increase(5);
             }

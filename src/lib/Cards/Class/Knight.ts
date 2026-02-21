@@ -23,13 +23,7 @@ export class MountedKnight extends Knight {
         this.trait("En selle").init(true);
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile") {
-            this.reincarnate(this.alternative_form);
-        }
-    };
-
-    dieGo = () => {
-
+    perishEffect = () => {
+        this.reincarnate(this.alternative_form);
     };
 };

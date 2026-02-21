@@ -15,18 +15,19 @@ export class Blason extends Item {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             card.stat("Endurance").increase(3);
         }
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

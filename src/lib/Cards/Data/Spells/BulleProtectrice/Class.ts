@@ -10,13 +10,13 @@ export class BulleProtectrice extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12], ["Eau", 12]]);
+        this.init([["Or", 5], ["Eau", 5]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -25,13 +25,13 @@ export class BulleProtectrice extends Spell {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -46,12 +46,13 @@ export class BulleProtectrice extends Spell {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        if (this.owner.ressource("Mana").total() >= 25) {
-            this.owner.ressource("Mana").spend(25);
-            target.stat("Garde").fix(100);
+        if (this.owner().ressource("Mana").total() >= 10) {
+            this.owner().ressource("Mana").spend(10);
+
+            target.stat("Garde").add += 20;
         }
         else {
-            target.stat("Garde").fix(50);
+            target.stat("Garde").turn += 20;
         }
 
         this.move("Défausse");

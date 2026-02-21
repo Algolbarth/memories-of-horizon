@@ -26,7 +26,7 @@ export class Elementaliste extends Creature {
             }
             return false;
         };
-        let cards = this.owner.draw(1, readCondition);
+        let cards = this.owner().draw(1, readCondition);
 
         if (cards[0] != undefined) {
             cards[0].costReduce(20);

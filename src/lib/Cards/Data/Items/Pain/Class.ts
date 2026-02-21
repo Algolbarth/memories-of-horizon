@@ -18,7 +18,7 @@ export class Pain extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -27,8 +27,8 @@ export class Pain extends Item {
     };
 
     canSatiety = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && !card.isDamaged()) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.isFullLife()) {
                 return true;
             }
         }
@@ -36,13 +36,13 @@ export class Pain extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -58,7 +58,7 @@ export class Pain extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.owner.ressource("Or").increase(1);
+            target.owner().ressource("Or").increase(1);
         }
         else {
             target.heal(10);

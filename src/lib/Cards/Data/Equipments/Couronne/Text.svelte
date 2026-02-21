@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Quand une créature alliée est posée : augmente la constitution et la force de cette créature du même montant que le niveau de la créature équipée.
+Quand une créature alliée est posée : augmente la constitution et la force de cette créature du même montant que le niveau du porteur.

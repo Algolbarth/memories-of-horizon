@@ -1,4 +1,5 @@
 import type { Card } from "./Class";
+import { Creature } from "./Creature";
 
 export class Trait {
     name: string;
@@ -17,7 +18,7 @@ export class Trait {
     value = () => {
         let total = this.base || this.add || this.turn || this.round;
 
-        if (this.card.type == "Créature") {
+        if (this.card instanceof Creature) {
             for (const equipment of this.card.equipments) {
                 total = total || equipment.equipTrait(this.name).value();
             }

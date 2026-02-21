@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : se réincarne en <CardInfo bind:system name={"Chevalier d'élite"} />.
+Quand périt : se réincarne en <CardInfo bind:system name={"Chevalier d'élite"} />.

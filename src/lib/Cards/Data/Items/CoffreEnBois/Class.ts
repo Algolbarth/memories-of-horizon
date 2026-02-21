@@ -14,7 +14,7 @@ export class CoffreEnBois extends Item {
     };
 
     useEffect = () => {
-        this.owner.draw(2);
+        this.owner().draw(2);
 
         this.move("Défausse");
         this.pose();

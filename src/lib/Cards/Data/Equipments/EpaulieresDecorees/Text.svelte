@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Augmente la résistance de la créature équipée de 10 fois la protection de cette créature.
+Augmente la résistance du porteur de 10 fois la protection de cette créature.

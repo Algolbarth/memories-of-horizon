@@ -20,10 +20,10 @@ export class Reine extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             let check = false;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (check == false && card instanceof Creature) {
                     check = true;
                 }
@@ -33,13 +33,13 @@ export class Reine extends Creature {
                 this.system.game.use.set(this, Use);
             }
             else {
-                this.useEffect(undefined);
+                this.useEffect();
             }
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -49,12 +49,12 @@ export class Reine extends Creature {
                 this.useEffect(target);
             }
             else {
-                this.useEffect(undefined);
+                this.useEffect();
             }
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Creature | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

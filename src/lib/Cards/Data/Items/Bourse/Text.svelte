@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : augmente de 5 sa vente en or.
+Quand se prépare dans l'inventaire : augmente de 5 sa vente en or.

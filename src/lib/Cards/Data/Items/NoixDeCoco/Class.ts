@@ -18,8 +18,8 @@ export class NoixDeCoco extends Item {
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player) {
-            for (const entity of [this.owner, this.adversary()]) {
+        if (this.owner().is_player) {
+            for (const entity of [this.owner(), this.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
                     if (card instanceof Creature && (card.isDamaged() || card.stat("Étourdissement").value() == 0)) {
                         return true;
@@ -28,7 +28,7 @@ export class NoixDeCoco extends Item {
             }
         }
         else {
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (card instanceof Creature && card.isDamaged()) {
                     return true;
                 }
@@ -43,9 +43,9 @@ export class NoixDeCoco extends Item {
     };
 
     canSatiety = () => {
-        for (const entity of [this.owner, this.adversary()]) {
+        for (const entity of [this.owner(), this.adversary()]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card instanceof Creature && (!card.isDamaged() && card.stat("Étourdissement").value() == 0)) {
+                if (card instanceof Creature && (card.isFullLife() && card.stat("Étourdissement").value() == 0)) {
                     return true;
                 }
             }
@@ -54,7 +54,7 @@ export class NoixDeCoco extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -65,7 +65,7 @@ export class NoixDeCoco extends Item {
                     target = card;
                 }
             }
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.isDamaged()) {
                     target = card;
                 }

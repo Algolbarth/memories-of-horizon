@@ -23,7 +23,7 @@ export class CanonAEau extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -36,8 +36,8 @@ export class CanonAEau extends Action {
 
         let value = 100;
 
-        value += 2 * this.owner.ressource("Eau").total();
-        this.owner.ressource("Eau").spend(this.owner.ressource("Eau").total());
+        value += 2 * this.owner().ressource("Eau").total();
+        this.owner().ressource("Eau").spend(this.owner().ressource("Eau").total());
 
         target.damageByEffect(value);
 

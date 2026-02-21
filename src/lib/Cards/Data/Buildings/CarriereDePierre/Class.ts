@@ -16,8 +16,8 @@ export class CarriereDePierre extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Terre").produce(10);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Terre").produce(10);
         }
     };
 };

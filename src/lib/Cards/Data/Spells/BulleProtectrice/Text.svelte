@@ -7,9 +7,9 @@
 	export let card: Card;
 </script>
 
-Augmente jusqu'à 50 la garde d'une créature alliée sur le terrain.
+Augmente de 20 la garde d'une créature alliée sur le terrain pendant ce tour.
 
 <br />
 <br />
 
-<Sorcery bind:system bind:card cost={25} text={"augmente jusqu'à 100 la garde à la place."} />
+<Sorcery bind:system bind:card cost={25} text={"augmente de 20 la garde à la place."} />

@@ -25,8 +25,8 @@ export class PluieDeFeu extends Spell {
 
     useEffect = () => {
         let damage: number = 0;
-        if (this.owner.ressource("Mana").total() >= 50) {
-            this.owner.ressource("Mana").spend(50);
+        if (this.owner().ressource("Mana").total() >= 50) {
+            this.owner().ressource("Mana").spend(50);
             damage = 20;
         }
         else {

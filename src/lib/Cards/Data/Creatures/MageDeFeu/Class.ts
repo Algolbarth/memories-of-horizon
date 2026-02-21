@@ -21,7 +21,7 @@ export class MageDeFeu extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isFamily("Sort") && card.owner == this.owner && this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.isArea("Terrain") && card.isFamily("Sort") && this.isAlly(card) && this.adversary().zone("Terrain").cards.length > 0) {
             this.adversary().zone("Terrain").cards[0].damageByEffect(5);
         }
     };

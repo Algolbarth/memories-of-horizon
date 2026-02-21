@@ -14,7 +14,7 @@ export class AnneauEnOr extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             this.bearer.stat("Constitution").increase(1);
             this.bearer.stat("Force").increase(1);
         }

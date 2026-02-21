@@ -19,8 +19,8 @@ export class Iconoclaste extends Creature {
         this.text = Text;
     };
 
-    otherDestroyEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.owner == this.owner && card.zone.name == "Pile") {
+    otherMillEffect = (card: Card) => {
+        if (this.isArea("Terrain") && this.isAlly(card)) {
             this.stat("Constitution").increase(1);
             this.stat("Force").increase(1);
         }

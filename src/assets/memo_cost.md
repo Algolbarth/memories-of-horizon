@@ -55,3 +55,5 @@ X pendant ce tour => X/2
 X pendant ce round => X/3
 
 X choix parmis de effets de coût Y => Y + (XY/10)
+
+résolution d'un effet coutant X => 2X

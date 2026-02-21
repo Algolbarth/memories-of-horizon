@@ -17,7 +17,7 @@ export class Siphon extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isElement("Eau") && this.owner == card.owner) {
+        if (this.isArea("Terrain") && card.isElement("Eau") && this.isAlly(card)) {
             this.getSale("Eau").base += 5;
         }
     };

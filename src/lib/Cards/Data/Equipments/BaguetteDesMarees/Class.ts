@@ -18,8 +18,8 @@ export class BaguetteDesMarees extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.ressource("Eau").produce(this.bearer.stat("Magie").value());
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().ressource("Eau").produce(this.bearer.stat("Magie").value());
         }
     };
 };

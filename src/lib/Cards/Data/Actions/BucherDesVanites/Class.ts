@@ -17,14 +17,14 @@ export class BucherDesVanites extends Action {
     };
 
     canUse = () => {
-        if (this.owner.zone("Pile").cards.length > 0 && this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Pile").cards.length > 0 && this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -47,9 +47,9 @@ export class BucherDesVanites extends Action {
 
         let value = 0;
 
-        let stack = copy(this.owner.zone("Pile").cards);
+        let stack = copy(this.owner().zone("Pile").cards);
         for (const card of stack) {
-            card.destroy();
+            card.mill();
             value++;
         }
 

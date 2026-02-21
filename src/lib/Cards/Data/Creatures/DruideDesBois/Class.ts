@@ -28,7 +28,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (card.owner == this.owner && card instanceof Action) {
+        if (this.isAlly(card) && card instanceof Action) {
             this.stat("Constitution").increase(6);
         }
     };

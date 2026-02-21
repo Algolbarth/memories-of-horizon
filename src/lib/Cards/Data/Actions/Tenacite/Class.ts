@@ -16,7 +16,7 @@ export class Tenacite extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -25,24 +25,24 @@ export class Tenacite extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
 
             if (target != undefined) {
-                if (target.stat("Force").total() > target.stat("Vitalité").total()) {
-                    this.useEffect(target, "strength");
+                if (target.stat("Endurance").value() > target.stat("Vitalité").value()) {
+                    this.useEffect(target, "balance");
                 }
                 else {
-                    this.useEffect(target, "balance");
+                    this.useEffect(target, "endurance");
                 }
             }
         }

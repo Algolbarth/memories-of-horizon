@@ -20,8 +20,9 @@ export class Celebrite extends Creature {
 
     useEffect = () => {
         this.move("Terrain");
-        this.owner.getCard("Garde").add("Terrain");
-        this.owner.getCard("Garde").add("Terrain");
+        this.owner().getCard("Garde").add("Terrain");
+        this.owner().getCard("Garde").add("Terrain");
+
         this.pose();
     };
 };

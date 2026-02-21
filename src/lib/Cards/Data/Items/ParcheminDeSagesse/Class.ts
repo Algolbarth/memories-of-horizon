@@ -14,15 +14,16 @@ export class ParcheminDeSagesse extends Item {
     };
 
     canUse = () => {
-        if (this.owner.totalIntelligence() > 0) {
+        if (this.owner().totalIntelligence() > 0) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.draw(this.owner.totalIntelligence());
+        this.owner().draw(this.owner().totalIntelligence());
+
         this.move("Défausse");
         this.pose();
     };
-}
+};

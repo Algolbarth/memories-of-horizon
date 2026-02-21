@@ -16,8 +16,8 @@ export class Caserne extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Soldat").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Soldat").add("Terrain");
         }
     };
 };

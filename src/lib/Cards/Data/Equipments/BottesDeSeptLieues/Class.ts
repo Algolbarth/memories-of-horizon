@@ -20,7 +20,7 @@ export class BottesDeSeptLieues extends Equipment {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
                 return true;
             }
@@ -29,13 +29,13 @@ export class BottesDeSeptLieues extends Equipment {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.isFamily("Géant") && card.canEquip()) {
                     target = card;
                 }
@@ -48,7 +48,7 @@ export class BottesDeSeptLieues extends Equipment {
     };
 
     roundEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             this.bearer.stat("Constitution").increase(7);
             this.bearer.stat("Force").increase(7);
         }

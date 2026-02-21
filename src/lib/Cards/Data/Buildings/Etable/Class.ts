@@ -16,8 +16,8 @@ export class Etable extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Cheval").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Cheval").add("Inventaire");
         }
     };
 };

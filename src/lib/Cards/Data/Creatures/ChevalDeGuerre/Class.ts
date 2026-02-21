@@ -21,10 +21,10 @@ export class ChevalDeGuerre extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             let check = false;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (check == false && card instanceof Creature) {
                     check = true;
                 }
@@ -40,7 +40,7 @@ export class ChevalDeGuerre extends Creature {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }

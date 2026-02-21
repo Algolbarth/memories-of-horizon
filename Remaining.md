@@ -17,14 +17,14 @@ Ajouter la paralysie, le gel et la cécité (gel => X tours, paralysie => X acti
 
 ## À ajouter
 ### Mimique
-Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la production en eau adverse.
-Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la constitution de la créature attaquante.
-Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
-Mimique : se pose sur le terrain adverse. Quand meurt : Génère humain sur le terrain adverse.
+Mimique de puit : se pose sur le terrain adverse. Quand périt : augmente la production en eau adverse.
+Mimique de pomme : se pose sur le terrain adverse. Quand périt au combat : augmente la constitution de la créature attaquante.
+Mimique de livre : se pose sur le terrain adverse. Quand périt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
+Mimique : se pose sur le terrain adverse. Quand périt : Génère humain sur le terrain adverse.
 
 ### Voleur
 Banque : augmente la vente des unités alliées sur le terrain.
-Cape de voleur : au début de la phase de préparation : augmente la vente en or de la créature équipée.
+Cape de voleur : quand se prépare sur le terrain : augmente la vente en or du porteur.
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la vente en or de l'unité.
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : génère Voleur sur le terrain.
 Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : génère une carte du même nom dans l'inventaire.
@@ -37,14 +37,14 @@ Avarice : détruit une créature alliée sur le terrain et augmente la constitut
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
 Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
-Sauvage : créature humain, si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
+Sauvage : créature humain : si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête alliée sur le terrain.
 Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
 Dague magique : objet équipement, s'équipe à une créature alliée sur le terrain OU produis X mana.
-Louve : créature bête, quand meurt : génère 2 Louveteau sur le terrain. 8/5.
+Louve : créature bête, Quand périt : génère 2 Louveteau sur le terrain. 8/5.
 Louveteau : créature bête, 5/3.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
@@ -65,19 +65,19 @@ Jarre de flamme : objet.
 ### Vegetal
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
-Vipère : créature reptile, quand attaque : empoisonne la créature équipée.
+Vipère : créature reptile, quand attaque : empoisonne le porteur.
 Mur de haie : créature plante. 0 atk inactif 
 Mur de ronces : créature plante. 0 atk inactif, épine
 Plante carnivore : créature plante. 0 atk inactif, au début du round : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
 Plante vénéneuse : créature plante, 0 atk inactif, au début du round : applique poison à la créature adverse la plus en avant sur le terrain.
-Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain.
+Jardinier : créature elfe, quand se prépare sur le terrain : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
-Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : génère Pomme dans l'inventaire.
-Manteau de ronce : objet équipement, augmente l'épine de la créature équipée.
+Pommier : créature plante, 0 atk inactif, quand se prépare sur le terrain : génère Pomme dans l'inventaire.
+Manteau de ronce : objet équipement, augmente l'épine du porteur.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Hérisson : créature bête, épine.
-Sécateur : objet, détruis un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
+Sécateur : objet, détruit un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
 
 ### Eau
 Thon : créature poisson.
@@ -127,7 +127,7 @@ Araignée
 Mère pondeuse 
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain.
 Wyverne zombie 
-Wyverne squelette : quand une créature alliée meurt : diminue son coût de 5.
+Wyverne squelette : quand une créature alliée périt : diminue son coût de 5.
 Nécromancien : quand une carte alliée Mort est posée : génère Squelette sur le terrain.
 Nécromage 
 Mage des morts 
@@ -157,9 +157,9 @@ Barde satyre : quand posé : augmente la constitution et la force de toutes les 
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
-Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée.
-Lames d'éclairs : objet équipement, augmente l'agilité de la créature équipée.
-Lances de foudre : objet équipement, augmente la force de la créature équipée selon sa vitesse.
+Bottes d'éclair : objet équipement, augmente la vitesse du porteur.
+Lames d'éclairs : objet équipement, augmente l'agilité du porteur.
+Lances de foudre : objet équipement, augmente la force du porteur selon sa vitesse.
 Centaure : créature, vitesse.
 Meneur centaure : créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain.
 Chasseur centaure : créature, quand attaque : inflige autant de dégâts que sa vitesse à la créature attaquée.
@@ -192,7 +192,7 @@ Cierge : objet, pioche des cartes OU produit de la lumière.
 Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
-Épée de pure lumière : objet équipement, Quand la créature équipée attaque : si pas blessée alors inflige des dégaâts.
+Épée de pure lumière : objet équipement, Quand le porteur attaque : si pas blessée alors inflige des dégaâts.
 Révélations de lumière : action, révèle toutes les cartes dans l'inventaire et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 
 Mage de lumière 
@@ -244,7 +244,7 @@ Proto dragon : créature wyverne dragon
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
 ### Feu/Vegetal
-Lézard : quand meurt : ajoute une Queue de lézard dans l'inventaire.
+Lézard : Quand périt : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans l'inventaire.
 Queue de lézard : augmente la force ou la constitution d'une créature alliée sur le terrain.
@@ -296,7 +296,7 @@ Tyranosaure
 Brachiosaure 
 Vélociraptor 
 Stégosaure 
-Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente sa constitution et sa force.
+Blaireau : créature, bête : quand joue : si camouflé : s'applique paralysie et augmente sa constitution et sa force.
 Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage.
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
@@ -507,7 +507,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Tassarion` : sorcier aasimar servant le royaume haut elfe de la clairière d'argent. est en mision aux pics glacés pour convaincre la jarl Mab de ne pas déclencher une guerre contre les vikings de Stormheim. suivra le héros et emperina pour découvrir la source des événements récents autour des gemmes. est le tuteur d'elspeth mais n'est pas souvent là pour l'encadrer.
 `Amira` : loup garou de type renard, c'est un assassin recruté pour tuer l'empereur de léonis par les rebelles donc indirectement par Dao. Rencontre le héros sans lui dire son véritable rôle mais finit par abandonner son objectif et aide l'empereur à s'enfuir de la capitale. plus tard Dao retrouvera sa trace à cause des affrontements entre la compagnie et la cabale. amira décide de fuir en conséquence afin de ne pas mettre en danger ses camarades.
 `Ethoras` : prince elfe en voyage diplomatique dans le royaume des fées (dirigée par titania et oberron). dois épouser la princesse Eastatem. peu concerné par son rôle princier il garde un bon fond et est coutageux au combat. après avoir affronter des ennemis des fées, il a décliner son mariage (pour le moment) Eastratem n'étant pas prête non plus. devra encaisser un coup de titania pour refuser le mariage mais suna arrivera à convaincre oberon de laisser du temps aux jeunes. ethoras choisira une vie d'aventure, suivant le héros et promettant de revenir pour donner sa décision finale.
-`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette force.
+`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya : silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette force.
 `Scarlet` : chasseuse adoptée par des loups garous. aidera le héros pour chercher du secours après l'agression d'elspeth et pour affronter la cabale. les loups garous font partis de ceux qui s'opposent au conseil. peux absorber le sang afin d'en faire un tissu qu'elle porte comme cape (et donc cacher l'odeur du sang).
 `Cernunnos` : Goliath capable de forger des armes en glace. aidera le héros à joindre les vikings avec l'aide de tassarion.
 
@@ -569,7 +569,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Kouen` : avien parmis les meilleurs archers de l'horizon. utilise ses flèches pour communiquer avec ses alliés.
 `Ouquidekin` : grand guerrier alishtar. communique avec l'esprit de sa femme.
 `Bombay` : djinn chat dieu des rêves. Il a l'apparence de l'hypnomiaou dark dans sw.
-`Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. À l'apparence d'Amitus.
+`Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff : si la règle est un devoir alors c une obligation : si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. À l'apparence d'Amitus.
 `Manx` : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  
 `Medox` : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire.
 `Mania` : golem géant (le géant de mha).

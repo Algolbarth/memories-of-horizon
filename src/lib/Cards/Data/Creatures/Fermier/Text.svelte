@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : produit 5 or.
+Quand se prépare sur le terrain : produit 5 or.

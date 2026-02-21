@@ -11,4 +11,4 @@
 
 Si la pile alliée est vide : découvre 5 cartes.
 
-<Resolve bind:system bind:card cost={30} text={"découvre autant de carte que nécessaire pour remplir la pile à la place."} />
+<Resolve bind:system bind:card cost={125} text={"découvre autant de carte que nécessaire pour remplir la pile à la place."} />

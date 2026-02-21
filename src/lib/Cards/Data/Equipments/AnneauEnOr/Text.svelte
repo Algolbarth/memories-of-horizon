@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 
 <br />
 <br />
 
-Au début de la phase de préparation, quand équipé : augmente de 1 la constitution et la force de la créature équipée.
+Quand se prépare sur le terrain : si équipé : augmente de 1 la constitution et la force du porteur.

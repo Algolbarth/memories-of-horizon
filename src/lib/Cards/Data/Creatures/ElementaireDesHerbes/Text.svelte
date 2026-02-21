@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : augmente de 15 la constitution et la force de la créature alliée sur le terrain la plus en avant.
+Quand périt : augmente de 15 la constitution et la force de la créature alliée sur le terrain la plus en avant.

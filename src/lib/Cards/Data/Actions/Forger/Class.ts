@@ -21,7 +21,7 @@ export class Forger extends Action {
             }
             return false;
         };
-        this.owner.discover(1, readCondition);
+        this.owner().discover(1, readCondition);
         this.move("Défausse");
         this.pose();
     };

@@ -9,7 +9,7 @@ export class Pietinement extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40]]);
+        this.init([["Or", 80]]);
 
         this.text = Text;
     };

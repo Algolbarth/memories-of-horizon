@@ -19,7 +19,7 @@ export class Pagure extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -28,7 +28,7 @@ export class Pagure extends Creature {
     };
 
     useEffect = (choice: string) => {
-        this.owner?.getCard(choice).add("Inventaire");
+        this.owner().getCard(choice).add("Inventaire");
 
         this.move("Terrain");
         this.pose();

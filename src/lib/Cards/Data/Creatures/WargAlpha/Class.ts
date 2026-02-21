@@ -19,8 +19,8 @@ export class WargAlpha extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Frappe").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Frappe").add("Inventaire");
         }
     };
 };

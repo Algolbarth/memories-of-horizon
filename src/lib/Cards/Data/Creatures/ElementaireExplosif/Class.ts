@@ -19,9 +19,9 @@ export class ElementaireExplosif extends Creature {
         this.text = Text;
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile" && this.owner.ressource("Feu").production >= 5) {
-            this.owner.ressource("Feu").decrease(5);
+    perishEffect = () => {
+        if (this.owner().ressource("Feu").production >= 5) {
+            this.owner().ressource("Feu").decrease(5);
 
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {

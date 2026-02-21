@@ -16,7 +16,7 @@ export class TourneeGenerale extends Action {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -24,14 +24,14 @@ export class TourneeGenerale extends Action {
 
     useEffect = () => {
         let number = 0;
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 number++;
             }
         }
         for (let i = 0; i < number; i++) {
-            this.owner.getCard("Bière").add("Inventaire");
+            this.owner().getCard("Bière").add("Inventaire");
         }
 
         this.move("Défausse");

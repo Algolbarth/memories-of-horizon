@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Carte de la région"} /> sur le terrain.
+Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Carte de la région"} /> sur le terrain.

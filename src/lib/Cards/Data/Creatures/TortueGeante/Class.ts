@@ -19,9 +19,7 @@ export class TortueGéante extends Creature {
         this.text = Text;
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile") {
-            this.owner.getCard("Carapace de tortue").add("Inventaire");
-        }
+    perishEffect = () => {
+        this.owner().getCard("Carapace de tortue").add("Inventaire");
     };
 };

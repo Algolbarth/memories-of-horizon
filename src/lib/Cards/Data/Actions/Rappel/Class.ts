@@ -10,26 +10,26 @@ export class Rappel extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 50]]);
 
         this.text = Text;
     };
 
     canUse = () => {
-        if (this.owner.zone("Défausse").cards.length > 0) {
+        if (this.owner().zone("Défausse").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Défausse").cards) {
+            for (const card of this.owner().zone("Défausse").cards) {
                 if (target == undefined) {
                     target = card;
                 }

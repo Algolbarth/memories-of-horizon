@@ -14,8 +14,8 @@ export class SacocheEnCuir extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.discover(2);
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().discover(2);
         }
     };
 }

@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée de famille Druide sur le terrain.
+S'équipe à une créature alliée de famille Druide sur le terrain.
 
 <br />
 <br />
 
-Au début de la phase de combat et à la fin de la phase de préparation adverse, quand équipé : transforme en sa forme alternative la créature équipée.
+Au début de la phase de combat et à la fin de la phase de préparation adverse : si équipé : transforme en sa forme alternative le porteur.

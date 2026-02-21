@@ -106,3 +106,12 @@ div.zone_taskbar {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+span.box_title {
+  font-size: 1.20em;
+  text-decoration: underline;
+}
+
+span.details {
+  color: rgb(255, 255, 255);
+}

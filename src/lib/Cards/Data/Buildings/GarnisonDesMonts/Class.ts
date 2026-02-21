@@ -16,8 +16,8 @@ export class GarnisonDesMonts extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Soldat nain").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Soldat nain").add("Terrain");
         }
     };
 };

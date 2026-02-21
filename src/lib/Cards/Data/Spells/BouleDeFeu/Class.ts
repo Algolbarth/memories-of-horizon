@@ -23,7 +23,7 @@ export class BouleDeFeu extends Spell {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -34,8 +34,8 @@ export class BouleDeFeu extends Spell {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        if (this.owner.ressource("Mana").total() >= 15) {
-            this.owner.ressource("Mana").spend(15);
+        if (this.owner().ressource("Mana").total() >= 15) {
+            this.owner().ressource("Mana").spend(15);
             target.damageByEffect(60);
         }
         else {

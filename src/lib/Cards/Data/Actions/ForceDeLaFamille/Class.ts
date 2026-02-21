@@ -17,7 +17,7 @@ export class ForceDeLaFamille extends Action {
 
     canUse = () => {
         let family_list: string[] = [];
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
 
         for (const card of battlefield) {
             if (card instanceof Creature) {
@@ -50,7 +50,7 @@ export class ForceDeLaFamille extends Action {
 
     useEffect = () => {
         let nb_creature = 0;
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
 
         for (const card of battlefield) {
             if (card instanceof Creature) {

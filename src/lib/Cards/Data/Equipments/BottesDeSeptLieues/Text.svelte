@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée de famille Géant sur le terrain.
+S'équipe à une créature alliée de famille Géant sur le terrain.
 <br />
 <br />
-Au début d'un round, quand équipé : augmente de 7 la constitution et la force de la créature équipée.
+Au début d'un round : si équipé : augmente de 7 la constitution et la force du porteur.

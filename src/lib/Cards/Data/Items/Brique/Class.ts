@@ -20,7 +20,7 @@ export class Brique extends Item {
         if (this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Building && card.isDamaged()) {
                 return true;
             }
@@ -29,7 +29,7 @@ export class Brique extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -38,7 +38,7 @@ export class Brique extends Item {
             }
             else {
                 let target = undefined;
-                for (const card of this.owner.zone("Terrain").cards) {
+                for (const card of this.owner().zone("Terrain").cards) {
                     if (target == undefined && card instanceof Building && card.isDamaged()) {
                         target = card;
                     }

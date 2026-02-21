@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée sur la pile est détruite : augmente de 1 sa constitution et sa force.
+Quand une carte alliée est meulée : augmente de 1 sa constitution et sa force.

@@ -17,8 +17,8 @@ export class Fontaine extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isElement("Eau") && this.owner == card.owner) {
-            this.owner.draw(1);
+        if (this.isArea("Terrain") && card.isElement("Eau") && this.isAlly(card)) {
+            this.owner().draw(1);
         }
     };
 };

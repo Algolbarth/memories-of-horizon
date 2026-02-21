@@ -1,7 +1,7 @@
 import type { System } from '../../System/Class';
 import { Stat } from './Stat';
 import { Trait } from './Trait';
-import type { Creature } from './Creature';
+import { Creature } from './Creature';
 import { Item } from './Item';
 import Use from '../Utils/EquipUse.svelte';
 
@@ -49,25 +49,23 @@ export class Equipment extends Item {
     };
 
     canUse = () => {
-        if (this.owner) {
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (card.type == "Créature" && card.canEquip()) {
-                    return true;
-                }
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.canEquip()) {
+                return true;
             }
         }
         return false;
     };
 
     select = () => {
-        if (this.system.game && this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
-        else if (this.owner) {
+        else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+            for (const card of this.owner().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.canEquip()) {
                     target = card;
                 }
             }
@@ -94,17 +92,19 @@ export class Equipment extends Item {
     };
 
     remove = () => {
-        if (this.owner && this.bearer != undefined) {
-            this.owner.ressource("Mana").decrease(this.equipStat("Magie").value());
+        if (this.bearer != undefined) {
+            this.owner().ressource("Mana").decrease(this.equipStat("Magie").value());
+
             for (let i = 0; i < this.bearer.equipments.length; i++) {
                 if (this.bearer.equipments[i] == this) {
                     this.bearer.equipments.splice(i, 1);
                     i--;
                 }
             }
+
             this.bearer = undefined;
         }
-        else if (this.zone != undefined && this.slot != undefined) {
+        else if (this.entity != undefined && this.zone != undefined && this.slot != undefined) {
             this.zone.cards.splice(this.slot, 1);
             for (let i = this.slot; i < this.zone.cards.length; i++) {
                 let card = this.zone.cards[i];
@@ -168,6 +168,12 @@ export class Equipment extends Item {
         }
         return false;
     };
+
+    millBearerEffect: Function | undefined;
+
+    destroyBearerEffect: Function | undefined;
+
+    dieBearerEffect: Function | undefined;
 
     playEffect: Function | undefined;
 

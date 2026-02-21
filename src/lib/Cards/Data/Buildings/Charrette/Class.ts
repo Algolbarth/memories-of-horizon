@@ -16,8 +16,8 @@ export class Charrette extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.draw(5);
+        if (this.isArea("Terrain")) {
+            this.owner().draw(5);
         }
     };
 };

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : pioche 1 carte et la verrouille.
+Quand périt : pioche 1 carte et la verrouille.

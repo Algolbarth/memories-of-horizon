@@ -20,7 +20,8 @@ export class Bulette extends Creature {
     };
 
     useEffect = () => {
-        this.owner.getCard("Coup de bouclier").add("Inventaire");
+        this.owner().getCard("Coup de bouclier").add("Inventaire");
+
         this.move("Terrain");
         this.pose();
     };

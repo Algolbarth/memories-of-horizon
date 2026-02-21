@@ -15,16 +15,16 @@ export class Horizon extends Action {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner) {
+        if (this.isArea("Pile") && this.isAlly(card)) {
             this.costReduce(10);
         }
     };
 
     useEffect = () => {
-        this.owner.zone("Région").size += 1;
-        this.owner.zone("Pile").size += 1;
-        this.owner.zone("Inventaire").size += 1;
-        this.owner.zone("Terrain").size += 1;
+        this.owner().zone("Région").size += 1;
+        this.owner().zone("Pile").size += 1;
+        this.owner().zone("Inventaire").size += 1;
+        this.owner().zone("Terrain").size += 1;
 
         this.move("Défausse");
         this.pose();

@@ -20,13 +20,13 @@ export class ChefCuisinier extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isFamily("Nourriture") && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card.isFamily("Nourriture") && this.isAlly(card)) {
             for (const e of card.elements.total()) {
                 if (e != "Neutre") {
-                    this.owner.ressource(e).produce(10);
+                    this.owner().ressource(e).produce(10);
                 }
                 else {
-                    this.owner.ressource("Or").produce(10);
+                    this.owner().ressource("Or").produce(10);
                 }
             }
         }

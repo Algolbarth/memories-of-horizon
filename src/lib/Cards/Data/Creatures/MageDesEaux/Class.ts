@@ -21,7 +21,7 @@ export class MageDesEaux extends Creature {
     };
 
     otherPoseEffect = (c: Card) => {
-        if (this.zone.name == "Terrain" && c.isFamily("Sort") && c.owner == this.owner) {
+        if (this.isArea("Terrain") && c.isFamily("Sort") && this.isAlly(c)) {
             let readCondition = (card: Card) => {
                 if (card.isFamily("Sort")) {
                     return true;
@@ -29,10 +29,10 @@ export class MageDesEaux extends Creature {
                 return false;
             };
 
-            let cards = this.owner.draw(1, readCondition);
+            let cards = this.owner().draw(1, readCondition);
 
-            if (cards[0] != undefined && this.owner.ressource("Mana").total() >= 5) {
-                this.owner.ressource("Mana").spend(5);
+            if (cards[0] != undefined && this.owner().ressource("Mana").total() >= 5) {
+                this.owner().ressource("Mana").spend(5);
                 cards[0].costReduce(10);
             }
         }

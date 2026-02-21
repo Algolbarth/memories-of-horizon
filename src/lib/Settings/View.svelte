@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let system: any;
+	import type { System } from "../System/Class";
+
+	export let system: System;
 
 	function close() {
 		if (system.game == undefined) {

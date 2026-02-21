@@ -16,8 +16,8 @@ export class SalleDArmes extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Entraînement").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Entraînement").add("Inventaire");
         }
     };
 };

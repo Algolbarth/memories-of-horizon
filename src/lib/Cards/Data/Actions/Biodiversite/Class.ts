@@ -16,7 +16,7 @@ export class Biodiversite extends Action {
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner().is_player || this.owner().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -24,7 +24,7 @@ export class Biodiversite extends Action {
 
     useEffect = () => {
         let family_list: string[] = [];
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
 
         for (const card of battlefield) {
             if (card instanceof Creature) {

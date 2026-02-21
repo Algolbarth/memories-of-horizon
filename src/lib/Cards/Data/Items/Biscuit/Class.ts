@@ -18,7 +18,7 @@ export class Biscuit extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -27,8 +27,8 @@ export class Biscuit extends Item {
     };
 
     canSatiety = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && !card.isDamaged()) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.isFullLife()) {
                 return true;
             }
         }
@@ -36,13 +36,13 @@ export class Biscuit extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -58,7 +58,7 @@ export class Biscuit extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            this.owner.getCard("Bonhomme biscuit").add("Terrain");
+            this.owner().getCard("Bonhomme biscuit").add("Terrain");
         }
         else {
             target.heal(20);

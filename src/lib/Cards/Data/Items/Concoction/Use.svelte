@@ -1,33 +1,29 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
-	function selectCondition(card: Card) {
-		let potion = system.game.use.card;
-		if (potion.stat("Infusion explosive").value() > 0) {
+	function selectCondition(target: Card) {
+		if (card.stat("Infusion explosive").value() > 0) {
 			return true;
 		}
-		if (card instanceof Creature) {
+		if (target instanceof Creature) {
 			return true;
 		}
 		return false;
 	}
 
-	function selectAction(card: Card) {
-		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(card);
-			system.game.use.reset();
-		}
+	function selectAction(target: Card) {
+		card.useEffect(target);
+		game.use.reset();
 	}
 </script>
 
-{#if system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} {selectAction} />
-{/if}
-{#if system.game && system.game.use.card}
-	<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {selectCondition} {selectAction} />
-{/if}
+<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Terrain")} {selectCondition} {selectAction} />
+<Zone bind:system bind:game entity={card.adversary()} zone={card.adversary().zone("Terrain")} {selectCondition} {selectAction} />

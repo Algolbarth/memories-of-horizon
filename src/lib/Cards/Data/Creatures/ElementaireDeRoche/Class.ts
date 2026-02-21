@@ -22,7 +22,7 @@ export class ElementaireDeRoche extends Creature {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
@@ -30,15 +30,15 @@ export class ElementaireDeRoche extends Creature {
 
     select = () => {
         if (this.adversary().zone("Terrain").cards.length > 0) {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
-                this.useEffect("effect", this.adversary().zone("Terrain").cards[0]);
+                this.useEffect("effect");
             }
         }
-        else if (this.owner.zone("Terrain").isNotFull()) {
-            this.useEffect("creature", undefined);
+        else if (this.owner().zone("Terrain").isNotFull()) {
+            this.useEffect("creature");
         }
     };
 

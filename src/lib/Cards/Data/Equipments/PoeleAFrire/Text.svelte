@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : inflige 10 dégâts à l'unité attaquée pour chaque objet allié de famille Nourriture dans la défausse.
+Quand le porteur attaque : inflige 10 dégâts à l'unité attaquée pour chaque objet allié de famille Nourriture dans la défausse.

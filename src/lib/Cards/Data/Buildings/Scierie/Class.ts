@@ -16,8 +16,8 @@ export class Scierie extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Végétal").produce(10);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Végétal").produce(10);
         }
     };
 };

@@ -20,7 +20,7 @@ export class GuerrierElfe extends Creature {
     };
 
     useEffect = () => {
-        if (this.owner.totalIntelligence() >= 20) {
+        if (this.owner().totalIntelligence() >= 20) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);
         }

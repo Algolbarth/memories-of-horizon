@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé et au début de la phase de préparation : génère 2 <CardInfo bind:system name={"Coffre en bois"} /> dans l'inventaire.
+Quand posé et quand se prépare sur le terrain : génère 2 <CardInfo bind:system name={"Coffre en bois"} /> dans l'inventaire.

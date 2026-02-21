@@ -21,21 +21,22 @@ export class Raido extends Boss {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.owner == this.owner && card instanceof Creature) {
+        if (this.isArea("Terrain") && this.isAlly(card) && card instanceof Creature) {
             card.stat("Force").increase(5);
             card.stat("Constitution").increase(5);
         }
     };
 
-    otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.owner != this.owner) {
-            this.owner.ressource("Or").produce(card.stat("Vitalité").value());
+    otherPerishEffect = (card: Card) => {
+        if (this.isArea("Terrain") && this.isNotAlly(card)) {
+            this.owner().ressource("Or").produce(card.stat("Vitalité").value());
         }
     };
 
     playEffect = () => {
-        while (this.owner.ressource("Or").total() >= 1) {
-            this.owner.ressource("Or").spend(1);
+        while (this.owner().ressource("Or").total() >= 1) {
+            this.owner().ressource("Or").spend(1);
+
             this.stat("Force").increase(1);
             this.stat("Constitution").increase(1);
         }

@@ -18,8 +18,8 @@ export class LanceurOrbital extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Satellite").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Satellite").add("Terrain");
         }
     };
 };

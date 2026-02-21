@@ -8,7 +8,7 @@ export class SageDement extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Feu", 20]]);
+        this.init([["Or", 35], ["Feu", 35]]);
 
         this.initFamily(["Gobelin"]);
 
@@ -17,22 +17,10 @@ export class SageDement extends Creature {
 
         this.text = Text;
 
-        this.stat("Intelligence").value = function () {
-            let total = this.base + this.add + this.turn + this.round;
-            if (this.card instanceof Creature) {
-                for (const equipment of this.card.equipments) {
-                    total += equipment.equipStat(this.name).value();
-                }
+        this.stat("Intelligence").effect = function (total: number) {
+            if (this.card.system.game != undefined && this.card.owner().zone("Pile").cards.length == 0) {
+                return total + 25;
             }
-
-            if (this.card.system.game != undefined && this.card.owner.zone("Pile").cards.length == 0) {
-                total += 10;
-            }
-
-            if (total < this.min) {
-                total = this.min;
-            }
-
             return total;
         };
     };

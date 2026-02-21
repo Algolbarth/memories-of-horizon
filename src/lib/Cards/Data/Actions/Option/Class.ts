@@ -15,7 +15,7 @@ export class Option extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -25,10 +25,10 @@ export class Option extends Action {
 
     useEffect = (choice: string) => {
         if (choice == "draw") {
-            this.owner.draw(3);
+            this.owner().draw(3);
         }
         else if (choice == "discover") {
-            this.owner.discover(1);
+            this.owner().discover(1);
         }
 
         this.move("Défausse");

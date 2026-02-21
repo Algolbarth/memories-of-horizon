@@ -18,15 +18,15 @@ export class NavetteSpatiale extends Building {
     };
 
     useEffect = () => {
-        this.owner?.ressource("Flux").stock(1);
+        this.owner().ressource("Flux").stock(1);
 
         this.move("Terrain");
         this.pose();
     };
 
     startPhaseEffect = () => {
-        if (this.zone?.name == "Terrain") {
-            this.owner?.ressource("Flux").stock(1);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Flux").stock(1);
         }
     };
 };

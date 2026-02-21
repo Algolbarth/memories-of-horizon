@@ -17,9 +17,9 @@ export class ElementaireDeFeu extends Creature {
         this.text = Text;
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile" && this.owner.ressource("Feu").production >= 3) {
-            this.owner.ressource("Feu").decrease(3);
+    perishEffect = () => {
+        if (this.owner().ressource("Feu").production >= 3) {
+            this.owner().ressource("Feu").decrease(3);
         }
     };
 };

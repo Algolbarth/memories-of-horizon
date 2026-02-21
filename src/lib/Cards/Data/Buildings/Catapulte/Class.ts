@@ -16,7 +16,7 @@ export class Catapulte extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             this.adversary().zone("Terrain").cards[0].damageByEffect(20);
         }
     };

@@ -16,10 +16,10 @@ export class Opportunite extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -29,32 +29,35 @@ export class Opportunite extends Action {
                 this.system.game.use.set(this, Use);
             }
             else {
-                this.useEffect(undefined);
+                this.useEffect("discover");
             }
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
             }
 
             if (target != undefined) {
-                this.useEffect(target);
+                this.useEffect("initiative", target);
+            }
+            else {
+                this.useEffect("discover");
             }
         }
     };
 
-    useEffect = (target: Creature | undefined) => {
-        if (target != undefined) {
+    useEffect = (choice: string, target: Creature | undefined = undefined) => {
+        if (choice == "initiative" && target != undefined) {
             this.targeting(target);
 
             target.stat("Initiative").turn += 1;
         }
-        else {
-            this.owner.discover(1);
+        else if (choice == "discover") {
+            this.owner().discover(1);
         }
 
         this.move("Défausse");

@@ -15,18 +15,18 @@ export class CreationRocheuse extends Spell {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").isNotFull()) {
+        if (this.owner().zone("Terrain").isNotFull()) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner.ressource("Mana").total() >= 50) {
+        if (this.owner().ressource("Mana").total() >= 50) {
             this.useEffect();
         }
         else {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -35,19 +35,19 @@ export class CreationRocheuse extends Spell {
         }
     };
 
-    useEffect = (choice: string) => {
-        if (this.owner.ressource("Mana").total() >= 50) {
-            this.owner.ressource("Mana").spend(50);
+    useEffect = (choice: string | undefined = undefined) => {
+        if (this.owner().ressource("Mana").total() >= 50) {
+            this.owner().ressource("Mana").spend(50);
 
-            this.owner.getCard("Élémentaire de roche").add("Terrain");
-            this.owner.getCard("Mur de roche").add("Terrain");
+            this.owner().getCard("Élémentaire de roche").add("Terrain");
+            this.owner().getCard("Mur de roche").add("Terrain");
         }
         else {
             if (choice == "creature") {
-                this.owner.getCard("Élémentaire de roche").add("Terrain");
+                this.owner().getCard("Élémentaire de roche").add("Terrain");
             }
             else if (choice == "building") {
-                this.owner.getCard("Mur de roche").add("Terrain");
+                this.owner().getCard("Mur de roche").add("Terrain");
             }
         }
 

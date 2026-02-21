@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : inflige 50 dégâts à l'unité attaquée.
+Quand le porteur attaque : inflige 50 dégâts à l'unité attaquée.

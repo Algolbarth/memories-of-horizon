@@ -18,9 +18,9 @@ export class TourDeSiege extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             let target = undefined;
-            let battlefield = copy(this.owner?.zone("Terrain").cards);
+            let battlefield = copy(this.owner().zone("Terrain").cards);
 
             for (const card of battlefield) {
                 if (target == undefined && card instanceof Creature) {

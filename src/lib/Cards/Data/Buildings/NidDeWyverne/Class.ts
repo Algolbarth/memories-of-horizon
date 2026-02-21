@@ -20,14 +20,14 @@ export class NidDeWyverne extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             let readCondition = (card: Card) => {
                 if (card instanceof Creature && card.isFamily("Wyverne")) {
                     return true;
                 }
                 return false;
             };
-            let cards = this.owner.draw(1, readCondition);
+            let cards = this.owner().draw(1, readCondition);
 
             if (cards[0] != undefined) {
                 cards[0].costReduce(15);

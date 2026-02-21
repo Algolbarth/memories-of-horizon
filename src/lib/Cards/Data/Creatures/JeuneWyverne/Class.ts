@@ -21,7 +21,7 @@ export class JeuneWyverne extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.level == 1) {
+        if (this.isArea("Pile") && this.isAlly(card) && card.level == 1) {
             this.costReduce(3);
         }
     };

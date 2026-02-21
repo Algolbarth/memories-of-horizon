@@ -16,8 +16,8 @@ export class TourDeGuet extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Cibler").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Cibler").add("Inventaire");
         }
     };
 };

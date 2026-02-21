@@ -23,8 +23,8 @@ export class VagueDeferlante extends Action {
 
     useEffect = () => {
         let value = 5;
-        if (this.owner.ressource("Eau").total() >= 25) {
-            this.owner.ressource("Eau").spend(25);
+        if (this.owner().ressource("Eau").total() >= 25) {
+            this.owner().ressource("Eau").spend(25);
             value = 10;
         }
 

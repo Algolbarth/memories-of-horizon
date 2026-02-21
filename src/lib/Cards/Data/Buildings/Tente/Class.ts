@@ -17,15 +17,15 @@ export class Tente extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone != undefined && this.slot != undefined && this.zone.name == "Terrain") {
-            if (this.slot > 0) {
-                let up_card = this.zone.cards[this.slot - 1];
+        if (this.isArea("Terrain")) {
+            if (this.emplacement() > 0) {
+                let up_card = this.area().cards[this.emplacement() - 1];
                 if (up_card instanceof Creature) {
                     up_card.heal(5);
                 }
             }
-            if (this.slot < this.zone.cards.length - 1) {
-                let down_card = this.zone.cards[this.slot + 1];
+            if (this.emplacement() < this.area().cards.length - 1) {
+                let down_card = this.area().cards[this.emplacement() + 1];
                 if (down_card instanceof Creature) {
                     down_card.heal(5);
                 }

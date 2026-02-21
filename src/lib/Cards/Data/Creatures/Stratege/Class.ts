@@ -28,7 +28,8 @@ export class Stratège extends Creature {
             }
             return false;
         };
-        this.owner.draw(1, readCondition);
+        this.owner().draw(1, readCondition);
+
         this.move("Terrain");
         this.pose();
     };

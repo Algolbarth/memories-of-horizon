@@ -23,19 +23,19 @@ export class GrandPretre extends Creature {
     select = () => {
         let check = false;
 
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (check == false && card instanceof Creature) {
                 check = true;
             }
         }
 
         if (check) {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
                 let choice = "life";
-                for (const card of this.owner.zone("Terrain").cards) {
+                for (const card of this.owner().zone("Terrain").cards) {
                     if (card instanceof Creature && card.isDamaged()) {
                         choice = "heal";
                     }
@@ -50,7 +50,7 @@ export class GrandPretre extends Creature {
     };
 
     useEffect = (choice: string | undefined) => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 if (choice == "life") {

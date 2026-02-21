@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Quand une créature alliée de famille Bête meurt : augmente de 10 la constitution de la créature équipée.
+Quand une créature alliée de famille Bête périt : augmente de 10 la constitution du porteur.

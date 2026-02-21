@@ -19,7 +19,7 @@ export class PoeleAFrire extends Equipment {
     fightEffect = (defender: Unit) => {
         let damage: number = 0;
 
-        let defausse = copy(this.owner.zone("Défausse").cards);
+        let defausse = copy(this.owner().zone("Défausse").cards);
         for (const card of defausse) {
             if (card instanceof Item && card.isFamily("Nourriture")) {
                 damage += 10;

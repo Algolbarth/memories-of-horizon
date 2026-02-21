@@ -19,7 +19,7 @@ export class LigneEnergetique extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isFamily("Élémentaire")) {
                 return true;
             }
@@ -28,13 +28,13 @@ export class LigneEnergetique extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.isFamily("Élémentaire")) {
                     target = card;
                 }
@@ -49,7 +49,7 @@ export class LigneEnergetique extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         let nb_element = 0;
 
         for (const card of battlefield) {
@@ -67,10 +67,10 @@ export class LigneEnergetique extends Action {
 
         for (const e of target.elements.total()) {
             if (e != "Neutre") {
-                this.owner.ressource(e).produce(5 * nb_element);
+                this.owner().ressource(e).produce(5 * nb_element);
             }
             else {
-                this.owner.ressource("Or").produce(5 * nb_element);
+                this.owner().ressource("Or").produce(5 * nb_element);
             }
         }
 

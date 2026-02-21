@@ -1,26 +1,25 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Item } from "../../../Class/Item";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
-	function selectCondition(card: Card) {
-		if (card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
+	function selectCondition(target: Card) {
+		if (target instanceof Item && target.isFamily("Potion") && target.name != "Concoction") {
 			return true;
 		}
 		return false;
 	}
 
-	function selectAction(card: Card) {
-		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(card);
-			system.game.use.reset();
-		}
+	function selectAction(target: Card) {
+		card.useEffect(target);
+		game.use.reset();
 	}
 </script>
 
-{#if system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {selectCondition} {selectAction} />
-{/if}
+<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Inventaire")} {selectCondition} {selectAction} />

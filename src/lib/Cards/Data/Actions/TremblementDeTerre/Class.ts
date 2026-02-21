@@ -15,14 +15,14 @@ export class TremblementDeTerre extends Action {
     };
 
     canUse = () => {
-        if (this.adversary().zone("Terrain").cards.length > 0 || (this.owner == this.system.game.player && this.owner.zone("Terrain").cards.length > 0)) {
+        if (this.adversary().zone("Terrain").cards.length > 0 || (this.owner().is_player && this.owner().zone("Terrain").cards.length > 0)) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         let double_battlefield = battlefield.concat(adversary_battlefield);
 

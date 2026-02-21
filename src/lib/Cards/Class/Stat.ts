@@ -1,4 +1,5 @@
 import type { Card } from "./Class";
+import { Creature } from "./Creature";
 
 export class Stat {
     name: string;
@@ -20,10 +21,14 @@ export class Stat {
     value = () => {
         let total = this.base + this.add + this.turn + this.round;
 
-        if (this.card.type == "Créature") {
+        if (this.card instanceof Creature) {
             for (const equipment of this.card.equipments) {
                 total += equipment.equipStat(this.name).value();
             }
+        }
+
+        if (this.effect != undefined) {
+            total = this.effect(total);
         }
 
         if (total < this.min) {
@@ -32,6 +37,8 @@ export class Stat {
 
         return total;
     };
+
+    effect: Function | undefined;
 
     increase = (value: number) => {
         this.add += value;
@@ -81,5 +88,11 @@ export class Stat {
 
     init = (value: number) => {
         this.base = value;
+    };
+
+    reset = () => {
+        this.add = 0;
+        this.turn = 0;
+        this.round = 0;
     };
 };

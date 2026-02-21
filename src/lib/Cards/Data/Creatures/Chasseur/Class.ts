@@ -19,8 +19,8 @@ export class Chasseur extends Creature {
         this.text = Text;
     };
 
-    otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card instanceof Creature && card.owner == this.owner && card.isFamily("Bête")) {
+    otherPerishEffect = (card: Card) => {
+        if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card) && card.isFamily("Bête")) {
             this.stat("Constitution").increase(3);
             this.stat("Force").increase(3);
         }

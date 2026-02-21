@@ -21,13 +21,13 @@ export class WyverneMarine extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Pile" && card.owner == this.owner && card.isElement("Eau")) {
+        if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Eau")) {
             this.costReduce(6);
         }
     };
 
     useEffect = () => {
-        this.owner.ressource("Eau").produce(10);
+        this.owner().ressource("Eau").produce(10);
 
         this.move("Terrain");
         this.pose();

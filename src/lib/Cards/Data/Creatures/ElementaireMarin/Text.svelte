@@ -9,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : <Source bind:system bind:card cost={5} text={"augmente de 5 sa constitution et sa force"} />.
+Quand se prépare sur le terrain : <Source bind:system bind:card cost={10} text={"augmente de 10 sa constitution et sa force"} />.

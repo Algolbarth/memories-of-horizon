@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : diminue de 10 le coût en or de toutes les cartes alliées sur la pile.
+Quand se prépare sur le terrain : diminue de 10 le coût en or de toutes les cartes alliées sur la pile.

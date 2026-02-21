@@ -19,12 +19,12 @@ export class DagueEmpoisonnee extends Equipment {
     };
 
     canUse = () => {
-        for (const card of this.owner?.adversary().zone("Terrain").cards) {
+        for (const card of this.owner().adversary().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
         }
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.canEquip()) {
                 return true;
             }
@@ -33,13 +33,13 @@ export class DagueEmpoisonnee extends Equipment {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.canEquip()) {
                     target = card;
                 }
@@ -50,7 +50,7 @@ export class DagueEmpoisonnee extends Equipment {
                 return 0;
             }
 
-            for (const card of this.owner?.adversary().zone("Terrain").cards) {
+            for (const card of this.owner().adversary().zone("Terrain").cards) {
                 if (card instanceof Creature) {
 
                 }

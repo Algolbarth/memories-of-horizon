@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Quand la créature équipée attaque : augmente de 5 l'endurance de la créature équipée.
+Quand le porteur attaque : augmente de 5 l'endurance du porteur.

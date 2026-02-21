@@ -16,7 +16,7 @@ export class Multisoin extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isDamaged()) {
                 return true;
             }
@@ -25,7 +25,7 @@ export class Multisoin extends Action {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 card.heal(5);

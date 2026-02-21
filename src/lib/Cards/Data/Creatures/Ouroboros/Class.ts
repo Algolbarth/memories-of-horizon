@@ -19,8 +19,8 @@ export class Ouroboros extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Pierre philosophale").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Pierre philosophale").add("Inventaire");
         }
     };
 };

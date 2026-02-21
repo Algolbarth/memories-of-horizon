@@ -19,6 +19,6 @@ export class SalamandreDesEaux extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner.getCard("Intoxication").add("Inventaire");
+        this.owner().getCard("Intoxication").add("Inventaire");
     };
 };

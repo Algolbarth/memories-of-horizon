@@ -1,5 +1,6 @@
 import { deleteDuplicate } from "../../Utils";
 import type { Card } from "./Class";
+import { Creature } from "./Creature";
 
 export class Families {
     base: string[] = [];
@@ -28,7 +29,7 @@ export class Families {
             array.push(t);
         }
 
-        if (this.card.type == "Créature") {
+        if (this.card instanceof Creature) {
             for (const e of this.card.equipments) {
                 for (const i of e.equipFamilies) {
                     array.push(i);

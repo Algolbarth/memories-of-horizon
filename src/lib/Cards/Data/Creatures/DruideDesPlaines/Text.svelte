@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide des plaines (forme humain)"}
-	Au début de la phase de préparation : pioche 2 cartes.
+	Quand se prépare sur le terrain : pioche 2 cartes.
 {/if}

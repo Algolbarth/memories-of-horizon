@@ -8,7 +8,7 @@
 	export let cost: number;
 </script>
 
-{#if system.game != undefined && card.owner && card.owner.ressource("Eau").total() >= cost}
+{#if system.game != undefined && card.owner().ressource("Eau").total() >= cost}
 	<span style="color:var(--source_effect);">Source {cost} : {text}</span>
 {:else}
 	Source {cost} : {text}

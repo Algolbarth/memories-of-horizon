@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : se place dans l'inventaire.
+Quand se prépare sur le terrain : se place dans l'inventaire.

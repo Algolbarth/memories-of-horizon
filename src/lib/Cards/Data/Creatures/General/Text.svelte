@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : augmente de 5 la constitution et la force de toutes les créatures alliées sur le terrain.
+Quand se prépare sur le terrain : augmente de 5 la constitution et la force de toutes les créatures alliées sur le terrain.

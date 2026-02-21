@@ -16,14 +16,14 @@ export class Meteore extends Item {
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner().is_player || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
             }
@@ -38,7 +38,7 @@ export class Meteore extends Item {
 
     useEffect = (choice: string, target: Unit | undefined = undefined) => {
         if (choice == "stockage") {
-            this.owner.ressource("Flux").stock(1);
+            this.owner().ressource("Flux").stock(1);
         }
         else if (choice == "damage" && target != undefined) {
             this.targeting(target);

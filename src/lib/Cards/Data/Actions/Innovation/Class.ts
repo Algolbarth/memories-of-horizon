@@ -14,14 +14,14 @@ export class Innovation extends Action {
     };
 
     canUse = () => {
-        if (this.owner?.zone("Pile").isFull()) {
+        if (this.owner().zone("Pile").isFull()) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.zone("Pile").size += 2;
+        this.owner().zone("Pile").size += 2;
 
         this.move("Défausse");
         this.pose();

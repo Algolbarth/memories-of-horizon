@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation, quand équipé : génère une créature du même nom que la créature équipée sur la pile.
+Quand se prépare sur le terrain : si équipé : génère une créature du même nom que le porteur sur la pile.

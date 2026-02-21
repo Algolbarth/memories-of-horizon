@@ -16,12 +16,12 @@ export class Defrichage extends Action {
     };
 
     useEffect = () => {
-        this.owner.zone("Terrain").size += 1;
+        this.owner().zone("Terrain").size += 1;
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
-                card.stat("Constitution").increase(this.owner.zone("Terrain").size);
+                card.stat("Constitution").increase(this.owner().zone("Terrain").size);
             }
         }
 

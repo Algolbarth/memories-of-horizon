@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Végétal est posée : diminue son coût de 5.
+Quand une carte alliée d'élément Végétal est posée : si dans la pile : diminue son coût de 5.

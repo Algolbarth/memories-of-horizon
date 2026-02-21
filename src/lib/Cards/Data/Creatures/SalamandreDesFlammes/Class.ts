@@ -19,6 +19,6 @@ export class SalamandreDesFlammes extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner.getCard("Enflammer").add("Inventaire");
+        this.owner().getCard("Enflammer").add("Inventaire");
     };
 };

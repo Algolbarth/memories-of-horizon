@@ -19,6 +19,6 @@ export class MasseMagique extends Equipment {
     };
 
     fightEffect = () => {
-        this.owner.ressource("Mana").stock(5);
+        this.owner().ressource("Mana").stock(5);
     };
 };

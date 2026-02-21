@@ -14,15 +14,15 @@ export class Coquillage extends Item {
     };
 
     canUse = () => {
-        if (this.owner.ressource("Eau").production >= 5) {
+        if (this.owner().ressource("Eau").production >= 5) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.ressource("Eau").decrease(5);
-        this.owner.ressource("Or").increase(5);
+        this.owner().ressource("Eau").decrease(5);
+        this.owner().ressource("Or").increase(5);
 
         this.move("Défausse");
         this.pose();

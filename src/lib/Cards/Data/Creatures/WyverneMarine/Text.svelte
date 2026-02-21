@@ -8,6 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Eau est posée : diminue son coût de 6.
+Quand une carte alliée d'élément Eau est posée : si dans la pile : diminue son coût de 6.
+
 <br />
+<br />
+
 Quand posé : produit 10 eau.

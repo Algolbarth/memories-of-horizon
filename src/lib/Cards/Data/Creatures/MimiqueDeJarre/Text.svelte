@@ -10,4 +10,4 @@
 
 Quand posé : se place sur le terrain adverse.
 <br />
-Quand meurt sur le terrain : stocke 10 or chez l'adversaire.
+Quand périt sur le terrain : stocke 10 or chez l'adversaire.

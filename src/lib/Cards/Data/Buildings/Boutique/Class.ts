@@ -16,8 +16,8 @@ export class Boutique extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Restockage").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Restockage").add("Inventaire");
         }
     };
 };

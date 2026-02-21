@@ -23,8 +23,8 @@ export class RazDeMaree extends Action {
 
     useEffect = () => {
         let value = 20;
-        while (this.owner.ressource("Eau").total() >= 5) {
-            this.owner.ressource("Eau").spend(5);
+        while (this.owner().ressource("Eau").total() >= 5) {
+            this.owner().ressource("Eau").spend(5);
             value++;
         }
 

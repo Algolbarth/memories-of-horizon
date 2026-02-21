@@ -15,14 +15,14 @@ export class Alchimanach extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             let readCondition = (card: Card) => {
                 if (card.isFamily("Potion")) {
                     return true;
                 }
                 return false;
             };
-            let cards = this.owner.draw(1, readCondition);
+            let cards = this.owner().draw(1, readCondition);
 
             if (cards[0] != undefined) {
                 cards[0].stat("Infusion").increase(15);

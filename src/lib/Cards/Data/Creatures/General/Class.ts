@@ -20,8 +20,8 @@ export class General extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            let battlefield = copy(this.owner.zone("Terrain").cards);
+        if (this.isArea("Terrain")) {
+            let battlefield = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
                     card.stat("Constitution").increase(5);

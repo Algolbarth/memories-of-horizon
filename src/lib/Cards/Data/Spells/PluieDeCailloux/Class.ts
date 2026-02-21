@@ -16,18 +16,18 @@ export class PluieDeCailloux extends Spell {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Terrain").isNotFull() || this.adversary().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner.ressource("Mana").total() >= 30) {
+        if (this.owner().ressource("Mana").total() >= 30) {
             this.useEffect(undefined);
         }
         else {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -37,12 +37,12 @@ export class PluieDeCailloux extends Spell {
     };
 
     useEffect = (choice: string | undefined) => {
-        if (this.owner.ressource("Mana").total() >= 30) {
-            this.owner.ressource("Mana").spend(30);
+        if (this.owner().ressource("Mana").total() >= 30) {
+            this.owner().ressource("Mana").spend(30);
 
-            let nb_creature = this.owner.zone("Terrain").size - this.owner.zone("Terrain").cards.length;
+            let nb_creature = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
             for (let i = 0; i < nb_creature; i++) {
-                this.owner.getCard("Élémentaire de caillou").add("Terrain");
+                this.owner().getCard("Élémentaire de caillou").add("Terrain");
             }
 
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
@@ -52,9 +52,9 @@ export class PluieDeCailloux extends Spell {
         }
         else {
             if (choice == "creature") {
-                let nb_creature = this.owner.zone("Terrain").size - this.owner.zone("Terrain").cards.length;
+                let nb_creature = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
                 for (let i = 0; i < nb_creature; i++) {
-                    this.owner.getCard("Élémentaire de caillou").add("Terrain");
+                    this.owner().getCard("Élémentaire de caillou").add("Terrain");
                 }
             }
             else if (choice == "damage") {

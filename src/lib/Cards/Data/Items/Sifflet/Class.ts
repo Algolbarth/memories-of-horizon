@@ -23,9 +23,9 @@ export class Sifflet extends Item {
             }
             return false;
         };
-        this.owner.draw(1, readCondition);
+        this.owner().draw(1, readCondition);
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Bête")) {
                 card.stat("Constitution").increase(1);

@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Aventurier"} /> dans l'inventaire.
+Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Aventurier"} /> dans l'inventaire.
 
 <br />
 <br />

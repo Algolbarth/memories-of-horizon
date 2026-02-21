@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : dépense 2 or.
+Quand se prépare sur le terrain : dépense 2 or.

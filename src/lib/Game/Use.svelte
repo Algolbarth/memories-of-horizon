@@ -1,34 +1,31 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
+	import type { Game } from "./Game";
 
 	export let system: System;
+	export let game: Game;
 
 	function close() {
-		if (system.game) {
-			system.game.use.reset();
-			system = system;
-		}
+		game.use.reset();
 	}
 </script>
 
-{#if system.game && system.game.use.card}
-	<div class="window">
-		<div class="body">
-			<button
-				class="square close"
-				on:click={() => {
-					close();
-				}}
-			>
-				X
-			</button>
+<div class="window">
+	<div class="body">
+		<button
+			class="square close"
+			on:click={() => {
+				close();
+			}}
+		>
+			X
+		</button>
 
-			<br />
-			<br />
+		<br />
+		<br />
 
-			<div class="side">
-				<svelte:component this={system.game.use.svelte} bind:system />
-			</div>
+		<div class="side">
+			<svelte:component this={game.use.svelte} bind:system bind:game bind:card={game.use.card} />
 		</div>
 	</div>
-{/if}
+</div>

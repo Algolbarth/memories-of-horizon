@@ -14,8 +14,8 @@ export class SacEnToile extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.draw(1);
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().draw(1);
         }
     };
 }

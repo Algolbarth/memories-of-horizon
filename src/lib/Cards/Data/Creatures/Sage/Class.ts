@@ -20,7 +20,7 @@ export class Sage extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             this.stat("Intelligence").increase(1);
         }
     };

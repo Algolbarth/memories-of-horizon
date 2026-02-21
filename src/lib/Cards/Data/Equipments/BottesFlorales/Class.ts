@@ -17,11 +17,11 @@ export class BottesFlorales extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            let battlefield = copy(this.owner.zone("Terrain").cards);
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            let battlefield = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card.isElement("Végétal")) {
-                    this.owner.ressource("Végétal").produce(1);
+                    this.owner().ressource("Végétal").produce(1);
                 }
             }
         }

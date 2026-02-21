@@ -22,11 +22,11 @@ export class LivreDeRecette extends Item {
             return false;
         };
 
-        if (this.owner.totalIntelligence() >= 20) {
-            this.owner.discover(5, readCondition);
+        if (this.owner().totalIntelligence() >= 20) {
+            this.owner().discover(5, readCondition);
         }
         else {
-            this.owner.discover(3, readCondition);
+            this.owner().discover(3, readCondition);
         }
 
         this.move("Défausse");

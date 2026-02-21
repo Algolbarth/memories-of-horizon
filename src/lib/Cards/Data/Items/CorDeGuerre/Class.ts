@@ -16,7 +16,7 @@ export class CorDeGuerre extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -25,12 +25,13 @@ export class CorDeGuerre extends Item {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 card.stat("Force").increase(5);
             }
         }
+
         this.move("Défausse");
         this.pose();
     };

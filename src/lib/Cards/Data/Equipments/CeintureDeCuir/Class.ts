@@ -14,8 +14,8 @@ export class CeintureDeCuir extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Option").add("Inventaire");
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().getCard("Option").add("Inventaire");
         }
     };
 };

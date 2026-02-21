@@ -8,14 +8,14 @@ export class SacDeBombe extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 50]]);
 
         this.text = Text;
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Bombe").add("Inventaire");
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().getCard("Bombe").add("Inventaire");
         }
     };
-}
+};

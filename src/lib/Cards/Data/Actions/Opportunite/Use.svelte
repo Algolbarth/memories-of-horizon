@@ -1,31 +1,35 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
-	let choice: boolean = false;
+	let choice: string | undefined = undefined;
 
-	function selectCondition(card: Card) {
-		if (card instanceof Creature) {
+	function selectCondition(target: Card) {
+		if (target instanceof Creature) {
 			return true;
 		}
 		return false;
 	}
 
 	function selectAction(target: Creature | undefined) {
-		system.game.use.card.useEffect(target);
-		system.game.use.reset();
+		card.useEffect(choice, target);
+		game.use.reset();
 	}
 </script>
 
-{#if !choice}
+{#if choice == undefined}
 	<div class="center">
 		<button
 			class="big choice"
 			on:click={() => {
+				choice = "discover";
 				selectAction(undefined);
 			}}
 		>
@@ -37,22 +41,21 @@
 		<button
 			class="big choice"
 			on:click={() => {
-				choice = true;
+				choice = "initiative";
 			}}
 		>
 			Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant ce tour
 		</button>
 	</div>
-{:else}
+{:else if choice == "initiative"}
 	<button
 		class="square return margin-bottom"
 		on:click={() => {
-			choice = false;
+			choice = undefined;
 		}}
 	>
 		↩
 	</button>
-	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} {selectAction} />
-	{/if}
+
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Terrain")} {selectCondition} {selectAction} />
 {/if}

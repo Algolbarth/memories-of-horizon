@@ -20,7 +20,7 @@ export class CavalierElfe extends Creature {
     };
 
     useEffect = () => {
-        if (this.owner.totalIntelligence() >= 20) {
+        if (this.owner().totalIntelligence() >= 20) {
             this.stat("Vitesse").increase(1);
         }
 

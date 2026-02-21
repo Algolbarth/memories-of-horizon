@@ -4,6 +4,7 @@ export class Cost {
     name: string;
     base: number = 0;
     add: number = 0;
+    turn: number = 0;
     card: Card;
 
     constructor(name: string, card: Card) {
@@ -12,7 +13,7 @@ export class Cost {
     };
 
     value = () => {
-        let total = this.base + this.add;
+        let total = this.base + this.add + this.turn;
         return total;
     };
 
@@ -22,5 +23,10 @@ export class Cost {
 
     decrease = (value: number) => {
         this.add -= value;
+    };
+
+    reset = () => {
+        this.add = 0;
+        this.turn = 0;
     };
 };

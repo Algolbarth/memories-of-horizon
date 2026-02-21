@@ -1,9 +1,12 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
 	let choice: string | undefined = undefined;
 
@@ -11,11 +14,9 @@
 		return true;
 	}
 
-	function selectAction(card: Card | undefined) {
-		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(choice, card);
-			system.game.use.reset();
-		}
+	function selectAction(target: Card | undefined) {
+		card.useEffect(choice, target);
+		game.use.reset();
 	}
 </script>
 
@@ -52,7 +53,5 @@
 		↩
 	</button>
 
-	{#if system.game && system.game.use.card}
-		<Zone bind:system entity={system.game.use.card.adversary()} zone={system.game.use.card.adversary().zone("Terrain")} {selectCondition} {selectAction} />
-	{/if}
+	<Zone bind:system bind:game entity={card.adversary()} zone={card.adversary().zone("Terrain")} {selectCondition} {selectAction} />
 {/if}

@@ -8,7 +8,7 @@ export class Cartographe extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 45]]);
+        this.init([["Or", 105]]);
 
         this.initFamily(["Humain"]);
 
@@ -19,8 +19,8 @@ export class Cartographe extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Carte de la région").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Carte de la région").add("Inventaire");
         }
     };
 };

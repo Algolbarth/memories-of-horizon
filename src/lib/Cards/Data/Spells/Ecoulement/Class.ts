@@ -14,12 +14,12 @@ export class Ecoulement extends Spell {
     };
 
     useEffect = () => {
-        if (this.owner.ressource("Mana").total() >= 10) {
-            this.owner.ressource("Mana").spend(10);
-            this.owner.ressource("Eau").increase(5);
+        if (this.owner().ressource("Mana").total() >= 10) {
+            this.owner().ressource("Mana").spend(10);
+            this.owner().ressource("Eau").increase(5);
         }
         else {
-            this.owner.ressource("Eau").increase(3);
+            this.owner().ressource("Eau").increase(3);
         }
 
         this.move("Défausse");

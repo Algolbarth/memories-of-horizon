@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation : augmente d'autant la garde de la créature équipée que la magie de celle-ci.
+Quand se prépare sur le terrain : augmente d'autant la garde du porteur que la magie de celle-ci.

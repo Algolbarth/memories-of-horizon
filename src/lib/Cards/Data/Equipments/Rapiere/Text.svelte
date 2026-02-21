@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de combat, quand équipé : remplit la jauge critique de la créature équipée.
+Au début de la phase de combat : si équipé : remplit la jauge critique du porteur.

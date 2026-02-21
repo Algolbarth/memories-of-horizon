@@ -13,4 +13,4 @@ Quand posé : inflige autant de dégâts que possible à une unité adverse et d
 <br />
 <br />
 
-Quand meurt : se réincarne en <CardInfo bind:system name={"Chevalier noir"} />.
+Quand périt : se réincarne en <CardInfo bind:system name={"Chevalier noir"} />.

@@ -19,7 +19,8 @@ export class Gorille extends Creature {
     };
 
     useEffect = () => {
-        this.owner.getCard("Écrasement").add("Inventaire");
+        this.owner().getCard("Écrasement").add("Inventaire");
+
         this.move("Terrain");
         this.pose();
     };

@@ -15,15 +15,16 @@ export class Pelle extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             let readCondition = (card: Card) => {
                 if (card.isElement("Terre")) {
                     return true;
                 }
                 return false;
             };
-            this.owner.discover(1, readCondition);
-            this.owner.ressource("Terre").produce(10);
+            this.owner().discover(1, readCondition);
+
+            this.owner().ressource("Terre").produce(10);
         }
     };
 };

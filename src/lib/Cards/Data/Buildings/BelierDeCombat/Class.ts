@@ -8,16 +8,16 @@ export class BelierDeCombat extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 100]]);
+        this.init([["Or", 170]]);
 
-        this.stat("Constitution").init(40);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Démolition").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Démolition").add("Inventaire");
         }
     };
 };

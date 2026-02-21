@@ -28,8 +28,8 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Eau").increase(2);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Eau").increase(2);
         }
     };
 };

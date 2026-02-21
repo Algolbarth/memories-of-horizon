@@ -29,7 +29,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);
         }

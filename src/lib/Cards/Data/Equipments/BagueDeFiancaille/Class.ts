@@ -14,8 +14,8 @@ export class BagueDeFiancailles extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard(this.bearer.name).add("Pile");
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().getCard(this.bearer.name).add("Pile");
         }
     };
 };

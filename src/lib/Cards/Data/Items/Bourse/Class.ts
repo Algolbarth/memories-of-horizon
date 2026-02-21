@@ -20,7 +20,7 @@ export class Bourse extends Item {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Inventaire") {
+        if (this.isArea("Inventaire")) {
             this.getSale("Or").increase(5);
         }
     };

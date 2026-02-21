@@ -14,8 +14,8 @@ export class Carquois extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Flèche en bois").add("Inventaire");
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().getCard("Flèche en bois").add("Inventaire");
         }
     };
 };

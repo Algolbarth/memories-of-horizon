@@ -1,5 +1,5 @@
 import type { System } from '../../../../System/Class';
-import type { Unit } from '../../../Class';
+import { Unit } from '../../../Class';
 import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -16,8 +16,8 @@ export class Retablissement extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card.isDamaged()) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Unit && card.isDamaged()) {
                 return true;
             }
         }
@@ -25,14 +25,14 @@ export class Retablissement extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.isDamaged()) {
+            for (const card of this.owner().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Unit && card.isDamaged()) {
                     target = card;
                 }
             }

@@ -20,7 +20,7 @@ export class Heros extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card)) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);
         }

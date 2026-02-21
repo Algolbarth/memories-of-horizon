@@ -23,7 +23,7 @@ export class Aventure extends Action {
                 }
                 return false;
             };
-            this.owner.draw(1, readCondition);
+            this.owner().draw(1, readCondition);
         }
 
         this.move("Défausse");

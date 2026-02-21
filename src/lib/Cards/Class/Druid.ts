@@ -19,7 +19,7 @@ export class Druid extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -30,9 +30,13 @@ export class Druid extends Creature {
     useEffect = (choice: string) => {
         if (choice == "transform") {
             this.transform(this.alternative_form);
-        }
 
-        this.zone.cards[this.slot].move("Terrain");
-        this.pose();
+            this.area().cards[this.emplacement()].move("Terrain");
+            this.area().cards[this.emplacement()].pose();
+        }
+        else if (choice == "place") {
+            this.move("Terrain");
+            this.pose();
+        }
     };
 };

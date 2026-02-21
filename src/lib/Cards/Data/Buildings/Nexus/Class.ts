@@ -20,13 +20,13 @@ export class Nexus extends Building {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && card.isFamily("Élémentaire")) {
+        if (this.isArea("Terrain") && card instanceof Creature && card.isFamily("Élémentaire")) {
             for (const element of card.elements.total()) {
                 if (element != "Neutre") {
-                    this.owner.ressource(element).increase(1);
+                    this.owner().ressource(element).increase(1);
                 }
                 else {
-                    this.owner.ressource("Or").increase(1);
+                    this.owner().ressource("Or").increase(1);
                 }
             }
         }

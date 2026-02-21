@@ -7,7 +7,7 @@
 	export let text: string;
 </script>
 
-{#if system.game != undefined && card.owner && card.canSatiety()}
+{#if system.game != undefined && card.canSatiety()}
 	<span style={"color:var(--satiety_effect)"}>Satieté : {text}</span>
 {:else}
 	Satieté : {text}

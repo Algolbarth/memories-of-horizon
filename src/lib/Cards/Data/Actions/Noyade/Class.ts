@@ -10,7 +10,7 @@ export class Noyade extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Eau", 20]]);
+        this.init([["Or", 40], ["Eau", 40]]);
 
         this.text = Text;
     };
@@ -25,7 +25,7 @@ export class Noyade extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {

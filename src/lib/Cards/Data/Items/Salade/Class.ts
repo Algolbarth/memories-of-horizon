@@ -19,7 +19,7 @@ export class Salade extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -28,8 +28,8 @@ export class Salade extends Item {
     };
 
     canSatiety = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
-            if (card instanceof Creature && !card.isDamaged()) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.isFullLife()) {
                 return true;
             }
         }
@@ -37,13 +37,13 @@ export class Salade extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -60,7 +60,7 @@ export class Salade extends Item {
 
         let nb_food: number = 0;
 
-        let defausse = copy(this.owner.zone("Défausse").cards);
+        let defausse = copy(this.owner().zone("Défausse").cards);
         for (const card of defausse) {
             if (card.isFamily("Nourriture") && card.isFamily("Plante")) {
                 nb_food++;

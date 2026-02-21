@@ -12,47 +12,23 @@ export class Champion extends Creature {
 
         this.initFamily(["Humain"]);
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
         this.stat("Endurance").init(5);
 
         this.text = Text;
 
-        this.stat("Force").value = function () {
-            let total = this.base + this.add + this.turn + this.round;
-            if (this.card instanceof Creature) {
-                for (const equipment of this.card.equipments) {
-                    total += equipment.equipStat(this.name).value();
-                }
+        this.stat("Force").effect = function (total: number) {
+            if (this.card.system.game != undefined && this.card.isArea("Terrain") && this.card.emplacement() == 0) {
+                return total * 2;
             }
-
-            if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
-                total = total * 2;
-            }
-
-            if (total < this.min) {
-                total = this.min;
-            }
-
             return total;
         };
 
-        this.stat("Endurance").value = function () {
-            let total = this.base + this.add + this.turn + this.round;
-            if (this.card instanceof Creature) {
-                for (const equipment of this.card.equipments) {
-                    total += equipment.equipStat(this.name).value();
-                }
+        this.stat("Endurance").effect = function (total: number) {
+            if (this.card.system.game != undefined && this.card.isArea("Terrain") && this.card.emplacement() == 0) {
+                return total * 2;
             }
-
-            if (this.card.system.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
-                total = total * 2;
-            }
-
-            if (total < this.min) {
-                total = this.min;
-            }
-
             return total;
         };
     };

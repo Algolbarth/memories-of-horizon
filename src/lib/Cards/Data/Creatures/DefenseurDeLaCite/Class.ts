@@ -22,7 +22,7 @@ export class DefenseurDeLaCite extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Building && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card instanceof Building && this.isAlly(card)) {
             this.stat("Endurance").increase(2);
         }
     };

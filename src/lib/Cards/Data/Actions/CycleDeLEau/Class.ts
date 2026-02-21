@@ -15,11 +15,11 @@ export class CycleDeLEau extends Action {
     };
 
     select = () => {
-        if (this.owner.ressource("Eau").total() >= 100) {
+        if (this.owner().ressource("Eau").total() >= 100) {
             this.useEffect(undefined);
         }
         else {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -29,15 +29,15 @@ export class CycleDeLEau extends Action {
     };
 
     useEffect = (choice: string | undefined) => {
-        if (this.owner.ressource("Eau").total() >= 100) {
-            this.owner.ressource("Eau").spend(100);
+        if (this.owner().ressource("Eau").total() >= 100) {
+            this.owner().ressource("Eau").spend(100);
 
-            this.owner.zone("Pile").size += 1;
-            this.owner.zone("Inventaire").size += 1;
-            this.owner.zone("Terrain").size += 1;
+            this.owner().zone("Pile").size += 1;
+            this.owner().zone("Inventaire").size += 1;
+            this.owner().zone("Terrain").size += 1;
         }
         else {
-            this.owner.zone(choice).size += 1;
+            this.owner().zone(choice).size += 1;
         }
 
         this.move("Défausse");

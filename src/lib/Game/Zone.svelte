@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { System } from "../System/Class";
 	import type { Entity } from "./Entity";
+	import type { Game } from "./Game";
 	import Preview from "./Preview.svelte";
 	import { Stack } from "./Stack";
 	import type { Zone } from "./Zone";
 
 	export let system: System;
+	export let game: Game;
 	export let zone: Zone;
 	export let entity: Entity;
 	export let selectCondition: Function | undefined;
@@ -38,7 +40,7 @@
 
 			<div style="text-align:right;">
 				{#if zone instanceof Stack}
-					{#if entity == system.game.player && zone.level() < 20 && selectAction == undefined && system.game.phase == "Préparation"}
+					{#if entity.is_player && zone.level() < 20 && selectAction == undefined && system.game.phase == "Préparation"}
 						{#if entity.canUpStack()}
 							<button
 								class="active"
@@ -55,7 +57,7 @@
 						{zone.level() * 10} Or -
 					{/if}
 
-					{#if entity == system.game.player && selectAction == undefined && system.game.phase == "Préparation"}
+					{#if entity.is_player && selectAction == undefined && system.game.phase == "Préparation"}
 						{#if entity.canActualiseStack()}
 							<button
 								class="active"
@@ -72,7 +74,7 @@
 						{10} Or
 					{/if}
 
-					{#if entity == system.game.player && selectAction == undefined && system.game.phase == "Préparation"}
+					{#if entity.is_player && selectAction == undefined && system.game.phase == "Préparation"}
 						-
 						<button
 							on:click={() => {
@@ -87,7 +89,7 @@
 							{/if}
 						</button>
 					{/if}
-				{:else if zone.name == "Région" && entity == system.game.player}
+				{:else if zone.name == "Région" && entity.is_player}
 					5 Or pour changer de lieu actif
 				{/if}
 			</div>
@@ -96,7 +98,7 @@
 		<div id="list">
 			{#if zone.cards.length > 0}
 				{#each zone.cards as card}
-					<Preview bind:system bind:card bind:selectCondition bind:selectAction />
+					<Preview bind:system bind:game bind:card bind:selectCondition bind:selectAction />
 				{/each}
 			{:else}
 				Vide

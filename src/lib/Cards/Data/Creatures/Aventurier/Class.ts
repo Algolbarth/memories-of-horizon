@@ -21,7 +21,7 @@ export class Aventurier extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -31,7 +31,7 @@ export class Aventurier extends Creature {
 
     useEffect = (choice: string) => {
         let nb_guild: number = 0;
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card.name == "Guilde des aventuriers") {
                 nb_guild++;
             }
@@ -43,7 +43,7 @@ export class Aventurier extends Creature {
             }
             return false;
         };
-        this.owner.draw(1 + nb_guild, readCondition);
+        this.owner().draw(1 + nb_guild, readCondition);
 
         this.move("Terrain");
         this.pose();

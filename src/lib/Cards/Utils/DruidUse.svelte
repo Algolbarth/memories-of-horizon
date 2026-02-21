@@ -1,13 +1,16 @@
 <script lang="ts">
+    import type { Game } from "../../Game/Game";
     import type { System } from "../../System/Class";
+    import type { Card } from "../Class";
 
+    // svelte-ignore export_let_unused
     export let system: System;
+    export let game: Game;
+    export let card: Card;
 
     function selectAction(choice: string) {
-        if (system.game && system.game.use.card) {
-            system.game.use.card.useEffect(choice);
-            system.game.use.reset();
-        }
+        card.useEffect(choice);
+        game.use.reset();
     }
 </script>
 
@@ -29,6 +32,6 @@
             selectAction("transform");
         }}
     >
-        Se transforme en {system.game.use.card.alternative_form}
+        Se transforme en {card.alternative_form}
     </button>
 </div>

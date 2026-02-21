@@ -14,14 +14,14 @@ export class Conquete extends Action {
     };
 
     canUse = () => {
-        if (this.owner?.zone("Terrain").isFull()) {
+        if (this.owner().zone("Terrain").isFull()) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.zone("Terrain").size += 2;
+        this.owner().zone("Terrain").size += 2;
 
         this.move("Défausse");
         this.pose();

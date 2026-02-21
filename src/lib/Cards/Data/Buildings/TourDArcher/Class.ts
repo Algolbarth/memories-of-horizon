@@ -16,8 +16,8 @@ export class TourDArcher extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Flèche en bois").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Flèche en bois").add("Inventaire");
         }
     };
 };

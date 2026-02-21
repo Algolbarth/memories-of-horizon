@@ -10,7 +10,7 @@ export class Bombe extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 25]]);
 
         this.text = Text;
     };
@@ -23,7 +23,7 @@ export class Bombe extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -34,7 +34,7 @@ export class Bombe extends Item {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(30);
+        target.damageByEffect(50);
 
         this.move("Défausse");
         this.pose();

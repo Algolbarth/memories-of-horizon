@@ -15,7 +15,7 @@ export class BancDeSardine extends Action {
 
     useEffect = () => {
         for (let i = 1; i <= 5; i++) {
-            this.owner.getCard("Sardine").add("Inventaire");
+            this.owner().getCard("Sardine").add("Inventaire");
         }
 
         this.move("Défausse");

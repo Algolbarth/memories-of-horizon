@@ -1,23 +1,26 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Creature } from "../../../Class/Creature";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
 	let choice: string | undefined = undefined;
 
-	function selectCondition(card: Card) {
-		if (card instanceof Creature) {
+	function selectCondition(target: Card) {
+		if (target instanceof Creature) {
 			return true;
 		}
 		return false;
 	}
 
-	function selectAction(card: Card) {
-		system.game.use.card.useEffect(card, choice);
-		system.game.use.reset();
+	function selectAction(target: Card) {
+		card.useEffect(target, choice);
+		game.use.reset();
 	}
 </script>
 
@@ -52,7 +55,6 @@
 	>
 		↩
 	</button>
-	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Terrain")} {selectCondition} {selectAction} />
-	{/if}
+
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Terrain")} {selectCondition} {selectAction} />
 {/if}

@@ -20,14 +20,15 @@ export class MaitreChien extends Creature {
 
     useEffect = () => {
         this.move("Terrain");
-        this.owner.getCard("Chien").add("Terrain");
-        this.owner.getCard("Chien").add("Terrain");
+        this.owner().getCard("Chien").add("Terrain");
+        this.owner().getCard("Chien").add("Terrain");
+
         this.pose();
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Chien").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Chien").add("Terrain");
         }
     };
 };

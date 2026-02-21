@@ -19,8 +19,8 @@ export class Fermier extends Creature {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.ressource("Or").produce(5);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Or").produce(5);
         }
     };
 };

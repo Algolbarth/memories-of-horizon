@@ -18,8 +18,8 @@ export class BassinDeReproduction extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Ondin").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Ondin").add("Terrain");
         }
     };
 };

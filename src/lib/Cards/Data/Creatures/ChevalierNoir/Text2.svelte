@@ -9,4 +9,4 @@
 	export let card: Card;
 </script>
 
-Quand meurt : <Prime bind:system bind:card cost={20} text={"fixe à 1 sa santé et reste sur le terrain."} />
+Quand périt : <Prime bind:system bind:card cost={20} text={"fixe à 1 sa santé et reste sur le terrain."} />

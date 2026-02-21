@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation, quand équipé : produit autant de terre que de cartes d'élément terre alliées sur le terrain.
+Quand se prépare sur le terrain : si équipé : produit autant de terre que de cartes d'élément terre alliées sur le terrain.

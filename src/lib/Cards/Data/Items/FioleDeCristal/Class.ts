@@ -15,7 +15,7 @@ export class FioleDeCristal extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Inventaire").cards) {
+        for (const card of this.owner().zone("Inventaire").cards) {
             if (card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
                 return true;
             }
@@ -24,13 +24,13 @@ export class FioleDeCristal extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Inventaire").cards) {
+            for (const card of this.owner().zone("Inventaire").cards) {
                 if (target == undefined && card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
                     target = card;
                 }

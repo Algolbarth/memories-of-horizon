@@ -1,9 +1,12 @@
 import { deleteDuplicate } from "../../Utils";
 import type { Card } from "./Class";
+import { Creature } from "./Creature";
 
 export class Elements {
     base: string[] = [];
     add: string[] = [];
+    turn: string[] = [];
+    round: string[] = [];
     card: Card;
 
     constructor(card: Card) {
@@ -19,7 +22,7 @@ export class Elements {
             array.push(a);
         }
 
-        if (this.card.type == "Créature") {
+        if (this.card instanceof Creature) {
             for (const e of this.card.equipments) {
                 for (const i of e.equipElements) {
                     array.push(i);

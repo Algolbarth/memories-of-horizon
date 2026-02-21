@@ -23,7 +23,7 @@ export class SoldatNain extends Creature {
 
     addEffect = (zone: string) => {
         if (zone == "Terrain") {
-            let battlefield = copy(this.owner.zone("Terrain").cards);
+            let battlefield = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Building) {
                     this.stat("Constitution").increase(2);

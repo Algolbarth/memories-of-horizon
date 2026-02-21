@@ -16,7 +16,7 @@ export class Couronne extends Equipment {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card instanceof Creature && card.owner == this.bearer.owner) {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain") && card instanceof Creature && this.bearer.isAlly(card)) {
             card.stat("Constitution").increase(this.bearer.level);
             card.stat("Force").increase(this.bearer.level);
         }

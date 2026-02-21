@@ -11,4 +11,4 @@
 Quand posé : génère 2 <CardInfo bind:system name={"Chien"} /> sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation : génère <CardInfo bind:system name={"Chien"} /> sur le terrain.
+Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Chien"} /> sur le terrain.

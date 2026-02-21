@@ -20,13 +20,13 @@ export class Satellite extends Building {
 
     addEffect = (zone: string) => {
         if (zone == "Terrain") {
-            this.stat('Constitution').increase(this.owner?.ressource("Flux").total());
-            this.stat('Puissance').increase(this.owner?.ressource("Flux").total());
+            this.stat('Constitution').increase(this.owner().ressource("Flux").total());
+            this.stat('Puissance').increase(this.owner().ressource("Flux").total());
         }
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
+        if (this.isArea("Terrain")) {
             this.adversary().zone("Terrain").cards[0].damageByEffect(this.stat("Puissance").value());
         }
     };

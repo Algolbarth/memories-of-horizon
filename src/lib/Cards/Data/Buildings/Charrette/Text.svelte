@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : pioche 5 cartes.
+Quand se prépare sur le terrain : pioche 5 cartes.

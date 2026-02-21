@@ -16,7 +16,7 @@ export class Hydratation extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isElement("Eau")) {
                 return true;
             }
@@ -25,13 +25,13 @@ export class Hydratation extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.isElement("Eau")) {
                     target = card;
                 }
@@ -48,8 +48,8 @@ export class Hydratation extends Action {
 
         let value: number = 15;
 
-        if (this.owner.ressource("Eau").total() >= 15) {
-            this.owner.ressource("Eau").spend(15);
+        if (this.owner().ressource("Eau").total() >= 15) {
+            this.owner().ressource("Eau").spend(15);
             value = 30;
         }
 

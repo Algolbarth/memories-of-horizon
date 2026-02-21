@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide des montagnes (forme nain)"}
-	Au début de la phase de préparation : augmente sa constitution et sa force de 10.
+	Quand se prépare sur le terrain : augmente sa constitution et sa force de 10.
 {/if}

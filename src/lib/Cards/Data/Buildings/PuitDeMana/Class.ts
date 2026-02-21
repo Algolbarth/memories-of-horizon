@@ -16,8 +16,8 @@ export class PuitDeMana extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Potion de mana").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Potion de mana").add("Inventaire");
         }
     };
 };

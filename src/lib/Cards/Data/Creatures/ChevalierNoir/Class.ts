@@ -8,7 +8,6 @@ import Use from './Use.svelte';
 export class ChevalierNoir extends Knight {
     name = "Chevalier noir";
     alternative_form = "Chevalier noir (monté)";
-    rez = false;
 
     constructor(system: System) {
         super(system);
@@ -25,20 +24,11 @@ export class ChevalierNoir extends Knight {
         this.text = Text2;
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile" && this.owner.ressource("Or").total() >= 20) {
-            this.owner.ressource("Or").spend(20);
+    perishEffect = () => {
+        if (this.owner().ressource("Or").total() >= 20) {
+            this.owner().ressource("Or").spend(20);
             this.stat("Santé").init(1);
-            this.rez = true;
-        }
-    };
-
-    dieGo = () => {
-        if (this.rez) {
-            this.rez = false;
-        }
-        else {
-            this.move("Défausse");
+            this.second_life = true;
         }
     };
 };
@@ -62,7 +52,7 @@ export class ChevalierNoirMonte extends MountedKnight {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             if (this.adversary().zone("Terrain").cards.length > 0) {
                 this.system.game.use.set(this, Use);
             }
@@ -83,10 +73,10 @@ export class ChevalierNoirMonte extends MountedKnight {
     useEffect = (target: Unit) => {
         if (target != undefined) {
             let value = target.stat("Santé").value();
-            if (this.owner.ressource("Or").total() < value) {
-                value = this.owner.ressource("Or").total();
+            if (this.owner().ressource("Or").total() < value) {
+                value = this.owner().ressource("Or").total();
             }
-            this.owner.ressource("Or").spend(value);
+            this.owner().ressource("Or").spend(value);
 
             target.damageByEffect(value);
         }

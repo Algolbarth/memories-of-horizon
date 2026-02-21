@@ -37,7 +37,7 @@
 			</button>
 
 			<button class="taskbar info">
-				Étape {game.chapter.step + 1} / {game.chapter.steps.length}
+				Étape {game.chapter.step_slot + 1} / {game.chapter.steps.length}
 			</button>
 		{/if}
 
@@ -147,27 +147,29 @@
 <div id="container" class="scroll">
 	<div class="entities">
 		<div>
-			<Entity bind:system bind:entity={game.player} direction={"left"} bind:show_flux />
+			<Entity bind:system bind:game bind:entity={game.player} direction={"left"} bind:show_flux />
 		</div>
 		<div style="text-align:right;">
-			<Entity bind:system bind:entity={game.bot} direction={"right"} bind:show_flux />
+			<Entity bind:system bind:game bind:entity={game.bot} direction={"right"} bind:show_flux />
 		</div>
 	</div>
 
 	{#if !game.isBattle()}
-		<DoubleZone bind:system zone={"Région"} />
-		<DoubleZone bind:system zone={"Pile"} />
-		<DoubleZone bind:system zone={"Inventaire"} />
+		<DoubleZone bind:system bind:game zone={"Région"} />
+		<DoubleZone bind:system bind:game zone={"Pile"} />
+		<DoubleZone bind:system bind:game zone={"Inventaire"} />
 	{/if}
 
-	<DoubleZone bind:system zone={"Terrain"} />
+	<DoubleZone bind:system bind:game zone={"Terrain"} />
 
 	{#if !game.isBattle()}
-		<DoubleZone bind:system zone={"Défausse"} />
+		<DoubleZone bind:system bind:game zone={"Défausse"} />
 	{/if}
 </div>
 
-<Use bind:system />
+{#if game.use.card != undefined && game.use.svelte != undefined}
+	<Use bind:system bind:game />
+{/if}
 
 {#if show_flux}
 	<Flux bind:system bind:game bind:show_flux />

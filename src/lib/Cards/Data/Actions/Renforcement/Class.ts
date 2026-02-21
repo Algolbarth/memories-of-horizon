@@ -16,18 +16,18 @@ export class Renforcement extends Action {
     };
 
     canUse = () => {
-        if (this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
-            this.useEffect(this.owner.zone("Terrain").cards[0]);
+            this.useEffect(this.owner().zone("Terrain").cards[0]);
         }
     };
 

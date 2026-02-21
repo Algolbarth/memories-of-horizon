@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Building } from '../../../Class/Building';
 import { Item } from '../../../Class/Item';
 import Text from './Text.svelte';
@@ -6,12 +7,12 @@ import Use from './Use.svelte';
 
 export class Restaurant extends Building {
     name = "Restaurant";
-    product = undefined;
+    product: string | undefined = undefined;
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35]]);
+        this.init([["Or", 25]]);
 
         this.stat("Constitution").init(10);
 
@@ -21,14 +22,14 @@ export class Restaurant extends Building {
     select = () => {
         let check = undefined;
 
-        for (const card of this.owner.zone("Inventaire").cards) {
-            if (check == undefined && card instanceof Item && card.isFamily("Nourriture")) {
+        for (const card of this.owner().zone("Inventaire").cards) {
+            if (check == undefined && card instanceof Item && card.isFamily("Nourriture") && card.level <= 2) {
                 check = card;
             }
         }
 
         if (check != undefined) {
-            if (this.owner == this.system.game.player) {
+            if (this.owner().is_player) {
                 this.system.game.use.set(this, Use);
             }
             else {
@@ -49,8 +50,8 @@ export class Restaurant extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain" && this.product != undefined) {
-            this.owner.getCard(this.product).add("Inventaire");
+        if (this.isArea("Terrain") && this.product != undefined) {
+            this.owner().getCard(this.product).add("Inventaire");
         }
     };
 };

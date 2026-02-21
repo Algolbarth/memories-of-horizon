@@ -21,10 +21,10 @@ export class Negociant extends Creature {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             let check = false;
 
-            for (const card of this.owner.zone("Pile").cards) {
+            for (const card of this.owner().zone("Pile").cards) {
                 if (check == false && card.getCost("Or").value() > 0) {
                     check = true;
                 }
@@ -40,7 +40,7 @@ export class Negociant extends Creature {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Pile").cards) {
+            for (const card of this.owner().zone("Pile").cards) {
                 if (target == undefined && card.getCost("Or").value() > 0) {
                     target = card;
                 }

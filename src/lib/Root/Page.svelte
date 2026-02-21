@@ -14,7 +14,7 @@
 	import Training from "../Training/Main.svelte";
 	import Game from "../Game/Game.svelte";
 	import Settings from "../Settings/View.svelte";
-	import Dialog from "../Game/Dialog.svelte";
+	import Scenario from "../Game/Scenario.svelte";
 	import Victory from "../Game/Victory.svelte";
 	import GameOver from "../Game/GameOver.svelte";
 	import ModeDecks from "../Deck/SelectMode.svelte";
@@ -56,8 +56,8 @@
 	<Game bind:system bind:game={system.game} />
 {:else if system.page == "Settings"}
 	<Settings bind:system />
-{:else if system.page == "Dialog"}
-	<Dialog bind:system />
+{:else if system.page == "Scenario" && system.game != undefined && system.game.chapter != undefined}
+	<Scenario bind:system bind:chapter={system.game.chapter} />
 {:else if system.page == "Victory"}
 	<Victory bind:system />
 {:else if system.page == "GameOver"}

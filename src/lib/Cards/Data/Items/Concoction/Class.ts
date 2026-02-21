@@ -33,11 +33,11 @@ export class Concoction extends Item {
             return true;
         }
         if (this.stat("Infusion explosive").value() > 0) {
-            if (this.owner.zone("Terrain").cards.length > 0 || this.owner.adversary().zone("Terrain").cards.length > 0) {
+            if (this.owner().zone("Terrain").cards.length > 0 || this.owner().adversary().zone("Terrain").cards.length > 0) {
                 return true;
             }
         }
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
+        for (const entity of [this.owner(), this.adversary()]) {
             for (const card of entity.zone("Terrain").cards) {
                 if (card instanceof Creature) {
                     return true;
@@ -48,15 +48,15 @@ export class Concoction extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             let check = false;
 
             if (this.stat("Infusion explosive").value() > 0) {
-                if (this.owner?.zone("Terrain").cards.length > 0 || this.owner?.adversary().zone("Terrain").cards.length > 0) {
+                if (this.owner().zone("Terrain").cards.length > 0 || this.adversary().zone("Terrain").cards.length > 0) {
                     check = true;
                 }
             }
-            for (const entity of [this.system.game.player, this.system.game.bot]) {
+            for (const entity of [this.owner(), this.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
                     if (card instanceof Creature) {
                         check = true;
@@ -74,7 +74,7 @@ export class Concoction extends Item {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     target = card;
                 }
@@ -99,10 +99,10 @@ export class Concoction extends Item {
     };
 
     useEffect = (target: Unit | undefined) => {
-        this.owner.ressource("Mana").produce(this.stat("Infusion de mana").value());
+        this.owner().ressource("Mana").produce(this.stat("Infusion de mana").value());
 
         if (this.stat("Infusion interdite").value() > 0) {
-            let homonculus = this.owner.getCard("Homonculus");
+            let homonculus = this.owner().getCard("Homonculus");
             homonculus.stat("Constitution").init(this.stat("Infusion interdite").value());
             homonculus.stat("Force").init(this.stat("Infusion interdite").value());
             homonculus.add("Terrain");

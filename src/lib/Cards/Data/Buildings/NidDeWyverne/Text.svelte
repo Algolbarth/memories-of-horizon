@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : pioche 1 créature de famille Wyverne, réduis de 15 le coût de cette carte et la verrouille.
+Quand se prépare sur le terrain : pioche 1 créature de famille Wyverne, réduis de 15 le coût de cette carte et la verrouille.

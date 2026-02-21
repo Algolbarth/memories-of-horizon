@@ -15,12 +15,10 @@ export class Porte extends Building {
         this.text = Text;
     };
 
-    dieEffect = () => {
-        if (this.zone.name != "Pile") {
-            let cards = this.owner.draw(1);
-            for (const c of cards) {
-                c.lock();
-            }
+    perishEffect = () => {
+        let cards = this.owner().draw(1);
+        for (const c of cards) {
+            c.lock();
         }
     };
 };

@@ -10,6 +10,6 @@
 
 Au choix :
 <ul>
-	<li>S'équipe sur une créature alliée sur le terrain.</li>
+	<li>S'équipe à une créature alliée sur le terrain.</li>
 	<li>Inflige 3 dégâts à toutes les unités adverses sur le terrain.</li>
 </ul>

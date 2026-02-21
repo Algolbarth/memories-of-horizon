@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Unit } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import { Item } from '../../../Class/Item';
 import type { Stat } from '../../../Class/Stat';
@@ -17,7 +18,7 @@ export class Remede extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.hasDebuff()) {
                 return true;
             }
@@ -26,29 +27,31 @@ export class Remede extends Item {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
             let target = undefined;
+            let debuff = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
+            for (const card of this.owner().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature && card.hasDebuff()) {
                     for (const stat of card.stats) {
                         if (stat.debuff && stat.condition()) {
-                            target = stat;
+                            target = card;
+                            debuff = stat;
                         }
                     }
                 }
             }
 
-            if (target != undefined) {
-                this.useEffect(target);
+            if (target != undefined && debuff != undefined) {
+                this.useEffect(target, debuff);
             }
         }
     };
 
-    useEffect = (stat: Stat) => {
+    useEffect = (target: Unit, stat: Stat) => {
         this.targeting(target);
 
         stat.set(stat.min);

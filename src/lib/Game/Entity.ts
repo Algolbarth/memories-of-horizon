@@ -1,7 +1,7 @@
 import type { Card } from "../Cards/Class";
 import { Creature } from "../Cards/Class/Creature";
 import type { Location } from "../Cards/Class/Location";
-import type { Deck } from "../Deck/Class";
+import { Deck } from "../Deck/Class";
 import type { System } from "../System/Class";
 import { copy } from "../Utils";
 import { Stack } from "./Stack";
@@ -27,19 +27,30 @@ export class Entity {
     place: Location | undefined = undefined;
     system: System;
     deck: Deck;
+    is_player: boolean = false;
+    is_bot: boolean = true;
+    opponent: Entity;
 
-    constructor(system: System, deck: Deck) {
+    constructor(system: System, opponent: Entity | undefined = undefined) {
         this.system = system;
-        this.deck = deck;
+
+        if (opponent == undefined) {
+            this.is_player = true;
+            this.is_bot = false;
+            this.opponent = new Entity(system, this);
+        }
+        else {
+            this.opponent = opponent;
+            opponent.opponent = this;
+        }
+
+        this.deck = new Deck(system);
 
         this.setRessources();
     };
 
     adversary = () => {
-        if (this == this.system.game.player) {
-            return this.system.game.bot;
-        }
-        return this.system.game.player;
+        return this.opponent;
     };
 
     setRessources = () => {
@@ -67,23 +78,26 @@ export class Entity {
     };
 
     getCard = (name: string) => {
-        let card = this.system.cards.getByName(name);
-        card.owner = this;
-        if (this == this.system.game.player) {
+        let card: Card = this.system.cards.getByName(name);
+
+        card.entity = this;
+
+        if (this.is_player) {
             card.cache = false;
         }
         else {
             card.cache = true;
         }
+
         return card;
     };
 
-    card_list = (readCondition: (Function | undefined) = undefined, drawer: Card | undefined) => {
+    cardList = (readCondition: (Function | undefined) = undefined, drawer: Card | undefined) => {
         let nameList: string[] = [];
 
         for (const c of this.deck.cards) {
             let card = this.system.cards.getByName(c);
-            if ((this == this.system.game.bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && (readCondition == undefined || readCondition(card, drawer))) {
+            if ((this.is_bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && (readCondition == undefined || readCondition(card, drawer))) {
                 nameList.push(c);
             }
         }
@@ -92,7 +106,7 @@ export class Entity {
     };
 
     draw = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
-        let nameList: string[] = this.card_list(readCondition, drawer);
+        let nameList: string[] = this.cardList(readCondition, drawer);
 
         if (nameList.length > 0) {
             let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
@@ -107,7 +121,7 @@ export class Entity {
     };
 
     discover = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
-        let nameList: string[] = this.card_list(readCondition, drawer);
+        let nameList: string[] = this.cardList(readCondition, drawer);
 
         for (const card of this.zone("Pile").cards) {
             if (nameList.includes(card.name)) {
@@ -163,10 +177,12 @@ export class Entity {
                 card.remove();
             }
         }
+
         if (this.zone("Pile").cards.length < 5) {
             this.draw(5 - this.zone("Pile").cards.length);
         }
-        for (const entity of [this.system.game.player, this.system.game.bot]) {
+
+        for (const entity of [this, this.opponent]) {
             for (const zone of entity.zones) {
                 let cpy = copy(zone.cards);
                 for (const card of cpy) {
@@ -217,17 +233,18 @@ export class Entity {
     };
 
     play = () => {
-        let playable = true;
-        while (playable) {
-            playable = false;
+        let continue_to_play: boolean = true;
+        while (continue_to_play) {
+            continue_to_play = false;
 
             for (let i = 0; i < this.zone("Inventaire").cards.length; i++) {
                 let card = this.zone("Inventaire").cards[i];
                 if (card.canUse()) {
                     card.use();
-                    if (card.zone == undefined || card.zone.name != "Inventaire") {
+
+                    if (card.isNotArea("Inventaire")) {
                         i--;
-                        playable = true;
+                        continue_to_play = true;
                     }
                 }
             }
@@ -287,7 +304,7 @@ export class Entity {
                 }
             }
         }
-        for (const zone of this.adversary().zones) {
+        for (const zone of this.opponent.zones) {
             let cpy = copy(zone.cards);
             for (const card of cpy) {
 
@@ -324,7 +341,7 @@ export class Entity {
                 }
             }
         }
-        for (const zone of this.adversary().zones) {
+        for (const zone of this.opponent.zones) {
             let cpy = copy(zone.cards);
             for (const card of cpy) {
 

@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -21,8 +22,8 @@ export class MageDeLaTerre extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isFamily("Sort") && card.owner == this.owner) {
-            this.owner.getCard("Élémentaire de caillou").add("Inventaire");
+        if (this.isArea("Terrain") && card.isFamily("Sort") && this.isAlly(card)) {
+            this.owner().getCard("Élémentaire de caillou").add("Inventaire");
         }
     };
 };

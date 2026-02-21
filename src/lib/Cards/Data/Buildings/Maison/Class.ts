@@ -16,8 +16,8 @@ export class Maison extends Building {
     };
 
     roundEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Humain").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Humain").add("Terrain");
         }
     };
 };

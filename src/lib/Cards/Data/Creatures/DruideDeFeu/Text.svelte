@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide de feu (forme gobelin)"}
-	Au début de la phase de préparation : augmente sa force de 10.
+	Quand se prépare sur le terrain : augmente sa force de 10.
 {/if}

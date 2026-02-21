@@ -20,7 +20,7 @@ export class Archimere extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card)) {
             for (let i = 0; i < card.families.total().length; i++) {
                 this.stat("Constitution").increase(5);
                 this.stat("Force").increase(5);

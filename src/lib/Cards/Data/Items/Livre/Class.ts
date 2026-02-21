@@ -14,11 +14,11 @@ export class Livre extends Item {
     };
 
     useEffect = () => {
-        if (this.owner.totalIntelligence() >= 10) {
-            this.owner.discover(2);
+        if (this.owner().totalIntelligence() >= 10) {
+            this.owner().discover(2);
         }
         else {
-            this.owner.discover(1);
+            this.owner().discover(1);
         }
 
         this.move("Défausse");

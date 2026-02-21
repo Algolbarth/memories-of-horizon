@@ -19,9 +19,9 @@ export class Bucheron extends Creature {
         this.text = Text;
     };
 
-    otherDieEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.zone.name != "Pile" && card.isElement("Végétal")) {
-            this.owner.ressource("Végétal").stock(2);
+    otherPerishEffect = (card: Card) => {
+        if (this.isArea("Terrain") && card.isElement("Végétal")) {
+            this.owner().ressource("Végétal").stock(2);
         }
     };
 };

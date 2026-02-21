@@ -20,8 +20,8 @@ export class MinistreOndin extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && card.isFamily("Ondin") && card.owner == this.owner) {
-            this.owner.ressource("Eau").produce(5);
+        if (this.isArea("Terrain") && card instanceof Creature && card.isFamily("Ondin") && this.isAlly(card)) {
+            this.owner().ressource("Eau").produce(5);
         }
     };
 };

@@ -16,7 +16,7 @@ export class MilieuAquatique extends Action {
     };
 
     canUse = () => {
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isElement("Eau")) {
                 return true;
             }
@@ -26,12 +26,12 @@ export class MilieuAquatique extends Action {
 
     useEffect = () => {
         let value = 5;
-        if (this.owner.ressource("Eau").total() >= 50) {
-            this.owner.ressource("Eau").spend(50);
+        if (this.owner().ressource("Eau").total() >= 50) {
+            this.owner().ressource("Eau").spend(50);
             value = 10;
         }
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isElement("Eau")) {
                 card.stat("Constitution").increase(value);

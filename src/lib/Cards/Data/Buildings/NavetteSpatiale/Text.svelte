@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé et au début de la phase de préparation : stocke 1 flux.
+Quand posé et quand se prépare sur le terrain : stocke 1 flux.

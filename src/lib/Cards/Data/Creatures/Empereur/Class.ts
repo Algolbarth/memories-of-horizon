@@ -21,7 +21,7 @@ export class Empereur extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 this.stat("Constitution").increase(10);
@@ -37,7 +37,7 @@ export class Empereur extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card instanceof Creature && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card)) {
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);
 

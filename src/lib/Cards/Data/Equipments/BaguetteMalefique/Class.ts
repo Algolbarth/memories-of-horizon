@@ -8,14 +8,14 @@ export class BaguetteMalefique extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 80]]);
+        this.init([["Or", 100]]);
 
         this.text = Text;
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.owner.getCard("Maléfice").add("Inventaire");
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
+            this.owner().getCard("Maléfice").add("Inventaire");
         }
     };
 };

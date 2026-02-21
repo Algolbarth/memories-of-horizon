@@ -1,4 +1,5 @@
 import type { System } from '../../../../System/Class';
+import type { Card } from '../../../Class';
 import { Creature } from '../../../Class/Creature';
 import Text from './Text.svelte';
 
@@ -19,7 +20,7 @@ export class Pyromancien extends Creature {
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.zone.name == "Terrain" && card.isElement("Feu") && card.owner == this.owner) {
+        if (this.isArea("Terrain") && card.isElement("Feu") && this.isAlly(card)) {
             this.stat("Force").increase(5);
         }
     };

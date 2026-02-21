@@ -8,7 +8,9 @@
 	export let card: Card;
 </script>
 
-S'équipe sur une créature alliée sur le terrain.
+S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
-Quand la créature équipée détruit une unité au combat : stocke 5 or.
+
+Quand le porteur détruit une unité au combat : stocke 5 or.

@@ -20,7 +20,7 @@ export class Titan extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.level >= 5) {
                 card.stat("Constitution").increase(25);

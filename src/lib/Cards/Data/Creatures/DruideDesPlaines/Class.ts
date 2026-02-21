@@ -28,8 +28,8 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.draw(2);
+        if (this.isArea("Terrain")) {
+            this.owner().draw(2);
         }
     };
 };

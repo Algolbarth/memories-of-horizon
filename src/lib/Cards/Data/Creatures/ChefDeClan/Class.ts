@@ -20,12 +20,13 @@ export class ChefDeClan extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 card.stat("Force").increase(20);
             }
         }
+
         this.move("Terrain");
         this.pose();
     };

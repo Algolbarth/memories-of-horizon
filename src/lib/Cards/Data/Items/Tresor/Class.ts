@@ -14,8 +14,8 @@ export class Tresor extends Item {
     };
 
     useEffect = () => {
-        this.owner.draw(5);
-        this.owner.ressource("Or").produce(10);
+        this.owner().draw(5);
+        this.owner().ressource("Or").produce(10);
 
         this.move("Défausse");
         this.pose();

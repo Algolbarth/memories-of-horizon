@@ -16,14 +16,14 @@ export class BagarreDeTaverne extends Action {
     };
 
     canUse = () => {
-        if (this.owner == this.system.game.player || this.owner.zone("Terrain").cards.length > 0) {
+        if (this.owner().is_player || this.owner().zone("Terrain").cards.length > 0) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             card.damageByEffect(5);
             if (card instanceof Creature) {

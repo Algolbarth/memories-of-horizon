@@ -18,14 +18,14 @@ export class Encyclopedie extends Equipment {
     };
 
     startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             let readCondition = (card: Card) => {
                 if (card instanceof Action) {
                     return true;
                 }
                 return false;
             };
-            this.owner.draw(1, readCondition);
+            this.owner().draw(1, readCondition);
         }
     };
 };

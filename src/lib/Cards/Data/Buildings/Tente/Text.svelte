@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début de la phase de préparation : soigne 5 blessures aux créatures adjacentes.
+Quand se prépare sur le terrain : soigne 5 blessures aux créatures adjacentes.

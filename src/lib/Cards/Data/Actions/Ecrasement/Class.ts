@@ -20,7 +20,7 @@ export class Ecrasement extends Action {
         if (this.adversary().zone("Terrain").cards.length == 0) {
             return false;
         }
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 return true;
             }
@@ -29,7 +29,7 @@ export class Ecrasement extends Action {
     };
 
     select = () => {
-        if (this.owner == this.system.game.player) {
+        if (this.owner().is_player) {
             this.system.game.use.set(this, Use);
         }
         else {
@@ -52,7 +52,7 @@ export class Ecrasement extends Action {
 
         let value = 0;
 
-        for (const card of this.owner.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && value < card.stat("Vitalité").value()) {
                 value = card.stat("Vitalité").value();
             }

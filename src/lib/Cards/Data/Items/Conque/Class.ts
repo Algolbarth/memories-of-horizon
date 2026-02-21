@@ -14,15 +14,15 @@ export class Conque extends Item {
     };
 
     canUse = () => {
-        if (this.owner.ressource("Or").production >= 5) {
+        if (this.owner().ressource("Or").production >= 5) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner.ressource("Or").decrease(5);
-        this.owner.ressource("Eau").increase(5);
+        this.owner().ressource("Or").decrease(5);
+        this.owner().ressource("Eau").increase(5);
 
         this.move("Défausse");
         this.pose();

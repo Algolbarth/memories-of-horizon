@@ -1,37 +1,38 @@
 <script lang="ts">
+	import type { Game } from "../../../../Game/Game";
 	import Zone from "../../../../Game/Zone.svelte";
 	import type { System } from "../../../../System/Class";
 	import type { Card } from "../../../Class";
 	import { Item } from "../../../Class/Item";
 
 	export let system: System;
+	export let game: Game;
+	export let card: Card;
 
 	let potion_1: Item | undefined;
 	let potion_2: Item | undefined;
 
-	function selectCondition(card: Card) {
-		if (card instanceof Item && card.isFamily("Potion") && (potion_1 == undefined || card != potion_1)) {
+	function selectCondition(target: Card) {
+		if (target instanceof Item && target.isFamily("Potion") && (potion_1 == undefined || target != potion_1)) {
 			return true;
 		}
 		return false;
 	}
 
-	function selectAction_1(card: Card) {
-		potion_1 = card;
+	function selectAction_1(target: Card) {
+		potion_1 = target;
 	}
 
-	function selectAction_2(card: Card) {
-		potion_2 = card;
+	function selectAction_2(target: Card) {
+		potion_2 = target;
 
-		if (system.game && system.game.use.card) {
-			system.game.use.card.useEffect(potion_1, potion_2);
-			system.game.use.reset();
-		}
+		card.useEffect(potion_1, potion_2);
+		game.use.reset();
 	}
 </script>
 
-{#if potion_1 == undefined && system.game && system.game.use.card && system.game.use.card.owner}
-	<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {selectCondition} selectAction={selectAction_1} />
+{#if potion_1 == undefined}
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Inventaire")} {selectCondition} selectAction={selectAction_1} />
 {:else}
 	<button
 		class="square return margin-bottom"
@@ -41,7 +42,6 @@
 	>
 		↩
 	</button>
-	{#if system.game && system.game.use.card && system.game.use.card.owner}
-		<Zone bind:system bind:entity={system.game.use.card.owner} zone={system.game.use.card.owner.zone("Inventaire")} {selectCondition} selectAction={selectAction_2} />
-	{/if}
+
+	<Zone bind:system bind:game entity={card.owner()} zone={card.owner().zone("Inventaire")} {selectCondition} selectAction={selectAction_2} />
 {/if}

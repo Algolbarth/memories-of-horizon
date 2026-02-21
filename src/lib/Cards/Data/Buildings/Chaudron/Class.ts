@@ -16,8 +16,8 @@ export class Chaudron extends Building {
     };
 
     startPhaseEffect = () => {
-        if (this.zone.name == "Terrain") {
-            this.owner.getCard("Mélange").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Mélange").add("Inventaire");
         }
     };
 };

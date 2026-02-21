@@ -54,6 +54,19 @@
 			</div>
 
 			<div class="container">
+				Élément
+				<div>
+					<Dropdown
+						array={system.filter.elements}
+						selected={elementSelect}
+						selecting={function (element: string) {
+							elementSelect = element;
+						}}
+					/>
+				</div>
+			</div>
+
+			<div class="container">
 				Type
 				<div>
 					<Dropdown
@@ -74,19 +87,6 @@
 						selected={familySelect}
 						selecting={function (element: string) {
 							familySelect = element;
-						}}
-					/>
-				</div>
-			</div>
-
-			<div class="container">
-				Élément
-				<div>
-					<Dropdown
-						array={system.filter.elements}
-						selected={elementSelect}
-						selecting={function (element: string) {
-							elementSelect = element;
 						}}
 					/>
 				</div>

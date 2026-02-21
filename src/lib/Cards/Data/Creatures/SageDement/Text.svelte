@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Tant que la pile alliée est vide : augmente de 10 son intelligence.
+Tant que la pile alliée est vide : augmente de 25 son intelligence.

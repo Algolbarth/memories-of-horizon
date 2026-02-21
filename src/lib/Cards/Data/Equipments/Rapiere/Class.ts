@@ -16,7 +16,7 @@ export class Rapiere extends Equipment {
     };
 
     startBattleEffect = () => {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
             this.bearer.stat("Critique").set(100);
         }
     };

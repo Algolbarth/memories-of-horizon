@@ -27,12 +27,12 @@ export class Thon extends Creature {
             }
             return false;
         };
-        this.owner.draw(1, readCondition);
+        this.owner().draw(1, readCondition);
 
-        let battlefield = copy(this.owner.zone("Terrain").cards);
+        let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Poisson")) {
-                this.owner?.ressource("Eau").produce(3);
+                this.owner().ressource("Eau").produce(3);
             }
         }
 
