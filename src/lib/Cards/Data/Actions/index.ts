@@ -73,6 +73,7 @@ export * from './Option';
 export * from './Parade';
 export * from './Pietinement';
 export * from './PluieDeFleche';
+export * from './PluieDeMeteorite';
 export * from './Polissage';
 export * from './Preparation';
 export * from './Rappel';
