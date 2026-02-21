@@ -102,6 +102,7 @@ export * from './MimiqueDeCoffre';
 export * from './MimiqueDeJarre';
 export * from './MinistreOndin';
 export * from './MontureDeChevalier';
+export * from './Mouton';
 export * from './Nain';
 export * from './Negociant';
 export * from './OfficierDArtillerie';
