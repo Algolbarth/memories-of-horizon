@@ -27,6 +27,7 @@ export * from './LacDeLave';
 export * from './LanceurOrbital';
 export * from './Maison';
 export * from './Marche';
+export * from './Memorial';
 export * from './MurDEnceinte';
 export * from './MurDeBrique';
 export * from './MurDeFlammes';
