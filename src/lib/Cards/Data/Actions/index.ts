@@ -12,6 +12,7 @@ export * from './BancDeSardine';
 export * from './Biodiversite';
 export * from './Blocage';
 export * from './Bombardement';
+export * from './Braquage';
 export * from './BriseGarde';
 export * from './BrulageDirige';
 export * from './BucherDesVanites';
