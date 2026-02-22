@@ -101,4 +101,5 @@ export * from './TourneeGenerale';
 export * from './TremblementDeTerre';
 export * from './VagueDeferlante';
 export * from './Vigilance';
+export * from './VolALaTire';
 export * from './Vulnerabilite';

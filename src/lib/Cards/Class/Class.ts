@@ -267,8 +267,8 @@ export class Card {
             this.sellEffect();
         }
 
-        for (const v of this.sale) {
-            this.owner().ressource(v.name).produce(v.value());
+        for (const sale of this.sale) {
+            this.owner().ressource(sale.name).produce(sale.value());
         }
 
         for (const entity of [this.owner(), this.adversary()]) {
