@@ -1,5 +1,6 @@
 export * from './Capitale';
 export * from './ChefLieu';
+export * from './CiteDOr';
 export * from './Foret';
 export * from './Mer';
 export * from './MerDEther';
