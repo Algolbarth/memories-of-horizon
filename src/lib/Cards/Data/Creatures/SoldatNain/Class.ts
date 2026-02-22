@@ -10,7 +10,7 @@ export class SoldatNain extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 18], ["Terre", 18]]);
+        this.init([["Or", 15], ["Terre", 15]]);
 
         this.initFamily(["Nain"]);
 

@@ -80,9 +80,7 @@ Hérisson : créature bête, épine.
 Sécateur : objet, détruit un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
 
 ### Eau
-Thon : créature poisson.
 Saumon : créature poisson.
-Requin : créature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 
 ### Terre

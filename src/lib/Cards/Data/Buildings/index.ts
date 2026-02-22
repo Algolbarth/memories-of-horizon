@@ -1,5 +1,6 @@
 export * from './Alambic';
 export * from './Baliste';
+export * from './Banque';
 export * from './Barricade';
 export * from './BassinDeReproduction';
 export * from './BelierDeCombat';

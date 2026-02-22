@@ -10,9 +10,9 @@ export class Pont extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 30]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

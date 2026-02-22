@@ -4,8 +4,8 @@ import { Action } from '../../../Class/Action';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class PluieDeMeteorite extends Action {
-    name = "Pluie de météorite";
+export class PluieDeMeteorites extends Action {
+    name = "Pluie de météorites";
 
     constructor(system: System) {
         super(system);

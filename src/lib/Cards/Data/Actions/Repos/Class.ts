@@ -10,7 +10,7 @@ export class Repos extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 50]]);
 
         this.text = Text;
     };

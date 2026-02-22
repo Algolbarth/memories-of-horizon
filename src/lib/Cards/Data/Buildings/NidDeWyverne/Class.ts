@@ -10,11 +10,11 @@ export class NidDeWyverne extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 25]]);
 
         this.initFamily(["Wyverne"]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };

@@ -8,9 +8,9 @@ export class FontaineDeBambou extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Eau", 20]]);
+        this.init([["Or", 18], ["Eau", 18]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(10);
 
         this.text = Text;
     };

@@ -8,9 +8,9 @@ export class PuitDeMana extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 20]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };

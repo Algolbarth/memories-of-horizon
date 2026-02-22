@@ -8,9 +8,9 @@ export class SalleDesCoffres extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35]]);
+        this.init([["Or", 40]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.text = Text;
     };
