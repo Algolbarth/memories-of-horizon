@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand le porteur attaque : inflige autant de dégâts à l'unité attaquée que la magie du porteur.

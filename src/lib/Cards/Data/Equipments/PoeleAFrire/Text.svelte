@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand le porteur attaque : inflige 10 dégâts à l'unité attaquée pour chaque objet allié de famille Nourriture dans la défausse.

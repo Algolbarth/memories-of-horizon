@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Au début de la phase de combat : si équipé : remplit la jauge critique du porteur.

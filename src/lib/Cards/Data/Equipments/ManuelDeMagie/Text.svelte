@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand se prépare sur le terrain : si équipé : génère <CardInfo bind:system name={"Incantation"} /> dans l'inventaire.

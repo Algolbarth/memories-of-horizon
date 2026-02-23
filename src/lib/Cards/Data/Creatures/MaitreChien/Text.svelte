@@ -9,6 +9,8 @@
 </script>
 
 Quand posé : génère 2 <CardInfo bind:system name={"Chien"} /> sur le terrain.
+
 <br />
 <br />
+
 Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Chien"} /> sur le terrain.

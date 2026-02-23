@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand le porteur attaque : stocke 5 mana.

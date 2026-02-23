@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand se prépare sur le terrain : si équipé : découvre 1 carte d'élément Terre et produit 10 terre.

@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand une créature alliée de famille Bête périt : augmente de 20 la force du porteur.

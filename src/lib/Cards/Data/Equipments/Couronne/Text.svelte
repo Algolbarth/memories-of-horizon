@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Quand une créature alliée est posée : augmente la constitution et la force de cette créature du même montant que le niveau du porteur.

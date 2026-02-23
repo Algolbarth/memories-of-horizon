@@ -66,6 +66,7 @@ export * from './LanceDePlatine';
 export * from './LanceIncendiaire';
 export * from './ManteauDEsquive';
 export * from './ManuelDeMagie';
+export * from './MasqueDePlongee';
 export * from './MasseDeFer';
 export * from './MasseDePierre';
 export * from './MasseDePlatine';

@@ -9,6 +9,8 @@
 </script>
 
 S'équipe à une créature alliée sur le terrain.
+
 <br />
 <br />
+
 Augmente la résistance du porteur de 10 fois la protection de cette créature.
