@@ -268,11 +268,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	button.desactivate {
-		background: transparent;
-		color: var(--desactivate);
-	}
-
 	#view {
 		position: fixed;
 		top: 0;

@@ -12,9 +12,9 @@ With 12 elements, you can combine all the cards to create ultimate synergies.
 
 Download release files here :
 
-### [🪟 For Windows](https://github.com/Algolbarth/memories-of-horizon/release/windows/memories-of-horizon.exe)
+### [🪟 For Windows](https://github.com/Algolbarth/memories-of-horizon/blob/main/release/windows)
 
-### [🐧 For Linux](https://github.com/Algolbarth/memories-of-horizon/release/linux/memories-of-horizon)
+### [🐧 For Linux](https://github.com/Algolbarth/memories-of-horizon/blob/main/release/linux)
 
 **Note:** Audio files are not supported by Tauri on Linux at this time, so music is disabled in this version.
 
@@ -57,7 +57,7 @@ Check is Deno is properly installed :
 deno --version
 ```
 
-### [Tauri](https://github.com/tauri-apps/tauri)
+### [🟡​🔵​ Tauri](https://github.com/tauri-apps/tauri)
 
 Install Tauri requirements using shell :
 ```

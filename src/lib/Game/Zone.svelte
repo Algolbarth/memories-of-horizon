@@ -77,6 +77,7 @@
 					{#if entity.is_player && selectAction == undefined && system.game.phase == "Préparation"}
 						-
 						<button
+							class="active"
 							on:click={() => {
 								entity.lock();
 								system = system;

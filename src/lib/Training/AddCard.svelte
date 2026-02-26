@@ -113,6 +113,7 @@
 						<div style="text-align:right;">
 							{#if zone.size == undefined || zone.size > zone.cards.length}
 								<button
+									class="active"
 									on:click={() => {
 										zone.cards.push(card.name);
 										system = system;
@@ -120,6 +121,8 @@
 								>
 									Ajouter
 								</button>
+							{:else}
+								<button class="desactivate">Ajouter</button>
 							{/if}
 						</div>
 					</div>

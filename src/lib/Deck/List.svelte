@@ -85,6 +85,7 @@
 
 				<div style="text-align:right">
 					<button
+						class="active arrow"
 						on:click={() => {
 							system.deck = deck;
 							system.view.reset();
@@ -101,6 +102,7 @@
 					{#if mode == "Libre"}
 						{#if i > 0}
 							<button
+								class="active arrow"
 								on:click={() => {
 									let temp = system.wild_decks[i - 1];
 									system.wild_decks[i - 1] = deck;
@@ -110,10 +112,11 @@
 								&#9650
 							</button>
 						{:else}
-							<button class="useless">&#9650</button>
+							<button class="desactivate">&#9650</button>
 						{/if}
 						{#if i < system.wild_decks.length - 1}
 							<button
+								class="active arrow"
 								on:click={() => {
 									let temp = system.wild_decks[i + 1];
 									system.wild_decks[i + 1] = deck;
@@ -123,7 +126,7 @@
 								&#9660
 							</button>
 						{:else}
-							<button class="useless">&#9660</button>
+							<button class="desactivate">&#9660</button>
 						{/if}
 					{/if}
 				</div>
@@ -155,8 +158,12 @@
 		background-color: var(--deck_preview_hover);
 	}
 
-	.useless {
-		color: lightgrey;
+	button.arrow {
+		color: var(--link_hover);
+	}
+
+	button.arrow:hover {
+		color: rgba(255, 255, 0, 1);
 	}
 
 	#view {

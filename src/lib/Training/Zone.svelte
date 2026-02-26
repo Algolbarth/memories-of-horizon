@@ -112,6 +112,7 @@
 
 					{#if i > 0}
 						<button
+							class="active"
 							on:click={() => {
 								let temp = zone.cards[i - 1];
 								zone.cards[i - 1] = card;
@@ -121,10 +122,11 @@
 							&#9650
 						</button>
 					{:else}
-						<button class="useless">&#9650</button>
+						<button class="desactivate">&#9650</button>
 					{/if}
 					{#if i < zone.cards.length - 1}
 						<button
+							class="active"
 							on:click={() => {
 								let temp = zone.cards[i + 1];
 								zone.cards[i + 1] = card;
@@ -134,13 +136,14 @@
 							&#9660
 						</button>
 					{:else}
-						<button class="useless">&#9660</button>
+						<button class="desactivate">&#9660</button>
 					{/if}
 				</div>
 			{:else}
 				<div>
 					{#if i > 0}
 						<button
+							class="active"
 							on:click={() => {
 								let temp = zone.cards[i - 1];
 								zone.cards[i - 1] = card;
@@ -150,10 +153,11 @@
 							&#9650
 						</button>
 					{:else}
-						<button class="useless">&#9650</button>
+						<button class="desactivate">&#9650</button>
 					{/if}
 					{#if i < zone.cards.length - 1}
 						<button
+							class="active"
 							on:click={() => {
 								let temp = zone.cards[i + 1];
 								zone.cards[i + 1] = card;
@@ -163,7 +167,7 @@
 							&#9660
 						</button>
 					{:else}
-						<button class="useless">&#9660</button>
+						<button class="desactivate">&#9660</button>
 					{/if}
 
 					{#if zone.name != "Région" || zone.cards.length > 1}
@@ -228,9 +232,5 @@
 
 	.remove:hover {
 		color: var(--close);
-	}
-
-	button.useless {
-		color: white;
 	}
 </style>

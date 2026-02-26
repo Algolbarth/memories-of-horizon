@@ -84,17 +84,8 @@ button.menu:hover {
 }
 
 button.desactivate {
-  background: var(--desactivate);
-  background-image: var(--grayish-effect);
-  background-blend-mode: overlay, soft-light, soft-light, normal;
-
-  color: white;
-
-  border-color: black;
-}
-
-button.desactivate:hover {
-  background: var(--desactivate_hover);
+  color: black;
+  cursor: url('/Pictures/Hand.cur'), default;
 }
 
 button.square {

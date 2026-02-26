@@ -163,11 +163,6 @@
 		background-color: var(--attacker_hover);
 	}
 
-	button.desactivate {
-		background: transparent;
-		color: var(--desactivate);
-	}
-
 	#infos {
 		text-align: left;
 	}
