@@ -99,8 +99,8 @@
 					{/if}
 				{/if}
 
-				{#if card.isArea("Inventaire") || (card.isArea("Terrain") && card instanceof Creature)}
-					{#if card.emplacement() > 0}
+				{#if card.isArea("Inventaire") || card.isArea("Terrain")}
+					{#if card.emplacement() > 0 && card instanceof Creature}
 						<button
 							class="active"
 							on:click={() => {
@@ -114,7 +114,7 @@
 						<button class="desactivate">&#9650</button>
 					{/if}
 
-					{#if card.emplacement() < card.area().cards.length - 1}
+					{#if card.emplacement() < card.area().cards.length - 1 && card instanceof Creature}
 						<button
 							class="active"
 							on:click={() => {

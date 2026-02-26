@@ -26,6 +26,7 @@ export * from './FioleDeVerre';
 export * from './FlecheEnBois';
 export * from './HerbesCuratives';
 export * from './HerbesMedicinales';
+export * from './Laine';
 export * from './Lait';
 export * from './Livre';
 export * from './LivreDeRecette';
