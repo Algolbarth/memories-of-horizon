@@ -69,6 +69,7 @@
 		background-image: var(--rock);
 		color: white;
 		border: solid;
+		border-width: 0.3vmin;
 		border-color: black;
 	}
 
@@ -91,7 +92,7 @@
 		border: solid;
 		border-color: black;
 		z-index: 1;
-		margin-top: 1.75em;
+		margin-top: 1.5em;
 	}
 
 	button {

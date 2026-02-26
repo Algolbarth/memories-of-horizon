@@ -87,7 +87,7 @@
 		padding: 0.75em;
 
 		border: solid;
-		border-width: 5px;
+		border-width: 0.5vmin;
 
 		text-align: center;
 	}

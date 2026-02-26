@@ -101,7 +101,7 @@
 
 		border: solid;
 		border-color: black;
-		border-width: 2px;
+		border-width: 0.2vmin;
 		border-radius: 5px;
 
 		background-image: var(--paper);

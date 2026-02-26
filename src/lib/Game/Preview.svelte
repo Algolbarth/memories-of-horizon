@@ -15,7 +15,7 @@
 <div class={(card.owner().is_player || selectAction != undefined ? "container " : "") + (card == game.fighter ? "attacker " : "") + "preview"}>
 	<div id={card.owner().is_player || selectAction != undefined ? "infos" : ""}>
 		{#if card.locked}
-			<img src="/assets/Pictures/lock.svg" alt="locked" class="locked" />
+			<img src="/Pictures/lock.svg" alt="locked" class="locked" />
 		{/if}
 		{#if !card.cache}
 			<button

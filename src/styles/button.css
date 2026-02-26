@@ -1,0 +1,223 @@
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  color: inherit;
+
+  padding: 0.6em 1.2em;
+  margin: 0.25em 0 0.25em 0;
+  box-sizing: border-box;
+
+  border: 0.25vmin solid;
+
+  cursor: url('/Pictures/Select.cur'), pointer;
+  background: var(--hover);
+  transition: border-color 0.25s;
+}
+
+button {
+  text-align: left;
+  font-weight: bold;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  background-color: transparent;
+}
+
+button:hover {
+  color: var(--link_hover);
+}
+
+button.big {
+  transition: background-color var(--delay) ease-in-out;
+
+  text-align: center;
+  color: white;
+
+  padding: 1em;
+  margin: 0.25em 0 0.25em 0;
+
+  border: solid;
+  border-width: 0.4vmin;
+  border-color: var(--dropdown_border) black black var(--dropdown_border);
+
+  background-color: var(--dropdown);
+  background-image: var(--rock);
+}
+
+button.big:hover {
+  transition: background-color var(--delay_hover) ease-in-out;
+
+  background-color: var(--dropdown_hover);
+  color: gold;
+
+  border-color: black var(--dropdown_border) var(--dropdown_border) black;
+}
+
+button.menu {
+  font-family: NightmarePills;
+  font-size: 3vmin;
+  color: black;
+
+  margin: 0;
+  width: 15vw;
+  padding: 0.75em;
+
+  border-color: var(--menu_border) black black var(--menu_border);
+
+  background-color: var(--menu);
+  background-image: var(--metal);
+  background-blend-mode: overlay, soft-light, soft-light, normal;
+}
+
+button.menu:hover {
+  color: black;
+
+  border-color: black var(--menu_border) var(--menu_border) black;
+
+  background-color: var(--menu_hover);
+}
+
+button.desactivate {
+  background: var(--desactivate);
+  background-image: var(--grayish-effect);
+  background-blend-mode: overlay, soft-light, soft-light, normal;
+
+  color: white;
+
+  border-color: black;
+}
+
+button.desactivate:hover {
+  background: var(--desactivate_hover);
+}
+
+button.square {
+  transition: all var(--delay_hover) ease-in-out;
+
+  text-align: center;
+  font-weight: bold;
+  color: white;
+
+  width: 2.5em;
+  height: 2.5em;
+
+  background-image: var(--metal);
+
+  border: solid;
+  border-width: 0.4vmin;
+  border-color: white;
+}
+
+button.square:hover {
+  transition: all var(--delay_hover) ease-in-out;
+
+  background-image: var(--metal);
+}
+
+button.close {
+  background-color: var(--close);
+
+  border-color: var(--close) black black var(--close);
+}
+
+button.close:hover {
+  background-color: var(--close_hover);
+
+  border-color: black var(--close) var(--close) black;
+}
+
+button.seal {
+  background-image: none;
+
+  border-style: double;
+  border-color: var(--close_hover);
+  border-width: 0.3em;
+  border-radius: 50%;
+
+  margin-top: -0.5vmin;
+}
+
+button.seal:hover {
+  border-style: double;
+  border-color: black;
+}
+
+button.return {
+  background-color: var(--return);
+
+  border-color: var(--return) black black var(--return);
+
+  transform: translate(0, 2px);
+  margin-top: -2px;
+}
+
+button.return:hover {
+  background-color: var(--return_hover);
+
+  border-color: black var(--return) var(--return) black;
+}
+
+button.active {
+  color: var(--active);
+}
+
+button.active:hover {
+  color: var(--active_hover);
+}
+
+button.taskbar {
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: black;
+
+  padding: 0.5em;
+
+  height: 2.5em;
+
+  background-image: var(--metal);
+}
+
+button.taskbar:hover {
+  color: white;
+}
+
+button.choice {
+  transition: all var(--delay) ease-in-out;
+
+  min-width: 15vw;
+  width: 100%;
+
+  color: black;
+
+  background-color: var(--choice);
+  background-image: var(--metal);
+
+  border-width: 0.5vmin;
+  border-color: var(--choice_border) black black var(--choice_border);
+}
+
+button.choice:hover {
+  background-color: var(--choice_hover);
+
+  border-color: black var(--choice_border) var(--choice_border) black;
+
+  transition: all var(--delay_hover) ease-in-out;
+}
+
+button.text {
+  cursor: url('/Pictures/Hand.cur'), default;
+}
+
+button.text:hover {
+  color: black;
+}
+
+button.margin-bottom {
+  margin-bottom: 1em;
+}

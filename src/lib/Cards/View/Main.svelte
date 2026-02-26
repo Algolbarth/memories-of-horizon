@@ -83,16 +83,21 @@
 
 	#shadow::before {
 		content: "";
+
 		position: absolute;
 		z-index: -1;
+
 		width: 40vw;
 		height: 90vh;
+
 		border: solid;
-		border-width: 10px;
+		border-width: 0.75vmin;
 		border-radius: 20px;
+
 		box-shadow: 0px 15px 15px rgba(0, 0, 0, 1);
 		opacity: 0;
-		transition: opacity 1s ease-in-out;
+
+		transition: opacity 0.5s ease-in-out;
 	}
 
 	#shadow:hover::before {
@@ -103,14 +108,17 @@
 	#body {
 		position: relative;
 		display: inline-block;
+
 		border: solid;
-		border-width: 10px;
+		border-width: 1vmin;
 		border-radius: 20px;
+
 		width: 100%;
 		height: 100%;
+
 		background-color: var(--card);
 		background-image: var(--paper);
-		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
+		box-shadow: 0 0.2vmin 0.2vmin rgba(0, 0, 0, 1);
 		transition: all 0.5s ease-in-out;
 	}
 

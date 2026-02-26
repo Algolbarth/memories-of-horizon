@@ -1,5 +1,5 @@
 <button class="text">
-    <img src="/assets/Pictures/NewLogo.png" alt="Logo" class="logo" />
+    <img src="/Pictures/Logo.png" alt="Logo" class="logo" />
 </button>
 
 <br />

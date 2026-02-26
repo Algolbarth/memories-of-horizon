@@ -15,6 +15,7 @@
 			Jouer
 		</button>
 	</div>
+
 	<div id="credits">
 		by
 		<button
@@ -27,7 +28,7 @@
 		-
 		<button
 			on:click={() => {
-				window.open("https://github.com/Algolbarth/MoH");
+				window.open("https://github.com/Algolbarth/memories-of-horizon");
 			}}
 		>
 			Github Repository
@@ -43,7 +44,7 @@
 
 		<br />
 
-		version {PKG.version} - 2025
+		version {PKG.version} - 2026
 	</div>
 </div>
 

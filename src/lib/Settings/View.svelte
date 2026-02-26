@@ -11,7 +11,7 @@
 		}
 	}
 
-	let delay = 5 - system.settings.auto_speed / 500;
+	let delay: number = 5 - system.settings.auto_speed / 500;
 </script>
 
 <div class="taskbar">

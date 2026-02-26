@@ -146,7 +146,7 @@
 		background: var(--zone);
 		background-image: var(--asfalt);
 		border: solid;
-		border-width: 5px;
+		border-width: 0.5vmin;
 		text-align: center;
 	}
 
@@ -157,7 +157,7 @@
 	.container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		padding-bottom: 10px;
+		padding-bottom: 1vmin;
 	}
 
 	.checkboxes {

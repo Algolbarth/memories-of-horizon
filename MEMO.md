@@ -1,0 +1,59 @@
+produit X ressource => X
+stocke X ressource => 3X/2
+augmente la production d'une ressource de X => 5X
+diminue le cout d'une carte de X => X
+augmente la vente d'une carte de X => X/2
+
+pioche X cartes => 2X
+pioche une carte avec une condition => 3X
+découvre X cartes => 5X
+découvre X cartes avec une condition => 8X
+génère X carte dans la boutique => 3X
+actualiser la pile => 10
+X quand la pile est actualisé => 5X
+Remplir la pile => 10 cartes
+Augmente la taille d'une zone de X => 50X
+
+X Force => X/2
+X Vitalité => X/2
+X Constitution (pour une créature) => 3X/2
+X Constitution (pour un bâtiment) => X/2
+X Force + X Constitution (pour une créature) => X
+X Régénération => 3X/2
+X Adresse => X
+X Intensité => 20X
+X Magie => 2X
+X Esquive => 20X
+Augmente jusqu'à X la Garde => X/2
+X Protection => 10X
+X Endurance => X
+X Résistance => X
+X Vitesse => 10X
+X Agilité => 25X
+X Maitrise => 25X
+X Percée => X/4
+X Intelligence => 5X
+X Initiative => 5X
+X Poison => X
+X Toxicité => 3X/2
+X Brûlure => 3X/2
+X Épine => 5X/2
+
+Inflige X dégâts => X/2
+Soigne X blessures  => X/2
+Remplit la jauge critique => 25
+
+X sur toutes les créatures/cartes alliées dans une zone => 10X
+X sur toutes les créatures/cartes dans une zone => 20X
+
+X à chaque étape de préparation => 2X
+X à chaque étape de combat => 2X
+X à chaque round => 3X
+X à chaque action/attaque => 4X
+
+X pendant ce tour => X/2
+X pendant ce round => X/3
+
+X choix parmis de effets de coût Y => Y + (XY/10)
+
+résolution d'un effet coutant X => 2X

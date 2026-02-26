@@ -95,7 +95,7 @@
 		padding: 1vw;
 
 		border: solid;
-		border-width: 5px;
+		border-width: 0.5vmin;
 	}
 
 	div.options {
