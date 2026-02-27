@@ -15,10 +15,26 @@ export class Music {
 
     init() {
         let mtg_arena = new Album("MTG Arena Soundtrack", "mtg-arena");
-        mtg_arena.add("1");
-        mtg_arena.add("2");
-        mtg_arena.add("3");
-        mtg_arena.add("4");
+        mtg_arena.add("Azorius");
+        mtg_arena.add("Boros");
+        mtg_arena.add("Rakdos");
+        mtg_arena.add("Throne of Eldraine");
+        mtg_arena.add("Ikoria 1");
+        mtg_arena.add("Ikoria 2");
+        mtg_arena.add("Ikoria 3");
+        mtg_arena.add("Ixalan 1");
+        mtg_arena.add("Ixalan 2");
+        mtg_arena.add("Ixalan 3");
+        mtg_arena.add("War of the Spark 1");
+        mtg_arena.add("War of the Spark 2");
+        mtg_arena.add("War of the Spark 3");
+        mtg_arena.add("Midnight Hunt 1");
+        mtg_arena.add("Midnight Hunt 2");
+        mtg_arena.add("Crimson Vow 1");
+        mtg_arena.add("Crimson Vow 2");
+        mtg_arena.add("All Will Be One 1");
+        mtg_arena.add("All Will Be One 2");
+        mtg_arena.add("Kaldheim");
         this.albums.push(mtg_arena);
 
         for (const album of this.albums) {
