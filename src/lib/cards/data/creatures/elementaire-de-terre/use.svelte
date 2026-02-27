@@ -1,0 +1,57 @@
+<script lang="ts">
+	import type { Game } from "../../../../game/game";
+	import Zone from "../../../../game/zone.svelte";
+	import type { System } from "../../../../system/class";
+	import type { Card } from "../../../class";
+
+	export let system: System;
+	export let game: Game;
+	export let card: Card;
+
+	let choice: string | undefined = undefined;
+
+	function selectCondition(target: Card) {
+		return true;
+	}
+
+	function selectAction(target: Card | undefined) {
+		card.useEffect(choice, target);
+		game.use.reset();
+	}
+</script>
+
+{#if choice == undefined}
+	<div class="center" style="text-align:center">
+		<button
+			class="big choice"
+			on:click={() => {
+				choice = "creature";
+				selectAction(undefined);
+			}}
+		>
+			Se place sur le terrain
+		</button>
+
+		<br />
+
+		<button
+			class="big choice"
+			on:click={() => {
+				choice = "effect";
+			}}
+		>
+			Se détruit pour infliger 30 dégâts à une unité adverse sur le terrain
+		</button>
+	</div>
+{:else}
+	<button
+		class="square return margin-bottom"
+		on:click={() => {
+			choice = undefined;
+		}}
+	>
+		↩
+	</button>
+
+	<Zone bind:system bind:game entity={card.adversary()} zone={card.adversary().zone("Terrain")} {selectCondition} {selectAction} />
+{/if}

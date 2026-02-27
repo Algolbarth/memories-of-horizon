@@ -12,7 +12,7 @@ button {
 
   border: 0.25vmin solid;
 
-  cursor: url('/Pictures/Select.cur'), pointer;
+  cursor: url('/pictures/select.cur'), pointer;
   background: var(--hover);
   transition: border-color 0.25s;
 }
@@ -85,7 +85,7 @@ button.menu:hover {
 
 button.desactivate {
   color: black;
-  cursor: url('/Pictures/Hand.cur'), default;
+  cursor: url('/pictures/hand.cur'), default;
 }
 
 button.square {
@@ -202,7 +202,7 @@ button.choice:hover {
 }
 
 button.text {
-  cursor: url('/Pictures/Hand.cur'), default;
+  cursor: url('/pictures/hand.cur'), default;
 }
 
 button.text:hover {

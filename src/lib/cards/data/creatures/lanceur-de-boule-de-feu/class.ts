@@ -1,0 +1,27 @@
+import type { System } from '../../../../system/class';
+import { Creature } from '../../../class/creature';
+import Text from './text.svelte';
+
+export class LanceurDeBouleDeFeu extends Creature {
+    name = "Lanceur de boule de feu";
+
+    constructor(system: System) {
+        super(system);
+
+        this.init([["Or", 20], ["Feu", 20]]);
+
+        this.initFamily(["Gobelin"]);
+
+        this.stat("Constitution").init(3);
+        this.stat("Force").init(10);
+        this.stat("Magie").init(15);
+
+        this.text = Text;
+    };
+
+    startPhaseEffect = () => {
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Boule de feu").add("Pile");
+        }
+    };
+};

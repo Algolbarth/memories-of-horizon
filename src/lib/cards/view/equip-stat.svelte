@@ -1,0 +1,37 @@
+<script lang="ts">
+	import type { Equipment } from "../class/equipment";
+
+	export let card: Equipment;
+</script>
+
+<div class="box">
+	<span class="box_title">Statistiques d'équipement</span>
+
+	<br />
+
+	<div class="container">
+		{#each card.equipStats as stat}
+			{#if stat.display()}
+				<div class="row">
+					<div>
+						{stat.name}
+					</div>
+					<div>
+						{stat.value()}
+					</div>
+				</div>
+			{/if}
+		{/each}
+	</div>
+</div>
+
+<style>
+	div.container {
+		display: grid;
+	}
+
+	div.row {
+		display: grid;
+		grid-template-columns: 12em 4fr;
+	}
+</style>

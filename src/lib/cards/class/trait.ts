@@ -1,0 +1,41 @@
+import type { Card } from "./class";
+import { Creature } from "./creature";
+
+export class Trait {
+    name: string;
+    base: boolean;
+    add: boolean = false;
+    turn: boolean = false;
+    round: boolean = false;
+    card: Card;
+
+    constructor(name: string, value: boolean, card: Card) {
+        this.name = name;
+        this.base = value;
+        this.card = card;
+    };
+
+    value = () => {
+        let total = this.base || this.add || this.turn || this.round;
+
+        if (this.card instanceof Creature) {
+            for (const equipment of this.card.equipments) {
+                total = total || equipment.equipTrait(this.name).value();
+            }
+        }
+
+        return total;
+    };
+
+    display = () => {
+        return this.condition();
+    };
+
+    condition = () => {
+        return this.value();
+    };
+
+    init = (value: boolean) => {
+        this.base = value;
+    };
+};

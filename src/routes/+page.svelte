@@ -1,10 +1,11 @@
 <script lang="ts">
-  import Root from "../lib/Root/Page.svelte";
-  import { System } from "../lib/System/Class";
+  import Root from "../lib/root/page.svelte";
+  import { System } from "../lib/system/class";
   import "../styles/app.css";
   import "../styles/div.css";
   import "../styles/button.css";
   import "../styles/input.css";
+  import { onDestroy } from "svelte";
 
   let system: System = new System();
   system.importCards();
@@ -26,6 +27,10 @@
   };
 
   setInterval(timeHandler, 1000);
+
+  onDestroy(() => {
+    system.music.stop();
+  });
 </script>
 
 <div class="window">

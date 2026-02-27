@@ -1,0 +1,17 @@
+<script lang="ts">
+	import type { System } from "../../../../system/class";
+	import type { Card } from "../../../class";
+
+	// svelte-ignore export_let_unused
+	export let system: System;
+	export let card: Card;
+</script>
+
+Soigne 2 blessures à une créature alliée sur le terrain pour chaque valeur d'infusion.
+
+<br />
+<br />
+
+<span class="details">
+	Soigne {card.stat("Infusion").value() * 2} blessures à une créature alliée sur le terrain.
+</span>

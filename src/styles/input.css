@@ -124,7 +124,7 @@ input[type="range"] {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
 
-  cursor: url("/Pictures/Select.cur"), pointer;
+  cursor: url("/pictures/select.cur"), pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -140,7 +140,7 @@ input[type="range"]::-webkit-slider-thumb {
 
   background: var(--link_hover);
 
-  cursor: url("/Pictures/Select.cur"), pointer;
+  cursor: url("/pictures/select.cur"), pointer;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -155,7 +155,7 @@ input[type="range"]::-moz-range-thumb {
   border-color: black;
   border-radius: 50%;
 
-  cursor: url("/Pictures/Select.cur"), pointer;
+  cursor: url("/pictures/select.cur"), pointer;
 }
 
 input[type=file] {
@@ -188,5 +188,5 @@ input::-webkit-inner-spin-button {
 }
 
 label {
-  cursor: url('/Pictures/Select.cur'), pointer;
+  cursor: url('/pictures/select.cur'), pointer;
 }

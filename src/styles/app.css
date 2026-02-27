@@ -2,7 +2,7 @@
   font-family: 'NightmarePills';
   font-style: normal;
   font-weight: 400;
-  src: url('/Font/NightmarePills-BV2w.ttf');
+  src: url('/font/nightmarepills.ttf');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Morris';
   font-style: normal;
   font-weight: 400;
-  src: url('/Font/morris-roman.black.ttf');
+  src: url('/font/morris-roman.black.ttf');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -29,7 +29,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  cursor: url('/Pictures/Hand.cur'), default;
+  cursor: url('/pictures/hand.cur'), default;
 
   --link_hover: rgba(255, 215, 0, 1);
 
@@ -90,14 +90,14 @@
   --prime_effect: rgb(255, 255, 0);
   --source_effect: rgb(21, 21, 201);
 
-  --asfalt: url(/Textures/asfalt-light.png);
-  --grunge: url(/Textures/bedge-grunge.png);
-  --scroll: url(/Textures/black-paper.png);
-  --paper: url(/Textures/natural-paper.png);
-  --metal: url(/Textures/brushed-alum.png);
-  --rock: url(/Textures/rocky-wall.png);
-  --leather: url(/Textures/leather.png);
-  --wood: url(/Textures/wood.png);
+  --asfalt: url(/textures/asfalt-light.png);
+  --grunge: url(/textures/bedge-grunge.png);
+  --scroll: url(/textures/black-paper.png);
+  --paper: url(/textures/natural-paper.png);
+  --metal: url(/textures/brushed-alum.png);
+  --rock: url(/textures/rocky-wall.png);
+  --leather: url(/textures/leather.png);
+  --wood: url(/textures/wood.png);
 
   --delay: 1s;
   --delay_hover: 0.1s;
