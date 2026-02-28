@@ -13,6 +13,7 @@ export * from './barde';
 export * from './barriere-de-corail';
 export * from './bonhomme-biscuit';
 export * from './bouffon';
+export * from './boxeur';
 export * from './brochet';
 export * from './bucheron';
 export * from './bulette';
