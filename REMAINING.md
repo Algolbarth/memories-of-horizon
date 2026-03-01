@@ -43,8 +43,6 @@ Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteur
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
 Dague magique : objet équipement, s'équipe à une créature alliée sur le terrain OU produis X mana.
-Louve : créature bête, Quand périt : génère 2 Louveteau sur le terrain. 8/5.
-Louveteau : créature bête, 5/3.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
 Gladiateur : créature humain.
