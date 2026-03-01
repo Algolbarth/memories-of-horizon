@@ -94,6 +94,7 @@ export * from './savoir-interdit';
 export * from './souffle-enflamme';
 export * from './spores';
 export * from './sprint';
+export * from './surchauffe';
 export * from './tenacite';
 export * from './tir-de-canon';
 export * from './tir-en-pleine-tete';
