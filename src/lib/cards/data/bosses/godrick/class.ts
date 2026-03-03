@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Boss } from '../../../class/boss';
+import type { System } from '$lib/system/class';
+import { Boss } from '$lib/cards/class/boss';
 
 export class Godrick extends Boss {
     name = "Godrick, roi des rois";

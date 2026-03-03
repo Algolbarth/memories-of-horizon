@@ -1,7 +1,8 @@
-import type { System } from '../../system/class';
-import { Card, Unit } from '.';
+import type { System } from '$lib/system/class';
+import { Card } from './class';
+import { Unit } from './unit';
 import type { Equipment } from './equipment';
-import { copy } from '../../utils';
+import { copy } from '$lib/utils';
 
 export class Creature extends Unit {
     type = "Créature";

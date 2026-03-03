@@ -1,4 +1,4 @@
-import type { System } from "../../system/class";
+import type { System } from "$lib/system/class";
 import Use from '../utils/druid-use.svelte';
 import { Creature } from "./creature";
 

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CardInfo from "../../../utils/card-info.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Quand une carte alliée de famille Sort est posée : génère un <CardInfo bind:system name={"Élémentaire de caillou"} /> dans l'inventaire.
+Quand une carte alliée de famille Sort est posée : si sur le terrain : génère un <CardInfo bind:system name={"Élémentaire de caillou"} /> dans votre inventaire.

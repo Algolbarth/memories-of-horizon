@@ -1,4 +1,4 @@
-import { deleteDuplicate } from "../../utils";
+import { deleteDuplicate } from "$lib/utils";
 import type { Card } from "./class";
 import { Creature } from "./creature";
 

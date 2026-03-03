@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import Satiety from "../../../utils/satiety.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import Satiety from "$lib/cards/utils/satiety.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -9,6 +9,6 @@
 	export let card: Card;
 </script>
 
-Soigne 25 blessures à une créature alliée sur le terrain.
+Soigne 25 blessures à une créature sur votre terrain.
 
 <Satiety bind:system bind:card text={"augmente son épine de 5 à la place."} />

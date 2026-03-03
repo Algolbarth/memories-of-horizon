@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Détruit la créature adverse sur le terrain ayant la vitalité la plus haute.
+Détruit la créature sur le terrain adverse ayant la vitalité la plus haute.

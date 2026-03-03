@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Spell } from '../../../class/spell';
+import type { System } from '$lib/system/class';
+import { Spell } from '$lib/cards/class/spell';
 import Text from './text.svelte';
 import Use from './use.svelte';
 

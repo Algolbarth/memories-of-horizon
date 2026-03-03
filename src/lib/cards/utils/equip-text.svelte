@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { System } from "../../system/class";
+	import type { System } from "$lib/system/class";
 	import type { Card } from "../class/class";
 
 	// svelte-ignore export_let_unused
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-S'équipe à une créature alliée sur le terrain.
+S'équipe à une créature sur votre terrain.

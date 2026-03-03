@@ -1,9 +1,9 @@
-import type { System } from '../../../../system/class';
-import { Equipment } from '../../../class/equipment';
+import type { System } from '$lib/system/class';
+import { Equipment } from '$lib/cards/class/equipment';
 import Text from './text.svelte';
 
-export class BaguetteMalefique extends Equipment {
-    name = "Baguette maléfique";
+export class BaguetteDeMaleficience extends Equipment {
+    name = "Baguette de maléficience";
 
     constructor(system: System) {
         super(system);

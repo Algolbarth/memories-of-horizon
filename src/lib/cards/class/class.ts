@@ -2,11 +2,11 @@ import { Stat } from "./stat";
 import { Trait } from "./trait";
 import { Elements } from "./element";
 import { Cost } from "./cost";
-import { copy } from "../../utils";
+import { copy } from "$lib/utils";
 import { Families } from "./family";
-import type { System } from "../../system/class";
-import { Entity } from "../../game/entity";
-import { Zone } from "../../game/zone";
+import type { System } from "$lib/system/class";
+import { Entity } from "$lib/game/entity";
+import { Zone } from "$lib/game/zone";
 import type { Unit } from "./unit";
 
 export class Card {

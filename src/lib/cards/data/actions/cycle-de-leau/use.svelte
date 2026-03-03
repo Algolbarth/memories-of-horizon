@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { Game } from "$lib/game/class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -21,7 +21,7 @@
 			selectAction("Pile");
 		}}
 	>
-		Augmente de 1 la taille de la pile alliée.
+		Augmente de 1 la taille de votre pile.
 	</button>
 
 	<br />
@@ -32,7 +32,7 @@
 			selectAction("Inventaire");
 		}}
 	>
-		Augmente de 1 la taille de l'inventaire allié.
+		Augmente de 1 la taille de votre inventaire.
 	</button>
 
 	<br />
@@ -43,6 +43,6 @@
 			selectAction("Terrain");
 		}}
 	>
-		Augmente de 1 la taille du terrain allié.
+		Augmente de 1 la taille de votre terrain.
 	</button>
 </div>

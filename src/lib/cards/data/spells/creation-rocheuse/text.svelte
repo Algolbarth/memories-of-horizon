@@ -1,8 +1,8 @@
 <script lang="ts">
-	import CardInfo from "../../../utils/card-info.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import Sorcery from "../../../utils/sorcery.svelte";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import Sorcery from "$lib/cards/utils/sorcery.svelte";
 
 	export let system: System;
 	export let card: Card;
@@ -11,10 +11,10 @@
 Au choix :
 <ul>
 	<li>
-		Génère un <CardInfo bind:system name={"Élémentaire de roche"} /> sur le terrain.
+		Génère un <CardInfo bind:system name={"Élémentaire de roche"} /> sur votre terrain.
 	</li>
 	<li>
-		Créé un <CardInfo bind:system name={"Mur de roche"} /> sur le terrain.
+		Génère un <CardInfo bind:system name={"Mur de roche"} /> sur votre terrain.
 	</li>
 </ul>
 

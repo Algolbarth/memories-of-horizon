@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { Game } from "$lib/game/class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -32,6 +32,6 @@
 			selectAction("damage");
 		}}
 	>
-		Inflige 20 dégâts à toues les unités adverses sur le terrain
+		Inflige 20 dégâts à toues les unités sur le terrain adverse
 	</button>
 </div>

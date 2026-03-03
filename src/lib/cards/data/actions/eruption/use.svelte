@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	export let system: System;
 	export let game: Game;

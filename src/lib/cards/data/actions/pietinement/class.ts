@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import { Action } from '../../../class/action';
-import { Creature } from '../../../class/creature';
+import type { System } from '$lib/system/class';
+import { Action } from '$lib/cards/class/action';
+import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 
 export class Pietinement extends Action {

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige à une unité adverse sur le terrain autant de dégâts que la vitalité la plus haute parmi les créatures alliées sur le terrain.
+Inflige à une unité sur le terrain adverse autant de dégâts que la vitalité la plus haute parmi les créatures sur votre terrain.

@@ -1,5 +1,5 @@
-import type { System } from '../../system/class';
-import { copy } from '../../utils';
+import type { System } from '$lib/system/class';
+import { copy } from '$lib/utils';
 import type { Creature } from './creature';
 import { Card } from './class';
 

@@ -1,5 +1,5 @@
 import { Deck } from "../deck/class";
-import type { Game } from "../game/game";
+import type { Game } from "../game/class";
 import type { System } from "../system/class";
 
 export class Chapter {

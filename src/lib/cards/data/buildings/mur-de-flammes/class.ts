@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Building } from '../../../class/building';
+import type { System } from '$lib/system/class';
+import { Building } from '$lib/cards/class/building';
 
 export class MurDeFlammes extends Building {
     name = "Mur de flammes";

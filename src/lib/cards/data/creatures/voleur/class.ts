@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Creature } from '../../../class/creature';
+import type { System } from '$lib/system/class';
+import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 
 export class Voleur extends Creature {
@@ -8,7 +8,7 @@ export class Voleur extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 15]]);
 
         this.initFamily(["Humain"]);
 
@@ -19,6 +19,6 @@ export class Voleur extends Creature {
     };
 
     fightEffect = () => {
-        this.getSale("Or").increase(2);
+        this.getSale("Or").increase(5);
     };
 };

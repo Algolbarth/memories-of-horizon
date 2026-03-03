@@ -2,7 +2,7 @@
 	import type { System } from "../system/class";
 	import { several } from "../utils";
 	import type { Entity } from "./entity";
-	import type { Game } from "./game";
+	import type { Game } from "./class";
 
 	export let system: System;
 	export let game: Game;

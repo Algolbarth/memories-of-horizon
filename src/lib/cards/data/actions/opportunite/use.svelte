@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import { Creature } from "../../../class/creature";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -44,7 +44,7 @@
 				choice = "initiative";
 			}}
 		>
-			Augmente de 1 l'initiative d'une créature alliée sur le terrain pendant ce tour
+			Augmente de 1 l'initiative d'une créature sur votre terrain pendant ce tour
 		</button>
 	</div>
 {:else if choice == "initiative"}

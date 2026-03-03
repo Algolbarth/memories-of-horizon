@@ -1,9 +1,9 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Item } from '../../../class/item';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';
-import type { Card } from '../../../class';
-import { Creature } from '../../../class/creature';
+import type { Card } from '$lib/cards/class/class';
+import { Creature } from '$lib/cards/class/creature';
 
 export class Sifflet extends Item {
     name = "Sifflet";

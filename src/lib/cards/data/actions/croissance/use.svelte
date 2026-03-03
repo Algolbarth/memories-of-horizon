@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import { Creature } from "../../../class/creature";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -32,7 +32,7 @@
 				choice = "life";
 			}}
 		>
-			Augmente de 75 la constitution d'une créature alliée sur le terrain
+			Augmente de 75 la constitution d'une créature sur votre terrain
 		</button>
 
 		<br />
@@ -43,7 +43,7 @@
 				choice = "balance";
 			}}
 		>
-			Augmente de 50 la constitution et la force d'une créature alliée sur le terrain
+			Augmente de 50 la constitution et la force d'une créature sur votre terrain
 		</button>
 	</div>
 {:else}

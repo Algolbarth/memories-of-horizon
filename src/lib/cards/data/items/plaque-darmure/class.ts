@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import { Item } from '../../../class/item';
-import type { Equipment } from '../../../class/equipment';
+import type { System } from '$lib/system/class';
+import { Item } from '$lib/cards/class/item';
+import type { Equipment } from '$lib/cards/class/equipment';
 import Text from './text.svelte';
 import Use from './use.svelte';
 

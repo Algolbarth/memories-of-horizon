@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import type { Card } from '../../../class';
-import { Creature } from '../../../class/creature';
+import type { System } from '$lib/system/class';
+import type { Card } from '$lib/cards/class/class';
+import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 
 export class Heros extends Creature {

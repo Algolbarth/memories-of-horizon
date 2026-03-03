@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import { copy } from '../../../../utils';
-import { Equipment } from '../../../class/equipment';
+import type { System } from '$lib/system/class';
+import { copy } from '$lib/utils';
+import { Equipment } from '$lib/cards/class/equipment';
 import Text from './text.svelte';
 
 export class BottesFlorales extends Equipment {

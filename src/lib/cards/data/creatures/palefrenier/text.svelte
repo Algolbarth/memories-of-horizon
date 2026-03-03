@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CardInfo from "../../../utils/card-info.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Quand posé : génère <CardInfo bind:system name={"Monture de chevalier"} /> sur la pile et réduis de 20 le coût de cette carte.
+Quand posé : génère <CardInfo bind:system name={"Monture de chevalier"} /> sur votre pile et réduis de 20 le coût de cette carte.

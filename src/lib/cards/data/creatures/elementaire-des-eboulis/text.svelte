@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -11,5 +11,5 @@
 Quand posé, au choix :
 <ul>
 	<li>Se place sur le terrain.</li>
-	<li>Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature adverse sur le terrain.</li>
+	<li>Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.</li>
 </ul>

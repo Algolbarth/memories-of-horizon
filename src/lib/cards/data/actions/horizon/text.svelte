@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée est posée : diminue son coût de 10.
+Quand une carte alliée est posée : si dans la pile : diminue son coût de 10.
 
 <br />
 <br />
 
-Augmente de 1 la taille de toutes les zones alliées.
+Augmente de 1 la taille de toutes vos zones.

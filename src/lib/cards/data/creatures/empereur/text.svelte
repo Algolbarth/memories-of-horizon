@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 10 sa constitution et sa force et augmente de 10 la constitution et la force de toutes les créatures alliées sur le terrain.
+Quand posé : augmente de 10 sa constitution et sa force et augmente de 10 la constitution et la force de toutes les créatures sur votre terrain.
 
 <br />
 <br />
 
-Quand une créature alliée est posée : augmente de 10 sa constitution et sa force et augmente de 10 la constitution et la force de cette créature.
+Quand une créature alliée est posée : si sur le terrain : augmente de 10 sa constitution et sa force et augmente de 10 la constitution et la force de cette créature.

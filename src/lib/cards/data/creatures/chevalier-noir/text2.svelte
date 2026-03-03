@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import Prime from "../../../utils/prime.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import Prime from "$lib/cards/utils/prime.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;

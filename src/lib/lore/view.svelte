@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Story } from "./story";
+	import type { Story } from "./class";
 
 	export let story: Story;
 	export let view: Story | undefined;

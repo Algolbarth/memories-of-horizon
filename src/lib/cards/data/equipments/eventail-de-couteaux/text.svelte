@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -10,6 +10,6 @@
 
 Au choix :
 <ul>
-	<li>S'équipe à une créature alliée sur le terrain.</li>
-	<li>Inflige 3 dégâts à toutes les unités adverses sur le terrain.</li>
+	<li>S'équipe à une créature sur votre terrain.</li>
+	<li>Inflige 3 dégâts à toutes les unités sur le terrain adverse.</li>
 </ul>

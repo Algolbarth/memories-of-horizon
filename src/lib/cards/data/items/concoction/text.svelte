@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import CardInfo from "../../../utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
 	import { Concoction } from "./class";
 
 	export let system: System;
@@ -22,7 +22,7 @@ Applique des effets en fonction des différentes valeurs d'infusion.
 	{/if}
 
 	{#if card.stat("Infusion interdite").value() > 0}
-		Génère <CardInfo bind:system name={"Homonculus"} /> sur le terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.
+		Génère <CardInfo bind:system name={"Homonculus"} /> sur votre terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.
 		<br />
 	{/if}
 

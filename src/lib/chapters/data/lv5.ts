@@ -1,6 +1,6 @@
-import { ChapterDeck } from '../../deck/chapter';
-import type { Game } from '../../game/game';
-import type { System } from '../../system/class';
+import { ChapterDeck } from '$lib/deck/chapter';
+import type { Game } from '$lib/game/class';
+import type { System } from '$lib/system/class';
 import { Chapter } from '../class';
 
 export class Lv5_Chevalier extends Chapter {

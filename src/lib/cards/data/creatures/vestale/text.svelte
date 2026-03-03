@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -10,6 +10,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Augmente de 20 la force d'une créature alliée sur le terrain.</li>
-	<li>Soigne 20 blessures d'une créature alliée sur le terrain.</li>
+	<li>Augmente de 20 la force d'une créature sur votre terrain.</li>
+	<li>Soigne 20 blessures d'une créature sur votre terrain.</li>
 </ul>

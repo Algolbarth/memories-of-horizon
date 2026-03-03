@@ -1,8 +1,8 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Action } from '../../../class/action';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
-import { Creature } from '../../../class/creature';
+import { Creature } from '$lib/cards/class/creature';
 
 export class ForceDeLaFamille extends Action {
     name = "Force de la famille";

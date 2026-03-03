@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Unit } from "../class";
+    import type { Unit } from "../class/class";
 
     export let card: Unit;
 

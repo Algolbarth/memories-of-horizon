@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -11,5 +11,5 @@
 Au choix :
 <ul>
 	<li>Stocke 10 flux.</li>
-	<li>Inflige 20 dégâts à toutes les unités adverses sur le terrain.</li>
+	<li>Inflige 20 dégâts à toutes les unités sur le terrain adverse.</li>
 </ul>

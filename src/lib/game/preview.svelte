@@ -3,7 +3,7 @@
 	import { Creature } from "../cards/class/creature";
 	import { Location } from "../cards/class/location";
 	import type { System } from "../system/class";
-	import type { Game } from "./game";
+	import type { Game } from "./class";
 
 	export let system: System;
 	export let game: Game;

@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Item } from '../../../class/item';
+import type { System } from '$lib/system/class';
+import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';
 
 export class Trefle extends Item {

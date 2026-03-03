@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import type { Card } from '../../../class';
-import { Action } from '../../../class/action';
+import type { System } from '$lib/system/class';
+import type { Card } from '$lib/cards/class/class';
+import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
 
 export class Aventure extends Action {

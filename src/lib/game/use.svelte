@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { System } from "../system/class";
-	import type { Game } from "./game";
+	import type { Game } from "./class";
 
 	export let system: System;
 	export let game: Game;

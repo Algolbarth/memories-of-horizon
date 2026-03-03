@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Druid } from '../../../class/druid';
+import type { System } from '$lib/system/class';
+import { Druid } from '$lib/cards/class/druid';
 import Text from './text.svelte';
 
 class DruideDesRecifs extends Druid {

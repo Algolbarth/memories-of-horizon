@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { Game } from "$lib/game/class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -21,7 +21,7 @@
 			selectAction("Coquillage");
 		}}
 	>
-		Génère Coquillage dans l'inventaire
+		Génère Coquillage dans votre inventaire
 	</button>
 
 	<br />
@@ -32,6 +32,6 @@
 			selectAction("Conque");
 		}}
 	>
-		Génère Conque dans l'inventaire
+		Génère Conque dans votre inventaire
 	</button>
 </div>

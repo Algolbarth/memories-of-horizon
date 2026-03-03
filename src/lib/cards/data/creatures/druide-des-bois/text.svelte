@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import DruidText from "../../../utils/druid-text.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import DruidText from "$lib/cards/utils/druid-text.svelte";
 
 	export let system: System;
 	export let card: Card;
@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide des bois (forme elfe)"}
-	Quand une action alliée est posée : augmente de 6 sa constitution.
+	Quand une action alliée est posée : si sur le terrain : augmente de 6 sa constitution.
 {/if}

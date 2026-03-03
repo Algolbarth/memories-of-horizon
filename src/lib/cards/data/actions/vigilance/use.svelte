@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import { Creature } from "../../../class/creature";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -32,7 +32,7 @@
 				choice = "endurance";
 			}}
 		>
-			Augmente de 10 l'endurance d'une créature alliée sur le terrain
+			Augmente de 10 l'endurance d'une créature sur votre terrain
 		</button>
 
 		<br />
@@ -43,7 +43,7 @@
 				choice = "résistance";
 			}}
 		>
-			Augmente de 10 la résistance d'une créature alliée sur le terrain
+			Augmente de 10 la résistance d'une créature sur votre terrain
 		</button>
 	</div>
 {:else}

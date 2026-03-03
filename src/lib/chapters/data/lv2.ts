@@ -1,7 +1,7 @@
-import { ChapterDeck } from '../../deck/chapter';
-import { Deck } from '../../deck/class';
-import type { Game } from '../../game/game';
-import type { System } from '../../system/class';
+import { ChapterDeck } from '$lib/deck/chapter';
+import { Deck } from '$lib/deck/class';
+import type { Game } from '$lib/game/class';
+import type { System } from '$lib/system/class';
 import { Chapter } from '../class';
 
 export class Lv2_Mur extends Chapter {

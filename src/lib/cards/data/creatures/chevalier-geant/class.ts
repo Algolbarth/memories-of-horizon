@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Knight, MountedKnight } from '../../../class/knight';
+import type { System } from '$lib/system/class';
+import { Knight, MountedKnight } from '$lib/cards/class/knight';
 import Text from './text.svelte';
 
 export class ChevalierGeant extends Knight {

@@ -4,7 +4,7 @@
 	import AddCard from "./add-card.svelte";
 	import ChangeDeck from "./change-deck.svelte";
 	import View from "../cards/view/main.svelte";
-	import { Game } from "../game/game";
+	import { Game } from "../game/class";
 	import type { System } from "../system/class";
 
 	export let system: System;

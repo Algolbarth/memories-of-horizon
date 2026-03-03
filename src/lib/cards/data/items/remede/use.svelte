@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import { Card } from "../../../class";
-	import { Creature } from "../../../class/creature";
-	import type { Stat } from "../../../class/stat";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import { Card } from "$lib/cards/class/class";
+	import { Creature } from "$lib/cards/class/creature";
+	import type { Stat } from "$lib/cards/class/stat";
 
 	export let system: System;
 	export let game: Game;

@@ -1,6 +1,6 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Action } from '../../../class/action';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
 
 export class Autodafe extends Action {

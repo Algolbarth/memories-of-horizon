@@ -32,18 +32,18 @@ Marchand de miracle : créature humain, quand trois cartes alliées de même nom
 Colère : inflige autant dégâts que les blessures du meneur.
 Envie : vole une carte dans l'inventaire adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
-Avarice : détruit une créature alliée sur le terrain et augmente la constitution et la force d'une autre créature alliée sur le terrain d'autant que la constitution et la force de la créature détruite.
-Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle.
+Avarice : détruit une créature sur votre terrain et augmente la constitution et la force d'une autre créature sur votre terrain d'autant que la constitution et la force de la créature détruite.
+Gourmandise : inflige à une créature sur le terrain adverse autant de dégâts que de créatures qui partagent au moins une famille avec elle.
 Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : créature humain : si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
-Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête alliée sur le terrain.
+Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête sur votre terrain.
 Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
-Dague magique : objet équipement, s'équipe à une créature alliée sur le terrain OU produis X mana.
-Dispersion : action, enlève les équipements + les stats temporaires d'une créature adverse sur le terrain.
+Dague magique : objet équipement, s'équipe à une créature sur votre terrain OU produis X mana.
+Dispersion : action, enlève les équipements + les stats temporaires d'une créature sur le terrain adverse.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
 Gladiateur : créature humain.
 Armagicien : créature humain, magie.
@@ -60,7 +60,7 @@ Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Jarre de flamme : objet.
 
 ### Vegetal
-Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain.
+Fiole de poison : empoisonne et augmente la toxicité d'une créature sur le terrain adverse.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
 Vipère : créature reptile, quand attaque : empoisonne le porteur.
 Mur de haie : créature plante. 0 atk inactif 
@@ -74,7 +74,7 @@ Manteau de ronce : objet équipement, augmente l'épine du porteur.
 Élémentaire de ronce.
 Cochon truffier : créature bête, quand posé : fouille 1 carte.
 Hérisson : créature bête, épine.
-Don naturel : action, détruit un élémentaire végétal allié sur le terrain et produit autant de végétal que sa vente.
+Don naturel : action, détruit un élémentaire végétal sur votre terrain et produit autant de végétal que sa vente.
 
 ### Eau
 Saumon : créature poisson.
@@ -82,7 +82,7 @@ Mégalodon: creature poisson.
 Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente sa force.
 
 ### Terre
-Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain.
+Jet de pierre : inflige des dégâts et applique paralysie à une créature sur le terrain adverse.
 Taupe : créature bête, quand posé : fouille 1 carte.
 Mère ours : créature bête, protection.
 Ourson : créature bête.
@@ -94,7 +94,7 @@ Sylphe : quand attaque : augmente son esquive.
 Archer sylphe : créature, portée.
 Griffon : quand posé : augmente sa constitution et sa force suivant le niveau de la pile.
 Aigle 
-Envol : action, applique esquive à une créature Air alliée sur le terrain.
+Envol : action, applique esquive à une créature Air sur votre terrain.
 Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la pile.
 Mage des airs 
 Hibours : créature bête oiseau 
@@ -113,7 +113,7 @@ Cheval squelette
 Zombie : 1 force.
 Zombie recousu : créature, régénération.
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement.
-Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente sa constitution et sa force.
+Ogre : quand posé : choisis une famille parmi les créatures sur le terrain adverse. quand tue une créature adverse de la famille choisie : augmente sa constitution et sa force.
 Faucheuse 
 Fantôme : créature, éphémère.
 Rat : créature, quand attaque : applique maladie à la créature attaquée.
@@ -136,11 +136,11 @@ Git : créature, quand arrive sur le terrain : génère un esprit temporaire.
 ### Metal
 Gnome : créature, quand arrive sur le terrain : génère un Mini automate sur le terrain.
 Mini automate : créature machine.
-Ingénieur : créature, augmente la constitution et la force d'une créature de famille machine alliée sur le terrain.
+Ingénieur : créature, augmente la constitution et la force d'une créature de famille machine sur votre terrain.
 Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduit son coût de 10 or.
 Automate : créature machine, maniement 1.
 Automate armé : créature machine, maniement 4.
-Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain.
+Réparation : action, soigne une créature machine ou un bâtiment sur votre terrain.
 Wyverne d'acier 
 Mage des métaux 
 Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa constitution et sa force.
@@ -149,23 +149,23 @@ Blindage: action, augmente de 50 la constitution et la force ou augmente de 25 l
 
 ### Foudre
 Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant ce tour.
-Acolyte satyre : quand posé : augmente la constitution et la force d'une créature alliée sur le terrain pendant ce tour.
+Acolyte satyre : quand posé : augmente la constitution et la force d'une créature sur votre terrain pendant ce tour.
 Barde satyre : quand posé : augmente la constitution et la force de toutes les créatures alliées sur le terrain pendant ce tour.
-Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain.
+Cage d'éclair : action, applique une paralysie à une créature sur le terrain adverse.
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
-Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
+Chaînes d'éclairs : action sort, inflige des dégâts à une créature sur le terrain adverse et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
 Bottes d'éclair : objet équipement, augmente la vitesse du porteur.
 Lames d'éclairs : objet équipement, augmente l'agilité du porteur.
 Lances de foudre : objet équipement, augmente la force du porteur selon sa vitesse.
 Centaure : créature, vitesse.
 Meneur centaure : créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain.
 Chasseur centaure : créature, quand attaque : inflige autant de dégâts que sa vitesse à la créature attaquée.
-Rabatteur centaure : créature, quand posé : augmente la vitesse d'une créature alliée sur le terrain.
+Rabatteur centaure : créature, quand posé : augmente la vitesse d'une créature sur votre terrain.
 Cyclope 
 Wyverne de foudre 
 Mage de foudre 
 Plateau : lieu pour les cartes d'élément Foudre.
-Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant.
+Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité sur le terrain adverse la plus en avant.
 Plat instantanné : objet nouriture, soigne. satieté : augmente la force pendant ce tour.
 Café : objet nouriture, soigne. satieté : augmente la vitesse.
 
@@ -184,10 +184,10 @@ Robustesse: action, augmente de 50 la constitution et la force ou augmente de 50
 
 ### Lumiere
 Aasimar : créature, régénération.
-Rayon de lumière : action, inflige des dégâts à une créature adverse sur le terrain OU soigne une créature alliée sur le terrain.
-Nova sagénère : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain.
+Rayon de lumière : action, inflige des dégâts à une créature sur le terrain adverse OU soigne une créature sur votre terrain.
+Nova sagénère : action, inflige des dégâts à toutes les créatures sur le terrain adverse. soigne toutes les créatures alliées sur le terrain.
 Fidèle 
-Prière : action, pioche des cartes OU soigne une créature alliée sur le terrain.
+Prière : action, pioche des cartes OU soigne une créature sur votre terrain.
 Cierge : objet, pioche des cartes OU produit de la lumière.
 Paladin : créature, garde.
 Luxomancien : créature, quand une carte alliée Lumière est posée : .
@@ -247,7 +247,7 @@ Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 Lézard : Quand périt : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans l'inventaire.
-Queue de lézard : augmente la force ou la constitution d'une créature alliée sur le terrain.
+Queue de lézard : augmente la force ou la constitution d'une créature sur votre terrain.
 Cactus 
 Buisson ardent 
 Fumigation : action, empoisonne et brûle une créature à la fois.
@@ -297,7 +297,7 @@ Brachiosaure
 Vélociraptor 
 Stégosaure 
 Blaireau : créature, bête : quand joue : si camouflé : s'applique paralysie et augmente sa constitution et sa force.
-Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage.
+Terrier : bâtiment, bête : applique camouflage à la créature bête sur votre terrain la plus en avant qui ne possède pas camouflage.
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
 ### Terre/Glace
@@ -306,7 +306,7 @@ Glacier : lieu pour les cartes d'élément Glace et Terre.
 
 ## Vegetal/Lumière
 Dryade
-Cheveux de dryades : augmente la régénération d'une créature alliée sur le terrain.
+Cheveux de dryades : augmente la régénération d'une créature sur votre terrain.
 
 ### Vegetal/Ombre
 Champignon 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 1 la taille du terrain allié.
+Augmente de 1 la taille de votre terrain.

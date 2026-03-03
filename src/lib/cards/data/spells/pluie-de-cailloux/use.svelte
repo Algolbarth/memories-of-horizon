@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { Game } from "$lib/game/class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -21,7 +21,7 @@
 			selectAction("creature");
 		}}
 	>
-		Remplit le terrain allié d'Élémentaire de caillou
+		Remplit votre terrain d'Élémentaire de caillou
 	</button>
 
 	<br />
@@ -32,6 +32,6 @@
 			selectAction("damage");
 		}}
 	>
-		Inflige 6 dégâts à toutes les unités adverses sur le terrain
+		Inflige 6 dégâts à toutes les unités sur le terrain adverse
 	</button>
 </div>

@@ -1,14 +1,14 @@
 <script lang="ts">
-	import CardInfo from "../../../utils/card-info.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or.
+Quand posé : inflige autant de dégâts que possible à une unité sur le terrain adverse et dépense autant d'or.
 
 <br />
 <br />

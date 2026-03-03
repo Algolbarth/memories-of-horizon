@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,6 +8,6 @@
 	export let card: Card;
 </script>
 
-Inflige 5 dégâts à toutes les unités alliées sur le terrain.
+Inflige 5 dégâts à toutes les unités sur votre terrain.
 <br />
-Augmente de 10 la force de toutes les créatures alliées sur le terrain.
+Augmente de 10 la force de toutes les créatures sur votre terrain.

@@ -1,6 +1,6 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Spell } from '../../../class/spell';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Spell } from '$lib/cards/class/spell';
 import Text from './text.svelte';
 
 export class PluieDeFeu extends Spell {

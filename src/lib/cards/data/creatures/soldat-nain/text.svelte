@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand arrive sur le terrain : augmente de 2 sa constitution et sa force pour chaque bâtiment allié sur le terrain.
+Quand arrive sur le terrain : augmente de 2 sa constitution et sa force pour chaque bâtiment sur votre terrain.

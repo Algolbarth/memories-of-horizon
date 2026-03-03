@@ -4,7 +4,8 @@
 	import View from "../cards/view/main.svelte";
 	import { several } from "../utils";
 	import type { System } from "../system/class";
-	import { Card, Unit } from "../cards/class";
+	import { Card } from "../cards/class/class";
+	import { Unit } from "../cards/class/unit";
 	import type { TrainZone } from "./train";
 
 	export let system: System;

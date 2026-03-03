@@ -1,8 +1,8 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Action } from '../../../class/action';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
-import type { Unit } from '../../../class';
+import type { Unit } from '$lib/cards/class/class';
 import Use from './use.svelte';
 
 export class BucherDesVanites extends Action {

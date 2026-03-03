@@ -1,8 +1,8 @@
-import { copy } from '../../../../utils';
-import type { System } from '../../../../system/class';
-import { Item } from '../../../class/item';
+import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';
-import { Creature } from '../../../class/creature';
+import { Creature } from '$lib/cards/class/creature';
 
 export class CorDeGuerre extends Item {
     name = "Cor de guerre";

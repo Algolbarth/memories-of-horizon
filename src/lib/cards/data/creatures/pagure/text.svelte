@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import CardInfo from "../../../utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -11,6 +11,6 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Génère <CardInfo bind:system name={"Coquillage"} /> dans l'inventaire.</li>
-	<li>Génère <CardInfo bind:system name={"Conque"} /> dans l'inventaire.</li>
+	<li>Génère <CardInfo bind:system name={"Coquillage"} /> dans votre inventaire.</li>
+	<li>Génère <CardInfo bind:system name={"Conque"} /> dans votre inventaire.</li>
 </ul>

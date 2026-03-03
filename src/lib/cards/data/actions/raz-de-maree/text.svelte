@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Inflige 20 dégâts à toutes les unités adverses sur le terrain. Dépense autant d'eau que possible et inflige 1 dégât supplémentaire pour chaque 5 eau dépensé.
+Inflige 20 dégâts à toutes les unités sur le terrain adverse. Dépense autant d'eau que possible et inflige 1 dégât supplémentaire pour chaque 5 eau dépensé.

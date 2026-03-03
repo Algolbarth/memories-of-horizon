@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CardInfo from "../../../utils/card-info.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import CardInfo from "$lib/cards/utils/card-info.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	export let system: System;
 	// svelte-ignore export_let_unused
 	export let card: Card;
 </script>
 
-Transforme en <CardInfo bind:system name={"Grenouille"} /> une créature adverse sur le terrain.
+Transforme en <CardInfo bind:system name={"Grenouille"} /> une créature sur le terrain adverse.

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import Sorcery from "../../../utils/sorcery.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import Sorcery from "$lib/cards/utils/sorcery.svelte";
 
 	export let system: System;
 	export let card: Card;
 </script>
 
-Inflige 10 dégâts à toutes les unités adverses sur le terrain.
+Inflige 10 dégâts à toutes les unités sur le terrain adverse.
 
 <br />
 <br />

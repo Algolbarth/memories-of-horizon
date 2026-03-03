@@ -1,8 +1,9 @@
-import { Card, Unit } from '../../../class';
-import type { System } from '../../../../system/class';
-import { Building } from '../../../class/building';
+import { Card } from '$lib/cards/class/class';
+import { Unit } from '$lib/cards/class/unit';
+import type { System } from '$lib/system/class';
+import { Building } from '$lib/cards/class/building';
 import Text from './text.svelte';
-import { Creature } from '../../../class/creature';
+import { Creature } from '$lib/cards/class/creature';
 
 export class LacDeLave extends Building {
     name = "Lac de lave";

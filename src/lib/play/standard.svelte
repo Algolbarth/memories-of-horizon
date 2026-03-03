@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Game } from "../game/game";
+	import { Game } from "../game/class";
 	import View from "../deck/preview.svelte";
 	import { several } from "../utils";
 	import type { System } from "../system/class";

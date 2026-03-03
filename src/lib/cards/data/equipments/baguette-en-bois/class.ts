@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import { Equipment } from '../../../class/equipment';
-import Text from '../../../utils/equip-text.svelte';
+import type { System } from '$lib/system/class';
+import { Equipment } from '$lib/cards/class/equipment';
+import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class BaguetteEnBois extends Equipment {
     name = "Baguette en bois";

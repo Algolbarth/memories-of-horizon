@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début d'un round : augmente de 10 la constitution et la force de la créature alliée sur le terrain la plus en avant.
+Au début d'un round : augmente de 10 la constitution et la force de la créature sur votre terrain la plus en avant.

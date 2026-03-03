@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-S'équipe à une créature alliée sur le terrain.
+S'équipe à une créature sur votre terrain.
 
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : produit autant de terre que de cartes d'élément Terre alliées sur le terrain.
+Quand se prépare sur le terrain : si équipé : produit autant de terre que de cartes d'élément Terre sur votre terrain.

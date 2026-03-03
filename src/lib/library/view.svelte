@@ -4,7 +4,7 @@
 	import View from "../cards/view/main.svelte";
 	import { several } from "../utils";
 	import type { System } from "../system/class";
-	import type { Card } from "../cards/class";
+	import type { Card } from "../cards/class/class";
 
 	export let system: System;
 

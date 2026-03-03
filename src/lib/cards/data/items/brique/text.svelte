@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -10,6 +10,6 @@
 
 Au choix :
 <ul>
-	<li>Soigne 20 blessures à un bâtiment allié sur le terrain.</li>
-	<li>Inflige 20 dégâts à une unité adverse sur le terrain.</li>
+	<li>Soigne 20 blessures à un bâtiment sur votre terrain.</li>
+	<li>Inflige 20 dégâts à une unité sur le terrain adverse.</li>
 </ul>

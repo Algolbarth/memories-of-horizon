@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Story } from "./story";
+	import type { Story } from "./class";
 	import type { System } from "../system/class";
 	import View from "./view.svelte";
 

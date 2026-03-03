@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Meule toutes les cartes alliées sur la pile. Inflige autant de dégâts à une unité adverse sur le terrain que 10 fois le nombre de cartes meulées.
+Meule toutes les cartes sur votre pile. Inflige autant de dégâts à une unité sur le terrain adverse que 10 fois le nombre de cartes meulées.

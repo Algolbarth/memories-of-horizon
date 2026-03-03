@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import { Creature } from "../../../class/creature";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -36,7 +36,7 @@
 				choice = "equip";
 			}}
 		>
-			S'équipe à une créature alliée sur le terrain
+			S'équipe à une créature sur votre terrain
 		</button>
 
 		<br />
@@ -47,7 +47,7 @@
 				choice = "damage";
 			}}
 		>
-			Inflige 5 dégâts à une unité adverse sur le terrain
+			Inflige 5 dégâts à une unité sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "equip"}

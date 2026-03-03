@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
-import type { Card } from '../../../class';
-import { Equipment } from '../../../class/equipment';
+import type { System } from '$lib/system/class';
+import type { Card } from '$lib/cards/class/class';
+import { Equipment } from '$lib/cards/class/equipment';
 import Text from './text.svelte';
 
 export class Grimoire extends Equipment {

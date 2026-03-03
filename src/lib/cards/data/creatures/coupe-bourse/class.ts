@@ -1,6 +1,6 @@
-import type { Card } from '$lib/cards/class';
-import type { System } from '../../../../system/class';
-import { Creature } from '../../../class/creature';
+import type { Card } from '$lib/cards/class/class';
+import type { System } from '$lib/system/class';
+import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 
 export class CoupeBourse extends Creature {

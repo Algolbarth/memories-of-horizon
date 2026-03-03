@@ -1,5 +1,5 @@
-import type { System } from '../../../../system/class';
-import { Creature } from '../../../class/creature';
+import type { System } from '$lib/system/class';
+import { Creature } from '$lib/cards/class/creature';
 
 export class Elfe extends Creature {
     name = "Elfe";

@@ -1,7 +1,7 @@
-import type { System } from '../../../../system/class';
-import { Creature } from '../../../class/creature';
-import { Item } from '../../../class/item';
-import { Stat } from '../../../class/stat';
+import type { System } from '$lib/system/class';
+import { Creature } from '$lib/cards/class/creature';
+import { Item } from '$lib/cards/class/item';
+import { Stat } from '$lib/cards/class/stat';
 import Text from './text.svelte';
 import Use from './use.svelte';
 

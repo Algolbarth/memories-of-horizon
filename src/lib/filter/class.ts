@@ -1,4 +1,4 @@
-import type { Card } from "../cards/class";
+import type { Card } from "../cards/class/class";
 import type { System } from "../system/class";
 
 export class Filter {

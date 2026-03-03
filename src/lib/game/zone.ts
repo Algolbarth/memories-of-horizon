@@ -1,4 +1,4 @@
-import type { Card } from "../cards/class";
+import type { Card } from "../cards/class/class";
 
 export class Zone {
     name: string;

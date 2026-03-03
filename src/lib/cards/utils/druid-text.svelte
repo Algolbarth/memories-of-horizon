@@ -1,10 +1,10 @@
 <script lang="ts">
-    import type { System } from "../../system/class";
-    import type { Card } from "../class";
+    import type { System } from "$lib/system/class";
+    import type { Druid } from "../class/druid";
     import CardInfo from "./card-info.svelte";
 
     export let system: System;
-    export let card: Card;
+    export let card: Druid;
 </script>
 
 Quand posé, au choix :

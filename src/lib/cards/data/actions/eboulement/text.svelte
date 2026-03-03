@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente jusqu'à 1 l'étourdissement d'une créature adverse sur le terrain. Si cette créature a son étourdissement à 1 ou plus, lui inflige 20 dégâts à la place.
+Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse. Si cette créature a son étourdissement à 1 ou plus, lui inflige 20 dégâts à la place.

@@ -136,6 +136,7 @@ export * from './salamandre-des-flammes';
 export * from './sanglier';
 export * from './sardine';
 export * from './seigneur-ondin';
+export * from './serrurier';
 export * from './serveuse-de-taverne';
 export * from './soldat';
 export * from './soldat-nain';

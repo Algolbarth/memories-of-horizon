@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte d'élément Eau alliée est posée : pioche 1 carte Eau.
+Quand une carte d'élément Eau alliée est posée : si sur le terrain : pioche 1 carte Eau.

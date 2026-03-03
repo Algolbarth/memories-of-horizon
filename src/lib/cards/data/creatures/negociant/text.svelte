@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : verrouille et diminue de 10 le coût en or d'une carte alliée sur la pile.
+Quand posé : verrouille et diminue de 10 le coût en or d'une carte sur votre pile.

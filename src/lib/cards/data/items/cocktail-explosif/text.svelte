@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Augmente de 10 la brûlure d'une unité adverse sur le terrain et aux unités adjacentes.
+Augmente de 10 la brûlure d'une unité sur le terrain adverse et aux unités adjacentes.

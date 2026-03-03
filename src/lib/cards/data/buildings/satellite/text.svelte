@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -13,4 +13,4 @@ Quand arrive sur le terrain : augmente d'autant sa constitution et sa puissance 
 <br />
 <br />
 
-Au début d'un round : inflige autant de dégâts à l'unité adverse sur le terrain en première position que sa puissance.
+Au début d'un round : inflige autant de dégâts à l'unité sur le terrain adverse en première position que sa puissance.

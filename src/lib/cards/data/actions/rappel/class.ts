@@ -1,6 +1,7 @@
-import { Card, Unit } from '../../../class';
-import type { System } from '../../../../system/class';
-import { Action } from '../../../class/action';
+import { Card } from '$lib/cards/class/class';
+import { Unit } from '$lib/cards/class/unit';
+import type { System } from '$lib/system/class';
+import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
 import Use from './use.svelte';
 

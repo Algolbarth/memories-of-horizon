@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
 
 	// svelte-ignore export_let_unused
 	export let system: System;
@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée de famille Sort est posée : pioche 1 carte de famille Sort. Dépense 5 mana pour réduire le coût du sort de 10.
+Quand une carte alliée de famille Sort est posée : si sur le terrain : pioche 1 carte de famille Sort. Dépense 5 mana pour réduire le coût du sort de 10.

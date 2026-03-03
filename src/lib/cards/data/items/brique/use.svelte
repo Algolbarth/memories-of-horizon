@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Game } from "../../../../game/game";
-	import Zone from "../../../../game/zone.svelte";
-	import type { System } from "../../../../system/class";
-	import type { Card } from "../../../class";
-	import { Building } from "../../../class/building";
+	import type { Game } from "$lib/game/class";
+	import Zone from "$lib/game/zone.svelte";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/class";
+	import { Building } from "$lib/cards/class/building";
 
 	export let system: System;
 	export let game: Game;
@@ -36,7 +36,7 @@
 				choice = "heal";
 			}}
 		>
-			Soigne 20 blessures à un bâtiment allié sur le terrain
+			Soigne 20 blessures à un bâtiment sur votre terrain
 		</button>
 
 		<br />
@@ -47,7 +47,7 @@
 				choice = "damage";
 			}}
 		>
-			Inflige 20 dégâts à une unité adverse sur le terrain
+			Inflige 20 dégâts à une unité sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "heal"}

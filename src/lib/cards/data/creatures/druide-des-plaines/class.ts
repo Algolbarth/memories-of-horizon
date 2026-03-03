@@ -1,6 +1,6 @@
-import type { System } from '../../../../system/class';
+import type { System } from '$lib/system/class';
 import Text from './text.svelte';
-import { Druid } from '../../../class/druid';
+import { Druid } from '$lib/cards/class/druid';
 
 class DruideDesPlaines extends Druid {
     constructor(system: System) {
