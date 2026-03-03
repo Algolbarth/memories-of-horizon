@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Pierre philosophale"} /> dans l'inventaire.
+Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Vol à la tire"} /> dans l'inventaire.
 
 <br />
 <br />
 
-Quand <CardInfo bind:system name={"Pierre philosophale"} /> est posée : augmente d'autant sa constitution et sa force que le flux dépensé.
+Quand <CardInfo bind:system name={"Vol à la tire"} /> est posée : augmente de 10 sa vente en or.

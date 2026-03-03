@@ -104,5 +104,5 @@ export * from './tournee-generale';
 export * from './tremblement-de-terre';
 export * from './vague-deferlante';
 export * from './vigilance';
-export * from './vol-ala-tire';
+export * from './vol-a-la-tire';
 export * from './vulnerabilite';

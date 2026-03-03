@@ -145,6 +145,7 @@ Wyverne d'acier
 Mage des métaux 
 Metallomancien : créature, quand une carte alliée Metal est posée : augmente sa constitution et sa force.
 Mines : lieu pour les cartes d'élément Métal.
+Blindage: action, augmente de 50 la constitution et la force ou augmente de 25 l'endurance et la résistance.
 
 ### Foudre
 Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant ce tour.
@@ -179,6 +180,7 @@ Loup des neiges
 Wyverne des neiges 
 Manteau de laine 
 Toundra : lieu pour les cartes d'élément Glace.
+Robustesse: action, augmente de 50 la constitution et la force ou augmente de 50 la résistance.
 
 ### Lumiere
 Aasimar : créature, régénération.
