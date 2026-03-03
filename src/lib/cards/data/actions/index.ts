@@ -68,6 +68,7 @@ export * from './multisoin';
 export * from './musculation';
 export * from './noyade';
 export * from './nuages-de-spores';
+export * from './odyssee';
 export * from './omniscience';
 export * from './opportunite';
 export * from './option';

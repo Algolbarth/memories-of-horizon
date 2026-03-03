@@ -49,6 +49,7 @@
         height: 1em;
 
         border: solid;
+        border-width: 0.25vmin;
         border-color: black;
 
         display: flex;
