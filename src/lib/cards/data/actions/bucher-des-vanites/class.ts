@@ -2,7 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import Text from './text.svelte';
-import type { Unit } from '$lib/cards/class/class';
+import type { Unit } from '$lib/cards/class/unit';
 import Use from './use.svelte';
 
 export class BucherDesVanites extends Action {

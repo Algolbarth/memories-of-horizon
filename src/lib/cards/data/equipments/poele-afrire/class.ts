@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
-import type { Unit } from '$lib/cards/class/class';
+import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
 import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';

@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Unit } from '$lib/cards/class/class';
+import type { Unit } from '$lib/cards/class/unit';
 import { Knight, MountedKnight } from '$lib/cards/class/knight';
 import Text from './text.svelte';
 import Text2 from './text2.svelte';

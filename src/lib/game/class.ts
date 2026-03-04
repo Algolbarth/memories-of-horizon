@@ -3,7 +3,7 @@ import { Chapter } from '../chapters/class';
 import { copy } from '../utils';
 import type { System } from '../system/class';
 import type { Card } from '../cards/class/class';
-import type { Unit } from '../cards/class/unit';
+import { Unit } from '../cards/class/unit';
 import type { Component } from 'svelte';
 import type { TrainEntity } from '../training/train';
 import { Creature } from '../cards/class/creature';

@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Unit } from '$lib/cards/class/class';
+import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
 import Text from './text.svelte';
