@@ -272,10 +272,10 @@ export class Creature extends Unit {
     };
 
     fight = (defender: Unit) => {
-        let isDie: boolean = defender.zone!.name != "Terrain";
+        let is_die: boolean = defender.zone!.name != "Terrain";
         let nb_hit: number = this.stat("Agilité").value();
 
-        while (!isDie && nb_hit > 0) {
+        while (!is_die && nb_hit > 0) {
 
             if (this.fightEffect != undefined) {
                 this.fightEffect(defender);
@@ -283,6 +283,17 @@ export class Creature extends Unit {
             for (const e of this.equipments) {
                 if (e.fightEffect != undefined) {
                     e.fightEffect(defender);
+                }
+            }
+
+            for (const entity of [this.owner(), this.adversary()]) {
+                for (const zone of entity.zones) {
+                    let cpy = copy(zone.cards);
+                    for (const card of cpy) {
+                        if (card != this) {
+                            card.otherFight(this);
+                        }
+                    }
                 }
             }
 
@@ -308,7 +319,7 @@ export class Creature extends Unit {
             let damage_result = defender.physicalDamage(damage);
 
             if (damage_result.die) {
-                isDie = true;
+                is_die = true;
                 this.kill(defender);
             }
 
@@ -317,6 +328,18 @@ export class Creature extends Unit {
     };
 
     fightEffect: Function | undefined;
+
+    otherFight = (card: Creature) => {
+        if (this.otherFightEffect != undefined) {
+            this.otherFightEffect(card);
+        }
+
+        for (const equipment of this.equipments) {
+            if (equipment.otherFightEffect != undefined) {
+                equipment.otherFightEffect(card);
+            }
+        }
+    };
 
     kill = (defender: Unit) => {
         if (this.killEffect != undefined) {

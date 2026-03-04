@@ -27,6 +27,7 @@ export * from './cerf';
 export * from './champion';
 export * from './chasseur';
 export * from './chat';
+export * from './chat-de-gouttiere';
 export * from './chat-errant';
 export * from './chef-barbare';
 export * from './chef-cuisinier';

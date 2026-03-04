@@ -8,6 +8,7 @@ import type { System } from "$lib/system/class";
 import { Entity } from "$lib/game/entity";
 import { Zone } from "$lib/game/zone";
 import type { Unit } from "./unit";
+import type { Creature } from "./creature";
 
 export class Card {
     name: string = "Carte";
@@ -453,6 +454,14 @@ export class Card {
     startBattleEffect: Function | undefined;
 
     roundEffect: Function | undefined;
+
+    otherFight = (card: Creature) => {
+        if (this.otherFightEffect != undefined) {
+            this.otherFightEffect(card);
+        }
+    };
+
+    otherFightEffect: Function | undefined;
 
     refreshStackEffect: Function | undefined;
 
