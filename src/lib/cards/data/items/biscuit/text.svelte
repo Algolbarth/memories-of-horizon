@@ -11,7 +11,7 @@
 Soigne 20 blessures à une créature sur votre terrain.
 
 {#if system.game != undefined && card.canSatiety()}
-	<span style={"color:var(--satiety_effect)"}>Satieté : génère un <CardInfo bind:system name={"Bonhomme biscuit"} /> sur votre terrain à la place.</span>
+	<span style={"color:var(--satiety_effect)"}>Satieté : génère <CardInfo bind:system name={"Bonhomme biscuit"} /> sur votre terrain à la place.</span>
 {:else}
-	Satieté : génère un <CardInfo bind:system name={"Bonhomme biscuit"} /> sur votre terrain à la place.
+	Satieté : génère <CardInfo bind:system name={"Bonhomme biscuit"} /> sur votre terrain à la place.
 {/if}

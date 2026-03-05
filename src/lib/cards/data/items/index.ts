@@ -24,6 +24,7 @@ export * from './fiole-de-corindon';
 export * from './fiole-de-cristal';
 export * from './fiole-de-verre';
 export * from './fleche-en-bois';
+export * from './fromage';
 export * from './herbes-curatives';
 export * from './herbes-medicinales';
 export * from './laine';

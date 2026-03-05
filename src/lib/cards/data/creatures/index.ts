@@ -144,6 +144,7 @@ export * from './serrurier';
 export * from './serveuse-de-taverne';
 export * from './soldat';
 export * from './soldat-nain';
+export * from './souris';
 export * from './stratege';
 export * from './theoricien-du-complot';
 export * from './thon';

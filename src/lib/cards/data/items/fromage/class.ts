@@ -4,13 +4,13 @@ import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';
 import Use from './use.svelte';
 
-export class Biscuit extends Item {
-    name = "Biscuit";
+export class Fromage extends Item {
+    name = "Fromage";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 5]]);
 
         this.initFamily(["Nourriture"]);
 
@@ -18,18 +18,22 @@ export class Biscuit extends Item {
     };
 
     canUse = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.isDamaged() || this.owner().zone("Terrain").isNotFull())) {
-                return true;
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card instanceof Creature && (card.isDamaged() || (this.owner().is_player && entity.zone("Terrain").isNotFull()))) {
+                    return true;
+                }
             }
         }
         return false;
     };
 
     canSatiety = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && card.isFullLife() && this.owner().zone("Terrain").isNotFull()) {
-                return true;
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card instanceof Creature && card.isFullLife() && entity.zone("Terrain").isNotFull()) {
+                    return true;
+                }
             }
         }
         return false;
@@ -43,7 +47,7 @@ export class Biscuit extends Item {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
+                if (target == undefined && card instanceof Creature && card.isDamaged()) {
                     target = card;
                 }
             }
@@ -58,10 +62,11 @@ export class Biscuit extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            this.owner().getCard("Bonhomme biscuit").add("Terrain");
+            target.owner().getCard("Souris").add("Terrain");
+            target.owner().getCard("Souris").add("Terrain");
         }
         else {
-            target.heal(20);
+            target.heal(10);
         }
 
         this.move("Défausse");
