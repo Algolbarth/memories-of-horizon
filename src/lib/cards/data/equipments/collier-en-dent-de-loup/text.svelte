@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand une créature alliée de famille Bête périt : augmente de 20 la force du porteur.
+Quand une créature alliée de famille Bête périt : si équipé et que le porteur est sur le terrain : augmente de 20 la force du porteur.

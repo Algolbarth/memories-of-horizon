@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : produit autant d'eau que de cartes d'élément Eau sur votre terrain.
+Quand le porteur se prépare sur le terrain : produit autant d'eau que de cartes d'élément Eau sur votre terrain.

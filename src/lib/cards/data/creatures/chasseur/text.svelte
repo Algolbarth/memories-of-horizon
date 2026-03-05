@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une créature alliée de famille Bête périt : augmente de 3 sa constitution et sa force.
+Quand une autre créature alliée de famille Bête périt : si sur le terrain : augmente de 3 sa constitution et sa force.

@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : augmente de 1 la constitution et la force du porteur.
+Quand le porteur se prépare sur le terrain : augmente de 1 la constitution et la force du porteur.

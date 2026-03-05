@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Au début d'un round : si équipé : augmente de 1 l'esquive du porteur pendant ce round.
+Au début d'un round : si équipé et que le porteur est sur le terrain : augmente de 1 l'esquive du porteur pendant ce round.

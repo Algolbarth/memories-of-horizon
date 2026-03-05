@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : produit autant de feu que de cartes d'élément Feu sur votre terrain.
+Quand le porteur se prépare sur le terrain : produit autant de feu que de cartes d'élément Feu sur votre terrain.

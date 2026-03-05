@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une unité d'élément Végétal périt : stocke 2 végétal.
+Quand une autre unité d'élément Végétal périt : stocke 2 végétal.

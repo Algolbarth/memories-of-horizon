@@ -13,4 +13,4 @@ Quand attaque : stocke 1 or.
 <br />
 <br />
 
-Quand une créature alliée attaque : augmente de 3 la force de cette créature pendant ce tour.
+Quand une autre créature alliée de famille Bête attaque : augmente de 3 la force de cette créature pendant ce tour.

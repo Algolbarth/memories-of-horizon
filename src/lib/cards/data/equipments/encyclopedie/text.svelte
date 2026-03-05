@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : pioche 1 action.
+Quand le porteur se prépare sur le terrain : pioche 1 action.

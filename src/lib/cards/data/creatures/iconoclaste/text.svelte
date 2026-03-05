@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée est meulée : augmente de 1 sa constitution et sa force.
+Quand une autre carte alliée est meulée : augmente de 1 sa constitution et sa force.

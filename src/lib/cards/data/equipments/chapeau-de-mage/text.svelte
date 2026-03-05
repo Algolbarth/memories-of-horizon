@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : augmente d'autant la garde du porteur que la magie de celle-ci.
+Quand le porteur se prépare sur le terrain : augmente d'autant la garde du porteur que la magie de celui-ci.

@@ -8,4 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand une autre carte d'élément Eau alliée est posée : si sur le terrain : augmente de 5 sa vente en eau.
+Quand attaque : stocke 1 or.
+
+<br />
+<br />
+
+Quand une autre créature alliée de famille Bête attaque : stocke 1 or.

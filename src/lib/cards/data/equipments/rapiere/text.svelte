@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Au début de la phase de combat : si équipé : remplit la jauge critique du porteur.
+Au début de la phase de combat : si équipé et que le porteur est sur le terrain : remplit la jauge critique du porteur.

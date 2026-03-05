@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une créature alliée de famille Ondin est posée : si sur le terrain : produit 5 eau.
+Quand une autre créature alliée de famille Ondin est posée : si sur le terrain : produit 5 eau.

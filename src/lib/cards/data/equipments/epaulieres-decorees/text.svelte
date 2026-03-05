@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Augmente la résistance du porteur de 10 fois la protection de cette créature.
+Augmente la résistance du porteur de 10 fois la protection du porteur.

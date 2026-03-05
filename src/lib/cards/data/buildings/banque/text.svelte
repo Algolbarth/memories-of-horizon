@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée est vendue : augmente de 1 ses intérêts et augmente de 5 sa vente en or.
+Quand une autre carte alliée est vendue : augmente de 1 ses intérêts et augmente de 5 sa vente en or.
 
 <br />
 <br />

@@ -20,7 +20,7 @@ export class Iconoclaste extends Creature {
     };
 
     otherMillEffect = (card: Card) => {
-        if (this.isArea("Terrain") && this.isAlly(card)) {
+        if (this.isAlly(card)) {
             this.stat("Constitution").increase(1);
             this.stat("Force").increase(1);
         }

@@ -2,18 +2,18 @@ import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 
-export class ChatDeGouttiere extends Creature {
-    name = "Chat de gouttière";
+export class ChatDomestique extends Creature {
+    name = "Chat domestique";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40]]);
+        this.init([["Or", 60]]);
 
         this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(3);
-        this.stat("Force").init(15);
+        this.stat("Force").init(3);
 
         this.text = Text;
     };
@@ -24,7 +24,7 @@ export class ChatDeGouttiere extends Creature {
 
     otherFightEffect = (card: Creature) => {
         if (card.isAlly(this) && card.isFamily("Bête")) {
-            card.stat("Force").turn += 3;
+            this.owner().ressource("Or").stock(1);
         }
     };
 };

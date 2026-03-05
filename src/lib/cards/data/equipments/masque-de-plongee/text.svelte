@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : augmente jusqu'à 10 la garde du porteur et génère <CardInfo bind:system name={"Bulle protectrice"} /> dans votre inventaire.
+Quand le porteur se prépare sur le terrain : augmente jusqu'à 10 la garde du porteur et génère <CardInfo bind:system name={"Bulle protectrice"} /> dans votre inventaire.

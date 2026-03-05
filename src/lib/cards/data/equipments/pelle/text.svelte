@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : découvre 1 carte d'élément Terre et produit 10 terre.
+Quand le porteur se prépare sur le terrain : découvre 1 carte d'élément Terre et produit 10 terre.

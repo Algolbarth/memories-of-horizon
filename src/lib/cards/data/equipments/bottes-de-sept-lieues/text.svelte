@@ -13,4 +13,4 @@ S'équipe à une créature de famille Géant sur votre terrain.
 <br />
 <br />
 
-Au début d'un round : si équipé : augmente de 7 la constitution et la force du porteur.
+Au début d'un round : si équipé et que le porteur est sur le terrain : augmente de 7 la constitution et la force du porteur.

@@ -14,4 +14,4 @@ Au choix :
 	<li>Augmente de 5 le poison et de 10 la toxicité d'une créature sur le terrain adverse.</li>
 </ul>
 
-Quand le porteur attaque : augmente de 3 la toxicité de la créature attaquée.
+Quand le porteur attaque une créature : augmente de 3 la toxicité de la créature attaquée.

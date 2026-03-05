@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : génère <CardInfo bind:system name={"Clé en or"} /> dans votre inventaire.
+Quand le porteur se prépare sur le terrain : génère <CardInfo bind:system name={"Clé en or"} /> dans votre inventaire.

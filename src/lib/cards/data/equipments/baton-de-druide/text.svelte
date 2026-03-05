@@ -13,4 +13,4 @@ S'équipe à une créature de famille Druide sur votre terrain.
 <br />
 <br />
 
-Au début de la phase de combat et à la fin de la phase de préparation adverse : si équipé : transforme en sa forme alternative le porteur.
+Au début de la phase de combat et à la fin de la phase de préparation adverse : si équipé et si le porteur est sur le terrain : transforme en sa forme alternative le porteur.

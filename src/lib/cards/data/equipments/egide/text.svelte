@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Augmente l'endurance du porteur de 10 fois la protection de cette créature.
+Augmente l'endurance du porteur de 10 fois la protection du porteur.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Terre est posée : si sur le terrain : augmente de 2 son endurance.
+Quand une autre carte alliée d'élément Terre est posée : si sur le terrain : augmente de 2 son endurance.

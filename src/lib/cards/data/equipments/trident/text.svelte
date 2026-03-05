@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Si le porteur détruit une unité au combat : stocke 5 eau.
+Quand le porteur détruit une unité au combat : stocke 5 eau.

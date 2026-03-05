@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée est meulée : produit 1 or et 1 feu.
+Quand une carte alliée est meulée : si sur le terrain : produit 1 or et 1 feu.

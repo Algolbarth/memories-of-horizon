@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand une unité d'élément Végétal périt : augmente de 5 la force du porteur.
+Quand une unité d'élément Végétal périt : si équipé et que le porteur est sur le terrain : augmente de 5 la force du porteur.

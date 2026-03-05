@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand une créature alliée est posée : si sur le terrain : augmente la constitution et la force de cette créature du même montant que le niveau du porteur.
+Quand une créature alliée est posée : si équipé et que le porteur est sur le terrain : augmente la constitution et la force de cette créature du même montant que le niveau du porteur.

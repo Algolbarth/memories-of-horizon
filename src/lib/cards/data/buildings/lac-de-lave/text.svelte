@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand une unité est posée : si sur le terrain :
+Quand une autre unité est posée : si sur le terrain :
 <ul>
 	<li>Si c'est une créature d'élément Feu : augmente de 5 la force de cette créature.</li>
 	<li>Si c'est une unité qui n'est pas d'élément Feu : inflige 5 dégâts à cette unité.</li>

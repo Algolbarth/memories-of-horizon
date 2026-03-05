@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : génère une créature du même nom que le porteur sur votre pile.
+Quand le porteur se prépare sur le terrain : génère une créature du même nom que le porteur sur votre pile.

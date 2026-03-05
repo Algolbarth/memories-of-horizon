@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand le porteur est attaquée : augmente de 2 l'endurance du porteur.
+Quand le porteur est attaqué : augmente de 2 l'endurance du porteur.

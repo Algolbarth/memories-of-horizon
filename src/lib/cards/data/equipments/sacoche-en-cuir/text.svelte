@@ -13,4 +13,4 @@ S'équipe à une créature sur votre terrain.
 <br />
 <br />
 
-Quand se prépare sur le terrain : si équipé : découvre 2 cartes.
+Quand le porteur se prépare sur le terrain : découvre 2 cartes.
