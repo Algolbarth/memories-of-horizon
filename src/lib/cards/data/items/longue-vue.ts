@@ -17,8 +17,8 @@ export class LongueVue extends Item {
 
     useEffect = () => {
         let cards: Card[] = this.owner().draw(1);
-        if (cards[0] != undefined) {
-            cards[0].lock();
+        for (const c of cards) {
+            c.lock();
             cards[0].stat("Perception").increase(20);
         }
 

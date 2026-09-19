@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
+import { Item } from '$lib/cards/class/item';
 
 export class BonhommeBiscuit extends Creature {
     name = "Bonhomme biscuit";
@@ -19,7 +20,7 @@ export class BonhommeBiscuit extends Creature {
     };
 
     targetEffect = (card: Card) => {
-        if (this.isArea("Terrain") && card.isFamily("Nourriture")) {
+        if (this.isArea("Terrain") && card.isFamily("Nourriture") && card instanceof Item) {
             this.stat("Constitution").increase(5);
             this.stat("Force").increase(5);
         }

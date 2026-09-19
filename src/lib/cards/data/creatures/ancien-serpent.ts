@@ -14,7 +14,7 @@ export class AncienSerpent extends Creature {
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);
 
-        this.addText(`Quand se prépare sur le terrain : Génère {card:Mue} sur votre terrain.`);
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Mue} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

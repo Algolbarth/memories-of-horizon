@@ -17,7 +17,7 @@ export class Enchanteresse extends Creature {
         this.stat("Force").init(5);
 
         this.addChoice([
-            `Annule la transformation d'une de vos cartes transformées.`,
+            `Annule la transformation d'une carte alliée transformée.`,
             `Transforme en {card:Mouton} une créature sur le terrain adverse.`]);
     };
 
@@ -41,7 +41,7 @@ export class Enchanteresse extends Creature {
         if (check) {
             this.game().user_interface = new UserInterface(this)
                 .addChoice([
-                    new Button(["Annule la transformation d'une de vos cartes transformées"],
+                    new Button(["Annule la transformation d'une carte alliée transformée"],
                         () => {
                             this.changePanel(1);
                         }),
@@ -106,7 +106,6 @@ export class Enchanteresse extends Creature {
             this.targeting(target);
 
             if (choice == "clean" && target.original_form != undefined) {
-                console.log(target.original_form);
                 target = target.transform(target.original_form);
             }
             else if (choice == "sheep") {
