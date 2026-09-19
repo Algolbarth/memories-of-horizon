@@ -12,7 +12,7 @@ export class SardinesEnBoite extends Item {
 
         this.init([["Or", 3], ["Eau", 2]]);
 
-        this.initFamily(["Nourriture"]);
+        this.initFamily(["Nourriture", "Poisson"]);
 
         this.addText([
             "Quand posé : Soigne 10 blessures à une créature sur votre terrain.",

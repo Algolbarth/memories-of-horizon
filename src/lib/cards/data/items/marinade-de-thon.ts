@@ -4,15 +4,15 @@ import { Item } from '$lib/cards/class/item';
 import { UserInterface } from '$lib/cards/user-interface/class';
 import type { Card } from '$lib/cards/class/card';
 
-export class CarpacioDeThon extends Item {
-    name = "Carpacio de thon";
+export class MarinadeDeThon extends Item {
+    name = "Marinade de thon";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 25], ["Eau", 25]]);
 
-        this.initFamily(["Nourriture"]);
+        this.initFamily(["Nourriture", "Poisson"]);
 
         this.addText([
             "Quand posé : Soigne 100 blessures à une créature sur votre terrain.",
