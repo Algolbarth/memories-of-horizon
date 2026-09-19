@@ -23,6 +23,7 @@ export * from './chataigne';
 export * from './chocolat';
 export * from './ciment';
 export * from './cle-en-or';
+export * from './cle-rouillee';
 export * from './cocktail-explosif';
 export * from './coffre-en-bois';
 export * from './coffre-en-or';

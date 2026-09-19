@@ -30,7 +30,6 @@ export * from './consolider';
 export * from './contre';
 export * from './coup-de-boule';
 export * from './cri-de-guerre';
-export * from './crochetage';
 export * from './croissance';
 export * from './cultiver';
 export * from './cycle-de-eau';

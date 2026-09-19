@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
-import { Action } from '$lib/cards/class/action';
+import { Item } from '$lib/cards/class/item';
 
-export class Crochetage extends Action {
-    name = "Crochetage";
+export class CleRouillee extends Item {
+    name = "Clé rouillée";
 
     constructor(system: System) {
         super(system);
