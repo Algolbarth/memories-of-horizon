@@ -6,6 +6,7 @@ export * from './ancienne-wyverne-marine';
 export * from './ancienne-wyverne-rouge';
 export * from './ancienne-wyverne-terrestre';
 export * from './ancienne-wyverne-verte';
+export * from './anemone-de-mer';
 export * from './apothicaire';
 export * from './aquamancien';
 export * from './arbaletrier-nain';
