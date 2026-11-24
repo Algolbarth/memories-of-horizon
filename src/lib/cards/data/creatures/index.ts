@@ -137,6 +137,7 @@ export * from './homme-affaires';
 export * from './homonculus';
 export * from './humain';
 export * from './iconoclaste';
+export * from './jardinier';
 export * from './jeune-wyverne';
 export * from './joaillier';
 export * from './jongleur-de-boule-de-feu';
