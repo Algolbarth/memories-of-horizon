@@ -187,6 +187,7 @@ export * from './phytomancien';
 export * from './pilote';
 export * from './pionnier';
 export * from './piquier-gobelin';
+export * from './poisson-clown';
 export * from './porte-flambeau';
 export * from './pretre';
 export * from './prince';
