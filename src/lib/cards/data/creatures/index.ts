@@ -105,6 +105,7 @@ export * from './explorateur';
 export * from './fermier';
 export * from './fidele-serviteur';
 export * from './forgeron';
+export * from './frondeur-gobelin';
 export * from './garde';
 export * from './garde-epine';
 export * from './garde-royal';
