@@ -34,32 +34,32 @@ export class ElementaireDeFeuilles extends Creature {
                 .addChoice([
                     new Button(["Se place sur votre terrain"],
                         () => {
-                            this.useEffect("creature");
+                            this.useEffect("normal");
                             this.closeInterface();
                         }),
                     new Button(["Éveil : Augmente de 15 sa force et sa constitution"],
                         () => {
-                            this.useEffect("effect");
+                            this.useEffect("awake");
                             this.closeInterface();
                         })]);
         }
         else if (this.owner().zone("Terrain").isNotFull()) {
-            this.useEffect("battlefield");
+            this.useEffect("normal");
         }
         else if (this.owner().zone("Pile").isNotFull()) {
-            this.useEffect("stack");
+            this.useEffect("awake");
         }
     };
 
     autoUse = () => {
-        this.useEffect("battlefield");
+        this.useEffect("normal");
     };
 
     useEffect = (choice: string) => {
-        if (choice == "battlefield") {
+        if (choice == "normal") {
             this.move("Terrain");
         }
-        else if (choice == "stack") {
+        else if (choice == "awake") {
             this.stat("Constitution").increase(15);
             this.stat("Force").increase(15);
 
