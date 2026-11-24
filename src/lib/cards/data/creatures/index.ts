@@ -184,6 +184,7 @@ export * from './palefrenier';
 export * from './pecheur';
 export * from './petite-fille';
 export * from './phytomancien';
+export * from './pilleur-de-garde-manger';
 export * from './pilote';
 export * from './pionnier';
 export * from './piquier-gobelin';
