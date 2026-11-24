@@ -39,6 +39,7 @@ export * from './defense-ultime';
 export * from './defrichage';
 export * from './demolition';
 export * from './desarmer';
+export * from './desenchanter';
 export * from './devise';
 export * from './dose-mortelle';
 export * from './eboulement';
