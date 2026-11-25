@@ -7,16 +7,16 @@ export class BancDeSardine extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Eau", 10]]);
+        this.init([["Or", 8], ["Eau", 8]]);
 
         this.initFamily(["Poisson"]);
 
-        this.addText(`Quand posé : Génère 5 {card:Sardine} dans votre inventaire.`);
+        this.addText(`Quand posé : Génère 5 {card:Sardine} sur votre pile.`);
     };
 
     useEffect = () => {
         for (let i = 1; i <= 5; i++) {
-            this.owner().getCard("Sardine").add("Inventaire");
+            this.owner().getCard("Sardine").add("Pile");
         }
 
         this.move("Défausse");
