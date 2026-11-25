@@ -20,7 +20,7 @@ export class GestionDesStocks extends Action {
     };
 
     useEffect = () => {
-        this.owner().zone("Inventaire").size += 2;
+        this.owner().zone("Inventaire").increase(2);
 
         this.move("Défausse");
         this.pose();

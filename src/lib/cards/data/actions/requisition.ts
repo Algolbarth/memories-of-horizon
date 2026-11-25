@@ -15,15 +15,15 @@ export class Requisition extends Action {
     };
 
     canUse = () => {
-        if (this.owner().zone("Inventaire").size > 1) {
+        if (this.owner().zone("Inventaire").getSize() > 1) {
             return true;
         }
         return false;
     };
 
     useEffect = () => {
-        this.owner().zone("Inventaire").size -= 1;
-        this.owner().zone("Terrain").size += 1;
+        this.owner().zone("Inventaire").decrease(1);
+        this.owner().zone("Terrain").increase(1);
 
         this.move("Défausse");
         this.pose();

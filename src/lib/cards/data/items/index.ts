@@ -16,6 +16,7 @@ export * from './brique';
 export * from './cadeau';
 export * from './capsule-de-survie';
 export * from './carotte';
+export * from './carte-au-tresor';
 export * from './carte-de-la-region';
 export * from './cendres';
 export * from './chataigne';

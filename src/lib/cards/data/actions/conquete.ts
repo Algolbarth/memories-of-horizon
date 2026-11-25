@@ -20,7 +20,7 @@ export class Conquete extends Action {
     };
 
     useEffect = () => {
-        this.owner().zone("Terrain").size += 2;
+        this.owner().zone("Terrain").increase(2);
 
         this.move("Défausse");
         this.pose();

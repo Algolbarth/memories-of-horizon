@@ -13,7 +13,7 @@ export class ExtensionDeTerritoire extends Action {
     };
 
     useEffect = () => {
-        this.owner().zone("Région").size += 1;
+        this.owner().zone("Région").increase(1);
 
         this.move("Défausse");
         this.pose();

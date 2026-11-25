@@ -19,7 +19,7 @@ export class Explorateur extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            this.owner().zone("Terrain").size += 1;
+            this.owner().zone("Terrain").increase(1);
         }
     };
 };

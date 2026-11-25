@@ -11,7 +11,7 @@ export class Colonisation extends Action {
 
         this.initFamily(["Humain"]);
 
-        this.addText(`Remplit votre terrain d'{card:Humain}.`);
+        this.addText(`Crée autant d'{card:Humain} que nécessaire pour remplir votre terrain.`);
     };
 
     canUse = () => {
@@ -22,7 +22,7 @@ export class Colonisation extends Action {
     };
 
     useEffect = () => {
-        let nb_creature: number = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
+        let nb_creature: number = this.owner().zone("Terrain").getSize() - this.owner().zone("Terrain").cards.length;
         for (let i = 0; i < nb_creature; i++) {
             this.owner().getCard("Humain").add("Terrain");
         }

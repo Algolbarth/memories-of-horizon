@@ -20,7 +20,7 @@ export class Innovation extends Action {
     };
 
     useEffect = () => {
-        this.owner().zone("Pile").size += 2;
+        this.owner().zone("Pile").increase(2);
 
         this.move("Défausse");
         this.pose();

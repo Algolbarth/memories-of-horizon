@@ -49,12 +49,12 @@ export class CycleDeLEau extends Action {
         if (this.owner().ressource("Eau").total() >= 100) {
             this.owner().ressource("Eau").spend(100);
 
-            this.owner().zone("Pile").size += 1;
-            this.owner().zone("Inventaire").size += 1;
-            this.owner().zone("Terrain").size += 1;
+            this.owner().zone("Pile").increase(1);
+            this.owner().zone("Inventaire").increase(1);
+            this.owner().zone("Terrain").increase(1);
         }
-        else {
-            this.owner().zone(choice).size += 1;
+        else if (choice != undefined) {
+            this.owner().zone(choice).increase(1);
         }
 
         this.move("Défausse");

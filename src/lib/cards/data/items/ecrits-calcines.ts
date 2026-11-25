@@ -25,7 +25,7 @@ export class EcritCalcines extends Item {
 
     useEffect = () => {
         if (this.owner().totalIntelligence() >= 125) {
-            this.owner().discover(this.owner().zone("Pile").size - this.owner().zone("Pile").cards.length);
+            this.owner().discover(this.owner().zone("Pile").getRemaining());
         }
         else {
             this.owner().discover(5);

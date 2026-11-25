@@ -21,6 +21,20 @@ export class Zone {
         return !this.isFull();
     };
 
+    getSize = () => {
+        if (this.size != undefined) {
+            return this.size;
+        }
+        return 0;
+    };
+
+    getRemaining = () => {
+        if (this.size != undefined) {
+            return this.getSize() - this.cards.length;
+        }
+        return 0;
+    };
+
     increase = (value: number) => {
         if (this.size != undefined) {
             this.size += value;

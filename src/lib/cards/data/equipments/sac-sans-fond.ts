@@ -15,7 +15,7 @@ export class SacSansFond extends Equipment {
 
     startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.owner().zone("Inventaire").size += 1;
+            this.owner().zone("Inventaire").increase(1);
         }
     };
 };

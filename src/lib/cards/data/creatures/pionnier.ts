@@ -19,7 +19,7 @@ export class Pionnier extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            this.owner().zone("Pile").size += 1;
+            this.owner().zone("Pile").increase(1);
         }
     };
 };
