@@ -352,7 +352,7 @@ export class Entity {
             for (const card of cards) {
 
                 if (zone.name == "Pile" && card.stat("Perception").value() > 0) {
-                    card.costReduce(card.stat("Perception").value());
+                    card.reduceCost(card.stat("Perception").value());
                 }
 
                 if (card instanceof Unit && card.stat("Vigueur").value() > 0) {

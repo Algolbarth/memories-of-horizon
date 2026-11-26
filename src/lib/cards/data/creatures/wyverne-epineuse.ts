@@ -22,7 +22,7 @@ export class WyverneEpineuse extends Creature {
 
     otherDefendEffect = (defender: Card, attacker: Card) => {
         if (this.isArea("Pile") && this.isAlly(defender) && defender.stat("Épine").value() > 0) {
-            this.costReduce(5);
+            this.reduceCost(5);
         }
     };
 };

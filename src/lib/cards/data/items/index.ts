@@ -96,6 +96,7 @@ export * from './tarte-aux-pommes';
 export * from './telescope';
 export * from './terrine-de-porc';
 export * from './the-vert';
+export * from './ticket-repas';
 export * from './tomate';
 export * from './torche';
 export * from './trefle';

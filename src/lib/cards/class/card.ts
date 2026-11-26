@@ -132,7 +132,7 @@ export class Card {
         return total;
     };
 
-    costReduce = (value: number) => {
+    reduceCost = (value: number) => {
         while (value > 0) {
             let best = this.getCost("Or");
             for (const cost of this.cost) {
@@ -142,6 +142,12 @@ export class Card {
             }
             best.base--;
             value--;
+        }
+    };
+
+    reduceFullCost = () => {
+        for (const cost of this.cost) {
+            cost.base = 0;
         }
     };
 

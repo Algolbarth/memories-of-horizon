@@ -20,7 +20,7 @@ export class Marche extends Building {
         if (this.isArea("Terrain")) {
             let stack: Card[] = copy(this.owner().zone("Pile").cards);
             for (const card of stack) {
-                card.costReduce(5);
+                card.reduceCost(5);
             }
         }
     };

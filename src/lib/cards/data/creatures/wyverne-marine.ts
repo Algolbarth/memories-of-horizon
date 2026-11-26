@@ -22,7 +22,7 @@ export class WyverneMarine extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Eau")) {
-            this.costReduce(5);
+            this.reduceCost(5);
         }
     };
 

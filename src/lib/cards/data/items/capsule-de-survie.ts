@@ -52,7 +52,7 @@ export class CapsuleDeSurvie extends Item {
             };
             let cards: Card[] = this.owner().draw(1, readCondition);
             if (cards[0] != undefined) {
-                cards[0].costReduce(35);
+                cards[0].reduceCost(35);
             }
         }
 

@@ -23,7 +23,7 @@ export class AncienneWyverneVerte extends Creature {
     otherPoseEffect = (card: Card) => {
         if (this.isAlly(card) && card.isElement("Nature")) {
             if (this.isArea("Pile")) {
-                this.costReduce(25);
+                this.reduceCost(25);
             }
             else if (this.isArea("Terrain")) {
                 this.stat("Constitution").increase(15);

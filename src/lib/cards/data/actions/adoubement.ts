@@ -32,7 +32,7 @@ export class Adoubement extends Action {
             if (cards[0] instanceof Knight && cards[0].trait("À terre").value()) {
                 cards[0] = cards[0].transform(cards[0].alternative_form);
             }
-            cards[0].costReduce(50);
+            cards[0].reduceCost(50);
         }
 
         this.move("Défausse");

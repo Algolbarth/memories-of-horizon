@@ -30,7 +30,7 @@ export class FideleServiteur extends Creature {
         let cards: Card[] = this.owner().draw(1, readCondition);
 
         if (cards[0] != undefined) {
-            cards[0].costReduce(100);
+            cards[0].reduceCost(100);
         }
 
         this.move("Terrain");

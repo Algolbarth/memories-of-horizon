@@ -22,7 +22,7 @@ export class GrandeWyverne extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card)) {
-            this.costReduce(10);
+            this.reduceCost(10);
         }
     };
 

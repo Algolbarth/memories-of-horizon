@@ -23,7 +23,7 @@ export class GrandeWyverneTerrestre extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Terre")) {
-            this.costReduce(10);
+            this.reduceCost(10);
         }
     };
 

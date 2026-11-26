@@ -24,7 +24,7 @@ export class PotEnTerreCuite extends Item {
         };
         let cards: Card[] = this.owner().draw(3, readCondition, this);
         for (const card of cards) {
-            card.costReduce(10);
+            card.reduceCost(10);
         }
 
         this.move("Terrain");

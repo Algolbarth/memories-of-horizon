@@ -23,7 +23,7 @@ export class MereWyverne extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isFamily("Wyverne")) {
-            this.costReduce(15);
+            this.reduceCost(15);
         }
     };
 
@@ -32,7 +32,7 @@ export class MereWyverne extends Creature {
             let stack: Card[] = copy(this.owner().zone("Pile").cards);
             for (const card of stack) {
                 if (card.isFamily("Wyverne")) {
-                    card.costReduce(5);
+                    card.reduceCost(5);
                 }
             }
         }

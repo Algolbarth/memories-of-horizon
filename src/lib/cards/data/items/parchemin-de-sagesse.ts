@@ -56,7 +56,7 @@ export class ParcheminDeSagesse extends Item {
     useEffect = (target: Card) => {
         this.targeting(target);
 
-        target.costReduce(5 * this.owner().totalIntelligence());
+        target.reduceCost(5 * this.owner().totalIntelligence());
 
         this.move("Défausse");
         this.pose();

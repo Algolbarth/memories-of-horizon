@@ -55,7 +55,7 @@ export class Cultiver extends Action {
     useEffect = (target: Card) => {
         this.targeting(target);
 
-        target.costReduce(20);
+        target.reduceCost(20);
         target.lock();
 
         this.move("Défausse");

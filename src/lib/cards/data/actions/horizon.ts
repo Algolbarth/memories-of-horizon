@@ -16,7 +16,7 @@ export class Horizon extends Action {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card)) {
-            this.costReduce(20);
+            this.reduceCost(20);
         }
     };
 

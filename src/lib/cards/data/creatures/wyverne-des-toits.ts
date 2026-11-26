@@ -24,7 +24,7 @@ export class WyverneDesToits extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card instanceof Building) {
-            this.costReduce(10);
+            this.reduceCost(10);
         }
     };
 

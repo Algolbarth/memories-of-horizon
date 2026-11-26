@@ -30,7 +30,7 @@ export class Dauphin extends Creature {
         let cards: Card[] = this.owner().draw(1, readCondition);
 
         if (cards[0] != undefined) {
-            cards[0].costReduce(this.owner().ressource("Eau").production);
+            cards[0].reduceCost(this.owner().ressource("Eau").production);
         }
 
         this.move("Terrain");

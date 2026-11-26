@@ -24,7 +24,7 @@ export class WyvernePelagique extends Creature {
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isFamily("Poisson")) {
-            this.costReduce(10);
+            this.reduceCost(10);
         }
     };
 

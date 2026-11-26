@@ -24,7 +24,7 @@ export class CoffreEnOr extends Item {
         };
         let cards: Card[] = this.owner().draw(2, readCondition, this);
         for (const card of cards) {
-            card.costReduce(20);
+            card.reduceCost(20);
         }
 
         this.move("Défausse");
