@@ -13,6 +13,7 @@ import { Card } from "$lib/cards/class/card";
 import { Chapter } from "../chapters/class";
 import type { Account } from "../profil/account";
 import { Filter } from "../filter/class";
+import type { StandardDeck } from "$lib/deck/standard";
 
 export class System {
     page: string = "BlackScreen";
@@ -23,7 +24,7 @@ export class System {
     cards: Cards = new Cards(this);
     chapters: Chapters = new Chapters(this);
     bosses: Bosses = new Bosses(this);
-    standard_decks: Deck[] = [];
+    standard_decks: StandardDeck[] = [];
     wild_decks: Deck[] = [];
     train_deck: Deck = new Deck(this, "train");
     game: undefined | Game;
@@ -173,6 +174,15 @@ export class System {
     importDecks = () => {
         for (const deck of Object.keys(decks)) {
             this.standard_decks.push(new decks[deck](this));
+        }
+        for (let i = 0; i < this.standard_decks.length; i++) {
+            let j = i;
+            while (j > 0 && this.standard_decks[j - 1].id > this.standard_decks[j].id) {
+                let trans = this.standard_decks[j];
+                this.standard_decks[j] = this.standard_decks[j - 1];
+                this.standard_decks[j - 1] = trans;
+                j--;
+            }
         }
 
         this.train_deck.name = "Deck d'entraînement";

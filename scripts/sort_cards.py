@@ -1,9 +1,11 @@
 import os
 
 CARD_DIRECTORY = './src/lib/cards/data'
-DIRECTORIES = ["actions", "bosses", "buildings", "creatures", "equipments", "items", "locations", "spells"]
+CARD_TYPES = ["actions", "bosses", "buildings", "creatures", "equipments", "items", "locations", "spells"]
+DECK_PATH = './src/lib/deck/data'
+STORY_PATH = './src/lib/lore/data'
 
-def check_items(path):
+def sort_items(path):
     nb_item = 0
     f = open(path + "/index.ts", "w")
     content = ""
@@ -28,13 +30,26 @@ def check_items(path):
     
     return nb_item
 
+def check_cards():
+    total_cards = 0
+    for TYPE in CARD_TYPES:
+        PATH = CARD_DIRECTORY + "/" + TYPE
+        nb_cards =  sort_items(PATH)
+        total_cards += nb_cards
+        print(f"{nb_cards} {TYPE}")
+    print(f"{total_cards} cards")
+
+def check_decks():
+    nb_decks = sort_items(DECK_PATH)
+    print(f"{nb_decks} decks")
+
+def check_stories():
+    nb_stories = sort_items(STORY_PATH)
+    print(f"{nb_stories} histoires")
+
 def check_all():
-    nb_cards = 0
-    for DIRECTORY in DIRECTORIES:
-        PATH = CARD_DIRECTORY + "/" + DIRECTORY
-        nb_items = check_items(PATH)
-        nb_cards += nb_items
-        print(f"{nb_items} {DIRECTORY}")
-    print(f"{nb_cards} cards")
+    check_cards()
+    check_decks()
+    check_stories()
 
 check_all()

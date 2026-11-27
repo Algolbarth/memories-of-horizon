@@ -2,9 +2,12 @@ import type { System } from "$lib/system/class";
 import { Deck } from "./class";
 
 export class StandardDeck extends Deck {
-    constructor(system: System, name: string, cards: string[]) {
+    id: number;
+
+    constructor(system: System, id: number, name: string, cards: string[]) {
         super(system, "standard");
 
+        this.id = id;
         this.name = name;
 
         for (let i = 0; i < cards.length; i++) {
