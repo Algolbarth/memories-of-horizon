@@ -19,7 +19,7 @@
 
 				<div id="space"></div>
 
-				<svelte:component this={story.text} />
+				{@html story.text}
 			</div>
 		</div>
 
